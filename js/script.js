@@ -1420,10 +1420,10 @@ else if (vacantes <= 10) {
 }
 else {
 
-    motor.factorVacantes = 4;
+    motor.factorVacantes = 4 + ((vacantes - 10) * 0.50);
 
     motor.diagnostico.push(
-        "El volumen de contratación requiere un equipo dedicado de reclutamiento."
+        `El proceso contempla ${vacantes} vacantes y requiere un equipo dedicado de reclutamiento.`
     );
 
 }
