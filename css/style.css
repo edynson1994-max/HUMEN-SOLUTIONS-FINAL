@@ -1860,10 +1860,31 @@ textarea.form-control{
 }
 
 .contact-card{
+
     display:flex;
-    gap:18px;
-    align-items:flex-start;
-    margin-bottom:28px;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:22px;
+
+    margin-bottom:18px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    transition:.35s;
+
+    position:relative;
+
+    z-index:2;
+
 }
 
 .contact-icon{
@@ -2253,7 +2274,33 @@ h2{
     padding:30px;
 
 }
+.footer-column{
 
+padding-top:5px;
+
+}
+
+.footer-column ul{
+
+gap:8px;
+
+}
+
+.footer-contact span{
+
+justify-content:center;
+
+font-size:15px;
+
+}
+
+.footer-column h3::after{
+
+width:55px;
+
+height:4px;
+
+}
 }
 
 
@@ -2353,5 +2400,1024 @@ TOP BAR
     display:flex;
     align-items:center;
     gap:8px;
+
+}
+/*==================================================
+            CONTACTO PREMIUM
+==================================================*/
+
+.contact-info{
+
+    background:linear-gradient(
+        180deg,
+        #0B3C5D 0%,
+        #14547F 100%
+    );
+
+    color:#fff;
+
+    border-radius:28px;
+
+    padding:48px;
+
+    box-shadow:
+        0 20px 45px rgba(11,60,93,.18);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.contact-info::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+
+    height:320px;
+
+    right:-120px;
+
+    top:-120px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+}
+
+.contact-info::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    left:-100px;
+
+    bottom:-100px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.03);
+
+}
+
+.contact-header{
+
+    margin-bottom:40px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.contact-header span{
+
+    color:#9FD36C;
+
+    font-size:.72rem;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+}
+
+.contact-header span{
+
+    color:#9FD36C;
+
+    font-size:.72rem;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+}
+
+.contact-header-icon{
+
+    width:78px;
+
+    height:78px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#9FD36C;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.18);
+
+}
+
+.contact-header-icon{
+
+    width:78px;
+
+    height:78px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#9FD36C;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.18);
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+        0 18px 35px rgba(0,0,0,.18);
+
+    border-color:#9FD36C;
+
+}
+
+.contact-card .icon{
+
+    width:68px;
+
+    height:68px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    flex-shrink:0;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.18);
+
+}
+
+.phone .icon{
+
+    background:#1d6f42;
+
+}
+
+.whatsapp .icon{
+
+    background:#0b8e46;
+
+}
+
+.email .icon{
+
+    background:#1f6de0;
+
+}
+
+.location .icon{
+
+    background:#7b4de4;
+
+}
+
+.schedule .icon{
+
+    background:#d79b11;
+
+}
+
+.contact-card strong{
+
+    display:block;
+
+    font-size:1.10rem;
+
+    color:#fff;
+
+    margin-bottom:6px;
+
+}
+
+.contact-card p{
+
+    margin:2px 0;
+
+    color:#D7E4EF;
+
+    line-height:1.6;
+
+    font-size:.92rem;
+
+}
+
+.contact-card small{
+
+    color:#9FD36C;
+
+    font-size:14px;
+
+}
+
+.contact-footer{
+
+    margin-top:35px;
+
+    padding:24px;
+
+    border-radius:20px;
+
+    background:rgba(159,211,108,.08);
+
+    border:1px solid rgba(159,211,108,.35);
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.contact-footer strong{
+
+    color:#9FD36C;
+
+    font-size:1.2rem;
+
+    margin-bottom:10px;
+
+    display:block;
+
+}
+
+.contact-footer p{
+
+    color:#dbe6ef;
+
+    line-height:1.8;
+
+}
+/*==============================
+      CARD EXTRA RECLUTAMIENTO
+===============================*/
+
+.card{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.card p{
+
+flex:1;
+
+}
+
+.card-extra{
+
+margin-top:22px;
+
+padding-top:18px;
+
+border-top:1px solid rgba(0,0,0,.08);
+
+}
+
+.extra-title{
+
+display:block;
+
+font-size:15px;
+
+font-weight:700;
+
+color:#0B3C5D;
+
+margin-bottom:8px;
+
+}
+
+.card-extra p{
+
+font-size:14px;
+
+color:#6b7280;
+
+line-height:1.6;
+
+margin-bottom:12px;
+
+}
+
+.extra-link{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:8px;
+
+font-weight:700;
+
+color:#6D8E34;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.extra-link:hover{
+
+gap:14px;
+
+color:#4d6f1b;
+
+}
+/*==================================================
+                FOOTER PREMIUM
+==================================================*/
+
+footer{
+
+background:linear-gradient(
+180deg,
+#0B3C5D,
+#124C75
+);
+
+color:#fff;
+
+margin-top:100px;
+
+overflow:hidden;
+
+}
+
+.footer-top{
+
+padding:80px 0 50px;
+
+}
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:2fr 1fr 1fr 1fr;
+
+gap:60px;
+
+align-items:start;
+
+}
+
+.footer-brand img{
+
+width:170px;
+
+margin-bottom:25px;
+
+transition:.35s;
+
+filter:drop-shadow(0 10px 20px rgba(0,0,0,.25));
+
+}
+
+.footer-brand img:hover{
+
+transform:translateY(-6px) scale(1.03);
+
+}
+
+.footer-brand p{
+
+color:rgba(255,255,255,.78);
+
+line-height:1.9;
+
+margin-bottom:30px;
+
+max-width:420px;
+
+}
+
+.footer-contact{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+.footer-contact span{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-size:15px;
+
+color:#fff;
+
+}
+
+.footer-column h3{
+
+font-size:22px;
+
+margin-bottom:24px;
+
+position:relative;
+
+padding-bottom:12px;
+
+}
+
+.footer-column h3::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:0;
+
+width:45px;
+
+height:3px;
+
+background:#8FBF4D;
+
+border-radius:20px;
+
+}
+
+.footer-column ul{
+
+list-style:none;
+
+padding:0;
+
+margin:0;
+
+}
+
+.footer-column li{
+
+margin-bottom:16px;
+
+}
+
+.footer-column a{
+
+color:rgba(255,255,255,.75);
+
+text-decoration:none;
+
+transition:.30s;
+
+display:inline-flex;
+
+align-items:center;
+
+gap:8px;
+
+}
+
+.footer-column a:hover{
+
+color:#8FBF4D;
+
+transform:translateX(8px);
+
+}
+
+.footer-bottom{
+
+border-top:1px solid rgba(255,255,255,.10);
+
+padding:22px 0;
+
+background:rgba(0,0,0,.12);
+
+}
+
+.footer-bottom-content{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.footer-bottom p{
+
+margin:0;
+
+color:rgba(255,255,255,.80);
+
+}
+
+.footer-bottom span{
+
+color:rgba(255,255,255,.65);
+
+font-size:14px;
+
+}
+
+/*==================================================
+COTIZADOR PREMIUM
+==================================================*/
+
+#cotizacion{
+
+    background:linear-gradient(180deg,#F8FBFD,#FFFFFF);
+
+}
+
+.cotizador-grid{
+
+    display:grid;
+
+    grid-template-columns:1.2fr .8fr;
+
+    gap:35px;
+
+    align-items:start;
+
+    margin-top:50px;
+
+}
+
+.cotizador-card{
+
+    background:#ffffff;
+
+    border:1px solid #E8ECF2;
+
+    border-radius:24px;
+
+    padding:40px;
+
+    box-shadow:0 15px 40px rgba(15,23,42,.06);
+
+}
+
+.cotizador-resultado{
+
+    background:linear-gradient(135deg,#0B3C5D,#155B87);
+
+    color:#ffffff;
+
+    border-radius:24px;
+
+    padding:40px;
+
+    position:sticky;
+
+    top:120px;
+
+    box-shadow:0 20px 45px rgba(11,60,93,.25);
+
+}
+
+.resultado-etiqueta{
+
+    display:inline-block;
+
+    background:rgba(255,255,255,.12);
+
+    padding:8px 16px;
+
+    border-radius:50px;
+
+    font-size:.80rem;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+
+}
+
+.cotizador-resultado h2{
+
+    color:#ffffff;
+
+    font-size:3.2rem;
+
+    margin-bottom:10px;
+
+}
+
+.resultado-subtitulo{
+
+    color:rgba(255,255,255,.85);
+
+    line-height:1.7;
+
+    margin-bottom:25px;
+
+}
+
+.cotizador-resultado hr{
+
+    border:none;
+
+    height:1px;
+
+    background:rgba(255,255,255,.15);
+
+    margin:25px 0;
+
+}
+
+#detalleCotizacion{
+
+    margin-top:22px;
+
+    color:#ffffff;
+
+    font-size:.92rem;
+
+    line-height:1.8;
+
+}
+
+#detalleCotizacion strong{
+
+    display:block;
+
+    margin-top:24px;
+
+    margin-bottom:12px;
+
+    padding-bottom:8px;
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+
+    font-size:1rem;
+
+    color:#fff;
+
+}
+
+#detalleCotizacion ul{
+
+    margin-top:12px;
+
+    padding-left:20px;
+
+}
+
+#detalleCotizacion li{
+
+    margin-bottom:10px;
+
+    margin-left:6px;
+
+}
+
+/*=========================
+FORMULARIO DEL COTIZADOR
+=========================*/
+
+#contenedorFormulario h3{
+
+    color:var(--primary);
+
+    margin-bottom:30px;
+
+}
+
+#contenedorFormulario label{
+
+    display:block;
+
+    font-weight:600;
+
+    color:var(--primary);
+
+    margin-bottom:8px;
+
+    margin-top:20px;
+
+}
+
+#contenedorFormulario input,
+
+#contenedorFormulario select{
+
+    width:100%;
+
+    height:55px;
+
+    border:1px solid #DCE4EC;
+
+    border-radius:14px;
+
+    padding:0 18px;
+
+    font-size:15px;
+
+    transition:.30s;
+
+    background:#ffffff;
+
+}
+
+#contenedorFormulario input:focus,
+
+#contenedorFormulario select:focus{
+
+    outline:none;
+
+    border-color:#1E88E5;
+
+    box-shadow:0 0 0 4px rgba(30,136,229,.10);
+
+}
+
+#contenedorFormulario button{
+
+    margin-top:30px;
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#0B3C5D,#1E88E5);
+
+    color:#ffffff;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.30s;
+
+    font-size:16px;
+
+}
+
+#contenedorFormulario button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 35px rgba(30,136,229,.25);
+
+}
+
+/*=========================
+PESTAÑAS DEL COTIZADOR
+=========================*/
+
+.cotizador-tabs{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-bottom:35px;
+
+    flex-wrap:wrap;
+
+}
+
+.cotizador-btn{
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#EDF3F8;
+
+    color:#0B3C5D;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.30s;
+
+}
+
+.cotizador-btn:hover{
+
+    background:#DDEAF5;
+
+}
+
+.cotizador-btn.active{
+
+    background:linear-gradient(135deg,#0B3C5D,#1E88E5);
+
+    color:#ffffff;
+
+    box-shadow:0 12px 30px rgba(11,60,93,.25);
+
+}
+
+.cotizador-resultado h2{
+
+    font-size:3rem;
+
+    font-weight:800;
+
+    color:#fff;
+
+    margin:0;
+
+    line-height:1.1;
+
+}
+
+#contenedorFormulario label{
+
+    margin-top:28px;
+
+}
+
+#contenedorFormulario input,
+#contenedorFormulario select{
+
+    margin-top:10px;
+
+}
+
+.cotizador-btn{
+
+    transform:scale(1);
+
+}
+
+.cotizador-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.cotizador-btn.active{
+
+    transform:translateY(-3px);
+
+}
+
+/*=========================================
+  ANIMACIÓN RESULTADO COTIZADOR
+=========================================*/
+
+.cotizacion-animada{
+
+    animation: aparecerCotizacion .45s ease;
+
+}
+
+@keyframes aparecerCotizacion{
+
+    0%{
+
+        opacity:0;
+        transform:translateY(12px) scale(.98);
+
+    }
+
+    100%{
+
+        opacity:1;
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+.codigo-cotizacion{
+
+    display:inline-block;
+
+    margin-top:18px;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    font-size:.82rem;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    color:#fff;
+
+    white-space:nowrap;
+
+    font-family:monospace;
+
+}
+
+.fecha-cotizacion{
+
+    margin-top:10px;
+
+    margin-bottom:24px;
+
+    font-size:.82rem;
+
+    font-weight:400;
+
+    color:rgba(255,255,255,.75);
+
+}
+
+#btnSolicitarCotizacion{
+
+    width:100%;
+
+    margin-top:28px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#ffffff;
+
+    color:#0B3C5D;
+
+    font-size:.95rem;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.30s;
+
+}
+
+#btnSolicitarCotizacion:hover{
+
+    transform:translateY(-3px);
+
+    background:#EEF5E6;
 
 }
