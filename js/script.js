@@ -1571,7 +1571,7 @@ switch (motor.complejidad) {
 
     motor.reclutadores = 1;
 
-    motor.garantia = 45;
+    motor.garantia = 30;
 
     motor.recomendaciones.push(
         "Se recomienda ampliar las fuentes de reclutamiento."
@@ -1593,7 +1593,7 @@ switch (motor.complejidad) {
 
     motor.reclutadores = 2;
 
-    motor.garantia = 60;
+    motor.garantia = 30;
 
     motor.recomendaciones.push(
         "Se recomienda asignar dos reclutadores para cumplir el plazo."
@@ -1615,7 +1615,7 @@ switch (motor.complejidad) {
 
     motor.reclutadores = 3;
 
-    motor.garantia = 90;
+    motor.garantia = 30;
 
     motor.recomendaciones.push(
         "Se recomienda un equipo especializado de tres reclutadores."
@@ -1681,6 +1681,9 @@ switch (urgencia) {
 
     total += total * motor.factorUrgencia;
 
+    const garantia60 = total * 1.10;
+const garantia90 = total * 1.20;
+
 const listaDiagnostico = motor.diagnostico
     .map(item => `• ${item}<br>`)
     .join("");
@@ -1715,8 +1718,65 @@ ${listaDiagnostico}
 
 • Equipo recomendado: ${motor.reclutadores} reclutador(es)<br>
 
-• Garantía de reposición: ${motor.garantia} días
+• Garantía de reposición incluida: ${motor.garantia} días<br>
+
+<div style="
+    margin:12px 0 18px;
+    padding:14px 16px;
+    background:rgba(255,255,255,.08);
+    border-left:4px solid #00C896;
+    border-radius:8px;
+    color:#EAF6FF;
+    font-size:14px;
+    line-height:1.7;
+">
+
+<strong style="color:#FFFFFF;">
+🛡️ Amplía tu garantía de reposición
+</strong>
+
 <br><br>
+
+✔ Garantía incluida:
+<strong>${motor.garantia} días</strong>
+
+<br><br>
+
+○ Garantía Extendida:
+<strong>60 días</strong>
+
+(+10%)
+
+<br>
+
+<strong>
+S/ ${garantia60.toLocaleString("es-PE",{
+minimumFractionDigits:2
+})}
+</strong>
+
+<br><br>
+
+○ Garantía Premium:
+<strong>90 días</strong>
+
+(+20%)
+
+<br>
+
+<strong>
+S/ ${garantia90.toLocaleString("es-PE",{
+minimumFractionDigits:2
+})}
+</strong>
+
+<br><br>
+
+<small style="opacity:.85;">
+El precio mostrado corresponde al valor total del servicio con la garantía ampliada incluida.
+</small>
+
+</div>
 
 <strong>Recomendaciones</strong><br>
 
