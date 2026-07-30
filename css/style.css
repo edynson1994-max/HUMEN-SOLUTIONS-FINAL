@@ -3452,3 +3452,144 @@ PESTAÑAS DEL COTIZADOR
 
     z-index:100;
 }
+
+/*==================================================
+CHECKBOX MODERNOS - COTIZADOR HUMEN
+==================================================*/
+
+.check-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    width:100%;
+
+    padding:18px 22px;
+
+    margin:14px 0;
+
+    background:#ffffff;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    box-shadow:0 6px 18px rgba(15,23,42,.05);
+
+    transition:.30s ease;
+
+    cursor:pointer;
+
+}
+
+.check-card:hover{
+
+    transform:translateY(-3px);
+
+    border-color:var(--primary-light);
+
+    box-shadow:0 12px 28px rgba(30,136,229,.15);
+
+}
+
+.check-card span{
+
+    flex:1;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:var(--text);
+
+    line-height:1.5;
+
+}
+
+.check-card input{
+
+    width:22px;
+
+    height:22px;
+
+    accent-color:var(--primary);
+
+    cursor:pointer;
+
+    flex-shrink:0;
+
+}
+
+.check-card:has(input:checked){
+
+    background:var(--primary-light-bg);
+
+    border-color:var(--primary);
+
+}
+
+.check-card:has(input:checked) span{
+
+    color:var(--primary);
+
+}
+
+.titulo-seccion{
+
+    margin-top:35px;
+
+    margin-bottom:20px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+/*====================================
+BOTÓN FLOTANTE COTIZACIÓN
+====================================*/
+
+#btnCotizacionFlotante{
+
+    position:fixed;
+
+    bottom:25px;
+
+    left:25px;
+
+    background:#0066cc;
+
+    color:white;
+
+    padding:15px 22px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    font-size:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+    z-index:9999;
+
+    transition:.30s;
+
+}
+
+#btnCotizacionFlotante:hover{
+
+    transform:translateY(-4px);
+
+    background:#004fa3;
+
+}
