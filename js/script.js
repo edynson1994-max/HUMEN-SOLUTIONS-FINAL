@@ -1047,1503 +1047,1778 @@ eventos() {
 
 mostrarFormulario() {
 
-    if (this.servicioActual === "reclutamiento") {
+    this.contenedor.innerHTML=`
 
-    this.contenedor.innerHTML = `
+<h3>Reclutamiento y Selección de Personal</h3>
 
-        <h3>Reclutamiento y Selección</h3>
+<label>Nombre del puesto</label>
 
-        <label>Nivel del puesto</label>
+<input
+type="text"
+id="puesto"
+placeholder="Ejemplo: Asistente Contable">
 
-        <select id="nivelPuesto">
+<label>Sueldo mensual ofrecido (S/)</label>
 
-            <option value="">Seleccione...</option>
+<input
+type="number"
+id="sueldo"
+min="0"
+placeholder="Ejemplo: 1800">
 
-            <option value="Operativo">Operativo</option>
+<label>Cantidad de vacantes</label>
 
-            <option value="Tecnico">Técnico</option>
+<input
+type="number"
+id="vacantes"
+min="1"
+value="1">
 
-            <option value="Administrativo">Administrativo</option>
+<label>1. Nivel del puesto requerido</label>
 
-            <option value="Analista">Analista</option>
+<select id="nivelPuesto">
 
-            <option value="Supervisor">Supervisor</option>
+<option value="">Seleccione...</option>
 
-            <option value="Coordinador">Coordinador</option>
+<option value="operativo">
+Operativo / Campo
+</option>
 
-            <option value="Jefatura">Jefatura</option>
+<option value="comercial">
+Comercial / Atención
+</option>
 
-            <option value="Gerencia">Gerencia</option>
+<option value="administrativo">
+Administrativo / Confianza
+</option>
 
-            <option value="Direccion">Dirección</option>
-
-        </select>
-
-        <label>Nombre del puesto</label>
-
-        <input
-            type="text"
-            id="puesto"
-            placeholder="Ejemplo: Asistente Contable">
-
-        <label>Cantidad de vacantes</label>
-
-        <input
-            type="number"
-            id="vacantes"
-            min="1"
-            value="1">
-
-        <label>Sueldo mensual (S/)</label>
-
-        <input
-            type="number"
-            id="sueldo"
-            min="0">
-
-        <label>Urgencia del proceso</label>
-
-        <select id="urgencia">
-
-            <option value="normal">Normal</option>
-
-            <option value="urgente">Urgente</option>
-
-            <option value="muyUrgente">Muy urgente</option>
-
-        </select>
-
-        <button id="btnCalcular">
-
-            Calcular cotización
-
-        </button>
-
-    `;
-
-    document
-        .getElementById("btnCalcular")
-        .addEventListener("click", () => {
-
-            this.calcularReclutamiento();
-
-        });
-
-}
-
-    if (this.servicioActual === "inventario") {
-
-    this.contenedor.innerHTML = `
-        <h3>Inventario Físico</h3>
-
-        <label>Rubro de la empresa</label>
-
-<select id="rubro">
-
-    <option value="">Seleccione...</option>
-
-    <option value="comercio">Comercio</option>
-
-    <option value="almacen">Almacén Logístico</option>
-
-    <option value="retail">Retail</option>
-
-    <option value="industria">Industria</option>
-
-    <option value="construccion">Construcción</option>
-
-    <option value="salud">Salud</option>
-
-    <option value="hoteleria">Hotelería</option>
-
-    <option value="educacion">Educación</option>
-
-    <option value="mineria">Minería</option>
+<option value="jefatura">
+Jefatura / Gerencia
+</option>
 
 </select>
 
-        <label>Cantidad de ítems</label>
-        <input
-            type="number"
-            id="items"
-            min="1"
-            placeholder="Ejemplo: 3500">
+<small>
 
-        <label>Cantidad de almacenes</label>
-        <input
-            type="number"
-            id="almacenes"
-            value="1"
-            min="1">
+Determina el nivel de filtro de antecedentes,
+entrevistas y validación de referencias.
 
-        <label>Ciudad</label>
+</small>
 
-        <select id="ciudad">
-            <option value="">Seleccione...</option>
-            <option>Cusco</option>
-            <option>Lima</option>
-            <option>Arequipa</option>
-            <option>Otra ciudad</option>
-        </select>
+<br><br>
 
-        <label>¿Los productos tienen código de barras?</label>
+<label>2. Urgencia del proceso</label>
 
-        <select id="codigoBarras">
-            <option value="si">Sí</option>
-            <option value="no">No</option>
-        </select>
+<select id="urgencia">
 
-        <button id="btnCalcularInventario">
-            Calcular
-        </button>
-    `;
+<option value="normal">
+Estándar (10 a 15 días)
+</option>
 
-    document
-        .getElementById("btnCalcularInventario")
-        .addEventListener("click", () => {
+<option value="urgente">
+Urgente (5 a 7 días)
+</option>
 
-            this.calcularInventario();
+<option value="expreso">
+Expreso (3 a 4 días)
+</option>
 
-        });
+</select>
+
+<hr>
+
+<div style="font-size:13px;opacity:.85;line-height:1.7">
+
+<b>El servicio incluye</b>
+
+<ul>
+
+<li>Publicación de la vacante.</li>
+
+<li>Filtro curricular.</li>
+
+<li>Entrevista por competencias.</li>
+
+<li>Validación de referencias laborales.</li>
+
+<li>Verificación de antecedentes.</li>
+
+<li>Garantía de reposición por 30 días.</li>
+
+</ul>
+
+</div>
+
+<button id="btnCalcular">
+
+Calcular Cotización
+
+</button>
+
+`;
+
+document
+.getElementById("btnCalcular")
+.addEventListener("click",()=>{
+
+this.calcularReclutamiento();
+
+});
+
+    if (this.servicioActual === "inventario") {
+
+this.contenedor.innerHTML = `
+
+<h3>Inventario y Control de Almacén</h3>
+
+<label>1. ¿Qué servicio necesitas?</label>
+
+<select id="tipoServicio">
+
+<option value="">Seleccione...</option>
+
+<option value="puntual">
+Toma de Inventario Físico (Puntual)
+</option>
+
+<option value="kardex">
+Control de Kárdex y Stock (Mensual)
+</option>
+
+</select>
+
+<small>
+Elige si necesitas una auditoría puntual o un control permanente.
+</small>
+
+<br><br>
+
+<label>2. ¿Cuántos tipos de productos (SKUs) manejas?</label>
+
+<select id="skus">
+
+<option value="">Seleccione...</option>
+
+<option value="150">
+Hasta 150 tipos
+</option>
+
+<option value="600">
+151 a 600 tipos
+</option>
+
+<option value="1500">
+601 a 1500 tipos
+</option>
+
+<option value="masivo">
+Más de 1500 (Evaluación técnica)
+</option>
+
+</select>
+
+<small>
+
+Cada talla, color o presentación cuenta como un SKU diferente.
+
+</small>
+
+<br><br>
+
+<label>3. Cantidad aproximada de unidades físicas</label>
+
+<select id="unidades">
+
+<option value="">Seleccione...</option>
+
+<option value="3000">
+Hasta 3,000 unidades
+</option>
+
+<option value="10000">
+3,001 a 10,000
+</option>
+
+<option value="30000">
+10,001 a 30,000
+</option>
+
+<option value="masivo">
+Más de 30,000
+</option>
+
+</select>
+
+<br><br>
+
+<label>4. ¿Cuántos locales o almacenes?</label>
+
+<select id="almacenes">
+
+<option value="1">1 almacén</option>
+
+<option value="2">2 almacenes</option>
+
+<option value="3">3 almacenes</option>
+
+<option value="4">Más de 3</option>
+
+</select>
+
+<br><br>
+
+<label>5. Ubicación</label>
+
+<select id="ciudad">
+
+<option value="">Seleccione...</option>
+
+<option value="Cusco">Cusco Cercado</option>
+
+<option value="Wanchaq">Wanchaq</option>
+
+<option value="Santiago">Santiago</option>
+
+<option value="San Sebastian">San Sebastián</option>
+
+<option value="San Jeronimo">San Jerónimo</option>
+
+<option value="Valle">Valle Sagrado</option>
+
+<option value="Otra">Otra ciudad</option>
+
+</select>
+
+<br><br>
+
+<label>6. Estado de la mercadería</label>
+
+<select id="organizacion">
+
+<option value="">Seleccione...</option>
+
+<option value="excelente">
+Excelente
+</option>
+
+<option value="regular">
+Regular
+</option>
+
+<option value="desordenado">
+Desordenado
+</option>
+
+</select>
+
+<br><br>
+
+<label>7. Código de barras</label>
+
+<select id="codigo">
+
+<option value="todos">
+Todos los productos
+</option>
+
+<option value="parcial">
+Solo algunos
+</option>
+
+<option value="ninguno">
+Ninguno
+</option>
+
+</select>
+
+<br><br>
+
+<label class="check-card">
+
+<span>
+
+Requiere conciliación de diferencias
+
+</span>
+
+<input
+type="checkbox"
+id="conciliacion">
+
+</label>
+
+<br>
+
+<label class="check-card">
+
+<span>
+
+Requiere valorización económica
+
+</span>
+
+<input
+type="checkbox"
+id="valorizacion">
+
+</label>
+
+<br>
+
+<label class="check-card">
+
+<span>
+
+Informe Ejecutivo para Gerencia
+
+</span>
+
+<input
+type="checkbox"
+id="ejecutivo">
+
+</label>
+
+<hr>
+
+<div style="font-size:13px;opacity:.85;line-height:1.7">
+
+<b>Condiciones del servicio</b>
+
+<ul>
+
+<li>La tarifa considera hasta 3,000 unidades físicas.</li>
+
+<li>Almacenes de gran volumen requieren visita técnica.</li>
+
+<li>La mercadería debe encontrarse accesible para el conteo.</li>
+
+<li>Servicios fuera de Cusco tendrán viáticos adicionales.</li>
+
+</ul>
+
+</div>
+
+<button id="btnCalcularInventario">
+
+Calcular Cotización
+
+</button>
+
+`;
+
+document
+.getElementById("btnCalcularInventario")
+.addEventListener("click",()=>{
+
+this.calcularInventario();
+
+});
 
 }
 
     if (this.servicioActual === "contabilidad") {
 
-    this.contenedor.innerHTML = `
-        <h3>Servicio Contable</h3>
+this.contenedor.innerHTML=`
 
-        <label>Régimen Tributario</label>
-        <select id="regimen">
-            <option value="">Seleccione...</option>
-            <option value="RUS">Nuevo RUS</option>
-            <option value="RER">Régimen Especial (RER)</option>
-            <option value="MYPE">Régimen MYPE</option>
-            <option value="GENERAL">Régimen General</option>
-        </select>
+<h3>Servicio Contable</h3>
 
-        <label>Comprobantes mensuales</label>
-        <input
-            type="number"
-            id="comprobantes"
-            min="0"
-            placeholder="Ejemplo: 120">
+<label>Régimen Tributario</label>
 
-        <label>Trabajadores en planilla</label>
-        <input
-            type="number"
-            id="trabajadores"
-            value="0"
-            min="0">
+<select id="regimen">
 
-        <label>¿Incluye planillas?</label>
-        <select id="planillas">
-            <option value="no">No</option>
-            <option value="si">Sí</option>
-        </select>
+<option value="">Seleccione...</option>
 
-        <button id="btnCalcularContabilidad">
-            Calcular
-        </button>
-    `;
+<option value="RUS">Nuevo RUS</option>
 
-    document
-        .getElementById("btnCalcularContabilidad")
-        .addEventListener("click", () => {
+<option value="RER">Régimen Especial (RER)</option>
 
-            this.calcularContabilidad();
+<option value="RMT">Régimen MYPE Tributario</option>
 
-        });
+<option value="GENERAL">Régimen General</option>
+
+</select>
+
+
+<label>Comprobantes mensuales</label>
+
+<input
+type="number"
+id="comprobantes"
+min="0"
+placeholder="Ejemplo: 120">
+
+
+<label>Trabajadores en planilla</label>
+
+<input
+type="number"
+id="trabajadores"
+value="0"
+min="0">
+
+
+<hr>
+
+<h4 class="titulo-seccion">
+
+Operaciones Especiales
+
+</h4>
+
+<label class="check-card">
+
+<span>
+
+Realiza importaciones
+
+</span>
+
+<input
+type="checkbox"
+id="importaciones">
+
+</label>
+
+<label class="check-card">
+
+<span>
+
+Realiza exportaciones
+
+</span>
+
+<input
+type="checkbox"
+id="exportaciones">
+
+</label>
+
+<label class="check-card">
+
+<span>
+
+Opera con detracciones
+
+</span>
+
+<input
+type="checkbox"
+id="detracciones">
+
+</label>
+
+<label class="check-card">
+
+<span>
+
+Percepciones / Retenciones
+
+</span>
+
+<input
+type="checkbox"
+id="retenciones">
+
+</label>
+
+<label class="check-card">
+
+<span>
+
+Maneja caja chica
+
+</span>
+
+<input
+type="checkbox"
+id="cajachica">
+
+</label>
+
+<label class="check-card">
+
+<span>
+
+Más de una cuenta bancaria
+
+</span>
+
+<input
+type="checkbox"
+id="bancos">
+
+</label>
+
+<hr>
+
+<h4 class="titulo-seccion">Servicios Adicionales</h4>
+
+<label class="check-card">
+
+<span>
+
+Emisión de comprobantes electrónicos
+
+</span>
+
+<input
+type="checkbox"
+id="facturacion">
+
+</label>
+
+<label class="check-card">
+
+<span>
+
+Reportes gerenciales
+
+</span>
+
+<input
+type="checkbox"
+id="reportes">
+
+</label>
+
+<label class="check-card">
+
+<span>
+
+Atención de requerimientos SUNAT
+
+</span>
+
+<input
+type="checkbox"
+id="sunat">
+
+</label>
+
+<label class="check-card">
+
+<span>
+
+Asesoría tributaria permanente
+
+</span>
+
+<input
+type="checkbox"
+id="asesoria">
+
+</label>
+
+<button
+id="btnCalcularContabilidad">
+
+Calcular Cotización
+
+</button>
+
+`;
+
+document
+
+.getElementById("btnCalcularContabilidad")
+
+.addEventListener("click",()=>{
+
+this.calcularContabilidad();
+
+});
 
 }
 
 },
 
-calcularReclutamiento() {
+calcularReclutamiento(){
 
-    const nivel = document.getElementById("nivelPuesto").value;
+const puesto=document.getElementById("puesto").value.trim();
 
-    const urgencia = document.getElementById("urgencia").value;
+const sueldo=Number(document.getElementById("sueldo").value);
 
-    const puesto = document.getElementById("puesto").value;
+const vacantes=Number(document.getElementById("vacantes").value);
 
-    const vacantes = Number(document.getElementById("vacantes").value);
+const nivel=document.getElementById("nivelPuesto").value;
 
-    const sueldo = Number(document.getElementById("sueldo").value);
+const urgencia=document.getElementById("urgencia").value;
 
-    const motor = {
+if(
+puesto===""||
+sueldo<=0||
+vacantes<=0||
+nivel===""){
+alert("Complete todos los datos.");
+return;
+}
 
-    factorNivel: 1,
+let precioBase=0;
 
-    factorVacantes: 1,
+let porcentaje=0;
 
-    factorSueldo: 1,
+let minimo=0;
 
-    factorUrgencia: 0,
+let detalle=[];
 
-    complejidad: "Baja",
+let diagnostico=[];
 
-    dias: 7,
+let recomendaciones=[];
 
-    reclutadores: 1,
+/*-------------------------
+NIVEL DEL PUESTO
+--------------------------*/
 
-    garantia: 30,
+switch(nivel){
 
-    diagnostico: [],
+case "operativo":
 
-    recomendaciones: []
+porcentaje=0.40;
+minimo=350;
 
-};
-
-switch (nivel) {
-
-    case "Operativo":
-
-    motor.factorNivel = 1.00;
-
-    motor.diagnostico.push(
-        "El puesto es operativo, por lo que el proceso de búsqueda es de baja complejidad."
-    );
-
-    break;
-
-    case "Tecnico":
-
-        motor.factorNivel = 1.10;
-
-        motor.diagnostico.push(
-    "El puesto requiere conocimientos técnicos específicos."
+diagnostico.push(
+"El puesto corresponde a un nivel operativo con un proceso estándar de selección."
 );
 
 break;
 
-    case "Administrativo":
+case "comercial":
 
-        motor.factorNivel = 1.15;
+porcentaje=0.50;
+minimo=450;
 
-        motor.diagnostico.push(
-    "El perfil administrativo requiere validar experiencia y competencias."
-);
-        break;
-
-    case "Analista":
-
-        motor.factorNivel = 1.30;
-
-        motor.diagnostico.push(
-    "El nivel analista demanda una evaluación más detallada del perfil."
-);
-        break;
-
-    case "Supervisor":
-
-        motor.factorNivel = 1.50;
-
-        motor.diagnostico.push(
-    "El cargo de supervisión requiere evaluar liderazgo y experiencia."
-);
-        break;
-
-    case "Coordinador":
-
-        motor.factorNivel = 1.70;
-
-        motor.diagnostico.push(
-    "El puesto de coordinación exige experiencia en gestión de equipos."
-);
-        break;
-
-    case "Jefatura":
-
-        motor.factorNivel = 2.00;
-
-        motor.diagnostico.push(
-    "El proceso corresponde a una jefatura y requiere una evaluación especializada."
-);
-        break;
-
-    case "Gerencia":
-
-        motor.factorNivel = 2.50;
-
-        motor.diagnostico.push(
-    "La búsqueda gerencial requiere un proceso ejecutivo y mayor nivel de validación."
-);
-        break;
-
-    case "Direccion":
-
-        motor.factorNivel = 3.20;
-
-        motor.diagnostico.push(
-    "La selección para un cargo directivo implica un proceso altamente estratégico."
-);
-        break;
-
-}
-
-if (vacantes == 1) {
-
-    motor.factorVacantes = 1;
-
-    motor.diagnostico.push(
-    "Se solicita cubrir una única vacante."
+diagnostico.push(
+"El puesto requiere evaluar habilidades comerciales y de atención al cliente."
 );
 
-}
-else if (vacantes <= 3) {
+break;
 
-    motor.factorVacantes = 1.8;
+case "administrativo":
 
-    motor.diagnostico.push(
-    "El proceso contempla varias vacantes similares."
+porcentaje=0.65;
+minimo=650;
+
+diagnostico.push(
+"El proceso contempla validación de antecedentes y referencias laborales."
 );
 
-}
-else if (vacantes <= 6) {
+break;
 
-    motor.factorVacantes = 2.5;
+case "jefatura":
 
-    motor.diagnostico.push(
-    "El número de vacantes incrementa el esfuerzo de búsqueda y entrevistas."
+porcentaje=1.00;
+minimo=1200;
+
+diagnostico.push(
+"El puesto requiere un proceso de búsqueda especializado y entrevistas de mayor profundidad."
 );
 
+break;
+
 }
-else if (vacantes <= 10) {
 
-    motor.factorVacantes = 3.2;
-
-    motor.diagnostico.push(
-    "Se requiere una estrategia de reclutamiento masivo."
+precioBase=Math.max(
+sueldo*porcentaje,
+minimo
 );
 
-}
-else {
-
-    motor.factorVacantes = 4 + ((vacantes - 10) * 0.50);
-
-    motor.diagnostico.push(
-        `El proceso contempla ${vacantes} vacantes y requiere un equipo dedicado de reclutamiento.`
-    );
-
-}
-
-if (sueldo <= 1500) {
-
-    motor.factorSueldo = 1;
-
-    motor.diagnostico.push(
-        "El rango salarial corresponde a un perfil de baja especialización."
-    );
-
-}
-else if (sueldo <= 2500) {
-
-    motor.factorSueldo = 1.15;
-
-    motor.diagnostico.push(
-        "El salario indica un perfil con experiencia intermedia."
-    );
-
-}
-else if (sueldo <= 4000) {
-
-    motor.factorSueldo = 1.35;
-
-    motor.diagnostico.push(
-        "El perfil requiere una búsqueda más especializada."
-    );
-
-}
-else if (sueldo <= 6000) {
-
-    motor.factorSueldo = 1.60;
-
-    motor.diagnostico.push(
-        "El salario corresponde a un puesto de mayor responsabilidad."
-    );
-
-}
-else {
-
-    motor.factorSueldo = 2;
-
-    motor.diagnostico.push(
-        "El nivel salarial corresponde a un perfil altamente especializado o ejecutivo."
-    );
-
-}
-
-switch (urgencia) {
-
-    case "normal":
-
-    motor.factorUrgencia = 0;
-
-    motor.diagnostico.push(
-        "El proceso se desarrollará dentro de los tiempos habituales de reclutamiento."
-    );
-
-    break;
-
-    case "urgente":
-
-    motor.factorUrgencia = 0.20;
-
-    motor.diagnostico.push(
-        "Se requiere acelerar la búsqueda de candidatos para cumplir el plazo solicitado."
-    );
-
-    break;
-
-    case "muyUrgente":
-
-    motor.factorUrgencia = 0.40;
-
-    motor.diagnostico.push(
-        "La alta urgencia exige dedicar más recursos y priorizar este proceso."
-    );
-
-    break;
-
-}
-
-let puntos = 0;
-
-puntos += motor.factorNivel;
-
-puntos += motor.factorVacantes;
-
-puntos += motor.factorSueldo;
-
-puntos += motor.factorUrgencia * 5;
-
-
-if (puntos < 4) {
-
-    motor.complejidad = "Baja";
-
-}
-
-else if (puntos < 6) {
-
-    motor.complejidad = "Media";
-
-}
-else if (puntos < 8) {
-
-    motor.complejidad = "Alta";
-
-}
-else {
-
-    motor.complejidad = "Crítica";
-
-}
-
-switch (motor.complejidad) {
-
-    case "Baja":
-
-        motor.dias = 12;
-
-        motor.reclutadores = 1;
-
-        motor.garantia = 30;
-
-        motor.recomendaciones.push(
-        "El proceso puede ser gestionado por un reclutador."
-    );
-
-    motor.recomendaciones.push(
-        "El plazo estimado permite realizar una búsqueda ordenada."
-    );
-
-    motor.recomendaciones.push(
-        "La garantía de 30 días cubre posibles reemplazos."
-    );
-
-        break;
-
-    case "Media":
-
-    motor.dias = 12;
-
-    motor.reclutadores = 1;
-
-    motor.garantia = 30;
-
-    motor.recomendaciones.push(
-        "Se recomienda ampliar las fuentes de reclutamiento."
-    );
-
-    motor.recomendaciones.push(
-        "Un reclutador puede gestionar el proceso completo."
-    );
-
-    motor.recomendaciones.push(
-        "La garantía recomendada es de 45 días."
-    );
-
-    break;
-
-    case "Alta":
-
-    motor.dias = 18;
-
-    motor.reclutadores = 2;
-
-    motor.garantia = 30;
-
-    motor.recomendaciones.push(
-        "Se recomienda asignar dos reclutadores para cumplir el plazo."
-    );
-
-    motor.recomendaciones.push(
-        "El proceso requiere una evaluación técnica más profunda."
-    );
-
-    motor.recomendaciones.push(
-        "La garantía de 60 días reduce el riesgo de reposición."
-    );
-
-    break;
-
-    case "Crítica":
-
-    motor.dias = 25;
-
-    motor.reclutadores = 3;
-
-    motor.garantia = 30;
-
-    motor.recomendaciones.push(
-        "Se recomienda un equipo especializado de tres reclutadores."
-    );
-
-    motor.recomendaciones.push(
-        "Es conveniente realizar seguimiento continuo al proceso."
-    );
-
-    motor.recomendaciones.push(
-        "La garantía de 90 días brinda mayor seguridad al cliente."
-    );
-
-    break;
-
-}
-
-// Ajustar el tiempo según la urgencia
-
-switch (urgencia) {
-
-    case "urgente":
-
-        motor.dias = Math.max(3, motor.dias - 2);
-
-        break;
-
-    case "muyUrgente":
-
-        motor.dias = Math.max(2, motor.dias - 5);
-
-        break;
-
-}
-
-    if (
-
-    nivel === "" ||
-
-    puesto === "" ||
-
-    vacantes <= 0 ||
-
-    sueldo <= 0
-
-){
-
-    alert("Completa todos los datos.");
-
-    return;
-
-}
-
-    const tarifaBase = 450;
-
-    let total = tarifaBase;
-
-    total *= motor.factorNivel;
-
-    total *= motor.factorVacantes;
-
-    total *= motor.factorSueldo;
-
-    total += total * motor.factorUrgencia;
-
-    const garantia60 = total * 1.10;
-const garantia90 = total * 1.20;
-
-const listaDiagnostico = motor.diagnostico
-    .map(item => `• ${item}<br>`)
-    .join("");
-
-const listaRecomendaciones = motor.recomendaciones
-    .map(item => `✓ ${item}<br>`)
-    .join("");
-
-    const detalle = `
-
-<strong>Servicio:</strong> Reclutamiento y Selección<br><br>
-
-<strong>Puesto:</strong> ${puesto}<br>
-
-<strong>Nivel:</strong> ${nivel}<br>
-
-<strong>Vacantes:</strong> ${vacantes}<br>
-
-<strong>Sueldo:</strong> S/ ${sueldo.toLocaleString("es-PE")}<br><br>
-
-<strong>Diagnóstico del proceso</strong><br>
-
-${listaDiagnostico}
-
-<br>
-
-<strong>Resultado del análisis</strong><br>
-
-• Complejidad: ${motor.complejidad}<br>
-
-• Tiempo estimado: ${motor.dias} días<br>
-
-• Equipo recomendado: ${motor.reclutadores} reclutador(es)<br>
-
-• Garantía de reposición incluida: ${motor.garantia} días<br>
-
-<div style="
-    margin:12px 0 18px;
-    padding:14px 16px;
-    background:rgba(255,255,255,.08);
-    border-left:4px solid #00C896;
-    border-radius:8px;
-    color:#EAF6FF;
-    font-size:14px;
-    line-height:1.7;
-">
-
-<strong style="color:#FFFFFF;">
-🛡️ Amplía tu garantía de reposición
-</strong>
-
-<br><br>
-
-✔ Garantía incluida:
-<strong>${motor.garantia} días</strong>
-
-<br><br>
-
-○ Garantía Extendida:
-<strong>60 días</strong>
-
-(+10%)
-
-<br>
-
-<strong>
-S/ ${garantia60.toLocaleString("es-PE",{
-minimumFractionDigits:2
-})}
-</strong>
-
-<br><br>
-
-○ Garantía Premium:
-<strong>90 días</strong>
-
-(+20%)
-
-<br>
-
-<strong>
-S/ ${garantia90.toLocaleString("es-PE",{
-minimumFractionDigits:2
-})}
-</strong>
-
-<br><br>
-
-<small style="opacity:.85;">
-El precio mostrado corresponde al valor total del servicio con la garantía ampliada incluida.
-</small>
-
-</div>
-
-<strong>Recomendaciones</strong><br>
-
-${listaRecomendaciones}
-
-`;
-
-this.mostrarResultado(total, detalle);
-
-},
-
-calcularInventario() {
-
-    const rubro = document.getElementById("rubro").value;
-
-    const items = Number(document.getElementById("items").value);
-
-    const almacenes = Number(document.getElementById("almacenes").value);
-
-    const ciudad = document.getElementById("ciudad").value;
-
-    const codigo = document.getElementById("codigoBarras").value;
-
-    const motor = {
-
-    precioBase: 600,
-
-    precioFinal: 600,
-
-    puntos: 0,
-
-    complejidad: "Baja",
-
-    inventaristas: 1,
-
-    dias: 1,
-
-    diagnostico: [],
-
-    recomendaciones: [],
-
-    precioItem: 0,
-
-    cargoMinimo: 500,
-
-    precioItem: 0,
-
-    cargoMinimo: 500,
-
-    subtotalItems:0,
-
-    costoAlmacenes:0,
-
-    costoCodigo:0,
-
-    costoViaticos:0
-
-};
-
-    if (
-        items <= 0 ||
-        almacenes <= 0 ||
-        ciudad === ""
-    ) {
-        alert("Completa todos los datos.");
-        return;
-    }
-
-switch (rubro) {
-
-    case "comercio":
-        motor.precioItem = 0.16;
-        break;
-
-    case "almacen":
-        motor.precioItem = 0.18;
-        break;
-
-    case "retail":
-        motor.precioItem = 0.20;
-        break;
-
-    case "industria":
-        motor.precioItem = 0.25;
-        break;
-
-    case "construccion":
-        motor.precioItem = 0.30;
-        break;
-
-    case "salud":
-        motor.precioItem = 0.28;
-        break;
-
-    case "hoteleria":
-        motor.precioItem = 0.18;
-        break;
-
-    case "educacion":
-        motor.precioItem = 0.16;
-        break;
-
-    case "mineria":
-        motor.precioItem = 0.45;
-        break;
-
-    default:
-        motor.precioItem = 0.18;
-
-}
-
-    // Precio según cantidad de ítems
-    if (items <= 1000) {
-
-    motor.subtotalItems = items * motor.precioItem;
-
-motor.precioBase =
-    motor.cargoMinimo + motor.subtotalItems;
-
-    motor.puntos += 1;
-
-    motor.diagnostico.push(
-        "El volumen de hasta 1,000 ítems corresponde a un inventario de baja complejidad."
-    );
-    motor.recomendaciones.push(
-    "El inventario puede ejecutarse con un solo equipo de trabajo."
+detalle.push(
+`Primera vacante ...................... S/${precioBase.toFixed(2)}`
 );
 
-} else if (items <= 5000) {
+let subtotal=precioBase;
 
-    motor.subtotalItems = items * motor.precioItem;
+/*-------------------------
+VACANTES ADICIONALES
+--------------------------*/
 
-motor.precioBase =
-    motor.cargoMinimo + motor.subtotalItems;
+if(vacantes>1){
 
-    motor.puntos += 2;
+const adicionales=(vacantes-1)*(precioBase*0.50);
 
-    motor.diagnostico.push(
-        "La cantidad de ítems requiere una planificación operativa para optimizar el conteo."
-    );
-    motor.recomendaciones.push(
-    "Se recomienda planificar previamente la distribución de los productos por zonas."
+subtotal+=adicionales;
+
+detalle.push(
+`Vacantes adicionales (${vacantes-1}) ......... S/${adicionales.toFixed(2)}`
 );
 
-} else if (items <= 10000) {
-
-    motor.subtotalItems = items * motor.precioItem;
-
-motor.precioBase =
-    motor.cargoMinimo + motor.subtotalItems;
-
-    motor.puntos += 3;
-
-    motor.diagnostico.push(
-        "El volumen de ítems demanda un equipo de trabajo más amplio y mayor tiempo de ejecución."
-    );
-    motor.recomendaciones.push(
-    "Es recomendable dividir el inventario por áreas para optimizar los tiempos."
-);
-
-} else {
-
-    motor.subtotalItems = items * motor.precioItem;
-
-motor.precioBase =
-    motor.cargoMinimo + motor.subtotalItems;
-
-    motor.puntos += 4;
-
-    motor.diagnostico.push(
-        "El inventario corresponde a una operación de alta complejidad por el elevado volumen de ítems."
-    );
-    motor.recomendaciones.push(
-    "Se recomienda ejecutar el inventario con varios equipos de trabajo y un supervisor general."
+diagnostico.push(
+`Se cubrirán ${vacantes} vacantes del mismo perfil.`
 );
 
 }
 
-    // Almacenes adicionales
+/*-------------------------
+URGENCIA
+--------------------------*/
 
-if (almacenes == 1) {
+let porcentajeUrgencia=0;
+let tiempo="10 a 15 días hábiles";
 
-    motor.puntos += 1;
+switch(urgencia){
 
-    motor.diagnostico.push(
-        "Todos los productos se encuentran en un solo almacén, facilitando la ejecución del inventario."
-    );
+case "normal":
 
-}
+porcentajeUrgencia=0;
 
-else {
+diagnostico.push(
+"El proceso seguirá el tiempo estándar de reclutamiento."
+);
 
-    motor.costoAlmacenes = (almacenes - 1) * 150;
+break;
 
-motor.precioBase += motor.costoAlmacenes;
+case "urgente":
 
-    motor.puntos += 2;
+porcentajeUrgencia=0.20;
 
-    motor.diagnostico.push(
-        `El inventario se distribuirá en ${almacenes} almacenes, lo que incrementa el tiempo de coordinación y desplazamiento del equipo.`
-    );
+tiempo="5 a 7 días hábiles";
 
-}
+diagnostico.push(
+"El cliente requiere acelerar el proceso de selección."
+);
 
-    // Código de barras
-if (codigo === "si") {
+detalle.push(
+"Recargo por urgencia ............... +20%"
+);
 
-    motor.puntos += 1;
+break;
 
-    motor.diagnostico.push(
-        "Los productos cuentan con código de barras, lo que agiliza el conteo y mejora la precisión del inventario."
-    );
+case "expreso":
 
-} else {
+porcentajeUrgencia=0.35;
 
-    motor.costoCodigo = 400;
+tiempo="3 a 4 días hábiles";
 
-motor.precioBase += motor.costoCodigo;
+diagnostico.push(
+"Se requiere una búsqueda prioritaria con dedicación exclusiva."
+);
 
-    motor.puntos += 2;
+detalle.push(
+"Recargo por servicio expreso ....... +35%"
+);
 
-    motor.diagnostico.push(
-        "Los productos no cuentan con código de barras, por lo que el conteo será manual y demandará mayor tiempo de ejecución."
-    );
-
-}
-
-    // Viáticos
-if (ciudad === "Cusco") {
-
-    motor.puntos += 1;
-
-    motor.diagnostico.push(
-        "El servicio se realizará en Cusco, por lo que no se consideran viáticos ni costos adicionales de desplazamiento."
-    );
-
-} else {
-
-    motor.costoViaticos = 300;
-
-motor.precioBase += motor.costoViaticos;
-
-    motor.puntos += 2;
-
-    motor.diagnostico.push(
-        `El servicio se realizará en ${ciudad}, por lo que se consideran viáticos y costos de desplazamiento del equipo.`
-    );
+break;
 
 }
 
-if (motor.puntos <= 4) {
+const recargo=subtotal*porcentajeUrgencia;
 
-    motor.complejidad = "Baja";
+const total=subtotal+recargo;
 
-} else if (motor.puntos <= 6) {
+if(recargo>0){
 
-    motor.complejidad = "Media";
-
-} else if (motor.puntos <= 8) {
-
-    motor.complejidad = "Alta";
-
-} else {
-
-    motor.complejidad = "Crítica";
+detalle.push(
+`Recargo aplicado ................... S/${recargo.toFixed(2)}`
+);
 
 }
 
-switch (motor.complejidad) {
+/*-------------------------
+RECOMENDACIONES
+--------------------------*/
 
-    case "Baja":
+recomendaciones.push(
+"El servicio incluye publicación de la vacante y filtro curricular."
+);
 
-        motor.inventaristas = 1;
-        motor.dias = Math.ceil(items / 1800);
+recomendaciones.push(
+"Se realizará entrevista por competencias."
+);
 
-        motor.recomendaciones.push(
-            "El inventario puede ejecutarse con un solo inventarista."
-        );
+recomendaciones.push(
+"Se validarán antecedentes policiales, penales y referencias laborales."
+);
 
-        break;
+recomendaciones.push(
+"Incluye una reposición sin costo durante los primeros 30 días."
+);
 
-    case "Media":
+if(nivel==="jefatura"){
 
-        motor.inventaristas = 2;
-        motor.dias = Math.ceil(items / 3600);
-
-        motor.recomendaciones.push(
-            "Se recomienda trabajar con dos inventaristas para optimizar los tiempos."
-        );
-
-        break;
-
-    case "Alta":
-
-        motor.inventaristas = 3;
-        motor.dias = Math.ceil(items / 5400);
-
-        motor.recomendaciones.push(
-            "Es recomendable asignar un supervisor y dividir el inventario por zonas."
-        );
-
-        break;
-
-    case "Crítica":
-
-        motor.inventaristas = 5;
-        motor.dias = Math.ceil(items / 9000);
-
-        motor.recomendaciones.push(
-            "Se recomienda formar varios equipos de trabajo con un coordinador general."
-        );
-
-        break;
+recomendaciones.push(
+"Para cargos estratégicos se recomienda una entrevista final con la gerencia."
+);
 
 }
 
-if (motor.dias < 1) {
+let complejidad="Baja";
+let estrellas="⭐⭐☆☆☆";
 
-    motor.dias = 1;
+if(total>=800){
+
+complejidad="Media";
+estrellas="⭐⭐⭐☆☆";
 
 }
 
-motor.precioFinal = motor.precioBase;
+if(total>=1500){
 
-const listaDiagnostico = motor.diagnostico
-    .map(item => `• ${item}<br>`)
-    .join("");
+complejidad="Alta";
+estrellas="⭐⭐⭐⭐☆";
 
-const listaRecomendaciones = motor.recomendaciones
-    .map(item => `✓ ${item}<br>`)
-    .join("");    
+}
 
-    const detalle = `
-<strong>Servicio:</strong> Inventario Físico<br>
+if(total>=3000){
 
-<strong>Ítems:</strong> ${items.toLocaleString("es-PE")}<br>
+complejidad="Muy Alta";
+estrellas="⭐⭐⭐⭐⭐";
 
-<strong>Almacenes:</strong> ${almacenes}<br>
+}
 
-<strong>Ciudad:</strong> ${ciudad}<br>
+const codigo=this.generarCodigoCotizacion();
 
-<strong>Código de barras:</strong> ${codigo === "si" ? "Sí" : "No"}<br><br>
+const html=`
+
+<div class="resultado-cotizacion">
+
+<h3>👥 Cotización Referencial de Reclutamiento</h3>
+
+<h4>Valorización del Servicio</h4>
+
+${detalle.map(x=>`<div>${x}</div>`).join("")}
 
 <hr>
 
-<h3 style="margin:12px 0 8px;color:#FFFFFF;">
-💰 Análisis Económico
-</h3>
+<div style="display:flex;justify-content:space-between;font-size:1.2rem;font-weight:bold">
 
-<table style="width:100%;border-collapse:collapse;font-size:15px">
+<span>TOTAL</span>
 
-<tr>
-<td>Cargo mínimo</td>
-<td style="text-align:right">
-S/ ${motor.cargoMinimo.toLocaleString("es-PE",{minimumFractionDigits:2})}
-</td>
-</tr>
+<span>S/${total.toFixed(2)}</span>
 
-<tr>
-<td>Subtotal por ítems</td>
-<td style="text-align:right">
-S/ ${motor.subtotalItems.toLocaleString("es-PE",{minimumFractionDigits:2})}
-</td>
-</tr>
+</div>
 
-<tr>
-<td>Tarifa por ítem</td>
-<td style="text-align:right">
-S/ ${motor.precioItem.toFixed(2)}
-</td>
-</tr>
+<hr>
 
-<tr>
-<td>Almacenes adicionales</td>
-<td style="text-align:right">
-S/ ${motor.costoAlmacenes.toLocaleString("es-PE",{minimumFractionDigits:2})}
-</td>
-</tr>
+<h4>Complejidad del Proceso</h4>
 
-<tr>
-<td>Conteo manual</td>
-<td style="text-align:right">
-S/ ${motor.costoCodigo.toLocaleString("es-PE",{minimumFractionDigits:2})}
-</td>
-</tr>
+<p>${estrellas}</p>
 
-<tr>
-<td>Viáticos</td>
-<td style="text-align:right">
-S/ ${motor.costoViaticos.toLocaleString("es-PE",{minimumFractionDigits:2})}
-</td>
-</tr>
+<p><strong>${complejidad}</strong></p>
 
-<tr style="font-size:18px;font-weight:bold;border-top:2px solid rgba(255,255,255,.35)">
+<hr>
 
-<td>Total estimado</td>
-
-<td style="text-align:right;color:#FFFFFF">
-
-S/ ${motor.precioFinal.toLocaleString("es-PE",{minimumFractionDigits:2})}
-
-</td>
-
-</tr>
-
-</table>
-
-<br>
-
-<strong>Diagnóstico del proceso</strong><br>
-
-${listaDiagnostico}
-
-<br>
-
-<strong>Complejidad del servicio:</strong> ${motor.complejidad}<br>
-
-<strong>Equipo recomendado:</strong> ${motor.inventaristas} inventarista(s)<br>
-
-<strong>Duración estimada:</strong> ${motor.dias} día(s)<br><br>
-
-<strong>Recomendaciones</strong><br>
-
-${listaRecomendaciones}
-
-<br>
-
-<strong>Incluye:</strong>
+<h4>Diagnóstico</h4>
 
 <ul>
-<li>Conteo físico</li>
-<li>Conciliación básica</li>
-<li>Reporte final</li>
-</ul>
-`;
 
-    this.mostrarResultado(
-    motor.precioFinal,
-    detalle
-);
-
-},
-
-calcularContabilidad() {
-
-    const regimen = document.getElementById("regimen").value;
-
-    const comprobantes = Number(document.getElementById("comprobantes").value);
-
-    const trabajadores = Number(document.getElementById("trabajadores").value);
-
-    const planillas = document.getElementById("planillas").value;
-
-    const motor = {
-
-    precioBase: 0,
-
-    precioFinal: 0,
-
-    puntos: 0,
-
-    complejidad: "Baja",
-
-    plan: "Emprendedor",
-
-    diagnostico: [],
-
-    recomendaciones: []
-
-};
-
-    if (regimen === "" || comprobantes < 0 || trabajadores < 0) {
-
-        alert("Completa todos los datos.");
-
-        return;
-
-    }
-
-    // Precio base según régimen
-    switch (regimen) {
-
-        case "RUS":
-            motor.precioBase = 180;
-motor.puntos += 1;
-
-motor.diagnostico.push(
-    "El negocio pertenece al Nuevo RUS, por lo que sus obligaciones contables son básicas."
-);
-            break;
-
-        case "RER":
-            motor.precioBase = 280;
-motor.puntos += 2;
-
-motor.diagnostico.push(
-    "El Régimen Especial requiere un mayor control tributario y contable."
-);
-            break;
-
-        case "MYPE":
-            motor.precioBase = 450;
-motor.puntos += 3;
-
-motor.diagnostico.push(
-    "El Régimen MYPE demanda un seguimiento contable más completo."
-);
-            break;
-
-        case "GENERAL":
-            motor.precioBase = 700;
-motor.puntos += 4;
-
-motor.diagnostico.push(
-    "El Régimen General implica una gestión contable y tributaria de mayor complejidad."
-);
-            break;
-
-    }
-
-    // Incremento por comprobantes
-    if (comprobantes <= 50) {
-
-    motor.puntos += 1;
-
-    motor.diagnostico.push(
-        "El volumen mensual de comprobantes es bajo y puede administrarse fácilmente."
-    );
-
-} else if (comprobantes <= 150) {
-
-    motor.puntos += 2;
-
-    motor.precioBase += 40;
-
-    motor.diagnostico.push(
-        "El volumen de comprobantes requiere una dedicación contable intermedia."
-    );
-
-} else if (comprobantes <= 300) {
-
-    motor.puntos += 3;
-
-    motor.precioBase += 120;
-
-    motor.diagnostico.push(
-        "La empresa presenta un movimiento contable importante durante el mes."
-    );
-
-} else {
-
-    motor.puntos += 4;
-
-    motor.precioBase += 240;
-
-    motor.diagnostico.push(
-        "El alto volumen de comprobantes exige un mayor tiempo de registro y revisión."
-    );
-
-}
-
-    // Incremento por trabajadores
-    if (trabajadores === 0) {
-
-    motor.puntos += 0;
-
-    motor.diagnostico.push(
-        "La empresa no cuenta con trabajadores en planilla."
-    );
-
-} else if (trabajadores <= 5) {
-
-    motor.puntos += 1;
-
-    motor.precioBase += trabajadores * 20;
-
-    motor.diagnostico.push(
-        "La empresa cuenta con una planilla pequeña de hasta 5 trabajadores."
-    );
-
-} else if (trabajadores <= 20) {
-
-    motor.puntos += 2;
-
-    motor.precioBase += trabajadores * 20;
-
-    motor.diagnostico.push(
-        "La planilla requiere un control periódico de obligaciones laborales."
-    );
-
-} else {
-
-    motor.puntos += 3;
-
-    motor.precioBase += trabajadores * 20;
-
-    motor.diagnostico.push(
-        "La empresa administra una planilla amplia que demanda mayor dedicación y control."
-    );
-
-}
-
-    // Administración de planillas
-    if (planillas === "si") {
-
-    motor.precioBase += 120;
-
-    motor.puntos += 2;
-
-    motor.diagnostico.push(
-        "La empresa requiere la administración de planillas y obligaciones laborales."
-    );
-
-} else {
-
-    motor.puntos += 0;
-
-    motor.diagnostico.push(
-        "El servicio no incluye administración de planillas."
-    );
-
-}
-
-if (motor.puntos <= 3) {
-
-    motor.complejidad = "Básica";
-
-} else if (motor.puntos <= 6) {
-
-    motor.complejidad = "Intermedia";
-
-} else if (motor.puntos <= 9) {
-
-    motor.complejidad = "Avanzada";
-
-} else {
-
-    motor.complejidad = "Corporativa";
-
-}
-
-let incluye = [];
-
-switch (motor.complejidad) {
-
-    case "Básica":
-
-        motor.plan = "Plan Emprendedor";
-        motor.precioFinal = motor.precioBase;
-
-        motor.recomendaciones.push(
-            "Este plan es ideal para pequeñas empresas con operaciones sencillas."
-        );
-
-        incluye = [
-            "Registro contable",
-            "Declaraciones mensuales",
-            "Asistencia por WhatsApp"
-        ];
-
-        break;
-
-    case "Intermedia":
-
-        motor.plan = "Plan Empresarial";
-        motor.precioFinal = motor.precioBase + 150;
-
-        motor.recomendaciones.push(
-            "Se recomienda un seguimiento contable mensual y asesoría tributaria."
-        );
-
-        incluye = [
-            "Registro contable",
-            "Libros electrónicos",
-            "Declaraciones mensuales",
-            "Asesoría tributaria"
-        ];
-
-        break;
-
-    case "Avanzada":
-
-        motor.plan = "Plan Avanzado";
-        motor.precioFinal = motor.precioBase + 350;
-
-        motor.recomendaciones.push(
-            "La empresa requiere un mayor control de sus procesos contables y laborales."
-        );
-
-        incluye = [
-            "Contabilidad integral",
-            "Libros electrónicos",
-            "Estados financieros",
-            "Asesoría tributaria",
-            "Soporte prioritario"
-        ];
-
-        break;
-
-    case "Corporativa":
-
-        motor.plan = "Plan Corporativo";
-        motor.precioFinal = motor.precioBase + 600;
-
-        motor.recomendaciones.push(
-            "Se recomienda un servicio contable integral con acompañamiento permanente."
-        );
-
-        incluye = [
-            "Contabilidad integral",
-            "Estados financieros",
-            "Libros electrónicos",
-            "Planeamiento tributario",
-            "Atención SUNAT",
-            "Reuniones mensuales"
-        ];
-
-        break;
-
-}
-const listaDiagnostico = motor.diagnostico
-    .map(item => `• ${item}<br>`)
-    .join("");
-
-const listaRecomendaciones = motor.recomendaciones
-    .map(item => `✓ ${item}<br>`)
-    .join("");
-
-    const detalle = `
-
-<strong>Servicio:</strong> Contabilidad Mensual<br><br>
-
-<strong>Diagnóstico</strong><br>
-
-${listaDiagnostico}
-
-<br>
-
-<strong>Resultado del análisis</strong><br>
-
-• Complejidad: ${motor.complejidad}<br>
-
-• Plan recomendado: ${motor.plan}<br>
-
-• Precio estimado: S/ ${motor.precioFinal.toLocaleString("es-PE")}<br>
-
-<br>
-
-<strong>Recomendaciones</strong><br>
-
-${listaRecomendaciones}
-
-<br>
-
-<strong>Servicios incluidos</strong>
-
-<ul>
-
-${incluye.map(item => `<li>${item}</li>`).join("")}
+${diagnostico.map(x=>`<li>${x}</li>`).join("")}
 
 </ul>
 
+<hr>
+
+<h4>Tiempo estimado</h4>
+
+<p>${tiempo}</p>
+
+<hr>
+
+<h4>Incluye el servicio</h4>
+
+<ul>
+
+<li>Publicación de la vacante.</li>
+
+<li>Filtro curricular.</li>
+
+<li>Entrevista por competencias.</li>
+
+<li>Verificación de antecedentes.</li>
+
+<li>Validación de referencias laborales.</li>
+
+<li>Presentación de candidatos finalistas.</li>
+
+<li>Garantía de reposición por 30 días.</li>
+
+</ul>
+
+<hr>
+
+<h4>Recomendaciones</h4>
+
+<ul>
+
+${recomendaciones.map(x=>`<li>${x}</li>`).join("")}
+
+</ul>
+
+<hr>
+
+<h4>Condiciones comerciales</h4>
+
+<ul>
+
+<li>50% al iniciar el proceso.</li>
+
+<li>50% al incorporarse el candidato seleccionado.</li>
+
+<li>No incluye evaluaciones médicas ni psicológicas especializadas.</li>
+
+<li>La garantía cubre una reposición dentro de los primeros 30 días.</li>
+
+<li>Cada perfil distinto se cotiza de forma independiente.</li>
+
+</ul>
+
+</div>
+
 `;
 
-    this.mostrarResultado(motor.precioFinal, detalle);
+this.mostrarResultado(total,html);
 
 },
+
+calcularInventario(){
+
+const tipoServicio=document.getElementById("tipoServicio").value;
+const skus=document.getElementById("skus").value;
+const unidades=document.getElementById("unidades").value;
+const almacenes=Number(document.getElementById("almacenes").value);
+const ciudad=document.getElementById("ciudad").value;
+const organizacion=document.getElementById("organizacion").value;
+const codigo=document.getElementById("codigo").value;
+
+const conciliacion=document.getElementById("conciliacion").checked;
+const valorizacion=document.getElementById("valorizacion").checked;
+const ejecutivo=document.getElementById("ejecutivo").checked;
+
+if(
+tipoServicio===""||
+skus===""||
+unidades===""||
+ciudad===""||
+organizacion===""){
+alert("Complete todos los datos.");
+return;
+}
+
+if(skus==="masivo"){
+alert("Este volumen de SKUs requiere una visita técnica previa.");
+return;
+}
+
+let total=0;
+
+let detalle=[];
+
+let diagnostico=[];
+
+let recomendaciones=[];
+
+let puntos=0;
+
+/*-------------------------
+SERVICIO
+--------------------------*/
+
+if(tipoServicio==="puntual"){
+
+total+=800;
+
+detalle.push("Inventario físico puntual .......... S/800");
+
+puntos+=2;
+
+diagnostico.push("Se realizará un inventario físico con conciliación e informe final.");
+
+}
+
+if(tipoServicio==="kardex"){
+
+total+=600;
+
+detalle.push("Control mensual de Kárdex .......... S/600");
+
+puntos+=1;
+
+diagnostico.push("El servicio corresponde al control permanente del inventario.");
+
+}
+
+/*-------------------------
+SKUs
+--------------------------*/
+
+switch(skus){
+
+case "150":
+
+diagnostico.push("Hasta 150 tipos de productos.");
+
+break;
+
+case "600":
+
+total+=250;
+
+detalle.push("151 a 600 SKUs ..................... +S/250");
+
+puntos++;
+
+diagnostico.push("Inventario con variedad media de productos.");
+
+break;
+
+case "1500":
+
+total+=500;
+
+detalle.push("601 a 1500 SKUs .................... +S/500");
+
+puntos+=2;
+
+diagnostico.push("Alta variedad de productos.");
+
+break;
+
+}
+
+/*-------------------------
+UNIDADES
+--------------------------*/
+
+switch(unidades){
+
+case "3000":
+
+diagnostico.push("Hasta 3,000 unidades físicas.");
+
+break;
+
+case "10000":
+
+total+=250;
+
+detalle.push("3,001 a 10,000 unidades ............ +S/250");
+
+puntos++;
+
+diagnostico.push("Volumen medio de conteo.");
+
+break;
+
+case "30000":
+
+total+=500;
+
+detalle.push("10,001 a 30,000 unidades ........... +S/500");
+
+puntos+=2;
+
+diagnostico.push("Alto volumen de inventario.");
+
+break;
+
+case "masivo":
+
+total+=900;
+
+detalle.push("Más de 30,000 unidades ............. +S/900");
+
+puntos+=4;
+
+diagnostico.push("Inventario de gran volumen.");
+
+break;
+
+}
+
+/*-------------------------
+ALMACENES
+--------------------------*/
+
+if(almacenes>1){
+
+const extra=(almacenes-1)*150;
+
+total+=extra;
+
+detalle.push(
+`${almacenes} almacenes ..................... +S/${extra}`
+);
+
+puntos+=almacenes-1;
+
+diagnostico.push(
+`Inventario distribuido en ${almacenes} almacenes.`
+);
+
+}
+
+/*-------------------------
+UBICACIÓN
+--------------------------*/
+
+if(ciudad==="Valle"){
+
+total+=120;
+
+detalle.push("Viáticos Valle Sagrado ............. +S/120");
+
+recomendaciones.push("Incluye desplazamiento al Valle Sagrado.");
+
+}
+
+if(ciudad==="Otra"){
+
+total+=250;
+
+detalle.push("Viáticos fuera de Cusco ............ +S/250");
+
+recomendaciones.push("Los viáticos pueden variar según la ubicación.");
+
+}
+
+/*-------------------------
+ORGANIZACIÓN
+--------------------------*/
+
+switch(organizacion){
+
+case "excelente":
+
+diagnostico.push("Mercadería correctamente organizada.");
+
+break;
+
+case "regular":
+
+total+=120;
+
+detalle.push("Organización regular ............... +S/120");
+
+puntos++;
+
+diagnostico.push("Será necesario ordenar parcialmente la mercadería.");
+
+break;
+
+case "desordenado":
+
+total+=300;
+
+detalle.push("Mercadería desordenada ............. +S/300");
+
+puntos+=3;
+
+diagnostico.push("El conteo demandará búsqueda manual de productos.");
+
+break;
+
+}
+
+/*-------------------------
+CÓDIGOS DE BARRAS
+--------------------------*/
+
+switch(codigo){
+
+case "todos":
+
+diagnostico.push("Todos los productos cuentan con código.");
+
+break;
+
+case "parcial":
+
+total+=80;
+
+detalle.push("Código de barras parcial ........... +S/80");
+
+puntos++;
+
+break;
+
+case "ninguno":
+
+total+=180;
+
+detalle.push("Sin código de barras ............... +S/180");
+
+puntos+=2;
+
+recomendaciones.push("Se recomienda implementar codificación para futuros inventarios.");
+
+break;
+
+}
+
+/*-------------------------
+SERVICIOS ADICIONALES
+--------------------------*/
+
+if(conciliacion){
+
+total+=120;
+
+detalle.push("Conciliación de diferencias ........ +S/120");
+
+recomendaciones.push("Se entregará análisis de sobrantes y faltantes.");
+
+}
+
+if(valorizacion){
+
+total+=150;
+
+detalle.push("Valorización económica ............. +S/150");
+
+recomendaciones.push("Se entregará valorización monetaria del inventario.");
+
+}
+
+if(ejecutivo){
+
+total+=100;
+
+detalle.push("Informe ejecutivo ................. +S/100");
+
+recomendaciones.push("Incluye conclusiones y recomendaciones gerenciales.");
+
+}
+
+/*-------------------------
+COMPLEJIDAD
+--------------------------*/
+
+let complejidad="";
+let estrellas="";
+let equipo=2;
+let tiempo="1 día";
+
+if(puntos<=2){
+    complejidad="Baja";
+    estrellas="⭐⭐☆☆☆";
+    equipo=2;
+    tiempo="1 día";
+}
+else if(puntos<=5){
+    complejidad="Media";
+    estrellas="⭐⭐⭐☆☆";
+    equipo=2;
+    tiempo="1 a 2 días";
+}
+else if(puntos<=8){
+    complejidad="Alta";
+    estrellas="⭐⭐⭐⭐☆";
+    equipo=3;
+    tiempo="2 a 3 días";
+}
+else{
+    complejidad="Muy Alta";
+    estrellas="⭐⭐⭐⭐⭐";
+    equipo=4;
+    tiempo="3 a 5 días";
+}
+
+if(recomendaciones.length===0){
+    recomendaciones.push("No se identificaron requerimientos adicionales para este servicio.");
+}
+
+const codigoCotizacion=this.generarCodigoCotizacion();
+
+const html=`
+
+<div class="resultado-cotizacion">
+
+<h3>📦 Cotización Referencial de Inventario</h3>
+
+<h4>Valorización del Servicio</h4>
+
+${detalle.map(item=>`<div>${item}</div>`).join("")}
+
+<hr>
+
+<div style="display:flex;justify-content:space-between;font-size:1.2rem;font-weight:bold">
+
+<span>TOTAL ESTIMADO</span>
+
+<span>S/${total.toFixed(2)}</span>
+
+</div>
+
+<hr>
+
+<h4>Nivel de Complejidad</h4>
+
+<p>${estrellas}</p>
+
+<p><strong>${complejidad}</strong></p>
+
+<hr>
+
+<h4>Diagnóstico</h4>
+
+<ul>
+
+${diagnostico.map(d=>`<li>${d}</li>`).join("")}
+
+</ul>
+
+<hr>
+
+<h4>Recomendaciones</h4>
+
+<ul>
+
+${recomendaciones.map(r=>`<li>${r}</li>`).join("")}
+
+</ul>
+
+<hr>
+
+<h4>Plan Operativo Recomendado</h4>
+
+<p><strong>Equipo sugerido:</strong> ${equipo} inventarista(s)</p>
+
+<p><strong>Tiempo estimado:</strong> ${tiempo}</p>
+
+<p><strong>Entrega del informe:</strong> 48 horas después del servicio.</p>
+
+<hr>
+
+<div style="font-size:.9rem;opacity:.85">
+
+<b>Condiciones del servicio</b>
+
+<ul>
+
+<li>La tarifa considera hasta 3,000 unidades como volumen estándar.</li>
+
+<li>Inventarios masivos podrán requerir una visita técnica previa.</li>
+
+<li>La mercadería deberá encontrarse accesible para realizar el conteo.</li>
+
+<li>Los servicios fuera de la ciudad de Cusco pueden generar costos adicionales por desplazamiento.</li>
+
+<li>La presente cotización es referencial y puede ajustarse luego de una evaluación técnica.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+`;
+
+this.mostrarResultado(total,html);
+
+},
+
+calcularContabilidad(){
+
+const regimen=document.getElementById("regimen").value;
+const comprobantes=Number(document.getElementById("comprobantes").value);
+const trabajadores=Number(document.getElementById("trabajadores").value);
+
+const importaciones=document.getElementById("importaciones").checked;
+const exportaciones=document.getElementById("exportaciones").checked;
+const detracciones=document.getElementById("detracciones").checked;
+const retenciones=document.getElementById("retenciones").checked;
+const cajachica=document.getElementById("cajachica").checked;
+const bancos=document.getElementById("bancos").checked;
+
+const facturacion=document.getElementById("facturacion").checked;
+const reportes=document.getElementById("reportes").checked;
+const sunat=document.getElementById("sunat").checked;
+const asesoria=document.getElementById("asesoria").checked;
+
+if(regimen===""){
+alert("Seleccione el régimen tributario.");
+return;
+}
+
+let total=0;
+
+let detalle=[];
+
+let diagnostico=[];
+
+let recomendaciones=[];
+
+let puntos=0;
+
+/*--------------------------
+BASE
+---------------------------*/
+
+if(regimen==="RUS"){
+
+this.mostrarResultado(
+
+65,
+
+`
+<strong>Nuevo RUS</strong><br><br>
+
+Precio mensual estimado:
+<strong>S/65.00</strong>
+
+<br><br>
+
+Este régimen tiene obligaciones tributarias básicas.
+
+<br><br>
+
+Para este régimen no es necesario completar una valorización detallada.
+`
+
+);
+
+return;
+
+}
+
+if(regimen==="RER"){
+
+total+=150;
+
+detalle.push("Base Régimen Especial ............ S/150");
+
+puntos+=1;
+
+diagnostico.push("La empresa pertenece al Régimen Especial.");
+
+}
+
+if(regimen==="RMT"){
+
+total+=250;
+
+detalle.push("Base Régimen MYPE ............... S/250");
+
+puntos+=2;
+
+diagnostico.push("La empresa pertenece al Régimen MYPE Tributario.");
+
+}
+
+if(regimen==="GENERAL"){
+
+total+=250;
+
+detalle.push("Base Régimen General ............ S/250");
+
+puntos+=3;
+
+diagnostico.push("La empresa pertenece al Régimen General.");
+
+}
+
+/*--------------------------
+COMPROBANTES
+---------------------------*/
+
+if(comprobantes<=50){
+
+diagnostico.push("Hasta 50 comprobantes mensuales.");
+
+}
+else if(comprobantes<=150){
+
+total+=50;
+
+detalle.push("Comprobantes .................... +S/50");
+
+puntos++;
+
+diagnostico.push("Volumen medio de comprobantes.");
+
+}
+else if(comprobantes<=300){
+
+total+=100;
+
+detalle.push("Comprobantes .................... +S/100");
+
+puntos+=2;
+
+diagnostico.push("Alto volumen de comprobantes.");
+
+}
+else{
+
+detalle.push("Comprobantes .................... Evaluación personalizada");
+
+diagnostico.push("Más de 300 comprobantes mensuales.");
+
+puntos+=4;
+
+}
+/*--------------------------
+PLANILLAS
+---------------------------*/
+
+if(trabajadores==0){
+
+diagnostico.push("No cuenta con trabajadores en planilla.");
+
+}
+
+else if(trabajadores<=3){
+
+total+=50;
+
+detalle.push("Planilla (1-3 trabajadores) ..... +S/50");
+
+puntos++;
+
+diagnostico.push("Planilla pequeña.");
+
+}
+
+else if(trabajadores<=10){
+
+total+=120;
+
+detalle.push("Planilla (4-10 trabajadores) .... +S/120");
+
+puntos+=2;
+
+diagnostico.push("Planilla mediana.");
+
+}
+
+else{
+
+let adicional=(trabajadores-10)*15;
+
+total+=120+adicional;
+
+detalle.push(`Planilla (${trabajadores} trabajadores) .... +S/${120+adicional}`);
+
+puntos+=3;
+
+diagnostico.push("Planilla numerosa.");
+
+}
+
+/*--------------------------
+OPERACIONES ESPECIALES
+---------------------------*/
+
+if(importaciones){
+
+total+=100;
+
+detalle.push("Importaciones ................... +S/100");
+
+puntos+=2;
+
+diagnostico.push("Realiza importaciones.");
+
+}
+
+if(exportaciones){
+
+total+=100;
+
+detalle.push("Exportaciones ................... +S/100");
+
+puntos+=2;
+
+diagnostico.push("Realiza exportaciones.");
+
+}
+
+if(detracciones){
+
+total+=60;
+
+detalle.push("Detracciones .................... +S/60");
+
+puntos++;
+
+diagnostico.push("Opera con detracciones.");
+
+}
+
+if(retenciones){
+
+total+=60;
+
+detalle.push("Retenciones / Percepciones ...... +S/60");
+
+puntos++;
+
+diagnostico.push("Opera con retenciones o percepciones.");
+
+}
+
+if(cajachica){
+
+total+=40;
+
+detalle.push("Caja chica ...................... +S/40");
+
+puntos++;
+
+diagnostico.push("Administra caja chica.");
+
+}
+
+if(bancos){
+
+total+=50;
+
+detalle.push("Varias cuentas bancarias ........ +S/50");
+
+puntos++;
+
+diagnostico.push("Maneja varias cuentas bancarias.");
+
+}
+
+/*--------------------------
+SERVICIOS ADICIONALES
+---------------------------*/
+
+if(facturacion){
+
+total+=80;
+
+detalle.push("Emisión comprobantes ............ +S/80");
+
+recomendaciones.push("Incluye emisión de comprobantes electrónicos.");
+
+}
+
+if(reportes){
+
+total+=80;
+
+detalle.push("Reportes gerenciales ............ +S/80");
+
+recomendaciones.push("Incluye reportes mensuales.");
+
+}
+
+if(sunat){
+
+total+=60;
+
+detalle.push("Atención SUNAT ................. +S/60");
+
+recomendaciones.push("Incluye atención de requerimientos SUNAT.");
+
+}
+
+if(asesoria){
+
+total+=100;
+
+detalle.push("Asesoría tributaria ............. +S/100");
+
+recomendaciones.push("Incluye asesoría tributaria permanente.");
+
+}
+
+/*--------------------------
+COMPLEJIDAD
+---------------------------*/
+
+let complejidad="Baja";
+
+if(puntos>=5) complejidad="Media";
+
+if(puntos>=10) complejidad="Alta";
+
+if(puntos>=15) complejidad="Muy Alta";
+
+/*--------------------------
+RECOMENDACIONES
+---------------------------*/
+
+if(comprobantes>300){
+
+recomendaciones.push("Se recomienda realizar una evaluación personalizada por el alto volumen de operaciones.");
+
+}
+
+if(trabajadores>20){
+
+recomendaciones.push("Se recomienda automatizar la gestión de planillas.");
+
+}
+
+if(importaciones||exportaciones){
+
+recomendaciones.push("Es recomendable realizar revisiones tributarias periódicas relacionadas con comercio exterior.");
+
+}
+
+if(detracciones||retenciones){
+
+recomendaciones.push("Se recomienda efectuar conciliaciones tributarias mensuales.");
+
+}
+
+if(recomendaciones.length===0){
+
+recomendaciones.push("La empresa presenta una operación estándar y puede mantenerse con el servicio mensual cotizado.");
+
+}
+
+/*--------------------------
+RESULTADO
+---------------------------*/
+
+let html=`
+
+<h3>Cotización Contable</h3>
+
+<hr>
+
+<h4>Valorización</h4>
+
+${detalle.join("<br>")}
+
+<br><br>
+
+<strong>Total Mensual: S/${total.toFixed(2)}</strong>
+
+<hr>
+
+<h4>Complejidad</h4>
+
+${complejidad}
+
+<hr>
+
+<h4>Diagnóstico</h4>
+
+<ul>
+
+${diagnostico.map(x=>`<li>${x}</li>`).join("")}
+
+</ul>
+
+<hr>
+
+<h4>Recomendaciones</h4>
+
+<ul>
+
+${recomendaciones.map(x=>`<li>${x}</li>`).join("")}
+
+</ul>
+
+<hr>
+
+<p>
+
+La Declaración Jurada Anual no está incluida en esta cotización y se cotiza de manera independiente.
+
+</p>
+
+`;
+
+this.mostrarResultado(total,html);
+
+},
+
 
 generarCodigoCotizacion() {
 
