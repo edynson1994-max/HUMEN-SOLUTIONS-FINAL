@@ -3005,7 +3005,7 @@ PAGO CON MERCADO PAGO
 // ⚠️ IMPORTANTE: reemplaza esta URL por la de tu Web App de Google Apps Script
 // una vez que la despliegues (ver GUIA-INSTALACION.md). Mientras diga
 // "PENDIENTE_CONFIGURAR", el botón de pago mostrará un aviso en vez de fallar en silencio.
-const MP_BACKEND_URL = "PENDIENTE_CONFIGURAR";
+const MP_BACKEND_URL = "https://script.google.com/macros/s/AKfycbyeKli4LZB3w7lPRfKjTBx97FwLpLy93l66RF9hsPWpgJAqsAYAmuMDqblbfZdr-p-s1g/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
 
