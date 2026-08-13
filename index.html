@@ -884,6 +884,8 @@ rel="stylesheet">
 
             <form id="formProponer">
 
+                <input type="text" id="propHoneypot" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
                 <div class="form-group">
                     <label for="propNombre">Nombre completo</label>
                     <input type="text" id="propNombre" class="form-control" placeholder="Ingrese su nombre completo" required>
@@ -1427,7 +1429,8 @@ rel="stylesheet">
 </button>
 <input type="hidden" name="_subject" value="Nueva solicitud desde la web">
 
-<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_captcha" value="true">
+<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
 <input type="hidden" name="_template" value="table">
 
