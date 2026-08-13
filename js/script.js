@@ -1163,7 +1163,7 @@ const html=`
 
 <div class="resultado-cotizacion">
 
-<h3>👥 Cotización Referencial de Reclutamiento</h3>
+<h3>👥 Cotización de Reclutamiento</h3>
 
 <h4>Valorización del Servicio</h4>
 
@@ -1622,7 +1622,7 @@ const html=`
 
 <div class="resultado-cotizacion">
 
-<h3>📦 Cotización Referencial de Inventario</h3>
+<h3>📦 Cotización de Inventario</h3>
 
 <h4>Valorización del Servicio</h4>
 
@@ -1692,7 +1692,7 @@ ${recomendaciones.map(r=>`<li>${r}</li>`).join("")}
 
 <li>Los servicios fuera de la ciudad de Cusco pueden generar costos adicionales por desplazamiento.</li>
 
-<li>La presente cotización es referencial y puede ajustarse luego de una evaluación técnica.</li>
+<li>El precio es final según los datos proporcionados; si el alcance real del servicio difiere de lo declarado, se cotiza el ajuste por separado.</li>
 
 </ul>
 
@@ -2331,7 +2331,7 @@ PAGO CON MERCADO PAGO
 // ⚠️ IMPORTANTE: reemplaza esta URL por la de tu Web App de Google Apps Script
 // una vez que la despliegues (ver GUIA-INSTALACION.md). Mientras diga
 // "PENDIENTE_CONFIGURAR", el botón de pago mostrará un aviso en vez de fallar en silencio.
-const MP_BACKEND_URL = "https://script.google.com/macros/s/AKfycbyeKli4LZB3w7lPRfKjTBx97FwLpLy93l66RF9hsPWpgJAqsAYAmuMDqblbfZdr-p-s1g/exec";
+const MP_BACKEND_URL = "PENDIENTE_CONFIGURAR";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -2347,6 +2347,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const radiosComprobante = document.querySelectorAll('input[name="tipoComprobante"]');
 
     if (!btnPagar || !overlay || !form) return;
+
+    // Si el navegador restaura esta página desde su caché al volver con
+    // "atrás" (por ejemplo, desde Mercado Pago), el botón puede quedar
+    // pegado en el estado "Redirigiendo..." de un intento anterior.
+    // Esto lo resetea automáticamente para no obligar al cliente a
+    // recargar la página manualmente.
+    window.addEventListener("pageshow", (event) => {
+        if (event.persisted) {
+            btnConfirmar.disabled = false;
+            btnConfirmar.textContent = "Continuar a Mercado Pago";
+        }
+    });
 
     function nombreServicio(clave) {
         if (clave === "reclutamiento") return "Reclutamiento y Selección de Personal";
