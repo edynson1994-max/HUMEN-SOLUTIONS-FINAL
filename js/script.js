@@ -1257,6 +1257,8 @@ ${recomendaciones.map(x=>`<li>${x}</li>`).join("")}
 
 `;
 
+this.parametrosActuales = {nivel, sueldo, vacantes, urgencia};
+
 this.mostrarResultado(total,html);
 
 },
@@ -1700,6 +1702,8 @@ ${recomendaciones.map(r=>`<li>${r}</li>`).join("")}
 
 `;
 
+this.parametrosActuales = {tipoServicio, skus, unidades, almacenes, ciudad, organizacion, codigo, conciliacion, valorizacion, ejecutivo};
+
 this.mostrarResultado(total,html);
 
 },
@@ -1755,6 +1759,8 @@ BASE
 ---------------------------*/
 
 if(regimen==="RUS"){
+
+this.parametrosActuales = {regimen, comprobantes, trabajadores, importaciones, exportaciones, detracciones, retenciones, cajachica, bancos, facturacion, reportes, sunat, asesoria};
 
 this.mostrarResultado(
 
@@ -2112,6 +2118,8 @@ La Declaración Jurada Anual no está incluida en esta cotización y se cotiza d
 
 `;
 
+this.parametrosActuales = {regimen, comprobantes, trabajadores, importaciones, exportaciones, detracciones, retenciones, cajachica, bancos, facturacion, reportes, sunat, asesoria};
+
 this.mostrarResultado(total,html);
 
 },
@@ -2323,7 +2331,7 @@ PAGO CON MERCADO PAGO
 // ⚠️ IMPORTANTE: reemplaza esta URL por la de tu Web App de Google Apps Script
 // una vez que la despliegues (ver GUIA-INSTALACION.md). Mientras diga
 // "PENDIENTE_CONFIGURAR", el botón de pago mostrará un aviso en vez de fallar en silencio.
-const MP_BACKEND_URL = "https://script.google.com/macros/s/AKfycbyeKli4LZB3w7lPRfKjTBx97FwLpLy93l66RF9hsPWpgJAqsAYAmuMDqblbfZdr-p-s1g/exec";
+const MP_BACKEND_URL = "PENDIENTE_CONFIGURAR";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -2442,6 +2450,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const datos = {
             servicio: nombreServicio(Cotizador.servicioActual),
+            servicioClave: Cotizador.servicioActual,
+            parametros: Cotizador.parametrosActuales,
             monto: Cotizador.precioActual,
             codigo: Cotizador.codigoActual,
             detalle: document.getElementById("detalleCotizacion").innerText,
@@ -2542,9 +2552,23 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+        // Si el honeypot tiene valor, es un bot — se finge éxito sin enviar nada
+        const honeypot = document.getElementById("propHoneypot").value;
+        if (honeypot) {
+            body.innerHTML = `
+                <div class="propuesta-enviada">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <h4>¡Propuesta enviada!</h4>
+                    <p>Revisamos tu presupuesto y te contactamos directamente para coordinar el pago.</p>
+                </div>
+            `;
+            return;
+        }
+
         const datos = {
             _subject: "🤝 Propuesta de precio — " + Cotizador.codigoActual,
             _url: window.location.href,
+            _honey: honeypot,
             Nombre: document.getElementById("propNombre").value.trim(),
             Correo: document.getElementById("propCorreo").value.trim(),
             Telefono: document.getElementById("propTelefono").value.trim(),
