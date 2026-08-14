@@ -326,6 +326,17 @@ eventos() {
 
 },
 
+irA(servicioClave) {
+
+    const boton = Array.from(this.botones).find(b => b.dataset.servicio === servicioClave);
+
+    if (boton) boton.click();
+
+    const seccion = document.getElementById("cotizacion");
+    if (seccion) seccion.scrollIntoView({ behavior: "smooth" });
+
+},
+
 mostrarFormulario() {
 
     this.contenedor.innerHTML=`
@@ -2633,6 +2644,23 @@ document.addEventListener("DOMContentLoaded", () => {
             btnEnviar.textContent = "Enviar propuesta";
 
         }
+
+    });
+
+});
+
+/*==================================================
+ENLACES "COTIZAR ESTE SERVICIO" (desde las tarjetas de Servicios)
+==================================================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    document.querySelectorAll("[data-ir-a]").forEach(enlace => {
+
+        enlace.addEventListener("click", (e) => {
+            e.preventDefault();
+            Cotizador.irA(enlace.dataset.irA);
+        });
 
     });
 
