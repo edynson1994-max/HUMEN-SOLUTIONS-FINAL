@@ -4654,37 +4654,95 @@ SELECTOR DE COMPROBANTE (Boleta / Factura)
 PROPONER UN PRECIO
 =========================================*/
 
-.link-proponer-precio{
+.banner-proponer-precio{
 
-    display:block;
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
 
     width:100%;
 
-    background:none;
+    background:rgba(185,151,91,.12);
 
-    border:none;
+    border:1.5px dashed rgba(185,151,91,.45);
 
-    text-align:center;
+    border-radius:14px;
 
-    font-size:.82rem;
-
-    color:var(--secondary);
-
-    font-weight:600;
-
-    text-decoration:underline;
+    padding:14px 16px;
 
     cursor:pointer;
 
-    padding:4px 0;
+    text-align:left;
 
     font-family:'Manrope',sans-serif;
 
+    transition:.25s;
+
 }
 
-.link-proponer-precio:hover{
+.banner-proponer-precio:hover{
 
-    color:var(--secondary-light);
+    background:rgba(185,151,91,.20);
+
+    border-color:var(--secondary);
+
+}
+
+.banner-proponer-icono{
+
+    flex-shrink:0;
+
+    width:36px;
+
+    height:36px;
+
+    border-radius:10px;
+
+    background:var(--secondary);
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.banner-proponer-texto{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2px;
+
+    font-size:.82rem;
+
+    line-height:1.4;
+
+    color:rgba(255,255,255,.85);
+
+}
+
+.banner-proponer-texto strong{
+
+    color:#fff;
+
+    font-size:.9rem;
+
+}
+
+.banner-proponer-flecha{
+
+    flex-shrink:0;
+
+    color:var(--secondary);
 
 }
 
@@ -4808,5 +4866,49 @@ PRECIO EN TARJETAS DE SERVICIOS
     transform:translateY(-2px);
 
     box-shadow:var(--shadow);
+
+}
+
+/*=========================================
+BENEFICIOS/PROMOCIONES EN TARJETA DE SERVICIO
+=========================================*/
+
+.card-promos{
+
+    list-style:none;
+
+    margin:16px 0 0;
+
+    padding:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:9px;
+
+}
+
+.card-promos li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    font-size:.86rem;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+.card-promos svg{
+
+    flex-shrink:0;
+
+    color:var(--secondary);
 
 }
