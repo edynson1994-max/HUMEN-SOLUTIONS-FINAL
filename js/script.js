@@ -437,6 +437,8 @@ Expreso (3 a 4 días)
 
 <li>Garantía de reposición por 30 días.</li>
 
+<li>Pago en 2 partes: 50% al inicio, 50% al completar el servicio.</li>
+
 </ul>
 
 </div>
@@ -1037,16 +1039,16 @@ VACANTES ADICIONALES
 
 if(vacantes>1){
 
-const adicionales=(vacantes-1)*(precioBase*0.50);
+const adicionales=(vacantes-1)*(precioBase*0.80);
 
 subtotal+=adicionales;
 
 detalle.push(
-`Vacantes adicionales (${vacantes-1}) ......... S/${adicionales.toFixed(2)}`
+`Vacantes adicionales (${vacantes-1}) — 20% dcto. c/u ... S/${adicionales.toFixed(2)}`
 );
 
 diagnostico.push(
-`Se cubrirán ${vacantes} vacantes del mismo perfil.`
+`Se cubrirán ${vacantes} vacantes del mismo perfil, con 20% de descuento desde la 2da.`
 );
 
 }
@@ -1234,6 +1236,8 @@ ${diagnostico.map(x=>`<li>${x}</li>`).join("")}
 
 <li>Garantía de reposición por 30 días.</li>
 
+<li>Pago en 2 partes: 50% al inicio, 50% al completar el servicio.</li>
+
 </ul>
 
 <hr>
@@ -1320,81 +1324,55 @@ let recomendaciones=[];
 let puntos=0;
 
 /*-------------------------
-SERVICIO
+SERVICIO + SKUs (precio base combinado, según tabla de referencia)
 --------------------------*/
 
 if(tipoServicio==="puntual"){
 
-total+=350;
+    if(skus==="150"){
+        total+=350;
+        detalle.push("Inventario puntual — hasta 200 SKUs ... S/350");
+        puntos+=1;
+    }
+    else if(skus==="600"){
+        total+=650;
+        detalle.push("Inventario puntual — 201 a 600 SKUs ... S/650");
+        puntos+=2;
+    }
+    else if(skus==="1500"){
+        total+=1200;
+        detalle.push("Inventario puntual — 601 a 1,500 SKUs .. S/1,200");
+        puntos+=3;
+    }
 
-detalle.push("Inventario físico puntual .......... S/350");
-
-puntos+=2;
-
-diagnostico.push("Se realizará un inventario físico con conciliación e informe final.");
+    diagnostico.push("Se realizará un inventario físico con conteo, conciliación e informe de diferencias.");
 
 }
 
 if(tipoServicio==="kardex"){
 
-total+=150;
+    if(skus==="150"){
+        total+=150;
+        detalle.push("Control de Kárdex — hasta 100 SKUs .... S/150/mes");
+        puntos+=1;
+    }
+    else if(skus==="600"){
+        total+=280;
+        detalle.push("Control de Kárdex — 101 a 500 SKUs .... S/280/mes");
+        puntos+=2;
+    }
+    else if(skus==="1500"){
+        total+=450;
+        detalle.push("Control de Kárdex — 501 a 1,000 SKUs .. S/450/mes");
+        puntos+=3;
+    }
 
-detalle.push("Control mensual de Kárdex .......... S/150");
-
-puntos+=1;
-
-diagnostico.push("El servicio corresponde al control permanente del inventario.");
+    diagnostico.push("El servicio corresponde al control y reconstrucción permanente del Kárdex SUNAT.");
 
 }
 
 /*-------------------------
-SKUs
---------------------------*/
-
-switch(skus){
-
-case "150":
-
-diagnostico.push("Hasta 150 tipos de productos.");
-
-break;
-
-case "600":
-
-if(tipoServicio==="kardex"){
-    total+=130;
-    detalle.push("151 a 600 SKUs ..................... +S/130");
-}else{
-    total+=300;
-    detalle.push("151 a 600 SKUs ..................... +S/300");
-}
-
-puntos++;
-
-diagnostico.push("Inventario con variedad media de productos.");
-
-break;
-
-case "1500":
-
-if(tipoServicio==="kardex"){
-    total+=300;
-    detalle.push("601 a 1500 SKUs .................... +S/300");
-}else{
-    total+=850;
-    detalle.push("601 a 1500 SKUs .................... +S/850");
-}
-
-puntos+=2;
-
-diagnostico.push("Alta variedad de productos.");
-
-break;
-
-}
-
-/*-------------------------
-UNIDADES
+UNIDADES (ajuste menor por volumen físico de conteo)
 --------------------------*/
 
 switch(unidades){
@@ -1407,9 +1385,9 @@ break;
 
 case "10000":
 
-total+=250;
+total+=60;
 
-detalle.push("3,001 a 10,000 unidades ............ +S/250");
+detalle.push("3,001 a 10,000 unidades ............ +S/60");
 
 puntos++;
 
@@ -1419,9 +1397,9 @@ break;
 
 case "30000":
 
-total+=500;
+total+=150;
 
-detalle.push("10,001 a 30,000 unidades ........... +S/500");
+detalle.push("10,001 a 30,000 unidades ........... +S/150");
 
 puntos+=2;
 
@@ -1431,9 +1409,9 @@ break;
 
 case "masivo":
 
-total+=900;
+total+=300;
 
-detalle.push("Más de 30,000 unidades ............. +S/900");
+detalle.push("Más de 30,000 unidades ............. +S/300");
 
 puntos+=4;
 
@@ -1449,7 +1427,7 @@ ALMACENES
 
 if(almacenes>1){
 
-const extra=(almacenes-1)*150;
+const extra=(almacenes-1)*80;
 
 total+=extra;
 
@@ -1471,9 +1449,9 @@ UBICACIÓN
 
 if(ciudad==="Valle"){
 
-total+=120;
+total+=100;
 
-detalle.push("Viáticos Valle Sagrado ............. +S/120");
+detalle.push("Viáticos Valle Sagrado ............. +S/100");
 
 recomendaciones.push("Incluye desplazamiento al Valle Sagrado.");
 
@@ -1481,9 +1459,9 @@ recomendaciones.push("Incluye desplazamiento al Valle Sagrado.");
 
 if(ciudad==="Otra"){
 
-total+=250;
+total+=180;
 
-detalle.push("Viáticos fuera de Cusco ............ +S/250");
+detalle.push("Viáticos fuera de Cusco ............ +S/180");
 
 recomendaciones.push("Los viáticos pueden variar según la ubicación.");
 
@@ -1503,9 +1481,9 @@ break;
 
 case "regular":
 
-total+=120;
+total+=60;
 
-detalle.push("Organización regular ............... +S/120");
+detalle.push("Organización regular ............... +S/60");
 
 puntos++;
 
@@ -1515,9 +1493,9 @@ break;
 
 case "desordenado":
 
-total+=300;
+total+=150;
 
-detalle.push("Mercadería desordenada ............. +S/300");
+detalle.push("Mercadería desordenada ............. +S/150");
 
 puntos+=3;
 
@@ -1541,9 +1519,9 @@ break;
 
 case "parcial":
 
-total+=80;
+total+=40;
 
-detalle.push("Código de barras parcial ........... +S/80");
+detalle.push("Código de barras parcial ........... +S/40");
 
 puntos++;
 
@@ -1551,9 +1529,9 @@ break;
 
 case "ninguno":
 
-total+=180;
+total+=90;
 
-detalle.push("Sin código de barras ............... +S/180");
+detalle.push("Sin código de barras ............... +S/90");
 
 puntos+=2;
 
@@ -1569,9 +1547,9 @@ SERVICIOS ADICIONALES
 
 if(conciliacion){
 
-total+=120;
+total+=60;
 
-detalle.push("Conciliación de diferencias ........ +S/120");
+detalle.push("Conciliación de diferencias ........ +S/60");
 
 recomendaciones.push("Se entregará análisis de sobrantes y faltantes.");
 
@@ -1579,9 +1557,9 @@ recomendaciones.push("Se entregará análisis de sobrantes y faltantes.");
 
 if(valorizacion){
 
-total+=150;
+total+=70;
 
-detalle.push("Valorización económica ............. +S/150");
+detalle.push("Valorización económica ............. +S/70");
 
 recomendaciones.push("Se entregará valorización monetaria del inventario.");
 
@@ -1589,9 +1567,9 @@ recomendaciones.push("Se entregará valorización monetaria del inventario.");
 
 if(ejecutivo){
 
-total+=100;
+total+=50;
 
-detalle.push("Informe ejecutivo ................. +S/100");
+detalle.push("Informe ejecutivo ................. +S/50");
 
 recomendaciones.push("Incluye conclusiones y recomendaciones gerenciales.");
 
@@ -1806,39 +1784,26 @@ return;
 
 }
 
-/*--------------------------
-TARIFA BASE SEGÚN RÉGIMEN Y VOLUMEN
----------------------------*/
-
 if(regimen==="RER"){
 
-if(comprobantes<=50 && trabajadores===0){
-    total+=150;
-    detalle.push("Base RER (1-50 comprobantes / 0 trabajadores) .... S/150");
-}else{
-    total+=220;
-    detalle.push("Base RER (51-150 comprobantes / 1-3 trabajadores) ... S/220");
-}
+total+=150;
+
+detalle.push("Base Régimen Especial ............ S/150");
 
 puntos+=1;
+
 diagnostico.push("La empresa pertenece al Régimen Especial.");
 
 }
 
 if(regimen==="RMT"){
 
-if(comprobantes<=50 && trabajadores<=2){
-    total+=250;
-    detalle.push("Base RMT (1-50 comprobantes / 0-2 trabajadores) .... S/250");
-}else if(comprobantes<=150 && trabajadores<=5){
-    total+=380;
-    detalle.push("Base RMT (51-150 comprobantes / 3-5 trabajadores) ... S/380");
-}else{
-    total+=550;
-    detalle.push("Base RMT (151-300 comprobantes / 6-10 trabajadores) .. S/550");
-}
+total+=250;
+
+detalle.push("Base Régimen MYPE ............... S/250");
 
 puntos+=2;
+
 diagnostico.push("La empresa pertenece al Régimen MYPE Tributario.");
 
 }
@@ -1846,40 +1811,93 @@ diagnostico.push("La empresa pertenece al Régimen MYPE Tributario.");
 if(regimen==="GENERAL"){
 
 total+=700;
-detalle.push("Base Régimen General .......................... Desde S/700");
+
+detalle.push("Base Régimen General ............ S/700");
+
 puntos+=3;
+
 diagnostico.push("La empresa pertenece al Régimen General.");
 
 }
 
 /*--------------------------
-CRITERIO DE VOLUMEN YA INCLUIDO EN LA TARIFA BASE
+COMPROBANTES
 ---------------------------*/
 
-if(regimen==="RER" || regimen==="RMT" || regimen==="GENERAL"){
-
 if(comprobantes<=50){
-    diagnostico.push("Hasta 50 comprobantes mensuales.");
-}else if(comprobantes<=150){
-    diagnostico.push("Volumen medio de comprobantes.");
-    puntos++;
-}else{
-    diagnostico.push("Alto volumen de comprobantes.");
-    puntos+=2;
+
+diagnostico.push("Hasta 50 comprobantes mensuales.");
+
+}
+else if(comprobantes<=150){
+
+total+=60;
+
+detalle.push("Comprobantes .................... +S/60");
+
+puntos++;
+
+diagnostico.push("Volumen medio de comprobantes.");
+
+}
+else{
+
+// comprobantes <= 300 (más de 300 ya se bloquea arriba con evaluación manual)
+
+total+=150;
+
+detalle.push("Comprobantes .................... +S/150");
+
+puntos+=2;
+
+diagnostico.push("Alto volumen de comprobantes.");
+
+}
+/*--------------------------
+PLANILLAS
+---------------------------*/
+
+if(trabajadores<=2){
+
+diagnostico.push("Hasta 2 trabajadores en planilla.");
+
 }
 
-if(trabajadores==0){
-    diagnostico.push("No cuenta con trabajadores en planilla.");
-}else if(trabajadores<=3){
-    diagnostico.push("Planilla pequeña.");
-    puntos++;
-}else if(trabajadores<=10){
-    diagnostico.push("Planilla mediana.");
-    puntos+=2;
-}else{
-    diagnostico.push("Planilla numerosa.");
-    puntos+=3;
+else if(trabajadores<=5){
+
+total+=70;
+
+detalle.push("Planilla (3-5 trabajadores) ..... +S/70");
+
+puntos++;
+
+diagnostico.push("Planilla pequeña.");
+
 }
+
+else if(trabajadores<=10){
+
+total+=150;
+
+detalle.push("Planilla (6-10 trabajadores) .... +S/150");
+
+puntos+=2;
+
+diagnostico.push("Planilla mediana.");
+
+}
+
+else{
+
+let adicional=(trabajadores-10)*15;
+
+total+=150+adicional;
+
+detalle.push(`Planilla (${trabajadores} trabajadores) .... +S/${150+adicional}`);
+
+puntos+=3;
+
+diagnostico.push("Planilla numerosa.");
 
 }
 
@@ -1889,9 +1907,9 @@ OPERACIONES ESPECIALES
 
 if(importaciones){
 
-total+=100;
+total+=50;
 
-detalle.push("Importaciones ................... +S/100");
+detalle.push("Importaciones ................... +S/50");
 
 puntos+=2;
 
@@ -1901,9 +1919,9 @@ diagnostico.push("Realiza importaciones.");
 
 if(exportaciones){
 
-total+=100;
+total+=50;
 
-detalle.push("Exportaciones ................... +S/100");
+detalle.push("Exportaciones ................... +S/50");
 
 puntos+=2;
 
@@ -1913,9 +1931,9 @@ diagnostico.push("Realiza exportaciones.");
 
 if(detracciones){
 
-total+=60;
+total+=30;
 
-detalle.push("Detracciones .................... +S/60");
+detalle.push("Detracciones .................... +S/30");
 
 puntos++;
 
@@ -1925,9 +1943,9 @@ diagnostico.push("Opera con detracciones.");
 
 if(retenciones){
 
-total+=60;
+total+=30;
 
-detalle.push("Retenciones / Percepciones ...... +S/60");
+detalle.push("Retenciones / Percepciones ...... +S/30");
 
 puntos++;
 
@@ -1937,9 +1955,9 @@ diagnostico.push("Opera con retenciones o percepciones.");
 
 if(cajachica){
 
-total+=40;
+total+=20;
 
-detalle.push("Caja chica ...................... +S/40");
+detalle.push("Caja chica ...................... +S/20");
 
 puntos++;
 
@@ -1949,9 +1967,9 @@ diagnostico.push("Administra caja chica.");
 
 if(bancos){
 
-total+=50;
+total+=25;
 
-detalle.push("Varias cuentas bancarias ........ +S/50");
+detalle.push("Varias cuentas bancarias ........ +S/25");
 
 puntos++;
 
@@ -1965,9 +1983,9 @@ SERVICIOS ADICIONALES
 
 if(facturacion){
 
-total+=80;
+total+=40;
 
-detalle.push("Emisión comprobantes ............ +S/80");
+detalle.push("Emisión comprobantes ............ +S/40");
 
 recomendaciones.push("Incluye emisión de comprobantes electrónicos.");
 
@@ -1975,9 +1993,9 @@ recomendaciones.push("Incluye emisión de comprobantes electrónicos.");
 
 if(reportes){
 
-total+=80;
+total+=40;
 
-detalle.push("Reportes gerenciales ............ +S/80");
+detalle.push("Reportes gerenciales ............ +S/40");
 
 recomendaciones.push("Incluye reportes mensuales.");
 
@@ -1985,9 +2003,9 @@ recomendaciones.push("Incluye reportes mensuales.");
 
 if(sunat){
 
-total+=60;
+total+=30;
 
-detalle.push("Atención SUNAT ................. +S/60");
+detalle.push("Atención SUNAT ................. +S/30");
 
 recomendaciones.push("Incluye atención de requerimientos SUNAT.");
 
@@ -1995,9 +2013,9 @@ recomendaciones.push("Incluye atención de requerimientos SUNAT.");
 
 if(asesoria){
 
-total+=100;
+total+=50;
 
-detalle.push("Asesoría tributaria ............. +S/100");
+detalle.push("Asesoría tributaria ............. +S/50");
 
 recomendaciones.push("Incluye asesoría tributaria permanente.");
 
@@ -2310,7 +2328,7 @@ PAGO CON MERCADO PAGO
 // ⚠️ IMPORTANTE: reemplaza esta URL por la de tu Web App de Google Apps Script
 // una vez que la despliegues (ver GUIA-INSTALACION.md). Mientras diga
 // "PENDIENTE_CONFIGURAR", el botón de pago mostrará un aviso en vez de fallar en silencio.
-const MP_BACKEND_URL = "https://script.google.com/macros/s/AKfycbyeKli4LZB3w7lPRfKjTBx97FwLpLy93l66RF9hsPWpgJAqsAYAmuMDqblbfZdr-p-s1g/exec";
+const MP_BACKEND_URL = "PENDIENTE_CONFIGURAR";
 
 document.addEventListener("DOMContentLoaded", () => {
 
