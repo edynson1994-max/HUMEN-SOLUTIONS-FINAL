@@ -976,8 +976,8 @@ switch(nivel){
 
 case "operativo":
 
-porcentaje=0.45;
-minimo=480;
+porcentaje=0.40;
+minimo=350;
 
 diagnostico.push(
 "El puesto corresponde a un nivel operativo con un proceso estándar de selección."
@@ -987,8 +987,8 @@ break;
 
 case "comercial":
 
-porcentaje=0.55;
-minimo=620;
+porcentaje=0.50;
+minimo=450;
 
 diagnostico.push(
 "El puesto requiere evaluar habilidades comerciales y de atención al cliente."
@@ -999,7 +999,7 @@ break;
 case "administrativo":
 
 porcentaje=0.70;
-minimo=890;
+minimo=650;
 
 diagnostico.push(
 "El proceso contempla validación de antecedentes y referencias laborales."
@@ -1009,8 +1009,8 @@ break;
 
 case "jefatura":
 
-porcentaje=1.05;
-minimo=1650;
+porcentaje=1.00;
+minimo=1200;
 
 diagnostico.push(
 "El puesto requiere un proceso de búsqueda especializado y entrevistas de mayor profundidad."
@@ -1325,9 +1325,9 @@ SERVICIO
 
 if(tipoServicio==="puntual"){
 
-total+=950;
+total+=350;
 
-detalle.push("Inventario físico puntual .......... S/950");
+detalle.push("Inventario físico puntual .......... S/350");
 
 puntos+=2;
 
@@ -1337,9 +1337,9 @@ diagnostico.push("Se realizará un inventario físico con conciliación e inform
 
 if(tipoServicio==="kardex"){
 
-total+=710;
+total+=150;
 
-detalle.push("Control mensual de Kárdex .......... S/710");
+detalle.push("Control mensual de Kárdex .......... S/150");
 
 puntos+=1;
 
@@ -1361,9 +1361,13 @@ break;
 
 case "600":
 
-total+=250;
-
-detalle.push("151 a 600 SKUs ..................... +S/250");
+if(tipoServicio==="kardex"){
+    total+=130;
+    detalle.push("151 a 600 SKUs ..................... +S/130");
+}else{
+    total+=300;
+    detalle.push("151 a 600 SKUs ..................... +S/300");
+}
 
 puntos++;
 
@@ -1373,9 +1377,13 @@ break;
 
 case "1500":
 
-total+=500;
-
-detalle.push("601 a 1500 SKUs .................... +S/500");
+if(tipoServicio==="kardex"){
+    total+=300;
+    detalle.push("601 a 1500 SKUs .................... +S/300");
+}else{
+    total+=850;
+    detalle.push("601 a 1500 SKUs .................... +S/850");
+}
 
 puntos+=2;
 
@@ -1775,13 +1783,13 @@ this.parametrosActuales = {regimen, comprobantes, trabajadores, importaciones, e
 
 this.mostrarResultado(
 
-65,
+50,
 
 `
 <strong>Nuevo RUS</strong><br><br>
 
 Precio mensual estimado:
-<strong>S/65.00</strong>
+<strong>S/50.00</strong>
 
 <br><br>
 
@@ -1798,120 +1806,80 @@ return;
 
 }
 
+/*--------------------------
+TARIFA BASE SEGÚN RÉGIMEN Y VOLUMEN
+---------------------------*/
+
 if(regimen==="RER"){
 
-total+=540;
-
-detalle.push("Base Régimen Especial ............ S/540");
+if(comprobantes<=50 && trabajadores===0){
+    total+=150;
+    detalle.push("Base RER (1-50 comprobantes / 0 trabajadores) .... S/150");
+}else{
+    total+=220;
+    detalle.push("Base RER (51-150 comprobantes / 1-3 trabajadores) ... S/220");
+}
 
 puntos+=1;
-
 diagnostico.push("La empresa pertenece al Régimen Especial.");
 
 }
 
 if(regimen==="RMT"){
 
-total+=720;
-
-detalle.push("Base Régimen MYPE ............... S/720");
+if(comprobantes<=50 && trabajadores<=2){
+    total+=250;
+    detalle.push("Base RMT (1-50 comprobantes / 0-2 trabajadores) .... S/250");
+}else if(comprobantes<=150 && trabajadores<=5){
+    total+=380;
+    detalle.push("Base RMT (51-150 comprobantes / 3-5 trabajadores) ... S/380");
+}else{
+    total+=550;
+    detalle.push("Base RMT (151-300 comprobantes / 6-10 trabajadores) .. S/550");
+}
 
 puntos+=2;
-
 diagnostico.push("La empresa pertenece al Régimen MYPE Tributario.");
 
 }
 
 if(regimen==="GENERAL"){
 
-total+=900;
-
-detalle.push("Base Régimen General ............ S/900");
-
+total+=700;
+detalle.push("Base Régimen General .......................... Desde S/700");
 puntos+=3;
-
 diagnostico.push("La empresa pertenece al Régimen General.");
 
 }
 
 /*--------------------------
-COMPROBANTES
+CRITERIO DE VOLUMEN YA INCLUIDO EN LA TARIFA BASE
 ---------------------------*/
+
+if(regimen==="RER" || regimen==="RMT" || regimen==="GENERAL"){
 
 if(comprobantes<=50){
-
-diagnostico.push("Hasta 50 comprobantes mensuales.");
-
+    diagnostico.push("Hasta 50 comprobantes mensuales.");
+}else if(comprobantes<=150){
+    diagnostico.push("Volumen medio de comprobantes.");
+    puntos++;
+}else{
+    diagnostico.push("Alto volumen de comprobantes.");
+    puntos+=2;
 }
-else if(comprobantes<=150){
-
-total+=50;
-
-detalle.push("Comprobantes .................... +S/50");
-
-puntos++;
-
-diagnostico.push("Volumen medio de comprobantes.");
-
-}
-else{
-
-// comprobantes <= 300 (más de 300 ya se bloquea arriba con evaluación manual)
-
-total+=100;
-
-detalle.push("Comprobantes .................... +S/100");
-
-puntos+=2;
-
-diagnostico.push("Alto volumen de comprobantes.");
-
-}
-/*--------------------------
-PLANILLAS
----------------------------*/
 
 if(trabajadores==0){
-
-diagnostico.push("No cuenta con trabajadores en planilla.");
-
+    diagnostico.push("No cuenta con trabajadores en planilla.");
+}else if(trabajadores<=3){
+    diagnostico.push("Planilla pequeña.");
+    puntos++;
+}else if(trabajadores<=10){
+    diagnostico.push("Planilla mediana.");
+    puntos+=2;
+}else{
+    diagnostico.push("Planilla numerosa.");
+    puntos+=3;
 }
-
-else if(trabajadores<=3){
-
-total+=50;
-
-detalle.push("Planilla (1-3 trabajadores) ..... +S/50");
-
-puntos++;
-
-diagnostico.push("Planilla pequeña.");
-
-}
-
-else if(trabajadores<=10){
-
-total+=120;
-
-detalle.push("Planilla (4-10 trabajadores) .... +S/120");
-
-puntos+=2;
-
-diagnostico.push("Planilla mediana.");
-
-}
-
-else{
-
-let adicional=(trabajadores-10)*15;
-
-total+=120+adicional;
-
-detalle.push(`Planilla (${trabajadores} trabajadores) .... +S/${120+adicional}`);
-
-puntos+=3;
-
-diagnostico.push("Planilla numerosa.");
 
 }
 
