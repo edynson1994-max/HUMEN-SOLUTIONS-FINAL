@@ -1,0 +1,97 @@
+name: Sincronizar datos reales (Perú en Datos)
+
+# Corre los 3 conectores (Contraloría, INEI-RENAMU, MEF) y deja los
+# resultados en data/*.json. Los conectores solo usan la librería estándar
+# de Python (no hace falta pip install nada).
+#
+# IMPORTANTE — esto nunca se ha corrido con acceso de red real todavía.
+# Se escribió y probó con datos simulados porque el entorno de desarrollo
+# tenía bloqueado el acceso a los dominios .gob.pe. La primera corrida real
+# va a ser AQUÍ, en GitHub Actions — revisa el resumen que imprime al final
+# y el contenido de data/*.json (especialmente "columnas_detectadas" y
+# "estado") antes de confiar en los números.
+#
+# El archivo del MEF pesa ~2.3 GB. Para una primera prueba rápida, usa
+# "Run workflow" y pon un valor en mef_max_mb (ej. 50) para cortar la
+# descarga a los primeros N megabytes — el resultado quedará marcado como
+# muestra parcial ("muestra_parcial": true), no como el total real.
+# Déjalo vacío para procesar el archivo completo.
+
+on:
+  schedule:
+    # 12:00 UTC = 07:00 hora de Lima, una vez por semana (domingo).
+    # El archivo del MEF es grande — no tiene sentido bajarlo entero todos
+    # los días. Ajustar si se prefiere otra frecuencia.
+    - cron: "0 12 * * 0"
+  workflow_dispatch:
+    inputs:
+      mef_max_mb:
+        description: "Cortar el CSV del MEF a los primeros N MB (vacío = archivo completo)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  sync-datos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Ejecutar los 3 conectores
+        env:
+          MEF_MAX_MB: ${{ github.event.inputs.mef_max_mb }}
+        run: python connectors/run_all.py
+
+      - name: Mostrar un resumen rápido de lo que se detectó
+        if: always()
+        run: |
+          echo "### Estado de cada fuente" >> "$GITHUB_STEP_SUMMARY"
+          for f in data/*.json; do
+            echo "- **$f**" >> "$GITHUB_STEP_SUMMARY"
+            python3 -c "
+import json, sys
+try:
+    d = json.load(open('$f', encoding='utf-8'))
+    if 'estado' in d:
+        print(f\"  - estado: {d.get('estado')}\")
+        if d.get('estado') == 'error':
+            print(f\"  - error: {d.get('error')}\")
+        if 'columnas_detectadas' in d:
+            print(f\"  - columnas detectadas: {d.get('columnas_detectadas')}\")
+    elif 'datasets' in d:
+        for ds in d['datasets']:
+            print(f\"  - {ds.get('titulo')}: {ds.get('estado')}\" + (f\" ({ds.get('error')})\" if ds.get('estado')=='error' else ''))
+except Exception as e:
+    print(f'  - no se pudo leer: {e}')
+" >> "$GITHUB_STEP_SUMMARY"
+          done
+
+      - name: Subir data/*.json como artifact (siempre, para poder revisar sin esperar el commit)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: datos-reales
+          path: data/*.json
+          retention-days: 14
+          if-no-files-found: warn
+
+      - name: Confirmar y subir cambios (solo si hubo cambios)
+        run: |
+          git config user.name "peru-en-datos-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/*.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios en los datos, no se crea commit."
+          else
+            git commit -m "Actualiza datos reales (MEF/INEI/Contraloría) - $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
