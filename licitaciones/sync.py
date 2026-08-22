@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-sync.py — Sincroniza convocatorias de licitación relevantes para Humen Solutions SACS
-(contabilidad y auditoría, inventarios físicos, reclutamiento de personal) a partir de
-los datos abiertos de contrataciones públicas del Perú.
+sync.py — Sincroniza TODAS las convocatorias de licitación pública vigentes del
+Perú, como banco de información pública abierto a cualquiera (no solo a Humen
+Solutions SACS). Las convocatorias afines a las 3 líneas de negocio de Humen
+(contabilidad y auditoría, inventarios físicos, reclutamiento de personal)
+quedan marcadas con una etiqueta informativa, pero ya NO se usan para excluir
+al resto — todo lo demás también se publica.
 
 FUENTE DE DATOS
 ----------------
@@ -22,16 +25,20 @@ mantener la atribución a la fuente (ver ATTRIBUTION más abajo).
 
 QUÉ HACE ESTE SCRIPT
 ---------------------
-1. Descarga el archivo del año en curso (y, en enero, también el del año anterior,
-   para no perder procesos que sigan vigentes de diciembre).
+1. Descarga el archivo del año en curso y el del año anterior (para no perder
+   procesos que sigan vigentes pero cuyo "release" en OCDS quedó registrado el
+   año pasado).
 2. Recorre cada "release" OCDS línea por línea.
-3. Se queda solo con procesos cuyo título/descripción coincide con las palabras clave
-   de las 3 líneas de negocio de Humen Solutions.
-4. Filtra procesos que ya cerraron (cuando el dato de fecha límite está disponible).
+3. Descarta lo que ya cerró: si hay fecha límite y ya pasó, fuera — sin
+   depender del campo "status" (poco confiable en registros migrados).
+4. A lo que queda abierto, le asigna una categoría de contratación (Bienes /
+   Servicios / Obras / Consultoría de Obras) tomada del propio estándar OCDS,
+   y además una o más etiquetas "humenTags" si el título/descripción coincide
+   con palabras clave de contabilidad, inventarios físicos o reclutamiento —
+   solo como distintivo visual, no como filtro de exclusión.
 5. Escribe licitaciones/data.json con una estructura simple que consume index.html.
-6. Guarda además sample_raw_release.json con UN registro crudo de ejemplo, para poder
-   ajustar el mapeo de campos si el esquema real difiere de lo asumido aquí (ver nota
-   al final de este archivo).
+6. Guarda además sample_raw_release.json con UN registro crudo de ejemplo, para
+   poder ajustar el mapeo de campos si el esquema real difiere del asumido aquí.
 
 IMPORTANTE — AJUSTE PENDIENTE EN LA PRIMERA CORRIDA REAL
 -----------------------------------------------------------
@@ -39,16 +46,14 @@ Este script fue escrito sin poder probarlo contra un archivo real (el entorno do
 escribió no tiene salida a internet hacia estos dominios). La extracción de campos
 (región, tipo de proceso, etc.) sigue la estructura estándar de OCDS y hace fallback a
 "No especificado" cuando un campo no existe, así que no debería romperse — pero conviene
-revisar sample_raw_release.json después de la primera corrida real en GitHub Actions
-para confirmar que los campos se están leyendo del lugar correcto y afinar el mapeo si
-hace falta.
+revisar sample_raw_release.json después de cada corrida real para confirmar que los
+campos se están leyendo del lugar correcto y afinar el mapeo si hace falta.
 """
 
 import gzip
 import io
 import json
 import os
-import re
 import sys
 import unicodedata
 from datetime import datetime, timezone
@@ -62,16 +67,21 @@ SAMPLE_RAW_PATH = os.path.join(os.path.dirname(__file__), "sample_raw_release.js
 ATTRIBUTION = (
     "Datos derivados del Registro de Datos Abiertos de Contrataciones "
     "(Open Contracting Partnership), a partir de información publicada por el "
-    "organismo peruano a cargo del SEACE. Licencia CC BY 4.0."
+    "organismo peruano a cargo del SEACE. Licencia CC BY 4.0. Banco de información "
+    "pública — no requiere afiliación con Humen Solutions para consultarlo."
 )
 
-# Máximo de convocatorias a conservar por categoría (evita un data.json gigante).
-MAX_PER_CATEGORY = 150
+# Máximo total de convocatorias a conservar (evita un data.json descontrolado si
+# en algún momento hay muchos miles de procesos abiertos a la vez). Se
+# conservan las de plazo más próximo primero, así que un tope alto casi nunca
+# debería recortar nada relevante.
+MAX_ITEMS = 4000
 
-# Días hacia atrás a considerar "reciente" si un proceso no trae fecha de publicación.
+# Días hacia atrás a considerar "reciente" si un proceso no trae fecha límite.
 FALLBACK_LOOKBACK_DAYS = 30
 
-KEYWORDS = {
+# Etiquetas informativas (NO filtran nada, solo destacan tarjetas en la interfaz).
+HUMEN_KEYWORDS = {
     "cont": [
         "contabilidad", "contable", "auditoria", "auditor",
         "estados financieros", "balance general", "conciliacion",
@@ -90,10 +100,12 @@ KEYWORDS = {
     ],
 }
 
-CATEGORY_LABELS = {
-    "cont": "Contabilidad y Auditoría",
-    "inv": "Inventarios Físicos",
-    "rec": "Reclutamiento y Personal",
+# Categoría de contratación estándar de OCDS → etiqueta en español.
+PROC_CATEGORY_LABELS = {
+    "goods": "Bienes",
+    "works": "Obras",
+    "services": "Servicios",
+    "consultingServices": "Consultoría de Obras",
 }
 
 CLOSED_STATUSES = {"complete", "cancelled", "unsuccessful", "withdrawn"}
@@ -108,13 +120,14 @@ def normalize(text):
     return text.lower()
 
 
-def match_category(title, description):
+def match_humen_tags(title, description):
+    """Etiquetas informativas de afinidad con Humen Solutions. No excluyen nada."""
     haystack = normalize((title or "") + " " + (description or ""))
-    for cat, words in KEYWORDS.items():
-        for w in words:
-            if w in haystack:
-                return cat
-    return None
+    tags = []
+    for tag, words in HUMEN_KEYWORDS.items():
+        if any(w in haystack for w in words):
+            tags.append(tag)
+    return tags
 
 
 def download_year(year, session):
@@ -154,9 +167,6 @@ def parse_release(release):
 
     title = tender.get("title") or release.get("title") or ""
     description = tender.get("description") or ""
-    cat = match_category(title, description)
-    if cat is None:
-        return None
 
     due_date = None
     tender_period = tender.get("tenderPeriod") or {}
@@ -166,6 +176,18 @@ def parse_release(release):
     pub_date = None
     if release.get("date"):
         pub_date = release["date"][:10]
+
+    # Filtro clave: si ya sabemos la fecha límite y ya pasó, el proceso está
+    # cerrado — sin importar lo que diga (o no diga) el campo "status". Los
+    # registros históricos migrados a OCDS muchas veces no traen un status
+    # confiable, y por eso procesos de hace 10+ años se colaban como "vigentes".
+    if due_date:
+        try:
+            due_dt = datetime.strptime(due_date, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+            if due_dt.date() < datetime.now(timezone.utc).date():
+                return None
+        except ValueError:
+            pass
 
     # Si no hay fecha límite conocida, exigimos que sea razonablemente reciente
     # para no arrastrar procesos históricos ya cerrados sin marcarlo explícitamente.
@@ -180,10 +202,14 @@ def parse_release(release):
 
     value = tender.get("value") or {}
     buyer_name = (release.get("buyer") or {}).get("name") or "Entidad no especificada"
+    proc_category = PROC_CATEGORY_LABELS.get(
+        tender.get("mainProcurementCategory"), "No especificado"
+    )
 
     return {
         "id": release.get("ocid") or release.get("id"),
-        "cat": cat,
+        "procCategory": proc_category,
+        "humenTags": match_humen_tags(title, description),
         "title": title.strip(),
         "entidad": buyer_name,
         "region": get_buyer_region(release) or "No especificado",
@@ -204,7 +230,7 @@ def collect(years):
         "User-Agent": "HumenSolutions-LicitacionesSync/1.0 (+contacto empresa)"
     })
 
-    by_cat = {"cont": [], "inv": [], "rec": []}
+    items = []
     sample_saved = False
 
     for year in years:
@@ -229,31 +255,49 @@ def collect(years):
 
             item = parse_release(release)
             if item:
-                by_cat[item["cat"]].append(item)
+                items.append(item)
 
         print(f"  {count} registros revisados en {year}", file=sys.stderr)
 
-    return by_cat
+    return items
 
 
 def main():
     now = datetime.now(timezone.utc)
-    years = [now.year]
-    if now.month == 1:
-        years.append(now.year - 1)
+    # Siempre se descargan el año en curso y el anterior: un proceso puede
+    # seguir vigente hoy aunque su "release" en OCDS haya quedado registrado
+    # en el archivo del año pasado. El filtro de fecha límite (arriba) se
+    # encarga de descartar lo que ya cerró, así que ampliar el rango es
+    # seguro y evita perder convocatorias realmente abiertas.
+    years = [now.year, now.year - 1]
 
-    by_cat = collect(years)
+    items = collect(years)
 
-    items = []
-    for cat, records in by_cat.items():
-        records.sort(key=lambda r: (r["dueDate"] is None, r["dueDate"] or ""))
-        items.extend(records[:MAX_PER_CATEGORY])
+    # Deduplicar por id/ocid (un mismo proceso puede aparecer más de una vez
+    # si tuvo varias actualizaciones registradas como releases distintos).
+    seen = {}
+    for item in items:
+        key = item["id"] or item["code"]
+        if key not in seen:
+            seen[key] = item
+    items = list(seen.values())
+
+    items.sort(key=lambda r: (r["dueDate"] is None, r["dueDate"] or ""))
+    dropped = max(0, len(items) - MAX_ITEMS)
+    items = items[:MAX_ITEMS]
+
+    humen_counts = {"cont": 0, "inv": 0, "rec": 0}
+    for item in items:
+        for tag in item["humenTags"]:
+            humen_counts[tag] += 1
 
     output = {
         "generated_at": now.isoformat(timespec="seconds"),
         "attribution": ATTRIBUTION,
         "source_url": "https://data.open-contracting.org/en/publication/135",
-        "counts": {cat: len(recs[:MAX_PER_CATEGORY]) for cat, recs in by_cat.items()},
+        "total_count": len(items),
+        "humen_counts": humen_counts,
+        "dropped_by_cap": dropped,
         "items": items,
     }
 
@@ -261,6 +305,8 @@ def main():
         json.dump(output, f, ensure_ascii=False, indent=2)
 
     print(f"Listo: {len(items)} convocatorias guardadas en {OUTPUT_PATH}", file=sys.stderr)
+    if dropped:
+        print(f"  ({dropped} quedaron fuera por el tope de {MAX_ITEMS})", file=sys.stderr)
 
 
 if __name__ == "__main__":

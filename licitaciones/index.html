@@ -6,12 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Buscador de Licitaciones | HUMEN SOLUTIONS</title>
+    <title>Buscador de Licitaciones Públicas del Perú | HUMEN SOLUTIONS</title>
 
     <meta name="description"
-        content="Convocatorias de licitación pública del Perú filtradas para contabilidad, inventarios físicos y reclutamiento de personal — herramienta interna de HUMEN SOLUTIONS.">
+        content="Todas las convocatorias de licitación pública vigentes en el Perú, en un solo buscador gratuito y abierto a cualquiera — con las afines a contabilidad, inventarios físicos y reclutamiento destacadas. Un servicio de HUMEN SOLUTIONS.">
 
-    <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google Fonts -->
@@ -80,10 +79,11 @@
 
             <div class="lic-header">
                 <div>
-                    <span class="lic-eyebrow">Herramienta interna</span>
+                    <span class="lic-eyebrow">Base de datos pública</span>
                     <h1>Buscador de licitaciones</h1>
-                    <p>Contabilidad y auditoría, inventarios físicos y reclutamiento de personal — convocatorias del
-                        Estado peruano filtradas para lo que ofrecemos.</p>
+                    <p>Todas las convocatorias de licitación pública vigentes en el Perú, en un solo lugar y
+                        gratis para cualquiera — con las afines a contabilidad, inventarios físicos y
+                        reclutamiento destacadas con ★.</p>
                 </div>
                 <div class="lic-updated" id="updatedNote">Cargando…</div>
             </div>
@@ -106,6 +106,7 @@
                             <input id="q" type="text" placeholder="Buscar por palabra clave, entidad o código de proceso…"
                                 autocomplete="off" />
                         </div>
+                        <select id="categoria"><option value="">Toda categoría</option></select>
                         <select id="tipo"><option value="">Todo tipo de proceso</option></select>
                         <select id="region"><option value="">Todo el Perú</option></select>
                         <select id="estado">
@@ -166,14 +167,14 @@
 
     <script>
     (function(){
-      var CATS = {
-        cont: { label:"Contabilidad y Auditoría" },
-        inv:  { label:"Inventarios Físicos"       },
-        rec:  { label:"Reclutamiento y Personal"  }
+      var HUMEN_TAG_LABELS = {
+        cont: "Contabilidad y Auditoría",
+        inv:  "Inventarios Físicos",
+        rec:  "Reclutamiento y Personal"
       };
 
       var DATA = [];
-      var activeCat = "";
+      var onlyHumen = false;
       var today = new Date();
 
       function parseDate(s){ return s ? new Date(s + "T00:00:00") : null; }
@@ -193,9 +194,15 @@
       function badgeLabel(d){
         var n = daysLeft(d);
         if (n === null) return "sin fecha límite";
-        if (n <= 0) return "cierra hoy";
+        if (n < 0) return "venció hace "+Math.abs(n)+(Math.abs(n)===1 ? " día" : " días");
+        if (n === 0) return "cierra hoy";
         if (n === 1) return "cierra en 1 día";
         return "cierra en "+n+" días";
+      }
+      function humenTagHtml(d){
+        if (!d.humenTags || !d.humenTags.length) return "";
+        var titles = d.humenTags.map(function(t){ return HUMEN_TAG_LABELS[t] || t; }).join(", ");
+        return '<span class="lic-tag star" title="Afín a: '+titles+'">★ Relevante para Humen</span>';
       }
       function money(item){
         if (item.monto == null) return null;
@@ -210,6 +217,8 @@
       }
 
       function populateSelects(){
+        var catSel = document.getElementById("categoria");
+        uniqueSorted("procCategory").forEach(function(c){ var o=document.createElement("option"); o.value=c; o.textContent=c; catSel.appendChild(o); });
         var tipoSel = document.getElementById("tipo");
         uniqueSorted("tipoProc").forEach(function(t){ var o=document.createElement("option"); o.value=t; o.textContent=t; tipoSel.appendChild(o); });
         var regionSel = document.getElementById("region");
@@ -217,16 +226,15 @@
       }
 
       function renderChips(){
-        var counts = { "": DATA.length, cont:0, inv:0, rec:0 };
-        DATA.forEach(function(d){ counts[d.cat]++; });
-        var html = '<span class="lic-chip'+(activeCat===""?" active":"")+'" data-cat="">Todas <span class="count">'+counts[""]+'</span></span>';
-        Object.keys(CATS).forEach(function(c){
-          html += '<span class="lic-chip'+(activeCat===c?" active":"")+'" data-cat="'+c+'">'+CATS[c].label+' <span class="count">'+counts[c]+'</span></span>';
-        });
+        var total = DATA.length;
+        var humenCount = DATA.filter(function(d){ return d.humenTags && d.humenTags.length; }).length;
+        var html =
+          '<span class="lic-chip'+(!onlyHumen?" active":"")+'" data-humen="0">Todas <span class="count">'+total+'</span></span>' +
+          '<span class="lic-chip lic-chip-star'+(onlyHumen?" active":"")+'" data-humen="1">★ Relevantes para Humen Solutions <span class="count">'+humenCount+'</span></span>';
         var chipsEl = document.getElementById("chips");
         chipsEl.innerHTML = html;
         Array.prototype.forEach.call(chipsEl.querySelectorAll(".lic-chip"), function(el){
-          el.addEventListener("click", function(){ activeCat = el.getAttribute("data-cat"); renderChips(); renderList(); });
+          el.addEventListener("click", function(){ onlyHumen = el.getAttribute("data-humen") === "1"; renderChips(); renderList(); });
         });
       }
 
@@ -244,10 +252,12 @@
 
       function matches(d){
         var q = document.getElementById("q").value.trim().toLowerCase();
+        var categoria = document.getElementById("categoria").value;
         var tipo = document.getElementById("tipo").value;
         var region = document.getElementById("region").value;
         var estado = document.getElementById("estado").value;
-        if (activeCat && d.cat !== activeCat) return false;
+        if (onlyHumen && (!d.humenTags || !d.humenTags.length)) return false;
+        if (categoria && d.procCategory !== categoria) return false;
         if (tipo && d.tipoProc !== tipo) return false;
         if (region && d.region !== region) return false;
         if (estado && urgency(d) !== estado) return false;
@@ -291,7 +301,8 @@
                 '<div class="lic-toprow">' +
                   '<span class="lic-code">'+(d.code||"")+'</span>' +
                   '<span class="lic-tag proc">'+d.tipoProc+'</span>' +
-                  '<span class="lic-tag cat">'+CATS[d.cat].label+'</span>' +
+                  '<span class="lic-tag cat">'+d.procCategory+'</span>' +
+                  humenTagHtml(d) +
                 '</div>' +
                 '<h3>'+d.title+'</h3>' +
                 '<div class="meta">'+d.entidad+'<span class="sep">·</span>'+d.region+'</div>' +
@@ -323,7 +334,8 @@
           '</div>' +
           '<div class="lic-toprow">' +
             '<span class="lic-tag proc">'+d.tipoProc+'</span>' +
-            '<span class="lic-tag cat">'+CATS[d.cat].label+'</span>' +
+            '<span class="lic-tag cat">'+d.procCategory+'</span>' +
+            humenTagHtml(d) +
             '<span class="lic-badge '+u+'">'+badgeLabel(d)+'</span>' +
           '</div>' +
           '<dl>' +
@@ -342,7 +354,7 @@
       document.getElementById("veil").addEventListener("click", function(e){ if (e.target.id==="veil") closeDetail(); });
       document.addEventListener("keydown", function(e){ if (e.key==="Escape") closeDetail(); });
 
-      ["q","tipo","region","estado","orden"].forEach(function(id){
+      ["q","categoria","tipo","region","estado","orden"].forEach(function(id){
         var el = document.getElementById(id);
         el.addEventListener("input", renderList);
         el.addEventListener("change", renderList);

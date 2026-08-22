@@ -236,6 +236,8 @@ CONTROLES
 .lic-chip:hover{ border-color:var(--secondary); }
 .lic-chip.active{ background:var(--primary); border-color:var(--primary); color:#fff; }
 .lic-chip.active .count{ background:rgba(255,255,255,.22); color:#fff; }
+.lic-chip-star{ border-color:var(--secondary); color:#8A6F3F; }
+.lic-chip-star.active{ background:var(--secondary); border-color:var(--secondary); color:#fff; }
 
 .lic-sortrow{ display:flex; align-items:center; gap:10px; }
 .lic-sortrow .flabel{ font-size:.8rem; color:var(--text-light); }
@@ -306,6 +308,11 @@ RESULTADOS
 }
 .lic-tag.proc{ background:var(--primary-light-bg); color:var(--primary); }
 .lic-tag.cat{ background:var(--secondary-bg); color:#8A6F3F; }
+.lic-tag.star{
+    background:#fff;
+    color:var(--secondary);
+    border:1px solid var(--secondary);
+}
 
 .lic-card h3{
     margin:0 0 8px;
