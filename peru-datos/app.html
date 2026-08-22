@@ -464,24 +464,24 @@ section{ padding:64px 0; }
       </div>
     </div>
     <div class="descubre-grid">
-      <div class="descubre-card" onclick="document.getElementById('conoce').scrollIntoView({behavior:'smooth'})">
-        <span class="q">¿Qué región recibe más inversión pública per cápita?</span>
-        <span class="a">Comparación entre las 25 regiones, ajustada por población.</span>
-        <span class="go">Ver comparación →</span>
+      <div class="descubre-card" onclick="document.getElementById('mapa').scrollIntoView({behavior:'smooth'})">
+        <span class="q">¿Qué región concentra más inversión pública ejecutada?</span>
+        <span class="a">Ranking real del MEF, región por región — selecciona cualquiera en el Mapa.</span>
+        <span class="go">Ver el Mapa →</span>
       </div>
-      <div class="descubre-card" onclick="document.getElementById('conoce').scrollIntoView({behavior:'smooth'})">
-        <span class="q">¿Cuánto dinero mueve una municipalidad promedio?</span>
-        <span class="a">De la transferencia del MEF a la obra terminada.</span>
-        <span class="go">Ver explicación →</span>
+      <div class="descubre-card" onclick="document.getElementById('explora').scrollIntoView({behavior:'smooth'})">
+        <span class="q">¿Qué se está contratando ahora mismo en tu región?</span>
+        <span class="a">Procesos de contratación pública reales, filtrables por región y categoría.</span>
+        <span class="go">Ver Explora →</span>
       </div>
       <div class="descubre-card" onclick="document.getElementById('conoce').scrollIntoView({behavior:'smooth'})">
         <span class="q">¿Qué pasa después de que una entidad publica una licitación?</span>
-        <span class="a">El recorrido completo, paso a paso, con datos reales.</span>
+        <span class="a">El recorrido completo, paso a paso.</span>
         <span class="go">Ver el proceso →</span>
       </div>
-      <div class="descubre-card" onclick="document.getElementById('conoce').scrollIntoView({behavior:'smooth'})">
+      <div class="descubre-card" onclick="document.getElementById('glosarioPresupuesto').scrollIntoView({behavior:'smooth'})">
         <span class="q">¿Qué significan PIA, PIM y devengado?</span>
-        <span class="a">Las tres cifras que definen el presupuesto público.</span>
+        <span class="a">Las cifras que definen el presupuesto público, explicadas una por una.</span>
         <span class="go">Ver glosario →</span>
       </div>
     </div>
@@ -535,6 +535,16 @@ section{ padding:64px 0; }
 }
 .flow-detail h4{ font-size:1.15rem; margin-bottom:6px; }
 .flow-detail p{ color:var(--ink-soft); font-size:.94rem; line-height:1.55; max-width:64ch; }
+
+.glosario-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:20px; }
+@media (max-width:820px){ .glosario-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .glosario-grid{ grid-template-columns:1fr; } }
+.glosario-item{
+  background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-m);
+  padding:18px; display:flex; flex-direction:column; gap:6px;
+}
+.glosario-item .term{ font-family:var(--font-display); font-weight:700; font-size:1.05rem; }
+.glosario-item .def{ color:var(--ink-soft); font-size:.86rem; line-height:1.5; }
 </style>
 
 <section id="conoce">
@@ -574,6 +584,37 @@ section{ padding:64px 0; }
 
       <div class="flow-detail" id="flowDetail">
         <!-- filled by JS -->
+      </div>
+    </div>
+
+    <div class="flow-card" id="glosarioPresupuesto" style="margin-top:20px;">
+      <span class="eyebrow">Conoce · Presupuesto público</span>
+      <h3>¿Qué significan PIA, PIM y devengado?</h3>
+      <div class="glosario-grid">
+        <div class="glosario-item">
+          <span class="term">PIA</span>
+          <span class="def">Presupuesto Institucional de Apertura — el presupuesto inicial que se aprueba para una entidad al comenzar el año, antes de cualquier ajuste.</span>
+        </div>
+        <div class="glosario-item">
+          <span class="term">PIM</span>
+          <span class="def">Presupuesto Institucional Modificado — el PIA ya ajustado durante el año (créditos suplementarios, transferencias entre partidas). Es la cifra vigente contra la que se mide cuánto se ha ejecutado.</span>
+        </div>
+        <div class="glosario-item">
+          <span class="term">Certificado</span>
+          <span class="def">El monto que la entidad aparta para un gasto específico antes de comprometerlo — asegura que el dinero existe y está disponible.</span>
+        </div>
+        <div class="glosario-item">
+          <span class="term">Comprometido</span>
+          <span class="def">El monto ya comprometido con un proveedor o contrato determinado, a la espera de que se entregue el bien o servicio.</span>
+        </div>
+        <div class="glosario-item">
+          <span class="term">Devengado</span>
+          <span class="def">El momento en que el Estado reconoce la obligación de pago porque ya recibió el bien o servicio — aunque el dinero todavía no haya salido de la cuenta pública. Es la cifra que usa Perú en Datos para medir "cuánto gastó" el Estado.</span>
+        </div>
+        <div class="glosario-item">
+          <span class="term">Girado</span>
+          <span class="def">El momento en que el dinero efectivamente sale de la cuenta pública hacia el proveedor — el desembolso final, posterior al devengado.</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1118,27 +1159,171 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
       '</div>';
   }
 
+  /* ---- Último / Explora: registros reales de contratación pública -----
+     Fuente: licitaciones/data.json — el mismo banco de datos, ya en vivo,
+     que usa la sección "Licitaciones" de Humen Solutions (mirror OCDS de
+     las contrataciones públicas del Perú, sincronizado a diario por
+     sync-licitaciones.yml). No hace falta un conector nuevo: se reutiliza
+     tal cual. Si el archivo no existe o no trae items, Último y Explora se
+     quedan con su contenido de demo, igual que Estelares y el Mapa. */
+  function escapeHtml(s){
+    return (s == null ? '' : String(s)).replace(/[&<>"]/g, function(c){
+      return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c];
+    });
+  }
+  function tagClaseParaCategoria(cat){
+    var c = (cat || '').toLowerCase();
+    if (c.indexOf('obra') !== -1) return 'obras';
+    if (c.indexOf('bien') !== -1) return 'empresas';
+    if (c.indexOf('consultor') !== -1) return 'economia';
+    if (c.indexOf('servicio') !== -1) return 'gobierno';
+    return 'gobierno';
+  }
+  function diasDesde(fechaIso){
+    if (!fechaIso) return null;
+    var d = new Date(fechaIso + 'T00:00:00');
+    if (isNaN(d.getTime())) return null;
+    return Math.floor((new Date() - d) / 86400000);
+  }
+  function diasHasta(fechaIso){
+    if (!fechaIso) return null;
+    var d = new Date(fechaIso + 'T00:00:00');
+    if (isNaN(d.getTime())) return null;
+    var hoy = new Date(); hoy.setHours(0,0,0,0);
+    return Math.round((d - hoy) / 86400000);
+  }
+  function tiempoRelativo(dias){
+    if (dias == null) return 'fecha no publicada';
+    if (dias <= 0) return 'hoy';
+    if (dias === 1) return 'ayer';
+    if (dias < 30) return 'hace ' + dias + ' días';
+    var meses = Math.floor(dias / 30);
+    return 'hace ' + meses + (meses === 1 ? ' mes' : ' meses');
+  }
+  function uniqueSorted(arr){
+    var visto = {}, out = [];
+    arr.forEach(function(v){ if (v && !visto[v]) { visto[v] = true; out.push(v); } });
+    out.sort();
+    return out;
+  }
+  function poblarFiltroSelect(id, valores, placeholder){
+    var sel = document.getElementById(id);
+    if (!sel) return;
+    var actual = sel.value;
+    sel.innerHTML = ['<option value="">' + placeholder + '</option>']
+      .concat(valores.map(function(v){ return '<option>' + escapeHtml(v) + '</option>'; }))
+      .join('');
+    if (valores.indexOf(actual) !== -1) sel.value = actual;
+  }
+
+  function construirUltimoYExploraReales(lic){
+    if (!lic || !lic.items || !lic.items.length) return null;
+    var items = lic.items.slice().sort(function(a, b){
+      return new Date(b.pubDate || '1970-01-01') - new Date(a.pubDate || '1970-01-01');
+    });
+
+    var feedHtml = '';
+    var storiesNuevas = {};
+    items.slice(0, 6).forEach(function(it, i){
+      var id = 'lic' + i;
+      var tagClase = tagClaseParaCategoria(it.procCategory);
+      var metricTxt = it.monto != null ? formatSoles(it.monto) : (it.tipoProc || 'Sin monto publicado');
+      feedHtml +=
+        '<button class="feed-item" data-story="' + id + '">' +
+          '<span class="tag ' + tagClase + '">' + escapeHtml(it.procCategory || 'Contratación') + '</span>' +
+          '<span><span class="feed-title">' + escapeHtml(it.title || it.objeto || 'Proceso de contratación') + '</span><br>' +
+            '<span class="feed-dek">' + escapeHtml(it.entidad || 'Entidad no especificada') + (it.region ? ' · ' + escapeHtml(it.region) : '') + '</span></span>' +
+          '<span class="feed-metric tabular">' + escapeHtml(metricTxt) + '</span>' +
+          '<span class="feed-time">' + tiempoRelativo(diasDesde(it.pubDate)) + '</span>' +
+        '</button>';
+
+      storiesNuevas[id] = {
+        tag: tagClase, tagLabel: it.procCategory || 'Contratación',
+        title: it.title || it.objeto || 'Proceso de contratación',
+        dek: it.objeto || it.title || '',
+        metric: metricTxt,
+        delta: it.code ? ('código ' + it.code) : null, deltaUp: null,
+        chart: [1,1,1,1,1],
+        meaning: 'Proceso de contratación pública publicado por ' + (it.entidad || 'la entidad convocante') + '.' + (it.dueDate ? (' El plazo de presentación vence el ' + it.dueDate + '.') : ''),
+        numbers: it.monto != null ? ('Monto referencial publicado por la entidad: ' + formatSoles(it.monto) + '.') : 'La entidad no publicó un monto referencial para este proceso.',
+        methodology: 'Dato tomado directamente del mirror OCDS (Open Contracting Data Standard) de las contrataciones públicas del Perú, sin cálculos adicionales — el mismo banco de datos que usa la sección Licitaciones de este sitio.',
+        source: { entidad: it.entidad || 'Entidad pública', dataset: 'Contrataciones públicas (OCDS)', updated: fmtFechaCorta(lic.generated_at), freq: 'Diaria', url: it.url || lic.source_url || '#' }
+      };
+    });
+
+    var exploraReal = items.map(function(it){
+      var diasCierre = diasHasta(it.dueDate);
+      return {
+        code: escapeHtml(it.code || it.id || '—'),
+        title: escapeHtml(it.title || it.objeto || 'Proceso de contratación'),
+        entidad: escapeHtml(it.entidad || 'Entidad no especificada'),
+        region: escapeHtml(it.region || 'No especificado'),
+        categoria: escapeHtml(it.procCategory || 'No especificado'),
+        estado: (diasCierre != null && diasCierre <= 5) ? 'Por cerrar' : 'Vigente',
+        monto: it.monto,
+        plazo: diasCierre == null ? 'sin fecha de cierre publicada' : (diasCierre <= 0 ? 'cierra hoy' : 'cierra en ' + diasCierre + (diasCierre === 1 ? ' día' : ' días'))
+      };
+    });
+
+    return { feedHtml: feedHtml, storiesNuevas: storiesNuevas, exploraReal: exploraReal, total: lic.total_count || items.length, generated_at: lic.generated_at };
+  }
+
+  function aplicarUltimoYExploraReales(r){
+    var lista = document.querySelector('#ultimo .feed-list');
+    if (lista) lista.innerHTML = r.feedHtml;
+    Object.keys(r.storiesNuevas).forEach(function(id){ STORIES[id] = r.storiesNuevas[id]; });
+    Array.prototype.forEach.call(document.querySelectorAll('#ultimo [data-story]'), function(el){
+      el.addEventListener('click', function(){ openStory(el.getAttribute('data-story')); });
+    });
+    var eyebrow = document.querySelector('#ultimo .eyebrow');
+    if (eyebrow) eyebrow.textContent = r.total.toLocaleString('es-PE') + ' procesos vigentes en todo el Perú · sincronizado ' + fmtFechaCorta(r.generated_at);
+
+    poblarFiltroSelect('fRegion', uniqueSorted(r.exploraReal.map(function(d){ return d.region; })), 'Región: todas');
+    poblarFiltroSelect('fCategoria', uniqueSorted(r.exploraReal.map(function(d){ return d.categoria; })), 'Categoría: todas');
+    EXPLORA_DATA = r.exploraReal;
+    renderExplora();
+
+    var exploraLede = document.querySelector('#explora .lede');
+    if (exploraLede) exploraLede.textContent = 'Investiga los ' + r.total.toLocaleString('es-PE') + ' procesos de contratación pública vigentes en el Perú — datos reales, actualizados a diario.';
+  }
+
   Promise.all([
     fetch('../data/mef.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
-    fetch('../data/contraloria.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
+    fetch('../data/contraloria.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
+    fetch('../licitaciones/data.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
   ]).then(function(res){
-    var mef = res[0], contraloria = res[1];
+    var mef = res[0], contraloria = res[1], licitaciones = res[2];
+    var partesReales = [];
+
+    // ---- Estelares (MEF + Contraloría) ----
     var reales = construirHistoriasReales(mef, contraloria);
     var idsReales = Object.keys(reales);
-    if (!idsReales.length) return; // ni un dato real disponible todavía — se queda la demo tal cual
+    if (idsReales.length) {
+      idsReales.forEach(function(id){ STORIES[id] = reales[id]; });
+      if (reales.s1) renderLeadCard('s1', reales.s1);
+      if (reales.s2) renderSecondaryCard('s2', reales.s2);
+      if (reales.s3) renderSecondaryCard('s3', reales.s3);
+      var masReciente = [mef, contraloria].filter(Boolean).map(function(d){ return d.generado_en; }).filter(Boolean).sort().pop();
+      document.getElementById('heroKickerText').textContent = 'Estelares · datos reales · ' + fmtFechaCorta(masReciente);
+      partesReales.push('Estelares');
+    }
 
-    idsReales.forEach(function(id){ STORIES[id] = reales[id]; });
-    if (reales.s1) renderLeadCard('s1', reales.s1);
-    if (reales.s2) renderSecondaryCard('s2', reales.s2);
-    if (reales.s3) renderSecondaryCard('s3', reales.s3);
+    // ---- Mapa (inversión, MEF) ----
+    if (typeof aplicarInversionRealAlMapa === 'function' && aplicarInversionRealAlMapa(mef)) {
+      partesReales.push('Mapa (inversión)');
+    }
 
-    var masReciente = [mef, contraloria].filter(Boolean).map(function(d){ return d.generado_en; }).filter(Boolean).sort().pop();
-    document.getElementById('heroKickerText').textContent = 'Estelares · datos reales · ' + fmtFechaCorta(masReciente);
+    // ---- Último y Explora (contrataciones, OCDS) ----
+    var resLic = construirUltimoYExploraReales(licitaciones);
+    if (resLic) {
+      aplicarUltimoYExploraReales(resLic);
+      partesReales.push('Último y Explora (contrataciones)');
+    }
 
-    var ribbon = document.getElementById('demoRibbon');
-    var faltantes = ['s1','s2','s3'].filter(function(id){ return idsReales.indexOf(id) === -1; });
-    ribbon.innerHTML = '🔶 Estelares usa <strong>datos reales</strong> de fuentes oficiales (revisa "Fuente" en cada historia). ' +
-      (faltantes.length ? 'El resto de Estelares, y Último / Explora / Mapa / Tu Perú, siguen en modo demostración con datos ficticios mientras se conectan más fuentes.' : 'Último, Explora, Mapa y Tu Perú siguen en modo demostración con datos ficticios mientras se conectan más fuentes.');
+    if (partesReales.length) {
+      var ribbon = document.getElementById('demoRibbon');
+      ribbon.innerHTML = '🔶 Datos reales activos: <strong>' + partesReales.join(' · ') + '</strong>. El resto de la página sigue en modo demostración con datos ficticios mientras se conectan más fuentes.';
+    }
   });
 
   /* ============ modal de historia ============ */
@@ -1170,16 +1355,62 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
           '<div class="item"><div class="k">Dataset</div><div class="v">' + s.source.dataset + '</div></div>' +
           '<div class="item"><div class="k">Última actualización</div><div class="v">' + s.source.updated + '</div></div>' +
           '<div class="item"><div class="k">Frecuencia</div><div class="v">' + s.source.freq + '</div></div>' +
-          '<a class="verfuente" href="' + s.source.url + '" onclick="return false;">Ver fuente oficial ↗</a>' +
+          (esUrlReal(s.source.url)
+            ? '<a class="verfuente" href="' + s.source.url + '" target="_blank" rel="noopener noreferrer">Ver fuente oficial ↗</a>'
+            : '<span class="verfuente" style="opacity:.5;cursor:not-allowed" title="Historia de demostración — todavía no tiene una fuente oficial real conectada">Ver fuente oficial ↗</span>') +
         '</div>' +
       '</div>' +
       '<div class="modal-share">' +
-        '<button type="button">WhatsApp</button><button type="button">Facebook</button><button type="button">X</button><button type="button">LinkedIn</button><button type="button">Copiar enlace</button>' +
+        '<button type="button" data-share="whatsapp">WhatsApp</button><button type="button" data-share="facebook">Facebook</button><button type="button" data-share="x">X</button><button type="button" data-share="linkedin">LinkedIn</button><button type="button" data-share="copiar">Copiar enlace</button>' +
       '</div>';
     document.getElementById('modalChart').innerHTML = sparklineSVG(s.chart, 'var(--oro)');
     document.getElementById('modalCloseBtn').addEventListener('click', closeStory);
+    wireShareButtons(s);
     veil.classList.add('open');
     document.body.style.overflow = 'hidden';
+  }
+  function esUrlReal(url){
+    return !!url && url !== '#';
+  }
+  function paginaPublica(){
+    // Compartir debe apuntar a la página de Humen Solutions que envuelve
+    // esta vista (el iframe), no al archivo interno app.html.
+    try {
+      if (window.top && window.top !== window && window.top.location && window.top.location.href) {
+        return window.top.location.href;
+      }
+    } catch (e) { /* origen cruzado: se usa la propia URL como respaldo */ }
+    return window.location.href;
+  }
+  function wireShareButtons(s){
+    var url = paginaPublica();
+    var texto = s.title + ' — Perú en Datos';
+    var acciones = {
+      whatsapp: 'https://wa.me/?text=' + encodeURIComponent(texto + ' ' + url),
+      facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url),
+      x: 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(texto) + '&url=' + encodeURIComponent(url),
+      linkedin: 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url)
+    };
+    Array.prototype.forEach.call(document.querySelectorAll('.modal-share [data-share]'), function(btn){
+      var tipo = btn.getAttribute('data-share');
+      btn.addEventListener('click', function(){
+        if (tipo === 'copiar') {
+          var terminar = function(ok){
+            var original = 'Copiar enlace';
+            btn.textContent = ok ? '¡Enlace copiado!' : 'No se pudo copiar';
+            setTimeout(function(){ btn.textContent = original; }, 1800);
+          };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(function(){ terminar(true); }).catch(function(){ terminar(false); });
+          } else {
+            terminar(false);
+          }
+          return;
+        }
+        var destino = acciones[tipo];
+        if (destino) window.open(destino, '_blank', 'noopener,noreferrer,width=600,height=600');
+      });
+    });
   }
   function closeStory(){
     veil.classList.remove('open');
@@ -1229,7 +1460,7 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
     { code:'LP-05-2026-MDL', title:'Construcción de losa deportiva multiusos', entidad:'Municipalidad Distrital de Loreto', region:'Loreto', categoria:'Obras', estado:'Vigente', monto:980000, plazo:'cierra en 6 días' },
     { code:'AS-19-2026-DRC', title:'Adquisición de mobiliario escolar para instituciones educativas', entidad:'Dirección Regional de Educación Cusco', region:'Cusco', categoria:'Bienes', estado:'Por cerrar', monto:410000, plazo:'cierra en 2 días' }
   ];
-  function money(n){ return 'S/ ' + n.toLocaleString('es-PE'); }
+  function money(n){ return n == null ? 'Monto no publicado' : 'S/ ' + n.toLocaleString('es-PE'); }
   function renderExplora(){
     var region = document.getElementById('fRegion').value;
     var categoria = document.getElementById('fCategoria').value;
@@ -1246,7 +1477,7 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
     document.getElementById('explCount').textContent = filtered.length + (filtered.length===1?' resultado':' resultados');
     grid.innerHTML = filtered.map(function(d){
       return '<div class="explora-card">' +
-        '<div class="top"><span class="code">' + d.code + '</span><span class="tag ' + (d.categoria==='Obras'?'obras':d.categoria==='Bienes'?'gobierno':d.categoria==='Servicios'?'economia':'empresas') + '">' + d.categoria + '</span></div>' +
+        '<div class="top"><span class="code">' + d.code + '</span><span class="tag ' + tagClaseParaCategoria(d.categoria) + '">' + d.categoria + '</span></div>' +
         '<h4>' + d.title + '</h4>' +
         '<div class="row"><span>' + d.entidad + '</span></div>' +
         '<div class="row"><span class="amt tabular">' + money(d.monto) + '</span><span>' + d.region + ' · ' + d.plazo + '</span></div>' +
@@ -1288,17 +1519,48 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
       tendencia: (hashNum(name,53) % 2 === 0 ? '▲ ' : '▼ ') + (3 + (hashNum(name,11)%30)) + '%'
     };
   }
+
+  // Inversión real (MEF): se llena solo si la sincronización trajo
+  // top_regiones_por_monto. Mientras no haya dato real para una región
+  // puntual, esa región se queda con el estimado de demo (nunca se inventa
+  // un número "real" a medias) — ver aplicarInversionRealAlMapa() más abajo.
+  var regionInversionReal = null; // { 'lima': 61234567890.12, ... }
+
+  function normalizarNombre(s){
+    return (s || '').toString()
+      .normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  }
+
+  function inversionRealPara(nombreTile){
+    if (!regionInversionReal) return null;
+    // Un tile puede representar más de una región real del MEF a la vez
+    // (ej. "Lima · Callao") — se suman las partes que sí tengan dato real.
+    var partes = nombreTile.split('·').map(normalizarNombre);
+    var total = 0, encontrado = false;
+    partes.forEach(function(p){
+      if (regionInversionReal[p] != null) { total += regionInversionReal[p]; encontrado = true; }
+    });
+    return encontrado ? total : null;
+  }
+
   var mapaPanel = document.getElementById('mapaPanel');
+  var regionActiva = 'Cusco';
   function selectRegion(name){
+    regionActiva = name;
     Array.prototype.forEach.call(regionGrid.querySelectorAll('.region-tile'), function(t){
       t.classList.toggle('active', t.getAttribute('data-region') === name);
     });
     var st = regionStats(name);
+    var invReal = inversionRealPara(name);
+    var inversionHtml = invReal != null
+      ? '<div class="mapa-stat"><span class="label">Inversión ejecutada 2025 (MEF, real)</span><span class="value tabular">' + formatSoles(invReal) + '</span></div>'
+      : '<div class="mapa-stat"><span class="label">Inversión referencial (demo)</span><span class="value tabular">S/ ' + st.inversion + '</span></div>';
     mapaPanel.innerHTML =
       '<div class="region-name">' + name + '</div>' +
-      '<div class="region-sub">Datos demo · actualizado hoy</div>' +
+      '<div class="region-sub">' + (invReal != null ? 'Inversión: dato real del MEF · el resto de esta ficha sigue en demo' : 'Datos demo · actualizado hoy') + '</div>' +
       '<div class="mapa-stat"><span class="label">Contrataciones vigentes</span><span class="value tabular">' + st.contrataciones + '</span></div>' +
-      '<div class="mapa-stat"><span class="label">Inversión referencial</span><span class="value tabular">S/ ' + st.inversion + '</span></div>' +
+      inversionHtml +
       '<div class="mapa-stat"><span class="label">Población</span><span class="value tabular">' + st.poblacion + '</span></div>' +
       '<div class="mapa-stat"><span class="label">Tendencia trimestral</span><span class="value tabular">' + st.tendencia + '</span></div>';
   }
@@ -1314,6 +1576,17 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
       btn.classList.add('active');
     });
   });
+
+  function aplicarInversionRealAlMapa(mef){
+    if (!mef || mef.estado !== 'ok' || !mef.top_regiones_por_monto) return false;
+    var mapa = {};
+    mef.top_regiones_por_monto.forEach(function(r){
+      mapa[normalizarNombre(r.region)] = r.monto_devengado;
+    });
+    regionInversionReal = mapa;
+    selectRegion(regionActiva); // re-dibuja la ficha activa con el dato real si aplica
+    return true;
+  }
 
   /* ============ Tu Perú: intereses ============ */
   var INTERESES = ['Cusco','Economía','Obras','Empresas','Gobierno','Trabajo','Educación','Salud'];
