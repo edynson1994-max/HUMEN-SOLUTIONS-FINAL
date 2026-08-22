@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Buscador de Licitaciones | HUMEN SOLUTIONS</title>
+
+    <meta name="description"
+        content="Convocatorias de licitación pública del Perú filtradas para contabilidad, inventarios físicos y reclutamiento de personal — herramienta interna de HUMEN SOLUTIONS.">
+
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS del sitio (mismo sistema de marca) -->
+    <link rel="stylesheet" href="../css/style.css?v=3">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="licitaciones.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="shortcut icon" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/favicon.png">
+
+</head>
+
+<body class="licitaciones-page">
+
+    <!-- ========================= -->
+    <!-- HEADER (idéntico al del sitio principal) -->
+    <!-- ========================= -->
+    <header id="header">
+
+        <div class="container">
+
+            <a href="../index.html" class="logo">
+                <img src="../images/logo-header-new.png" alt="HUMEN SOLUTIONS" width="1571" height="465"
+                    class="logo-icon">
+            </a>
+
+            <nav>
+                <ul class="menu">
+                    <li><a href="../index.html#inicio">Inicio</a></li>
+                    <li><a href="../index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html" style="color:var(--primary)">Licitaciones</a></li>
+                    <li><a href="../index.html#beneficios">Beneficios</a></li>
+                    <li><a href="../index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <a href="../index.html#contacto" class="btn-primary btn-header-cta">
+                Cotiza con nosotros
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </a>
+
+            <button class="menu-mobile">☰</button>
+
+        </div>
+
+    </header>
+
+    <main class="licitaciones-main">
+        <div class="lic-shell">
+
+            <div class="lic-breadcrumb">
+                <a href="../index.html">Inicio</a><span>/</span><span class="current">Buscador de licitaciones</span>
+            </div>
+
+            <div class="lic-header">
+                <div>
+                    <span class="lic-eyebrow">Herramienta interna</span>
+                    <h1>Buscador de licitaciones</h1>
+                    <p>Contabilidad y auditoría, inventarios físicos y reclutamiento de personal — convocatorias del
+                        Estado peruano filtradas para lo que ofrecemos.</p>
+                </div>
+                <div class="lic-updated" id="updatedNote">Cargando…</div>
+            </div>
+
+            <div class="lic-attrib" id="attribBanner"></div>
+
+            <div id="stateArea"></div>
+
+            <div id="mainArea" style="display:none">
+                <div class="lic-stats" id="stats"></div>
+
+                <div class="lic-controls">
+                    <div class="lic-searchrow">
+                        <div class="lic-searchbox">
+                            <svg width="16" height="16" viewBox="0 0 15 15" fill="none">
+                                <circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.4" />
+                                <path d="M10.3 10.3L14 14" stroke="currentColor" stroke-width="1.4"
+                                    stroke-linecap="round" />
+                            </svg>
+                            <input id="q" type="text" placeholder="Buscar por palabra clave, entidad o código de proceso…"
+                                autocomplete="off" />
+                        </div>
+                        <select id="tipo"><option value="">Todo tipo de proceso</option></select>
+                        <select id="region"><option value="">Todo el Perú</option></select>
+                        <select id="estado">
+                            <option value="">Cualquier plazo</option>
+                            <option value="urgent">Cierra en ≤ 3 días</option>
+                            <option value="soon">Cierra en ≤ 7 días</option>
+                            <option value="ok">Más de 7 días</option>
+                        </select>
+                    </div>
+
+                    <div class="lic-chiprow" id="chips"></div>
+
+                    <div class="lic-sortrow">
+                        <span class="flabel">Ordenar</span>
+                        <select id="orden">
+                            <option value="plazo">Plazo más próximo primero</option>
+                            <option value="monto-desc">Monto referencial (mayor a menor)</option>
+                            <option value="monto-asc">Monto referencial (menor a mayor)</option>
+                            <option value="reciente">Publicación más reciente</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="lic-resultsmeta"><b id="countnum">0</b> convocatorias encontradas</div>
+                <div class="lic-list" id="list"></div>
+            </div>
+
+            <div class="lic-footer">
+                <span>HUMEN SOLUTIONS SACS</span>
+                <span id="footerAttrib"></span>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="lic-veil" id="veil">
+        <div class="lic-panel" id="panel"></div>
+    </div>
+
+    <script>
+    (function(){
+        /* Menú móvil + sombra de header al hacer scroll — mismo comportamiento que el sitio principal */
+        var header = document.querySelector("#header");
+        var menu = document.querySelector(".menu");
+        var menuButton = document.querySelector(".menu-mobile");
+        if (menuButton && menu) {
+            menuButton.addEventListener("click", function(){
+                menu.classList.toggle("active");
+                menuButton.classList.toggle("active");
+            });
+        }
+        window.addEventListener("scroll", function(){
+            if (window.scrollY > 80) header.classList.add("scrolled");
+            else header.classList.remove("scrolled");
+        });
+    })();
+    </script>
+
+    <script>
+    (function(){
+      var CATS = {
+        cont: { label:"Contabilidad y Auditoría" },
+        inv:  { label:"Inventarios Físicos"       },
+        rec:  { label:"Reclutamiento y Personal"  }
+      };
+
+      var DATA = [];
+      var activeCat = "";
+      var today = new Date();
+
+      function parseDate(s){ return s ? new Date(s + "T00:00:00") : null; }
+      function fmtDate(dt){
+        if (!dt) return "sin fecha";
+        var meses = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+        return dt.getDate()+" "+meses[dt.getMonth()]+" "+dt.getFullYear();
+      }
+      function daysLeft(d){ return d.dueDate ? Math.round((d.dueDate - today) / 86400000) : null; }
+      function urgency(d){
+        var n = daysLeft(d);
+        if (n === null) return "unknown";
+        if (n <= 3) return "urgent";
+        if (n <= 7) return "soon";
+        return "ok";
+      }
+      function badgeLabel(d){
+        var n = daysLeft(d);
+        if (n === null) return "sin fecha límite";
+        if (n <= 0) return "cierra hoy";
+        if (n === 1) return "cierra en 1 día";
+        return "cierra en "+n+" días";
+      }
+      function money(item){
+        if (item.monto == null) return null;
+        var cur = item.moneda === "PEN" ? "S/" : (item.moneda || "");
+        return cur + " " + Math.round(item.monto).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+
+      function uniqueSorted(field){
+        var set = {};
+        DATA.forEach(function(d){ if (d[field] && d[field] !== "No especificado") set[d[field]] = true; });
+        return Object.keys(set).sort();
+      }
+
+      function populateSelects(){
+        var tipoSel = document.getElementById("tipo");
+        uniqueSorted("tipoProc").forEach(function(t){ var o=document.createElement("option"); o.value=t; o.textContent=t; tipoSel.appendChild(o); });
+        var regionSel = document.getElementById("region");
+        uniqueSorted("region").forEach(function(r){ var o=document.createElement("option"); o.value=r; o.textContent=r; regionSel.appendChild(o); });
+      }
+
+      function renderChips(){
+        var counts = { "": DATA.length, cont:0, inv:0, rec:0 };
+        DATA.forEach(function(d){ counts[d.cat]++; });
+        var html = '<span class="lic-chip'+(activeCat===""?" active":"")+'" data-cat="">Todas <span class="count">'+counts[""]+'</span></span>';
+        Object.keys(CATS).forEach(function(c){
+          html += '<span class="lic-chip'+(activeCat===c?" active":"")+'" data-cat="'+c+'">'+CATS[c].label+' <span class="count">'+counts[c]+'</span></span>';
+        });
+        var chipsEl = document.getElementById("chips");
+        chipsEl.innerHTML = html;
+        Array.prototype.forEach.call(chipsEl.querySelectorAll(".lic-chip"), function(el){
+          el.addEventListener("click", function(){ activeCat = el.getAttribute("data-cat"); renderChips(); renderList(); });
+        });
+      }
+
+      function renderStats(){
+        var vigentes = DATA.length;
+        var estaSemana = DATA.filter(function(d){ var n=daysLeft(d); return n!==null && n<=7; }).length;
+        var nuevas = DATA.filter(function(d){ return d.pubDate && (today - d.pubDate)/86400000 <= 7; }).length;
+        var montoTotal = DATA.reduce(function(a,d){ return a + (d.monto || 0); }, 0);
+        document.getElementById("stats").innerHTML =
+          '<div class="lic-stat"><div class="n">'+vigentes+'</div><div class="l">Convocatorias vigentes</div></div>'+
+          '<div class="lic-stat urgent"><div class="n">'+estaSemana+'</div><div class="l">Cierran en 7 días o menos</div></div>'+
+          '<div class="lic-stat"><div class="n">'+nuevas+'</div><div class="l">Publicadas últimos 7 días</div></div>'+
+          '<div class="lic-stat"><div class="n">S/ '+Math.round(montoTotal).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'</div><div class="l">Monto referencial acumulado</div></div>';
+      }
+
+      function matches(d){
+        var q = document.getElementById("q").value.trim().toLowerCase();
+        var tipo = document.getElementById("tipo").value;
+        var region = document.getElementById("region").value;
+        var estado = document.getElementById("estado").value;
+        if (activeCat && d.cat !== activeCat) return false;
+        if (tipo && d.tipoProc !== tipo) return false;
+        if (region && d.region !== region) return false;
+        if (estado && urgency(d) !== estado) return false;
+        if (q){
+          var hay = ((d.title||"")+" "+(d.entidad||"")+" "+(d.code||"")+" "+(d.region||"")).toLowerCase();
+          if (hay.indexOf(q) === -1) return false;
+        }
+        return true;
+      }
+
+      function sortData(arr){
+        var orden = document.getElementById("orden").value;
+        arr = arr.slice();
+        if (orden === "plazo") arr.sort(function(a,b){
+          if (a.dueDate === null) return 1;
+          if (b.dueDate === null) return -1;
+          return a.dueDate - b.dueDate;
+        });
+        else if (orden === "monto-desc") arr.sort(function(a,b){ return (b.monto||0) - (a.monto||0); });
+        else if (orden === "monto-asc") arr.sort(function(a,b){ return (a.monto||0) - (b.monto||0); });
+        else if (orden === "reciente") arr.sort(function(a,b){ return (b.pubDate||0) - (a.pubDate||0); });
+        return arr;
+      }
+
+      function renderList(){
+        var filtered = sortData(DATA.filter(matches));
+        document.getElementById("countnum").textContent = filtered.length;
+        var listEl = document.getElementById("list");
+        if (!filtered.length){
+          listEl.innerHTML = '<div class="lic-empty">No hay convocatorias que coincidan con estos filtros. Prueben ajustando la búsqueda o el plazo.</div>';
+          return;
+        }
+        var stripeVar = { urgent:"var(--urgent)", soon:"var(--soon)", ok:"var(--ok)", unknown:"var(--border)" };
+        listEl.innerHTML = filtered.map(function(d){
+          var u = urgency(d);
+          var m = money(d);
+          return '' +
+            '<div class="lic-card" data-id="'+d._idx+'">' +
+              '<div class="stripe" style="--stripe:'+stripeVar[u]+'"></div>' +
+              '<div class="lic-card-main">' +
+                '<div class="lic-toprow">' +
+                  '<span class="lic-code">'+(d.code||"")+'</span>' +
+                  '<span class="lic-tag proc">'+d.tipoProc+'</span>' +
+                  '<span class="lic-tag cat">'+CATS[d.cat].label+'</span>' +
+                '</div>' +
+                '<h3>'+d.title+'</h3>' +
+                '<div class="meta">'+d.entidad+'<span class="sep">·</span>'+d.region+'</div>' +
+              '</div>' +
+              '<div class="lic-card-side">' +
+                (m ? '<div class="lic-amount">'+m+'</div>' : '<div class="lic-amount unknown">monto no publicado</div>') +
+                '<div class="lic-deadline">' +
+                  '<div class="lic-badge '+u+'">'+badgeLabel(d)+'</div>' +
+                  '<div class="date">'+(d.dueDate ? 'límite '+fmtDate(d.dueDate) : '')+'</div>' +
+                '</div>' +
+                '<button class="lic-detailbtn" type="button">Ver detalle</button>' +
+              '</div>' +
+            '</div>';
+        }).join("");
+
+        Array.prototype.forEach.call(listEl.querySelectorAll(".lic-card"), function(card){
+          card.addEventListener("click", function(){
+            openDetail(DATA[parseInt(card.getAttribute("data-id"), 10)]);
+          });
+        });
+      }
+
+      function openDetail(d){
+        var u = urgency(d);
+        document.getElementById("panel").innerHTML =
+          '<div class="lic-panel-top">' +
+            '<div><span class="lic-code">'+(d.code||"")+'</span><h2>'+d.title+'</h2></div>' +
+            '<button class="lic-closebtn" id="closeBtn" aria-label="Cerrar">×</button>' +
+          '</div>' +
+          '<div class="lic-toprow">' +
+            '<span class="lic-tag proc">'+d.tipoProc+'</span>' +
+            '<span class="lic-tag cat">'+CATS[d.cat].label+'</span>' +
+            '<span class="lic-badge '+u+'">'+badgeLabel(d)+'</span>' +
+          '</div>' +
+          '<dl>' +
+            '<dt>Entidad convocante</dt><dd>'+d.entidad+'</dd>' +
+            '<dt>Región</dt><dd>'+d.region+'</dd>' +
+            '<dt>Monto referencial</dt><dd>'+(money(d) || "no publicado")+'</dd>' +
+            '<dt>Fecha de publicación</dt><dd>'+(d.pubDate ? fmtDate(d.pubDate) : "no publicada")+'</dd>' +
+            '<dt>Fecha límite</dt><dd>'+(d.dueDate ? fmtDate(d.dueDate) : "no publicada")+'</dd>' +
+          '</dl>' +
+          '<p class="obj">'+d.objeto+'</p>' +
+          (d.url ? '<p class="lic-panel-link"><a href="'+d.url+'" target="_blank" rel="noopener">Ver documento fuente ↗</a></p>' : '');
+        document.getElementById("veil").classList.add("open");
+        document.getElementById("closeBtn").addEventListener("click", closeDetail);
+      }
+      function closeDetail(){ document.getElementById("veil").classList.remove("open"); }
+      document.getElementById("veil").addEventListener("click", function(e){ if (e.target.id==="veil") closeDetail(); });
+      document.addEventListener("keydown", function(e){ if (e.key==="Escape") closeDetail(); });
+
+      ["q","tipo","region","estado","orden"].forEach(function(id){
+        var el = document.getElementById(id);
+        el.addEventListener("input", renderList);
+        el.addEventListener("change", renderList);
+      });
+
+      function showState(html, isError){
+        document.getElementById("stateArea").innerHTML = '<div class="lic-state'+(isError?" error":"")+'">'+html+'</div>';
+        document.getElementById("mainArea").style.display = "none";
+      }
+
+      fetch("./data.json", { cache: "no-store" })
+        .then(function(r){ if (!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
+        .then(function(json){
+          DATA = (json.items || []).map(function(item, idx){
+            return Object.assign({}, item, {
+              _idx: idx,
+              dueDate: parseDate(item.dueDate),
+              pubDate: parseDate(item.pubDate)
+            });
+          });
+
+          var attribBanner = document.getElementById("attribBanner");
+          if (json.attribution){
+            attribBanner.innerHTML = json.attribution + (json.source_url ? ' — <a href="'+json.source_url+'" target="_blank" rel="noopener">ver fuente</a>' : '');
+          } else {
+            attribBanner.style.display = "none";
+          }
+          document.getElementById("footerAttrib").textContent = json.source_url ? "Fuente: " + json.source_url : "";
+
+          var updatedNote = document.getElementById("updatedNote");
+          if (json.generated_at){
+            var gen = new Date(json.generated_at);
+            updatedNote.innerHTML = "Actualizado: <b>"+fmtDate(gen)+", "+gen.getHours().toString().padStart(2,"0")+":"+gen.getMinutes().toString().padStart(2,"0")+"</b>";
+          } else {
+            updatedNote.textContent = "Aún sin sincronizar";
+          }
+
+          if (!DATA.length){
+            showState(
+              "Todavía no hay convocatorias sincronizadas. " +
+              (json.generated_at
+                ? "La última sincronización no encontró procesos vigentes que coincidan con las 3 líneas de negocio — vuelve a intentarlo más tarde."
+                : "Ejecuta el workflow «Sincronizar licitaciones» en GitHub Actions (o espera a la corrida programada) para traer la primera tanda de datos."),
+              false
+            );
+            return;
+          }
+
+          document.getElementById("stateArea").innerHTML = "";
+          document.getElementById("mainArea").style.display = "block";
+          populateSelects();
+          renderChips();
+          renderStats();
+          renderList();
+        })
+        .catch(function(err){
+          showState("No se pudo cargar data.json (" + err.message + "). Si acabas de publicar el sitio, corre el workflow de sincronización al menos una vez.", true);
+        });
+    })();
+    </script>
+
+</body>
+</html>
