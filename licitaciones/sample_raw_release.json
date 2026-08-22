@@ -1,0 +1,128 @@
+{
+  "id": "ocds-dgv273-seacev3-1235225-2026-08-04T10:21:13.317563-05:00",
+  "tag": [
+    "compiled"
+  ],
+  "date": "2026-08-04T10:21:13.317550-05:00",
+  "ocid": "ocds-dgv273-seacev3-1235225",
+  "buyer": {
+    "id": "PE-CONSUCODE-10249",
+    "name": "FUERZA AEREA DEL PERU"
+  },
+  "tender": {
+    "id": "1235225",
+    "items": [
+      {
+        "id": "21333746",
+        "unit": {
+          "id": "40",
+          "name": "Unidad",
+          "scheme": "PE-SEACE3-UnidadMedida"
+        },
+        "status": "active",
+        "position": "1",
+        "quantity": 216.0,
+        "totalValue": {
+          "amount": 0.0,
+          "currency": "PEN",
+          "currencyName": "Soles"
+        },
+        "description": "ADQUISICIÓN DE MATERIAL MISCELÁNEO PARA EL MANTENIMIENTO E INSPECCIONES DE LAS FLOTAS AÉREAS PP-032/PP-135",
+        "statusDetails": "CONVOCADO"
+      }
+    ],
+    "title": "LP-SM-7-2026-FAP/SEBAT-1",
+    "value": {
+      "amount": 0.0,
+      "currency": "PEN",
+      "amount_PEN": 0.0,
+      "currencyName": "Soles"
+    },
+    "documents": [
+      {
+        "id": "24831474986046141",
+        "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=ba89305e-92e2-4d79-bbbb-3ec17c8068b2",
+        "title": "Bases Administrativas",
+        "format": "docx",
+        "language": "es",
+        "documentType": "biddingDocuments",
+        "datePublished": "2026-08-03T18:26:00-05:00"
+      }
+    ],
+    "description": "ADQUISICIÓN DE MATERIAL MISCELÁNEO PARA EL MANTENIMIENTO E INSPECCIONES DE LAS FLOTAS AÉREAS PP-032/PP-135",
+    "tenderPeriod": {
+      "endDate": "2026-08-03T00:00:00-05:00",
+      "startDate": "2026-08-03T00:00:00-05:00"
+    },
+    "datePublished": "2026-08-03T18:26:00-05:00",
+    "enquiryPeriod": {
+      "endDate": "2026-08-13T23:59:00-05:00",
+      "startDate": "2026-08-04T00:01:00-05:00",
+      "durationInDays": 9
+    },
+    "procuringEntity": {
+      "id": "PE-CONSUCODE-10249",
+      "name": "FUERZA AEREA DEL PERU"
+    },
+    "procurementMethod": "open",
+    "mainProcurementCategory": "goods",
+    "procurementMethodDetails": "Licitación Pública",
+    "additionalProcurementCategories": [
+      "goods"
+    ],
+    "hasTenderInformationProtectedByLaw": false
+  },
+  "parties": [
+    {
+      "id": "PE-CONSUCODE-10249",
+      "name": "FUERZA AEREA DEL PERU",
+      "roles": [
+        "buyer",
+        "procuringEntity"
+      ],
+      "address": {
+        "region": "LIMA",
+        "locality": "JESUS MARIA",
+        "department": "LIMA",
+        "countryName": "PERU",
+        "streetAddress": "CAMPO DE MARTE LIMA"
+      },
+      "identifier": {
+        "id": "10249",
+        "scheme": "PE-CONSUCODE",
+        "legalName": "FUERZA AEREA DEL PERU"
+      },
+      "contactPoint": {
+        "telephone": "000000"
+      },
+      "additionalIdentifiers": [
+        {
+          "id": "20144364059",
+          "scheme": "PE-RUC",
+          "legalName": "FUERZA AEREA DEL PERU"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "seace_v3",
+      "url": "https://prodapp2.seace.gob.pe/seacebus-uiwd-pub/buscadorPublico/buscadorPublico.xhtml",
+      "name": "Sistema Electrónico de Contrataciones del Estado - Versión 3"
+    }
+  ],
+  "planning": {
+    "budget": {
+      "description": "Fondos Públicos"
+    }
+  },
+  "publishedDate": "2026-08-04T10:21:13.317569-05:00",
+  "initiationType": "tender",
+  "dataSegmentation": {
+    "id": "2026-08",
+    "criteria": [
+      "añoInicioConvocatoria",
+      "mesInicioConvocatoria"
+    ]
+  }
+}
