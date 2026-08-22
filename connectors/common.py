@@ -34,6 +34,31 @@ conocido. Los ids/URLs usados por cada conector se obtuvieron navegando el
 catálogo manualmente (vía búsqueda web, ya que `/search/` está bloqueado por
 robots.txt) y verificando cada página de dataset con fetch real — no son
 adivinados.
+
+ACTUALIZACIÓN — Data API (datastore) confirmada por el instructivo oficial
+--------------------------------------------------------------------------
+El "Instructivo para el Registro de Datasets en la Plataforma Nacional de
+Datos Abiertos" (PCM/Secretaría de Gobierno Digital, 2021) confirma que la
+plataforma es DKAN y que cada RECURSO (no cada dataset) puede tener una
+"Data API" propia — un botón que aparece junto a "Descargar" cuando el
+recurso se registró con la opción "Grilla" activada al subirlo. Eso es
+exactamente el endpoint `api/action/datastore/search.json?resource_id=...`
+que antes se probó y pareció roto — pero se probó con un resource_id
+adivinado/incorrecto, no con uno real. Ahora sí se puede intentar bien:
+
+  1. `package_show(<slug o id del dataset>)` (ya confirmado funcional)
+     devuelve `result["resources"]`, una lista donde cada recurso trae su
+     propio `id` (el resource_id real) y su `url` de descarga actual.
+  2. Con ese `id` real, `datastore_search_all()` intenta la Data API.
+  3. Si el recurso NO tiene datastore activado (no todos lo tienen — solo
+     los que se subieron con "Grilla" marcada), la API responde con error
+     y el conector debe caer de vuelta a descargar el archivo y parsearlo
+     como CSV — nunca asumir que existe.
+
+Esto NO requiere usuario ni clave: el login que pide el instructivo es solo
+para las entidades que PUBLICAN datasets nuevos (sección "Iniciar sesión"),
+no para leer datos públicos ya publicados — package_show y datastore_search
+son de lectura pública, sin autenticación.
 """
 
 import csv
@@ -47,6 +72,7 @@ import urllib.error
 import urllib.request
 
 PNDA_API = "https://www.datosabiertos.gob.pe/api/3/action/package_show"
+PNDA_DATASTORE_API = "https://www.datosabiertos.gob.pe/api/action/datastore/search.json"
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 PeruEnDatos/1.0"
@@ -84,13 +110,80 @@ def http_get(url, timeout=60, max_retries=3, stream=False):
 def package_show(dataset_id):
     """Llama a la API CKAN/DKAN de metadatos (package_show) — la única de
     búsqueda/consulta confirmada funcional en este portal (package_search y
-    datastore/search.json están rotos o no enrutados, verificado)."""
-    url = f"{PNDA_API}?id={dataset_id}"
+    datastore/search.json están rotos o no enrutados, verificado).
+
+    `dataset_id` puede venir con tildes/ñ sin codificar (algunos slugs de
+    este portal las tienen, ej. "información-general-...") — se
+    codifica aquí con quote() antes de armar la URL. Sin esto, urlopen()
+    revienta con UnicodeEncodeError en cuanto la URL tiene un caracter no
+    ASCII (confirmado corriendo esto de verdad, no solo con mocks)."""
+    from urllib.parse import quote
+    url = f"{PNDA_API}?id={quote(dataset_id, safe='')}"
     resp = http_get(url)
     payload = json.loads(resp.read().decode("utf-8"))
     if not payload.get("success"):
         raise RuntimeError(f"package_show para {dataset_id} respondió success=false")
     return payload["result"]
+
+
+def datastore_search_all(resource_id, page_size=5000, max_records=None):
+    """Pagina sobre la Data API real (datastore/search.json) para un
+    resource_id concreto y devuelve TODOS los registros ya como dicts
+    (nombre de columna -> valor), sin necesidad de parsear CSV a mano.
+
+    Confirmado como mecanismo real por el instructivo oficial (ver el
+    aviso arriba en este archivo) — pero solo funciona para recursos que
+    se registraron con datastore activado. Si el recurso no lo tiene,
+    esto lanza una excepción (típicamente con success=false o un error de
+    HTTP) y quien llama debe usar la descarga directa + CSV como respaldo.
+
+    `max_records` corta la paginación temprano (útil para no bajar
+    millones de filas de un recurso enorme por esta vía — para eso sigue
+    siendo mejor el streaming de archivo directo)."""
+    offset = 0
+    records = []
+    fields = None
+    while True:
+        limit = page_size
+        if max_records:
+            limit = min(limit, max_records - len(records))
+            if limit <= 0:
+                break
+        from urllib.parse import quote
+        url = f"{PNDA_DATASTORE_API}?resource_id={quote(str(resource_id), safe='')}&limit={limit}&offset={offset}"
+        resp = http_get(url)
+        payload = json.loads(resp.read().decode("utf-8"))
+        if not payload.get("success"):
+            raise RuntimeError(f"datastore_search para {resource_id} respondió success=false: {payload.get('error')}")
+        result = payload["result"]
+        if fields is None:
+            fields = [f["id"] for f in result.get("fields", []) if f.get("id") != "_id"]
+        batch = result.get("records", [])
+        records.extend(batch)
+        if not batch or len(batch) < limit:
+            break
+        offset += limit
+        if max_records and len(records) >= max_records:
+            break
+    return {"fields": fields or [], "records": records}
+
+
+def find_resource(dataset_result, hint=None, formato=None):
+    """Dado el `result` de package_show(), elige un recurso de su lista
+    `resources`. Si `hint` se da, prioriza el recurso cuyo nombre/título
+    contiene ese texto (normalizado); si `formato` se da, filtra por
+    formato (csv, xlsx, etc., insensible a mayúsculas). Devuelve el primer
+    recurso que matchee, o None si no hay ninguno — nunca inventa uno."""
+    resources = dataset_result.get("resources", []) or []
+    candidatos = resources
+    if formato:
+        candidatos = [r for r in candidatos if normalize(r.get("format", "")) == normalize(formato)] or candidatos
+    if hint:
+        hint_n = normalize(hint)
+        con_hint = [r for r in candidatos if hint_n in normalize(r.get("name", "") + " " + r.get("title", ""))]
+        if con_hint:
+            return con_hint[0]
+    return candidatos[0] if candidatos else None
 
 
 def download_to_file(url, dest_path, max_bytes=None):

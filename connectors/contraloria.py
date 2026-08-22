@@ -18,19 +18,43 @@ no auditorías) publicados en PNDA, confirmados por dos vías independientes
   - Información general de los monitores:
     https://www.datosabiertos.gob.pe/dataset/informaci%C3%B3n-general-de-los-monitores-ciudadanos-de-control
 
-No se pudo leer el contenido real de estos CSV desde el entorno donde se
-escribió este conector (ver common.py) — así que las columnas se detectan
-en tiempo de ejecución, no se asumen. Corre esto una vez con salida de red
-real (GitHub Actions) y revisa `columnas_detectadas` en el JSON de salida
-para confirmar que la detección funcionó.
+ESTRATEGIA DE 3 NIVELES (ver aviso "Data API" en common.py)
+-------------------------------------------------------------
+Para cada dataset se intenta, en orden, cayendo al siguiente solo si el
+anterior falla:
+
+  1. Data API real (datastore/search.json) sobre el resource_id que
+     devuelve package_show — la vía más limpia, sin parsear CSV a mano,
+     PERO solo funciona si ese recurso se registró con datastore activado.
+  2. Descarga directa de la URL que package_show reporta como actual para
+     ese recurso (más confiable que una URL fija porque viene de la fuente
+     de verdad en el momento de la corrida, no de lo que se capturó al
+     escribir este conector).
+  3. Descarga directa de la URL fija verificada abajo (csv_url), por si
+     package_show mismo falla (por ejemplo si el "slug" del dataset
+     cambió).
+
+En cualquiera de los 3 casos, las columnas se detectan en tiempo de
+ejecución, nunca se asumen fijas — y el resultado incluye "metodo" para
+que quede claro cuál de los 3 niveles funcionó en cada corrida real.
 """
 
 import io
 import os
 import sys
+from urllib.parse import unquote, urlparse
 
 sys.path.insert(0, os.path.dirname(__file__))
-from common import detect_column, download_to_file, http_get, normalize, sniff_csv_reader, write_summary
+from common import (
+    datastore_search_all,
+    detect_column,
+    find_resource,
+    http_get,
+    normalize,
+    package_show,
+    sniff_csv_reader,
+    write_summary,
+)
 
 OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "contraloria.json")
 
@@ -51,17 +75,23 @@ REGION_CANDIDATES = ["departamento", "region", "dpto", "ubigeo departamento"]
 FECHA_CANDIDATES = ["fecha", "anio", "año", "periodo", "fecha de intervencion"]
 
 
-def process_csv(csv_bytes, titulo):
-    text = csv_bytes.decode("utf-8-sig", errors="replace")
-    reader = sniff_csv_reader(io.StringIO(text))
-    fieldnames = reader.fieldnames or []
+def dataset_slug(dataset_url):
+    """El 'id' que espera package_show — el último segmento de la URL del
+    dataset, decodificado (el propio portal usa el alias con acentos
+    codificados como parte del slug, ej. 'informaci%C3%B3n-general-...')."""
+    path = urlparse(dataset_url).path
+    return unquote(path.rstrip("/").split("/")[-1])
 
+
+def process_rows(rows, fieldnames, titulo):
+    """Núcleo de la agregación — funciona igual si las filas vinieron de
+    parsear un CSV a mano o ya vinieron como dicts de la Data API."""
     region_col = detect_column(fieldnames, REGION_CANDIDATES)
     fecha_col = detect_column(fieldnames, FECHA_CANDIDATES)
 
     total = 0
     por_region = {}
-    for row in reader:
+    for row in rows:
         total += 1
         if region_col:
             val = (row.get(region_col) or "").strip().title()
@@ -80,28 +110,83 @@ def process_csv(csv_bytes, titulo):
     }
 
 
+def process_csv(csv_bytes, titulo):
+    text = csv_bytes.decode("utf-8-sig", errors="replace")
+    reader = sniff_csv_reader(io.StringIO(text))
+    fieldnames = reader.fieldnames or []
+    return process_rows(reader, fieldnames, titulo)
+
+
+def procesar_dataset(ds):
+    """Intenta los 3 niveles en orden. Devuelve el dict de resultado (con
+    'estado' y 'metodo') — nunca lanza, cualquier fallo total queda
+    reflejado como estado":"error"."""
+
+    # Nivel 1 y 2 dependen de package_show — si eso falla, se salta directo
+    # al nivel 3 con la URL fija.
+    resource = None
+    try:
+        slug = dataset_slug(ds["dataset_url"])
+        pkg = package_show(slug)
+        resource = find_resource(pkg, formato="csv")
+    except Exception as exc:
+        print(f"  package_show falló para {ds['titulo']} ({exc}) — se usará la URL fija.", file=sys.stderr)
+
+    if resource is not None:
+        # Nivel 1: Data API (datastore) sobre el resource_id real.
+        try:
+            resource_id = resource.get("id")
+            print(f"  Probando Data API (datastore) para resource_id={resource_id} ...", file=sys.stderr)
+            ds_data = datastore_search_all(resource_id)
+            if not ds_data["records"]:
+                raise RuntimeError("la Data API respondió sin registros")
+            parsed = process_rows(ds_data["records"], ds_data["fields"], ds["titulo"])
+            parsed["metodo"] = "data_api"
+            parsed["resource_id"] = resource_id
+            parsed["estado"] = "ok"
+            return {**parsed, "dataset_url": ds["dataset_url"], "csv_url": ds["csv_url"]}
+        except Exception as exc:
+            print(f"  Data API no disponible para este recurso ({exc}) — se baja el archivo.", file=sys.stderr)
+
+        # Nivel 2: URL en vivo que reporta package_show para ese recurso.
+        live_url = resource.get("url")
+        if live_url:
+            try:
+                resp = http_get(live_url)
+                data = resp.read()
+                print(f"  {len(data):,} bytes descargados (URL en vivo)", file=sys.stderr)
+                parsed = process_csv(data, ds["titulo"])
+                parsed["metodo"] = "descarga_url_en_vivo"
+                parsed["estado"] = "ok"
+                return {**parsed, "dataset_url": ds["dataset_url"], "csv_url": live_url}
+            except Exception as exc:
+                print(f"  Descarga de la URL en vivo falló ({exc}) — se usará la URL fija.", file=sys.stderr)
+
+    # Nivel 3: URL fija verificada manualmente (último recurso).
+    try:
+        resp = http_get(ds["csv_url"])
+        data = resp.read()
+        print(f"  {len(data):,} bytes descargados (URL fija)", file=sys.stderr)
+        parsed = process_csv(data, ds["titulo"])
+        parsed["metodo"] = "descarga_url_fija"
+        parsed["estado"] = "ok"
+        return {**parsed, "dataset_url": ds["dataset_url"], "csv_url": ds["csv_url"]}
+    except Exception as exc:
+        print(f"  ERROR con {ds['titulo']}: {exc}", file=sys.stderr)
+        return {
+            "titulo": ds["titulo"],
+            "dataset_url": ds["dataset_url"],
+            "csv_url": ds["csv_url"],
+            "estado": "error",
+            "error": str(exc),
+        }
+
+
 def main():
     results = []
     for ds in DATASETS:
-        print(f"Descargando {ds['titulo']} ...", file=sys.stderr)
-        try:
-            resp = http_get(ds["csv_url"])
-            data = resp.read()
-            print(f"  {len(data):,} bytes descargados", file=sys.stderr)
-            parsed = process_csv(data, ds["titulo"])
-            parsed["dataset_url"] = ds["dataset_url"]
-            parsed["csv_url"] = ds["csv_url"]
-            parsed["estado"] = "ok"
-            results.append(parsed)
-        except Exception as exc:
-            print(f"  ERROR con {ds['titulo']}: {exc}", file=sys.stderr)
-            results.append({
-                "titulo": ds["titulo"],
-                "dataset_url": ds["dataset_url"],
-                "csv_url": ds["csv_url"],
-                "estado": "error",
-                "error": str(exc),
-            })
+        print(f"Procesando {ds['titulo']} ...", file=sys.stderr)
+        results.append(procesar_dataset(ds))
 
     summary = {
         "fuente": "Contraloría General de la República — Monitores Ciudadanos de Control",

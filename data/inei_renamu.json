@@ -2,8 +2,8 @@
   "fuente": "INEI — Registro Nacional de Municipalidades (RENAMU) 2023, muestra",
   "atribucion": "Instituto Nacional de Estadística e Informática (INEI), vía Portal Nacional de Datos Abiertos.",
   "dataset_url": "https://www.datosabiertos.gob.pe/dataset/registro-nacional-de-municipalidades-renamu-2023-instituto-nacional-de-estad%C3%ADstica-e",
-  "csv_url": "https://www.datosabiertos.gob.pe/sites/default/files/BD_Muestra_2023.csv",
   "nota": "Esta es la 'data de muestra' publicada por el portal, no el registro completo — más rápida de procesar para esta primera versión. La data completa está en un .zip servido por INEI, pendiente de una segunda fase.",
   "estado": "error",
-  "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+  "csv_url": "https://www.datosabiertos.gob.pe/sites/default/files/BD_Muestra_2023.csv"
 }

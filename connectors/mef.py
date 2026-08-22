@@ -36,20 +36,48 @@ que:
      investigación — por eso este conector valida el status HTTP antes de
      comprometerse a procesar, y reporta error explícito si el archivo no
      responde, en vez de fallar silenciosamente.
+
+SOBRE LA DATA API (datastore) — por qué este conector NO la usa
+------------------------------------------------------------------
+El instructivo oficial confirma que existe una Data API real por recurso
+(ver el aviso en common.py) — pero paginar ~millones de filas a través de
+esa API sería mucho más lento (y más peticiones HTTP) que un solo streaming
+del CSV, que es lo que ya hace este conector de forma eficiente. Por eso
+aquí solo se usa `package_show` para refrescar la URL de descarga (por si
+la fija de abajo quedó desactualizada), no para leer los datos en sí.
 """
 
 import csv
 import io
 import os
 import sys
+from urllib.parse import unquote, urlparse
 
 sys.path.insert(0, os.path.dirname(__file__))
-from common import detect_column, http_get, normalize, write_summary
+from common import detect_column, find_resource, http_get, normalize, package_show, write_summary
 
 OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "mef.json")
 
 DATASET_URL = "https://www.datosabiertos.gob.pe/dataset/presupuesto-y-ejecuci%C3%B3n-de-gasto-%E2%80%93-devengado-mensual"
 CSV_URL = "https://fs.datosabiertos.mef.gob.pe/datastorefiles/2025-Gasto-Devengado-Mensual.csv"
+
+
+def dataset_slug(dataset_url):
+    path = urlparse(dataset_url).path
+    return unquote(path.rstrip("/").split("/")[-1])
+
+
+def resolve_csv_url():
+    """Intenta refrescar la URL vía package_show; si falla por cualquier
+    motivo, cae a la URL fija verificada manualmente. Nunca lanza."""
+    try:
+        pkg = package_show(dataset_slug(DATASET_URL))
+        resource = find_resource(pkg, formato="csv")
+        if resource and resource.get("url"):
+            return resource["url"], "package_show"
+    except Exception as exc:
+        print(f"package_show falló ({exc}) — se usará la URL fija.", file=sys.stderr)
+    return CSV_URL, "url_fija"
 
 REGION_CANDIDATES = ["departamento", "region", "dpto", "nombre departamento"]
 MONTO_CANDIDATES = ["monto devengado", "devengado", "monto_devengado", "importe devengado"]
@@ -141,20 +169,22 @@ def main():
     args = parser.parse_args()
     max_bytes = int(args.max_mb * 1024 * 1024) if args.max_mb else None
 
-    print(f"Descargando (streaming) {CSV_URL} ...", file=sys.stderr)
+    csv_url, url_origen = resolve_csv_url()
+    print(f"Descargando (streaming) {csv_url} [{url_origen}] ...", file=sys.stderr)
     try:
-        resp = http_get(CSV_URL, timeout=300, max_retries=2)
+        resp = http_get(csv_url, timeout=300, max_retries=2)
         result = stream_process(resp, max_bytes=max_bytes)
         result["estado"] = "ok"
+        result["url_origen"] = url_origen
     except Exception as exc:
         print(f"  ERROR: {exc}", file=sys.stderr)
-        result = {"estado": "error", "error": str(exc)}
+        result = {"estado": "error", "error": str(exc), "url_origen": url_origen}
 
     summary = {
         "fuente": "MEF — Presupuesto y Ejecución de Gasto (Devengado Mensual) 2025",
         "atribucion": "Ministerio de Economía y Finanzas (MEF), vía Portal Nacional de Datos Abiertos.",
         "dataset_url": DATASET_URL,
-        "csv_url": CSV_URL,
+        "csv_url": csv_url,
         **result,
     }
     os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
