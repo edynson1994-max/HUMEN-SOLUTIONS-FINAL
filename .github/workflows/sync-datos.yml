@@ -53,27 +53,7 @@ jobs:
 
       - name: Mostrar un resumen rápido de lo que se detectó
         if: always()
-        run: |
-          echo "### Estado de cada fuente" >> "$GITHUB_STEP_SUMMARY"
-          for f in data/*.json; do
-            echo "- **$f**" >> "$GITHUB_STEP_SUMMARY"
-            python3 -c "
-import json, sys
-try:
-    d = json.load(open('$f', encoding='utf-8'))
-    if 'estado' in d:
-        print(f\"  - estado: {d.get('estado')}\")
-        if d.get('estado') == 'error':
-            print(f\"  - error: {d.get('error')}\")
-        if 'columnas_detectadas' in d:
-            print(f\"  - columnas detectadas: {d.get('columnas_detectadas')}\")
-    elif 'datasets' in d:
-        for ds in d['datasets']:
-            print(f\"  - {ds.get('titulo')}: {ds.get('estado')}\" + (f\" ({ds.get('error')})\" if ds.get('estado')=='error' else ''))
-except Exception as e:
-    print(f'  - no se pudo leer: {e}')
-" >> "$GITHUB_STEP_SUMMARY"
-          done
+        run: python connectors/print_summary.py >> "$GITHUB_STEP_SUMMARY"
 
       - name: Subir data/*.json como artifact (siempre, para poder revisar sin esperar el commit)
         if: always()
