@@ -1,0 +1,1002 @@
+{
+  "fuente": "Catálogo del Portal Nacional de Datos Abiertos (PNDA) — descubrimiento propio, no oficial",
+  "atribucion": "Datos originales de cada entidad publicadora, vía Portal Nacional de Datos Abiertos (PNDA).",
+  "estado": "ok",
+  "total_datasets_portal": 4646,
+  "total_datasets_procesados": 20,
+  "total_clasificados_economia_finanzas": 0,
+  "total_recursos_con_data_api_confirmada": 0,
+  "metodo_clasificacion": "entidad publicadora conocida (ver ENTIDADES_ECONOMIA_FINANZAS); si no matchea, palabras clave en título/notas/tags (ver PALABRAS_CLAVE_ECONOMIA_FINANZAS)",
+  "data_api_probado_para": "economia-finanzas",
+  "errores": [],
+  "datasets": [
+    {
+      "dataset_id": "cantidad-de-investigadores-que-estudiaron-en-universidades-publicas-por-grados-academicos",
+      "titulo": "Cantidad de investigadores que estudiaron en universidades publicas por grados academicos",
+      "descripcion": "Reporte Cantidad de investigadores que estudiaron en universidades publicas por grados académicos generado del Directorio de Investigadores e innovadores (DINA) hasta el 10 de ",
+      "entidad": "Consejo Nacional de Ciencia, Tecnología e Innovación - CONCYTEC",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/cantidad-de-investigadores-que-estudiaron-en-universidades-publicas-por-grados-academicos",
+      "resources": [
+        {
+          "resource_id": "a97f343a-e2d7-4aab-bac3-162aaa1125ac",
+          "nombre": "Cantidad de investigadores que estudiaron en universidades publicas por grados academicos",
+          "formato": "xlsx",
+          "resource_url": "http://datos.concytec.gob.pe/sites/default/files/DAT_INV_GRA_ACA_2.xlsx",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Vie, 10/21/2016 - 15:30",
+      "fecha_modificacion_portal": "Vie, 06/12/2026 - 10:22"
+    },
+    {
+      "dataset_id": "viáticos-de-entidades",
+      "titulo": "Viáticos de entidades",
+      "descripcion": "Viáticos de las entidades",
+      "entidad": "Presidencia del Consejo de Ministros - PCM",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/vi%C3%A1ticos-de-entidades",
+      "resources": [
+        {
+          "resource_id": "70db24b6-6085-4688-a288-fbe5e7724444",
+          "nombre": "Viáticos de entidades 2016",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/ds_viatico_entidades_2016.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Mié, 10/26/2016 - 13:02",
+      "fecha_modificacion_portal": "Mié, 03/15/2017 - 13:58"
+    },
+    {
+      "dataset_id": "vehículos-de-entidades",
+      "titulo": "Vehículos de entidades",
+      "descripcion": "Vehículos de entidades",
+      "entidad": "Presidencia del Consejo de Ministros - PCM",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/veh%C3%ADculos-de-entidades",
+      "resources": [
+        {
+          "resource_id": "4a2de365-69c0-4af8-9000-c2702577314b",
+          "nombre": "Vehículos de entidades 2015",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/ds_vehiculo_entidades_2015.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "aaf39721-6af3-45bc-a640-8c335652c122",
+          "nombre": "Vehículos de entidades 2016",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/ds_vehiculo_entidades_2016.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Mié, 10/26/2016 - 16:36",
+      "fecha_modificacion_portal": "Mié, 03/15/2017 - 13:58"
+    },
+    {
+      "dataset_id": "publicidad-de-entidades",
+      "titulo": "Publicidad de entidades",
+      "descripcion": "Publicidad de entidades",
+      "entidad": "Presidencia del Consejo de Ministros - PCM",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/publicidad-de-entidades",
+      "resources": [
+        {
+          "resource_id": "fc4a10ac-924f-49c5-9cb7-0d2c532a9e4e",
+          "nombre": "Publicidad de entidades 2015",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/ds_publicidad_entidades_2015.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "9c3802e3-86f6-4274-bb38-f7b56cbb7eb7",
+          "nombre": "Publicidad de entidades 2016",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/ds_publicidad_entidades_2016.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Mié, 10/26/2016 - 16:42",
+      "fecha_modificacion_portal": "Mié, 03/15/2017 - 13:58"
+    },
+    {
+      "dataset_id": "teléfonos-de-entidades",
+      "titulo": "Teléfonos de entidades",
+      "descripcion": "Teléfonos de entidades",
+      "entidad": "Presidencia del Consejo de Ministros - PCM",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/tel%C3%A9fonos-de-entidades",
+      "resources": [
+        {
+          "resource_id": "3b18afcf-4de3-4137-ba25-dc8c5a2bd893",
+          "nombre": "Teléfonos de entidades 2015",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/ds_telefono_entidades_2015.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "e72519f9-4711-42e2-9d18-5d7475a77766",
+          "nombre": "Teléfonos de entidades 2016",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/ds_telefono_entidades_2016.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Mié, 10/26/2016 - 16:49",
+      "fecha_modificacion_portal": "Mié, 03/15/2017 - 13:58"
+    },
+    {
+      "dataset_id": "personal-de-entidades",
+      "titulo": "Personal de entidades",
+      "descripcion": "Personal de entidades",
+      "entidad": "Presidencia del Consejo de Ministros - PCM",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/personal-de-entidades",
+      "resources": [
+        {
+          "resource_id": "5dd375dc-8230-420c-abc8-c95bdeabeb24",
+          "nombre": "Personal de entidades 2015",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/ds_personal_entidades_2015.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "28086044-3ab8-438d-8ad9-2612046fd7e6",
+          "nombre": "Personal de entidades 2016",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/ds_personal_entidades_2016.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Mié, 10/26/2016 - 17:07",
+      "fecha_modificacion_portal": "Mié, 03/15/2017 - 13:58"
+    },
+    {
+      "dataset_id": "ordenes-de-entidades",
+      "titulo": "Ordenes de entidades",
+      "descripcion": "Ordenes de entidades",
+      "entidad": "Presidencia del Consejo de Ministros - PCM",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/ordenes-de-entidades",
+      "resources": [
+        {
+          "resource_id": "5e1b009a-33f3-4086-b120-84b12b09ed42",
+          "nombre": "Ordenes de entidades del 2015",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/ds_orden_entidades_2015.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "2ec964d2-1997-4c9b-a33e-881928d30188",
+          "nombre": "Ordenes de entidades 2016",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/ds_orden_entidades_2016.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Vie, 10/28/2016 - 10:40",
+      "fecha_modificacion_portal": "Mié, 03/15/2017 - 13:58"
+    },
+    {
+      "dataset_id": "tramite-de-entidades",
+      "titulo": "Tramite de entidades",
+      "descripcion": "Tramite de entidades",
+      "entidad": "Presidencia del Consejo de Ministros - PCM",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/tramite-de-entidades",
+      "resources": [
+        {
+          "resource_id": "719c29f4-8d09-4764-89dd-5e327b0092d2",
+          "nombre": "Trámite de entidades del 2015",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/ds_tramite_entidades_2015.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Mié, 11/02/2016 - 16:58",
+      "fecha_modificacion_portal": "Mié, 03/15/2017 - 13:58"
+    },
+    {
+      "dataset_id": "valorización-de-pérdidas-por-presencia-de-enfermedades-nivel-de-región-política-años-2012",
+      "titulo": "Valorización de pérdidas por presencia de enfermedades a nivel de región política: años 2012-2013-2014-2015. ",
+      "descripcion": "Reporte cuantitativo sobre las pérdidas en productos de origen vegetal a nivel regional, entre los años 2012-2015",
+      "entidad": "Ministerio de Desarrollo Agrario y Riego - MIDAGRI",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/valorizaci%C3%B3n-de-p%C3%A9rdidas-por-presencia-de-enfermedades-nivel-de-regi%C3%B3n-pol%C3%ADtica-a%C3%B1os-2012",
+      "resources": [
+        {
+          "resource_id": "42090a81-8d26-42e3-b7f4-2f0eebf48494",
+          "nombre": "Valoración de pérdidas por presencia de plagas y enfermedades",
+          "formato": "excel",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/Perdidas%20al%20VBP%20x%20efecto%20de%20plagas%202012_2014.xlsx",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Vie, 12/30/2016 - 17:12",
+      "fecha_modificacion_portal": "Mié, 03/15/2017 - 17:02"
+    },
+    {
+      "dataset_id": "inscripción-de-empresas-cubicadoras-osinergmin",
+      "titulo": "Inscripción de Empresas Cubicadoras - OSINERGMIN",
+      "descripcion": "Registro de Empresas Cubicadoras con inscripción Temporal y Definitiva - Sector Hidrocarburos",
+      "entidad": "Organismo Supervisor de la Inversión en Energía y Minería - OSINERGMIN",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/inscripci%C3%B3n-de-empresas-cubicadoras-osinergmin",
+      "resources": [
+        {
+          "resource_id": "cdf7465c-d67c-4625-b2ae-38a9fafe13a7",
+          "nombre": "Registro Empresas Cubicadoras",
+          "formato": "xlb",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/STE-Registro-Empresas-Cubicadoras.xls",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Mar, 01/03/2017 - 08:53",
+      "fecha_modificacion_portal": "Mié, 12/17/2025 - 11:57"
+    },
+    {
+      "dataset_id": "registro-de-instaladores-habilitados-de-gas-natural-organismo-supervisor-de-la-inversión-en",
+      "titulo": "Registro de instaladores habilitados de gas natural - [Organismo Supervisor de la Inversión en Energía y Minería - OSINERGMIN]",
+      "descripcion": "REGISTRO DE INSTALADORES HABILITADOS DE GAS NATURAL CATEGORÍAS:\n1.  IG-1: Habilita a construir, reparar y mantener cualquier tipo de instalaciones internas residenciales y/o comerciales de gas natural\n2.  IG-2: Habilita a construir, reparar y mantener cualquier tipo de instalaciones internas residenciales y/o comerciales de gas natural sin límite de consumo\n3.  IG-3: Habilita a diseñar, construir, reparar, mantener o modificar cualquier tipo de instalaciones internas residenciales, comerciales y/o industriales de gas natural.",
+      "entidad": "Organismo Supervisor de la Inversión en Energía y Minería - OSINERGMIN",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/registro-de-instaladores-habilitados-de-gas-natural-organismo-supervisor-de-la-inversi%C3%B3n-en",
+      "resources": [
+        {
+          "resource_id": "34f3e980-e622-46d3-8bc5-697a7aec53fe",
+          "nombre": "Instaladores Gas Natural - Persona Jurídica",
+          "formato": "pdf",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/PersonaJuridica.pdf",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "b9f8e124-5acf-48b5-b211-806b0b6014c5",
+          "nombre": "Instaladores Gas Natural - Persona Natural IG-1",
+          "formato": "pdf",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/PersonaNaturalIG-1.pdf",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "c28b3555-f966-44a3-9614-c14a7fabce59",
+          "nombre": "Instaladores Gas Natural - Persona Natural IG-2",
+          "formato": "pdf",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/PersonaNaturalIG-2.pdf",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "876a8d67-31a2-44e1-b7dd-b197013e620c",
+          "nombre": "Instaladores Gas Natural - Persona Natural IG-3",
+          "formato": "pdf",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/PersonaNaturalIG-3.pdf",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "e2ee1097-73cb-4e10-aa2e-f999a9520f8b",
+          "nombre": "Instaladores Gas Natural",
+          "formato": "data",
+          "resource_url": "",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Mar, 01/03/2017 - 10:16",
+      "fecha_modificacion_portal": "Vie, 07/24/2026 - 10:37"
+    },
+    {
+      "dataset_id": "registro-de-hidrocarburos-líquidos-osinergmin",
+      "titulo": "Registro de Hidrocarburos Líquidos - Osinergmin",
+      "descripcion": "Para desarrollar actividades de comercialización en el subsector  de hidrocarburos se requiere estar inscrita en el\nRegistro de Hidrocarburos del Osinergmin",
+      "entidad": "Organismo Supervisor de la Inversión en Energía y Minería - OSINERGMIN",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/registro-de-hidrocarburos-l%C3%ADquidos-osinergmin",
+      "resources": [
+        {
+          "resource_id": "80e43d15-253b-45c6-9e9f-c81fde996b89",
+          "nombre": "Consumidores Directores con Instalaciones Fijas",
+          "formato": "xlb",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/CDCLyOPDHconInstalacionesFijas.xls",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "986f50ca-d0dd-4986-8e17-1a5d744f17aa",
+          "nombre": " Registro de Hidrocarburos con Instalaciones Móviles",
+          "formato": "xlb",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/CDCLyOPDHconInstalacionesM%C3%B3viles.xls",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "66285d8a-7512-43c2-acbd-d71e9fe00365",
+          "nombre": "Registro de Hidrocarburos - Comercializadores de Combustible de Aviación",
+          "formato": "xlb",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/ComercializadoresdeCombustibledeAviaci%C3%B3n.xls",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "fdc8ae38-cb1f-416e-b0ee-91b4a35c383f",
+          "nombre": "Registro de Hidrocarburos - Comercializadores de Combustible de Embarcación",
+          "formato": "xlb",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/ComercializadoresdeCombustibledeEmbarcaci%C3%B3n.xls",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "dbe90392-6971-4492-b32e-8bc7b1c37b06",
+          "nombre": "Registro de Hidrocarburos - Distribuidores Mayoristas Combustibles Líquidos",
+          "formato": "xlb",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/DistribuidoresMayoristasCombustiblesL%C3%ADquidos.xls",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "d5d0df00-9d1d-444f-bc20-ed950bd3b7e2",
+          "nombre": "Registro de Hidrocarburos - Distribuidores Mayoristas OPDH",
+          "formato": "xlb",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/DistribuidoresMayoristasOPDH.xls",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "3e02211f-46ca-48aa-807a-82cf45ed0253",
+          "nombre": "Registro de Hidrocarburos - Plantas de Procesamiento de Hidrocarburos",
+          "formato": "xlb",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/Plantas%20de%20Procesamiento%20de%20Hidrocarburos.xls",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "7c7484f0-f68a-40bf-887b-64082a459835",
+          "nombre": "Registro de Hidrocarburos - Plantas Lubricantes",
+          "formato": "xlb",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/Plantas%20de%20Lubricantes.xls",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "9e2f9050-1462-44a9-86a8-d8b54058b229",
+          "nombre": "Registro de Hidrocarburos - Plantas de Abastecimiento de Combustibles Líquidos",
+          "formato": "xlb",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/Plantas%20de%20Abastecimiento%20de%20Combustibles%20Liquidos.xls",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "30efc125-d9d0-4bc9-8835-9f4b0bba4c0f",
+          "nombre": " Registro de Hidrocarburos - Medios de Transporte Lacustre, Marítimo y Fluvial",
+          "formato": "xlb",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/MEDIOS%20DE%20TRANSPORTE%20LACUSTRE%2C%20MARITIMO%20Y%20FLUVIAL.xls",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "f93f53bc-e3df-445e-b46e-88bd55b0090f",
+          "nombre": "Registro de Hidrocarburos - Grifos y Estaciones de Servicios",
+          "formato": "xlb",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/GrifosyEstacionesdeServicios.xls",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Mar, 01/03/2017 - 12:04",
+      "fecha_modificacion_portal": "Mar, 04/07/2026 - 10:31"
+    },
+    {
+      "dataset_id": "boletin",
+      "titulo": "Boletin",
+      "descripcion": "Información sobre eventos, convenios y avances de investigación.",
+      "entidad": "Ministerio del Ambiente - MINAM",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/boletin",
+      "resources": [
+        {
+          "resource_id": "32b5018a-4436-4264-9392-75052853e065",
+          "nombre": "Boletín INAIGEM",
+          "formato": "pdf",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/BOLETIN%20INSTITUCIONAL%20N%C2%B001.pdf",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Mar, 01/03/2017 - 12:24",
+      "fecha_modificacion_portal": "Jue, 07/06/2017 - 19:55"
+    },
+    {
+      "dataset_id": "instituciones-científicas-depositarias-de-material-biológico-serfor",
+      "titulo": "Instituciones Científicas Depositarias de Material Biológico - SERFOR",
+      "descripcion": "Instituciones Científicas Depositarias de Material Biológico. Información proporcionada por el Servicio Nacional Forestal y de Fauna Silvestre (SERFOR).",
+      "entidad": "Ministerio de Desarrollo Agrario y Riego - MIDAGRI",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/instituciones-cient%C3%ADficas-depositarias-de-material-biol%C3%B3gico-serfor",
+      "resources": [
+        {
+          "resource_id": "c17b9b9c-4c45-4bd6-b909-376c3da0b840",
+          "nombre": "Instituciones Científicas Depositarias de Material Biológico - SERFOR",
+          "formato": "xlsx",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/Instituciones%20Cientificas%20Depositarias%20de%20Material%20Biologico.xlsx",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Mar, 01/03/2017 - 16:22",
+      "fecha_modificacion_portal": "Mié, 03/08/2017 - 14:09"
+    },
+    {
+      "dataset_id": "registro-nacional-de-infractores-serfor",
+      "titulo": "Registro Nacional de Infractores - SERFOR",
+      "descripcion": "Registro Nacional de Infractores. Información proporcionada por el Servicio Nacional Forestal y de Fauna Silvestre (SERFOR).",
+      "entidad": "Ministerio de Desarrollo Agrario y Riego - MIDAGRI",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/registro-nacional-de-infractores-serfor",
+      "resources": [
+        {
+          "resource_id": "46285b39-b0ee-4a42-b366-0a9e93de7615",
+          "nombre": "Registro Nacional de Infractores - SERFOR",
+          "formato": "xlsx",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/Registro%20Nacional%20de%20Infractores.xlsx",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Mar, 01/03/2017 - 16:25",
+      "fecha_modificacion_portal": "Vie, 06/17/2022 - 17:09"
+    },
+    {
+      "dataset_id": "boletín-estadístico-mensual-de-la-producción-y-comercialización-avícola",
+      "titulo": "BOLETÍN ESTADÍSTICO MENSUAL DE LA PRODUCCIÓN Y COMERCIALIZACIÓN AVÍCOLA ",
+      "descripcion": "Información sobre las principales actividades de la cadena avícola tales como: valor bruto de la producción avícola, producción de ave, producción de huevo de gallina para consumo, comercialización de aves vivas en centros de distribución, beneficio de pollos en centros de faenado, oferta de carne de ave, carga de huevos fértiles y producción de aves Bb en plantas de incubación de las diferentes líneas de producción y oferta nacional de aves Bb por líneas de producción, etc",
+      "entidad": "Ministerio de Desarrollo Agrario y Riego - MIDAGRI",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/bolet%C3%ADn-estad%C3%ADstico-mensual-de-la-producci%C3%B3n-y-comercializaci%C3%B3n-av%C3%ADcola",
+      "resources": [
+        {
+          "resource_id": "9968ef73-04b0-495d-bf86-0b52642b2034",
+          "nombre": "Boletín Estadístico Mensual de la Producción y Comercialización Avícola – Setiembre 2016-DGESEP-DEA",
+          "formato": "xlb",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/cuadros-produccion-comercializacion-avicola-set16.xls",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "4b102f3d-2597-409e-bdf5-2585ef8841f8",
+          "nombre": "PRODUCCIÓN DE CARNE DE AVE  POR MES, SEGÚN ESPECIE. ENERO 2016 - ENERO 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/PRODUCCI%C3%93N%20DE%20CARNE%20DE%20AVE%20%20POR%20MES%2C%20SEG%C3%9AN%20ESPECIE.%20ENERO%202016%20-%20ENERO%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "fc6c32c1-bde0-459b-8b33-43c26233b39b",
+          "nombre": "VALOR BRUTO DE LA PRODUCCIÓN AVÍCOLA  POR MES, SEGÚN PRODUCTO. ENERO 2016 - ENERO 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/VALOR%20BRUTO%20DE%20LA%20PRODUCCI%C3%93N%20AVICOLA%20%20POR%20MES%2C%20SEG%C3%9AN%20PRODUCTO.%20ENERO%202016%20-%20ENERO%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "41130d8e-752c-4a3e-aa9c-006d31293516",
+          "nombre": "PRODUCCIÓN DE HUEVO DE GALLINA PARA CONSUMO Y EXISTENCIA DE GALLINAS EN POSTURA  POR MES. ENERO 2016 - ENERO 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/PRODUCCI%C3%93N%20DE%20HUEVO%20DE%20GALLINA%20PARA%20CONSUMO%20Y%20EXISTENCIA%20DE%20GALLINAS%20EN%20POSTURA%20%20POR%20MES.%20ENERO%202016%20-%20ENERO%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "60ffb807-7cba-4d1a-8123-d3ff11bfd04c",
+          "nombre": "PRODUCCIÓN DE AVE POR MES, SEGÚN ESPECIE. ENERO 2016 - ENERO 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/PRODUCCI%C3%93N%20DE%20AVE%20POR%20MES%2C%20SEG%C3%9AN%20ESPECIE.%20ENERO%202016%20-%20ENERO%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "083664fe-e1b5-49e7-94c3-8acc7d967106",
+          "nombre": "Producción y comercialización avicola-ene17",
+          "formato": "pdf",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/Produccion%20y%20Comercializacion%20Avicola-ene17.pdf",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "3f76fceb-354e-4e72-be33-0c7fb161bdba",
+          "nombre": "VALOR BRUTO DE LA PRODUCCIÓN AVÍCOLA  POR MES, SEGÚN PRODUCTO. ENERO 2016 - FEBRERO 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/VALOR%20BRUTO%20DE%20LA%20PRODUCCI%C3%93N%20AVICOLA%20%20POR%20MES%2C%20SEG%C3%9AN%20PRODUCTO.%20ENERO%202016%20-%20FEBRERO%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "8b5740ab-fab3-4057-9278-a0a793d5ad97",
+          "nombre": "PRODUCCIÓN DE CARNE DE AVE  POR MES, SEGÚN ESPECIE. ENERO 2016 - FEBRERO 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/PRODUCCI%C3%93N%20DE%20CARNE%20DE%20AVE%20%20POR%20MES%2C%20SEG%C3%9AN%20ESPECIE.%20ENERO%202016%20-%20FEBRERO%202017..xlsx",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "1edcb6d9-53b5-47f5-9032-0d7f9546f3cf",
+          "nombre": "PRODUCCIÓN DE AVE VIVA POR MES, SEGÚN ESPECIE. ENERO 2016 - FEBRERO 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/PRODUCCI%C3%93N%20DE%20AVE%20VIVA%20POR%20MES%2C%20SEG%C3%9AN%20ESPECIE.%20ENERO%202016%20-%20FEBRERO%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "9ba46dd2-6bce-41a2-8423-6b3b1e4fe054",
+          "nombre": "Producción y Comercialización avícola febrero 2017",
+          "formato": "pdf",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/produccion-comercializacion-avicola-feb.pdf",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "d1d9f080-6086-4772-b3fe-c61ae782b252",
+          "nombre": "PRODUCCIÓN DE CARNE DE AVE  POR MES, SEGÚN ESPECIE. ENERO 2016 -  MARZO 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/PRODUCCI%C3%93N%20DE%20CARNE%20DE%20AVE%20%20POR%20MES%2C%20SEG%C3%9AN%20ESPECIE.%20ENERO%202016%20-%20%20MARZO%202017..xlsx",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "aeb4ef7a-d374-4b12-86d1-835a211a8f9a",
+          "nombre": "VALOR BRUTO DE LA PRODUCCIÓN AVÍCOLA  POR MES, SEGÚN PRODUCTO. ENERO 2016 - MARZO 2017",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/VALOR%20BRUTO%20DE%20LA%20PRODUCCI%C3%93N%20AV%C3%8DCOLA%20%20POR%20MES%2C%20SEG%C3%9AN%20PRODUCTO.%20ENERO%202016%20-%20MARZO%202017.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "e5fd7bc3-622d-4df2-9309-112dac1585f9",
+          "nombre": "PRODUCCIÓN DE HUEVO DE GALLINA PARA CONSUMO Y EXISTENCIA DE GALLINAS EN POSTURA  POR MES. ENERO 2016 -  MARZO 2017",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/PRODUCCI%C3%93N%20DE%20HUEVO%20DE%20GALLINA%20PARA%20CONSUMO%20Y%20EXISTENCIA%20DE%20GALLINAS%20EN%20POSTURA%20%20POR%20MES.%20ENERO%202016%20-%20%20MARZO%202017.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "d661883f-2da1-44e6-8e3c-69b8b1ab352e",
+          "nombre": "PRODUCCIÓN DE AVE POR MES, SEGÚN ESPECIE. ENERO 2016 -  MARZO 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/PRODUCCI%C3%93N%20DE%20AVE%20POR%20MES%2C%20SEG%C3%9AN%20ESPECIE.%20ENERO%202016%20-%20%20MARZO%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "cd31c8f2-cc26-4ef2-838c-0b414ddcc3b6",
+          "nombre": "Producción y comercialización Avícola marzo 2017",
+          "formato": "pdf",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/produccion-comercializacion-avicola-mar17.pdf",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "9e8982d0-ecd6-42fd-b557-67820b2c4b62",
+          "nombre": "PRODUCCIÓN DE AVE POR MES, SEGÚN ESPECIE. ENERO 2016 - ABRIL 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/PRODUCCI%C3%93N%20DE%20AVE%20POR%20MES%2C%20SEG%C3%9AN%20ESPECIE.%20ENERO%202016%20-%20ABRIL%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "0b2a7c02-dcc7-41ff-88eb-af1e6c81a860",
+          "nombre": "Producción y Comercialización Avícola de abril 2017",
+          "formato": "pdf",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/produccion-comercializacion-avicola-abr17.pdf",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "e21fec82-2b95-4a76-a5c0-9c7bf2e341ea",
+          "nombre": "PRODUCCIÓN DE HUEVO DE GALLINA PARA CONSUMO Y EXISTENCIA DE GALLINAS EN POSTURA  POR MES. ENERO 2016 - ABRIL 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/PRODUCCI%C3%93N%20DE%20HUEVO%20DE%20GALLINA%20PARA%20CONSUMO%20Y%20EXISTENCIA%20DE%20GALLINAS%20EN%20POSTURA%20%20POR%20MES.%20ENERO%202016%20-%20ABRIL%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "412f6442-51ec-4af9-b7b4-e0323cbd596c",
+          "nombre": "PRODUCCIÓN DE CARNE DE AVE VIVA  POR MES, SEGÚN ESPECIE. ENERO 2016 - ABRIL 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/PRODUCCI%C3%93N%20DE%20CARNE%20DE%20AVE%20VIVA%20%20POR%20MES%2C%20SEG%C3%9AN%20ESPECIE.%20ENERO%202016%20-%20ABRIL%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "c4ec71df-38b7-4a74-b26d-0cd68b26de3b",
+          "nombre": "VALOR BRUTO DE LA PRODUCCIÓN AVÍCOLA  POR MES, SEGÚN PRODUCTO. ENERO 2016 - ABRIL 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/VALOR%20BRUTO%20DE%20LA%20PRODUCCI%C3%93N%20AV%C3%8DCOLA%20%20POR%20MES%2C%20SEG%C3%9AN%20PRODUCTO.%20ENERO%202016%20-%20ABRIL%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "b39bcd9b-da58-44be-ac6e-19e0c3fd3f2e",
+          "nombre": "PRODUCCIÓN DE HUEVO DE GALLINA PARA CONSUMO Y EXISTENCIA DE GALLINAS EN POSTURA  POR MES. ENERO 2016 - MAYO 2017.",
+          "formato": "csv",
+          "resource_url": "",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "38e9f985-44a1-4f14-ab4e-dc8abf116eba",
+          "nombre": "PRODUCCIÓN DE CARNE DE AVE  POR MES, SEGÚN ESPECIE. ENERO 2016 - MAYO 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/PRODUCCI%C3%93N%20DE%20CARNE%20DE%20AVE%20%20POR%20MES%2C%20SEG%C3%9AN%20ESPECIE.%20ENERO%202016%20-%20MAYO%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "8ed18282-3fa1-42fc-b6b2-bc6fd3fdb001",
+          "nombre": "VALOR BRUTO DE LA PRODUCCIÓN AVÍCOLA  POR MES, SEGÚN PRODUCTO. ENERO 2016 - MAYO 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/VALOR%20BRUTO%20DE%20LA%20PRODUCCI%C3%93N%20AV%C3%8DCOLA%20%20POR%20MES%2C%20SEG%C3%9AN%20PRODUCTO.%20ENERO%202016%20-%20MAYO%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "1138f4b0-b00e-48b0-9b60-937f6290ad12",
+          "nombre": "PRODUCCIÓN DE AVE VIVA POR MES, SEGÚN ESPECIE. ENERO 2016 - MAYO 2017.",
+          "formato": "csv",
+          "resource_url": "",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "7c50ace1-c5ba-4863-b4b2-eee9707e94af",
+          "nombre": "PRODUCCIÓN Y COMERCIALIZACIÓN AVÍCOLA  MAYO 2017",
+          "formato": "pdf",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/produccion-comercializacion-avicola-may17_030717.pdf",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "890e819e-eefc-4964-8101-64cab45e3287",
+          "nombre": "PRODUCCIÓN DE CARNE DE AVE  POR MES, SEGÚN ESPECIE. ENERO 2016 - JUNIO 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/07/PRODUCCI%C3%93N%20DE%20CARNE%20DE%20AVE%20%20POR%20MES%2C%20SEG%C3%9AN%20ESPECIE.%20ENERO%202016%20-%20JUNIO%202017..xls",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "4160a805-c2ec-49a6-ac44-5fc0f1ba4023",
+          "nombre": "VALOR BRUTO DE LA PRODUCCIÓN AVÍCOLA  POR MES, SEGÚN PRODUCTO. ENERO 2016 - JUNIO 2017",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/07/VALOR%20BRUTO%20DE%20LA%20PRODUCCI%C3%93N%20AV%C3%8DCOLA%20%20POR%20MES%2C%20SEG%C3%9AN%20PRODUCTO.%20ENERO%202016%20-%20JUNIO%202017.xls",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "7ee0957e-6747-490f-b5ea-9171bb0997cb",
+          "nombre": "Produccion comercializacion avicola-junio 2017",
+          "formato": "pdf",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/produccion-comercializacion-avicola-jun17_210717.pdf",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "ee0f7d6f-215c-4a70-bfbc-54138d565291",
+          "nombre": " PRODUCCIÓN DE HUEVO DE GALLINA PARA CONSUMO Y EXISTENCIA DE GALLINAS EN POSTURA POR MES. ENERO 2016 - FEBRERO 2017",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/PRODUCCI%C3%93N%20DE%20HUEVO%20DE%20GALLINA%20PARA%20CONSUMO%20Y%20EXISTENCIA%20DE%20GALLINAS%20EN%20POSTURA%20%20POR%20MES.%20ENERO%202016%20-%20FEBRERO%202017_0.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "9052757c-47fb-4a14-be5a-6901bb21e9cb",
+          "nombre": "PRODUCCIÓN DE AVE VIVA POR MES, SEGÚN ESPECIE. ENERO 2016 - JUNIO 2017",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/08/PRODUCCI%C3%93N%20DE%20AVE%20VIVA%20POR%20MES%2C%20SEG%C3%9AN%20ESPECIE.%20ENERO%202016%20-%20JUNIO%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "3ec73468-8f40-4fbc-897e-45f1a5f6970b",
+          "nombre": "PRODUCCIÓN DE HUEVO DE GALLINA PARA CONSUMO Y EXISTENCIA DE GALLINAS EN POSTURA  POR MES. ENERO 2016 - JUNIO 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/09/PRODUCCI%C3%93N%20DE%20HUEVO%20DE%20GALLINA%20PARA%20CONSUMO%20Y%20EXISTENCIA%20DE%20GALLINAS%20EN%20POSTURA%20%20POR%20MES.%20ENERO%202016%20-%20JUNIO%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "9fbfd1fb-4e33-452a-a318-c535d3cfcfdb",
+          "nombre": "PRODUCCIÓN  Y COMERCIALIZACIÓN AVÍCOLA JULIO 2017",
+          "formato": "pdf",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/09/PRODUCCI%C3%93N%20%20Y%20COMERCIALIZACI%C3%93N%20AV%C3%8DCOLA%20JULIO%202017.pdf",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "6f65509e-c7c1-4591-93a6-2b28416d5e7f",
+          "nombre": "PRODUCCIÓN DE AVE VIVA POR MES, SEGÚN ESPECIE. ENERO 2016 -JULIO 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/09/PRODUCCI%C3%93N%20DE%20AVE%20VIVA%20POR%20MES%2C%20SEG%C3%9AN%20ESPECIE.%20ENERO%202016%20-JULIO%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "c53e504b-d393-40e8-8e38-4a55c5e3b673",
+          "nombre": "PRODUCCIÓN DE CARNE DE AVE  POR MES, SEGÚN ESPECIE. ENERO 2016 - JULIO 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/09/PRODUCCI%C3%93N%20DE%20CARNE%20DE%20AVE%20%20POR%20MES%2C%20SEG%C3%9AN%20ESPECIE.%20ENERO%202016%20-%20JULIO%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "ba7435e7-82a2-4d7f-be48-391b7d206cc0",
+          "nombre": "PRODUCCIÓN DE HUEVO DE GALLINA PARA CONSUMO Y EXISTENCIA DE GALLINAS EN POSTURA  POR MES. ENERO 2016 - JULIO 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/09/PRODUCCI%C3%93N%20DE%20HUEVO%20DE%20GALLINA%20PARA%20CONSUMO%20Y%20EXISTENCIA%20DE%20GALLINAS%20EN%20POSTURA%20%20POR%20MES.%20ENERO%202016%20-%20JULIO%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "ccac95db-e749-4eff-abb3-d4fe7afa5664",
+          "nombre": "VALOR BRUTO DE LA PRODUCCIÓN AVÍCOLA  POR MES, SEGÚN PRODUCTO. ENERO 2016 - JULIO 2017.",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/09/VALOR%20BRUTO%20DE%20LA%20PRODUCCI%C3%93N%20AV%C3%8DCOLA%20%20POR%20MES%2C%20SEG%C3%9AN%20PRODUCTO.%20ENERO%202016%20-%20JULIO%202017..csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "03d52771-fcae-44c0-891b-1281e3486f15",
+          "nombre": "PRODUCCIÓN Y COMERCIALIZACIÓN AVÍCOLA AGOSTO 2017",
+          "formato": "pdf",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/11/PRODUCCI%C3%93N%20Y%20COMERCIALIZACI%C3%93N%20AV%C3%8DCOLA%20AGOSTO%202017.pdf",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "3245ae47-da96-4069-a66c-5a26414db35c",
+          "nombre": "PRODUCCIÓN DE AVE VIVA POR MES  SEGÚN ESPECIE  ENERO 2016  AGOSTO 2017 ",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/11/PRODUCCI%C3%93N%20DE%20AVE%20VIVA%20POR%20MES%20%20SEG%C3%9AN%20ESPECIE%20%20ENERO%202016%20%20AGOSTO%202017%20.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "bf5dc515-bb05-4576-b181-6f6f260721c0",
+          "nombre": "PRODUCCIÓN DE CARNE DE AVE  POR MES  SEGÚN ESPECIE ENERO 2016   AGOSTO 2017 ",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/11/PRODUCCI%C3%93N%20DE%20CARNE%20DE%20AVE%20%20POR%20MES%20%20SEG%C3%9AN%20ESPECIE%20ENERO%202016%20%20%20AGOSTO%202017%20.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "9e2c2b1a-8acd-48a7-8911-b1815222f1e5",
+          "nombre": "PRODUCCIÓN DE HUEVO DE GALLINA PARA CONSUMO Y EXISTENCIA DE GALLINAS EN POSTURA  POR MES  ENERO 2016   AGOSTO 2017 ",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/11/PRODUCCI%C3%93N%20DE%20HUEVO%20DE%20GALLINA%20PARA%20CONSUMO%20Y%20EXISTENCIA%20DE%20GALLINAS%20EN%20POSTURA%20%20POR%20MES%20%20ENERO%202016%20%20%20AGOSTO%202017%20.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "978c8f3a-aeaa-43b2-bf66-fbb22bdc6f59",
+          "nombre": "VALOR BRUTO DE LA PRODUCCIÓN AVÍCOLA  POR MES  SEGÚN PRODUCTO  ENERO 2016   AGOSTO 2017 ",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/11/VALOR%20BRUTO%20DE%20LA%20PRODUCCI%C3%93N%20AV%C3%8DCOLA%20%20POR%20MES%20%20SEG%C3%9AN%20PRODUCTO%20%20ENERO%202016%20%20%20AGOSTO%202017%20.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "160f27c7-1fb8-4459-9935-aa36ec035382",
+          "nombre": "PRODUCCIÓN Y COMERCIALIZACIÓN AVÍCOLA SETIEMBRE 2017",
+          "formato": "pdf",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/11/PRODUCCI%C3%93N%20Y%20COMERCIALIZACI%C3%93N%20AV%C3%8DCOLA%20SETIEMBRE%202017.pdf",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "e2b7541f-ce38-441e-b899-26b43504f373",
+          "nombre": "PRODUCCIÓN DE AVE VIVA POR MES SEGÚN ESPECIE  ENERO 2016   SETIEMBRE 2017 ",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/11/PRODUCCI%C3%93N%20DE%20AVE%20VIVA%20POR%20MES%20SEG%C3%9AN%20ESPECIE%20%20ENERO%202016%20%20%20SETIEMBRE%202017%20.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "258e7f4c-af22-4b7d-a732-41bfb8750bae",
+          "nombre": "PRODUCCIÓN DE CARNE DE AVE  POR MES SEGÚN ESPECIE ENERO 2016  SETIEMBRE 2017",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/11/PRODUCCI%C3%93N%20DE%20CARNE%20DE%20AVE%20%20POR%20MES%20SEG%C3%9AN%20ESPECIE%20ENERO%202016%20%20SETIEMBRE%202017.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "b2eaf5ce-a010-4ebd-81b5-001a82c1534d",
+          "nombre": "PRODUCCIÓN DE HUEVO DE GALLINA PARA CONSUMO Y EXISTENCIA DE GALLINAS EN POSTURA  POR MES  ENERO 2016   SETIEMBRE 2017 ",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/11/PRODUCCI%C3%93N%20DE%20HUEVO%20DE%20GALLINA%20PARA%20CONSUMO%20Y%20EXISTENCIA%20DE%20GALLINAS%20EN%20POSTURA%20%20POR%20MES%20%20ENERO%202016%20%20%20SETIEMBRE%202017%20.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "9ac6b761-2781-418e-bdfa-f6ee7086f979",
+          "nombre": "VALOR BRUTO DE LA PRODUCCIÓN AVÍCOLA  POR MES  SEGÚN PRODUCTO  ENERO 2016  SETIEMBRE 2017 ",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/recursos/2017/11/VALOR%20BRUTO%20DE%20LA%20PRODUCCI%C3%93N%20AV%C3%8DCOLA%20%20POR%20MES%20%20SEG%C3%9AN%20PRODUCTO%20%20ENERO%202016%20%20SETIEMBRE%202017%20.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Mié, 01/04/2017 - 10:00",
+      "fecha_modificacion_portal": "Mié, 11/08/2017 - 17:49"
+    },
+    {
+      "dataset_id": "registro-de-cultivares-comerciales-nivel-nacional",
+      "titulo": "Registro de Cultivares Comerciales a Nivel Nacional",
+      "descripcion": "El Registro de Cultivares Comerciales es único a nivel nacional y es conducido por la Autoridad en Semillas. La inscripción en él, es obligatoria para la producción y el comercio de las semillas de los cultivares de las especies o grupo de especies que cuenten con Reglamento Específico.\nEl registro de un cultivar comercial implica:\n*   Que su denominación garantiza la autenticidad del cultivar, de acuerdo con la descripción que figura en el expediente de registro.\n*   El reconocimiento de la conveniencia y utilidad para el comercio de semillas en el país.\n\n",
+      "entidad": "Ministerio de Desarrollo Agrario y Riego - MIDAGRI",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/registro-de-cultivares-comerciales-nivel-nacional",
+      "resources": [
+        {
+          "resource_id": "ee17e2ad-bafc-46eb-974a-d7b505c7c7e8",
+          "nombre": "Registro de Cultivar Comercial - Diciembre 2016",
+          "formato": "excel",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/Registro%20Cultivar%20Comercial%20%282016-12%29.xls",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "f7de2c3b-deee-48c3-beca-bdb5c658035b",
+          "nombre": "Registro de Cultivares Comerciales en Arroz - Diciembre 2016",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/arroz_0.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "a37c5269-a750-47f4-9dec-a1ea2f39ef9a",
+          "nombre": "Registro de Cultivares Comerciales en Algodón - Diciembre 2016",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/algodon.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "38aaf26e-b7a9-4ef9-8672-be6ce100e410",
+          "nombre": "Registro de Cultivares Comerciales en Cereal - Diciembre 2016",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/cereal.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "99378bbd-46a1-4df5-aef4-03298eac0f26",
+          "nombre": "Registro de Cultivares Comerciales en Leguminosas - Diciembre 2016",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/leguminosas.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "f45ee822-0c9e-4aeb-95b4-bc515435d2d8",
+          "nombre": "Registro de Cultivares Comerciales en Maíz Amarillo- Diciembre 2016",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/maiz_amarillo.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "2adc9e10-c538-4ef7-8f93-8559c02f5ff2",
+          "nombre": "Registro de Cultivares Comerciales en Maíz Amiláceo - Diciembre 2016",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/maiz_amilaceo.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "38b314d8-4b08-4d4b-bdbe-d009350e27b1",
+          "nombre": "Registro de Cultivares Comerciales en Papa - Diciembre 2016",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/papa.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        },
+        {
+          "resource_id": "60374b42-fe45-4ae2-aaa9-90780587bed7",
+          "nombre": "Registro de Cultivares Comerciales en Quínua - Diciembre 2016",
+          "formato": "csv",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/quinua.csv",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Mié, 01/04/2017 - 10:36",
+      "fecha_modificacion_portal": "Mié, 07/12/2017 - 14:41"
+    },
+    {
+      "dataset_id": "boletín-estadístico-mensual-de-la-producción-y-comercialización-avícola-–-octubre-2016",
+      "titulo": "Boletín Estadístico Mensual de la Producción y Comercialización Avícola – Octubre 2016-DGESEP-DEA",
+      "descripcion": "La Dirección de Estadística Agraria (DEA), de la Dirección General de Seguimiento y Evaluación de Políticas (DGESEP), del Ministerio de Agricultura y Riego (MINAGRI); en el marco del Sistema Integrado de Estadística Agraria, presenta el “Boletín Estadístico Mensual de la Producción y Comercialización Avícola”, correspondiente al mes de Septiembre del año 2016.",
+      "entidad": "Ministerio de Desarrollo Agrario y Riego - MIDAGRI",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/bolet%C3%ADn-estad%C3%ADstico-mensual-de-la-producci%C3%B3n-y-comercializaci%C3%B3n-av%C3%ADcola-%E2%80%93-octubre-2016",
+      "resources": [],
+      "fecha_creacion_portal": "Mié, 01/04/2017 - 16:12",
+      "fecha_modificacion_portal": "Mié, 03/08/2017 - 12:21"
+    },
+    {
+      "dataset_id": "boletin-hidrometeorológico",
+      "titulo": "BOLETIN hidrometeorológico",
+      "descripcion": "Boletín  hidrometeoro lógico",
+      "entidad": "Ministerio del Ambiente - MINAM",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/boletin-hidrometeorol%C3%B3gico",
+      "resources": [
+        {
+          "resource_id": "8e5ed4dc-9c87-41d9-a466-70fdb697db57",
+          "nombre": "Boletín hidrometeoro lógico",
+          "formato": "zip",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/bolitin%202016%20.ZIP",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Mar, 01/10/2017 - 15:51",
+      "fecha_modificacion_portal": "Jue, 07/06/2017 - 19:55"
+    },
+    {
+      "dataset_id": "temperatura-agua-y-ambiente-nodo-sensor-puerto-maldonado-represa-iiap",
+      "titulo": "Temperatura Agua y Ambiente Nodo Sensor  Puerto Maldonado Represa- IIAP",
+      "descripcion": "Muestra los datos históricos del Nodo sensor ubicado en Puerto Maldonado, específicamente en el estanque de captación de agua para las 12 piscigranjas ; utilizando dos variables: la temperatura del Agua y la Temperatura del Ambiente. Sirve para tener un control de la calidad del agua para diversas investigaciones para repoblación de peces.\n",
+      "entidad": "Instituto de Investigaciones de la Amazonía Peruana - IIAP",
+      "categoria": null,
+      "categoria_metodo": null,
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/temperatura-agua-y-ambiente-nodo-sensor-puerto-maldonado-represa-iiap",
+      "resources": [
+        {
+          "resource_id": "54e8d3dd-75f1-4a06-bb42-f3f26c31a240",
+          "nombre": "Nov a Dic 2016",
+          "formato": "xlsx",
+          "resource_url": "https://www.datosabiertos.gob.pe/sites/default/files/SIMonitoreoIIAP-DatosHistoricos.xlsx",
+          "tiene_data_api": null,
+          "detalle_data_api": null
+        }
+      ],
+      "fecha_creacion_portal": "Mié, 01/11/2017 - 10:25",
+      "fecha_modificacion_portal": "Jue, 07/16/2026 - 11:37"
+    }
+  ],
+  "generado_en": "2026-08-22T23:08:39Z"
+}
