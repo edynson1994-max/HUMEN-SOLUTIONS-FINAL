@@ -79,10 +79,26 @@ def resolve_csv_url():
         print(f"package_show falló ({exc}) — se usará la URL fija.", file=sys.stderr)
     return CSV_URL, "url_fija"
 
-REGION_CANDIDATES = ["departamento", "region", "dpto", "nombre departamento"]
-MONTO_CANDIDATES = ["monto devengado", "devengado", "monto_devengado", "importe devengado"]
-MES_CANDIDATES = ["mes", "mes_eje", "periodo"]
-ENTIDAD_CANDIDATES = ["entidad", "pliego", "nombre pliego", "unidad ejecutora"]
+# IMPORTANTE — corregido tras ver datos reales (corrida real del
+# 2026-08-22): el archivo real viene en formato "ancho": una columna de
+# CÓDIGO y otra de NOMBRE para región/entidad (ej. DEPARTAMENTO_EJECUTORA
+# vs DEPARTAMENTO_EJECUTORA_NOMBRE), y el monto NO es una sola columna —
+# son 12 columnas mensuales (MONTO_DEVENGADO_ENERO..DICIEMBRE) más una
+# columna MONTO_DEVENGADO_ANUAL con el total del año. La primera versión
+# de este conector no sabía esto (se escribió sin poder ver el archivo) y
+# por eso agarraba la columna de CÓDIGO en vez de NOMBRE, y el monto de
+# ENERO en vez del total anual — ambos ya corregidos: los candidatos más
+# específicos van primero para que el emparejamiento por substring de
+# detect_column() los encuentre antes que la variante genérica/de código.
+REGION_CANDIDATES = ["departamento_ejecutora_nombre", "nombre departamento", "departamento_nombre", "departamento", "region", "dpto"]
+MONTO_ANUAL_CANDIDATES = ["monto_devengado_anual", "devengado_anual", "monto devengado anual"]
+ENTIDAD_CANDIDATES = ["pliego_nombre", "nombre pliego", "entidad_nombre", "entidad", "pliego", "unidad ejecutora"]
+
+# Nombres reales de los 12 meses tal como aparecen en las columnas
+# MONTO_DEVENGADO_<MES> — se usan para armar una serie mensual nacional
+# (útil para un gráfico de tendencia real en vez de inventar una).
+MESES = ["ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO",
+         "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"]
 
 
 def parse_amount(value):
@@ -100,9 +116,15 @@ def parse_amount(value):
 def stream_process(resp, max_bytes=None):
     """Lee la respuesta HTTP línea por línea (streaming real, sin cargar todo
     en memoria) y va acumulando sumas por región. Corta en max_bytes si se
-    especifica (modo muestra)."""
+    especifica (modo muestra).
+
+    Windows-1252, no UTF-8: se confirmó con datos reales de este mismo
+    portal (ver smart_decode en common.py) que estos CSV de entidades
+    peruanas vienen en cp1252 — se usa ese encoding acá también aunque el
+    encabezado de este archivo en particular resultó ser ASCII puro (así
+    que no se notaba), por si las columnas *_NOMBRE traen tildes/ñ."""
     raw = resp  # objeto tipo file-like devuelto por urllib
-    text_stream = io.TextIOWrapper(raw, encoding="utf-8", errors="replace", newline="")
+    text_stream = io.TextIOWrapper(raw, encoding="cp1252", errors="replace", newline="")
 
     # Sniff manual de la primera línea para detectar el delimitador, sin
     # tener que leer todo el archivo en memoria para csv.Sniffer.
@@ -111,9 +133,16 @@ def stream_process(resp, max_bytes=None):
     fieldnames = next(csv.reader(io.StringIO(first_line), delimiter=delim))
 
     region_col = detect_column(fieldnames, REGION_CANDIDATES)
-    monto_col = detect_column(fieldnames, MONTO_CANDIDATES)
-    mes_col = detect_column(fieldnames, MES_CANDIDATES)
+    monto_anual_col = detect_column(fieldnames, MONTO_ANUAL_CANDIDATES)
     entidad_col = detect_column(fieldnames, ENTIDAD_CANDIDATES)
+
+    # Columnas mensuales: se buscan por nombre exacto de mes (no por
+    # substring genérico) para no confundirlas entre sí ni con la anual.
+    mes_cols = {}
+    for mes in MESES:
+        col = detect_column(fieldnames, [f"monto_devengado_{mes.lower()}"])
+        if col:
+            mes_cols[mes] = col
 
     reader = csv.DictReader(text_stream, fieldnames=fieldnames, delimiter=delim)
 
@@ -121,19 +150,25 @@ def stream_process(resp, max_bytes=None):
     total_monto = 0.0
     filas_con_monto = 0
     por_region = {}
-    bytes_leidos = len(first_line.encode("utf-8"))
+    gasto_mensual_nacional = {mes: 0.0 for mes in mes_cols}
+    bytes_leidos = len(first_line.encode("cp1252", errors="replace"))
     truncado = False
 
     for row in reader:
         total_filas += 1
-        if monto_col:
-            monto = parse_amount(row.get(monto_col))
+        if monto_anual_col:
+            monto = parse_amount(row.get(monto_anual_col))
             if monto is not None:
                 total_monto += monto
                 filas_con_monto += 1
                 if region_col:
                     region = (row.get(region_col) or "No especificado").strip().title()
                     por_region[region] = por_region.get(region, 0.0) + monto
+
+        for mes, col in mes_cols.items():
+            m = parse_amount(row.get(col))
+            if m is not None:
+                gasto_mensual_nacional[mes] += m
 
         if max_bytes:
             # Estimación aproximada del avance leído (no exacta, pero evita
@@ -148,15 +183,19 @@ def stream_process(resp, max_bytes=None):
     return {
         "columnas_detectadas": fieldnames,
         "columna_region_usada": region_col,
-        "columna_monto_usada": monto_col,
-        "columna_mes_usada": mes_col,
+        "columna_monto_anual_usada": monto_anual_col,
         "columna_entidad_usada": entidad_col,
+        "meses_detectados": list(mes_cols.keys()),
         "filas_leidas": total_filas,
         "filas_con_monto_valido": filas_con_monto,
-        "monto_devengado_total": round(total_monto, 2) if monto_col else None,
+        "monto_devengado_total": round(total_monto, 2) if monto_anual_col else None,
         "top_regiones_por_monto": (
             [{"region": r, "monto_devengado": round(m, 2)} for r, m in top_regiones]
-            if region_col and monto_col else None
+            if region_col and monto_anual_col else None
+        ),
+        "gasto_mensual_nacional": (
+            [{"mes": mes, "monto_devengado": round(gasto_mensual_nacional[mes], 2)} for mes in MESES if mes in gasto_mensual_nacional]
+            if mes_cols else None
         ),
         "muestra_parcial": truncado,
     }

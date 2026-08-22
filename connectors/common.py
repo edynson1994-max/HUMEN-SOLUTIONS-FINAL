@@ -120,9 +120,25 @@ def package_show(dataset_id):
     from urllib.parse import quote
     url = f"{PNDA_API}?id={quote(dataset_id, safe='')}"
     resp = http_get(url)
-    payload = json.loads(resp.read().decode("utf-8"))
+    raw = resp.read().decode("utf-8", errors="replace")
+    payload = json.loads(raw)
+
+    # Confirmado en una corrida real (2026-08-22): para algunos slugs esta
+    # API respondió con una LISTA en la raíz en vez del sobre
+    # {"success":..., "result":...} que documenta CKAN — probablemente el
+    # slug no matchea ningún dataset y el portal devuelve algo distinto al
+    # error estándar de CKAN. Antes esto reventaba con "'list' object has
+    # no attribute 'get'"; ahora se reporta con contexto (los primeros
+    # ~300 caracteres de la respuesta) para poder diagnosticarlo en el
+    # próximo intento, y sigue cayendo al respaldo (descarga directa) sin
+    # romper nada.
+    if not isinstance(payload, dict):
+        raise RuntimeError(
+            f"package_show para {dataset_id} devolvió {type(payload).__name__} en vez de un objeto — "
+            f"respuesta cruda: {raw[:300]!r}"
+        )
     if not payload.get("success"):
-        raise RuntimeError(f"package_show para {dataset_id} respondió success=false")
+        raise RuntimeError(f"package_show para {dataset_id} respondió success=false: {payload.get('error')}")
     return payload["result"]
 
 
@@ -207,19 +223,59 @@ def download_to_file(url, dest_path, max_bytes=None):
 
 
 def detect_column(fieldnames, candidates):
-    """Busca en `fieldnames` (las columnas reales de un CSV) el primer nombre
-    que se parezca a alguno de `candidates` (nombres plausibles en español,
-    normalizados). Coincidencia por substring en ambos sentidos, sin tildes
-    ni mayúsculas — porque no sabemos el nombre exacto que usa cada
-    portal. Devuelve el nombre REAL de la columna (tal cual aparece en el
-    archivo), o None si no se encontró nada parecido."""
+    """Busca en `fieldnames` (las columnas reales de un CSV) el nombre que
+    mejor se parezca a alguno de `candidates` (nombres plausibles en
+    español, normalizados, sin tildes ni mayúsculas).
+
+    DOS PASADAS — corregido tras un bug real con datos del MEF: cuando un
+    dataset tiene pares "código" / "código_nombre" (ej.
+    DEPARTAMENTO_EJECUTORA vs DEPARTAMENTO_EJECUTORA_NOMBRE), una sola
+    pasada por substring-en-cualquier-sentido agarraba el campo de código
+    por error, porque "departamento_ejecutora" (el campo corto) queda
+    "contenido dentro" del candidato largo "departamento_ejecutora_nombre"
+    igual que si fuera al revés. Por eso ahora:
+      1) Primero se busca una coincidencia EXACTA (recorriendo todos los
+         candidatos, en su orden de prioridad) — esto es inequívoco y
+         resuelve el caso de arriba, porque "departamento_ejecutora_nombre"
+         solo empata exacto con el campo que de verdad se llama así.
+      2) Solo si ningún candidato tuvo coincidencia exacta, se cae a
+         substring en cualquier sentido (comportamiento anterior), para
+         seguir tolerando nombres de columna parcialmente distintos."""
     norm_fields = {f: normalize(f) for f in fieldnames}
+
     for cand in candidates:
         cand_n = normalize(cand)
         for real_name, norm_name in norm_fields.items():
-            if cand_n == norm_name or cand_n in norm_name or norm_name in cand_n:
+            if cand_n == norm_name:
                 return real_name
+
+    for cand in candidates:
+        cand_n = normalize(cand)
+        for real_name, norm_name in norm_fields.items():
+            if cand_n in norm_name or norm_name in cand_n:
+                return real_name
+
     return None
+
+
+def smart_decode(raw_bytes):
+    """Decodifica bytes de CSV a texto, adivinando entre UTF-8 y
+    Windows-1252 (cp1252).
+
+    CONFIRMADO CON DATOS REALES (corrida del 2026-08-22): los CSV de
+    Contraloría en este portal vienen en cp1252, no UTF-8 — forzarlos como
+    UTF-8 produce encabezados rotos tipo 'N�MERO DE INFORME DE CONTROL' en
+    vez de 'NÚMERO DE INFORME DE CONTROL'. cp1252 es tristemente común en
+    exportaciones de sistemas del Estado peruano (típicamente Excel/SQL
+    Server en Windows). Esta función intenta UTF-8 primero (por si un
+    dataset sí viene bien) y solo cae a cp1252 si UTF-8 dejó caracteres de
+    reemplazo (el síntoma de que la codificación no era esa) — cp1252
+    nunca lanza excepción (mapea cualquier byte a algún caracter), así que
+    es un respaldo seguro que no puede fallar."""
+    text = raw_bytes.decode("utf-8-sig", errors="replace")
+    if "�" in text:
+        text = raw_bytes.decode("cp1252", errors="replace")
+    return text
 
 
 def sniff_csv_reader(file_obj):
@@ -236,6 +292,13 @@ def sniff_csv_reader(file_obj):
 
 
 def write_summary(out_path, summary):
+    """Guarda el resumen como JSON, agregando siempre `generado_en` (hora
+    UTC de esta corrida) si no lo trae ya — así el frontend (o cualquier
+    revisión manual) puede mostrar honestamente cuándo se sincronizó por
+    última vez, en vez de inventar un "actualizado hace X minutos"."""
+    import datetime
+    if "generado_en" not in summary:
+        summary = {**summary, "generado_en": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(summary, f, ensure_ascii=False, indent=2)
     print(f"Listo: resumen guardado en {out_path}", file=sys.stderr)

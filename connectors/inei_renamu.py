@@ -38,6 +38,7 @@ from common import (
     find_resource,
     http_get,
     package_show,
+    smart_decode,
     sniff_csv_reader,
     write_summary,
 )
@@ -84,7 +85,7 @@ def process_rows(rows, fieldnames):
 
 
 def process_csv(csv_bytes):
-    text = csv_bytes.decode("utf-8-sig", errors="replace")
+    text = smart_decode(csv_bytes)
     reader = sniff_csv_reader(io.StringIO(text))
     fieldnames = reader.fieldnames or []
     return process_rows(reader, fieldnames)
