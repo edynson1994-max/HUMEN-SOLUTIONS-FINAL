@@ -3,7 +3,7 @@ name: Sincronizar licitaciones
 # Este workflow SOLO toca archivos dentro de licitaciones/ (data.json y el registro
 # de muestra). No modifica ninguna otra parte del sitio.
 #
-# Tiene DOS fuentes posibles:
+# Tiene TRES fuentes posibles:
 #   - "ocp" (por defecto, la que corre sola todos los días): el mirror OCDS de
 #     Open Contracting Partnership. Ya probada en producción, es la que se usa
 #     sin tocar nada.
@@ -11,9 +11,15 @@ name: Sincronizar licitaciones
 #     contratacionesabiertas.oece.gob.pe, con datos más al día (incluye el mes
 #     en curso) — pero automatizada con un navegador (Playwright) porque el
 #     sitio bloquea peticiones HTTP simples, y ESTA RUTA TODAVÍA NO SE HA
-#     PROBADO EN VIVO. Motivo de tenerla como job aparte y solo manual: si
-#     falla o hace falta ajustar selectores, no arriesga romper la
-#     sincronización diaria que ya funciona.
+#     PROBADO EN VIVO.
+#   - "seace" (solo manual): el CSV que exporta directamente el portal SEACE
+#     "Oportunidades de Negocio v2.0" (prod4.seace.gob.pe/openegocio) — la
+#     MISMA fuente del CSV que se subió a mano para construir csv_to_data.py,
+#     así que reutiliza ese parser ya probado tal cual. TAMPOCO se ha podido
+#     probar en vivo todavía.
+# Las dos últimas están como jobs aparte y solo manuales a propósito: si fallan
+# o hace falta ajustar selectores, no arriesgan romper la sincronización
+# diaria que ya funciona.
 
 on:
   schedule:
@@ -27,6 +33,7 @@ on:
         options:
           - ocp
           - oece
+          - seace
         default: ocp
 
 permissions:
@@ -108,5 +115,51 @@ jobs:
             echo "Sin cambios en los datos, no se crea commit."
           else
             git commit -m "Actualiza licitaciones - fuente OECE ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+            git push
+          fi
+
+  sync-seace:
+    # SOLO manual: elegir "seace" en "Run workflow". No probado en vivo
+    # todavía — si falla, revisa el log y el artifact de depuración.
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.fuente == 'seace'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Descargar el CSV (navegador real, sin filtros — cobertura nacional)
+        run: python licitaciones/scrape_seace_csv.py --out licitaciones/descargas
+
+      - name: Convertir a data.json (mismo parser probado con el CSV manual)
+        run: python licitaciones/csv_to_data.py licitaciones/descargas/*.csv
+
+      - name: Subir CSV/screenshot de depuración (siempre, para poder revisar)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seace-debug
+          path: licitaciones/descargas/
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Confirmar y subir cambios (solo si hubo cambios)
+        run: |
+          git config user.name "humen-licitaciones-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add licitaciones/data.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios en los datos, no se crea commit."
+          else
+            git commit -m "Actualiza licitaciones - fuente SEACE CSV ($(date -u +'%Y-%m-%d %H:%M UTC'))"
             git push
           fi
