@@ -241,7 +241,7 @@ section{ padding:64px 0; }
 .tag.educacion{ background:var(--andes-bg); color:var(--andes); }
 </style>
 
-<div class="demo-ribbon">🔶 VISTA PREVIA — todos los datos de esta demo son <strong>ficticios</strong>, creados solo para mostrar cómo se vería la plataforma con datos reales.</div>
+<div class="demo-ribbon" id="demoRibbon">🔶 VISTA PREVIA — todos los datos de esta demo son <strong>ficticios</strong>, creados solo para mostrar cómo se vería la plataforma con datos reales.</div>
 
 <header class="site">
   <div class="header-row">
@@ -319,7 +319,7 @@ section{ padding:64px 0; }
 
 <section class="hero-strip">
   <div class="wrap">
-    <div class="hero-kicker"><span class="dot"></span><span>Estelares · actualizado hace 6 minutos</span></div>
+    <div class="hero-kicker"><span class="dot"></span><span id="heroKickerText">Estelares · actualizado hace 6 minutos</span></div>
   </div>
 </section>
 
@@ -987,6 +987,159 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
     '</svg>';
   }
   document.getElementById('spark-s1').innerHTML = sparklineSVG(STORIES.s1.chart, 'var(--carmin)');
+
+  /* ============ Estelares con datos reales (MEF, Contraloría) ============
+     Reemplaza s1/s2/s3 (demo) por historias armadas en el momento a partir
+     de data/mef.json y data/contraloria.json — los mismos archivos que
+     actualiza el workflow "Sincronizar datos reales". Si esos archivos no
+     existen todavía o el fetch falla (sitio recién publicado, primera
+     sincronización aún no corrió), las 3 tarjetas se quedan tal como están
+     (el contenido de demo ya escrito en el HTML) — nunca se muestra un
+     estado roto, y el rótulo de "vista previa" no cambia.
+
+     Solo se reemplaza lo que de verdad se pudo calcular con datos reales:
+     si el MEF trae total pero Contraloría falló, s1/s2 cambian y s3 se
+     queda en demo. Esto es intencional — mejor una tarjeta de demo
+     claramente marcada que una tarjeta "real" a medias. */
+
+  function formatSoles(n){
+    if (n == null) return 'S/ —';
+    var abs = Math.abs(n);
+    if (abs >= 1e9) return 'S/ ' + (n/1e9).toFixed(1).replace('.', ',') + ' mil millones';
+    if (abs >= 1e6) return 'S/ ' + (n/1e6).toFixed(1).replace('.', ',') + ' millones';
+    if (abs >= 1e3) return 'S/ ' + Math.round(n/1e3).toLocaleString('es-PE') + ' mil';
+    return 'S/ ' + Math.round(n).toLocaleString('es-PE');
+  }
+
+  function fmtFechaCorta(iso){
+    if (!iso) return 'sincronización automática';
+    try {
+      var d = new Date(iso);
+      if (isNaN(d.getTime())) return iso;
+      return d.toLocaleDateString('es-PE', { day:'numeric', month:'short', year:'numeric' });
+    } catch (e) { return iso; }
+  }
+
+  function primerElemento(arr, filtro){
+    if (!arr) return null;
+    var out = arr.filter(filtro);
+    return out.length ? out[0] : null;
+  }
+
+  function construirHistoriasReales(mef, contraloria){
+    var reales = {};
+
+    if (mef && mef.estado === 'ok' && mef.monto_devengado_total != null) {
+      var serieMensual = (mef.gasto_mensual_nacional || []).map(function(m){ return m.monto_devengado; });
+      reales.s1 = {
+        tag: 'economia', tagLabel: 'Economía',
+        title: 'El Estado peruano devengó ' + formatSoles(mef.monto_devengado_total) + ' en gasto público en 2025',
+        dek: 'Suma del gasto devengado por todos los pliegos y niveles de gobierno durante el año, según el archivo de ejecución de gasto del MEF.',
+        metric: formatSoles(mef.monto_devengado_total),
+        delta: mef.filas_leidas ? mef.filas_leidas.toLocaleString('es-PE') + ' líneas presupuestales' : null,
+        deltaUp: null,
+        chart: serieMensual.length === 12 ? serieMensual : [1,1,1,1,1,1,1,1,1,1,1,1],
+        meaning: 'Esta cifra agrega el gasto "devengado" — el momento en que el Estado reconoce una obligación de pago ya generada, aunque el desembolso efectivo (girado) pueda ser posterior — de todas las entidades públicas del Perú durante 2025. No distingue tipos de gasto: incluye desde planillas hasta grandes obras de infraestructura.',
+        numbers: 'Suma de la columna "Monto Devengado Anual" para las ' + (mef.filas_leidas||0).toLocaleString('es-PE') + ' líneas presupuestales del archivo, sin filtrar por sector ni nivel de gobierno. El gráfico muestra el gasto devengado mes a mes, sumado a nivel nacional.',
+        methodology: 'Cifra sumada automáticamente por Perú en Datos a partir del archivo público de ejecución de gasto del MEF — no es un cálculo publicado por el MEF, es un agregado propio sobre su data abierta.',
+        source: { entidad:'Ministerio de Economía y Finanzas (MEF)', dataset:'Presupuesto y Ejecución de Gasto — Devengado Mensual 2025', updated: fmtFechaCorta(mef.generado_en), freq:'El MEF actualiza el archivo; Perú en Datos lo vuelve a leer cada semana', url: mef.dataset_url || '#' }
+      };
+
+      var topRegionMef = mef.top_regiones_por_monto && mef.top_regiones_por_monto.length ? mef.top_regiones_por_monto[0] : null;
+      if (topRegionMef) {
+        var rankingMef = mef.top_regiones_por_monto.slice(0, 8).map(function(r){ return r.monto_devengado; }).reverse();
+        reales.s2 = {
+          tag: 'economia', tagLabel: 'Economía',
+          title: topRegionMef.region + ' concentra el mayor gasto público ejecutado',
+          dek: 'De las regiones con gasto identificado en el archivo del MEF, ' + topRegionMef.region + ' encabeza el ranking de monto devengado en 2025.',
+          metric: formatSoles(topRegionMef.monto_devengado),
+          delta: '1ª de ' + mef.top_regiones_por_monto.length + ' regiones con dato', deltaUp: null,
+          chart: rankingMef,
+          meaning: 'Un monto alto no significa necesariamente "más obras en esa región": puede reflejar que ahí está la sede de una unidad ejecutora que administra gasto de alcance nacional, no solo local.',
+          numbers: 'Ranking de regiones por la suma del "Monto Devengado Anual" de sus unidades ejecutoras.',
+          methodology: 'Agregado propio de Perú en Datos, agrupando las líneas del archivo del MEF por la región de la unidad ejecutora.',
+          source: { entidad:'Ministerio de Economía y Finanzas (MEF)', dataset:'Presupuesto y Ejecución de Gasto — Devengado Mensual 2025', updated: fmtFechaCorta(mef.generado_en), freq:'Semanal (resincronización)', url: mef.dataset_url || '#' }
+        };
+      }
+    }
+
+    if (contraloria && contraloria.datasets) {
+      var dsInterv = primerElemento(contraloria.datasets, function(d){ return d.estado === 'ok' && d.top_regiones && d.top_regiones.length; });
+      if (dsInterv) {
+        var topContraloria = dsInterv.top_regiones[0];
+        var idDestino = reales.s2 ? 's3' : 's2';
+        reales[idDestino] = {
+          tag: 'gobierno', tagLabel: 'Gobierno',
+          title: topContraloria.region + ' concentra más intervenciones de Monitores Ciudadanos de Control',
+          dek: '"' + dsInterv.titulo + '", publicado por la Contraloría General de la República.',
+          metric: topContraloria.conteo.toLocaleString('es-PE'),
+          delta: 'registros en ' + topContraloria.region, deltaUp: null,
+          chart: dsInterv.top_regiones.slice(0, 8).map(function(r){ return r.conteo; }).reverse(),
+          meaning: 'Los Monitores Ciudadanos de Control son voluntarios capacitados por la Contraloría para vigilar obras y servicios públicos. Esta cifra mide dónde hay más registros de sus intervenciones — no necesariamente dónde hay más irregularidades.',
+          numbers: 'Conteo de registros del dataset "' + dsInterv.titulo + '", agrupados por región.',
+          methodology: 'Conteo directo del archivo publicado por la Contraloría, sin cálculos adicionales — solo agregación por región.',
+          source: { entidad:'Contraloría General de la República', dataset: dsInterv.titulo, updated: fmtFechaCorta(contraloria.generado_en), freq:'Según publique la Contraloría', url: dsInterv.dataset_url || '#' }
+        };
+      }
+    }
+
+    return reales;
+  }
+
+  function renderLeadCard(id, s){
+    var el = document.querySelector('.story-card.lead[data-story="' + id + '"]');
+    if (!el || !s) return;
+    el.innerHTML =
+      '<div>' +
+        '<div class="tags"><span class="tag ' + s.tag + '">' + s.tagLabel + '</span></div>' +
+        '<h3 style="margin-top:12px;">' + s.title + '</h3>' +
+        '<p class="dek" style="margin-top:10px;">' + s.dek + '</p>' +
+      '</div>' +
+      '<div>' +
+        '<div class="sparkline-wrap" id="spark-' + id + '"></div>' +
+        '<div class="metric-row">' +
+          '<span class="metric tabular">' + s.metric + '</span>' +
+          (s.delta ? '<span class="delta tabular" style="color:var(--ink-soft)">' + s.delta + '</span>' : '') +
+        '</div>' +
+        '<div class="meta-line" style="margin-top:8px;"><span>' + s.source.entidad + '</span><span>·</span><span>Actualizado ' + s.source.updated + '</span></div>' +
+      '</div>';
+    document.getElementById('spark-' + id).innerHTML = sparklineSVG(s.chart, 'var(--carmin)');
+  }
+
+  function renderSecondaryCard(id, s){
+    var el = document.querySelector('.story-card.secondary[data-story="' + id + '"]');
+    if (!el || !s) return;
+    el.innerHTML =
+      '<div class="tags"><span class="tag ' + s.tag + '">' + s.tagLabel + '</span></div>' +
+      '<h3>' + s.title + '</h3>' +
+      '<div class="metric-row">' +
+        '<span class="metric tabular">' + s.metric + '</span>' +
+        (s.delta ? '<span class="delta tabular" style="color:var(--ink-soft)">' + s.delta + '</span>' : '') +
+      '</div>';
+  }
+
+  Promise.all([
+    fetch('../data/mef.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
+    fetch('../data/contraloria.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
+  ]).then(function(res){
+    var mef = res[0], contraloria = res[1];
+    var reales = construirHistoriasReales(mef, contraloria);
+    var idsReales = Object.keys(reales);
+    if (!idsReales.length) return; // ni un dato real disponible todavía — se queda la demo tal cual
+
+    idsReales.forEach(function(id){ STORIES[id] = reales[id]; });
+    if (reales.s1) renderLeadCard('s1', reales.s1);
+    if (reales.s2) renderSecondaryCard('s2', reales.s2);
+    if (reales.s3) renderSecondaryCard('s3', reales.s3);
+
+    var masReciente = [mef, contraloria].filter(Boolean).map(function(d){ return d.generado_en; }).filter(Boolean).sort().pop();
+    document.getElementById('heroKickerText').textContent = 'Estelares · datos reales · ' + fmtFechaCorta(masReciente);
+
+    var ribbon = document.getElementById('demoRibbon');
+    var faltantes = ['s1','s2','s3'].filter(function(id){ return idsReales.indexOf(id) === -1; });
+    ribbon.innerHTML = '🔶 Estelares usa <strong>datos reales</strong> de fuentes oficiales (revisa "Fuente" en cada historia). ' +
+      (faltantes.length ? 'El resto de Estelares, y Último / Explora / Mapa / Tu Perú, siguen en modo demostración con datos ficticios mientras se conectan más fuentes.' : 'Último, Explora, Mapa y Tu Perú siguen en modo demostración con datos ficticios mientras se conectan más fuentes.');
+  });
 
   /* ============ modal de historia ============ */
   var veil = document.getElementById('modalVeil');
