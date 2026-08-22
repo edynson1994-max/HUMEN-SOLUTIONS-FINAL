@@ -3,7 +3,151 @@
   "atribucion": "Ministerio de Economía y Finanzas (MEF), vía Portal Nacional de Datos Abiertos.",
   "dataset_url": "https://www.datosabiertos.gob.pe/dataset/presupuesto-y-ejecuci%C3%B3n-de-gasto-%E2%80%93-devengado-mensual",
   "csv_url": "https://fs.datosabiertos.mef.gob.pe/datastorefiles/2025-Gasto-Devengado-Mensual.csv",
-  "estado": "error",
-  "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+  "columnas_detectadas": [
+    "ANO_EJE",
+    "NIVEL_GOBIERNO",
+    "NIVEL_GOBIERNO_NOMBRE",
+    "SECTOR",
+    "SECTOR_NOMBRE",
+    "PLIEGO",
+    "PLIEGO_NOMBRE",
+    "SEC_EJEC",
+    "EJECUTORA",
+    "EJECUTORA_NOMBRE",
+    "DEPARTAMENTO_EJECUTORA",
+    "DEPARTAMENTO_EJECUTORA_NOMBRE",
+    "PROVINCIA_EJECUTORA",
+    "PROVINCIA_EJECUTORA_NOMBRE",
+    "DISTRITO_EJECUTORA",
+    "DISTRITO_EJECUTORA_NOMBRE",
+    "PROGRAMA_PPTO",
+    "PROGRAMA_PPTO_NOMBRE",
+    "TIPO_ACT_PROY",
+    "PRODUCTO_PROYECTO",
+    "PRODUCTO_PROYECTO_NOMBRE",
+    "ACTIVIDAD_ACCION_OBRA",
+    "ACTIVIDAD_ACCION_OBRA_NOMBRE",
+    "FUNCION",
+    "FUNCION_NOMBRE",
+    "DIVISION_FUNCIONAL",
+    "DIVISION_FUNCIONAL_NOMBRE",
+    "GRUPO_FUNCIONAL",
+    "GRUPO_FUNCIONAL_NOMBRE",
+    "SEC_FUNC",
+    "META",
+    "FINALIDAD",
+    "META_NOMBRE",
+    "DEPARTAMENTO_META",
+    "DEPARTAMENTO_META_NOMBRE",
+    "FUENTE_FINANCIAMIENTO",
+    "FUENTE_FINANCIAMIENTO_NOMBRE",
+    "RUBRO",
+    "RUBRO_NOMBRE",
+    "TIPO_RECURSO",
+    "TIPO_RECURSO_NOMBRE",
+    "CATEGORIA_GASTO",
+    "CATEGORIA_GASTO_NOMBRE",
+    "TIPO_TRANSACCION",
+    "TIPO_TRANSACCION_NOMBRE",
+    "GENERICA",
+    "GENERICA_NOMBRE",
+    "SUBGENERICA",
+    "SUBGENERICA_NOMBRE",
+    "SUBGENERICA_DET",
+    "SUBGENERICA_DET_NOMBRE",
+    "ESPECIFICA",
+    "ESPECIFICA_NOMBRE",
+    "ESPECIFICA_DET",
+    "ESPECIFICA_DET_NOMBRE",
+    "MONTO_PIA",
+    "MONTO_PIM",
+    "MONTO_CERTIFICADO_ANUAL",
+    "MONTO_COMPROMETIDO_ANUAL",
+    "MONTO_DEVENGADO_ENERO",
+    "MONTO_DEVENGADO_FEBRERO",
+    "MONTO_DEVENGADO_MARZO",
+    "MONTO_DEVENGADO_ABRIL",
+    "MONTO_DEVENGADO_MAYO",
+    "MONTO_DEVENGADO_JUNIO",
+    "MONTO_DEVENGADO_JULIO",
+    "MONTO_DEVENGADO_AGOSTO",
+    "MONTO_DEVENGADO_SEPTIEMBRE",
+    "MONTO_DEVENGADO_OCTUBRE",
+    "MONTO_DEVENGADO_NOVIEMBRE",
+    "MONTO_DEVENGADO_DICIEMBRE",
+    "MONTO_DEVENGADO_ANUAL",
+    "MONTO_GIRADO_ANUAL"
+  ],
+  "columna_region_usada": "DEPARTAMENTO_EJECUTORA",
+  "columna_monto_usada": "MONTO_DEVENGADO_ENERO",
+  "columna_mes_usada": null,
+  "columna_entidad_usada": "PLIEGO",
+  "filas_leidas": 2807168,
+  "filas_con_monto_valido": 2807168,
+  "monto_devengado_total": 16835113842.62,
+  "top_regiones_por_monto": [
+    {
+      "region": "15",
+      "monto_devengado": 11081188136.78
+    },
+    {
+      "region": "20",
+      "monto_devengado": 423083929.57
+    },
+    {
+      "region": "12",
+      "monto_devengado": 404022052.06
+    },
+    {
+      "region": "06",
+      "monto_devengado": 399969928.64
+    },
+    {
+      "region": "16",
+      "monto_devengado": 395415954.84
+    },
+    {
+      "region": "04",
+      "monto_devengado": 351565889.5
+    },
+    {
+      "region": "13",
+      "monto_devengado": 344612849.99
+    },
+    {
+      "region": "08",
+      "monto_devengado": 331124992.54
+    },
+    {
+      "region": "07",
+      "monto_devengado": 331018213.56
+    },
+    {
+      "region": "02",
+      "monto_devengado": 310581265.98
+    },
+    {
+      "region": "21",
+      "monto_devengado": 282496945.63
+    },
+    {
+      "region": "01",
+      "monto_devengado": 260944155.78
+    },
+    {
+      "region": "14",
+      "monto_devengado": 245762985.04
+    },
+    {
+      "region": "11",
+      "monto_devengado": 232286103.87
+    },
+    {
+      "region": "22",
+      "monto_devengado": 223423779.94
+    }
+  ],
+  "muestra_parcial": false,
+  "estado": "ok",
   "url_origen": "url_fija"
 }

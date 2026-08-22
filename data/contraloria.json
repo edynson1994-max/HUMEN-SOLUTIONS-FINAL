@@ -4,17 +4,131 @@
   "datasets": [
     {
       "titulo": "Resultados de intervenciones de Monitores Ciudadanos de Control 2021",
+      "filas_totales": 4089,
+      "columnas_detectadas": [
+        "CODIGO ORDEN DE SERVICIO",
+        "DENOMINACION DEL SERVICIO",
+        "TIPO DE INTERVENCION",
+        "CODIGO ENTIDAD",
+        "ENTIDAD",
+        "REGION",
+        "PROVINCIA",
+        "DISTRITO",
+        "�TIENE SITUACIONES DE INCUMPLIMIENTO?",
+        "N�MERO DE INFORME DE CONTROL"
+      ],
+      "columna_region_usada": "REGION",
+      "columna_fecha_usada": null,
+      "top_regiones": [
+        {
+          "region": "Lima Metropolitana",
+          "conteo": 603
+        },
+        {
+          "region": "Ancash",
+          "conteo": 259
+        },
+        {
+          "region": "Cajamarca",
+          "conteo": 229
+        },
+        {
+          "region": "La Libertad",
+          "conteo": 229
+        },
+        {
+          "region": "Cusco",
+          "conteo": 200
+        },
+        {
+          "region": "Piura",
+          "conteo": 198
+        },
+        {
+          "region": "Junin",
+          "conteo": 196
+        },
+        {
+          "region": "Puno",
+          "conteo": 183
+        },
+        {
+          "region": "Arequipa",
+          "conteo": 173
+        },
+        {
+          "region": "Lima Provincias",
+          "conteo": 172
+        }
+      ],
+      "metodo": "descarga_url_fija",
+      "estado": "ok",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/resultados-de-las-intervenciones-realizadas-por-los-monitores-ciudadanos-de-control-en-el",
-      "csv_url": "https://www.datosabiertos.gob.pe/sites/default/files/DATOS%20ABIERTOS%20-%20RESULTADOS%20DE%20INTERVENCIONES%202021_3.csv",
-      "estado": "error",
-      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+      "csv_url": "https://www.datosabiertos.gob.pe/sites/default/files/DATOS%20ABIERTOS%20-%20RESULTADOS%20DE%20INTERVENCIONES%202021_3.csv"
     },
     {
       "titulo": "Información general de los Monitores Ciudadanos de Control",
+      "filas_totales": 19910,
+      "columnas_detectadas": [
+        "C�DIGO",
+        "A�O DE INGRESO",
+        "REGI�N",
+        "DEPARTAMENTO",
+        "DISTRITO",
+        "SEXO",
+        "EDAD",
+        "ESTUDIOS ALCANZADOS",
+        "OCUPACI�N",
+        "CARRERA PROFESIONAL O T�CNICA"
+      ],
+      "columna_region_usada": "DEPARTAMENTO",
+      "columna_fecha_usada": null,
+      "top_regiones": [
+        {
+          "region": "Lima",
+          "conteo": 2779
+        },
+        {
+          "region": "Arequipa",
+          "conteo": 1503
+        },
+        {
+          "region": "Huancayo",
+          "conteo": 786
+        },
+        {
+          "region": "Cusco",
+          "conteo": 736
+        },
+        {
+          "region": "Trujillo",
+          "conteo": 696
+        },
+        {
+          "region": "Chiclayo",
+          "conteo": 638
+        },
+        {
+          "region": "Piura",
+          "conteo": 548
+        },
+        {
+          "region": "Puno",
+          "conteo": 540
+        },
+        {
+          "region": "Tacna",
+          "conteo": 524
+        },
+        {
+          "region": "Huanuco",
+          "conteo": 471
+        }
+      ],
+      "metodo": "descarga_url_fija",
+      "estado": "ok",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/informaci%C3%B3n-general-de-los-monitores-ciudadanos-de-control",
-      "csv_url": "https://www.datosabiertos.gob.pe/sites/default/files/DATOS%20ABIERTOS%20-%20MONITORES%20CIUDADANOS%20DE%20CONTROL.csv",
-      "estado": "error",
-      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+      "csv_url": "https://www.datosabiertos.gob.pe/sites/default/files/DATOS%20ABIERTOS%20-%20MONITORES%20CIUDADANOS%20DE%20CONTROL.csv"
     }
   ]
 }
