@@ -85,7 +85,7 @@ jobs:
           python -m playwright install --with-deps chromium
 
       - name: Descargar el archivo del mes más reciente (navegador real)
-        run: python licitaciones/scrape_oece.py --out licitaciones/descargas --debug
+        run: python licitaciones/scrape_oece.py --out licitaciones/descargas
 
       - name: Convertir a data.json (reutiliza el parser de sync.py)
         run: python licitaciones/oece_json_to_data.py "licitaciones/descargas/*.zip"
