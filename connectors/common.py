@@ -139,7 +139,21 @@ def package_show(dataset_id):
         )
     if not payload.get("success"):
         raise RuntimeError(f"package_show para {dataset_id} respondió success=false: {payload.get('error')}")
-    return payload["result"]
+
+    result = payload["result"]
+    # Confirmado en la primera corrida real de discovery.py contra el
+    # portal completo (2026-08-22, ~4,646 datasets): para al menos un
+    # dataset, "result" vino como una LISTA en vez de un objeto, aunque
+    # "success" fuera true y el sobre exterior sí fuera un dict (por eso
+    # el chequeo de arriba no lo detectaba). Sin esto, quien llama recibe
+    # un objeto con forma inesperada y revienta más adelante con un error
+    # críptico (AttributeError) en vez de uno diagnosticable.
+    if not isinstance(result, dict):
+        raise RuntimeError(
+            f"package_show para {dataset_id} tiene 'result' de tipo {type(result).__name__} "
+            f"en vez de un objeto — contenido: {str(result)[:300]!r}"
+        )
+    return result
 
 
 def datastore_search_all(resource_id, page_size=5000, max_records=None):

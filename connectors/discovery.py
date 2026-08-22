@@ -19,7 +19,7 @@ QUÉ HACE
    las categorías quedan registradas, aunque solo se sondee Data API para
    Economía y Finanzas en el MVP) — así las categorías futuras (sección
    20 del pedido original: Gobernabilidad, Salud, etc.) ya tienen su
-   metadata lista sin tener que volver a recorrer los ~1,050 datasets.
+   metadata lista sin tener que volver a recorrer los ~4,600 datasets.
 
 ENDPOINTS VERIFICADOS EN VIVO (no adivinados — probados contra el portal
 real antes de escribir este archivo, uno por uno, con fetch real):
@@ -28,9 +28,19 @@ real antes de escribir este archivo, uno por uno, con fetch real):
                                              en sesiones anteriores).
   - `api/3/action/package_list`           → SÍ funciona. Devuelve
                                              {"success": true, "result":
-                                             [slugs...]}. Corrida real
-                                             (2026-08-22): 1,051 slugs.
-                                             Los slugs vienen con
+                                             [slugs...]}. Una prueba con
+                                             la herramienta de fetch (que
+                                             resume el HTML/JSON con un
+                                             modelo, no lo lee crudo)
+                                             reportó 1,051 slugs — pero la
+                                             primera corrida real en
+                                             GitHub Actions (2026-08-22)
+                                             confirmó 4,646. El número
+                                             correcto es el que reporta
+                                             cada corrida en
+                                             `total_datasets_portal`, no
+                                             ninguna cifra fija de este
+                                             comentario. Los slugs vienen con
                                              tildes/ñ SIN codificar (ej.
                                              "viáticos-de-entidades") —
                                              coincide con lo que ya espera
@@ -85,7 +95,7 @@ vez de inventar un campo que no existe o scrapear la página bloqueada.
 
 POR QUÉ SOLO SE PRUEBA DATA API PARA "ECONOMÍA Y FINANZAS" POR DEFECTO
 -------------------------------------------------------------------------
-Probar `has_data_api()` es 1 petición HTTP por recurso. Con ~1,050
+Probar `has_data_api()` es 1 petición HTTP por recurso. Con ~4,600
 datasets (varios con más de un recurso), probarlo para TODO el portal en
 cada corrida de descubrimiento sería lento y poco respetuoso con el
 servidor del portal, y el MVP (sección 10 del plan) solo necesita esto
@@ -158,7 +168,7 @@ def clasificar_categoria(dataset_result):
     — o (None, None) si el dataset no matchea Economía y Finanzas con
     ninguno de los dos criterios. Nunca asume "sí" por defecto: la
     ausencia de match es un resultado válido y esperado para la mayoría
-    del portal (el MVP es solo una categoría de ~1,050)."""
+    del portal (el MVP es solo una categoría de ~4,600)."""
     groups = dataset_result.get("groups") or []
     entidad_norm = normalize(groups[0].get("title", "")) if groups else ""
     for candidato in ENTIDADES_ECONOMIA_FINANZAS_NOMBRES:
@@ -258,21 +268,34 @@ def main():
     datasets = []
     errores = []
     for i, slug in enumerate(slugs, 1):
+        # TODO el procesamiento de un dataset (no solo el package_show) va
+        # en un único try/except. Bug real encontrado en la primera corrida
+        # contra el portal real (2026-08-22): para al menos un dataset,
+        # package_show() respondió success=true pero su "result" vino como
+        # una LISTA en vez de un objeto — algo que common.py no validaba
+        # (solo validaba que el sobre {"success":...} fuera un dict, no que
+        # "result" también lo fuera). Como clasificar_categoria() y
+        # construir_entrada_dataset() esperan un dict y llamaban
+        # .get(...) sobre él, esto tumbaba TODO el run con un
+        # AttributeError sin capturar, en vez de registrarse como el error
+        # de un solo dataset y seguir con los demás. Corregido en dos
+        # frentes: aquí (todo el cuerpo del loop protegido) y en
+        # common.py (package_show ahora valida el tipo de "result" antes
+        # de devolverlo, con un error explícito y diagnosticable).
         try:
             resultado = package_show(slug)
+            categoria_preview, _ = clasificar_categoria(resultado)
+            probar_este = (
+                args.probar_data_api == "todos"
+                or (args.probar_data_api == "economia-finanzas" and categoria_preview == "Economía y Finanzas")
+            )
+            entrada = construir_entrada_dataset(slug, resultado, probar_este)
+            datasets.append(entrada)
         except Exception as exc:
             print(f"  [{i}/{len(slugs)}] ERROR en {slug!r}: {exc}", file=sys.stderr)
             errores.append({"dataset_id": slug, "error": str(exc)})
             time.sleep(args.pausa)
             continue
-
-        categoria_preview, _ = clasificar_categoria(resultado)
-        probar_este = (
-            args.probar_data_api == "todos"
-            or (args.probar_data_api == "economia-finanzas" and categoria_preview == "Economía y Finanzas")
-        )
-        entrada = construir_entrada_dataset(slug, resultado, probar_este)
-        datasets.append(entrada)
 
         if i % 50 == 0 or i == len(slugs):
             econ_hasta_ahora = sum(1 for d in datasets if d["categoria"] == "Economía y Finanzas")
