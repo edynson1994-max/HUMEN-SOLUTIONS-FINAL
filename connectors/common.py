@@ -142,12 +142,31 @@ def package_show(dataset_id):
 
     result = payload["result"]
     # Confirmado en la primera corrida real de discovery.py contra el
-    # portal completo (2026-08-22, ~4,646 datasets): para al menos un
-    # dataset, "result" vino como una LISTA en vez de un objeto, aunque
-    # "success" fuera true y el sobre exterior sí fuera un dict (por eso
-    # el chequeo de arriba no lo detectaba). Sin esto, quien llama recibe
-    # un objeto con forma inesperada y revienta más adelante con un error
-    # críptico (AttributeError) en vez de uno diagnosticable.
+    # portal completo (2026-08-22, ~4,646 datasets): para una porción
+    # GRANDE del portal (miles de datasets, no un caso raro aislado),
+    # "result" no viene como el objeto directo sino como una LISTA que
+    # contiene ese mismo objeto adentro, con un solo elemento — verificado
+    # con fetch real contra varios de estos datasets, ej.:
+    #   {"success": true, "result": [{"id": ..., "title": ..., "notes":
+    #   ..., "groups": [...], "resources": [...], ...}]}
+    # en vez de la forma esperada {"success": true, "result": {...}}.
+    # No se pudo determinar con certeza por qué el portal usa esta forma
+    # alterna solo para algunos datasets (posiblemente relacionado con
+    # datasets marcados "private": true en su metadata, visto en varios
+    # de los que devuelven esta forma) — pero el contenido en sí es
+    # idéntico y confiable, así que aquí se "desenvuelve" la lista de un
+    # solo elemento en vez de descartar el dataset como error. Si la
+    # lista viene vacía o con más de un elemento, ESO sí es ambiguo/
+    # inesperado y se reporta como error explícito, sin adivinar cuál
+    # elegir.
+    if isinstance(result, list):
+        if len(result) == 1 and isinstance(result[0], dict):
+            result = result[0]
+        else:
+            raise RuntimeError(
+                f"package_show para {dataset_id} tiene 'result' como lista con {len(result)} elemento(s) "
+                f"(se esperaba 0 o 1 para poder desenvolverla) — contenido: {str(result)[:300]!r}"
+            )
     if not isinstance(result, dict):
         raise RuntimeError(
             f"package_show para {dataset_id} tiene 'result' de tipo {type(result).__name__} "
