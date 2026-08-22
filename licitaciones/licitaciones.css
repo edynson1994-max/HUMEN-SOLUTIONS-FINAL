@@ -430,6 +430,19 @@ PANEL DE DETALLE
 .lic-panel .lic-panel-link{ margin-top:20px; }
 .lic-panel .lic-panel-link a{ color:var(--secondary); font-weight:700; }
 .lic-panel .lic-panel-link a:hover{ color:#8A6F3F; }
+.lic-panel .lic-panel-link-fallback{
+    background:var(--secondary-bg);
+    border-radius:12px;
+    padding:12px 16px;
+}
+.lic-panel-hint{
+    display:block;
+    margin-top:6px;
+    font-size:.85rem;
+    font-weight:400;
+    color:var(--text-light,#6b6b6b);
+}
+.lic-panel-hint strong{ color:var(--text); }
 
 /*=========================
 FOOTER SIMPLIFICADO

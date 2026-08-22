@@ -174,6 +174,7 @@
       };
 
       var DATA = [];
+      var SEARCH_URL = null; // portal oficial de búsqueda, para el enlace de respaldo cuando no hay un link directo verificado
       var onlyHumen = false;
       var today = new Date();
 
@@ -325,6 +326,24 @@
         });
       }
 
+      function linkBlock(d){
+        // d.url: enlace directo y verificado a la ficha/documento del proceso.
+        // Cuando no existe (p.ej. datos cargados desde el CSV manual, donde no
+        // hay un patrón de enlace directo confirmado), se ofrece un enlace
+        // honesto al buscador oficial en vez de inventar una URL — junto con
+        // el código del proceso para copiar y pegar en ese buscador.
+        if (d.url){
+          return '<p class="lic-panel-link"><a href="'+d.url+'" target="_blank" rel="noopener">Ver proceso / documento fuente ↗</a></p>';
+        }
+        if (SEARCH_URL){
+          return '<p class="lic-panel-link lic-panel-link-fallback">' +
+            '<a href="'+SEARCH_URL+'" target="_blank" rel="noopener">Buscar este proceso en el portal oficial ↗</a>' +
+            (d.code ? '<span class="lic-panel-hint">Usa el código <strong>'+d.code+'</strong> en el buscador del portal.</span>' : '') +
+            '</p>';
+        }
+        return '';
+      }
+
       function openDetail(d){
         var u = urgency(d);
         document.getElementById("panel").innerHTML =
@@ -346,7 +365,7 @@
             '<dt>Fecha límite</dt><dd>'+(d.dueDate ? fmtDate(d.dueDate) : "no publicada")+'</dd>' +
           '</dl>' +
           '<p class="obj">'+d.objeto+'</p>' +
-          (d.url ? '<p class="lic-panel-link"><a href="'+d.url+'" target="_blank" rel="noopener">Ver documento fuente ↗</a></p>' : '');
+          linkBlock(d);
         document.getElementById("veil").classList.add("open");
         document.getElementById("closeBtn").addEventListener("click", closeDetail);
       }
@@ -375,6 +394,8 @@
               pubDate: parseDate(item.pubDate)
             });
           });
+
+          SEARCH_URL = json.source_url || null;
 
           var attribBanner = document.getElementById("attribBanner");
           if (json.attribution){

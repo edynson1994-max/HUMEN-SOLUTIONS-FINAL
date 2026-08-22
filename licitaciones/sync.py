@@ -159,6 +159,30 @@ def get_document_url(tender):
     return None
 
 
+def get_process_url(release, tender):
+    """Enlace verificado para 'entrar' al proceso.
+
+    Prioridad:
+    1. Un documento del propio tender que ya traiga URL (a veces apunta
+       directo al PDF de bases o a la ficha en SEACE) — es el más específico
+       cuando existe.
+    2. La ficha del proceso en el portal público de datos abiertos de
+       contrataciones, construida a partir del OCID:
+           https://contratacionesabiertas.osce.gob.pe/proceso/{ocid}
+       Este patrón está VERIFICADO (se confirmó contra un resultado de
+       búsqueda real en ese portal) — no es un patrón inventado.
+    Si no hay ni documento ni ocid, no se inventa nada: se deja en None y el
+    frontend cae de vuelta al buscador general.
+    """
+    doc_url = get_document_url(tender)
+    if doc_url:
+        return doc_url
+    ocid = release.get("ocid")
+    if ocid:
+        return f"https://contratacionesabiertas.osce.gob.pe/proceso/{ocid}"
+    return None
+
+
 def parse_release(release):
     tender = release.get("tender") or {}
     status = (tender.get("status") or "").lower()
@@ -189,16 +213,22 @@ def parse_release(release):
         except ValueError:
             pass
 
-    # Si no hay fecha límite conocida, exigimos que sea razonablemente reciente
-    # para no arrastrar procesos históricos ya cerrados sin marcarlo explícitamente.
-    if due_date is None and pub_date:
+    # Si no hay fecha límite conocida (frecuente en Contratación Directa, que no
+    # tiene periodo de postulación), exigimos que la publicación sea reciente
+    # para no arrastrar procesos históricos ya cerrados. Si TAMPOCO hay fecha de
+    # publicación, no hay forma de saber si sigue vigente — antes esos casos se
+    # colaban sin filtro alguno (así se filtró un proceso de 2015); ahora se
+    # descartan directamente, por precaución.
+    if due_date is None:
+        if not pub_date:
+            return None
         try:
             pub_dt = datetime.strptime(pub_date, "%Y-%m-%d").replace(tzinfo=timezone.utc)
             age_days = (datetime.now(timezone.utc) - pub_dt).days
             if age_days > FALLBACK_LOOKBACK_DAYS:
                 return None
         except ValueError:
-            pass
+            return None
 
     value = tender.get("value") or {}
     buyer_name = (release.get("buyer") or {}).get("name") or "Entidad no especificada"
@@ -220,7 +250,7 @@ def parse_release(release):
         "pubDate": pub_date,
         "dueDate": due_date,
         "objeto": description.strip() or title.strip(),
-        "url": get_document_url(tender),
+        "url": get_process_url(release, tender),
     }
 
 
