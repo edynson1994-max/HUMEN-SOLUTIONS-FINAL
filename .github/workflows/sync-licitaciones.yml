@@ -2,18 +2,41 @@ name: Sincronizar licitaciones
 
 # Este workflow SOLO toca archivos dentro de licitaciones/ (data.json y el registro
 # de muestra). No modifica ninguna otra parte del sitio.
+#
+# Tiene DOS fuentes posibles:
+#   - "ocp" (por defecto, la que corre sola todos los días): el mirror OCDS de
+#     Open Contracting Partnership. Ya probada en producción, es la que se usa
+#     sin tocar nada.
+#   - "oece" (solo manual, botón "Run workflow"): el portal oficial peruano
+#     contratacionesabiertas.oece.gob.pe, con datos más al día (incluye el mes
+#     en curso) — pero automatizada con un navegador (Playwright) porque el
+#     sitio bloquea peticiones HTTP simples, y ESTA RUTA TODAVÍA NO SE HA
+#     PROBADO EN VIVO. Motivo de tenerla como job aparte y solo manual: si
+#     falla o hace falta ajustar selectores, no arriesga romper la
+#     sincronización diaria que ya funciona.
 
 on:
   schedule:
     # 11:00 UTC = 06:00 hora de Lima. Ajustar si se prefiere otro horario.
     - cron: "0 11 * * *"
-  workflow_dispatch: {}  # permite lanzarlo a mano desde la pestaña "Actions" en GitHub
+  workflow_dispatch:
+    inputs:
+      fuente:
+        description: "Fuente de datos a usar"
+        type: choice
+        options:
+          - ocp
+          - oece
+        default: ocp
 
 permissions:
   contents: write
 
 jobs:
-  sync:
+  sync-ocp:
+    # Corre todos los días por el cron, y también a mano si se elige "ocp"
+    # (o se deja el valor por defecto) en "Run workflow".
+    if: github.event_name == 'schedule' || github.event.inputs.fuente == 'ocp'
     runs-on: ubuntu-latest
     steps:
       - name: Descargar el repositorio
@@ -27,7 +50,7 @@ jobs:
       - name: Instalar dependencias
         run: pip install requests
 
-      - name: Ejecutar sincronización
+      - name: Ejecutar sincronización (mirror OCP)
         run: python licitaciones/sync.py
 
       - name: Confirmar y subir cambios (solo si hubo cambios)
@@ -38,6 +61,52 @@ jobs:
           if git diff --cached --quiet; then
             echo "Sin cambios en los datos, no se crea commit."
           else
-            git commit -m "Actualiza licitaciones ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+            git commit -m "Actualiza licitaciones - fuente OCP ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+            git push
+          fi
+
+  sync-oece:
+    # SOLO manual: elegir "oece" en "Run workflow". No probado en vivo todavía
+    # — si falla, revisa el log y la screenshot que sube como artifact.
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.fuente == 'oece'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Descargar el archivo del mes más reciente (navegador real)
+        run: python licitaciones/scrape_oece.py --out licitaciones/descargas --debug
+
+      - name: Convertir a data.json (reutiliza el parser de sync.py)
+        run: python licitaciones/oece_json_to_data.py "licitaciones/descargas/*.zip"
+
+      - name: Subir screenshot/zip de depuración (siempre, para poder revisar)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: oece-debug
+          path: licitaciones/descargas/
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Confirmar y subir cambios (solo si hubo cambios)
+        run: |
+          git config user.name "humen-licitaciones-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add licitaciones/data.json licitaciones/sample_raw_release.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios en los datos, no se crea commit."
+          else
+            git commit -m "Actualiza licitaciones - fuente OECE ($(date -u +'%Y-%m-%d %H:%M UTC'))"
             git push
           fi
