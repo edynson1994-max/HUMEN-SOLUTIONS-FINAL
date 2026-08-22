@@ -1,7 +1,7 @@
 name: Descubrir catálogo PNDA (Fase 3 - Perú en Datos)
 
 # Corre connectors/discovery.py: recorre TODO el portal de datos abiertos
-# (package_list + package_show por cada dataset, ~1,050 a la fecha),
+# (package_list + package_show por cada dataset, ~4,600 a la fecha),
 # clasifica cuáles son de Economía y Finanzas, y prueba en vivo cuáles
 # recursos tienen la Data API activada. Escribe data/catalog.json.
 #
@@ -13,7 +13,7 @@ name: Descubrir catálogo PNDA (Fase 3 - Perú en Datos)
 #
 # Para una primera prueba rápida, usa "Run workflow" y pon un número
 # pequeño en "limit" (ej. 20) — así se prueba el flujo completo sin
-# esperar a recorrer los ~1,050 datasets del portal. Déjalo vacío para la
+# esperar a recorrer los ~4,600 datasets del portal. Déjalo vacío para la
 # corrida completa (tarda varios minutos, a propósito: hay una pausa
 # entre peticiones para no saturar el servidor del portal).
 
@@ -21,7 +21,7 @@ on:
   workflow_dispatch:
     inputs:
       limit:
-        description: "Procesar solo los primeros N datasets del portal (vacío = todos, ~1,050)"
+        description: "Procesar solo los primeros N datasets del portal (vacío = todos, ~4,600)"
         required: false
         default: ""
       probar_data_api:
