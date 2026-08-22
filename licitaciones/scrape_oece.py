@@ -18,8 +18,9 @@ PODIDO PROBAR EN VIVO desde el entorno donde se escribió este script — no hay
 salida de red hacia este dominio desde ahí. Los selectores de abajo son un
 borrador basado únicamente en capturas de pantalla de la página, no en una
 inspección real del DOM. Es muy probable que haga falta un round de ajustes
-mirando el error real (correr esto con `--debug` y compartir el mensaje, o
-correrlo en GitHub Actions con `workflow_dispatch` y revisar el log).
+mirando el error real (correrlo en GitHub Actions con `workflow_dispatch` y
+revisar el log/artifact de depuración, o localmente con `--headed` si hay una
+pantalla real disponible — nunca `--headed` en CI, ver más abajo).
 
 QUÉ HACE
 --------
@@ -44,9 +45,11 @@ USO
 
     python3 scrape_oece.py --out descargas/
     python3 scrape_oece.py --out descargas/ --year 2026 --month 8
-    python3 scrape_oece.py --out descargas/ --debug     # deja el navegador
-                                                          # visible y guarda
-                                                          # una captura si falla
+    python3 scrape_oece.py --out descargas/ --headed    # SOLO con pantalla real
+                                                          # (no en GitHub Actions)
+
+Si algo falla, siempre se guarda descargas/screenshot_error.png con el estado
+de la página en ese momento — corra o no con --headed.
 """
 
 import argparse
@@ -78,7 +81,7 @@ def main():
     parser.add_argument("--year", type=int, default=None, help="Año a buscar en la tabla (por defecto: el más reciente disponible).")
     parser.add_argument("--month", type=int, default=None, help="Mes (1-12) a buscar en la tabla (por defecto: el más reciente disponible).")
     parser.add_argument("--formato", default="JSON", choices=["JSON", "CSV", "XLSX"], help="Formato de archivo a descargar.")
-    parser.add_argument("--debug", action="store_true", help="Corre con el navegador visible (no headless) y guarda screenshot.png si algo falla.")
+    parser.add_argument("--headed", action="store_true", help="Corre con el navegador visible (no headless), SOLO para depurar en una máquina con pantalla real. NO usar en GitHub Actions / CI: no hay servidor X y el navegador falla al abrir (TargetClosedError).")
     parser.add_argument("--timeout", type=int, default=60000, help="Timeout en ms para cada espera de Playwright.")
     args = parser.parse_args()
 
@@ -93,7 +96,7 @@ def main():
     target_year = str(args.year) if args.year else None
     target_month_name = MESES[args.month] if args.month else None
 
-    launch_kwargs = {"headless": not args.debug}
+    launch_kwargs = {"headless": not args.headed}
     chromium_path = find_chromium()
     if chromium_path:
         launch_kwargs["executable_path"] = chromium_path
@@ -165,13 +168,17 @@ def main():
 
         except Exception as exc:
             print(f"ERROR: {exc}", file=sys.stderr)
-            if args.debug:
-                shot_path = os.path.join(args.out, "screenshot_error.png")
-                try:
-                    page.screenshot(path=shot_path, full_page=True)
-                    print(f"  (screenshot guardada en {shot_path} para depurar)", file=sys.stderr)
-                except Exception:
-                    pass
+            # Intento de screenshot SIEMPRE (no solo en --headed) — es la principal
+            # pista para depurar cuando esto corre en CI, donde nadie está mirando
+            # el navegador en vivo. Es un intento "best effort": si la página ya
+            # se cerró (p.ej. el propio error fue que el navegador no pudo abrir),
+            # simplemente no habrá screenshot y no debe tumbar el script por eso.
+            shot_path = os.path.join(args.out, "screenshot_error.png")
+            try:
+                page.screenshot(path=shot_path, full_page=True)
+                print(f"  (screenshot guardada en {shot_path} para depurar)", file=sys.stderr)
+            except Exception:
+                pass
             sys.exit(1)
         finally:
             browser.close()
