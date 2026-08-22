@@ -186,5 +186,6 @@
   ],
   "metodo": "descarga_url_fija",
   "estado": "ok",
-  "csv_url": "https://www.datosabiertos.gob.pe/sites/default/files/BD_Muestra_2023.csv"
+  "csv_url": "https://www.datosabiertos.gob.pe/sites/default/files/BD_Muestra_2023.csv",
+  "generado_en": "2026-08-22T18:20:23Z"
 }

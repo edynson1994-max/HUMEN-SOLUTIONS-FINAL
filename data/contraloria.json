@@ -14,8 +14,8 @@
         "REGION",
         "PROVINCIA",
         "DISTRITO",
-        "�TIENE SITUACIONES DE INCUMPLIMIENTO?",
-        "N�MERO DE INFORME DE CONTROL"
+        "¿TIENE SITUACIONES DE INCUMPLIMIENTO?",
+        "NÚMERO DE INFORME DE CONTROL"
       ],
       "columna_region_usada": "REGION",
       "columna_fecha_usada": null,
@@ -70,19 +70,19 @@
       "titulo": "Información general de los Monitores Ciudadanos de Control",
       "filas_totales": 19910,
       "columnas_detectadas": [
-        "C�DIGO",
-        "A�O DE INGRESO",
-        "REGI�N",
+        "CÓDIGO",
+        "AÑO DE INGRESO",
+        "REGIÓN",
         "DEPARTAMENTO",
         "DISTRITO",
         "SEXO",
         "EDAD",
         "ESTUDIOS ALCANZADOS",
-        "OCUPACI�N",
-        "CARRERA PROFESIONAL O T�CNICA"
+        "OCUPACIÓN",
+        "CARRERA PROFESIONAL O TÉCNICA"
       ],
       "columna_region_usada": "DEPARTAMENTO",
-      "columna_fecha_usada": null,
+      "columna_fecha_usada": "AÑO DE INGRESO",
       "top_regiones": [
         {
           "region": "Lima",
@@ -130,5 +130,6 @@
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/informaci%C3%B3n-general-de-los-monitores-ciudadanos-de-control",
       "csv_url": "https://www.datosabiertos.gob.pe/sites/default/files/DATOS%20ABIERTOS%20-%20MONITORES%20CIUDADANOS%20DE%20CONTROL.csv"
     }
-  ]
+  ],
+  "generado_en": "2026-08-22T18:20:21Z"
 }

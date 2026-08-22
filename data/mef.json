@@ -78,76 +78,140 @@
     "MONTO_DEVENGADO_ANUAL",
     "MONTO_GIRADO_ANUAL"
   ],
-  "columna_region_usada": "DEPARTAMENTO_EJECUTORA",
-  "columna_monto_usada": "MONTO_DEVENGADO_ENERO",
-  "columna_mes_usada": null,
-  "columna_entidad_usada": "PLIEGO",
+  "columna_region_usada": "DEPARTAMENTO_EJECUTORA_NOMBRE",
+  "columna_monto_anual_usada": "MONTO_DEVENGADO_ANUAL",
+  "columna_entidad_usada": "PLIEGO_NOMBRE",
+  "meses_detectados": [
+    "ENERO",
+    "FEBRERO",
+    "MARZO",
+    "ABRIL",
+    "MAYO",
+    "JUNIO",
+    "JULIO",
+    "AGOSTO",
+    "SEPTIEMBRE",
+    "OCTUBRE",
+    "NOVIEMBRE",
+    "DICIEMBRE"
+  ],
   "filas_leidas": 2807168,
   "filas_con_monto_valido": 2807168,
-  "monto_devengado_total": 16835113842.62,
+  "monto_devengado_total": 253678531328.73,
   "top_regiones_por_monto": [
     {
-      "region": "15",
-      "monto_devengado": 11081188136.78
+      "region": "Lima",
+      "monto_devengado": 151488309724.48
     },
     {
-      "region": "20",
-      "monto_devengado": 423083929.57
+      "region": "Cusco",
+      "monto_devengado": 8374378841.09
     },
     {
-      "region": "12",
-      "monto_devengado": 404022052.06
+      "region": "Piura",
+      "monto_devengado": 7157081667.34
     },
     {
-      "region": "06",
-      "monto_devengado": 399969928.64
+      "region": "Cajamarca",
+      "monto_devengado": 6750193792.44
     },
     {
-      "region": "16",
-      "monto_devengado": 395415954.84
+      "region": "La Libertad",
+      "monto_devengado": 6534038938.07
     },
     {
-      "region": "04",
-      "monto_devengado": 351565889.5
+      "region": "Ancash",
+      "monto_devengado": 6421951540.82
     },
     {
-      "region": "13",
-      "monto_devengado": 344612849.99
+      "region": "Arequipa",
+      "monto_devengado": 6222373224.3
     },
     {
-      "region": "08",
-      "monto_devengado": 331124992.54
+      "region": "Junin",
+      "monto_devengado": 5588126767.57
     },
     {
-      "region": "07",
-      "monto_devengado": 331018213.56
+      "region": "Provincia Constitucional Del Callao",
+      "monto_devengado": 5479226842.62
     },
     {
-      "region": "02",
-      "monto_devengado": 310581265.98
+      "region": "Loreto",
+      "monto_devengado": 5361129845.48
     },
     {
-      "region": "21",
-      "monto_devengado": 282496945.63
+      "region": "Puno",
+      "monto_devengado": 5315831200.87
     },
     {
-      "region": "01",
-      "monto_devengado": 260944155.78
+      "region": "Ayacucho",
+      "monto_devengado": 4313981576.23
     },
     {
-      "region": "14",
-      "monto_devengado": 245762985.04
+      "region": "Ica",
+      "monto_devengado": 3998512170.63
     },
     {
-      "region": "11",
-      "monto_devengado": 232286103.87
+      "region": "Lambayeque",
+      "monto_devengado": 3947381051.38
     },
     {
-      "region": "22",
-      "monto_devengado": 223423779.94
+      "region": "San Martin",
+      "monto_devengado": 3830778978.15
+    }
+  ],
+  "gasto_mensual_nacional": [
+    {
+      "mes": "ENERO",
+      "monto_devengado": 16835113842.62
+    },
+    {
+      "mes": "FEBRERO",
+      "monto_devengado": 21907083519.65
+    },
+    {
+      "mes": "MARZO",
+      "monto_devengado": 17848446335.7
+    },
+    {
+      "mes": "ABRIL",
+      "monto_devengado": 17323461642.53
+    },
+    {
+      "mes": "MAYO",
+      "monto_devengado": 19059256742.81
+    },
+    {
+      "mes": "JUNIO",
+      "monto_devengado": 20553648217.1
+    },
+    {
+      "mes": "JULIO",
+      "monto_devengado": 21464948310.86
+    },
+    {
+      "mes": "AGOSTO",
+      "monto_devengado": 23718101029.81
+    },
+    {
+      "mes": "SEPTIEMBRE",
+      "monto_devengado": 21162887768.59
+    },
+    {
+      "mes": "OCTUBRE",
+      "monto_devengado": 19635180470.43
+    },
+    {
+      "mes": "NOVIEMBRE",
+      "monto_devengado": 19692526467.13
+    },
+    {
+      "mes": "DICIEMBRE",
+      "monto_devengado": 34477876981.5
     }
   ],
   "muestra_parcial": false,
   "estado": "ok",
-  "url_origen": "url_fija"
+  "url_origen": "url_fija",
+  "generado_en": "2026-08-22T18:38:00Z"
 }
