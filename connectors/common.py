@@ -184,6 +184,36 @@ def datastore_search_all(resource_id, page_size=5000, max_records=None):
     return {"fields": fields or [], "records": records}
 
 
+def has_data_api(resource_id, timeout=20):
+    """Prueba EN VIVO (una sola petición, `limit=1`, sin paginar) si un
+    recurso concreto tiene la Data API (datastore) activada.
+
+    Generalización del mismo mecanismo que ya usaba `contraloria.py` de
+    forma ad-hoc: no hay ningún campo en `package_show` que diga de
+    antemano si un recurso tiene datastore activado (confirmado revisando
+    la respuesta real de dos datasets distintos) — la única forma
+    confiable es intentar `datastore/search.json?resource_id=...` y ver si
+    responde con éxito o con error.
+
+    Nunca lanza excepción: quien llama (p.ej. `discovery.py`, sync futuro)
+    necesita poder probar cientos de recursos sin que uno solo tumbe todo
+    el proceso. Devuelve `(tiene_data_api: bool, detalle: str)` — el
+    detalle sirve para diagnosticar por qué un recurso no tiene Data API
+    (útil al revisar `data/catalog.json` a mano)."""
+    if not resource_id:
+        return False, "sin resource_id"
+    try:
+        from urllib.parse import quote
+        url = f"{PNDA_DATASTORE_API}?resource_id={quote(str(resource_id), safe='')}&limit=1"
+        resp = http_get(url, timeout=timeout, max_retries=2)
+        payload = json.loads(resp.read().decode("utf-8", errors="replace"))
+        if payload.get("success"):
+            return True, "datastore activo"
+        return False, str(payload.get("error") or "success=false")
+    except Exception as exc:
+        return False, str(exc)
+
+
 def find_resource(dataset_result, hint=None, formato=None):
     """Dado el `result` de package_show(), elige un recurso de su lista
     `resources`. Si `hint` se da, prioriza el recurso cuyo nombre/título
