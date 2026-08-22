@@ -1,0 +1,20 @@
+{
+  "fuente": "Contraloría General de la República — Monitores Ciudadanos de Control",
+  "atribucion": "Datos publicados por la Contraloría General de la República en el Portal Nacional de Datos Abiertos (PNDA).",
+  "datasets": [
+    {
+      "titulo": "Resultados de intervenciones de Monitores Ciudadanos de Control 2021",
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/resultados-de-las-intervenciones-realizadas-por-los-monitores-ciudadanos-de-control-en-el",
+      "csv_url": "https://www.datosabiertos.gob.pe/sites/default/files/DATOS%20ABIERTOS%20-%20RESULTADOS%20DE%20INTERVENCIONES%202021_3.csv",
+      "estado": "error",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "titulo": "Información general de los Monitores Ciudadanos de Control",
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/informaci%C3%B3n-general-de-los-monitores-ciudadanos-de-control",
+      "csv_url": "https://www.datosabiertos.gob.pe/sites/default/files/DATOS%20ABIERTOS%20-%20MONITORES%20CIUDADANOS%20DE%20CONTROL.csv",
+      "estado": "error",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    }
+  ]
+}

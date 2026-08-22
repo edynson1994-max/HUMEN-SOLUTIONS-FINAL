@@ -1,0 +1,8 @@
+{
+  "fuente": "MEF — Presupuesto y Ejecución de Gasto (Devengado Mensual) 2025",
+  "atribucion": "Ministerio de Economía y Finanzas (MEF), vía Portal Nacional de Datos Abiertos.",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/presupuesto-y-ejecuci%C3%B3n-de-gasto-%E2%80%93-devengado-mensual",
+  "csv_url": "https://fs.datosabiertos.mef.gob.pe/datastorefiles/2025-Gasto-Devengado-Mensual.csv",
+  "estado": "error",
+  "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+}
