@@ -110,6 +110,15 @@ def main():
                 "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
             ),
         )
+        # Algunos portales del Estado detectan navegadores automatizados por la
+        # propiedad navigator.webdriver (que Chromium en modo headless deja en
+        # true por defecto) y bloquean o no terminan de cargar el contenido. Es
+        # una técnica estándar (no un intento de saltar CAPTCHAs ni ninguna
+        # medida de seguridad real) hacer que el navegador no se anuncie como
+        # automatizado desde el primer script que corre en la página.
+        page.add_init_script(
+            "Object.defineProperty(navigator, 'webdriver', {get: () => undefined});"
+        )
         page.set_default_timeout(args.timeout)
 
         try:
@@ -168,17 +177,35 @@ def main():
 
         except Exception as exc:
             print(f"ERROR: {exc}", file=sys.stderr)
-            # Intento de screenshot SIEMPRE (no solo en --headed) — es la principal
-            # pista para depurar cuando esto corre en CI, donde nadie está mirando
-            # el navegador en vivo. Es un intento "best effort": si la página ya
-            # se cerró (p.ej. el propio error fue que el navegador no pudo abrir),
-            # simplemente no habrá screenshot y no debe tumbar el script por eso.
+            # Diagnóstico SIEMPRE (no solo en --headed) — es la principal pista
+            # para depurar cuando esto corre en CI, donde nadie está mirando el
+            # navegador en vivo. Todo "best effort": si la página ya se cerró
+            # (p.ej. el propio error fue que el navegador no pudo abrir),
+            # simplemente no habrá nada que guardar y no debe tumbar el script.
+            try:
+                print(f"  URL final: {page.url}", file=sys.stderr)
+                print(f"  Título de la página: {page.title()!r}", file=sys.stderr)
+                body_text = page.evaluate("document.body ? document.body.innerText : ''")
+                snippet = " ".join(body_text.split())[:600]
+                print(f"  Primeros ~600 caracteres de texto visible: {snippet!r}", file=sys.stderr)
+            except Exception as diag_exc:
+                print(f"  (no se pudo leer título/texto de la página: {diag_exc})", file=sys.stderr)
+
             shot_path = os.path.join(args.out, "screenshot_error.png")
             try:
                 page.screenshot(path=shot_path, full_page=True)
                 print(f"  (screenshot guardada en {shot_path} para depurar)", file=sys.stderr)
             except Exception:
                 pass
+
+            html_path = os.path.join(args.out, "page_error.html")
+            try:
+                with open(html_path, "w", encoding="utf-8") as f:
+                    f.write(page.content())
+                print(f"  (HTML completo guardado en {html_path} para depurar)", file=sys.stderr)
+            except Exception:
+                pass
+
             sys.exit(1)
         finally:
             browser.close()
