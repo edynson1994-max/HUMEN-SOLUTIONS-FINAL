@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perú en Datos</title>
+<meta name="description" content="Lo que está pasando en el Perú, explicado con datos oficiales." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="../images/favicon.png">
+<link rel="shortcut icon" href="../images/favicon.png">
+</head>
+<body>
+<style>
+/* ============================================================
+   PERÚ EN DATOS — design tokens
+   Paper: warm stone. Ink: indigo-charcoal. Accents: carmín
+   (cochinilla, tinte históricamente peruano), oro andino, andes teal.
+   ============================================================ */
+:root{
+  --paper: #EEEAE1;
+  --paper-raised: #F7F4EE;
+  --ink: #1C1A22;
+  --ink-soft: #57524C;
+  --line: #DBD3C1;
+  --line-soft: #E4DDCD;
+
+  --carmin: #A32638;
+  --carmin-ink: #7A1B2A;
+  --carmin-bg: #F6E4E3;
+
+  --oro: #9A6415;
+  --oro-bg: #F3E6CC;
+
+  --andes: #1D4E4B;
+  --andes-bg: #DCE9E5;
+
+  --ok: #2F6B3F;
+  --ok-bg: #DEEBDF;
+
+  --shadow: 0 1px 2px rgba(28,26,34,.06), 0 8px 24px -12px rgba(28,26,34,.18);
+  --shadow-lg: 0 4px 8px rgba(28,26,34,.08), 0 24px 48px -16px rgba(28,26,34,.28);
+
+  --radius-s: 8px;
+  --radius-m: 14px;
+  --radius-l: 22px;
+
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper: #17151B;
+    --paper-raised: #201D25;
+    --ink: #ECE7DC;
+    --ink-soft: #B3AB9C;
+    --line: #34303A;
+    --line-soft: #2A2731;
+
+    --carmin: #E2687A;
+    --carmin-ink: #F0919F;
+    --carmin-bg: #3A2028;
+
+    --oro: #E1B15C;
+    --oro-bg: #3A3020;
+
+    --andes: #6FBBB3;
+    --andes-bg: #1D3634;
+
+    --ok: #7FC08D;
+    --ok-bg: #1E3524;
+
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
+    --shadow-lg: 0 4px 8px rgba(0,0,0,.35), 0 24px 48px -16px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --paper: #17151B;
+  --paper-raised: #201D25;
+  --ink: #ECE7DC;
+  --ink-soft: #B3AB9C;
+  --line: #34303A;
+  --line-soft: #2A2731;
+
+  --carmin: #E2687A;
+  --carmin-ink: #F0919F;
+  --carmin-bg: #3A2028;
+
+  --oro: #E1B15C;
+  --oro-bg: #3A3020;
+
+  --andes: #6FBBB3;
+  --andes-bg: #1D3634;
+
+  --ok: #7FC08D;
+  --ok-bg: #1E3524;
+
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
+  --shadow-lg: 0 4px 8px rgba(0,0,0,.35), 0 24px 48px -16px rgba(0,0,0,.6);
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+}
+
+h1,h2,h3,h4{ font-family:var(--font-display); font-weight:600; margin:0; text-wrap:balance; color:var(--ink); }
+p{ margin:0; }
+a{ color:inherit; }
+button{ font-family:inherit; }
+img,svg{ display:block; max-width:100%; }
+::selection{ background:var(--carmin); color:#fff; }
+:focus-visible{ outline:2px solid var(--carmin); outline-offset:2px; border-radius:4px; }
+
+.wrap{ max-width:1180px; margin:0 auto; padding:0 28px; }
+@media (max-width:640px){ .wrap{ padding:0 18px; } }
+
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.tabular{ font-variant-numeric:tabular-nums; }
+
+/* ---------- demo ribbon ---------- */
+.demo-ribbon{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  letter-spacing:.04em;
+  text-align:center;
+  padding:7px 16px;
+}
+.demo-ribbon strong{ color:var(--oro); font-weight:600; }
+
+/* ---------- header ---------- */
+header.site{
+  position:sticky; top:0; z-index:40;
+  background:color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-row{
+  display:flex; align-items:center; gap:24px;
+  padding:14px 28px;
+  max-width:1180px; margin:0 auto;
+}
+.logo{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1.28rem;
+  letter-spacing:-.01em;
+  white-space:nowrap;
+  display:flex; align-items:baseline; gap:2px;
+}
+.logo .mark{ color:var(--carmin); }
+nav.primary{ display:flex; gap:4px; flex:1; }
+nav.primary a{
+  text-decoration:none;
+  font-size:.88rem; font-weight:600;
+  color:var(--ink-soft);
+  padding:8px 12px;
+  border-radius:100px;
+  transition:background .15s, color .15s;
+  white-space:nowrap;
+}
+nav.primary a:hover, nav.primary a.active{ background:var(--paper-raised); color:var(--ink); }
+
+.header-tools{ display:flex; align-items:center; gap:8px; }
+.search-box{
+  display:flex; align-items:center; gap:8px;
+  background:var(--paper-raised);
+  border:1px solid var(--line);
+  border-radius:100px;
+  padding:8px 14px;
+  width:220px;
+  transition:width .2s, border-color .2s;
+}
+.search-box:focus-within{ width:280px; border-color:var(--carmin); }
+.search-box input{
+  border:0; background:none; outline:none; color:var(--ink);
+  font-family:var(--font-body); font-size:.88rem; width:100%;
+}
+.search-box input::placeholder{ color:var(--ink-soft); }
+.icon-btn{
+  display:flex; align-items:center; justify-content:center;
+  width:38px; height:38px; border-radius:100px;
+  border:1px solid var(--line); background:var(--paper-raised);
+  color:var(--ink); cursor:pointer; flex:none;
+  transition:border-color .15s, transform .15s;
+}
+.icon-btn:hover{ border-color:var(--carmin); }
+.icon-btn:active{ transform:scale(.94); }
+.menu-toggle{ display:none; }
+
+@media (max-width:980px){
+  nav.primary{ display:none; }
+  .search-box{ width:150px; }
+  .menu-toggle{ display:flex; }
+}
+
+/* ---------- generic section scaffolding ---------- */
+section{ padding:64px 0; }
+.section-head{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  gap:24px; margin-bottom:28px; flex-wrap:wrap;
+}
+.section-head h2{ font-size:clamp(1.6rem,3vw,2.2rem); }
+.section-head .lede{ font-size:1rem; color:var(--ink-soft); max-width:46ch; }
+
+.tag{
+  display:inline-flex; align-items:center; gap:5px;
+  font-family:var(--font-mono); font-size:.68rem; font-weight:600;
+  letter-spacing:.05em; text-transform:uppercase;
+  padding:4px 9px; border-radius:100px;
+}
+.tag.contrataciones{ background:var(--carmin-bg); color:var(--carmin-ink); }
+.tag.obras{ background:var(--oro-bg); color:var(--oro); }
+.tag.economia{ background:var(--andes-bg); color:var(--andes); }
+.tag.gobierno{ background:var(--line-soft); color:var(--ink-soft); }
+.tag.empresas{ background:var(--carmin-bg); color:var(--carmin-ink); }
+.tag.salud{ background:var(--ok-bg); color:var(--ok); }
+.tag.educacion{ background:var(--andes-bg); color:var(--andes); }
+</style>
+
+<div class="demo-ribbon">🔶 VISTA PREVIA — todos los datos de esta demo son <strong>ficticios</strong>, creados solo para mostrar cómo se vería la plataforma con datos reales.</div>
+
+<header class="site">
+  <div class="header-row">
+    <a class="logo" href="#inicio" style="text-decoration:none;"><span class="mark">Perú</span>&nbsp;en&nbsp;Datos</a>
+    <nav class="primary" aria-label="Secciones">
+      <a href="#estelares" class="active">Estelares</a>
+      <a href="#ultimo">Último</a>
+      <a href="#conoce">Conoce</a>
+      <a href="#explora">Explora</a>
+      <a href="#mapa">Mapa</a>
+      <a href="#tu-peru">Tu Perú</a>
+    </nav>
+    <div class="header-tools">
+      <div class="search-box">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="flex:none;color:var(--ink-soft)"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" placeholder="¿Cuánto gastó Cusco en obras?">
+      </div>
+      <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema" title="Modo claro/oscuro">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="inicio">
+
+<style>
+/* ---------- Estelares ---------- */
+.hero-strip{ padding:40px 0 8px; }
+.hero-kicker{
+  display:flex; align-items:center; gap:10px; margin-bottom:14px;
+}
+.hero-kicker .dot{ width:8px; height:8px; border-radius:50%; background:var(--carmin); animation:pulse 2.2s infinite; }
+@keyframes pulse{ 0%,100%{ opacity:1 } 50%{ opacity:.35 } }
+.hero-kicker span{ font-family:var(--font-mono); font-size:.74rem; letter-spacing:.1em; text-transform:uppercase; color:var(--carmin-ink); font-weight:600; }
+
+.estelares-grid{
+  display:grid; grid-template-columns:1.5fr 1fr; gap:20px;
+}
+@media (max-width:860px){ .estelares-grid{ grid-template-columns:1fr; } }
+
+.story-card{
+  background:var(--paper-raised);
+  border:1px solid var(--line);
+  border-radius:var(--radius-l);
+  padding:28px;
+  cursor:pointer;
+  display:flex; flex-direction:column; gap:16px;
+  transition:transform .18s, box-shadow .18s, border-color .18s;
+  text-align:left;
+  width:100%;
+}
+.story-card:hover{ transform:translateY(-3px); box-shadow:var(--shadow-lg); border-color:var(--line-soft); }
+.story-card.lead{ justify-content:space-between; }
+.story-card.lead h3{ font-size:clamp(1.5rem,2.6vw,2.05rem); line-height:1.12; }
+.story-card .tags{ display:flex; gap:6px; flex-wrap:wrap; }
+.story-card .dek{ color:var(--ink-soft); font-size:.96rem; line-height:1.5; }
+.story-card .metric-row{
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+  padding-top:6px; border-top:1px solid var(--line);
+}
+.story-card .metric{ font-family:var(--font-display); font-weight:700; font-size:1.9rem; color:var(--carmin); }
+.story-card.lead .metric{ font-size:2.6rem; }
+.story-card .delta{ font-family:var(--font-mono); font-size:.78rem; font-weight:600; }
+.story-card .delta.up{ color:var(--ok); }
+.story-card .delta.down{ color:var(--carmin); }
+.story-card .meta-line{ font-family:var(--font-mono); font-size:.72rem; color:var(--ink-soft); display:flex; gap:6px; align-items:center; }
+
+.secondary-stack{ display:flex; flex-direction:column; gap:20px; }
+.story-card.secondary h3{ font-size:1.15rem; line-height:1.25; }
+.story-card.secondary .metric{ font-size:1.5rem; }
+
+.sparkline-wrap{ width:100%; height:56px; }
+</style>
+
+<section class="hero-strip">
+  <div class="wrap">
+    <div class="hero-kicker"><span class="dot"></span><span>Estelares · actualizado hace 6 minutos</span></div>
+  </div>
+</section>
+
+<section id="estelares" style="padding-top:0;">
+  <div class="wrap">
+    <div class="estelares-grid">
+
+      <button class="story-card lead" data-story="s1">
+        <div>
+          <div class="tags"><span class="tag contrataciones">Contrataciones</span></div>
+          <h3 style="margin-top:12px;">Esta semana el Estado contrató S/ 850 millones</h3>
+          <p class="dek" style="margin-top:10px;">340 entidades públicas cerraron procesos de contratación en los últimos 7 días — el monto semanal más alto del trimestre, impulsado por obras en Cusco y Arequipa.</p>
+        </div>
+        <div>
+          <div class="sparkline-wrap" id="spark-s1"></div>
+          <div class="metric-row">
+            <span class="metric tabular">S/ 850M</span>
+            <span class="delta up tabular">▲ 23% vs. semana anterior</span>
+          </div>
+          <div class="meta-line" style="margin-top:8px;"><span>MEF · SEACE</span><span>·</span><span>Actualizado 21 ago 2026</span></div>
+        </div>
+      </button>
+
+      <div class="secondary-stack">
+        <button class="story-card secondary" data-story="s2">
+          <div class="tags"><span class="tag obras">Obras</span></div>
+          <h3>Cusco concentra el mayor crecimiento en obras públicas</h3>
+          <div class="metric-row">
+            <span class="metric tabular">+64%</span>
+            <span class="delta up tabular">▲ trimestral</span>
+          </div>
+        </button>
+        <button class="story-card secondary" data-story="s3">
+          <div class="tags"><span class="tag empresas">Empresas</span></div>
+          <h3>Una misma empresa acumula 12 contratos de construcción este trimestre</h3>
+          <div class="metric-row">
+            <span class="metric tabular">12</span>
+            <span class="delta tabular" style="color:var(--ink-soft)">procesos, 5 regiones</span>
+          </div>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* ---------- Último ---------- */
+#ultimo{ background:var(--paper-raised); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.feed-list{ display:flex; flex-direction:column; }
+.feed-item{
+  display:grid; grid-template-columns:120px 1fr auto auto; align-items:center; gap:20px;
+  padding:18px 4px; border-bottom:1px solid var(--line);
+  text-align:left; background:none; border-left:0; border-right:0; border-top:0; width:100%;
+  cursor:pointer;
+}
+.feed-item:first-child{ border-top:1px solid var(--line); }
+.feed-item:hover .feed-title{ color:var(--carmin); }
+.feed-item .feed-title{ font-weight:700; font-size:1rem; transition:color .15s; }
+.feed-item .feed-dek{ color:var(--ink-soft); font-size:.86rem; margin-top:3px; }
+.feed-item .feed-metric{ font-family:var(--font-display); font-weight:700; font-size:1.2rem; color:var(--oro); white-space:nowrap; }
+.feed-item .feed-time{ font-family:var(--font-mono); font-size:.72rem; color:var(--ink-soft); white-space:nowrap; text-align:right; }
+@media (max-width:720px){
+  .feed-item{ grid-template-columns:1fr; gap:6px; }
+  .feed-item .feed-metric, .feed-item .feed-time{ text-align:left; }
+}
+</style>
+
+<section id="ultimo">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Último</h2>
+        <p class="lede">Lo más reciente en los datos públicos, a medida que se publica.</p>
+      </div>
+      <span class="eyebrow tabular">6 actualizaciones · última hace 18 min</span>
+    </div>
+
+    <div class="feed-list">
+      <button class="feed-item" data-story="u1">
+        <span class="tag obras">Obras</span>
+        <span><span class="feed-title">Nueva contratación registrada en Cusco</span><br><span class="feed-dek">Mejoramiento de vía vecinal, distrito de Anta</span></span>
+        <span class="feed-metric tabular">S/ 2.4M</span>
+        <span class="feed-time">hace 18 min</span>
+      </button>
+      <button class="feed-item" data-story="u2">
+        <span class="tag gobierno">Gobierno</span>
+        <span><span class="feed-title">Municipalidad de Anta publica proceso de selección de personal</span><br><span class="feed-dek">Convocatoria CAS para 3 plazas administrativas</span></span>
+        <span class="feed-metric tabular">S/ 185K</span>
+        <span class="feed-time">hace 20 min</span>
+      </button>
+      <button class="feed-item" data-story="u3">
+        <span class="tag economia">Economía</span>
+        <span><span class="feed-title">MEF actualiza la ejecución presupuestal regional</span><br><span class="feed-dek">Cusco alcanza 61% de ejecución al cierre de julio</span></span>
+        <span class="feed-metric tabular">61%</span>
+        <span class="feed-time">hace 45 min</span>
+      </button>
+      <button class="feed-item" data-story="u4">
+        <span class="tag empresas">Empresas</span>
+        <span><span class="feed-title">Nueva empresa se registra en el rubro construcción</span><br><span class="feed-dek">RNP habilita a la empresa para postular a obras</span></span>
+        <span class="feed-metric tabular">1 registro</span>
+        <span class="feed-time">hace 1 h</span>
+      </button>
+      <button class="feed-item" data-story="u5">
+        <span class="tag salud">Salud</span>
+        <span><span class="feed-title">EsSalud publica proceso para adquisición de insumos médicos</span><br><span class="feed-dek">Concurso público para 4 hospitales de la red Cusco</span></span>
+        <span class="feed-metric tabular">S/ 3.1M</span>
+        <span class="feed-time">hace 2 h</span>
+      </button>
+      <button class="feed-item" data-story="u6">
+        <span class="tag educacion">Educación</span>
+        <span><span class="feed-title">Minedu convoca proceso de infraestructura escolar</span><br><span class="feed-dek">Mejoramiento de 6 locales educativos en zona rural</span></span>
+        <span class="feed-metric tabular">S/ 5.8M</span>
+        <span class="feed-time">hace 3 h</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ---------- Descubre ---------- */
+.descubre-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+@media (max-width:940px){ .descubre-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .descubre-grid{ grid-template-columns:1fr; } }
+.descubre-card{
+  background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-m);
+  padding:20px; display:flex; flex-direction:column; gap:10px; text-align:left; cursor:pointer;
+  transition:border-color .15s, transform .15s;
+}
+.descubre-card:hover{ border-color:var(--andes); transform:translateY(-2px); }
+.descubre-card .q{ font-family:var(--font-display); font-weight:600; font-size:1.05rem; line-height:1.3; }
+.descubre-card .a{ color:var(--ink-soft); font-size:.85rem; }
+.descubre-card .go{ font-family:var(--font-mono); font-size:.72rem; color:var(--andes); font-weight:600; }
+</style>
+
+<section id="descubre">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Descubre</h2>
+        <p class="lede">Pequeñas historias para entender cómo funciona el Perú, un dato a la vez.</p>
+      </div>
+    </div>
+    <div class="descubre-grid">
+      <div class="descubre-card" onclick="document.getElementById('conoce').scrollIntoView({behavior:'smooth'})">
+        <span class="q">¿Qué región recibe más inversión pública per cápita?</span>
+        <span class="a">Comparación entre las 25 regiones, ajustada por población.</span>
+        <span class="go">Ver comparación →</span>
+      </div>
+      <div class="descubre-card" onclick="document.getElementById('conoce').scrollIntoView({behavior:'smooth'})">
+        <span class="q">¿Cuánto dinero mueve una municipalidad promedio?</span>
+        <span class="a">De la transferencia del MEF a la obra terminada.</span>
+        <span class="go">Ver explicación →</span>
+      </div>
+      <div class="descubre-card" onclick="document.getElementById('conoce').scrollIntoView({behavior:'smooth'})">
+        <span class="q">¿Qué pasa después de que una entidad publica una licitación?</span>
+        <span class="a">El recorrido completo, paso a paso, con datos reales.</span>
+        <span class="go">Ver el proceso →</span>
+      </div>
+      <div class="descubre-card" onclick="document.getElementById('conoce').scrollIntoView({behavior:'smooth'})">
+        <span class="q">¿Qué significan PIA, PIM y devengado?</span>
+        <span class="a">Las tres cifras que definen el presupuesto público.</span>
+        <span class="go">Ver glosario →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ---------- Conoce ---------- */
+#conoce{ background:var(--paper-raised); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.enciclopedia-grid{
+  display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-bottom:44px;
+}
+@media (max-width:900px){ .enciclopedia-grid{ grid-template-columns:repeat(3,1fr); } }
+@media (max-width:560px){ .enciclopedia-grid{ grid-template-columns:repeat(2,1fr); } }
+.enc-chip{
+  background:var(--paper); border:1px solid var(--line); border-radius:100px;
+  padding:9px 16px; font-size:.82rem; font-weight:600; text-align:center;
+  color:var(--ink-soft);
+}
+
+.flow-card{
+  background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-l);
+  padding:32px; box-shadow:var(--shadow);
+}
+.flow-card > .eyebrow{ margin-bottom:6px; }
+.flow-card h3{ font-size:1.5rem; margin-bottom:22px; }
+.flow-stages{
+  display:flex; flex-wrap:wrap; gap:0; align-items:center;
+}
+.flow-stage{
+  display:flex; align-items:center; gap:8px;
+  background:none; border:2px solid var(--line); border-radius:100px;
+  padding:10px 18px; font-weight:700; font-size:.86rem; color:var(--ink-soft);
+  cursor:pointer; transition:all .15s;
+  font-family:var(--font-body);
+}
+.flow-stage .n{ font-family:var(--font-mono); font-size:.68rem; opacity:.7; }
+.flow-stage:hover{ border-color:var(--andes); color:var(--ink); }
+.flow-stage.active{ border-color:var(--carmin); background:var(--carmin); color:#fff; }
+.flow-arrow{ color:var(--line); padding:0 4px; font-size:1.1rem; flex:none; }
+@media (max-width:720px){ .flow-arrow{ display:none; } .flow-stages{ gap:8px; } }
+
+.flow-detail{
+  margin-top:26px; padding-top:24px; border-top:1px solid var(--line);
+  display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:start;
+}
+.flow-detail .badge{
+  font-family:var(--font-display); font-weight:700; font-size:1.6rem;
+  width:52px; height:52px; border-radius:50%; background:var(--carmin-bg); color:var(--carmin-ink);
+  display:flex; align-items:center; justify-content:center; flex:none;
+}
+.flow-detail h4{ font-size:1.15rem; margin-bottom:6px; }
+.flow-detail p{ color:var(--ink-soft); font-size:.94rem; line-height:1.55; max-width:64ch; }
+</style>
+
+<section id="conoce">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Conoce</h2>
+        <p class="lede">Una enciclopedia visual de cómo funciona el Estado peruano.</p>
+      </div>
+    </div>
+
+    <div class="enciclopedia-grid">
+      <span class="enc-chip">Estado peruano</span>
+      <span class="enc-chip">Municipalidades</span>
+      <span class="enc-chip">Gobiernos regionales</span>
+      <span class="enc-chip">Presupuesto público</span>
+      <span class="enc-chip">Contrataciones</span>
+      <span class="enc-chip">Obras públicas</span>
+      <span class="enc-chip">Empresas</span>
+      <span class="enc-chip">Economía</span>
+      <span class="enc-chip">Población</span>
+      <span class="enc-chip">Educación</span>
+      <span class="enc-chip">Salud</span>
+      <span class="enc-chip">Empleo</span>
+      <span class="enc-chip">Territorio</span>
+      <span class="enc-chip">Agricultura</span>
+      <span class="enc-chip">Infraestructura</span>
+    </div>
+
+    <div class="flow-card">
+      <span class="eyebrow">Conoce · Contrataciones públicas</span>
+      <h3>¿Qué es una licitación pública?</h3>
+
+      <div class="flow-stages" id="flowStages">
+        <!-- filled by JS -->
+      </div>
+
+      <div class="flow-detail" id="flowDetail">
+        <!-- filled by JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ---------- Explora ---------- */
+.explora-toolbar{
+  display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+  background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-m);
+  padding:14px; margin-bottom:22px;
+}
+.explora-toolbar select, .explora-toolbar input{
+  font-family:var(--font-body); font-size:.85rem; color:var(--ink);
+  background:var(--paper); border:1px solid var(--line); border-radius:100px;
+  padding:8px 14px; outline:none;
+}
+.explora-toolbar select:focus, .explora-toolbar input:focus{ border-color:var(--carmin); }
+.explora-toolbar input[type="text"]{ flex:1; min-width:160px; }
+.explora-count{ font-family:var(--font-mono); font-size:.78rem; color:var(--ink-soft); margin-bottom:14px; }
+
+.explora-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+@media (max-width:820px){ .explora-grid{ grid-template-columns:1fr; } }
+.explora-card{
+  background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-m);
+  padding:18px; display:flex; flex-direction:column; gap:10px;
+}
+.explora-card .top{ display:flex; justify-content:space-between; gap:10px; align-items:flex-start; }
+.explora-card .code{ font-family:var(--font-mono); font-size:.72rem; color:var(--ink-soft); }
+.explora-card h4{ font-size:1rem; font-weight:700; line-height:1.35; font-family:var(--font-body); }
+.explora-card .row{ display:flex; justify-content:space-between; align-items:center; font-size:.82rem; color:var(--ink-soft); }
+.explora-card .amt{ font-family:var(--font-display); font-weight:700; color:var(--oro); font-size:1.15rem; }
+.explora-card[hidden]{ display:none; }
+</style>
+
+<section id="explora">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Explora</h2>
+        <p class="lede">Investiga los datos directamente — sin necesidad de saber SQL ni leer un dataset crudo.</p>
+      </div>
+    </div>
+
+    <div class="explora-toolbar">
+      <select id="fRegion">
+        <option value="">Región: todas</option>
+        <option>Cusco</option>
+        <option>Lima</option>
+        <option>Arequipa</option>
+        <option>Piura</option>
+        <option>Loreto</option>
+      </select>
+      <select id="fCategoria">
+        <option value="">Categoría: todas</option>
+        <option>Obras</option>
+        <option>Bienes</option>
+        <option>Servicios</option>
+        <option>Consultoría</option>
+      </select>
+      <select id="fEstado">
+        <option value="">Estado: todos</option>
+        <option>Vigente</option>
+        <option>Por cerrar</option>
+      </select>
+      <input type="text" id="fBuscar" placeholder="Buscar por entidad o palabra clave…">
+    </div>
+
+    <p class="explora-count tabular" id="explCount">6 resultados</p>
+
+    <div class="explora-grid" id="explGrid">
+      <!-- filled by JS -->
+    </div>
+  </div>
+</section>
+
+<style>
+/* ---------- Mapa ---------- */
+.mapa-layout{ display:grid; grid-template-columns:1fr 320px; gap:28px; align-items:start; }
+@media (max-width:900px){ .mapa-layout{ grid-template-columns:1fr; } }
+
+.mapa-indicador{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px; }
+.mapa-indicador button{
+  font-family:var(--font-body); font-size:.82rem; font-weight:600;
+  padding:7px 14px; border-radius:100px; border:1px solid var(--line);
+  background:var(--paper-raised); color:var(--ink-soft); cursor:pointer;
+}
+.mapa-indicador button.active{ background:var(--andes); border-color:var(--andes); color:#fff; }
+
+.region-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  grid-template-rows:repeat(7,1fr);
+  gap:6px;
+  aspect-ratio:5/6;
+}
+.region-tile{
+  border:1.5px solid var(--line); border-radius:8px;
+  background:var(--paper-raised); color:var(--ink);
+  font-family:var(--font-mono); font-size:.66rem; font-weight:600; text-align:center;
+  display:flex; align-items:center; justify-content:center; padding:4px;
+  cursor:pointer; line-height:1.2;
+  transition:background .15s, border-color .15s, transform .1s;
+}
+.region-tile:hover{ border-color:var(--andes); transform:scale(1.04); }
+.region-tile.active{ background:var(--carmin); border-color:var(--carmin); color:#fff; }
+
+.mapa-panel{
+  background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-m);
+  padding:22px; position:sticky; top:96px;
+}
+.mapa-panel .region-name{ font-family:var(--font-display); font-size:1.4rem; font-weight:700; margin-bottom:2px; }
+.mapa-panel .region-sub{ font-family:var(--font-mono); font-size:.7rem; color:var(--ink-soft); margin-bottom:18px; }
+.mapa-stat{ display:flex; justify-content:space-between; align-items:baseline; padding:10px 0; border-top:1px solid var(--line); }
+.mapa-stat:first-of-type{ border-top:0; }
+.mapa-stat .label{ font-size:.82rem; color:var(--ink-soft); }
+.mapa-stat .value{ font-family:var(--font-display); font-weight:700; font-size:1.05rem; }
+</style>
+
+<section id="mapa">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Mapa del Perú</h2>
+        <p class="lede">Mapa esquemático (cartograma) — cada región ocupa una celda del mismo tamaño para que ninguna quede oculta por su extensión real. Selecciona una región.</p>
+      </div>
+    </div>
+
+    <div class="mapa-indicador">
+      <button class="active">Contrataciones</button>
+      <button>Inversión</button>
+      <button>Obras</button>
+      <button>Población</button>
+    </div>
+
+    <div class="mapa-layout">
+      <div class="region-grid" id="regionGrid">
+        <!-- filled by JS -->
+      </div>
+      <div class="mapa-panel" id="mapaPanel">
+        <!-- filled by JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ---------- Tu Perú + alertas ---------- */
+#tu-peru{ background:var(--paper-raised); border-top:1px solid var(--line); }
+.tuperu-layout{ display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+@media (max-width:860px){ .tuperu-layout{ grid-template-columns:1fr; } }
+
+.interes-grid{ display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+.interes-chip{
+  display:flex; align-items:center; gap:8px;
+  background:var(--paper); border:1.5px solid var(--line); border-radius:100px;
+  padding:9px 16px 9px 12px; font-size:.86rem; font-weight:600; cursor:pointer;
+  transition:border-color .15s, background .15s;
+}
+.interes-chip input{ accent-color:var(--carmin); width:16px; height:16px; }
+.interes-chip.checked{ border-color:var(--carmin); background:var(--carmin-bg); }
+
+.alerta-card{
+  background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-m);
+  padding:20px; display:flex; flex-direction:column; gap:10px;
+}
+.alerta-head{ display:flex; align-items:center; gap:8px; }
+.alerta-head .bell{ color:var(--carmin); }
+.alerta-head span{ font-family:var(--font-mono); font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--carmin); }
+.alerta-card h4{ font-size:1.05rem; }
+.alerta-card .row{ display:flex; justify-content:space-between; align-items:center; }
+.alerta-card .amt{ font-family:var(--font-display); font-weight:700; color:var(--oro); font-size:1.2rem; }
+.alerta-card .time{ font-family:var(--font-mono); font-size:.72rem; color:var(--ink-soft); }
+.alerta-channels{ display:flex; gap:8px; margin-top:6px; }
+.alerta-channels span{
+  font-family:var(--font-mono); font-size:.66rem; padding:4px 9px; border-radius:100px;
+  background:var(--andes-bg); color:var(--andes); font-weight:600;
+}
+</style>
+
+<section id="tu-peru">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Tu Perú</h2>
+        <p class="lede">Elige tus temas y te avisamos cuando aparezca algo nuevo.</p>
+      </div>
+    </div>
+
+    <div class="tuperu-layout">
+      <div>
+        <span class="eyebrow">¿Qué quieres seguir?</span>
+        <div class="interes-grid" id="interesGrid">
+          <!-- filled by JS -->
+        </div>
+      </div>
+
+      <div class="alerta-card">
+        <div class="alerta-head">
+          <svg class="bell" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg>
+          <span>Nueva oportunidad</span>
+        </div>
+        <h4>Municipalidad Provincial de Anta</h4>
+        <p style="color:var(--ink-soft); font-size:.9rem;">Servicio de mantenimiento de infraestructura vial</p>
+        <div class="row">
+          <span class="amt tabular">S/ 185,000</span>
+          <span class="time">Publicado hace 20 min</span>
+        </div>
+        <div class="alerta-channels">
+          <span>✉ Correo</span>
+          <span>🔔 Web</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<style>
+/* ---------- footer ---------- */
+footer{ background:var(--ink); color:var(--paper); padding:56px 0 28px; }
+footer .wrap{ display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:40px; }
+@media (max-width:760px){ footer .wrap{ grid-template-columns:1fr; gap:32px; } }
+footer .logo{ color:var(--paper); margin-bottom:14px; }
+footer .logo .mark{ color:var(--carmin-ink); }
+footer p{ color:color-mix(in srgb, var(--paper) 65%, transparent); font-size:.88rem; line-height:1.6; max-width:42ch; }
+footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:color-mix(in srgb, var(--paper) 55%, transparent); margin-bottom:14px; font-weight:600; }
+.fuentes-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px; }
+.fuentes-list li{ display:flex; justify-content:space-between; gap:10px; font-size:.86rem; border-bottom:1px solid color-mix(in srgb, var(--paper) 14%, transparent); padding-bottom:9px; }
+.fuentes-list .name{ font-weight:600; }
+.fuentes-list .freq{ font-family:var(--font-mono); font-size:.7rem; color:color-mix(in srgb, var(--paper) 50%, transparent); }
+.legal-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; font-size:.86rem; color:color-mix(in srgb, var(--paper) 65%, transparent); }
+.foot-bottom{
+  max-width:1180px; margin:40px auto 0; padding:20px 28px 0; border-top:1px solid color-mix(in srgb, var(--paper) 14%, transparent);
+  display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  font-family:var(--font-mono); font-size:.72rem; color:color-mix(in srgb, var(--paper) 45%, transparent);
+}
+</style>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="logo" style="font-size:1.15rem;"><span class="mark">Perú</span>&nbsp;en&nbsp;Datos</div>
+      <p>Lo que está pasando en el Perú, explicado con datos oficiales. Un proyecto independiente de periodismo de datos — no es un portal del Estado.</p>
+    </div>
+    <div>
+      <h5>Fuentes de esta demo (ilustrativas)</h5>
+      <ul class="fuentes-list">
+        <li><span class="name">MEF — Transparencia económica</span><span class="freq">diaria</span></li>
+        <li><span class="name">SEACE / OECE — Contrataciones</span><span class="freq">diaria</span></li>
+        <li><span class="name">INEI — Estadísticas</span><span class="freq">mensual</span></li>
+        <li><span class="name">Contraloría</span><span class="freq">semanal</span></li>
+        <li><span class="name">Plataforma Nacional de Datos Abiertos</span><span class="freq">variable</span></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Principios</h5>
+      <ul class="legal-list">
+        <li>No inventamos datos: todo dato factual debe tener una fuente identificable, con fecha y enlace oficial.</li>
+        <li>Detectamos variaciones y tendencias, no acusamos: usamos lenguaje neutral, nunca calificamos algo como irregular o delictivo solo por un patrón estadístico.</li>
+        <li>Separamos siempre dato oficial, análisis, explicación y opinión.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>Perú en Datos — vista previa de producto, agosto 2026</span>
+    <span>Todos los datos mostrados en esta demo son ficticios</span>
+  </div>
+</footer>
+
+<style>
+/* ---------- historia modal ---------- */
+.modal-veil{
+  position:fixed; inset:0; background:color-mix(in srgb, var(--ink) 55%, transparent);
+  backdrop-filter:blur(3px);
+  display:none; align-items:flex-start; justify-content:center;
+  padding:5vh 20px; z-index:100; overflow-y:auto;
+}
+.modal-veil.open{ display:flex; }
+.modal-panel{
+  background:var(--paper); border-radius:var(--radius-l); max-width:720px; width:100%;
+  box-shadow:var(--shadow-lg); padding:36px; position:relative;
+  animation:modalIn .18s ease-out;
+}
+@keyframes modalIn{ from{ opacity:0; transform:translateY(10px) scale(.98);} to{ opacity:1; transform:none; } }
+.modal-close{
+  position:absolute; top:20px; right:20px;
+  width:36px; height:36px; border-radius:50%; border:1px solid var(--line);
+  background:var(--paper-raised); cursor:pointer; font-size:1.1rem; color:var(--ink-soft);
+  display:flex; align-items:center; justify-content:center;
+}
+.modal-panel h2{ font-size:clamp(1.5rem,3vw,1.9rem); margin:14px 0 10px; padding-right:40px; }
+.modal-panel .modal-dek{ color:var(--ink-soft); font-size:1rem; margin-bottom:24px; }
+.modal-section{ margin-top:26px; }
+.modal-section .h{ font-family:var(--font-mono); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--andes); font-weight:700; margin-bottom:10px; }
+.modal-section p{ color:var(--ink); font-size:.95rem; line-height:1.6; }
+.modal-chart-wrap{ height:140px; margin:6px 0; }
+.modal-fuente{
+  background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-m);
+  padding:18px; display:grid; grid-template-columns:1fr 1fr; gap:14px;
+}
+.modal-fuente .item .k{ font-size:.72rem; color:var(--ink-soft); }
+.modal-fuente .item .v{ font-weight:700; font-size:.92rem; margin-top:2px; }
+.modal-fuente a.verfuente{
+  grid-column:1/-1; display:inline-flex; align-items:center; gap:6px;
+  color:var(--carmin); font-weight:700; font-size:.86rem; text-decoration:none; margin-top:4px;
+}
+.modal-share{ display:flex; gap:8px; margin-top:26px; flex-wrap:wrap; }
+.modal-share button{
+  display:flex; align-items:center; gap:7px; padding:8px 14px; border-radius:100px;
+  border:1px solid var(--line); background:var(--paper-raised); font-size:.82rem; font-weight:600;
+  color:var(--ink); cursor:pointer;
+}
+.modal-share button:hover{ border-color:var(--andes); }
+</style>
+
+<div class="modal-veil" id="modalVeil">
+  <div class="modal-panel" id="modalPanel" role="dialog" aria-modal="true">
+    <!-- filled by JS -->
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============ tema claro/oscuro ============ */
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('themeToggle');
+  function currentTheme(){
+    if (root.getAttribute('data-theme')) return root.getAttribute('data-theme');
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  themeBtn.addEventListener('click', function(){
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+  });
+
+  /* ============ datos DEMO de historias ============ */
+  var STORIES = {
+    s1: {
+      tag: 'contrataciones', tagLabel: 'Contrataciones',
+      title: 'Esta semana el Estado contrató S/ 850 millones',
+      dek: '340 entidades públicas cerraron procesos de contratación en los últimos 7 días — el monto semanal más alto del trimestre, impulsado por obras en Cusco y Arequipa.',
+      metric: 'S/ 850M', delta: '▲ 23% vs. semana anterior', deltaUp: true,
+      chart: [420,460,505,480,540,610,590,690,720,760,700,850],
+      meaning: 'Un aumento del 23% en una sola semana es alto, pero no aislado: coincide con el cierre de julio, un mes en que muchas entidades ejecutan presupuesto antes de fin de trimestre. La concentración en Cusco y Arequipa refleja varios proyectos de infraestructura vial que llegaron a la etapa de buena pro esta semana.',
+      numbers: 'El monto agregado suma los procesos con buena pro otorgada entre el 15 y el 21 de agosto. Se excluyen procesos declarados desiertos o cancelados. La comparación es contra el mismo agregado de la semana anterior.',
+      methodology: 'Cifra calculada por Perú en Datos a partir de registros individuales de contratación, agrupados por fecha de buena pro. No es un dato publicado directamente por la fuente — es un análisis propio, claramente etiquetado como tal.',
+      source: { entidad:'MEF / SEACE-OECE', dataset:'Registro de contrataciones públicas', updated:'21 ago 2026', freq:'Diaria', url:'#' }
+    },
+    s2: {
+      tag: 'obras', tagLabel: 'Obras',
+      title: 'Cusco concentra el mayor crecimiento en obras públicas',
+      dek: 'El valor de las obras convocadas en Cusco creció 64% este trimestre frente al anterior, la mayor variación entre las 25 regiones.',
+      metric: '+64%', delta: '▲ variación trimestral', deltaUp: true,
+      chart: [120,110,135,128,150,210,240,265],
+      meaning: 'El crecimiento se concentra en obras viales y de saneamiento en distritos rurales. Una variación tan alta en un trimestre suele deberse a pocos proyectos grandes más que a un cambio generalizado — vale la pena mirar los procesos individuales antes de sacar conclusiones sobre la región completa.',
+      numbers: 'Se compara el valor referencial de obras convocadas en el trimestre actual (jun–ago 2026) contra el trimestre anterior (mar–may 2026), para la región Cusco.',
+      methodology: 'Cálculo propio de Perú en Datos sobre el campo "valor referencial" de cada proceso de tipo Obra, agrupado por región y fecha de convocatoria.',
+      source: { entidad:'SEACE-OECE', dataset:'Procesos de contratación — Obras', updated:'21 ago 2026', freq:'Diaria', url:'#' }
+    },
+    s3: {
+      tag: 'empresas', tagLabel: 'Empresas',
+      title: 'Una misma empresa acumula 12 contratos de construcción este trimestre',
+      dek: 'Una empresa registrada en Cusco obtuvo la buena pro en 12 procesos de obra en 5 regiones distintas durante el último trimestre.',
+      metric: '12', delta: 'procesos, 5 regiones', deltaUp: null,
+      chart: [1,2,2,3,4,5,7,9,10,12],
+      meaning: 'Esto es una concentración, no una acusación: puede explicarse por una empresa con buena capacidad operativa que gana procesos legítimamente en distintas convocatorias. Mostramos el patrón para que cualquiera pueda revisarlo — no calificamos esto como irregular.',
+      numbers: 'Se cuentan los procesos con buena pro otorgada a la misma razón social (por RUC) en los últimos 90 días, sin importar la entidad convocante.',
+      methodology: 'Análisis propio de concentración por postor ganador. No implica ningún juicio sobre la legalidad o legitimidad de los procesos — solo describe un patrón observado en los datos públicos.',
+      source: { entidad:'SEACE-OECE / RNP', dataset:'Resultados de buena pro', updated:'21 ago 2026', freq:'Diaria', url:'#' }
+    },
+    u1: { tag:'obras', tagLabel:'Obras', title:'Nueva contratación registrada en Cusco', dek:'Mejoramiento de vía vecinal, distrito de Anta, financiado con recursos del canon.', metric:'S/ 2.4M', delta:'proceso vigente', deltaUp:null, chart:[10,14,12,18,24], meaning:'Es un proceso individual recién publicado — todavía no tiene postores ni buena pro. Se puede seguir su avance desde Explora.', numbers:'Monto referencial del proceso, tal como lo publicó la entidad convocante.', methodology:'Dato tomado directamente de la fuente, sin cálculos adicionales.', source:{entidad:'Municipalidad Distrital de Anta', dataset:'SEACE — Oportunidades de negocio', updated:'hace 18 min', freq:'Tiempo real', url:'#'} },
+    u2: { tag:'gobierno', tagLabel:'Gobierno', title:'Municipalidad de Anta publica proceso de selección de personal', dek:'Convocatoria CAS para 3 plazas administrativas del área de infraestructura.', metric:'S/ 185K', delta:'proceso vigente', deltaUp:null, chart:[3,3,3], meaning:'Los procesos CAS son contrataciones de personal por servicios, distintas de las contrataciones de bienes u obras — pero se publican en el mismo sistema.', numbers:'Monto total referencial para las 3 plazas durante el periodo del contrato.', methodology:'Dato tomado directamente de la fuente.', source:{entidad:'Municipalidad Provincial de Anta', dataset:'SEACE — Oportunidades de negocio', updated:'hace 20 min', freq:'Tiempo real', url:'#'} },
+    u3: { tag:'economia', tagLabel:'Economía', title:'MEF actualiza la ejecución presupuestal regional', dek:'Cusco alcanza 61% de ejecución de su presupuesto institucional modificado al cierre de julio.', metric:'61%', delta:'▲ 4 pp vs. junio', deltaUp:true, chart:[40,44,49,53,57,61], meaning:'La ejecución presupuestal mide cuánto del dinero asignado ya se gastó. Un ritmo de 61% a julio está dentro de lo esperado para no perder presupuesto a fin de año.', numbers:'Devengado acumulado / Presupuesto Institucional Modificado (PIM), para el pliego Gobierno Regional Cusco.', methodology:'Dato replicado directamente del Portal de Transparencia Económica del MEF, sin transformación.', source:{entidad:'MEF', dataset:'Transparencia económica — Consulta amigable', updated:'hace 45 min', freq:'Diaria', url:'#'} },
+    u4: { tag:'empresas', tagLabel:'Empresas', title:'Nueva empresa se registra en el rubro construcción', dek:'El Registro Nacional de Proveedores habilita a la empresa para postular a procesos de obra.', metric:'1 registro', delta:'nuevo', deltaUp:null, chart:[1,1,1,1,1], meaning:'El registro es un requisito previo para poder postular — no implica que la empresa ya haya ganado ningún proceso.', numbers:'Conteo de nuevas inscripciones vigentes en el capítulo de ejecutoras de obra.', methodology:'Dato tomado directamente de la fuente.', source:{entidad:'RNP — OSCE/OECE', dataset:'Registro Nacional de Proveedores', updated:'hace 1 h', freq:'Diaria', url:'#'} },
+    u5: { tag:'salud', tagLabel:'Salud', title:'EsSalud publica proceso para adquisición de insumos médicos', dek:'Concurso público para abastecer a 4 hospitales de la red asistencial Cusco.', metric:'S/ 3.1M', delta:'proceso vigente', deltaUp:null, chart:[8,12,15,20,31], meaning:'Este tipo de proceso agrupa varios hospitales de una misma red para negociar mejores condiciones de compra.', numbers:'Monto referencial total del concurso, para todos los ítems solicitados.', methodology:'Dato tomado directamente de la fuente.', source:{entidad:'EsSalud', dataset:'SEACE — Oportunidades de negocio', updated:'hace 2 h', freq:'Tiempo real', url:'#'} },
+    u6: { tag:'educacion', tagLabel:'Educación', title:'Minedu convoca proceso de infraestructura escolar', dek:'Mejoramiento de 6 locales educativos en zona rural de la región Cusco.', metric:'S/ 5.8M', delta:'proceso vigente', deltaUp:null, chart:[10,22,35,45,58], meaning:'Los procesos de infraestructura escolar suelen tener plazos de ejecución más largos por tratarse de obra civil en zonas de difícil acceso.', numbers:'Monto referencial agregado de los 6 locales incluidos en el proceso.', methodology:'Dato tomado directamente de la fuente.', source:{entidad:'Ministerio de Educación', dataset:'SEACE — Oportunidades de negocio', updated:'hace 3 h', freq:'Tiempo real', url:'#'} }
+  };
+
+  /* ============ mini gráfico de área (sparkline) ============ */
+  function sparklineSVG(data, color){
+    var w = 520, h = 140, pad = 6;
+    var max = Math.max.apply(null, data), min = Math.min.apply(null, data);
+    var range = (max - min) || 1;
+    var step = (w - pad*2) / (data.length - 1);
+    var pts = data.map(function(v,i){
+      var x = pad + i*step;
+      var y = pad + (h - pad*2) * (1 - (v - min)/range);
+      return [x,y];
+    });
+    var line = pts.map(function(p,i){ return (i===0?'M':'L') + p[0].toFixed(1) + ',' + p[1].toFixed(1); }).join(' ');
+    var area = line + ' L' + pts[pts.length-1][0].toFixed(1) + ',' + (h-pad) + ' L' + pts[0][0].toFixed(1) + ',' + (h-pad) + ' Z';
+    var gridLines = '';
+    for (var g=1; g<4; g++){
+      var gy = pad + (h - pad*2) * (g/4);
+      gridLines += '<line x1="'+pad+'" y1="'+gy.toFixed(1)+'" x2="'+(w-pad)+'" y2="'+gy.toFixed(1)+'" stroke="currentColor" stroke-opacity="0.12" stroke-width="1"/>';
+    }
+    var last = pts[pts.length-1];
+    return '<svg viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none" style="width:100%;height:100%;overflow:visible;color:var(--ink-soft)">' +
+      gridLines +
+      '<defs><linearGradient id="g-'+Math.round(last[0])+'" x1="0" y1="0" x2="0" y2="1">' +
+        '<stop offset="0%" stop-color="'+color+'" stop-opacity="0.28"/>' +
+        '<stop offset="100%" stop-color="'+color+'" stop-opacity="0"/>' +
+      '</linearGradient></defs>' +
+      '<path d="'+area+'" fill="url(#g-'+Math.round(last[0])+')" />' +
+      '<path d="'+line+'" fill="none" stroke="'+color+'" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />' +
+      '<circle cx="'+last[0].toFixed(1)+'" cy="'+last[1].toFixed(1)+'" r="4.5" fill="'+color+'" />' +
+    '</svg>';
+  }
+  document.getElementById('spark-s1').innerHTML = sparklineSVG(STORIES.s1.chart, 'var(--carmin)');
+
+  /* ============ modal de historia ============ */
+  var veil = document.getElementById('modalVeil');
+  var panel = document.getElementById('modalPanel');
+
+  function openStory(id){
+    var s = STORIES[id];
+    if (!s) return;
+    panel.innerHTML =
+      '<button class="modal-close" id="modalCloseBtn" aria-label="Cerrar">✕</button>' +
+      '<span class="tag ' + s.tag + '">' + s.tagLabel + '</span>' +
+      '<h2>' + s.title + '</h2>' +
+      '<p class="modal-dek">' + s.dek + '</p>' +
+      '<div class="metric-row" style="border:0; padding-top:0;">' +
+        '<span class="metric tabular" style="font-size:2.1rem;">' + s.metric + '</span>' +
+        (s.delta ? '<span class="delta tabular ' + (s.deltaUp===true?'up':s.deltaUp===false?'down':'') + '" style="' + (s.deltaUp===null?'color:var(--ink-soft)':'') + '">' + s.delta + '</span>' : '') +
+      '</div>' +
+      '<div class="modal-section"><div class="h">¿Qué significa?</div><p>' + s.meaning + '</p></div>' +
+      '<div class="modal-section"><div class="h">Los números</div>' +
+        '<div class="modal-chart-wrap" id="modalChart"></div>' +
+        '<p style="font-size:.85rem;">' + s.numbers + '</p>' +
+      '</div>' +
+      '<div class="modal-section"><div class="h">Metodología</div><p style="font-size:.85rem;">' + s.methodology + '</p></div>' +
+      '<div class="modal-section">' +
+        '<div class="h">Fuente</div>' +
+        '<div class="modal-fuente">' +
+          '<div class="item"><div class="k">Entidad</div><div class="v">' + s.source.entidad + '</div></div>' +
+          '<div class="item"><div class="k">Dataset</div><div class="v">' + s.source.dataset + '</div></div>' +
+          '<div class="item"><div class="k">Última actualización</div><div class="v">' + s.source.updated + '</div></div>' +
+          '<div class="item"><div class="k">Frecuencia</div><div class="v">' + s.source.freq + '</div></div>' +
+          '<a class="verfuente" href="' + s.source.url + '" onclick="return false;">Ver fuente oficial ↗</a>' +
+        '</div>' +
+      '</div>' +
+      '<div class="modal-share">' +
+        '<button type="button">WhatsApp</button><button type="button">Facebook</button><button type="button">X</button><button type="button">LinkedIn</button><button type="button">Copiar enlace</button>' +
+      '</div>';
+    document.getElementById('modalChart').innerHTML = sparklineSVG(s.chart, 'var(--oro)');
+    document.getElementById('modalCloseBtn').addEventListener('click', closeStory);
+    veil.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeStory(){
+    veil.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  veil.addEventListener('click', function(e){ if (e.target === veil) closeStory(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeStory(); });
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-story]'), function(el){
+    el.addEventListener('click', function(){ openStory(el.getAttribute('data-story')); });
+  });
+
+  /* ============ Conoce: flujo de la licitación pública ============ */
+  var FLOW = [
+    { label:'ENTIDAD PÚBLICA', text:'Un ministerio, gobierno regional o municipalidad identifica que necesita comprar un bien, un servicio o construir una obra.' },
+    { label:'NECESIDAD', text:'El área usuaria define qué necesita exactamente y por qué — esto se documenta en un requerimiento técnico.' },
+    { label:'PROCESO', text:'La entidad publica la convocatoria en SEACE, con las bases, el monto referencial y los plazos para postular.' },
+    { label:'POSTORES', text:'Las empresas interesadas presentan sus propuestas técnicas y económicas dentro del plazo establecido.' },
+    { label:'EVALUACIÓN', text:'Un comité evalúa cada propuesta según criterios definidos en las bases: precio, experiencia, plazos.' },
+    { label:'BUENA PRO', text:'Se otorga la buena pro al postor ganador — el resultado se publica y puede ser apelado por los demás postores.' },
+    { label:'CONTRATO', text:'La entidad y la empresa ganadora firman el contrato, con montos, plazos y condiciones definidas.' },
+    { label:'EJECUCIÓN', text:'La empresa entrega el bien, presta el servicio o ejecuta la obra — con pagos y supervisión durante el proceso.' }
+  ];
+  var stagesEl = document.getElementById('flowStages');
+  var detailEl = document.getElementById('flowDetail');
+  function renderFlow(active){
+    stagesEl.innerHTML = FLOW.map(function(f,i){
+      return (i>0 ? '<span class="flow-arrow">→</span>' : '') +
+        '<button class="flow-stage' + (i===active?' active':'') + '" data-i="'+i+'"><span class="n">' + (i+1) + '</span>' + f.label + '</button>';
+    }).join('');
+    var f = FLOW[active];
+    detailEl.innerHTML =
+      '<div class="badge">' + (active+1) + '</div>' +
+      '<div><h4>' + f.label.charAt(0) + f.label.slice(1).toLowerCase() + '</h4><p>' + f.text + '</p></div>';
+    Array.prototype.forEach.call(stagesEl.querySelectorAll('.flow-stage'), function(btn){
+      btn.addEventListener('click', function(){ renderFlow(parseInt(btn.getAttribute('data-i'),10)); });
+    });
+  }
+  renderFlow(0);
+
+  /* ============ Explora ============ */
+  var EXPLORA_DATA = [
+    { code:'LP-14-2026-MPC', title:'Mejoramiento del sistema de agua potable, sector Huancaro', entidad:'Municipalidad Provincial de Cusco', region:'Cusco', categoria:'Obras', estado:'Vigente', monto:1850000, plazo:'cierra en 4 días' },
+    { code:'AS-22-2026-GRA', title:'Adquisición de equipos de cómputo para oficinas administrativas', entidad:'Gobierno Regional de Arequipa', region:'Arequipa', categoria:'Bienes', estado:'Vigente', monto:320000, plazo:'cierra en 9 días' },
+    { code:'CP-08-2026-MML', title:'Servicio de mantenimiento de áreas verdes distritales', entidad:'Municipalidad Metropolitana de Lima', region:'Lima', categoria:'Servicios', estado:'Por cerrar', monto:670000, plazo:'cierra en 1 día' },
+    { code:'CD-31-2026-GRP', title:'Consultoría para expediente técnico de puente vehicular', entidad:'Gobierno Regional de Piura', region:'Piura', categoria:'Consultoría', estado:'Vigente', monto:245000, plazo:'cierra en 12 días' },
+    { code:'LP-05-2026-MDL', title:'Construcción de losa deportiva multiusos', entidad:'Municipalidad Distrital de Loreto', region:'Loreto', categoria:'Obras', estado:'Vigente', monto:980000, plazo:'cierra en 6 días' },
+    { code:'AS-19-2026-DRC', title:'Adquisición de mobiliario escolar para instituciones educativas', entidad:'Dirección Regional de Educación Cusco', region:'Cusco', categoria:'Bienes', estado:'Por cerrar', monto:410000, plazo:'cierra en 2 días' }
+  ];
+  function money(n){ return 'S/ ' + n.toLocaleString('es-PE'); }
+  function renderExplora(){
+    var region = document.getElementById('fRegion').value;
+    var categoria = document.getElementById('fCategoria').value;
+    var estado = document.getElementById('fEstado').value;
+    var q = document.getElementById('fBuscar').value.trim().toLowerCase();
+    var grid = document.getElementById('explGrid');
+    var filtered = EXPLORA_DATA.filter(function(d){
+      if (region && d.region !== region) return false;
+      if (categoria && d.categoria !== categoria) return false;
+      if (estado && d.estado !== estado) return false;
+      if (q && (d.title.toLowerCase().indexOf(q)===-1 && d.entidad.toLowerCase().indexOf(q)===-1)) return false;
+      return true;
+    });
+    document.getElementById('explCount').textContent = filtered.length + (filtered.length===1?' resultado':' resultados');
+    grid.innerHTML = filtered.map(function(d){
+      return '<div class="explora-card">' +
+        '<div class="top"><span class="code">' + d.code + '</span><span class="tag ' + (d.categoria==='Obras'?'obras':d.categoria==='Bienes'?'gobierno':d.categoria==='Servicios'?'economia':'empresas') + '">' + d.categoria + '</span></div>' +
+        '<h4>' + d.title + '</h4>' +
+        '<div class="row"><span>' + d.entidad + '</span></div>' +
+        '<div class="row"><span class="amt tabular">' + money(d.monto) + '</span><span>' + d.region + ' · ' + d.plazo + '</span></div>' +
+      '</div>';
+    }).join('') || '<p style="color:var(--ink-soft); grid-column:1/-1;">No hay resultados con estos filtros — prueba ajustando la búsqueda.</p>';
+  }
+  ['fRegion','fCategoria','fEstado','fBuscar'].forEach(function(id){
+    document.getElementById(id).addEventListener('input', renderExplora);
+    document.getElementById(id).addEventListener('change', renderExplora);
+  });
+  renderExplora();
+
+  /* ============ Mapa ============ */
+  var REGIONS = [
+    {n:'Tumbes', r:1,c:1}, {n:'Loreto', r:1,c:5},
+    {n:'Piura', r:2,c:1}, {n:'Amazonas', r:2,c:3},
+    {n:'Lambayeque', r:3,c:1}, {n:'Cajamarca', r:3,c:2}, {n:'San Martín', r:3,c:4},
+    {n:'La Libertad', r:4,c:1}, {n:'Huánuco', r:4,c:3}, {n:'Ucayali', r:4,c:4},
+    {n:'Áncash', r:5,c:1}, {n:'Pasco', r:5,c:2}, {n:'Junín', r:5,c:3}, {n:'Madre de Dios', r:5,c:5},
+    {n:'Lima · Callao', r:6,c:1}, {n:'Huancavelica', r:6,c:2}, {n:'Ayacucho', r:6,c:3}, {n:'Cusco', r:6,c:4}, {n:'Puno', r:6,c:5},
+    {n:'Ica', r:7,c:1}, {n:'Arequipa', r:7,c:2}, {n:'Apurímac', r:7,c:3}, {n:'Moquegua', r:7,c:4}, {n:'Tacna', r:7,c:5}
+  ];
+  var regionGrid = document.getElementById('regionGrid');
+  regionGrid.innerHTML = REGIONS.map(function(g){
+    return '<button class="region-tile" style="grid-row:'+g.r+';grid-column:'+g.c+'" data-region="'+g.n+'">' + g.n + '</button>';
+  }).join('');
+
+  function hashNum(str, seed){
+    var h = seed;
+    for (var i=0; i<str.length; i++){ h = (h*31 + str.charCodeAt(i)) >>> 0; }
+    return h;
+  }
+  function regionStats(name){
+    var base = hashNum(name, 17);
+    return {
+      contrataciones: 12 + (base % 240),
+      inversion: (5 + (hashNum(name,41) % 90)) + '.' + (hashNum(name,3)%9) + 'M',
+      poblacion: (80 + (hashNum(name,7) % 900)) + 'K hab.',
+      tendencia: (hashNum(name,53) % 2 === 0 ? '▲ ' : '▼ ') + (3 + (hashNum(name,11)%30)) + '%'
+    };
+  }
+  var mapaPanel = document.getElementById('mapaPanel');
+  function selectRegion(name){
+    Array.prototype.forEach.call(regionGrid.querySelectorAll('.region-tile'), function(t){
+      t.classList.toggle('active', t.getAttribute('data-region') === name);
+    });
+    var st = regionStats(name);
+    mapaPanel.innerHTML =
+      '<div class="region-name">' + name + '</div>' +
+      '<div class="region-sub">Datos demo · actualizado hoy</div>' +
+      '<div class="mapa-stat"><span class="label">Contrataciones vigentes</span><span class="value tabular">' + st.contrataciones + '</span></div>' +
+      '<div class="mapa-stat"><span class="label">Inversión referencial</span><span class="value tabular">S/ ' + st.inversion + '</span></div>' +
+      '<div class="mapa-stat"><span class="label">Población</span><span class="value tabular">' + st.poblacion + '</span></div>' +
+      '<div class="mapa-stat"><span class="label">Tendencia trimestral</span><span class="value tabular">' + st.tendencia + '</span></div>';
+  }
+  regionGrid.addEventListener('click', function(e){
+    var btn = e.target.closest('.region-tile');
+    if (btn) selectRegion(btn.getAttribute('data-region'));
+  });
+  selectRegion('Cusco');
+
+  Array.prototype.forEach.call(document.querySelectorAll('.mapa-indicador button'), function(btn){
+    btn.addEventListener('click', function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.mapa-indicador button'), function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+    });
+  });
+
+  /* ============ Tu Perú: intereses ============ */
+  var INTERESES = ['Cusco','Economía','Obras','Empresas','Gobierno','Trabajo','Educación','Salud'];
+  var DEFAULT_ON = {'Cusco':true,'Economía':true,'Obras':true};
+  var interesGrid = document.getElementById('interesGrid');
+  interesGrid.innerHTML = INTERESES.map(function(t){
+    var checked = DEFAULT_ON[t] ? ' checked' : '';
+    return '<label class="interes-chip' + (DEFAULT_ON[t]?' checked':'') + '"><input type="checkbox"' + checked + ' data-t="'+t+'">' + t + '</label>';
+  }).join('');
+  Array.prototype.forEach.call(interesGrid.querySelectorAll('.interes-chip'), function(chip){
+    var input = chip.querySelector('input');
+    input.addEventListener('change', function(){ chip.classList.toggle('checked', input.checked); });
+  });
+
+  /* ============ menú móvil (nav) ============ */
+  // La demo usa navegación por ancla; en pantallas angostas el menú superior
+  // se oculta (ver CSS) — el buscador y el botón de tema siguen accesibles.
+
+})();
+</script>
+
+
+<script>
+/* Reporta la altura real del contenido al padre (index.html) para que el
+   iframe que lo embebe no tenga scroll propio ni deje espacio de más. */
+(function(){
+  function reportHeight(){
+    var h = document.documentElement.scrollHeight;
+    if (window.parent) {
+      window.parent.postMessage({ type: 'ped-height', height: h }, '*');
+    }
+  }
+  window.addEventListener('load', reportHeight);
+  window.addEventListener('resize', reportHeight);
+  if (window.ResizeObserver) {
+    new ResizeObserver(reportHeight).observe(document.body);
+  } else {
+    setInterval(reportHeight, 800);
+  }
+  reportHeight();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Perú en Datos | HUMEN SOLUTIONS</title>
+
+    <meta name="description"
+        content="Lo que está pasando en el Perú, explicado con datos oficiales — presupuesto, obras, contrataciones y más, en un solo lugar. Un proyecto de HUMEN SOLUTIONS.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS del sitio (mismo sistema de marca) -->
+    <link rel="stylesheet" href="../css/style.css?v=3">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="peru-datos-wrapper.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="shortcut icon" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/favicon.png">
+
+</head>
+
+<body class="peru-datos-page">
+
+    <!-- ========================= -->
+    <!-- HEADER (idéntico al del sitio principal) -->
+    <!-- ========================= -->
+    <header id="header">
+
+        <div class="container">
+
+            <a href="../index.html" class="logo">
+                <img src="../images/logo-header-new.png" alt="HUMEN SOLUTIONS" width="1571" height="465"
+                    class="logo-icon">
+            </a>
+
+            <nav>
+                <ul class="menu">
+                    <li><a href="../index.html#inicio">Inicio</a></li>
+                    <li><a href="../index.html#servicios">Servicios</a></li>
+                    <li><a href="../licitaciones/index.html">Licitaciones</a></li>
+                    <li><a href="index.html" style="color:var(--primary);white-space:nowrap">Perú en Datos</a></li>
+                    <li><a href="../index.html#beneficios">Beneficios</a></li>
+                    <li><a href="../index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <a href="../index.html#contacto" class="btn-primary btn-header-cta">
+                Cotiza con nosotros
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </a>
+
+            <button class="menu-mobile">☰</button>
+
+        </div>
+
+    </header>
+
+    <main class="peru-datos-main">
+
+        <div class="pd-shell">
+
+            <div class="pd-breadcrumb">
+                <a href="../index.html">Inicio</a><span>/</span><span class="current">Perú en Datos</span>
+            </div>
+
+            <div class="pd-header">
+                <div>
+                    <span class="pd-eyebrow">Proyecto de periodismo de datos</span>
+                    <h1>Perú en Datos</h1>
+                    <p>Lo que está pasando en el Perú, explicado con datos oficiales del MEF, SEACE/OECE, INEI,
+                        la Contraloría y el Portal Nacional de Datos Abiertos — con fuente y fecha en cada cifra.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- "Perú en Datos" corre como su propia página completa (app.html),
+             embebida aquí para que tenga su propio buscador, su selector de
+             tema claro/oscuro y sus secciones internas sin chocar con el
+             CSS del sitio principal. Se ajusta de alto automáticamente al
+             contenido (ver postMessage abajo) para que no quede scroll
+             doble. -->
+        <!-- ========================= -->
+        <div class="pd-frame-wrap">
+            <iframe
+                id="pdFrame"
+                class="pd-frame"
+                src="app.html"
+                title="Perú en Datos"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+        </div>
+
+        <p class="pd-note">
+            Esta es una vista preliminar: los datos que se muestran dentro de "Perú en Datos" hoy son de
+            demostración (marcados como tal en la propia página), mientras se terminan de conectar y verificar
+            las fuentes oficiales en vivo.
+        </p>
+
+    </main>
+
+    <script>
+    (function(){
+        var frame = document.getElementById('pdFrame');
+        window.addEventListener('message', function(ev){
+            if (ev.data && ev.data.type === 'ped-height' && typeof ev.data.height === 'number') {
+                frame.style.height = Math.max(ev.data.height, 400) + 'px';
+            }
+        });
+    })();
+    </script>
+
+</body>
+
+</html>

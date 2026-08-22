@@ -1,0 +1,94 @@
+/* ============================================================
+   Perú en Datos — envoltorio dentro del sitio de HUMEN SOLUTIONS
+   No redefine --primary, --secondary, etc. — usa los mismos tokens
+   del sitio (igual que licitaciones.css) para que el header y el
+   breadcrumb se sientan parte de la misma página.
+   ============================================================ */
+
+/* El header del sitio es position:fixed (ver css/style.css) — sin este
+   padding, el breadcrumb y el título quedarían tapados debajo de él.
+   Mismo valor que usa licitaciones.css para el mismo problema. */
+main.peru-datos-main{
+    padding-top:110px;
+}
+
+@media (max-width:768px){
+    main.peru-datos-main{ padding-top:100px; }
+}
+
+.pd-shell{
+    width:100%;
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+}
+
+.pd-breadcrumb{
+    font-size:.85rem;
+    color:var(--text-light);
+    margin:0 0 22px;
+}
+.pd-breadcrumb a{ color:var(--text-light); transition:.25s; }
+.pd-breadcrumb a:hover{ color:var(--primary); }
+.pd-breadcrumb span{ color:var(--border); margin:0 8px; }
+.pd-breadcrumb .current{ color:var(--primary); font-weight:600; }
+
+.pd-header{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:30px;
+    flex-wrap:wrap;
+    padding-bottom:28px;
+}
+.pd-eyebrow{
+    display:inline-block;
+    font-size:.78rem;
+    font-weight:700;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    color:var(--primary);
+    margin-bottom:10px;
+}
+.pd-header h1{
+    font-size:clamp(2rem,3.4vw,2.7rem);
+    letter-spacing:-1px;
+    margin-bottom:10px;
+}
+.pd-header p{
+    max-width:60ch;
+    color:var(--text-light);
+    margin:0;
+}
+
+.pd-frame-wrap{
+    width:100vw;
+    position:relative;
+    left:50%;
+    right:50%;
+    margin-left:-50vw;
+    margin-right:-50vw;
+    border-top:1px solid var(--border);
+    /* Mismo "paper" claro que usa Perú en Datos, para que no haya un salto
+       de color mientras carga el iframe. El sitio de HUMEN es siempre claro
+       (no tiene modo oscuro), así que este fondo se queda fijo también —
+       el propio iframe sí se adapta a modo oscuro internamente, de forma
+       independiente. */
+    background:#EEEAE1;
+}
+
+.pd-frame{
+    display:block;
+    width:100%;
+    border:0;
+    min-height:100vh;
+}
+
+.pd-note{
+    max-width:1180px;
+    margin:22px auto 60px;
+    padding:0 32px;
+    font-size:.82rem;
+    color:var(--text-light);
+    line-height:1.6;
+}
