@@ -1,0 +1,116 @@
+name: Descubrir catálogo PNDA (Fase 3 - Perú en Datos)
+
+# Corre connectors/discovery.py: recorre TODO el portal de datos abiertos
+# (package_list + package_show por cada dataset, ~1,050 a la fecha),
+# clasifica cuáles son de Economía y Finanzas, y prueba en vivo cuáles
+# recursos tienen la Data API activada. Escribe data/catalog.json.
+#
+# SOLO MANUAL a propósito (sin "schedule" / cron): esta es la Fase 3,
+# todavía no conectada a nada del frontend — se corre a mano para revisar
+# el resultado antes de avanzar a la Fase 4 (sincronización genérica de
+# los datasets que aparezcan aquí). El cron automático llega en la Fase 5,
+# cuando discovery + sync corran juntos.
+#
+# Para una primera prueba rápida, usa "Run workflow" y pon un número
+# pequeño en "limit" (ej. 20) — así se prueba el flujo completo sin
+# esperar a recorrer los ~1,050 datasets del portal. Déjalo vacío para la
+# corrida completa (tarda varios minutos, a propósito: hay una pausa
+# entre peticiones para no saturar el servidor del portal).
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Procesar solo los primeros N datasets del portal (vacío = todos, ~1,050)"
+        required: false
+        default: ""
+      probar_data_api:
+        description: "Para qué datasets probar en vivo si tienen Data API"
+        required: false
+        default: "economia-finanzas"
+        type: choice
+        options:
+          - economia-finanzas
+          - todos
+          - ninguno
+
+permissions:
+  contents: write
+
+jobs:
+  descubrir-catalogo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Ejecutar discovery.py
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.limit }}" ]; then
+            ARGS="$ARGS --limit ${{ github.event.inputs.limit }}"
+          fi
+          python connectors/discovery.py --probar-data-api "${{ github.event.inputs.probar_data_api }}" $ARGS
+
+      - name: Mostrar un resumen rápido en la pestaña del run
+        if: always()
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          try:
+              with open("data/catalog.json", encoding="utf-8") as f:
+                  d = json.load(f)
+          except FileNotFoundError:
+              print("No se generó data/catalog.json (falló antes de escribir).")
+              raise SystemExit(0)
+          print(f"**Estado:** {d.get('estado')}")
+          print(f"**Datasets en el portal:** {d.get('total_datasets_portal')}")
+          print(f"**Datasets procesados:** {d.get('total_datasets_procesados')}")
+          print(f"**Clasificados como Economía y Finanzas:** {d.get('total_clasificados_economia_finanzas')}")
+          print(f"**Recursos con Data API confirmada:** {d.get('total_recursos_con_data_api_confirmada')}")
+          print(f"**Errores:** {len(d.get('errores') or [])}")
+          if d.get("errores"):
+              print("\n| dataset_id | error |\n|---|---|")
+              for e in d["errores"][:20]:
+                  print(f"| {e['dataset_id']} | {e['error']} |")
+          PY
+
+      - name: Subir data/catalog.json como artifact (siempre, para revisar sin esperar el commit)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: catalogo-pnda
+          path: data/catalog.json
+          retention-days: 14
+          if-no-files-found: warn
+
+      - name: Confirmar y subir cambios (solo si hubo cambios)
+        run: |
+          git config user.name "peru-en-datos-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/catalog.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios en el catálogo, no se crea commit."
+            exit 0
+          fi
+          git commit -m "Descubre catálogo PNDA (Fase 3) - $(date -u +'%Y-%m-%d %H:%M UTC')"
+
+          for intento in 1 2 3 4 5; do
+            git fetch origin main
+            if git merge origin/main --no-edit -X ours -m "Merge automático (descubrir-catalogo)"; then
+              if git push origin main; then
+                echo "Subido correctamente."
+                exit 0
+              fi
+            fi
+            echo "Intento $intento falló (probablemente otro push a la vez), reintentando..."
+            sleep $((intento * 5))
+          done
+          echo "No se pudo subir después de varios intentos." >&2
+          exit 1
