@@ -2,7 +2,7 @@
   "fuente": "MEF — Presupuesto y Ejecución de Gasto (Devengado Mensual) 2025",
   "atribucion": "Ministerio de Economía y Finanzas (MEF), vía Portal Nacional de Datos Abiertos.",
   "dataset_url": "https://www.datosabiertos.gob.pe/dataset/presupuesto-y-ejecuci%C3%B3n-de-gasto-%E2%80%93-devengado-mensual",
-  "csv_url": "https://fs.datosabiertos.mef.gob.pe/datastorefiles/2025-Gasto-Devengado-Mensual.csv",
+  "csv_url": "https://fs.datosabiertos.mef.gob.pe/datastorefiles/2012-Gasto-Devengado.csv",
   "columnas_detectadas": [
     "ANO_EJE",
     "NIVEL_GOBIERNO",
@@ -95,123 +95,123 @@
     "NOVIEMBRE",
     "DICIEMBRE"
   ],
-  "filas_leidas": 2807168,
-  "filas_con_monto_valido": 2807168,
-  "monto_devengado_total": 253678531328.73,
+  "filas_leidas": 1836502,
+  "filas_con_monto_valido": 1836502,
+  "monto_devengado_total": 102998481815.11,
   "top_regiones_por_monto": [
     {
       "region": "Lima",
-      "monto_devengado": 151488309724.48
+      "monto_devengado": 59741028883.99
     },
     {
       "region": "Cusco",
-      "monto_devengado": 8374378841.09
-    },
-    {
-      "region": "Piura",
-      "monto_devengado": 7157081667.34
-    },
-    {
-      "region": "Cajamarca",
-      "monto_devengado": 6750193792.44
-    },
-    {
-      "region": "La Libertad",
-      "monto_devengado": 6534038938.07
-    },
-    {
-      "region": "Ancash",
-      "monto_devengado": 6421951540.82
-    },
-    {
-      "region": "Arequipa",
-      "monto_devengado": 6222373224.3
-    },
-    {
-      "region": "Junin",
-      "monto_devengado": 5588126767.57
+      "monto_devengado": 4346215768.04
     },
     {
       "region": "Provincia Constitucional Del Callao",
-      "monto_devengado": 5479226842.62
+      "monto_devengado": 3514653847.56
     },
     {
-      "region": "Loreto",
-      "monto_devengado": 5361129845.48
+      "region": "Ancash",
+      "monto_devengado": 2938047354.73
+    },
+    {
+      "region": "Cajamarca",
+      "monto_devengado": 2579457950.02
+    },
+    {
+      "region": "La Libertad",
+      "monto_devengado": 2563470676.83
+    },
+    {
+      "region": "Piura",
+      "monto_devengado": 2452904590.45
+    },
+    {
+      "region": "Arequipa",
+      "monto_devengado": 2411362620.25
     },
     {
       "region": "Puno",
-      "monto_devengado": 5315831200.87
+      "monto_devengado": 2209073661.5
+    },
+    {
+      "region": "Loreto",
+      "monto_devengado": 1868462326.52
+    },
+    {
+      "region": "Junin",
+      "monto_devengado": 1807621260.29
+    },
+    {
+      "region": "",
+      "monto_devengado": 1770924354.29
     },
     {
       "region": "Ayacucho",
-      "monto_devengado": 4313981576.23
-    },
-    {
-      "region": "Ica",
-      "monto_devengado": 3998512170.63
+      "monto_devengado": 1518747871.35
     },
     {
       "region": "Lambayeque",
-      "monto_devengado": 3947381051.38
+      "monto_devengado": 1518074400.21
     },
     {
-      "region": "San Martin",
-      "monto_devengado": 3830778978.15
+      "region": "Huanuco",
+      "monto_devengado": 1415266999.46
     }
   ],
   "gasto_mensual_nacional": [
     {
       "mes": "ENERO",
-      "monto_devengado": 16835113842.62
+      "monto_devengado": 4854789990.23
     },
     {
       "mes": "FEBRERO",
-      "monto_devengado": 21907083519.65
+      "monto_devengado": 7604193665.93
     },
     {
       "mes": "MARZO",
-      "monto_devengado": 17848446335.7
+      "monto_devengado": 7078204199.39
     },
     {
       "mes": "ABRIL",
-      "monto_devengado": 17323461642.53
+      "monto_devengado": 7079630091.54
     },
     {
       "mes": "MAYO",
-      "monto_devengado": 19059256742.81
+      "monto_devengado": 7557080624.5
     },
     {
       "mes": "JUNIO",
-      "monto_devengado": 20553648217.1
+      "monto_devengado": 7399454281.01
     },
     {
       "mes": "JULIO",
-      "monto_devengado": 21464948310.86
+      "monto_devengado": 8372597017.83
     },
     {
       "mes": "AGOSTO",
-      "monto_devengado": 23718101029.81
+      "monto_devengado": 8740421159.86
     },
     {
       "mes": "SEPTIEMBRE",
-      "monto_devengado": 21162887768.59
+      "monto_devengado": 8393923581.98
     },
     {
       "mes": "OCTUBRE",
-      "monto_devengado": 19635180470.43
+      "monto_devengado": 9246902959.6
     },
     {
       "mes": "NOVIEMBRE",
-      "monto_devengado": 19692526467.13
+      "monto_devengado": 9070629740.25
     },
     {
       "mes": "DICIEMBRE",
-      "monto_devengado": 34477876981.5
+      "monto_devengado": 17600654502.99
     }
   ],
   "muestra_parcial": false,
   "estado": "ok",
-  "url_origen": "url_fija",
-  "generado_en": "2026-08-22T22:27:07Z"
+  "url_origen": "package_show",
+  "generado_en": "2026-08-23T12:37:37Z"
 }

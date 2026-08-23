@@ -61,7 +61,7 @@
           "conteo": 172
         }
       ],
-      "metodo": "descarga_url_fija",
+      "metodo": "descarga_url_en_vivo",
       "estado": "ok",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/resultados-de-las-intervenciones-realizadas-por-los-monitores-ciudadanos-de-control-en-el",
       "csv_url": "https://www.datosabiertos.gob.pe/sites/default/files/DATOS%20ABIERTOS%20-%20RESULTADOS%20DE%20INTERVENCIONES%202021_3.csv"
@@ -125,11 +125,11 @@
           "conteo": 471
         }
       ],
-      "metodo": "descarga_url_fija",
+      "metodo": "descarga_url_en_vivo",
       "estado": "ok",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/informaci%C3%B3n-general-de-los-monitores-ciudadanos-de-control",
       "csv_url": "https://www.datosabiertos.gob.pe/sites/default/files/DATOS%20ABIERTOS%20-%20MONITORES%20CIUDADANOS%20DE%20CONTROL.csv"
     }
   ],
-  "generado_en": "2026-08-22T22:18:43Z"
+  "generado_en": "2026-08-23T12:26:21Z"
 }
