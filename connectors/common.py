@@ -217,7 +217,7 @@ def datastore_search_all(resource_id, page_size=5000, max_records=None):
     return {"fields": fields or [], "records": records}
 
 
-def has_data_api(resource_id, timeout=20):
+def has_data_api(resource_id, timeout=15):
     """Prueba EN VIVO (una sola petición, `limit=1`, sin paginar) si un
     recurso concreto tiene la Data API (datastore) activada.
 
@@ -227,6 +227,24 @@ def has_data_api(resource_id, timeout=20):
     la respuesta real de dos datasets distintos) — la única forma
     confiable es intentar `datastore/search.json?resource_id=...` y ver si
     responde con éxito o con error.
+
+    `max_retries=1` A PROPÓSITO (sin reintentos) — corregido tras la
+    primera corrida completa contra el portal real (2026-08-22): la
+    inmensa mayoría de recursos NO tienen datastore activado, y el portal
+    responde a eso con un error HTTP 500 "Resource ... does not exist" —
+    una respuesta DETERMINISTA (ese recurso nunca va a tener datastore en
+    ese mismo segundo intento), no una falla transitoria de red. Con
+    `max_retries=2` (el valor por defecto de `http_get`), cada uno de
+    esos miles de recursos sin datastore pagaba un reintento completo +
+    ~2 segundos de espera sin ganar nada — eso fue lo que hizo que la
+    corrida completa (~4,600 datasets) proyectara superar ampliamente el
+    límite de tiempo del workflow. Con 1 solo intento, un recurso que sí
+    tenía Data API pero falló por un problema de red pasajero quedará
+    marcado `tiene_data_api: false` en vez de `true` — un falso negativo
+    aceptable (nunca un falso positivo: nunca se inventa que SÍ tiene
+    Data API), y que además se vuelve a intentar de verdad más adelante,
+    en la Fase 4, cuando `sync_dataset.py` sincronice ese dataset en
+    concreto.
 
     Nunca lanza excepción: quien llama (p.ej. `discovery.py`, sync futuro)
     necesita poder probar cientos de recursos sin que uno solo tumbe todo
@@ -238,7 +256,7 @@ def has_data_api(resource_id, timeout=20):
     try:
         from urllib.parse import quote
         url = f"{PNDA_DATASTORE_API}?resource_id={quote(str(resource_id), safe='')}&limit=1"
-        resp = http_get(url, timeout=timeout, max_retries=2)
+        resp = http_get(url, timeout=timeout, max_retries=1)
         payload = json.loads(resp.read().decode("utf-8", errors="replace"))
         if payload.get("success"):
             return True, "datastore activo"

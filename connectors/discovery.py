@@ -237,10 +237,45 @@ def construir_entrada_dataset(slug, dataset_result, probar_data_api_este):
     }
 
 
+def armar_summary(args, total_portal, empezar_en, procesados_esta_corrida, datasets, errores, cortado_por_tiempo, minutos_transcurridos):
+    """Arma el dict que se guarda en catalog.json — usado tanto para
+    checkpoints intermedios como para el resultado final, así ambos tienen
+    exactamente la misma forma (ver docstring de `main` sobre por qué hay
+    checkpoints)."""
+    total_economia_finanzas = sum(1 for d in datasets if d["categoria"] == "Economía y Finanzas")
+    con_data_api = sum(1 for d in datasets for r in d["resources"] if r["tiene_data_api"] is True)
+    siguiente_empezar_en = empezar_en + procesados_esta_corrida + len(errores)
+    corrida_completa = (not cortado_por_tiempo) and siguiente_empezar_en >= total_portal
+    return {
+        "fuente": "Catálogo del Portal Nacional de Datos Abiertos (PNDA) — descubrimiento propio, no oficial",
+        "atribucion": "Datos originales de cada entidad publicadora, vía Portal Nacional de Datos Abiertos (PNDA).",
+        "estado": "ok" if corrida_completa else "parcial",
+        "corrida_completa": corrida_completa,
+        "cortado_por_tiempo": cortado_por_tiempo,
+        "minutos_que_tomo_esta_corrida": round(minutos_transcurridos, 1),
+        "empezar_en_usado_esta_corrida": empezar_en,
+        "siguiente_empezar_en": None if corrida_completa else siguiente_empezar_en,
+        "total_datasets_portal": total_portal,
+        "total_datasets_procesados": len(datasets),
+        "total_clasificados_economia_finanzas": total_economia_finanzas,
+        "total_recursos_con_data_api_confirmada": con_data_api,
+        "metodo_clasificacion": "entidad publicadora conocida (ver ENTIDADES_ECONOMIA_FINANZAS); si no matchea, palabras clave en título/notas/tags (ver PALABRAS_CLAVE_ECONOMIA_FINANZAS)",
+        "data_api_probado_para": args.probar_data_api,
+        "errores": errores,
+        "datasets": datasets,
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--limit", type=int, default=None,
-                         help="Procesar solo los primeros N datasets del portal (para pruebas rápidas; el catálogo resultante quedará incompleto a propósito).")
+                         help="Procesar solo los primeros N datasets (contados desde --empezar-en) — para pruebas rápidas; el catálogo resultante quedará incompleto a propósito.")
+    parser.add_argument("--empezar-en", type=int, default=0,
+                         help="Saltar los primeros N datasets de package_list. Úsalo para CONTINUAR una corrida anterior que se cortó por tiempo: revisa 'siguiente_empezar_en' en el catalog.json de esa corrida y pásalo aquí.")
+    parser.add_argument("--max-minutos", type=float, default=None,
+                         help="Detener la corrida (guardando ordenadamente lo procesado hasta ese punto, con 'siguiente_empezar_en' listo para continuar) si supera este tiempo — en vez de dejar que GitHub Actions la mate de golpe sin guardar nada al llegar a su propio timeout-minutes. Recomendado: unos 10-15 minutos MENOS que el timeout-minutes del workflow.")
+    parser.add_argument("--checkpoint-cada", type=int, default=200,
+                         help="Guardar un catalog.json parcial cada N datasets procesados, además de al terminar — así una cancelación manual o una caída del runner (no solo el límite de tiempo, que ya se maneja con --max-minutos) pierde como máximo este número de datasets, no la corrida completa. 0 desactiva los checkpoints intermedios.")
     parser.add_argument("--pausa", type=float, default=0.2,
                          help="Segundos de espera entre peticiones a package_show (ser respetuosos con el servidor del portal). Default: 0.2s.")
     parser.add_argument("--probar-data-api", choices=["economia-finanzas", "todos", "ninguno"], default="economia-finanzas",
@@ -248,8 +283,10 @@ def main():
     parser.add_argument("--out", default=OUT_PATH, help="Ruta de salida del catalog.json (para pruebas, sin pisar el real).")
     args = parser.parse_args()
 
+    inicio = time.time()
+
     try:
-        slugs = obtener_lista_slugs()
+        todos_los_slugs = obtener_lista_slugs()
     except Exception as exc:
         print(f"ERROR: no se pudo obtener package_list: {exc}", file=sys.stderr)
         write_summary(args.out, {
@@ -260,14 +297,36 @@ def main():
         })
         sys.exit(1)
 
-    total_portal = len(slugs)
+    total_portal = len(todos_los_slugs)
+    slugs = todos_los_slugs[args.empezar_en:]
     if args.limit:
         slugs = slugs[:args.limit]
-    print(f"package_list: {total_portal} datasets en el portal. Procesando {len(slugs)}...", file=sys.stderr)
+    print(
+        f"package_list: {total_portal} datasets en el portal. Empezando en el índice {args.empezar_en}, "
+        f"procesando {len(slugs)}...",
+        file=sys.stderr,
+    )
 
     datasets = []
     errores = []
+    cortado_por_tiempo = False
     for i, slug in enumerate(slugs, 1):
+        # NOTA: no se puede usar time.time() dentro de un script de workflow
+        # de la herramienta Workflow (ahí está prohibido) — pero ESTE es un
+        # script Python normal que corre como su propio proceso en GitHub
+        # Actions, así que time.time() es válido y necesario aquí para el
+        # límite de tiempo propio.
+        if args.max_minutos is not None:
+            minutos_transcurridos = (time.time() - inicio) / 60
+            if minutos_transcurridos >= args.max_minutos:
+                print(
+                    f"  Se alcanzó --max-minutos ({args.max_minutos}) en el dataset {i}/{len(slugs)} "
+                    f"— deteniendo ordenadamente y guardando lo procesado.",
+                    file=sys.stderr,
+                )
+                cortado_por_tiempo = True
+                break
+
         # TODO el procesamiento de un dataset (no solo el package_show) va
         # en un único try/except. Bug real encontrado en la primera corrida
         # contra el portal real (2026-08-22): para al menos un dataset,
@@ -301,33 +360,48 @@ def main():
             econ_hasta_ahora = sum(1 for d in datasets if d["categoria"] == "Economía y Finanzas")
             print(f"  [{i}/{len(slugs)}] procesados · {econ_hasta_ahora} clasificados como Economía y Finanzas hasta ahora", file=sys.stderr)
 
+        # Checkpoint intermedio — ver el --help de --checkpoint-cada. Se
+        # guarda con cortado_por_tiempo=False y minutos_transcurridos
+        # actuales; si la corrida sigue después sin cortarse, el archivo
+        # final simplemente lo sobreescribe con el resultado completo.
+        if args.checkpoint_cada and i % args.checkpoint_cada == 0 and i != len(slugs):
+            minutos_transcurridos = (time.time() - inicio) / 60
+            checkpoint = armar_summary(
+                args, total_portal, args.empezar_en, len(datasets), datasets, errores,
+                cortado_por_tiempo=False, minutos_transcurridos=minutos_transcurridos,
+            )
+            checkpoint["estado"] = "parcial"
+            checkpoint["corrida_completa"] = False
+            checkpoint["siguiente_empezar_en"] = args.empezar_en + i  # checkpoint: "vamos en i", no el final
+            os.makedirs(os.path.dirname(args.out), exist_ok=True)
+            write_summary(args.out, checkpoint)
+            print(f"  [checkpoint guardado en {i}/{len(slugs)}]", file=sys.stderr)
+
         time.sleep(args.pausa)
 
-    total_economia_finanzas = sum(1 for d in datasets if d["categoria"] == "Economía y Finanzas")
-    con_data_api = sum(
-        1 for d in datasets for r in d["resources"] if r["tiene_data_api"] is True
+    minutos_transcurridos = (time.time() - inicio) / 60
+    summary = armar_summary(
+        args, total_portal, args.empezar_en, len(datasets), datasets, errores,
+        cortado_por_tiempo, minutos_transcurridos,
     )
-
-    summary = {
-        "fuente": "Catálogo del Portal Nacional de Datos Abiertos (PNDA) — descubrimiento propio, no oficial",
-        "atribucion": "Datos originales de cada entidad publicadora, vía Portal Nacional de Datos Abiertos (PNDA).",
-        "estado": "ok",
-        "total_datasets_portal": total_portal,
-        "total_datasets_procesados": len(datasets),
-        "total_clasificados_economia_finanzas": total_economia_finanzas,
-        "total_recursos_con_data_api_confirmada": con_data_api,
-        "metodo_clasificacion": "entidad publicadora conocida (ver ENTIDADES_ECONOMIA_FINANZAS); si no matchea, palabras clave en título/notas/tags (ver PALABRAS_CLAVE_ECONOMIA_FINANZAS)",
-        "data_api_probado_para": args.probar_data_api,
-        "errores": errores,
-        "datasets": datasets,
-    }
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
     write_summary(args.out, summary)
-    print(
-        f"Listo: {len(datasets)} datasets procesados, {total_economia_finanzas} clasificados como "
-        f"Economía y Finanzas, {con_data_api} recursos con Data API confirmada, {len(errores)} errores.",
-        file=sys.stderr,
-    )
+
+    if summary["corrida_completa"]:
+        print(
+            f"Listo, CORRIDA COMPLETA: {len(datasets)} datasets procesados, "
+            f"{summary['total_clasificados_economia_finanzas']} clasificados como Economía y Finanzas, "
+            f"{summary['total_recursos_con_data_api_confirmada']} recursos con Data API confirmada, "
+            f"{len(errores)} errores.",
+            file=sys.stderr,
+        )
+    else:
+        print(
+            f"Corrida PARCIAL ({'cortada por --max-minutos' if cortado_por_tiempo else 'terminó su lote pero quedan datasets'}): "
+            f"{len(datasets)} datasets procesados en esta corrida, {len(errores)} errores. "
+            f"Para continuar, vuelve a correr con --empezar-en {summary['siguiente_empezar_en']}.",
+            file=sys.stderr,
+        )
 
 
 if __name__ == "__main__":
