@@ -162,6 +162,7 @@ jobs:
           python connectors/detectar_cambios.py
           python connectors/analytics.py
           python connectors/story_engine.py
+          python connectors/catalogo_indice.py --categoria "${{ github.event.inputs.categoria || 'Economía y Finanzas' }}"
 
       - name: Mostrar un resumen rápido en la pestaña del run
         if: always()
@@ -212,6 +213,7 @@ jobs:
           [ -f data/cambios_recientes.json ] && git add data/cambios_recientes.json
           [ -d data/analytics ] && git add data/analytics
           [ -d data/stories ] && git add data/stories
+          [ -f data/catalogo_indice.json ] && git add data/catalogo_indice.json
           if git diff --cached --quiet; then
             echo "Sin cambios en data/sources, no se crea commit."
             exit 0
