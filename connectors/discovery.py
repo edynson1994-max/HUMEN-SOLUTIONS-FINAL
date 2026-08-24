@@ -244,6 +244,60 @@ def obtener_lista_slugs():
     return payload["result"]
 
 
+def cargar_catalogo_existente(out_path):
+    """Carga el catalog.json ya existente (si lo hay) como dos dicts
+    indexados por dataset_id: uno para los datasets ya descubiertos con
+    éxito, otro para los que quedaron en error. Nunca levanta excepción —
+    si el archivo no existe, está vacío, corrupto, o no tiene la forma
+    esperada, se trata como "primera corrida" (dicts vacíos).
+
+    FIX DEL BUG DE ACUMULACIÓN (ver README de connectors/): antes,
+    main() siempre empezaba con datasets=[] y errores=[] en blanco, así
+    que CADA corrida — sobre todo cada corrida de continuación con
+    --empezar-en, que es el caso normal de uso — pisaba el catalog.json
+    entero con SOLO el lote de esa corrida, borrando en silencio todo lo
+    descubierto en corridas anteriores. Confirmado en producción: una
+    corrida completa (2026-08-23) había dejado 706 datasets clasificados
+    como Economía y Finanzas; corridas posteriores de continuación lo
+    fueron pisando hasta dejar el catálogo real en solo 530 datasets
+    totales (65 clasificados) pese a reportar "corrida_completa: true".
+    Cargar lo que ya había, indexado por dataset_id, permite que cada
+    corrida se SUME a lo anterior en vez de reemplazarlo."""
+    if not os.path.isfile(out_path):
+        return {}, {}, None
+    try:
+        with open(out_path, encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as exc:
+        print(
+            f"AVISO: no se pudo leer {out_path} para acumular sobre él ({exc}) — "
+            f"esta corrida empieza desde un catálogo vacío.",
+            file=sys.stderr,
+        )
+        return {}, {}, None
+
+    datasets_por_id = {}
+    for d in (data.get("datasets") or []):
+        did = d.get("dataset_id")
+        if did:
+            datasets_por_id[did] = d
+
+    errores_por_id = {}
+    for e in (data.get("errores") or []):
+        did = e.get("dataset_id")
+        if did:
+            errores_por_id[did] = e
+
+    total_portal_anterior = data.get("total_datasets_portal")
+
+    print(
+        f"Catálogo existente cargado desde {out_path}: {len(datasets_por_id)} datasets y "
+        f"{len(errores_por_id)} errores de corridas anteriores — esta corrida se SUMA a esto, no lo reemplaza.",
+        file=sys.stderr,
+    )
+    return datasets_por_id, errores_por_id, total_portal_anterior
+
+
 def construir_entrada_dataset(slug, dataset_result, probar_data_api_este):
     groups = dataset_result.get("groups") or []
     entidad = groups[0].get("title") if groups else None
@@ -292,14 +346,26 @@ def construir_entrada_dataset(slug, dataset_result, probar_data_api_este):
     }
 
 
-def armar_summary(args, total_portal, empezar_en, procesados_esta_corrida, datasets, errores, cortado_por_tiempo, minutos_transcurridos):
+def armar_summary(args, total_portal, empezar_en, intentados_esta_corrida, datasets, errores,
+                   cortado_por_tiempo, minutos_transcurridos, nuevos_esta_corrida=None, errores_esta_corrida=None):
     """Arma el dict que se guarda en catalog.json — usado tanto para
     checkpoints intermedios como para el resultado final, así ambos tienen
     exactamente la misma forma (ver docstring de `main` sobre por qué hay
-    checkpoints)."""
+    checkpoints).
+
+    IMPORTANTE (fix del bug de acumulación, ver cargar_catalogo_existente
+    y el README): `datasets` y `errores` son ahora CUMULATIVOS — incluyen
+    lo descubierto en TODAS las corridas anteriores, no solo la actual.
+    Por eso `siguiente_empezar_en` ya NO puede calcularse con
+    len(datasets)/len(errores) como antes (cuando esas listas eran del
+    tamaño del lote de esta corrida nada más) — eso daría un número cada
+    vez más inflado y rompería el avance por el portal. Se usa
+    `intentados_esta_corrida`, un contador aparte que sí cuenta solo los
+    slugs tocados en ESTA corrida (con éxito o con error), que es lo que
+    realmente determina cuántos índices de package_list se avanzaron."""
     total_economia_finanzas = sum(1 for d in datasets if d["categoria"] == "Economía y Finanzas")
     con_data_api = sum(1 for d in datasets for r in d["resources"] if r["tiene_data_api"] is True)
-    siguiente_empezar_en = empezar_en + procesados_esta_corrida + len(errores)
+    siguiente_empezar_en = empezar_en + intentados_esta_corrida
     corrida_completa = (not cortado_por_tiempo) and siguiente_empezar_en >= total_portal
     return {
         "fuente": "Catálogo del Portal Nacional de Datos Abiertos (PNDA) — descubrimiento propio, no oficial",
@@ -311,9 +377,14 @@ def armar_summary(args, total_portal, empezar_en, procesados_esta_corrida, datas
         "empezar_en_usado_esta_corrida": empezar_en,
         "siguiente_empezar_en": None if corrida_completa else siguiente_empezar_en,
         "total_datasets_portal": total_portal,
+        # Acumulado: todo lo descubierto hasta ahora, sumando todas las
+        # corridas (no solo esta). "datasets_nuevos_o_actualizados_en_esta_corrida"
+        # de más abajo es el que describe SOLO el lote de esta corrida.
         "total_datasets_procesados": len(datasets),
         "total_clasificados_economia_finanzas": total_economia_finanzas,
         "total_recursos_con_data_api_confirmada": con_data_api,
+        "datasets_nuevos_o_actualizados_en_esta_corrida": nuevos_esta_corrida,
+        "errores_nuevos_en_esta_corrida": errores_esta_corrida,
         "metodo_clasificacion": "entidad publicadora conocida (ver ENTIDADES_ECONOMIA_FINANZAS); si no matchea, palabras clave en título/notas/tags (ver PALABRAS_CLAVE_ECONOMIA_FINANZAS)",
         "data_api_probado_para": args.probar_data_api,
         "errores": errores,
@@ -336,20 +407,56 @@ def main():
     parser.add_argument("--probar-data-api", choices=["economia-finanzas", "todos", "ninguno"], default="economia-finanzas",
                          help="Para qué datasets probar en vivo si sus recursos tienen Data API. Default: solo los clasificados como Economía y Finanzas (ver docstring del módulo).")
     parser.add_argument("--out", default=OUT_PATH, help="Ruta de salida del catalog.json (para pruebas, sin pisar el real).")
+    parser.add_argument("--reiniciar", action="store_true",
+                         help="Ignora cualquier catalog.json existente y empieza desde un catálogo vacío (comportamiento del wipe-and-restart de antes del fix de acumulación). Uso raro — normalmente NO hace falta: el comportamiento por defecto ahora ya es acumular sobre lo existente, así que --empezar-en 0 también es seguro sin este flag.")
     args = parser.parse_args()
 
     inicio = time.time()
+
+    if args.reiniciar:
+        datasets_por_id, errores_por_id, total_portal_anterior = {}, {}, None
+        print("--reiniciar: se ignora cualquier catalog.json existente, esta corrida empieza desde cero.", file=sys.stderr)
+    else:
+        datasets_por_id, errores_por_id, total_portal_anterior = cargar_catalogo_existente(args.out)
 
     try:
         todos_los_slugs = obtener_lista_slugs()
     except Exception as exc:
         print(f"ERROR: no se pudo obtener package_list: {exc}", file=sys.stderr)
-        write_summary(args.out, {
-            "fuente": "Catálogo del Portal Nacional de Datos Abiertos (PNDA)",
-            "estado": "error",
-            "error": f"package_list falló: {exc}",
-            "datasets": [],
-        })
+        # OJO: si ya había un catálogo acumulado de corridas anteriores, NO
+        # se pisa con un estado de error vacío — sería el mismo bug de
+        # pérdida de datos que se acaba de arreglar, solo que disparado por
+        # una falla de red en vez de por una corrida de continuación. Se
+        # conserva tal cual estaba, con el error visible en el resumen.
+        if datasets_por_id or errores_por_id:
+            print(
+                f"El catálogo ya tenía {len(datasets_por_id)} datasets y {len(errores_por_id)} errores "
+                f"acumulados de corridas anteriores — se conservan tal cual.",
+                file=sys.stderr,
+            )
+            summary = armar_summary(
+                args,
+                total_portal_anterior if total_portal_anterior is not None else (len(datasets_por_id) + len(errores_por_id)),
+                args.empezar_en, 0,
+                list(datasets_por_id.values()), list(errores_por_id.values()),
+                cortado_por_tiempo=False,
+                minutos_transcurridos=(time.time() - inicio) / 60,
+                nuevos_esta_corrida=0, errores_esta_corrida=0,
+            )
+            summary["estado"] = "error"
+            summary["error"] = f"package_list falló: {exc}"
+            summary["corrida_completa"] = False
+            summary["siguiente_empezar_en"] = args.empezar_en
+        else:
+            summary = {
+                "fuente": "Catálogo del Portal Nacional de Datos Abiertos (PNDA)",
+                "estado": "error",
+                "error": f"package_list falló: {exc}",
+                "datasets": [],
+                "errores": [],
+            }
+        os.makedirs(os.path.dirname(args.out), exist_ok=True)
+        write_summary(args.out, summary)
         sys.exit(1)
 
     total_portal = len(todos_los_slugs)
@@ -358,13 +465,14 @@ def main():
         slugs = slugs[:args.limit]
     print(
         f"package_list: {total_portal} datasets en el portal. Empezando en el índice {args.empezar_en}, "
-        f"procesando {len(slugs)}...",
+        f"procesando {len(slugs)}... (catálogo acumulado ya tiene {len(datasets_por_id)} datasets de corridas anteriores)",
         file=sys.stderr,
     )
 
-    datasets = []
-    errores = []
     cortado_por_tiempo = False
+    intentados_esta_corrida = 0
+    nuevos_esta_corrida = 0
+    errores_esta_corrida = 0
     for i, slug in enumerate(slugs, 1):
         # NOTA: no se puede usar time.time() dentro de un script de workflow
         # de la herramienta Workflow (ahí está prohibido) — pero ESTE es un
@@ -396,6 +504,7 @@ def main():
         # frentes: aquí (todo el cuerpo del loop protegido) y en
         # common.py (package_show ahora valida el tipo de "result" antes
         # de devolverlo, con un error explícito y diagnosticable).
+        intentados_esta_corrida += 1
         try:
             resultado = package_show(slug)
             categoria_preview, _ = clasificar_categoria(resultado)
@@ -404,16 +513,30 @@ def main():
                 or (args.probar_data_api == "economia-finanzas" and categoria_preview == "Economía y Finanzas")
             )
             entrada = construir_entrada_dataset(slug, resultado, probar_este)
-            datasets.append(entrada)
+            datasets_por_id[slug] = entrada
+            errores_por_id.pop(slug, None)  # si antes había fallado y ahora funcionó, ya no es un error
+            nuevos_esta_corrida += 1
         except Exception as exc:
             print(f"  [{i}/{len(slugs)}] ERROR en {slug!r}: {exc}", file=sys.stderr)
-            errores.append({"dataset_id": slug, "error": str(exc)})
+            errores_esta_corrida += 1
+            if slug not in datasets_por_id:
+                # Solo se registra el error si NO había ya un dato bueno
+                # para este slug de una corrida anterior — así una falla
+                # transitoria (ej. un timeout puntual) no borra un dataset
+                # que ya se había descubierto bien antes.
+                errores_por_id[slug] = {"dataset_id": slug, "error": str(exc)}
+            else:
+                print(f"    (ya había un dato bueno para {slug!r} de una corrida anterior — se conserva, no se pisa con este error)", file=sys.stderr)
             time.sleep(args.pausa)
             continue
 
         if i % 50 == 0 or i == len(slugs):
-            econ_hasta_ahora = sum(1 for d in datasets if d["categoria"] == "Economía y Finanzas")
-            print(f"  [{i}/{len(slugs)}] procesados · {econ_hasta_ahora} clasificados como Economía y Finanzas hasta ahora", file=sys.stderr)
+            econ_hasta_ahora = sum(1 for d in datasets_por_id.values() if d["categoria"] == "Economía y Finanzas")
+            print(
+                f"  [{i}/{len(slugs)}] procesados en esta corrida · {len(datasets_por_id)} acumulados en total · "
+                f"{econ_hasta_ahora} clasificados como Economía y Finanzas hasta ahora",
+                file=sys.stderr,
+            )
 
         # Checkpoint intermedio — ver el --help de --checkpoint-cada. Se
         # guarda con cortado_por_tiempo=False y minutos_transcurridos
@@ -422,38 +545,44 @@ def main():
         if args.checkpoint_cada and i % args.checkpoint_cada == 0 and i != len(slugs):
             minutos_transcurridos = (time.time() - inicio) / 60
             checkpoint = armar_summary(
-                args, total_portal, args.empezar_en, len(datasets), datasets, errores,
+                args, total_portal, args.empezar_en, intentados_esta_corrida,
+                list(datasets_por_id.values()), list(errores_por_id.values()),
                 cortado_por_tiempo=False, minutos_transcurridos=minutos_transcurridos,
+                nuevos_esta_corrida=nuevos_esta_corrida, errores_esta_corrida=errores_esta_corrida,
             )
             checkpoint["estado"] = "parcial"
             checkpoint["corrida_completa"] = False
             checkpoint["siguiente_empezar_en"] = args.empezar_en + i  # checkpoint: "vamos en i", no el final
             os.makedirs(os.path.dirname(args.out), exist_ok=True)
             write_summary(args.out, checkpoint)
-            print(f"  [checkpoint guardado en {i}/{len(slugs)}]", file=sys.stderr)
+            print(f"  [checkpoint guardado en {i}/{len(slugs)} — {len(datasets_por_id)} datasets acumulados en total]", file=sys.stderr)
 
         time.sleep(args.pausa)
 
     minutos_transcurridos = (time.time() - inicio) / 60
     summary = armar_summary(
-        args, total_portal, args.empezar_en, len(datasets), datasets, errores,
+        args, total_portal, args.empezar_en, intentados_esta_corrida,
+        list(datasets_por_id.values()), list(errores_por_id.values()),
         cortado_por_tiempo, minutos_transcurridos,
+        nuevos_esta_corrida=nuevos_esta_corrida, errores_esta_corrida=errores_esta_corrida,
     )
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
     write_summary(args.out, summary)
 
     if summary["corrida_completa"]:
         print(
-            f"Listo, CORRIDA COMPLETA: {len(datasets)} datasets procesados, "
+            f"Listo, CORRIDA COMPLETA: {len(datasets_por_id)} datasets acumulados en total "
+            f"({nuevos_esta_corrida} nuevos/actualizados en esta corrida), "
             f"{summary['total_clasificados_economia_finanzas']} clasificados como Economía y Finanzas, "
             f"{summary['total_recursos_con_data_api_confirmada']} recursos con Data API confirmada, "
-            f"{len(errores)} errores.",
+            f"{len(errores_por_id)} errores acumulados ({errores_esta_corrida} nuevos en esta corrida).",
             file=sys.stderr,
         )
     else:
         print(
             f"Corrida PARCIAL ({'cortada por --max-minutos' if cortado_por_tiempo else 'terminó su lote pero quedan datasets'}): "
-            f"{len(datasets)} datasets procesados en esta corrida, {len(errores)} errores. "
+            f"{nuevos_esta_corrida} datasets nuevos/actualizados en esta corrida ({len(datasets_por_id)} acumulados en total), "
+            f"{errores_esta_corrida} errores nuevos en esta corrida. "
             f"Para continuar, vuelve a correr con --empezar-en {summary['siguiente_empezar_en']}.",
             file=sys.stderr,
         )
