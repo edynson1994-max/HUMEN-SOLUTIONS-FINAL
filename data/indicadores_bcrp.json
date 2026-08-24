@@ -1,0 +1,27 @@
+{
+  "fuente": "Banco Central de Reserva del Perú (BCRP) — API pública de Series Estadísticas",
+  "atribucion": "Banco Central de Reserva del Perú (BCRP).",
+  "dataset_url": "https://estadisticas.bcrp.gob.pe/estadisticas/series/",
+  "tipo_cambio": {
+    "periodo": "21.Ago.26",
+    "compra": 3.346,
+    "venta": 3.347,
+    "unidad": "S/ por US$",
+    "descripcion": "Tipo de cambio interbancario, BCRP"
+  },
+  "tasa_referencia": {
+    "periodo": "Ago.2026",
+    "valor_pct": 4.25,
+    "descripcion": "Tasa de Referencia de la Política Monetaria, BCRP"
+  },
+  "inflacion": {
+    "periodo": "Jul.2026",
+    "variacion_mensual_pct": 0.29,
+    "variacion_12_meses_pct": 4.07,
+    "descripcion": "IPC Lima Metropolitana (INEI, vía BCRP)"
+  },
+  "estado": "ok",
+  "indicadores_disponibles": ["tipo_cambio", "tasa_referencia", "inflacion"],
+  "generado_en": "2026-08-24T20:09:28Z",
+  "nota_semilla": "Valores reales verificados a mano contra el API del BCRP el 2026-08-24, para que el widget muestre datos reales desde el primer despliegue. El workflow 'Sincronizar indicadores para contabilidad (BCRP)' los reemplaza automáticamente a diario — este campo desaparece en cuanto corre por primera vez."
+}
