@@ -1,0 +1,24 @@
+{
+  "generado_en": "2026-08-24T18:13:04Z",
+  "fuentes": {
+    "analytics_generado_en": "2026-08-24T18:13:04Z",
+    "cambios_generado_en": "2026-08-24T18:13:03Z"
+  },
+  "total_candidatas": 1,
+  "candidatas": [
+    {
+      "id": "cobertura_catalogo",
+      "tipo": "cobertura_catalogo",
+      "dataset_id": null,
+      "titulo": "Cobertura del catálogo de Economía y Finanzas",
+      "entidad": null,
+      "hechos": {
+        "total_datasets_portal": 4650,
+        "total_clasificados_en_categoria": 1,
+        "catalogo_corrida_completa": false
+      },
+      "resumen_estructurado": "Perú en Datos conoce 1 datasets de Economía y Finanzas de los 4650 que tiene registrados el Portal Nacional de Datos Abiertos (descubrimiento parcial — todavía se está descubriendo el resto del portal).",
+      "prioridad": 1
+    }
+  ]
+}

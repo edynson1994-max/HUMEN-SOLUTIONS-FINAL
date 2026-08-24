@@ -278,18 +278,94 @@ def sincronizar(dataset_id, catalogo, resource_id=None, max_mb=None):
     }
 
 
+def _leer_ultima_linea_historial(history_path):
+    """Lee la ÚLTIMA línea de history.jsonl (el resultado de la
+    sincronización anterior de ESTE dataset), si existe. Nunca lanza: un
+    archivo ausente, vacío, o con la última línea corrupta se trata igual
+    que "no hay corrida anterior" — un historial dañado nunca debe frenar
+    la sincronización actual, solo perder la comparación de esta vez."""
+    if not os.path.exists(history_path):
+        return None
+    try:
+        with open(history_path, encoding="utf-8") as f:
+            lineas = [l for l in f if l.strip()]
+        if not lineas:
+            return None
+        return json.loads(lineas[-1])
+    except Exception:
+        return None
+
+
+def _calcular_cambio(anterior, estado_actual, filas_actual):
+    """Fase 6 — detección de cambios: compara la corrida actual contra la
+    anterior (ver _leer_ultima_linea_historial). Sección 3 del plan pide
+    "¿cambió el total? ¿hay filas nuevas?" — lo único que se puede afirmar
+    con certeza para CUALQUIER dataset (sin conocer sus columnas, mismo
+    principio que el resto de sync_dataset.py) es si cambió el CONTEO de
+    filas entre dos sincronizaciones exitosas. Por eso SOLO calcula una
+    diferencia cuando ambas corridas (anterior y actual) llegaron a
+    "estado": "ok" con un filas_leidas real — en cualquier otro caso
+    (primera sincronización, o alguna de las dos corridas falló/no trajo
+    filas) queda explícitamente "no_comparable" o "primera_sincronizacion"
+    en vez de inventar o asumir un delta. Nunca lanza."""
+    if anterior is None:
+        return {
+            "tipo": "primera_sincronizacion",
+            "filas_antes": None,
+            "filas_despues": filas_actual,
+            "diferencia": None,
+            "diferencia_pct": None,
+        }
+
+    filas_antes = anterior.get("filas")
+    estado_antes = anterior.get("estado")
+
+    if estado_antes != "ok" or estado_actual != "ok" or filas_antes is None or filas_actual is None:
+        return {
+            "tipo": "no_comparable",
+            "filas_antes": filas_antes,
+            "filas_despues": filas_actual,
+            "diferencia": None,
+            "diferencia_pct": None,
+        }
+
+    diferencia = filas_actual - filas_antes
+    diferencia_pct = (diferencia / filas_antes * 100) if filas_antes else None
+    tipo = "sin_cambio" if diferencia == 0 else ("aumento" if diferencia > 0 else "disminucion")
+    return {
+        "tipo": tipo,
+        "filas_antes": filas_antes,
+        "filas_despues": filas_actual,
+        "diferencia": diferencia,
+        "diferencia_pct": round(diferencia_pct, 2) if diferencia_pct is not None else None,
+    }
+
+
 def guardar_resultado(resultado, sources_dir=SOURCES_DIR):
     """Guarda latest.json + raw/<fecha>.json + agrega una línea a
     history.jsonl — ver docstring del módulo sobre el modelo de datos.
     El timestamp se calcula UNA vez aquí y se usa en los 3 lugares, para
     que latest.json y el archivo en raw/ correspondientes a esta misma
-    corrida queden con exactamente la misma fecha."""
+    corrida queden con exactamente la misma fecha.
+
+    Fase 6: antes de escribir, lee la última línea del history.jsonl
+    EXISTENTE (la corrida anterior de este mismo dataset) y calcula
+    `cambio_vs_corrida_anterior` — se guarda tanto en latest.json/raw/
+    (para quien mire un solo dataset) como en la nueva línea de
+    history.jsonl (para poder armar data/cambios_recientes.json sin
+    tener que recorrer todo el historial de cada dataset — alcanza con
+    la última línea)."""
     import datetime
     generado_en = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     resultado = {**resultado, "generado_en": generado_en}
 
     carpeta = os.path.join(sources_dir, resultado["dataset_id"])
     os.makedirs(os.path.join(carpeta, "raw"), exist_ok=True)
+    history_path = os.path.join(carpeta, "history.jsonl")
+
+    anterior = _leer_ultima_linea_historial(history_path)
+    cambio = _calcular_cambio(anterior, resultado["estado"], resultado.get("filas_leidas"))
+    resultado = {**resultado, "cambio_vs_corrida_anterior": cambio}
 
     with open(os.path.join(carpeta, "latest.json"), "w", encoding="utf-8") as f:
         json.dump(resultado, f, ensure_ascii=False, indent=2)
@@ -303,8 +379,9 @@ def guardar_resultado(resultado, sources_dir=SOURCES_DIR):
         "estado": resultado["estado"],
         "filas": resultado.get("filas_leidas"),
         "nivel_usado": resultado.get("nivel_usado"),
+        "cambio": cambio,
     }
-    with open(os.path.join(carpeta, "history.jsonl"), "a", encoding="utf-8") as f:
+    with open(history_path, "a", encoding="utf-8") as f:
         f.write(json.dumps(linea, ensure_ascii=False) + "\n")
 
     return resultado

@@ -1,0 +1,41 @@
+{
+  "generado_en": "2026-08-24T18:13:04Z",
+  "catalogo": {
+    "categoria": "Economía y Finanzas",
+    "total_datasets_portal": 4650,
+    "total_clasificados_en_categoria": 1,
+    "catalogo_corrida_completa": false,
+    "catalogo_generado_en": "2026-08-24T16:46:22Z"
+  },
+  "sincronizacion": {
+    "total_con_historial": 1,
+    "por_estado": {
+      "error": 1
+    },
+    "total_con_data_api_confirmada": 0
+  },
+  "filas": {
+    "total_datasets_con_filas_ok": 0,
+    "total_filas_ok": 0,
+    "promedio_filas_ok": null,
+    "mediana_filas_ok": null,
+    "ranking_mas_filas": []
+  },
+  "variaciones": {
+    "total_con_variacion_detectada": 0,
+    "ranking_mayor_aumento_pct": [],
+    "ranking_mayor_disminucion_pct": []
+  },
+  "tendencias": {
+    "ventana_corridas": 5,
+    "conteo": {
+      "creciente": 0,
+      "decreciente": 0,
+      "estable": 0,
+      "insuficiente_historial": 1
+    }
+  },
+  "entidades": {
+    "top_por_datasets_sincronizados_ok": []
+  }
+}

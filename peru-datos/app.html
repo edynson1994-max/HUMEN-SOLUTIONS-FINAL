@@ -250,6 +250,8 @@ section{ padding:64px 0; }
     <nav class="primary" aria-label="Secciones">
       <a href="#estelares" class="active">Estelares</a>
       <a href="#ultimo">Fuentes</a>
+      <a href="#quecambio">Qué cambió</a>
+      <a href="#cifras">En cifras</a>
       <a href="#conoce">Conoce</a>
       <a href="#explora">Catálogo</a>
       <a href="#mapa">Mapa</a>
@@ -425,6 +427,67 @@ section{ padding:64px 0; }
         <span class="feed-time">pendiente de sincronizar</span>
       </button>
     </div>
+  </div>
+</section>
+
+<style>
+/* ---------- Qué cambió (Fase 9) ---------- */
+.cambio-list{ display:flex; flex-direction:column; }
+.cambio-item{
+  display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:20px;
+  padding:16px 4px; border-bottom:1px solid var(--line);
+}
+.cambio-item:first-child{ border-top:1px solid var(--line); }
+.cambio-item .titulo{ font-weight:700; font-size:.96rem; }
+.cambio-item .ent{ color:var(--ink-soft); font-size:.82rem; margin-top:2px; }
+.cambio-item .delta{ font-family:var(--font-mono); font-weight:700; font-size:.92rem; white-space:nowrap; text-align:right; }
+.cambio-item .delta.up{ color:var(--ok); }
+.cambio-item .delta.down{ color:var(--carmin); }
+.cambio-item .fecha{ font-family:var(--font-mono); font-size:.72rem; color:var(--ink-soft); white-space:nowrap; text-align:right; }
+@media (max-width:720px){
+  .cambio-item{ grid-template-columns:1fr; gap:4px; }
+  .cambio-item .delta, .cambio-item .fecha{ text-align:left; }
+}
+.estado-vacio{
+  background:var(--paper-raised); border:1px dashed var(--line); border-radius:var(--radius-m);
+  padding:22px; color:var(--ink-soft); font-size:.9rem; line-height:1.55;
+}
+
+/* ---------- En cifras (Fase 10) ---------- */
+.cifras-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+@media (max-width:940px){ .cifras-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .cifras-grid{ grid-template-columns:1fr; } }
+.cifra-card{
+  background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-m);
+  padding:22px; display:flex; flex-direction:column; gap:6px;
+}
+.cifra-card .num{ font-family:var(--font-display); font-weight:700; font-size:2rem; color:var(--andes); line-height:1.1; }
+.cifra-card .label{ font-size:.86rem; color:var(--ink-soft); }
+.cifra-card .sub{ font-family:var(--font-mono); font-size:.7rem; color:var(--ink-soft); opacity:.85; }
+</style>
+
+<section id="quecambio">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>¿Qué cambió?</h2>
+        <p class="lede">Cada vez que un dataset se vuelve a sincronizar, comparamos el número de filas contra la corrida anterior — sin interpretar qué significa el cambio, solo mostrando el número.</p>
+      </div>
+      <span class="eyebrow tabular" id="quecambioEyebrow">calculando…</span>
+    </div>
+    <div class="cambio-list" id="quecambioList"><!-- filled by JS --></div>
+  </div>
+</section>
+
+<section id="cifras" style="background:var(--paper-raised); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>En cifras</h2>
+        <p class="lede">El estado real del pipeline de Economía y Finanzas — cuántos datasets conoce, cuántos ya sincronizó, cuántos tienen Data API activada.</p>
+      </div>
+    </div>
+    <div class="cifras-grid" id="cifrasGrid"><!-- filled by JS --></div>
   </div>
 </section>
 
@@ -678,11 +741,11 @@ section{ padding:64px 0; }
 
     <div class="catalogo-gateway">
       <div>
-        <div class="num tabular">1,330</div>
+        <div class="num tabular" id="catalogoGatewayNum">1,330</div>
         <h3>datasets reales de Economía y Finanzas</h3>
-        <p>Todo lo que el Estado peruano publica en esta categoría del Portal Nacional de Datos Abiertos — presupuesto, gasto, compras, tributación y más, de cientos de entidades distintas.</p>
+        <p id="catalogoGatewayDek">Todo lo que el Estado peruano publica en esta categoría del Portal Nacional de Datos Abiertos — presupuesto, gasto, compras, tributación y más, de cientos de entidades distintas.</p>
       </div>
-      <a class="go" href="https://www.datosabiertos.gob.pe/search/field_topic/econom%C3%ADa-y-finanzas-29?sort_by=changed" target="_blank" rel="noopener noreferrer">Ver los 1,330 datasets ↗</a>
+      <a class="go" id="catalogoGatewayLink" href="https://www.datosabiertos.gob.pe/search/field_topic/econom%C3%ADa-y-finanzas-29?sort_by=changed" target="_blank" rel="noopener noreferrer">Ver los 1,330 datasets ↗</a>
     </div>
 
     <div class="catalogo-buscador">
@@ -698,6 +761,12 @@ section{ padding:64px 0; }
     <div class="catalogo-subhead">Disponibles en el portal, todavía no conectados</div>
     <p class="catalogo-count tabular" id="catalogoCountDisponibles">4 datasets</p>
     <div class="catalogo-grid" id="catalogoGridDisponibles"><!-- filled by JS --></div>
+
+    <div id="loUltimoBlock" hidden>
+      <div class="catalogo-subhead">Lo último actualizado en el portal (Economía y Finanzas, catálogo real)</div>
+      <p class="catalogo-count tabular" id="loUltimoCount"></p>
+      <div class="catalogo-grid" id="loUltimoGrid"><!-- filled by JS, solo si hay catalog.json real --></div>
+    </div>
   </div>
 </section>
 
@@ -1222,13 +1291,195 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
     return algunaReal;
   }
 
+  /* ---- Catálogo real, ¿Qué cambió?, En cifras (Fases 8-10) -----------
+     Estas 3 secciones son NUEVAS (no reemplazan demo existente): si el
+     archivo correspondiente no existe todavía o el fetch falla, cada
+     una queda en un estado vacío EXPLÍCITO y honesto ("todavía no hay
+     datos" / la sección de catálogo simplemente no aparece) — nunca se
+     inventa contenido de relleno para una sección que se presenta como
+     100% real. */
+  function escapeHtml(s){
+    return (s == null ? '' : String(s)).replace(/[&<>"']/g, function(c){
+      return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+    });
+  }
+
+  // El portal devuelve metadata_modified como texto, ej.
+  // "Miércoles, 08/02/2023 - 15:41" — NUNCA se muestra reformateado (se
+  // muestra tal cual vino, ver renderCatalogoReal), pero para poder
+  // ORDENAR "lo último" de verdad sí hace falta convertirlo a fecha.
+  //
+  // OJO: confirmado contra datos reales (no es una suposición) que el
+  // portal NO es consistente en el orden día/mes — la mayoría de
+  // ejemplos vistos vienen como DD/MM/AAAA, pero al menos uno real trae
+  // "Mié, 12/17/2025 - 11:57" (inequívocamente MM/DD/AAAA, porque no
+  // existe el mes 17). Por eso: se asume DD/MM por defecto, pero si el
+  // componente que se leería como "mes" sale > 12, se interpretan los
+  // dos números al revés (evidencia inequívoca de que ese string vino en
+  // MM/DD). Cuando ambos números son ≤ 12 (fecha genuinamente ambigua,
+  // ej. "08/02") no hay forma de saberlo con certeza — se deja la
+  // suposición DD/MM. Esto SOLO afecta el ORDEN interno de "lo último",
+  // nunca lo que se muestra en pantalla (eso siempre es el texto crudo).
+  // Si el formato no calza en absoluto, se descarta ese dataset del
+  // ordenamiento en vez de adivinar una fecha.
+  function parseFechaPortal(s){
+    if (!s) return null;
+    var m = /(\d{2})\/(\d{2})\/(\d{4})\s*-\s*(\d{2}):(\d{2})/.exec(s);
+    if (!m) return null;
+    var a = parseInt(m[1],10), b = parseInt(m[2],10);
+    var dia = a, mes = b;
+    if (mes > 12 && dia <= 12) { dia = b; mes = a; } // evidencia inequívoca de MM/DD
+    var d = new Date(parseInt(m[3],10), mes-1, dia, parseInt(m[4],10), parseInt(m[5],10));
+    return isNaN(d.getTime()) ? null : d;
+  }
+
+  function renderCatalogoReal(catalog){
+    if (!catalog || !Array.isArray(catalog.datasets)) return false;
+    var deEconomia = catalog.datasets.filter(function(d){ return d.categoria === 'Economía y Finanzas'; });
+    if (!deEconomia.length) return false;
+
+    var total = deEconomia.length;
+    var totalPortal = catalog.total_datasets_portal;
+    var completa = catalog.corrida_completa;
+
+    var numEl = document.getElementById('catalogoGatewayNum');
+    var dekEl = document.getElementById('catalogoGatewayDek');
+    var linkEl = document.getElementById('catalogoGatewayLink');
+    if (numEl) numEl.textContent = total.toLocaleString('es-PE');
+    if (dekEl) {
+      dekEl.textContent = 'Catálogo real descubierto por Perú en Datos'
+        + (totalPortal ? ', sobre ' + totalPortal.toLocaleString('es-PE') + ' datasets del portal completo' : '')
+        + (completa ? '' : ' — descubrimiento todavía en curso, esta cifra puede crecer')
+        + '. Presupuesto, gasto, compras, tributación y más, de cientos de entidades distintas.';
+    }
+    if (linkEl) linkEl.textContent = 'Ver los ' + total.toLocaleString('es-PE') + ' datasets ↗';
+
+    var conFecha = deEconomia
+      .map(function(d){ return { d: d, fecha: parseFechaPortal(d.fecha_modificacion_portal) }; })
+      .filter(function(x){ return x.fecha; });
+    conFecha.sort(function(a,b){ return b.fecha - a.fecha; });
+    var top = conFecha.slice(0, 8);
+
+    var block = document.getElementById('loUltimoBlock');
+    var grid = document.getElementById('loUltimoGrid');
+    var count = document.getElementById('loUltimoCount');
+    if (block && grid && top.length) {
+      block.hidden = false;
+      if (count) count.textContent = 'mostrando los ' + top.length + ' más recientes de ' + total + ' conocidos con fecha de actualización';
+      grid.innerHTML = top.map(function(x){
+        var d = x.d;
+        return '<div class="catalogo-card">' +
+          '<div class="top"><span class="tag economia">Economía y Finanzas</span>' +
+            '<span class="estado-badge disponible">' + escapeHtml(d.fecha_modificacion_portal || '') + '</span></div>' +
+          '<h4>' + escapeHtml(d.titulo || d.dataset_id) + '</h4>' +
+          '<div class="ent">' + escapeHtml(d.entidad || '') + '</div>' +
+          '<div class="row">' +
+            '<a class="verlink" href="dataset.html?id=' + encodeURIComponent(d.dataset_id) + '">Ver ficha →</a>' +
+            '<a class="verlink" href="' + (d.dataset_url || '#') + '" target="_blank" rel="noopener noreferrer">Portal oficial ↗</a>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+    return true;
+  }
+
+  function formatDiferencia(c){
+    var signo = c.diferencia > 0 ? '+' : '';
+    var pct = c.diferencia_pct != null
+      ? ' (' + (c.diferencia_pct > 0 ? '+' : '') + c.diferencia_pct.toFixed(1).replace('.', ',') + '%)'
+      : '';
+    return signo + c.diferencia.toLocaleString('es-PE') + ' filas' + pct;
+  }
+
+  function renderQueCambio(cambios){
+    var list = document.getElementById('quecambioList');
+    var eyebrow = document.getElementById('quecambioEyebrow');
+    if (!list) return;
+    if (!cambios || !cambios.cambios || !cambios.cambios.length) {
+      if (eyebrow) eyebrow.textContent = 'sin cambios detectados todavía';
+      list.innerHTML = '<div class="estado-vacio">Todavía no hay suficientes sincronizaciones repetidas de un mismo dataset como para comparar y mostrar cambios reales. Esta sección se llena sola a medida que el cron semanal vuelve a sincronizar los datasets ya conocidos.</div>';
+      return;
+    }
+    if (eyebrow) {
+      eyebrow.textContent = cambios.total_con_cambio_detectado + ' cambios detectados'
+        + (cambios.total_mostrados < cambios.total_con_cambio_detectado ? ' (mostrando los ' + cambios.total_mostrados + ' más grandes)' : '');
+    }
+    list.innerHTML = cambios.cambios.map(function(c){
+      var up = c.tipo === 'aumento';
+      return '<a class="cambio-item" href="dataset.html?id=' + encodeURIComponent(c.dataset_id) + '" style="text-decoration:none;color:inherit;">' +
+        '<span><span class="titulo">' + escapeHtml(c.titulo) + '</span>' + (c.entidad ? '<br><span class="ent">' + escapeHtml(c.entidad) + '</span>' : '') + '</span>' +
+        '<span class="delta ' + (up ? 'up' : 'down') + ' tabular">' + (up ? '▲ ' : '▼ ') + formatDiferencia(c) + '</span>' +
+        '<span class="fecha">' + fmtFechaCorta(c.fecha) + '</span>' +
+      '</a>';
+    }).join('');
+  }
+
+  function renderCifras(analytics){
+    var grid = document.getElementById('cifrasGrid');
+    if (!grid) return;
+    if (!analytics) {
+      grid.innerHTML = '<div class="estado-vacio" style="grid-column:1/-1;">Todavía no hay datos calculados — esta sección se activa sola cuando corra por primera vez el pipeline de sincronización y análisis (Fases 5-7).</div>';
+      return;
+    }
+    var cat = analytics.catalogo || {};
+    var sinc = analytics.sincronizacion || {};
+    var filas = analytics.filas || {};
+    var porEstado = sinc.por_estado || {};
+    var cards = [];
+    if (cat.total_clasificados_en_categoria != null) {
+      cards.push({
+        num: cat.total_clasificados_en_categoria.toLocaleString('es-PE'),
+        label: 'datasets de Economía y Finanzas conocidos',
+        sub: cat.total_datasets_portal
+          ? 'de ' + cat.total_datasets_portal.toLocaleString('es-PE') + ' en todo el portal' + (cat.catalogo_corrida_completa ? '' : ' · descubrimiento en curso')
+          : ''
+      });
+    }
+    cards.push({
+      num: (porEstado.ok || 0).toLocaleString('es-PE'),
+      label: 'sincronizados con éxito',
+      sub: sinc.total_con_historial ? 'de ' + sinc.total_con_historial.toLocaleString('es-PE') + ' con al menos un intento' : ''
+    });
+    cards.push({
+      num: (sinc.total_con_data_api_confirmada || 0).toLocaleString('es-PE'),
+      label: 'con Data API confirmada',
+      sub: 'descarga en vivo, sin depender de un archivo estático'
+    });
+    if (filas.total_filas_ok) {
+      cards.push({
+        num: filas.total_filas_ok.toLocaleString('es-PE'),
+        label: 'filas sincronizadas en total',
+        sub: filas.promedio_filas_ok != null ? Math.round(filas.promedio_filas_ok).toLocaleString('es-PE') + ' filas en promedio por dataset' : ''
+      });
+    }
+    grid.innerHTML = cards.map(function(c){
+      return '<div class="cifra-card"><div class="num tabular">' + c.num + '</div><div class="label">' + c.label + '</div>'
+        + (c.sub ? '<div class="sub">' + escapeHtml(c.sub) + '</div>' : '') + '</div>';
+    }).join('');
+  }
+
   Promise.all([
     fetch('../data/mef.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
     fetch('../data/contraloria.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
-    fetch('../data/inei_renamu.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
+    fetch('../data/inei_renamu.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
+    fetch('../data/catalog.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
+    fetch('../data/cambios_recientes.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
+    fetch('../data/analytics/economia-finanzas.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
   ]).then(function(res){
-    var mef = res[0], contraloria = res[1], inei = res[2];
+    var mef = res[0], contraloria = res[1], inei = res[2], catalog = res[3], cambios = res[4], analytics = res[5];
     var partesReales = [];
+
+    // ---- Catálogo real (Fase 8) ----
+    if (renderCatalogoReal(catalog)) partesReales.push('Catálogo');
+
+    // ---- ¿Qué cambió? (Fase 9) — se renderiza siempre, con estado
+    // vacío honesto si todavía no hay comparaciones ----
+    renderQueCambio(cambios);
+    if (cambios && cambios.total_con_cambio_detectado) partesReales.push('Qué cambió');
+
+    // ---- En cifras (Fase 10) ----
+    renderCifras(analytics);
+    if (analytics) partesReales.push('En cifras');
 
     // ---- Estelares (MEF + Contraloría) ----
     var reales = construirHistoriasReales(mef, contraloria);

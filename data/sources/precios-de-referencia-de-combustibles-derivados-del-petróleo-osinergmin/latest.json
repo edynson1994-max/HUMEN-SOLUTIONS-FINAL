@@ -1,0 +1,19 @@
+{
+  "dataset_id": "precios-de-referencia-de-combustibles-derivados-del-petróleo-osinergmin",
+  "titulo": "Precios de Referencia de Combustibles Derivados del Petróleo - OSINERGMIN",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/precios-de-referencia-de-combustibles-derivados-del-petr%C3%B3leo-osinergmin",
+  "resource_id": "6f12ba6a-7bed-49df-8aba-8f3fc6d2b382",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "[Errno 104] Connection reset by peer",
+    "url_catalogo_respaldo": "[Errno 104] Connection reset by peer"
+  },
+  "generado_en": "2026-08-24T18:13:03Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "no_comparable",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}
