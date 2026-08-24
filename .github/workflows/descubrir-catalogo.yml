@@ -26,6 +26,25 @@ name: Descubrir catálogo PNDA (Fase 3 - Perú en Datos)
 #     workflow poniendo ese número en el campo "empezar_en" — así
 #     continúas exactamente donde quedó, sin repetir ni saltarte nada.
 #
+# CONTINUACIÓN AUTOMÁTICA SI SE DEJA "empezar_en" VACÍO (agregado junto
+# con el fix del bug de acumulación de discovery.py — ver README de
+# connectors/): antes, el campo "empezar_en" del formulario tenía como
+# default fijo "0", así que cualquiera que le diera a "Run workflow" sin
+# tocar ese campo a mano disparaba sin querer una corrida desde el
+# principio del portal. Combinado con el bug de que discovery.py pisaba
+# el catalog.json entero en vez de acumular, esto es justo lo que borró
+# en silencio el progreso real varias veces en producción. Ahora:
+#   - discovery.py YA ACUMULA sobre el catalog.json existente en vez de
+#     reemplazarlo (el bug de fondo está arreglado), así que un
+#     "empezar_en" equivocado ya no puede destruir lo ya descubierto.
+#   - Además, igual que en "Sincronizar datasets de Economía y Finanzas",
+#     el campo por defecto ahora queda VACÍO, y un paso "Calcular desde
+#     dónde continuar" lo resuelve automáticamente leyendo
+#     "siguiente_empezar_en" del catalog.json ya commiteado — así ni
+#     siquiera hace falta copiar el número a mano entre corridas.
+#   - El campo del formulario sigue disponible para forzar un punto de
+#     partida distinto si hace falta (ej. re-verificar un tramo puntual).
+#
 # Para una primera prueba rápida, usa "Run workflow" y pon un número
 # pequeño en "limit" (ej. 20).
 
@@ -37,9 +56,9 @@ on:
         required: false
         default: ""
       empezar_en:
-        description: "Saltar los primeros N datasets del portal (para CONTINUAR una corrida anterior que quedó parcial — usa el 'siguiente_empezar_en' de esa corrida)"
+        description: "Forzar desde qué índice empezar (vacío = automático: sigue donde quedó la corrida anterior leyendo catalog.json, ver arriba)"
         required: false
-        default: "0"
+        default: ""
       max_minutos:
         description: "Detenerse ordenadamente (guardando avance) después de este tiempo, dejando margen antes del límite del job"
         required: false
@@ -70,16 +89,50 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Calcular desde dónde continuar
+        id: continuar
+        env:
+          EMPEZAR_EN_INPUT: ${{ github.event.inputs.empezar_en }}
+        run: |
+          # Mismo patrón que "Sincronizar datasets de Economía y Finanzas"
+          # (ver sincronizar-economia-finanzas.yml). Prioridad:
+          #   1) lo que puso la persona a mano en "Run workflow",
+          #   2) "siguiente_empezar_en" del catalog.json ya commiteado
+          #      (continuación automática — y ahora, con discovery.py ya
+          #      acumulando en vez de pisar, siempre es seguro),
+          #   3) 0 (primera corrida de todas, o catálogo ya completo —
+          #      en ese caso discovery.py simplemente vuelve a acumular
+          #      sobre lo mismo sin duplicar nada).
+          if [ -n "$EMPEZAR_EN_INPUT" ]; then
+            EMPEZAR_EN="$EMPEZAR_EN_INPUT"
+            echo "Usando empezar_en del formulario: $EMPEZAR_EN"
+          elif [ -f data/catalog.json ]; then
+            EMPEZAR_EN=$(python3 - <<'PY'
+          import json
+          try:
+              with open("data/catalog.json", encoding="utf-8") as f:
+                  d = json.load(f)
+              v = d.get("siguiente_empezar_en")
+              print(v if v is not None else 0)
+          except Exception:
+              print(0)
+          PY
+          )
+            echo "Continuando automáticamente desde la corrida anterior: empezar_en=$EMPEZAR_EN"
+          else
+            EMPEZAR_EN=0
+            echo "No hay catalog.json todavía — empezando desde 0."
+          fi
+          echo "empezar_en=$EMPEZAR_EN" >> "$GITHUB_OUTPUT"
+
       - name: Ejecutar discovery.py
         env:
-          EMPEZAR_EN: ${{ github.event.inputs.empezar_en }}
+          EMPEZAR_EN: ${{ steps.continuar.outputs.empezar_en }}
           MAX_MINUTOS: ${{ github.event.inputs.max_minutos }}
           LIMIT: ${{ github.event.inputs.limit }}
         run: |
-          # Defensivo: si alguien borra el valor por defecto de un campo y
-          # lo deja vacío, no queremos pasarle "--empezar-en" sin valor a
-          # argparse (revienta) — se cae a los defaults sensatos de abajo.
-          EMPEZAR_EN="${EMPEZAR_EN:-0}"
+          # Defensivo: si algún input queda vacío (o esta corrida no vino
+          # de un formulario), se cae a los defaults sensatos de abajo.
           MAX_MINUTOS="${MAX_MINUTOS:-100}"
           ARGS="--empezar-en $EMPEZAR_EN --max-minutos $MAX_MINUTOS"
           if [ -n "$LIMIT" ]; then
@@ -100,10 +153,11 @@ jobs:
               raise SystemExit(0)
           print(f"**Estado:** {d.get('estado')} {'✅ corrida completa' if d.get('corrida_completa') else '⏸️ corrida parcial'}")
           print(f"**Datasets en el portal:** {d.get('total_datasets_portal')}")
-          print(f"**Datasets procesados en ESTA corrida:** {d.get('total_datasets_procesados')} (empezó en el índice {d.get('empezar_en_usado_esta_corrida')})")
-          print(f"**Clasificados como Economía y Finanzas (en esta corrida):** {d.get('total_clasificados_economia_finanzas')}")
+          print(f"**Datasets acumulados en TOTAL (todas las corridas hasta ahora):** {d.get('total_datasets_procesados')}")
+          print(f"**Nuevos/actualizados en ESTA corrida:** {d.get('datasets_nuevos_o_actualizados_en_esta_corrida')} (empezó en el índice {d.get('empezar_en_usado_esta_corrida')})")
+          print(f"**Clasificados como Economía y Finanzas (acumulado total):** {d.get('total_clasificados_economia_finanzas')}")
           print(f"**Recursos con Data API confirmada:** {d.get('total_recursos_con_data_api_confirmada')}")
-          print(f"**Errores:** {len(d.get('errores') or [])}")
+          print(f"**Errores acumulados:** {len(d.get('errores') or [])} ({d.get('errores_nuevos_en_esta_corrida')} nuevos en esta corrida)")
           print(f"**Tardó:** {d.get('minutos_que_tomo_esta_corrida')} minutos")
           if not d.get("corrida_completa"):
               print(f"\n⚠️ **La corrida quedó parcial.** Para continuar, vuelve a correr este workflow con `empezar_en = {d.get('siguiente_empezar_en')}`.")
