@@ -63,6 +63,7 @@ import requests
 BASE_URL = "https://data.open-contracting.org/en/publication/135/download"
 OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "data.json")
 SAMPLE_RAW_PATH = os.path.join(os.path.dirname(__file__), "sample_raw_release.json")
+DIAGNOSTICO_PATH = os.path.join(os.path.dirname(__file__), "_diagnostico_campos.json")
 
 ATTRIBUTION = (
     "Datos derivados del Registro de Datos Abiertos de Contrataciones "
@@ -160,17 +161,24 @@ def get_document_url(tender):
 
 
 def get_process_url(release, tender):
-    """Enlace verificado para 'entrar' al proceso.
+    """Enlace para 'entrar' al proceso.
 
     Prioridad:
     1. Un documento del propio tender que ya traiga URL (a veces apunta
        directo al PDF de bases o a la ficha en SEACE) — es el más específico
-       cuando existe.
+       cuando existe. En la práctica esto cubre el 100% de los casos vistos
+       hasta ahora (ver diagnóstico de campos), así que la opción 2 casi
+       nunca se usa — pero se deja como respaldo.
     2. La ficha del proceso en el portal público de datos abiertos de
        contrataciones, construida a partir del OCID:
-           https://contratacionesabiertas.osce.gob.pe/proceso/{ocid}
-       Este patrón está VERIFICADO (se confirmó contra un resultado de
-       búsqueda real en ese portal) — no es un patrón inventado.
+           https://contratacionesabiertas.oece.gob.pe/proceso/{ocid}
+       CORREGIDO (antes decía "osce.gob.pe" — ese dominio ni siquiera
+       resuelve, confirmado al revisar este archivo: fallaba con "Name or
+       service not known". El dominio real y vigente es "oece.gob.pe"
+       — OSCE fue renombrado a OECE (Organismo Especializado para las
+       Contrataciones Públicas Eficientes). Bloquea peticiones automáticas
+       (403 confirmado), pero eso no afecta a una persona real haciendo clic
+       en el link desde su navegador — solo a un fetch automatizado.
     Si no hay ni documento ni ocid, no se inventa nada: se deja en None y el
     frontend cae de vuelta al buscador general.
     """
@@ -179,7 +187,7 @@ def get_process_url(release, tender):
         return doc_url
     ocid = release.get("ocid")
     if ocid:
-        return f"https://contratacionesabiertas.osce.gob.pe/proceso/{ocid}"
+        return f"https://contratacionesabiertas.oece.gob.pe/proceso/{ocid}"
     return None
 
 
@@ -254,6 +262,78 @@ def parse_release(release):
     }
 
 
+def _parse_ocds_date(value):
+    """Parsea una fecha OCDS (ISO-8601, con o sin hora/zona) a datetime UTC.
+    Devuelve None si no se puede — nunca lanza."""
+    if not value:
+        return None
+    try:
+        # OCDS trae fechas tipo "2026-08-13T23:59:00-05:00" — normalizamos el
+        # "Z" final (poco común aquí, pero válido en el estándar) y dejamos
+        # que fromisoformat haga el resto.
+        v = value.replace("Z", "+00:00")
+        d = datetime.fromisoformat(v)
+        if d.tzinfo is None:
+            d = d.replace(tzinfo=timezone.utc)
+        return d
+    except (ValueError, TypeError):
+        return None
+
+
+def _diagnosticar_release(release, diag, ahora):
+    """Recolecta estadísticas SOLO de lectura (no cambia el resultado real)
+    sobre qué tan confiable es tenderPeriod.endDate como "fecha límite" en
+    este dataset — sin eso, no hay forma de saber con datos reales (no solo
+    con 1-2 ejemplos sueltos) si vale la pena usar otro campo.
+
+    POR QUÉ EXISTE ESTE DIAGNÓSTICO (2026-08-24): revisando sample_raw_release.json
+    (un solo release real, guardado por una corrida anterior) se notó algo raro:
+    tenderPeriod traía un solo día (startDate == endDate), ya vencido para cuando
+    se procesa el archivo, mientras que enquiryPeriod traía una ventana de varios
+    días que EMPEZABA DESPUÉS de que tenderPeriod ya había "cerrado" — al revés de
+    lo que dice el estándar OCDS (enquiryPeriod debería cerrar ANTES de que termine
+    tenderPeriod, no después). Si eso se repite en muchos releases, explicaría por
+    qué las 544 convocatorias que hoy se guardan en data.json llegan TODAS por el
+    camino de respaldo (sin dueDate, publicado hace ≤30 días) y ninguna por tener un
+    tenderPeriod.endDate en el futuro — es decir, ese campo podría no ser confiable
+    para este dataset específico y se estarían perdiendo miles de convocatorias
+    realmente vigentes. Pero un solo ejemplo no alcanza para reescribir el filtro
+    de vigencia con confianza — hace falta ver la distribución real sobre miles de
+    releases, algo que solo se puede hacer en la corrida real (este entorno de
+    trabajo no tiene salida de red hacia estos dominios). Este diagnóstico se
+    guarda en licitaciones/_diagnostico_campos.json en cada corrida para revisarlo
+    sin tener que volver a bajar nada."""
+    tender = release.get("tender") or {}
+    tp_end = _parse_ocds_date((tender.get("tenderPeriod") or {}).get("endDate"))
+    eq_end = _parse_ocds_date((tender.get("enquiryPeriod") or {}).get("endDate"))
+
+    diag["total_releases_leidos"] += 1
+
+    if tp_end is not None:
+        diag["con_tenderPeriod_endDate"] += 1
+        if tp_end >= ahora:
+            diag["tenderPeriod_endDate_futuro"] += 1
+        else:
+            diag["tenderPeriod_endDate_pasado"] += 1
+
+    if eq_end is not None:
+        diag["con_enquiryPeriod_endDate"] += 1
+        if eq_end >= ahora:
+            diag["enquiryPeriod_endDate_futuro"] += 1
+        else:
+            diag["enquiryPeriod_endDate_pasado"] += 1
+
+    if tp_end is not None and eq_end is not None and eq_end > tp_end:
+        diag["enquiryPeriod_termina_despues_de_tenderPeriod"] += 1
+        if len(diag["ejemplos_anomalos"]) < 8:
+            diag["ejemplos_anomalos"].append({
+                "ocid": release.get("ocid"),
+                "title": (tender.get("title") or "")[:120],
+                "tenderPeriod": tender.get("tenderPeriod"),
+                "enquiryPeriod": tender.get("enquiryPeriod"),
+            })
+
+
 def collect(years):
     session = requests.Session()
     session.headers.update({
@@ -262,6 +342,18 @@ def collect(years):
 
     items = []
     sample_saved = False
+    ahora = datetime.now(timezone.utc)
+    diag = {
+        "total_releases_leidos": 0,
+        "con_tenderPeriod_endDate": 0,
+        "tenderPeriod_endDate_futuro": 0,
+        "tenderPeriod_endDate_pasado": 0,
+        "con_enquiryPeriod_endDate": 0,
+        "enquiryPeriod_endDate_futuro": 0,
+        "enquiryPeriod_endDate_pasado": 0,
+        "enquiryPeriod_termina_despues_de_tenderPeriod": 0,
+        "ejemplos_anomalos": [],
+    }
 
     for year in years:
         print(f"Descargando {year}.jsonl.gz ...", file=sys.stderr)
@@ -283,11 +375,36 @@ def collect(years):
                     json.dump(release, f, ensure_ascii=False, indent=2)
                 sample_saved = True
 
+            _diagnosticar_release(release, diag, ahora)
+
             item = parse_release(release)
             if item:
                 items.append(item)
 
         print(f"  {count} registros revisados en {year}", file=sys.stderr)
+
+    with open(DIAGNOSTICO_PATH, "w", encoding="utf-8") as f:
+        json.dump({
+            "generado_en": ahora.isoformat(timespec="seconds"),
+            "nota": (
+                "Diagnóstico de qué tan confiable es tenderPeriod.endDate como "
+                "fecha limite real en este dataset — ver el docstring de "
+                "_diagnosticar_release() en sync.py para el detalle completo. "
+                "Si 'tenderPeriod_endDate_futuro' es 0 o casi 0 comparado con "
+                "'total_releases_leidos', es una señal fuerte de que ese campo "
+                "no sirve para filtrar vigencia en este dataset y hace falta "
+                "revisar 'enquiryPeriod_endDate_futuro' y los "
+                "'ejemplos_anomalos' como alternativa."
+            ),
+            **diag,
+        }, f, ensure_ascii=False, indent=2)
+    print(
+        f"Diagnóstico de campos guardado en {DIAGNOSTICO_PATH}: "
+        f"{diag['tenderPeriod_endDate_futuro']}/{diag['total_releases_leidos']} releases con "
+        f"tenderPeriod.endDate en el futuro, {diag['enquiryPeriod_endDate_futuro']}/{diag['total_releases_leidos']} "
+        f"con enquiryPeriod.endDate en el futuro.",
+        file=sys.stderr,
+    )
 
     return items
 

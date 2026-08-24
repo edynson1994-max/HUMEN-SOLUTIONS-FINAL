@@ -4978,3 +4978,87 @@ BENEFICIOS/PROMOCIONES EN TARJETA DE SERVICIO
     color:var(--secondary);
 
 }
+
+/* ========================= */
+/* INDICADORES DEL DÍA (BCRP) */
+/* ========================= */
+.indicadores-strip{
+    margin-top:56px;
+    padding:28px 32px;
+    background:var(--primary-light-bg);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+}
+
+.indicadores-eyebrow{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px 16px;
+    margin-bottom:20px;
+}
+
+.indicadores-eyebrow > span{
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.07em;
+    text-transform:uppercase;
+    color:var(--primary);
+}
+
+.indicadores-fuente{
+    font-size:.78rem;
+    color:var(--text-light);
+    text-decoration:none;
+    border-bottom:1px dotted var(--text-light);
+    transition:var(--transition);
+}
+
+.indicadores-fuente:hover{
+    color:var(--primary);
+    border-color:var(--primary);
+}
+
+.indicadores-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:22px 28px;
+}
+
+.indicador-item{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+.indicador-label{
+    font-size:.78rem;
+    color:var(--text-light);
+}
+
+.indicador-valor{
+    font-size:1.55rem;
+    font-weight:700;
+    color:var(--text);
+    font-variant-numeric:tabular-nums;
+}
+
+.indicador-sub{
+    font-size:.74rem;
+    color:var(--text-light);
+}
+
+@media (max-width:720px){
+    .indicadores-strip{
+        padding:22px 20px;
+    }
+    .indicadores-grid{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+    .indicadores-eyebrow{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
