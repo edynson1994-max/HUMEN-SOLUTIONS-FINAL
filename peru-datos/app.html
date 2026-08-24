@@ -44,6 +44,9 @@
   --ok: #3D7A45;
   --ok-bg: #E7F2E9;
 
+  --error: #A3372B;
+  --error-bg: #F7E6E2;
+
   --shadow: 0 1px 2px rgba(38,38,32,.06), 0 8px 24px -12px rgba(38,38,32,.16);
   --shadow-lg: 0 4px 8px rgba(38,38,32,.08), 0 24px 48px -16px rgba(38,38,32,.24);
 
@@ -78,6 +81,9 @@
     --ok: #8FCB86;
     --ok-bg: #1E2A1C;
 
+    --error: #E08578;
+    --error-bg: #3A251F;
+
     --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
     --shadow-lg: 0 4px 8px rgba(0,0,0,.35), 0 24px 48px -16px rgba(0,0,0,.6);
   }
@@ -102,6 +108,9 @@
 
   --ok: #8FCB86;
   --ok-bg: #1E2A1C;
+
+  --error: #E08578;
+  --error-bg: #3A251F;
 
   --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
   --shadow-lg: 0 4px 8px rgba(0,0,0,.35), 0 24px 48px -16px rgba(0,0,0,.6);
@@ -641,12 +650,32 @@ section{ padding:64px 0; }
 .catalogo-card h4{ font-size:1rem; font-weight:700; line-height:1.35; font-family:var(--font-body); }
 .catalogo-card .ent{ font-size:.82rem; color:var(--ink-soft); }
 .catalogo-card .row{ display:flex; justify-content:space-between; align-items:center; margin-top:4px; }
-.catalogo-card .estado-badge{ font-family:var(--font-mono); font-size:.68rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+.catalogo-card .estado-badge{ font-family:var(--font-mono); font-size:.68rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; padding:3px 9px; border-radius:100px; white-space:nowrap; }
 .catalogo-card .estado-badge.conectado{ background:var(--ok-bg); color:var(--ok); }
 .catalogo-card .estado-badge.disponible{ background:var(--line-soft); color:var(--ink-soft); }
+.catalogo-card .estado-badge.no-soportado{ background:var(--line-soft); color:var(--ink-soft); }
+.catalogo-card .estado-badge.error{ background:var(--error-bg); color:var(--error); }
+.catalogo-card .estado-badge.pendiente{ background:var(--line-soft); color:var(--ink-soft); }
+.catalogo-card .filas{ font-family:var(--font-mono); font-size:.8rem; font-weight:700; color:var(--ok); }
+.catalogo-card[data-estado="ok"]{ border-color:var(--ok); }
 .catalogo-card a.verlink{ font-family:var(--font-mono); font-size:.76rem; font-weight:600; color:var(--carmin); text-decoration:none; }
 .catalogo-card a.verlink:hover{ text-decoration:underline; }
 .catalogo-card[hidden]{ display:none; }
+
+.catalogo-filtros{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px; }
+.catalogo-filtro{
+  font-family:var(--font-mono); font-size:.76rem; font-weight:600;
+  background:var(--paper-raised); border:1px solid var(--line); color:var(--ink-soft);
+  border-radius:100px; padding:7px 14px; cursor:pointer;
+}
+.catalogo-filtro:hover{ border-color:var(--carmin); color:var(--carmin); }
+.catalogo-filtro.active{ background:var(--carmin); border-color:var(--carmin); color:#fff; }
+.catalogo-cargarmas{
+  display:block; margin:20px auto 0; font-family:var(--font-body); font-weight:700; font-size:.86rem;
+  background:var(--paper-raised); border:1px solid var(--line); color:var(--ink); border-radius:100px;
+  padding:11px 26px; cursor:pointer;
+}
+.catalogo-cargarmas:hover{ border-color:var(--carmin); color:var(--carmin); }
 </style>
 
 <section id="explora">
@@ -667,19 +696,19 @@ section{ padding:64px 0; }
       <a class="go" id="catalogoGatewayLink" href="https://www.datosabiertos.gob.pe/search/field_topic/econom%C3%ADa-y-finanzas-29?sort_by=changed" target="_blank" rel="noopener noreferrer">Ver los 1,330 datasets ↗</a>
     </div>
 
+    <div class="catalogo-subhead">Los datasets de la categoría, con su estado real</div>
+
     <div class="catalogo-buscador">
-      <input type="text" id="catalogoBuscar" placeholder="Buscar cualquier dataset en el portal oficial (ej. canon, RENIEC, salud)…">
-      <button type="button" id="catalogoBuscarBtn">Buscar en el portal ↗</button>
-      <span class="hint">Abre el buscador real de datosabiertos.gob.pe en una pestaña nueva, con tu búsqueda ya escrita.</span>
+      <input type="text" id="catalogoBuscar" placeholder="Buscar por título o entidad (ej. MEF, presupuesto, SUNAT)…">
+      <span class="hint">Filtra entre los datasets ya descubiertos. Si no aparece el que buscas, prueba <a href="#" id="catalogoBuscarPortal" style="color:var(--carmin); font-weight:600;">buscarlo en el portal oficial ↗</a>.</span>
     </div>
 
-    <div class="catalogo-subhead">Ya procesados por Perú en Datos</div>
-    <p class="catalogo-count tabular" id="catalogoCountConectados">4 datasets</p>
-    <div class="catalogo-grid" id="catalogoGridConectados"><!-- filled by JS --></div>
+    <div class="catalogo-filtros" id="catalogoFiltros"><!-- filled by JS --></div>
 
-    <div class="catalogo-subhead">Disponibles en el portal, todavía no conectados</div>
-    <p class="catalogo-count tabular" id="catalogoCountDisponibles">4 datasets</p>
-    <div class="catalogo-grid" id="catalogoGridDisponibles"><!-- filled by JS --></div>
+    <p class="catalogo-count tabular" id="catalogoCount"></p>
+    <div class="catalogo-grid" id="catalogoGrid"><!-- filled by JS --></div>
+    <button type="button" class="catalogo-cargarmas" id="catalogoCargarMas" hidden>Cargar más</button>
+    <div class="estado-vacio" id="catalogoIndiceVacio" hidden>Todavía no hay un índice completo del catálogo — se activa solo en cuanto corra por primera vez la sincronización de Economía y Finanzas (Fase 5).</div>
 
     <div id="loUltimoBlock" hidden>
       <div class="catalogo-subhead">Lo último actualizado en el portal (Economía y Finanzas, catálogo real)</div>
@@ -1274,12 +1303,16 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
     fetch('../data/inei_renamu.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
     fetch('../data/catalog.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
     fetch('../data/cambios_recientes.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
-    fetch('../data/analytics/economia-finanzas.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
+    fetch('../data/analytics/economia-finanzas.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
+    fetch('../data/catalogo_indice.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
   ]).then(function(res){
-    var mef = res[0], contraloria = res[1], inei = res[2], catalog = res[3], cambios = res[4], analytics = res[5];
+    var mef = res[0], contraloria = res[1], inei = res[2], catalog = res[3], cambios = res[4], analytics = res[5], catalogoIndice = res[6];
 
     // ---- Catálogo real (Fase 8) ----
     renderCatalogoReal(catalog);
+
+    // ---- Catálogo navegable completo, con estado real (Fase 13) ----
+    renderCatalogoIndice(catalogoIndice);
 
     // ---- ¿Qué cambió? (Fase 9) — se renderiza siempre, con estado
     // vacío honesto si todavía no hay comparaciones ----
@@ -1445,74 +1478,139 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
   }
   renderFlow(0);
 
-  /* ============ Catálogo de datos abiertos ============
-     Todo lo de aquí es real y verificado a mano contra datosabiertos.gob.pe
-     — nunca se inventa un dataset ni una URL. "Ya procesados" son los que
-     tienen conector propio en Perú en Datos; "Disponibles" son datasets
-     reales del portal que todavía no se conectaron. El buscador de abajo
-     abre el buscador real del portal oficial (no hay API pública de
-     búsqueda — package_search devuelve 404 — así que se usa la misma
-     página de búsqueda que usaría cualquier persona). */
-  var CATALOGO_CONECTADOS = [
-    { titulo:'Presupuesto y Ejecución de Gasto — Devengado Mensual 2025', entidad:'Ministerio de Economía y Finanzas (MEF)', categoria:'Economía y Finanzas', url:'https://www.datosabiertos.gob.pe/dataset/presupuesto-y-ejecuci%C3%B3n-de-gasto-%E2%80%93-devengado-mensual' },
-    { titulo:'Resultados de intervenciones de Monitores Ciudadanos de Control 2021', entidad:'Contraloría General de la República', categoria:'Gobernabilidad', url:'https://www.datosabiertos.gob.pe/dataset/resultados-de-las-intervenciones-realizadas-por-los-monitores-ciudadanos-de-control-en-el' },
-    { titulo:'Información general de los Monitores Ciudadanos de Control', entidad:'Contraloría General de la República', categoria:'Gobernabilidad', url:'https://www.datosabiertos.gob.pe/dataset/informaci%C3%B3n-general-de-los-monitores-ciudadanos-de-control' },
-    { titulo:'Registro Nacional de Municipalidades (RENAMU) 2023', entidad:'Instituto Nacional de Estadística e Informática (INEI)', categoria:'Desarrollo Urbano', url:'https://www.datosabiertos.gob.pe/dataset/registro-nacional-de-municipalidades-renamu-2023-instituto-nacional-de-estad%C3%ADstica-e' }
-  ];
-  var CATALOGO_DISPONIBLES = [
-    { titulo:'Valorizaciones de obras registradas en el SEACE', entidad:'Organismo Especializado para las Contrataciones Públicas Eficientes (OECE)', categoria:'Contrataciones', url:'https://www.datosabiertos.gob.pe/dataset/valorizaciones-de-obras-registradas-en-el-seace%E2%80%93-organismo-especializado-para-las' },
-    { titulo:'Cuadernos de obra digital', entidad:'Organismo Especializado para las Contrataciones Públicas Eficientes (OECE)', categoria:'Contrataciones', url:'https://www.datosabiertos.gob.pe/dataset/cuadernos-de-obra-digital-%E2%80%93-organismo-especializado-para-las-contrataciones-p%C3%BAblicas' },
-    { titulo:'Población identificada con DNI', entidad:'Registro Nacional de Identificación y Estado Civil (RENIEC)', categoria:'Población', url:'https://www.datosabiertos.gob.pe/dataset/reniec-poblaci%C3%B3n-identificada-con-dni-registro-nacional-de-identificaci%C3%B3n-y-estado-civil' },
-    { titulo:'Prestaciones de salud liquidadas por las Entidades Prestadoras de Salud (IAFAS EPS)', entidad:'Superintendencia Nacional de Salud (SUSALUD)', categoria:'Salud', url:'https://www.datosabiertos.gob.pe/dataset/prestaciones-de-salud-liquidadas-por-las-entidades-prestadoras-de-salud-iafas-eps' }
-  ];
+  /* ============ Catálogo de datos abiertos (Fase 13) ============
+     Antes esta sección mostraba 4 tarjetas escritas a mano
+     (CATALOGO_CONECTADOS/CATALOGO_DISPONIBLES), sin relación con los
+     datasets realmente descubiertos ni sincronizados — un cliente no
+     podía ver más que un puñado fijo, y no había forma de saber ANTES
+     de hacer clic si un dataset tenía datos utilizables. Ahora se arma
+     completa desde data/catalogo_indice.json (generado por
+     catalogo_indice.py en cada sincronización): TODOS los datasets
+     reales de la categoría, cada uno con el estado REAL de su última
+     sincronización — se puede filtrar, buscar y paginar sobre todos, y
+     el estado (con datos / formato no soportado / error / sin
+     sincronizar) se ve en la tarjeta antes de entrar, no después. */
+  var CATALOGO_PAGINA = 24;
+  var catalogoTodos = [];
+  var catalogoFiltroActivo = 'ok';
+  var catalogoMostrados = 0;
+  var catalogoResultadoActual = [];
 
-  function renderCatalogoGrid(gridId, countId, items, conectado){
-    var grid = document.getElementById(gridId);
-    var count = document.getElementById(countId);
+  var ESTADO_INFO = {
+    ok: { label: 'Con datos', claseBadge: 'conectado' },
+    formato_no_soportado: { label: 'Formato no soportado', claseBadge: 'no-soportado' },
+    error: { label: 'Con error', claseBadge: 'error' },
+    no_sincronizado_aun: { label: 'Sin sincronizar todavía', claseBadge: 'pendiente' }
+  };
+
+  function contarPorEstadoCatalogo(lista){
+    var c = {};
+    lista.forEach(function(d){ c[d.estado] = (c[d.estado] || 0) + 1; });
+    return c;
+  }
+
+  function renderCatalogoFiltros(lista){
+    var cont = document.getElementById('catalogoFiltros');
+    if (!cont) return;
+    var conteos = contarPorEstadoCatalogo(lista);
+    var opciones = [
+      { key: 'ok', label: 'Con datos', n: conteos.ok || 0 },
+      { key: 'todos', label: 'Todos', n: lista.length },
+      { key: 'formato_no_soportado', label: 'Formato no soportado', n: conteos.formato_no_soportado || 0 },
+      { key: 'error', label: 'Con error', n: conteos.error || 0 },
+      { key: 'no_sincronizado_aun', label: 'Sin sincronizar', n: conteos.no_sincronizado_aun || 0 }
+    ];
+    cont.innerHTML = opciones.map(function(o){
+      return '<button type="button" class="catalogo-filtro' + (o.key === catalogoFiltroActivo ? ' active' : '') + '" data-filtro="' + o.key + '">'
+        + o.label + ' <span class="tabular">(' + o.n.toLocaleString('es-PE') + ')</span></button>';
+    }).join('');
+    Array.prototype.forEach.call(cont.querySelectorAll('.catalogo-filtro'), function(btn){
+      btn.addEventListener('click', function(){
+        catalogoFiltroActivo = btn.getAttribute('data-filtro');
+        aplicarFiltroCatalogo();
+      });
+    });
+  }
+
+  function renderCatalogoCard(d){
+    var info = ESTADO_INFO[d.estado] || { label: d.estado, claseBadge: 'pendiente' };
+    var sub = '';
+    if (d.estado === 'ok' && d.filas != null) sub = '<span class="filas tabular">' + d.filas.toLocaleString('es-PE') + ' filas</span>';
+    else if (d.estado === 'formato_no_soportado' && d.formato) sub = '<span class="ent">Formato: ' + escapeHtml(d.formato) + '</span>';
+    return '<div class="catalogo-card" data-estado="' + d.estado + '">' +
+      '<div class="top"><span class="tag economia">Economía y Finanzas</span>' +
+        '<span class="estado-badge ' + info.claseBadge + '">' + info.label + '</span></div>' +
+      '<h4>' + escapeHtml(d.titulo) + '</h4>' +
+      '<div class="ent">' + escapeHtml(d.entidad || '') + '</div>' +
+      (sub ? '<div class="row">' + sub + '</div>' : '') +
+      '<div class="row">' +
+        '<a class="verlink" href="dataset.html?id=' + encodeURIComponent(d.dataset_id) + '">Ver ficha →</a>' +
+        '<a class="verlink" href="' + (d.dataset_url || '#') + '" target="_blank" rel="noopener noreferrer">Portal oficial ↗</a>' +
+      '</div>' +
+    '</div>';
+  }
+
+  function renderCatalogoPagina(reiniciar){
+    var grid = document.getElementById('catalogoGrid');
+    var count = document.getElementById('catalogoCount');
+    var boton = document.getElementById('catalogoCargarMas');
     if (!grid) return;
-    if (count) count.textContent = items.length + (items.length === 1 ? ' dataset' : ' datasets');
-    grid.innerHTML = items.map(function(d){
-      return '<div class="catalogo-card">' +
-        '<div class="top"><span class="tag ' + tagClaseParaCategoria(d.categoria) + '">' + d.categoria + '</span>' +
-          '<span class="estado-badge ' + (conectado ? 'conectado' : 'disponible') + '">' + (conectado ? 'Conectado' : 'Disponible') + '</span></div>' +
-        '<h4>' + d.titulo + '</h4>' +
-        '<div class="ent">' + d.entidad + '</div>' +
-        '<div class="row"><a class="verlink" href="' + d.url + '" target="_blank" rel="noopener noreferrer">Ver dataset real ↗</a></div>' +
-      '</div>';
-    }).join('') || '<p style="color:var(--ink-soft); grid-column:1/-1;">Sin resultados para esta búsqueda.</p>';
+    if (reiniciar) { catalogoMostrados = 0; grid.innerHTML = ''; }
+    var siguientes = catalogoResultadoActual.slice(catalogoMostrados, catalogoMostrados + CATALOGO_PAGINA);
+    var html = siguientes.map(renderCatalogoCard).join('');
+    if (!html && reiniciar) html = '<p style="color:var(--ink-soft); grid-column:1/-1;">Sin resultados para esta búsqueda.</p>';
+    grid.insertAdjacentHTML('beforeend', html);
+    catalogoMostrados += siguientes.length;
+    if (count) count.textContent = catalogoMostrados.toLocaleString('es-PE') + ' de ' + catalogoResultadoActual.length.toLocaleString('es-PE') + ' datasets';
+    if (boton) boton.hidden = catalogoMostrados >= catalogoResultadoActual.length;
   }
-  function tagClaseParaCategoria(cat){
-    var c = (cat || '').toLowerCase();
-    if (c.indexOf('econom') !== -1) return 'economia';
-    if (c.indexOf('gobern') !== -1) return 'gobierno';
-    if (c.indexOf('contrata') !== -1) return 'contrataciones';
-    if (c.indexOf('salud') !== -1) return 'salud';
-    if (c.indexOf('urban') !== -1 || c.indexOf('territ') !== -1) return 'territorio';
-    if (c.indexOf('educac') !== -1) return 'educacion';
-    return 'empresas';
-  }
-  function filtrarCatalogo(q){
-    q = (q || '').trim().toLowerCase();
-    function coincide(d){
-      return !q || d.titulo.toLowerCase().indexOf(q) !== -1 || d.entidad.toLowerCase().indexOf(q) !== -1 || d.categoria.toLowerCase().indexOf(q) !== -1;
-    }
-    renderCatalogoGrid('catalogoGridConectados', 'catalogoCountConectados', CATALOGO_CONECTADOS.filter(coincide), true);
-    renderCatalogoGrid('catalogoGridDisponibles', 'catalogoCountDisponibles', CATALOGO_DISPONIBLES.filter(coincide), false);
-  }
-  filtrarCatalogo('');
 
-  var catalogoInput = document.getElementById('catalogoBuscar');
-  var catalogoBtn = document.getElementById('catalogoBuscarBtn');
-  function abrirBusquedaOficial(){
-    var q = (catalogoInput.value || '').trim();
-    var url = q ? 'https://www.datosabiertos.gob.pe/search?query=' + encodeURIComponent(q) : 'https://www.datosabiertos.gob.pe/search';
-    window.open(url, '_blank', 'noopener,noreferrer');
+  function aplicarFiltroCatalogo(){
+    var q = (document.getElementById('catalogoBuscar') || {}).value || '';
+    q = q.trim().toLowerCase();
+    catalogoResultadoActual = catalogoTodos.filter(function(d){
+      if (catalogoFiltroActivo !== 'todos' && d.estado !== catalogoFiltroActivo) return false;
+      if (!q) return true;
+      return (d.titulo || '').toLowerCase().indexOf(q) !== -1 || (d.entidad || '').toLowerCase().indexOf(q) !== -1;
+    });
+    // Dentro de "Con datos", los que traen más filas primero — son los
+    // que más valor aportan de un vistazo, en vez de orden arbitrario.
+    if (catalogoFiltroActivo === 'ok') {
+      catalogoResultadoActual = catalogoResultadoActual.slice().sort(function(a,b){ return (b.filas || 0) - (a.filas || 0); });
+    }
+    renderCatalogoFiltros(catalogoTodos);
+    renderCatalogoPagina(true);
   }
-  if (catalogoInput) {
-    catalogoInput.addEventListener('input', function(){ filtrarCatalogo(catalogoInput.value); });
-    catalogoInput.addEventListener('keydown', function(e){ if (e.key === 'Enter') abrirBusquedaOficial(); });
+
+  function renderCatalogoIndice(indice){
+    var vacio = document.getElementById('catalogoIndiceVacio');
+    var filtros = document.getElementById('catalogoFiltros');
+    if (!indice || !Array.isArray(indice.datasets) || !indice.datasets.length) {
+      if (vacio) vacio.hidden = false;
+      if (filtros) filtros.hidden = true;
+      return;
+    }
+    catalogoTodos = indice.datasets;
+    // Si no hay ningún dataset "ok" todavía, el filtro por defecto
+    // ("Con datos") mostraría una lista vacía sin explicar por qué —
+    // se arranca en "Todos" en ese caso para no confundir.
+    if (!catalogoTodos.some(function(d){ return d.estado === 'ok'; })) catalogoFiltroActivo = 'todos';
+    aplicarFiltroCatalogo();
+
+    var buscar = document.getElementById('catalogoBuscar');
+    if (buscar) buscar.addEventListener('input', function(){ aplicarFiltroCatalogo(); });
+
+    var cargarMas = document.getElementById('catalogoCargarMas');
+    if (cargarMas) cargarMas.addEventListener('click', function(){ renderCatalogoPagina(false); });
+
+    var buscarPortal = document.getElementById('catalogoBuscarPortal');
+    if (buscarPortal) buscarPortal.addEventListener('click', function(e){
+      e.preventDefault();
+      var q = (document.getElementById('catalogoBuscar') || {}).value || '';
+      var url = q.trim() ? 'https://www.datosabiertos.gob.pe/search?query=' + encodeURIComponent(q.trim()) : 'https://www.datosabiertos.gob.pe/search';
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
   }
-  if (catalogoBtn) catalogoBtn.addEventListener('click', abrirBusquedaOficial);
 
   /* ============ Mapa ============ */
   var REGIONS = [
