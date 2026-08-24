@@ -7,7 +7,7 @@
 <meta name="description" content="Lo que está pasando en el Perú, explicado con datos oficiales." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="../images/favicon.png">
 <link rel="shortcut icon" href="../images/favicon.png">
 </head>
@@ -15,88 +15,93 @@
 <style>
 /* ============================================================
    PERÚ EN DATOS — design tokens
-   Paper: warm stone. Ink: indigo-charcoal. Accents: carmín
-   (cochinilla, tinte históricamente peruano), oro andino, andes teal.
+   Alineados a propósito con la paleta y tipografía de humen.solutions
+   (css/style.css): verde bosque como acento principal ("carmin", el
+   nombre de la variable se mantiene para no tocar cada sitio donde se
+   usa — solo cambia el color que contiene), oro cálido como acento
+   secundario, y Manrope como única tipografía. Los nombres de variable
+   viejos (carmin/oro/andes) se conservan tal cual para no romper los
+   cientos de "var(--carmin)" ya usados en este archivo.
    ============================================================ */
 :root{
-  --paper: #EEEAE1;
-  --paper-raised: #F7F4EE;
-  --ink: #1C1A22;
-  --ink-soft: #57524C;
-  --line: #DBD3C1;
-  --line-soft: #E4DDCD;
+  --paper: #FDFCFA;
+  --paper-raised: #FFFFFF;
+  --ink: #26261F;
+  --ink-soft: #6E6B5D;
+  --line: #E6E0D0;
+  --line-soft: #EFE9DC;
 
-  --carmin: #A32638;
-  --carmin-ink: #7A1B2A;
-  --carmin-bg: #F6E4E3;
+  --carmin: #33472A;
+  --carmin-ink: #24331C;
+  --carmin-bg: #F5F7F2;
 
-  --oro: #9A6415;
-  --oro-bg: #F3E6CC;
+  --oro: #B9975B;
+  --oro-bg: #FAF5E9;
 
-  --andes: #1D4E4B;
-  --andes-bg: #DCE9E5;
+  --andes: #4F6B3A;
+  --andes-bg: #EAF0E4;
 
-  --ok: #2F6B3F;
-  --ok-bg: #DEEBDF;
+  --ok: #3D7A45;
+  --ok-bg: #E7F2E9;
 
-  --shadow: 0 1px 2px rgba(28,26,34,.06), 0 8px 24px -12px rgba(28,26,34,.18);
-  --shadow-lg: 0 4px 8px rgba(28,26,34,.08), 0 24px 48px -16px rgba(28,26,34,.28);
+  --shadow: 0 1px 2px rgba(38,38,32,.06), 0 8px 24px -12px rgba(38,38,32,.16);
+  --shadow-lg: 0 4px 8px rgba(38,38,32,.08), 0 24px 48px -16px rgba(38,38,32,.24);
 
-  --radius-s: 8px;
-  --radius-m: 14px;
-  --radius-l: 22px;
+  --radius-s: 10px;
+  --radius-m: 16px;
+  --radius-l: 20px;
 
-  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
-  --font-body: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-display: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "Manrope", ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
 
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --paper: #17151B;
-    --paper-raised: #201D25;
+    --paper: #1A1F16;
+    --paper-raised: #23291D;
     --ink: #ECE7DC;
     --ink-soft: #B3AB9C;
-    --line: #34303A;
-    --line-soft: #2A2731;
+    --line: #38402F;
+    --line-soft: #2E3527;
 
-    --carmin: #E2687A;
-    --carmin-ink: #F0919F;
-    --carmin-bg: #3A2028;
+    --carmin: #86B26C;
+    --carmin-ink: #A3C98C;
+    --carmin-bg: #26301E;
 
-    --oro: #E1B15C;
-    --oro-bg: #3A3020;
+    --oro: #D4B876;
+    --oro-bg: #332A18;
 
-    --andes: #6FBBB3;
-    --andes-bg: #1D3634;
+    --andes: #9BBF7E;
+    --andes-bg: #232A1B;
 
-    --ok: #7FC08D;
-    --ok-bg: #1E3524;
+    --ok: #8FCB86;
+    --ok-bg: #1E2A1C;
 
     --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
     --shadow-lg: 0 4px 8px rgba(0,0,0,.35), 0 24px 48px -16px rgba(0,0,0,.6);
   }
 }
 :root[data-theme="dark"]{
-  --paper: #17151B;
-  --paper-raised: #201D25;
+  --paper: #1A1F16;
+  --paper-raised: #23291D;
   --ink: #ECE7DC;
   --ink-soft: #B3AB9C;
-  --line: #34303A;
-  --line-soft: #2A2731;
+  --line: #38402F;
+  --line-soft: #2E3527;
 
-  --carmin: #E2687A;
-  --carmin-ink: #F0919F;
-  --carmin-bg: #3A2028;
+  --carmin: #86B26C;
+  --carmin-ink: #A3C98C;
+  --carmin-bg: #26301E;
 
-  --oro: #E1B15C;
-  --oro-bg: #3A3020;
+  --oro: #D4B876;
+  --oro-bg: #332A18;
 
-  --andes: #6FBBB3;
-  --andes-bg: #1D3634;
+  --andes: #9BBF7E;
+  --andes-bg: #232A1B;
 
-  --ok: #7FC08D;
-  --ok-bg: #1E3524;
+  --ok: #8FCB86;
+  --ok-bg: #1E2A1C;
 
   --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
   --shadow-lg: 0 4px 8px rgba(0,0,0,.35), 0 24px 48px -16px rgba(0,0,0,.6);

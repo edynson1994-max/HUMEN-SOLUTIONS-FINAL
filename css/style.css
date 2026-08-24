@@ -5062,3 +5062,12 @@ BENEFICIOS/PROMOCIONES EN TARJETA DE SERVICIO
         align-items:flex-start;
     }
 }
+
+/* Tarjeta de contacto que ahora es un enlace (WhatsApp abre el chat
+   directamente) — evita que el navegador le meta subrayado/color de
+   enlace por defecto; el resto del look lo sigue dando .contact-card. */
+a.contact-card{
+    text-decoration:none;
+    color:inherit;
+    cursor:pointer;
+}

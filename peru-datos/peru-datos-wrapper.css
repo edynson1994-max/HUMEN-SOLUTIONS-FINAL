@@ -74,7 +74,7 @@ main.peru-datos-main{
        (no tiene modo oscuro), así que este fondo se queda fijo también —
        el propio iframe sí se adapta a modo oscuro internamente, de forma
        independiente. */
-    background:#EEEAE1;
+    background:#FDFCFA;
 }
 
 .pd-frame{
