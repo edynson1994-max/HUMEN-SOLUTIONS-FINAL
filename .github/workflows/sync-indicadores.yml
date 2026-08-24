@@ -1,0 +1,75 @@
+name: Sincronizar indicadores para contabilidad (BCRP)
+
+# Corre connectors/bcrp_indicadores.py: tipo de cambio del día, tasa de
+# referencia del BCRP e inflación (IPC), todo desde el API público de
+# Series Estadísticas del Banco Central de Reserva del Perú — sin llave,
+# sin bloqueo (a diferencia de SEACE, verificado con dos corridas reales
+# fallidas — ver el comentario en sync-licitaciones.yml). Solo usa la
+# librería estándar de Python, no hace falta pip install nada.
+#
+# Va en un workflow aparte (no junto a sync-datos.yml) porque tiene una
+# cadencia distinta: el tipo de cambio cambia todos los días hábiles, así
+# que este corre a diario. sync-datos.yml corre semanal porque el archivo
+# del MEF pesa ~2.3 GB — mezclarlos forzaría a uno de los dos a la
+# cadencia equivocada.
+
+on:
+  schedule:
+    # 13:00 UTC = 08:00 hora de Lima, de lunes a viernes (el BCRP no
+    # publica tipo de cambio en fin de semana, así que no tiene sentido
+    # correr sábado/domingo).
+    - cron: "0 13 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-indicadores:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Ejecutar el conector del BCRP
+        run: python connectors/bcrp_indicadores.py
+
+      - name: Mostrar el resultado en el resumen del job
+        if: always()
+        run: |
+          echo '```json' >> "$GITHUB_STEP_SUMMARY"
+          cat data/indicadores_bcrp.json >> "$GITHUB_STEP_SUMMARY" || true
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Confirmar y subir cambios (solo si hubo cambios)
+        run: |
+          git config user.name "peru-en-datos-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/indicadores_bcrp.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios en los indicadores, no se crea commit."
+            exit 0
+          fi
+          git commit -m "Actualiza indicadores BCRP (tipo de cambio, tasa, inflación) - $(date -u +'%Y-%m-%d %H:%M UTC')"
+
+          # Mismo patrón de reintento con merge que sync-datos.yml, por si
+          # otro workflow empuja al repo justo al mismo tiempo.
+          for intento in 1 2 3 4 5; do
+            git fetch origin main
+            if git merge origin/main --no-edit -X ours -m "Merge automático (sync-indicadores)"; then
+              if git push origin main; then
+                echo "Subido correctamente."
+                exit 0
+              fi
+            fi
+            echo "Intento $intento falló (probablemente otro push a la vez), reintentando..."
+            sleep $((intento * 5))
+          done
+          echo "No se pudo subir después de varios intentos." >&2
+          exit 1
