@@ -21,7 +21,10 @@
     "descripcion": "IPC Lima Metropolitana (INEI, vía BCRP)"
   },
   "estado": "ok",
-  "indicadores_disponibles": ["tipo_cambio", "tasa_referencia", "inflacion"],
-  "generado_en": "2026-08-24T20:09:28Z",
-  "nota_semilla": "Valores reales verificados a mano contra el API del BCRP el 2026-08-24, para que el widget muestre datos reales desde el primer despliegue. El workflow 'Sincronizar indicadores para contabilidad (BCRP)' los reemplaza automáticamente a diario — este campo desaparece en cuanto corre por primera vez."
+  "indicadores_disponibles": [
+    "tipo_cambio",
+    "tasa_referencia",
+    "inflacion"
+  ],
+  "generado_en": "2026-08-24T20:17:59Z"
 }
