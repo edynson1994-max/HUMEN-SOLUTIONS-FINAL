@@ -1,13 +1,13 @@
 {
-  "generado_en": "2026-08-24T22:47:06Z",
+  "generado_en": "2026-08-24T23:29:56Z",
   "categoria": "Economía y Finanzas",
   "total_catalogo": 505,
   "total_datasets_portal": 4651,
   "catalogo_corrida_completa": true,
   "conteos_por_estado": {
-    "ok": 213,
-    "formato_no_soportado": 259,
-    "error": 33
+    "ok": 226,
+    "formato_no_soportado": 244,
+    "error": 35
   },
   "datasets": [
     {
@@ -160,8 +160,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/reporte-de-ingresos-de-contribuyentes-de-la-municipalidad-distrital-de-jes%C3%BAs-mar%C3%ADa-mdjm",
       "fecha_modificacion_portal": "Mar, 06/30/2026 - 22:39",
-      "estado": "formato_no_soportado",
-      "filas": null,
+      "estado": "ok",
+      "filas": 129620,
       "formato": null
     },
     {
@@ -314,8 +314,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/convenio-de-colaboraci%C3%B3n-interinstitucional-entre-el-ministerio-de-defensa-y-entidades-del",
       "fecha_modificacion_portal": "Vie, 06/19/2026 - 10:56",
-      "estado": "formato_no_soportado",
-      "filas": null,
+      "estado": "ok",
+      "filas": 12,
       "formato": null
     },
     {
@@ -369,8 +369,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/lista-de-docentes-undac-2026",
       "fecha_modificacion_portal": "Vie, 06/26/2026 - 10:47",
-      "estado": "formato_no_soportado",
-      "filas": null,
+      "estado": "ok",
+      "filas": 605,
       "formato": null
     },
     {
@@ -380,8 +380,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/estudiantes-undac-matriculados-por-semestre-y-asignatura-a%C3%B1o-2026",
       "fecha_modificacion_portal": "Vie, 06/26/2026 - 10:44",
-      "estado": "formato_no_soportado",
-      "filas": null,
+      "estado": "ok",
+      "filas": 7103,
       "formato": null
     },
     {
@@ -402,8 +402,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/deuda-por-cobrar-del-impuesto-predial-a%C3%B1os-2020-al-2026-de-la-municipalidad-provincial-de",
       "fecha_modificacion_portal": "Vie, 06/26/2026 - 18:34",
-      "estado": "formato_no_soportado",
-      "filas": null,
+      "estado": "ok",
+      "filas": 82753,
       "formato": null
     },
     {
@@ -468,7 +468,7 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/padr%C3%B3n-de-agentes-de-retenci%C3%B3n-y-percepci%C3%B3n-del-igv-superintendencia-nacional-de-aduanas-y",
       "fecha_modificacion_portal": "Mar, 08/04/2026 - 16:09",
-      "estado": "formato_no_soportado",
+      "estado": "error",
       "filas": null,
       "formato": null
     },
@@ -479,7 +479,7 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/padr%C3%B3n-de-contribuyentes-en-el-sistema-de-emisi%C3%B3n-electr%C3%B3nica-see-superintendencia-nacional",
       "fecha_modificacion_portal": "Mar, 08/04/2026 - 16:16",
-      "estado": "formato_no_soportado",
+      "estado": "error",
       "filas": null,
       "formato": null
     },
@@ -512,8 +512,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/relaci%C3%B3n-de-agencias-y-oficinas-especiales-nivel-nacional-banco-de-la-naci%C3%B3n-2026",
       "fecha_modificacion_portal": "Jue, 07/02/2026 - 19:13",
-      "estado": "formato_no_soportado",
-      "filas": null,
+      "estado": "ok",
+      "filas": 559,
       "formato": null
     },
     {
@@ -523,8 +523,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/relaci%C3%B3n-de-agentes-bn-nivel-nacional-banco-de-la-naci%C3%B3n",
       "fecha_modificacion_portal": "Jue, 07/02/2026 - 19:21",
-      "estado": "formato_no_soportado",
-      "filas": null,
+      "estado": "ok",
+      "filas": 20275,
       "formato": null
     },
     {
@@ -534,8 +534,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/relaci%C3%B3n-de-cajeros-automaticos-nivel-nacional-banco-de-la-naci%C3%B3n",
       "fecha_modificacion_portal": "Jue, 07/02/2026 - 19:26",
-      "estado": "formato_no_soportado",
-      "filas": null,
+      "estado": "ok",
+      "filas": 1112,
       "formato": null
     },
     {
@@ -666,8 +666,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/cr%C3%A9ditos-financieros-2025-1er-semestre-obtenidos-por-el-personal-pensionista-o-sus",
       "fecha_modificacion_portal": "Mar, 08/04/2026 - 09:13",
-      "estado": "formato_no_soportado",
-      "filas": null,
+      "estado": "ok",
+      "filas": 334660,
       "formato": null
     },
     {
@@ -677,8 +677,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/cr%C3%A9ditos-financieros-2025-2do-semestre-obtenidos-por-el-personal-pensionista-o-sus",
       "fecha_modificacion_portal": "Mar, 08/04/2026 - 09:11",
-      "estado": "formato_no_soportado",
-      "filas": null,
+      "estado": "ok",
+      "filas": 363596,
       "formato": null
     },
     {
@@ -688,8 +688,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/proyectos-de-inversion-publica-2026",
       "fecha_modificacion_portal": "Vie, 08/07/2026 - 10:55",
-      "estado": "formato_no_soportado",
-      "filas": null,
+      "estado": "ok",
+      "filas": 522,
       "formato": null
     },
     {
@@ -699,8 +699,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/asociaciones-o-empresas-aprobadas-para-cofinanciar-sus-planes-de-negocio",
       "fecha_modificacion_portal": "Vie, 08/07/2026 - 10:57",
-      "estado": "formato_no_soportado",
-      "filas": null,
+      "estado": "ok",
+      "filas": 16,
       "formato": null
     },
     {
@@ -1766,8 +1766,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/pensionistas-del-r%C3%A9gimen-sctr-administrado-por-la-onp",
       "fecha_modificacion_portal": "Jue, 04/10/2025 - 14:57",
-      "estado": "formato_no_soportado",
-      "filas": null,
+      "estado": "ok",
+      "filas": 63,
       "formato": null
     },
     {
@@ -5565,6 +5565,5 @@
       "filas": 9,
       "formato": null
     }
-  ],
-  "nota_semilla": "Generado a mano contra los datos reales ya sincronizados en el repositorio (corrida del 24 ago 2026), para que el catálogo navegable muestre contenido real desde el primer despliegue. El workflow \"Sincronizar datasets de Economía y Finanzas\" lo regenera automáticamente en cada corrida futura — este campo desaparece entonces."
+  ]
 }

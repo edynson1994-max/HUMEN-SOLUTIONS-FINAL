@@ -1,9 +1,9 @@
 {
-  "generado_en": "2026-08-24T22:23:55Z",
+  "generado_en": "2026-08-24T23:29:55Z",
   "total_datasets_con_historial": 505,
   "total_con_cambio_detectado": 0,
   "total_mostrados": 0,
-  "total_primera_sincronizacion": 504,
-  "total_sin_cambio_o_no_comparable": 1,
+  "total_primera_sincronizacion": 0,
+  "total_sin_cambio_o_no_comparable": 505,
   "cambios": []
 }

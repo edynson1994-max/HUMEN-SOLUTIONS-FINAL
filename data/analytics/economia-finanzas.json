@@ -1,5 +1,5 @@
 {
-  "generado_en": "2026-08-24T22:23:55Z",
+  "generado_en": "2026-08-24T23:29:55Z",
   "catalogo": {
     "categoria": "Economía y Finanzas",
     "total_datasets_portal": 4651,
@@ -10,17 +10,17 @@
   "sincronizacion": {
     "total_con_historial": 505,
     "por_estado": {
-      "ok": 213,
-      "formato_no_soportado": 259,
-      "error": 33
+      "ok": 226,
+      "formato_no_soportado": 244,
+      "error": 35
     },
     "total_con_data_api_confirmada": 0
   },
   "filas": {
-    "total_datasets_con_filas_ok": 213,
-    "total_filas_ok": 8359670,
-    "promedio_filas_ok": 39247.3,
-    "mediana_filas_ok": 3157,
+    "total_datasets_con_filas_ok": 226,
+    "total_filas_ok": 9300566,
+    "promedio_filas_ok": 41152.9,
+    "mediana_filas_ok": 2962.5,
     "ranking_mas_filas": [
       {
         "dataset_id": "pensionistas-y-beneficiarios-del-sistema-nacional-de-pensiones-decreto-ley-n°-19990-22",
@@ -35,10 +35,22 @@
         "filas": 385811
       },
       {
+        "dataset_id": "créditos-financieros-2025-2do-semestre-obtenidos-por-el-personal-pensionista-o-sus",
+        "titulo": "Créditos financieros 2025 2do semestre obtenidos por el personal pensionista o sus beneficiarios por institución armada",
+        "entidad": "Ministerio de Defensa - MINDEF",
+        "filas": 363596
+      },
+      {
         "dataset_id": "pensionistas-del-sistema-nacional-de-pensiones-según-modalidad-de-pago-oficina-de",
         "titulo": "Pensionistas del Sistema Nacional de Pensiones según modalidad de pago - [Oficina de Normalización Previsional- ONP]",
         "entidad": "Oficina de Normalización Previsional - ONP",
         "filas": 337113
+      },
+      {
+        "dataset_id": "créditos-financieros-2025-1er-semestre-obtenidos-por-el-personal-pensionista-o-sus",
+        "titulo": "Créditos financieros 2025 1er semestre obtenidos por el personal pensionista o sus beneficiarios por institución armada",
+        "entidad": "Ministerio de Defensa - MINDEF",
+        "filas": 334660
       },
       {
         "dataset_id": "afiliados-del-sistema-nacional-de-pensiones-decreto-ley-n°-19990-administrados-por-la-onp-24",
@@ -69,18 +81,6 @@
         "titulo": "Asegurados del Régimen SCTR administrado por la ONP 2025",
         "entidad": "Oficina de Normalización Previsional - ONP",
         "filas": 287732
-      },
-      {
-        "dataset_id": "afiliados-del-snp-por-tipo-empleo-oficina-de-normalización-previsional-onp",
-        "titulo": "Afiliados del SNP por tipo empleo - [Oficina de Normalización Previsional - ONP]",
-        "entidad": "Oficina de Normalización Previsional - ONP",
-        "filas": 281578
-      },
-      {
-        "dataset_id": "bonos-de-reconocimiento-otorgados-por-la-onp-2025",
-        "titulo": "Bonos de Reconocimiento otorgados por la ONP 2025",
-        "entidad": "Oficina de Normalización Previsional - ONP",
-        "filas": 270113
       }
     ]
   },
@@ -94,27 +94,27 @@
     "conteo": {
       "creciente": 0,
       "decreciente": 0,
-      "estable": 0,
-      "insuficiente_historial": 505
+      "estable": 213,
+      "insuficiente_historial": 292
     }
   },
   "entidades": {
     "top_por_datasets_sincronizados_ok": [
       {
         "entidad": "Oficina de Normalización Previsional - ONP",
-        "conteo": 73
+        "conteo": 74
       },
       {
         "entidad": "Servicio de Administración Tributaria de Lima - SAT",
         "conteo": 15
       },
       {
-        "entidad": "Instituto Nacional de Estadística e Informática - INEI ",
-        "conteo": 9
+        "entidad": "Banco de la Nación",
+        "conteo": 10
       },
       {
-        "entidad": "Banco de la Nación",
-        "conteo": 7
+        "entidad": "Instituto Nacional de Estadística e Informática - INEI ",
+        "conteo": 9
       },
       {
         "entidad": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN",
@@ -129,15 +129,15 @@
         "conteo": 5
       },
       {
+        "entidad": "Municipalidad Distrital de Jesús María - Lima ",
+        "conteo": 4
+      },
+      {
         "entidad": "Ministerio de la Producción - PRODUCE",
         "conteo": 4
       },
       {
         "entidad": "Municipalidad Distrital de Los Olivos ",
-        "conteo": 4
-      },
-      {
-        "entidad": "Ministerio del Interior - MININTER",
         "conteo": 4
       }
     ]

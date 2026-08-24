@@ -1,1 +1,2 @@
 {"fecha": "2026-08-24T22:08:35Z", "estado": "ok", "filas": 59820, "nivel_usado": "url_en_vivo", "cambio": {"tipo": "primera_sincronizacion", "filas_antes": null, "filas_despues": 59820, "diferencia": null, "diferencia_pct": null}}
+{"fecha": "2026-08-24T23:12:52Z", "estado": "ok", "filas": 59820, "nivel_usado": "url_en_vivo", "cambio": {"tipo": "sin_cambio", "filas_antes": 59820, "filas_despues": 59820, "diferencia": 0, "diferencia_pct": 0.0}}
