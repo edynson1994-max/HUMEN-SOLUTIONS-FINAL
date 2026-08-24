@@ -123,6 +123,7 @@ p{ margin:0; }
 a{ color:inherit; }
 button{ font-family:inherit; }
 img,svg{ display:block; max-width:100%; }
+[hidden]{ display:none !important; }
 ::selection{ background:var(--carmin); color:#fff; }
 :focus-visible{ outline:2px solid var(--carmin); outline-offset:2px; border-radius:4px; }
 
@@ -138,18 +139,6 @@ img,svg{ display:block; max-width:100%; }
   color:var(--ink-soft);
 }
 .tabular{ font-variant-numeric:tabular-nums; }
-
-/* ---------- demo ribbon ---------- */
-.demo-ribbon{
-  background:var(--ink);
-  color:var(--paper);
-  font-family:var(--font-mono);
-  font-size:.72rem;
-  letter-spacing:.04em;
-  text-align:center;
-  padding:7px 16px;
-}
-.demo-ribbon strong{ color:var(--oro); font-weight:600; }
 
 /* ---------- header ---------- */
 header.site{
@@ -185,21 +174,6 @@ nav.primary a{
 nav.primary a:hover, nav.primary a.active{ background:var(--paper-raised); color:var(--ink); }
 
 .header-tools{ display:flex; align-items:center; gap:8px; }
-.search-box{
-  display:flex; align-items:center; gap:8px;
-  background:var(--paper-raised);
-  border:1px solid var(--line);
-  border-radius:100px;
-  padding:8px 14px;
-  width:220px;
-  transition:width .2s, border-color .2s;
-}
-.search-box:focus-within{ width:280px; border-color:var(--carmin); }
-.search-box input{
-  border:0; background:none; outline:none; color:var(--ink);
-  font-family:var(--font-body); font-size:.88rem; width:100%;
-}
-.search-box input::placeholder{ color:var(--ink-soft); }
 .icon-btn{
   display:flex; align-items:center; justify-content:center;
   width:38px; height:38px; border-radius:100px;
@@ -213,7 +187,6 @@ nav.primary a:hover, nav.primary a.active{ background:var(--paper-raised); color
 
 @media (max-width:980px){
   nav.primary{ display:none; }
-  .search-box{ width:150px; }
   .menu-toggle{ display:flex; }
 }
 
@@ -242,8 +215,6 @@ section{ padding:64px 0; }
 .tag.territorio{ background:var(--oro-bg); color:var(--oro); }
 </style>
 
-<div class="demo-ribbon" id="demoRibbon">🔶 VISTA PREVIA — todos los datos de esta demo son <strong>ficticios</strong>, creados solo para mostrar cómo se vería la plataforma con datos reales.</div>
-
 <header class="site">
   <div class="header-row">
     <a class="logo" href="#inicio" style="text-decoration:none;"><span class="mark">Perú</span>&nbsp;en&nbsp;Datos</a>
@@ -255,13 +226,8 @@ section{ padding:64px 0; }
       <a href="#conoce">Conoce</a>
       <a href="#explora">Catálogo</a>
       <a href="#mapa">Mapa</a>
-      <a href="#tu-peru">Tu Perú</a>
     </nav>
     <div class="header-tools">
-      <div class="search-box">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="flex:none;color:var(--ink-soft)"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-        <input type="text" placeholder="¿Cuánto gastó Cusco en obras?">
-      </div>
       <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema" title="Modo claro/oscuro">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
       </button>
@@ -284,6 +250,7 @@ section{ padding:64px 0; }
 .estelares-grid{
   display:grid; grid-template-columns:1.5fr 1fr; gap:20px;
 }
+.estelares-grid.single{ grid-template-columns:1fr; }
 @media (max-width:860px){ .estelares-grid{ grid-template-columns:1fr; } }
 
 .story-card{
@@ -322,49 +289,24 @@ section{ padding:64px 0; }
 
 <section class="hero-strip">
   <div class="wrap">
-    <div class="hero-kicker"><span class="dot"></span><span id="heroKickerText">Estelares · actualizado hace 6 minutos</span></div>
+    <div class="hero-kicker"><span class="dot"></span><span id="heroKickerText">Estelares · cargando datos reales…</span></div>
   </div>
 </section>
 
 <section id="estelares" style="padding-top:0;">
   <div class="wrap">
-    <div class="estelares-grid">
-
-      <button class="story-card lead" data-story="s1">
-        <div>
-          <div class="tags"><span class="tag contrataciones">Contrataciones</span></div>
-          <h3 style="margin-top:12px;">Esta semana el Estado contrató S/ 850 millones</h3>
-          <p class="dek" style="margin-top:10px;">340 entidades públicas cerraron procesos de contratación en los últimos 7 días — el monto semanal más alto del trimestre, impulsado por obras en Cusco y Arequipa.</p>
-        </div>
-        <div>
-          <div class="sparkline-wrap" id="spark-s1"></div>
-          <div class="metric-row">
-            <span class="metric tabular">S/ 850M</span>
-            <span class="delta up tabular">▲ 23% vs. semana anterior</span>
-          </div>
-          <div class="meta-line" style="margin-top:8px;"><span>MEF · SEACE</span><span>·</span><span>Actualizado 21 ago 2026</span></div>
-        </div>
-      </button>
-
-      <div class="secondary-stack">
-        <button class="story-card secondary" data-story="s2">
-          <div class="tags"><span class="tag obras">Obras</span></div>
-          <h3>Cusco concentra el mayor crecimiento en obras públicas</h3>
-          <div class="metric-row">
-            <span class="metric tabular">+64%</span>
-            <span class="delta up tabular">▲ trimestral</span>
-          </div>
-        </button>
-        <button class="story-card secondary" data-story="s3">
-          <div class="tags"><span class="tag empresas">Empresas</span></div>
-          <h3>Una misma empresa acumula 12 contratos de construcción este trimestre</h3>
-          <div class="metric-row">
-            <span class="metric tabular">12</span>
-            <span class="delta tabular" style="color:var(--ink-soft)">procesos, 5 regiones</span>
-          </div>
-        </button>
+    <div class="estelares-grid" id="estelaresGrid" hidden>
+      <button class="story-card lead" data-story="s1" hidden></button>
+      <div class="secondary-stack" id="secondaryStack" hidden>
+        <button class="story-card secondary" data-story="s2" hidden></button>
+        <button class="story-card secondary" data-story="s3" hidden></button>
       </div>
-
+    </div>
+    <div class="estado-vacio" id="estelaresVacio">
+      Todavía no hay suficientes datos reales sincronizados para armar una historia destacada aquí — se llena
+      sola en cuanto el MEF o la Contraloría vuelvan a sincronizar. Mientras tanto, revisa
+      <a href="#ultimo" style="color:var(--carmin); font-weight:600;">Fuentes conectadas</a> o el
+      <a href="#explora" style="color:var(--carmin); font-weight:600;">Catálogo</a>.
     </div>
   </div>
 </section>
@@ -398,33 +340,33 @@ section{ padding:64px 0; }
         <h2>Fuentes conectadas</h2>
         <p class="lede">Qué fuente oficial trae cada dato, cuánto trajo y cuándo se sincronizó por última vez — la trazabilidad completa, sin cajas negras.</p>
       </div>
-      <span class="eyebrow tabular">4 fuentes en proceso de conexión</span>
+      <span class="eyebrow tabular">4 conectores propios</span>
     </div>
 
     <div class="feed-list">
       <button class="feed-item" data-story="u1">
         <span class="tag economia">Economía</span>
         <span><span class="feed-title">MEF — Presupuesto y Ejecución de Gasto 2025</span><br><span class="feed-dek">Devengado mensual por pliego, entidad y región</span></span>
-        <span class="feed-metric tabular">demo</span>
-        <span class="feed-time">pendiente de sincronizar</span>
+        <span class="feed-metric tabular">—</span>
+        <span class="feed-time">sin sincronizar todavía</span>
       </button>
       <button class="feed-item" data-story="u2">
         <span class="tag gobierno">Gobierno</span>
         <span><span class="feed-title">Contraloría — Monitores Ciudadanos de Control</span><br><span class="feed-dek">Resultados de intervenciones 2021, por región</span></span>
-        <span class="feed-metric tabular">demo</span>
-        <span class="feed-time">pendiente de sincronizar</span>
+        <span class="feed-metric tabular">—</span>
+        <span class="feed-time">sin sincronizar todavía</span>
       </button>
       <button class="feed-item" data-story="u3">
         <span class="tag gobierno">Gobierno</span>
         <span><span class="feed-title">Contraloría — Información de los monitores</span><br><span class="feed-dek">Registro general de monitores ciudadanos</span></span>
-        <span class="feed-metric tabular">demo</span>
-        <span class="feed-time">pendiente de sincronizar</span>
+        <span class="feed-metric tabular">—</span>
+        <span class="feed-time">sin sincronizar todavía</span>
       </button>
       <button class="feed-item" data-story="u4">
         <span class="tag territorio">Territorio</span>
         <span><span class="feed-title">INEI — Registro Nacional de Municipalidades</span><br><span class="feed-dek">RENAMU 2023, municipalidades por región (muestra)</span></span>
-        <span class="feed-metric tabular">demo</span>
-        <span class="feed-time">pendiente de sincronizar</span>
+        <span class="feed-metric tabular">—</span>
+        <span class="feed-time">sin sincronizar todavía</span>
       </button>
     </div>
   </div>
@@ -523,7 +465,7 @@ section{ padding:64px 0; }
       </div>
       <div class="descubre-card" onclick="document.getElementById('explora').scrollIntoView({behavior:'smooth'})">
         <span class="q">¿Dónde encuentro más datos oficiales del Perú?</span>
-        <span class="a">Catálogo con acceso directo a los 1,330 datasets de Economía y Finanzas, y un buscador de todo el portal.</span>
+        <span class="a">Catálogo con acceso directo a los datasets de Economía y Finanzas ya descubiertos, y un buscador de todo el portal.</span>
         <span class="go">Ver Catálogo →</span>
       </div>
       <div class="descubre-card" onclick="document.getElementById('conoce').scrollIntoView({behavior:'smooth'})">
@@ -543,16 +485,6 @@ section{ padding:64px 0; }
 <style>
 /* ---------- Conoce ---------- */
 #conoce{ background:var(--paper-raised); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-.enciclopedia-grid{
-  display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-bottom:44px;
-}
-@media (max-width:900px){ .enciclopedia-grid{ grid-template-columns:repeat(3,1fr); } }
-@media (max-width:560px){ .enciclopedia-grid{ grid-template-columns:repeat(2,1fr); } }
-.enc-chip{
-  background:var(--paper); border:1px solid var(--line); border-radius:100px;
-  padding:9px 16px; font-size:.82rem; font-weight:600; text-align:center;
-  color:var(--ink-soft);
-}
 
 .flow-card{
   background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-l);
@@ -604,26 +536,8 @@ section{ padding:64px 0; }
     <div class="section-head">
       <div>
         <h2>Conoce</h2>
-        <p class="lede">Una enciclopedia visual de cómo funciona el Estado peruano.</p>
+        <p class="lede">Cómo funciona una licitación pública y qué significan los términos del presupuesto — para entender el resto de la página.</p>
       </div>
-    </div>
-
-    <div class="enciclopedia-grid">
-      <span class="enc-chip">Estado peruano</span>
-      <span class="enc-chip">Municipalidades</span>
-      <span class="enc-chip">Gobiernos regionales</span>
-      <span class="enc-chip">Presupuesto público</span>
-      <span class="enc-chip">Contrataciones</span>
-      <span class="enc-chip">Obras públicas</span>
-      <span class="enc-chip">Empresas</span>
-      <span class="enc-chip">Economía</span>
-      <span class="enc-chip">Población</span>
-      <span class="enc-chip">Educación</span>
-      <span class="enc-chip">Salud</span>
-      <span class="enc-chip">Empleo</span>
-      <span class="enc-chip">Territorio</span>
-      <span class="enc-chip">Agricultura</span>
-      <span class="enc-chip">Infraestructura</span>
     </div>
 
     <div class="flow-card">
@@ -775,14 +689,6 @@ section{ padding:64px 0; }
 .mapa-layout{ display:grid; grid-template-columns:1fr 320px; gap:28px; align-items:start; }
 @media (max-width:900px){ .mapa-layout{ grid-template-columns:1fr; } }
 
-.mapa-indicador{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px; }
-.mapa-indicador button{
-  font-family:var(--font-body); font-size:.82rem; font-weight:600;
-  padding:7px 14px; border-radius:100px; border:1px solid var(--line);
-  background:var(--paper-raised); color:var(--ink-soft); cursor:pointer;
-}
-.mapa-indicador button.active{ background:var(--andes); border-color:var(--andes); color:#fff; }
-
 .region-grid{
   display:grid;
   grid-template-columns:repeat(5,1fr);
@@ -818,15 +724,8 @@ section{ padding:64px 0; }
     <div class="section-head">
       <div>
         <h2>Mapa del Perú</h2>
-        <p class="lede">Mapa esquemático (cartograma) — cada región ocupa una celda del mismo tamaño para que ninguna quede oculta por su extensión real. Selecciona una región.</p>
+        <p class="lede">Mapa esquemático (cartograma) — cada región ocupa una celda del mismo tamaño para que ninguna quede oculta por su extensión real. Selecciona una región para ver el gasto público ejecutado (MEF) y las municipalidades registradas (INEI) que ya se sincronizaron para ella.</p>
       </div>
-    </div>
-
-    <div class="mapa-indicador">
-      <button class="active">Contrataciones</button>
-      <button>Inversión</button>
-      <button>Obras</button>
-      <button>Población</button>
     </div>
 
     <div class="mapa-layout">
@@ -835,77 +734,6 @@ section{ padding:64px 0; }
       </div>
       <div class="mapa-panel" id="mapaPanel">
         <!-- filled by JS -->
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-/* ---------- Tu Perú + alertas ---------- */
-#tu-peru{ background:var(--paper-raised); border-top:1px solid var(--line); }
-.tuperu-layout{ display:grid; grid-template-columns:1fr 1fr; gap:32px; }
-@media (max-width:860px){ .tuperu-layout{ grid-template-columns:1fr; } }
-
-.interes-grid{ display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
-.interes-chip{
-  display:flex; align-items:center; gap:8px;
-  background:var(--paper); border:1.5px solid var(--line); border-radius:100px;
-  padding:9px 16px 9px 12px; font-size:.86rem; font-weight:600; cursor:pointer;
-  transition:border-color .15s, background .15s;
-}
-.interes-chip input{ accent-color:var(--carmin); width:16px; height:16px; }
-.interes-chip.checked{ border-color:var(--carmin); background:var(--carmin-bg); }
-
-.alerta-card{
-  background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-m);
-  padding:20px; display:flex; flex-direction:column; gap:10px;
-}
-.alerta-head{ display:flex; align-items:center; gap:8px; }
-.alerta-head .bell{ color:var(--carmin); }
-.alerta-head span{ font-family:var(--font-mono); font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--carmin); }
-.alerta-card h4{ font-size:1.05rem; }
-.alerta-card .row{ display:flex; justify-content:space-between; align-items:center; }
-.alerta-card .amt{ font-family:var(--font-display); font-weight:700; color:var(--oro); font-size:1.2rem; }
-.alerta-card .time{ font-family:var(--font-mono); font-size:.72rem; color:var(--ink-soft); }
-.alerta-channels{ display:flex; gap:8px; margin-top:6px; }
-.alerta-channels span{
-  font-family:var(--font-mono); font-size:.66rem; padding:4px 9px; border-radius:100px;
-  background:var(--andes-bg); color:var(--andes); font-weight:600;
-}
-</style>
-
-<section id="tu-peru">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <h2>Tu Perú</h2>
-        <p class="lede">Elige tus temas y te avisamos cuando aparezca algo nuevo.</p>
-      </div>
-    </div>
-
-    <div class="tuperu-layout">
-      <div>
-        <span class="eyebrow">¿Qué quieres seguir?</span>
-        <div class="interes-grid" id="interesGrid">
-          <!-- filled by JS -->
-        </div>
-      </div>
-
-      <div class="alerta-card">
-        <div class="alerta-head">
-          <svg class="bell" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg>
-          <span>Nueva oportunidad</span>
-        </div>
-        <h4>Municipalidad Provincial de Anta</h4>
-        <p style="color:var(--ink-soft); font-size:.9rem;">Servicio de mantenimiento de infraestructura vial</p>
-        <div class="row">
-          <span class="amt tabular">S/ 185,000</span>
-          <span class="time">Publicado hace 20 min</span>
-        </div>
-        <div class="alerta-channels">
-          <span>✉ Correo</span>
-          <span>🔔 Web</span>
-        </div>
       </div>
     </div>
   </div>
@@ -959,8 +787,8 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
     </div>
   </div>
   <div class="foot-bottom">
-    <span>Perú en Datos — vista previa de producto, agosto 2026</span>
-    <span>Todos los datos mostrados en esta demo son ficticios</span>
+    <span>Perú en Datos — en construcción, agosto 2026</span>
+    <span>Cada cifra viene de una fuente oficial identificada, con fecha — nunca se inventa un dato</span>
   </div>
 </footer>
 
@@ -1032,45 +860,23 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
     root.setAttribute('data-theme', next);
   });
 
-  /* ============ datos DEMO de historias ============ */
+  /* ============ historias: solo se llenan con datos reales ============
+     A diferencia de una versión anterior de esta página, aquí NO hay
+     contenido de relleno con cifras inventadas — s1/s2/s3 (Estelares) se
+     completan únicamente cuando construirHistoriasReales() encuentra
+     datos reales de MEF/Contraloría; si no hay ninguno todavía, la
+     sección muestra el estado vacío honesto (#estelaresVacio) en vez de
+     una tarjeta con un número inventado. u1-u4 (Fuentes conectadas) sí
+     tienen texto fijo describiendo QUÉ hace cada conector — eso es
+     documentación real de metodología, no una cifra fabricada — pero su
+     metric/delta empiezan en "sin sincronizar" y solo cambian a un
+     número real cuando aplicarEstadoFuentes() encuentra un archivo de
+     verdad sincronizado. */
   var STORIES = {
-    s1: {
-      tag: 'contrataciones', tagLabel: 'Contrataciones',
-      title: 'Esta semana el Estado contrató S/ 850 millones',
-      dek: '340 entidades públicas cerraron procesos de contratación en los últimos 7 días — el monto semanal más alto del trimestre, impulsado por obras en Cusco y Arequipa.',
-      metric: 'S/ 850M', delta: '▲ 23% vs. semana anterior', deltaUp: true,
-      chart: [420,460,505,480,540,610,590,690,720,760,700,850],
-      meaning: 'Un aumento del 23% en una sola semana es alto, pero no aislado: coincide con el cierre de julio, un mes en que muchas entidades ejecutan presupuesto antes de fin de trimestre. La concentración en Cusco y Arequipa refleja varios proyectos de infraestructura vial que llegaron a la etapa de buena pro esta semana.',
-      numbers: 'El monto agregado suma los procesos con buena pro otorgada entre el 15 y el 21 de agosto. Se excluyen procesos declarados desiertos o cancelados. La comparación es contra el mismo agregado de la semana anterior.',
-      methodology: 'Cifra calculada por Perú en Datos a partir de registros individuales de contratación, agrupados por fecha de buena pro. No es un dato publicado directamente por la fuente — es un análisis propio, claramente etiquetado como tal.',
-      source: { entidad:'MEF / SEACE-OECE', dataset:'Registro de contrataciones públicas', updated:'21 ago 2026', freq:'Diaria', url:'#' }
-    },
-    s2: {
-      tag: 'obras', tagLabel: 'Obras',
-      title: 'Cusco concentra el mayor crecimiento en obras públicas',
-      dek: 'El valor de las obras convocadas en Cusco creció 64% este trimestre frente al anterior, la mayor variación entre las 25 regiones.',
-      metric: '+64%', delta: '▲ variación trimestral', deltaUp: true,
-      chart: [120,110,135,128,150,210,240,265],
-      meaning: 'El crecimiento se concentra en obras viales y de saneamiento en distritos rurales. Una variación tan alta en un trimestre suele deberse a pocos proyectos grandes más que a un cambio generalizado — vale la pena mirar los procesos individuales antes de sacar conclusiones sobre la región completa.',
-      numbers: 'Se compara el valor referencial de obras convocadas en el trimestre actual (jun–ago 2026) contra el trimestre anterior (mar–may 2026), para la región Cusco.',
-      methodology: 'Cálculo propio de Perú en Datos sobre el campo "valor referencial" de cada proceso de tipo Obra, agrupado por región y fecha de convocatoria.',
-      source: { entidad:'SEACE-OECE', dataset:'Procesos de contratación — Obras', updated:'21 ago 2026', freq:'Diaria', url:'#' }
-    },
-    s3: {
-      tag: 'empresas', tagLabel: 'Empresas',
-      title: 'Una misma empresa acumula 12 contratos de construcción este trimestre',
-      dek: 'Una empresa registrada en Cusco obtuvo la buena pro en 12 procesos de obra en 5 regiones distintas durante el último trimestre.',
-      metric: '12', delta: 'procesos, 5 regiones', deltaUp: null,
-      chart: [1,2,2,3,4,5,7,9,10,12],
-      meaning: 'Esto es una concentración, no una acusación: puede explicarse por una empresa con buena capacidad operativa que gana procesos legítimamente en distintas convocatorias. Mostramos el patrón para que cualquiera pueda revisarlo — no calificamos esto como irregular.',
-      numbers: 'Se cuentan los procesos con buena pro otorgada a la misma razón social (por RUC) en los últimos 90 días, sin importar la entidad convocante.',
-      methodology: 'Análisis propio de concentración por postor ganador. No implica ningún juicio sobre la legalidad o legitimidad de los procesos — solo describe un patrón observado en los datos públicos.',
-      source: { entidad:'SEACE-OECE / RNP', dataset:'Resultados de buena pro', updated:'21 ago 2026', freq:'Diaria', url:'#' }
-    },
-    u1: { tag:'economia', tagLabel:'Economía', title:'MEF — Presupuesto y Ejecución de Gasto 2025', dek:'Devengado mensual del gasto público, por pliego, entidad y región.', metric:'demo', delta:'pendiente de sincronizar', deltaUp:null, chart:[1,1,1,1,1], meaning:'Cuando este conector sincroniza, procesa en streaming el archivo completo (2.3 GB, ~2.8 millones de filas) que publica el MEF, sin cargarlo entero en memoria.', numbers:'Suma la columna "Monto Devengado Anual" de cada línea presupuestal, agrupada por región y entidad.', methodology:'Perú en Datos lee el archivo público del MEF y agrega las cifras — no publica ningún cálculo del MEF, solo agregados propios claramente etiquetados como tales.', source:{entidad:'Ministerio de Economía y Finanzas (MEF)', dataset:'Presupuesto y Ejecución de Gasto — Devengado Mensual 2025', updated:'—', freq:'Semanal', url:'#'} },
-    u2: { tag:'gobierno', tagLabel:'Gobierno', title:'Contraloría — Monitores Ciudadanos de Control', dek:'Resultados de las intervenciones realizadas por los monitores ciudadanos en 2021, por región.', metric:'demo', delta:'pendiente de sincronizar', deltaUp:null, chart:[1,1,1,1,1], meaning:'Los Monitores Ciudadanos de Control son voluntarios capacitados por la Contraloría para vigilar obras y servicios públicos.', numbers:'Conteo de registros de intervenciones, agrupados por región.', methodology:'Dato tomado directamente del archivo público de la Contraloría, sin cálculos adicionales.', source:{entidad:'Contraloría General de la República', dataset:'Resultados de intervenciones de Monitores Ciudadanos de Control 2021', updated:'—', freq:'Según publique la Contraloría', url:'#'} },
-    u3: { tag:'gobierno', tagLabel:'Gobierno', title:'Contraloría — Información de los monitores', dek:'Registro general de los monitores ciudadanos de control, por región.', metric:'demo', delta:'pendiente de sincronizar', deltaUp:null, chart:[1,1,1,1,1], meaning:'Este dataset identifica a los propios monitores, distinto del dataset de resultados de sus intervenciones.', numbers:'Conteo de monitores registrados, agrupados por región.', methodology:'Dato tomado directamente del archivo público de la Contraloría, sin cálculos adicionales.', source:{entidad:'Contraloría General de la República', dataset:'Información general de los Monitores Ciudadanos de Control', updated:'—', freq:'Según publique la Contraloría', url:'#'} },
-    u4: { tag:'territorio', tagLabel:'Territorio', title:'INEI — Registro Nacional de Municipalidades', dek:'RENAMU 2023 (muestra) — cuántas municipalidades tiene cada región.', metric:'demo', delta:'pendiente de sincronizar', deltaUp:null, chart:[1,1,1,1,1], meaning:'El RENAMU es el registro oficial de municipalidades del Perú, levantado anualmente por el INEI.', numbers:'Conteo de municipalidades por región, sobre la muestra publicada del RENAMU 2023.', methodology:'Dato tomado directamente del archivo público del INEI, sin cálculos adicionales.', source:{entidad:'Instituto Nacional de Estadística e Informática (INEI)', dataset:'Registro Nacional de Municipalidades (RENAMU) 2023', updated:'—', freq:'Anual', url:'#'} }
+    u1: { tag:'economia', tagLabel:'Economía', title:'MEF — Presupuesto y Ejecución de Gasto 2025', dek:'Devengado mensual del gasto público, por pliego, entidad y región.', metric:'—', delta:'sin sincronizar todavía', deltaUp:null, chart:[1,1,1,1,1], meaning:'Cuando este conector sincroniza, procesa en streaming el archivo completo (2.3 GB, ~2.8 millones de filas) que publica el MEF, sin cargarlo entero en memoria.', numbers:'Suma la columna "Monto Devengado Anual" de cada línea presupuestal, agrupada por región y entidad.', methodology:'Perú en Datos lee el archivo público del MEF y agrega las cifras — no publica ningún cálculo del MEF, solo agregados propios claramente etiquetados como tales.', source:{entidad:'Ministerio de Economía y Finanzas (MEF)', dataset:'Presupuesto y Ejecución de Gasto — Devengado Mensual 2025', updated:'—', freq:'Semanal', url:'#'} },
+    u2: { tag:'gobierno', tagLabel:'Gobierno', title:'Contraloría — Monitores Ciudadanos de Control', dek:'Resultados de las intervenciones realizadas por los monitores ciudadanos en 2021, por región.', metric:'—', delta:'sin sincronizar todavía', deltaUp:null, chart:[1,1,1,1,1], meaning:'Los Monitores Ciudadanos de Control son voluntarios capacitados por la Contraloría para vigilar obras y servicios públicos.', numbers:'Conteo de registros de intervenciones, agrupados por región.', methodology:'Dato tomado directamente del archivo público de la Contraloría, sin cálculos adicionales.', source:{entidad:'Contraloría General de la República', dataset:'Resultados de intervenciones de Monitores Ciudadanos de Control 2021', updated:'—', freq:'Según publique la Contraloría', url:'#'} },
+    u3: { tag:'gobierno', tagLabel:'Gobierno', title:'Contraloría — Información de los monitores', dek:'Registro general de los monitores ciudadanos de control, por región.', metric:'—', delta:'sin sincronizar todavía', deltaUp:null, chart:[1,1,1,1,1], meaning:'Este dataset identifica a los propios monitores, distinto del dataset de resultados de sus intervenciones.', numbers:'Conteo de monitores registrados, agrupados por región.', methodology:'Dato tomado directamente del archivo público de la Contraloría, sin cálculos adicionales.', source:{entidad:'Contraloría General de la República', dataset:'Información general de los Monitores Ciudadanos de Control', updated:'—', freq:'Según publique la Contraloría', url:'#'} },
+    u4: { tag:'territorio', tagLabel:'Territorio', title:'INEI — Registro Nacional de Municipalidades', dek:'RENAMU 2023 (muestra) — cuántas municipalidades tiene cada región.', metric:'—', delta:'sin sincronizar todavía', deltaUp:null, chart:[1,1,1,1,1], meaning:'El RENAMU es el registro oficial de municipalidades del Perú, levantado anualmente por el INEI.', numbers:'Conteo de municipalidades por región, sobre la muestra publicada del RENAMU 2023.', methodology:'Dato tomado directamente del archivo público del INEI, sin cálculos adicionales.', source:{entidad:'Instituto Nacional de Estadística e Informática (INEI)', dataset:'Registro Nacional de Municipalidades (RENAMU) 2023', updated:'—', freq:'Anual', url:'#'} }
   };
 
   /* ============ mini gráfico de área (sparkline) ============ */
@@ -1103,21 +909,18 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
       '<circle cx="'+last[0].toFixed(1)+'" cy="'+last[1].toFixed(1)+'" r="4.5" fill="'+color+'" />' +
     '</svg>';
   }
-  document.getElementById('spark-s1').innerHTML = sparklineSVG(STORIES.s1.chart, 'var(--carmin)');
-
   /* ============ Estelares con datos reales (MEF, Contraloría) ============
-     Reemplaza s1/s2/s3 (demo) por historias armadas en el momento a partir
-     de data/mef.json y data/contraloria.json — los mismos archivos que
+     s1/s2/s3 arrancan ocultas (ver HTML) — se arman en el momento a partir
+     de data/mef.json y data/contraloria.json, los mismos archivos que
      actualiza el workflow "Sincronizar datos reales". Si esos archivos no
      existen todavía o el fetch falla (sitio recién publicado, primera
-     sincronización aún no corrió), las 3 tarjetas se quedan tal como están
-     (el contenido de demo ya escrito en el HTML) — nunca se muestra un
-     estado roto, y el rótulo de "vista previa" no cambia.
+     sincronización aún no corrió), la sección se queda en su estado vacío
+     honesto (#estelaresVacio) — nunca se inventa una tarjeta.
 
-     Solo se reemplaza lo que de verdad se pudo calcular con datos reales:
-     si el MEF trae total pero Contraloría falló, s1/s2 cambian y s3 se
-     queda en demo. Esto es intencional — mejor una tarjeta de demo
-     claramente marcada que una tarjeta "real" a medias. */
+     Solo se muestra lo que de verdad se pudo calcular con datos reales:
+     si el MEF trae total pero Contraloría falló, aparecen s1/s2 nomás y
+     s3 sigue oculta. Esto es intencional — mejor una historia menos que
+     una tarjeta "real" a medias. */
 
   function formatSoles(n){
     if (n == null) return 'S/ —';
@@ -1206,6 +1009,7 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
   function renderLeadCard(id, s){
     var el = document.querySelector('.story-card.lead[data-story="' + id + '"]');
     if (!el || !s) return;
+    el.hidden = false;
     el.innerHTML =
       '<div>' +
         '<div class="tags"><span class="tag ' + s.tag + '">' + s.tagLabel + '</span></div>' +
@@ -1226,6 +1030,7 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
   function renderSecondaryCard(id, s){
     var el = document.querySelector('.story-card.secondary[data-story="' + id + '"]');
     if (!el || !s) return;
+    el.hidden = false;
     el.innerHTML =
       '<div class="tags"><span class="tag ' + s.tag + '">' + s.tagLabel + '</span></div>' +
       '<h3>' + s.title + '</h3>' +
@@ -1286,7 +1091,7 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
     if (algunaReal) {
       var eyebrow = document.querySelector('#ultimo .eyebrow');
       var ultimaFecha = [mef, contraloria, inei].filter(Boolean).map(function(d){ return d.generado_en; }).filter(Boolean).sort().pop();
-      if (eyebrow) eyebrow.textContent = '4 fuentes en proceso de conexión · última sincronización real ' + fmtFechaCorta(ultimaFecha);
+      if (eyebrow) eyebrow.textContent = '4 conectores propios · última sincronización real ' + fmtFechaCorta(ultimaFecha);
     }
     return algunaReal;
   }
@@ -1467,50 +1272,47 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
     fetch('../data/analytics/economia-finanzas.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
   ]).then(function(res){
     var mef = res[0], contraloria = res[1], inei = res[2], catalog = res[3], cambios = res[4], analytics = res[5];
-    var partesReales = [];
 
     // ---- Catálogo real (Fase 8) ----
-    if (renderCatalogoReal(catalog)) partesReales.push('Catálogo');
+    renderCatalogoReal(catalog);
 
     // ---- ¿Qué cambió? (Fase 9) — se renderiza siempre, con estado
     // vacío honesto si todavía no hay comparaciones ----
     renderQueCambio(cambios);
-    if (cambios && cambios.total_con_cambio_detectado) partesReales.push('Qué cambió');
 
     // ---- En cifras (Fase 10) ----
     renderCifras(analytics);
-    if (analytics) partesReales.push('En cifras');
 
-    // ---- Estelares (MEF + Contraloría) ----
+    // ---- Estelares (MEF + Contraloría) — arranca oculto (ver HTML),
+    // solo se muestra lo que de verdad se pudo calcular con datos reales.
     var reales = construirHistoriasReales(mef, contraloria);
     var idsReales = Object.keys(reales);
+    var estelaresGrid = document.getElementById('estelaresGrid');
+    var estelaresVacio = document.getElementById('estelaresVacio');
+    var secondaryStack = document.getElementById('secondaryStack');
     if (idsReales.length) {
       idsReales.forEach(function(id){ STORIES[id] = reales[id]; });
       if (reales.s1) renderLeadCard('s1', reales.s1);
       if (reales.s2) renderSecondaryCard('s2', reales.s2);
       if (reales.s3) renderSecondaryCard('s3', reales.s3);
+      if (secondaryStack) secondaryStack.hidden = !(reales.s2 || reales.s3);
+      if (estelaresGrid) {
+        estelaresGrid.hidden = false;
+        estelaresGrid.classList.toggle('single', !(reales.s2 || reales.s3));
+      }
+      if (estelaresVacio) estelaresVacio.hidden = true;
       var masReciente = [mef, contraloria].filter(Boolean).map(function(d){ return d.generado_en; }).filter(Boolean).sort().pop();
       document.getElementById('heroKickerText').textContent = 'Estelares · datos reales · ' + fmtFechaCorta(masReciente);
-      partesReales.push('Estelares');
+    } else {
+      document.getElementById('heroKickerText').textContent = 'Estelares · sin datos suficientes todavía';
     }
 
     // ---- Mapa (inversión MEF + municipalidades INEI) ----
-    if (typeof aplicarInversionRealAlMapa === 'function' && aplicarInversionRealAlMapa(mef)) {
-      partesReales.push('Mapa (inversión)');
-    }
-    if (typeof aplicarMunicipiosRealAlMapa === 'function' && aplicarMunicipiosRealAlMapa(inei)) {
-      partesReales.push('Mapa (municipalidades)');
-    }
+    if (typeof aplicarInversionRealAlMapa === 'function') aplicarInversionRealAlMapa(mef);
+    if (typeof aplicarMunicipiosRealAlMapa === 'function') aplicarMunicipiosRealAlMapa(inei);
 
     // ---- Fuentes (estado real de sincronización) ----
-    if (aplicarEstadoFuentes(mef, contraloria, inei)) {
-      partesReales.push('Fuentes');
-    }
-
-    if (partesReales.length) {
-      var ribbon = document.getElementById('demoRibbon');
-      ribbon.innerHTML = '🔶 Datos reales activos: <strong>' + partesReales.join(' · ') + '</strong>. El resto de la página sigue en modo demostración con datos ficticios mientras se conectan más fuentes. El Catálogo, más abajo, siempre enlaza directo al portal oficial.';
-    }
+    aplicarEstadoFuentes(mef, contraloria, inei);
   });
 
   /* ============ modal de historia ============ */
@@ -1722,25 +1524,15 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
     return '<button class="region-tile" style="grid-row:'+g.r+';grid-column:'+g.c+'" data-region="'+g.n+'">' + g.n + '</button>';
   }).join('');
 
-  function hashNum(str, seed){
-    var h = seed;
-    for (var i=0; i<str.length; i++){ h = (h*31 + str.charCodeAt(i)) >>> 0; }
-    return h;
-  }
-  function regionStats(name){
-    var base = hashNum(name, 17);
-    return {
-      contrataciones: 12 + (base % 240),
-      inversion: (5 + (hashNum(name,41) % 90)) + '.' + (hashNum(name,3)%9) + 'M',
-      poblacion: (80 + (hashNum(name,7) % 900)) + 'K hab.',
-      tendencia: (hashNum(name,53) % 2 === 0 ? '▲ ' : '▼ ') + (3 + (hashNum(name,11)%30)) + '%'
-    };
-  }
-
-  // Inversión real (MEF): se llena solo si la sincronización trajo
-  // top_regiones_por_monto. Mientras no haya dato real para una región
-  // puntual, esa región se queda con el estimado de demo (nunca se inventa
-  // un número "real" a medias) — ver aplicarInversionRealAlMapa() más abajo.
+  // Este mapa solo muestra los DOS indicadores para los que Perú en Datos
+  // tiene un conector real (inversión ejecutada del MEF, municipalidades
+  // del INEI) — antes también mostraba "Contrataciones vigentes",
+  // "Población" y una "Tendencia trimestral", pero esos tres nunca
+  // tuvieron una fuente real detrás (eran un número generado a partir del
+  // nombre de la región, no un dato). Se quitaron en vez de dejarlos como
+  // relleno — ver README para el detalle. Mientras una región no tenga
+  // ninguno de los dos datos reales sincronizados todavía, la ficha lo
+  // dice explícitamente en vez de inventar un número.
   var regionInversionReal = null; // { 'lima': 61234567890.12, ... }
   var regionMunicipiosReal = null; // { 'cusco': 13, ... } — INEI RENAMU
 
@@ -1771,37 +1563,26 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
     Array.prototype.forEach.call(regionGrid.querySelectorAll('.region-tile'), function(t){
       t.classList.toggle('active', t.getAttribute('data-region') === name);
     });
-    var st = regionStats(name);
     var invReal = inversionRealPara(name);
     var muniReal = municipiosRealPara(name);
-    var inversionHtml = invReal != null
-      ? '<div class="mapa-stat"><span class="label">Inversión ejecutada 2025 (MEF, real)</span><span class="value tabular">' + formatSoles(invReal) + '</span></div>'
-      : '<div class="mapa-stat"><span class="label">Inversión referencial (demo)</span><span class="value tabular">S/ ' + st.inversion + '</span></div>';
-    var municipiosHtml = muniReal != null
-      ? '<div class="mapa-stat"><span class="label">Municipalidades (INEI, real)</span><span class="value tabular">' + muniReal.toLocaleString('es-PE') + '</span></div>'
-      : '';
     var algoReal = invReal != null || muniReal != null;
+    var statsHtml = '';
+    if (invReal != null) {
+      statsHtml += '<div class="mapa-stat"><span class="label">Inversión ejecutada 2025 (MEF)</span><span class="value tabular">' + formatSoles(invReal) + '</span></div>';
+    }
+    if (muniReal != null) {
+      statsHtml += '<div class="mapa-stat"><span class="label">Municipalidades (INEI)</span><span class="value tabular">' + muniReal.toLocaleString('es-PE') + '</span></div>';
+    }
     mapaPanel.innerHTML =
       '<div class="region-name">' + name + '</div>' +
-      '<div class="region-sub">' + (algoReal ? 'Incluye datos reales (marcados) · el resto de esta ficha sigue en demo' : 'Datos demo · actualizado hoy') + '</div>' +
-      '<div class="mapa-stat"><span class="label">Contrataciones vigentes</span><span class="value tabular">' + st.contrataciones + '</span></div>' +
-      inversionHtml +
-      municipiosHtml +
-      '<div class="mapa-stat"><span class="label">Población</span><span class="value tabular">' + st.poblacion + '</span></div>' +
-      '<div class="mapa-stat"><span class="label">Tendencia trimestral</span><span class="value tabular">' + st.tendencia + '</span></div>';
+      '<div class="region-sub">' + (algoReal ? 'Datos reales sincronizados' : 'Todavía sin datos reales sincronizados para esta región') + '</div>' +
+      (algoReal ? statsHtml : '<p style="color:var(--ink-soft); font-size:.86rem; line-height:1.5;">Aparecerá aquí en cuanto el MEF o el INEI se vuelvan a sincronizar con un dato para ' + name + '.</p>');
   }
   regionGrid.addEventListener('click', function(e){
     var btn = e.target.closest('.region-tile');
     if (btn) selectRegion(btn.getAttribute('data-region'));
   });
   selectRegion('Cusco');
-
-  Array.prototype.forEach.call(document.querySelectorAll('.mapa-indicador button'), function(btn){
-    btn.addEventListener('click', function(){
-      Array.prototype.forEach.call(document.querySelectorAll('.mapa-indicador button'), function(b){ b.classList.remove('active'); });
-      btn.classList.add('active');
-    });
-  });
 
   function aplicarInversionRealAlMapa(mef){
     if (!mef || mef.estado !== 'ok' || !mef.top_regiones_por_monto) return false;
@@ -1824,19 +1605,6 @@ footer h5{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; 
     selectRegion(regionActiva);
     return true;
   }
-
-  /* ============ Tu Perú: intereses ============ */
-  var INTERESES = ['Cusco','Economía','Obras','Empresas','Gobierno','Trabajo','Educación','Salud'];
-  var DEFAULT_ON = {'Cusco':true,'Economía':true,'Obras':true};
-  var interesGrid = document.getElementById('interesGrid');
-  interesGrid.innerHTML = INTERESES.map(function(t){
-    var checked = DEFAULT_ON[t] ? ' checked' : '';
-    return '<label class="interes-chip' + (DEFAULT_ON[t]?' checked':'') + '"><input type="checkbox"' + checked + ' data-t="'+t+'">' + t + '</label>';
-  }).join('');
-  Array.prototype.forEach.call(interesGrid.querySelectorAll('.interes-chip'), function(chip){
-    var input = chip.querySelector('input');
-    input.addEventListener('change', function(){ chip.classList.toggle('checked', input.checked); });
-  });
 
   /* ============ menú móvil (nav) ============ */
   // La demo usa navegación por ancla; en pantallas angostas el menú superior
