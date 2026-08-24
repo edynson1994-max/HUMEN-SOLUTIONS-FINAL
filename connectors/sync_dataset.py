@@ -88,7 +88,16 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 CATALOG_PATH = os.path.join(DATA_DIR, "catalog.json")
 SOURCES_DIR = os.path.join(DATA_DIR, "sources")
 
-FORMATOS_CSV_RECONOCIDOS = {"csv", "text/csv", "csv " , ""}  # "" cubre datasets donde el portal no especifica formato
+FORMATOS_CSV_RECONOCIDOS = {"csv", "text/csv", "csv ", "cvs", ""}
+# "" cubre datasets donde el portal no especifica formato. "cvs" es un
+# typo real y confirmado del propio portal (no un formato distinto de
+# csv) — verificado contra datos reales de producción: los recursos
+# marcados "cvs" en datosabiertos.gob.pe son CSVs normales con el
+# nombre del formato mal escrito en su metadato, no otra cosa. Ver
+# también el .lstrip(".") en descargar_y_parsear: el portal también usa
+# ".csv" (con punto) para el mismo formato — antes de ese fix, 13
+# datasets reales con formato ".csv" se rechazaban como "no soportados"
+# sin serlo.
 
 
 def cargar_catalogo(catalog_path):
@@ -141,11 +150,28 @@ def resolver_url_en_vivo(dataset_id, resource_id, url_respaldo):
     return url_respaldo, "url_catalogo"
 
 
+def _parece_pagina_html(texto):
+    """Heurística barata para detectar cuando el servidor respondió con
+    una página HTML (login, redirección, "no encontrado") en vez del
+    CSV real, con código HTTP 200 — así que no salta como fallo de red
+    ni de formato, y sin esto quedaba archivado como "ok" con datos
+    falsos. Esto NO es hipotético: se encontró revisando datos reales
+    de la primera corrida en producción — 45 de los 213 datasets
+    marcados "ok" resultaron ser el <!DOCTYPE html> de una página del
+    portal, no una fila real de datos (ver README). Solo mira el
+    principio del texto — un CSV real, por más raro que sea su
+    contenido, no empieza con una etiqueta HTML."""
+    inicio = texto.lstrip()[:200].lower()
+    return inicio.startswith("<!doctype html") or inicio.startswith("<html") or inicio.startswith("<?xml")
+
+
 def parsear_csv_generico(raw_bytes, max_filas_muestra=20):
     """Parsea CUALQUIER CSV sin asumir columnas — solo cuenta filas y
     guarda una muestra. Ver docstring del módulo sobre por qué no se
     interpreta el significado de las columnas aquí."""
     texto = smart_decode(raw_bytes)
+    if _parece_pagina_html(texto):
+        raise FormatoNoSoportado("contenido_html_recibido_en_vez_de_csv")
     reader = sniff_csv_reader(io.StringIO(texto))
     fieldnames = reader.fieldnames or []
     filas = list(reader)
@@ -157,7 +183,7 @@ def parsear_csv_generico(raw_bytes, max_filas_muestra=20):
 
 
 def descargar_y_parsear(url, formato, max_mb=None):
-    formato_norm = (formato or "").strip().lower()
+    formato_norm = (formato or "").strip().lower().lstrip(".")
     if formato_norm not in FORMATOS_CSV_RECONOCIDOS:
         raise FormatoNoSoportado(formato or "(sin especificar)")
     max_bytes = int(max_mb * 1024 * 1024) if max_mb else None
