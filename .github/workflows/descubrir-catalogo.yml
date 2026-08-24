@@ -11,19 +11,39 @@ name: Descubrir catálogo PNDA (Fase 3 - Perú en Datos)
 # los datasets que aparezcan aquí). El cron automático llega en la Fase 5,
 # cuando discovery + sync corran juntos.
 #
+# SE PUEDE CORTAR Y CONTINUAR — corregido tras la primera corrida real
+# contra el portal completo (2026-08-22), que iba camino a superar el
+# límite de tiempo del job y hubiera perdido TODO lo procesado (antes,
+# discovery.py solo guardaba resultados al terminar). Ahora:
+#   - discovery.py se detiene solo ("max_minutos") ANTES de que GitHub
+#     Actions mate el job por su propio timeout-minutes, guardando
+#     ordenadamente lo que llevaba y con "siguiente_empezar_en" listo.
+#   - Además guarda un catalog.json parcial cada 200 datasets
+#     ("--checkpoint-cada", fijo en discovery.py) por si algo más corta
+#     la corrida de golpe (cancelación manual, caída del runner).
+#   - Si "Run workflow" te dice que la corrida quedó parcial, revisa
+#     "siguiente_empezar_en" en el resumen del run y vuelve a correr el
+#     workflow poniendo ese número en el campo "empezar_en" — así
+#     continúas exactamente donde quedó, sin repetir ni saltarte nada.
+#
 # Para una primera prueba rápida, usa "Run workflow" y pon un número
-# pequeño en "limit" (ej. 20) — así se prueba el flujo completo sin
-# esperar a recorrer los ~4,600 datasets del portal. Déjalo vacío para la
-# corrida completa (tarda varios minutos, a propósito: hay una pausa
-# entre peticiones para no saturar el servidor del portal).
+# pequeño en "limit" (ej. 20).
 
 on:
   workflow_dispatch:
     inputs:
       limit:
-        description: "Procesar solo los primeros N datasets del portal (vacío = todos, ~4,600)"
+        description: "Procesar solo los primeros N datasets desde 'empezar_en' (vacío = todos los que queden)"
         required: false
         default: ""
+      empezar_en:
+        description: "Saltar los primeros N datasets del portal (para CONTINUAR una corrida anterior que quedó parcial — usa el 'siguiente_empezar_en' de esa corrida)"
+        required: false
+        default: "0"
+      max_minutos:
+        description: "Detenerse ordenadamente (guardando avance) después de este tiempo, dejando margen antes del límite del job"
+        required: false
+        default: "100"
       probar_data_api:
         description: "Para qué datasets probar en vivo si tienen Data API"
         required: false
@@ -40,7 +60,7 @@ permissions:
 jobs:
   descubrir-catalogo:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - name: Descargar el repositorio
         uses: actions/checkout@v4
@@ -51,10 +71,19 @@ jobs:
           python-version: "3.12"
 
       - name: Ejecutar discovery.py
+        env:
+          EMPEZAR_EN: ${{ github.event.inputs.empezar_en }}
+          MAX_MINUTOS: ${{ github.event.inputs.max_minutos }}
+          LIMIT: ${{ github.event.inputs.limit }}
         run: |
-          ARGS=""
-          if [ -n "${{ github.event.inputs.limit }}" ]; then
-            ARGS="$ARGS --limit ${{ github.event.inputs.limit }}"
+          # Defensivo: si alguien borra el valor por defecto de un campo y
+          # lo deja vacío, no queremos pasarle "--empezar-en" sin valor a
+          # argparse (revienta) — se cae a los defaults sensatos de abajo.
+          EMPEZAR_EN="${EMPEZAR_EN:-0}"
+          MAX_MINUTOS="${MAX_MINUTOS:-100}"
+          ARGS="--empezar-en $EMPEZAR_EN --max-minutos $MAX_MINUTOS"
+          if [ -n "$LIMIT" ]; then
+            ARGS="$ARGS --limit $LIMIT"
           fi
           python connectors/discovery.py --probar-data-api "${{ github.event.inputs.probar_data_api }}" $ARGS
 
@@ -67,14 +96,17 @@ jobs:
               with open("data/catalog.json", encoding="utf-8") as f:
                   d = json.load(f)
           except FileNotFoundError:
-              print("No se generó data/catalog.json (falló antes de escribir).")
+              print("No se generó data/catalog.json (falló antes de escribir el primer checkpoint).")
               raise SystemExit(0)
-          print(f"**Estado:** {d.get('estado')}")
+          print(f"**Estado:** {d.get('estado')} {'✅ corrida completa' if d.get('corrida_completa') else '⏸️ corrida parcial'}")
           print(f"**Datasets en el portal:** {d.get('total_datasets_portal')}")
-          print(f"**Datasets procesados:** {d.get('total_datasets_procesados')}")
-          print(f"**Clasificados como Economía y Finanzas:** {d.get('total_clasificados_economia_finanzas')}")
+          print(f"**Datasets procesados en ESTA corrida:** {d.get('total_datasets_procesados')} (empezó en el índice {d.get('empezar_en_usado_esta_corrida')})")
+          print(f"**Clasificados como Economía y Finanzas (en esta corrida):** {d.get('total_clasificados_economia_finanzas')}")
           print(f"**Recursos con Data API confirmada:** {d.get('total_recursos_con_data_api_confirmada')}")
           print(f"**Errores:** {len(d.get('errores') or [])}")
+          print(f"**Tardó:** {d.get('minutos_que_tomo_esta_corrida')} minutos")
+          if not d.get("corrida_completa"):
+              print(f"\n⚠️ **La corrida quedó parcial.** Para continuar, vuelve a correr este workflow con `empezar_en = {d.get('siguiente_empezar_en')}`.")
           if d.get("errores"):
               print("\n| dataset_id | error |\n|---|---|")
               for e in d["errores"][:20]:
@@ -90,8 +122,13 @@ jobs:
           retention-days: 14
           if-no-files-found: warn
 
-      - name: Confirmar y subir cambios (solo si hubo cambios)
+      - name: Confirmar y subir cambios (siempre que exista el archivo, incluso si la corrida quedó parcial o el job se cortó)
+        if: always()
         run: |
+          if [ ! -f data/catalog.json ]; then
+            echo "No hay data/catalog.json que confirmar (no se llegó a guardar ni un checkpoint)."
+            exit 0
+          fi
           git config user.name "peru-en-datos-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/catalog.json
