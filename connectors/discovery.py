@@ -152,14 +152,53 @@ ENTIDADES_ECONOMIA_FINANZAS_SIGLAS = ["mef", "sunat", "bcrp", "onp", "cofide", "
 # publicadora no está en la lista de arriba, pero el contenido del
 # dataset es claramente económico-financiero — ej. un dataset de
 # presupuesto publicado por un gobierno regional, no por el MEF).
+#
+# "fiscal" fue quitada a propósito — revisé la corrida real completa
+# (2026-08-23, 706 datasets clasificados) descargando el catalog.json real
+# y analizándolo con Python, no una muestra: esa sola palabra generó 131
+# coincidencias, de las cuales 107 eran falsos positivos claros que no
+# tienen nada que ver con Economía y Finanzas — "año fiscal" (una fecha,
+# no el tema del dataset), "distrito fiscal"/"fiscalía" (Ministerio
+# Público = fiscales = PROCURADORES, no finanzas), e "Insumos Químicos
+# Fiscalizados"/"Producción Fiscalizada" (OEFA/MINEM = FISCALIZACIÓN
+# ambiental o regulatoria = supervisión, no finanzas). "fiscal" en
+# español es ambiguo entre "relativo al fisco/impuestos" y "relativo a la
+# fiscalía/persecución penal" o "fiscalización/supervisión regulatoria" —
+# los otros 24 casos donde SÍ había contenido de Economía y Finanzas real
+# ya quedaban cubiertos por otras palabras clave más específicas de esta
+# lista (presupuesto/impuesto/etc.), así que quitar "fiscal" no pierde
+# cobertura real, solo el ruido.
 PALABRAS_CLAVE_ECONOMIA_FINANZAS = [
     "presupuesto", "gasto publico", "gasto público", "tributacion",
     "tributario", "recaudacion", "deuda publica", "deuda pública",
     "inversion publica", "inversión pública", "ejecucion presupuestal",
     "ejecución presupuestal", "canon", "ingresos publicos",
-    "ingresos públicos", "devengado", "presupuestal", "fiscal",
+    "ingresos públicos", "devengado", "presupuestal",
     "financiero", "financiera", "impuesto", "arancel", "aduana",
     "regalia", "regalía", "endeudamiento",
+]
+
+# Entidades cuyo NOMBRE o TAGS suelen colisionar con las palabras clave de
+# arriba pero cuya actividad principal no es Economía y Finanzas — se
+# excluyen del paso por palabra_clave (no del paso por entidad, que de
+# todos modos no las incluye). Encontradas revisando la corrida real:
+#   - OEFA ("Organismo de Evaluación y FISCALIZACIÓN Ambiental"): 46+
+#     datasets ambientales quedaron adentro solo por la palabra
+#     "fiscalización"/tags compartidos — es supervisión ambiental, no
+#     finanzas.
+#   - PRONABEC ("Programa Nacional de Becas y CRÉDITO Educativo"): 33
+#     datasets de becas/personal/convocatorias quedaron adentro — el
+#     programa tiene "crédito" en el nombre pero es un programa de becas
+#     educativas, no una entidad financiera.
+#   - Contraloría General de la República (CGR): sus datasets de
+#     "Monitores Ciudadanos de Control" quedaron adentro por tags — esos
+#     mismos datasets ya están conectados y categorizados como
+#     "Gobernabilidad" en el resto de Perú en Datos (ver peru-datos/app.html,
+#     sección Catálogo), no como Economía y Finanzas.
+ENTIDADES_EXCLUIDAS_DE_PALABRA_CLAVE = [
+    "organismo de evaluacion y fiscalizacion ambiental",
+    "programa nacional de becas y credito educativo",
+    "contraloria general de la republica",
 ]
 
 
@@ -177,6 +216,12 @@ def clasificar_categoria(dataset_result):
     for sigla in ENTIDADES_ECONOMIA_FINANZAS_SIGLAS:
         if re.search(r"\b" + re.escape(sigla) + r"\b", entidad_norm):
             return "Economía y Finanzas", "entidad"
+
+    # Ver ENTIDADES_EXCLUIDAS_DE_PALABRA_CLAVE arriba — estas entidades NO
+    # pasan al paso por palabra clave, aunque su nombre o tags coincidan
+    # con alguna (confirmado con la corrida real que sí colisionaban).
+    if any(excluida in entidad_norm for excluida in ENTIDADES_EXCLUIDAS_DE_PALABRA_CLAVE):
+        return None, None
 
     tags_txt = " ".join((t.get("name") or "") for t in (dataset_result.get("tags") or []))
     texto = normalize(" ".join([
@@ -220,11 +265,21 @@ def construir_entrada_dataset(slug, dataset_result, probar_data_api_este):
             "detalle_data_api": detalle_data_api,
         })
 
+    # Se guardan los tags — corregido tras la primera revisión manual del
+    # catalog.json real (2026-08-23): la clasificación por palabra_clave
+    # también mira los tags (no solo título/notas), pero como antes no se
+    # guardaban en la salida, ~99 datasets clasificados así no se podían
+    # auditar sin volver a llamar a la API para ver qué tag disparó el
+    # match. Ahora quedan en el archivo, así cualquier revisión futura es
+    # 100% reproducible localmente, sin red.
+    tags = [t.get("name") for t in (dataset_result.get("tags") or []) if t.get("name")]
+
     return {
         "dataset_id": slug,
         "titulo": dataset_result.get("title"),
         "descripcion": dataset_result.get("notes"),
         "entidad": entidad,
+        "tags": tags,
         "categoria": categoria,
         "categoria_metodo": categoria_metodo,
         "dataset_url": PNDA_DATASET_BASE_URL + quote(slug, safe=""),
