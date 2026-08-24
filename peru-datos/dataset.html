@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="../images/favicon.png">
 <link rel="shortcut icon" href="../images/favicon.png">
 </head>
@@ -17,41 +17,47 @@
    mismos tokens de diseño que app.html (mismo :root, mismos nombres de
    variable) para que se vea como parte del mismo sitio, no como una
    página aparte — ver la sección "Fundamentals" del resto del proyecto:
-   nunca se rediseña, solo se reutiliza lo que ya existe. */
+   nunca se rediseña, solo se reutiliza lo que ya existe.
+   Paleta alineada a humen.solutions (ver app.html): verde bosque como
+   acento principal, oro cálido como secundario, Manrope como tipografía
+   única. --error es nuevo aquí (app.html no lo usa) y se mantiene como
+   un rojo aparte del verde de marca — si "carmin" ahora significa
+   "acento principal" en vez de "algo salió mal", un estado de error
+   necesita su propio color para seguir leyéndose como error. */
 :root{
-  --paper: #EEEAE1; --paper-raised: #F7F4EE; --ink: #1C1A22; --ink-soft: #57524C;
-  --line: #DBD3C1; --line-soft: #E4DDCD;
-  --carmin: #A32638; --carmin-ink: #7A1B2A; --carmin-bg: #F6E4E3;
-  --oro: #9A6415; --oro-bg: #F3E6CC;
-  --andes: #1D4E4B; --andes-bg: #DCE9E5;
-  --ok: #2F6B3F; --ok-bg: #DEEBDF;
-  --error: #A32638; --error-bg: #F6E4E3;
-  --shadow: 0 1px 2px rgba(28,26,34,.06), 0 8px 24px -12px rgba(28,26,34,.18);
-  --radius-s: 8px; --radius-m: 14px; --radius-l: 22px;
-  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
-  --font-body: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --paper: #FDFCFA; --paper-raised: #FFFFFF; --ink: #26261F; --ink-soft: #6E6B5D;
+  --line: #E6E0D0; --line-soft: #EFE9DC;
+  --carmin: #33472A; --carmin-ink: #24331C; --carmin-bg: #F5F7F2;
+  --oro: #B9975B; --oro-bg: #FAF5E9;
+  --andes: #4F6B3A; --andes-bg: #EAF0E4;
+  --ok: #3D7A45; --ok-bg: #E7F2E9;
+  --error: #A3372B; --error-bg: #F7E6E2;
+  --shadow: 0 1px 2px rgba(38,38,32,.06), 0 8px 24px -12px rgba(38,38,32,.16);
+  --radius-s: 10px; --radius-m: 16px; --radius-l: 20px;
+  --font-display: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "Manrope", ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --paper: #17151B; --paper-raised: #201D25; --ink: #ECE7DC; --ink-soft: #B3AB9C;
-    --line: #34303A; --line-soft: #2A2731;
-    --carmin: #E2687A; --carmin-ink: #F0919F; --carmin-bg: #3A2028;
-    --oro: #E1B15C; --oro-bg: #3A3020;
-    --andes: #6FBBB3; --andes-bg: #1D3634;
-    --ok: #7FC08D; --ok-bg: #1E3524;
-    --error: #E2687A; --error-bg: #3A2028;
+    --paper: #1A1F16; --paper-raised: #23291D; --ink: #ECE7DC; --ink-soft: #B3AB9C;
+    --line: #38402F; --line-soft: #2E3527;
+    --carmin: #86B26C; --carmin-ink: #A3C98C; --carmin-bg: #26301E;
+    --oro: #D4B876; --oro-bg: #332A18;
+    --andes: #9BBF7E; --andes-bg: #232A1B;
+    --ok: #8FCB86; --ok-bg: #1E2A1C;
+    --error: #E08578; --error-bg: #3A251F;
     --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
   }
 }
 :root[data-theme="dark"]{
-  --paper: #17151B; --paper-raised: #201D25; --ink: #ECE7DC; --ink-soft: #B3AB9C;
-  --line: #34303A; --line-soft: #2A2731;
-  --carmin: #E2687A; --carmin-ink: #F0919F; --carmin-bg: #3A2028;
-  --oro: #E1B15C; --oro-bg: #3A3020;
-  --andes: #6FBBB3; --andes-bg: #1D3634;
-  --ok: #7FC08D; --ok-bg: #1E3524;
-  --error: #E2687A; --error-bg: #3A2028;
+  --paper: #1A1F16; --paper-raised: #23291D; --ink: #ECE7DC; --ink-soft: #B3AB9C;
+  --line: #38402F; --line-soft: #2E3527;
+  --carmin: #86B26C; --carmin-ink: #A3C98C; --carmin-bg: #26301E;
+  --oro: #D4B876; --oro-bg: #332A18;
+  --andes: #9BBF7E; --andes-bg: #232A1B;
+  --ok: #8FCB86; --ok-bg: #1E2A1C;
+  --error: #E08578; --error-bg: #3A251F;
   --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
 }
 *,*::before,*::after{ box-sizing:border-box; }
