@@ -1,0 +1,194 @@
+name: Sincronizar datasets de Economía y Finanzas (Fase 5 - Perú en Datos)
+
+# Corre connectors/sync_dataset.py --todos-de-categoria "Economía y Finanzas"
+# contra el catalog.json YA COMMITEADO (lo genera un workflow aparte,
+# "Descubrir catálogo PNDA" — ver más abajo por qué son dos workflows
+# separados y no uno solo). Escribe/actualiza data/sources/<dataset_id>/
+# para cada dataset de la categoría.
+#
+# POR QUÉ DISCOVERY Y SYNC SON DOS WORKFLOWS SEPARADOS (y no uno combinado
+# como sugería el plan original de la Fase 5):
+#   - Descubrir el catálogo completo (~4,600 datasets del portal) es una
+#     operación cara (~1-2h) pero de baja frecuencia: el portal no publica
+#     entidades/datasets nuevos todos los días. Por eso "Descubrir catálogo
+#     PNDA" se mantiene MANUAL (workflow_dispatch), corrida cada tanto por
+#     un humano que revisa el resultado.
+#   - Sincronizar los datos DE LOS DATASETS YA CONOCIDOS (esta categoría,
+#     ~500-700) sí necesita refrescarse seguido (los propios datasets se
+#     actualizan con su propio calendario — mensual, trimestral). Por eso
+#     ESTE workflow sí tiene "schedule" (cron) y corre solo.
+#   - Combinarlos en un solo job forzaría a esperar ~2h de discovery cada
+#     vez que solo hacía falta refrescar datos ya conocidos — desperdicia
+#     tiempo de Actions y aumenta el riesgo de que el job completo se corte
+#     por timeout antes de llegar a sincronizar nada.
+#
+# CONTINUACIÓN AUTOMÁTICA ENTRE CORRIDAS PROGRAMADAS (sin intervención
+# humana, a diferencia de "Descubrir catálogo PNDA" que pide el
+# "empezar_en" a mano):
+#   Cada corrida guarda en el repo, junto a los datos,
+#   data/sources/_resumen_ultima_corrida.json con "siguiente_empezar_en".
+#   La SIGUIENTE corrida programada (el próximo cron) lo lee automáticamente:
+#     - Si la corrida anterior quedó PARCIAL (se cortó por --max-minutos),
+#       continúa exactamente donde quedó.
+#     - Si la corrida anterior se completó entera, vuelve a empezar en 0 —
+#       así el ciclo se repite indefinidamente, dataset por dataset, sin
+#       que ninguno quede eternamente desactualizado ni se repita de más.
+#   "Run workflow" a mano SIEMPRE puede pisar esto con el campo
+#   "empezar_en" del formulario, por si hace falta forzar un punto de
+#   partida distinto.
+#
+# Probado offline (sin red) con reloj y sincronizar() simulados —
+# test_sync_checkpoint.py — verificando que dos corridas encadenadas
+# (una cortada por tiempo + su continuación) cubren cada dataset de la
+# categoría EXACTAMENTE una vez, sin huecos ni repetidos.
+
+on:
+  workflow_dispatch:
+    inputs:
+      categoria:
+        description: "Categoría del catálogo a sincronizar"
+        required: false
+        default: "Economía y Finanzas"
+      empezar_en:
+        description: "Forzar desde qué índice empezar (vacío = automático: sigue donde quedó la corrida anterior, ver arriba)"
+        required: false
+        default: ""
+      limit:
+        description: "Procesar solo los primeros N datasets desde 'empezar_en' (vacío = todos los que queden)"
+        required: false
+        default: ""
+      max_minutos:
+        description: "Detenerse ordenadamente (nada se pierde: cada dataset ya se guarda al procesarse) después de este tiempo"
+        required: false
+        default: "75"
+      max_mb:
+        description: "Cortar cada descarga a los primeros N MB (evita bajar archivos enormes sin querer en una corrida automática)"
+        required: false
+        default: "25"
+  schedule:
+    # Todos los domingos 09:00 UTC (04:00 hora Perú). Cron interpretado en
+    # UTC por GitHub Actions.
+    - cron: "0 9 * * 0"
+
+permissions:
+  contents: write
+
+jobs:
+  sincronizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verificar que exista el catálogo
+        run: |
+          if [ ! -f data/catalog.json ]; then
+            echo "::error::No existe data/catalog.json — corre primero el workflow 'Descubrir catálogo PNDA'."
+            exit 1
+          fi
+
+      - name: Calcular desde dónde continuar
+        id: continuar
+        env:
+          EMPEZAR_EN_INPUT: ${{ github.event.inputs.empezar_en }}
+        run: |
+          # Prioridad: 1) lo que puso la persona a mano en "Run workflow",
+          # 2) "siguiente_empezar_en" de la última corrida guardada en el
+          #    repo (continuación automática entre corridas programadas),
+          # 3) 0 (primera corrida de todas).
+          if [ -n "$EMPEZAR_EN_INPUT" ]; then
+            EMPEZAR_EN="$EMPEZAR_EN_INPUT"
+            echo "Usando empezar_en del formulario: $EMPEZAR_EN"
+          elif [ -f data/sources/_resumen_ultima_corrida.json ]; then
+            EMPEZAR_EN=$(python3 - <<'PY'
+          import json
+          try:
+              with open("data/sources/_resumen_ultima_corrida.json", encoding="utf-8") as f:
+                  d = json.load(f)
+              v = d.get("siguiente_empezar_en")
+              print(v if v is not None else 0)
+          except Exception:
+              print(0)
+          PY
+          )
+            echo "Continuando automáticamente desde la corrida anterior: empezar_en=$EMPEZAR_EN"
+          else
+            EMPEZAR_EN=0
+            echo "No hay corrida anterior registrada — empezando desde 0."
+          fi
+          echo "empezar_en=$EMPEZAR_EN" >> "$GITHUB_OUTPUT"
+
+      - name: Ejecutar sync_dataset.py
+        env:
+          CATEGORIA: ${{ github.event.inputs.categoria }}
+          EMPEZAR_EN: ${{ steps.continuar.outputs.empezar_en }}
+          MAX_MINUTOS: ${{ github.event.inputs.max_minutos }}
+          MAX_MB: ${{ github.event.inputs.max_mb }}
+          LIMIT: ${{ github.event.inputs.limit }}
+        run: |
+          # Defensivo, mismo patrón que "Descubrir catálogo PNDA": si un
+          # campo del formulario queda vacío (o esta es una corrida por
+          # "schedule", que no llena los inputs), se cae a defaults sensatos.
+          CATEGORIA="${CATEGORIA:-Economía y Finanzas}"
+          MAX_MINUTOS="${MAX_MINUTOS:-75}"
+          MAX_MB="${MAX_MB:-25}"
+          ARGS="--empezar-en $EMPEZAR_EN --max-minutos $MAX_MINUTOS --max-mb $MAX_MB"
+          if [ -n "$LIMIT" ]; then
+            ARGS="$ARGS --limit $LIMIT"
+          fi
+          python connectors/sync_dataset.py --todos-de-categoria "$CATEGORIA" $ARGS
+
+      - name: Mostrar un resumen rápido en la pestaña del run
+        if: always()
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          try:
+              with open("data/sources/_resumen_ultima_corrida.json", encoding="utf-8") as f:
+                  d = json.load(f)
+          except FileNotFoundError:
+              print("No se generó el resumen (falló antes de terminar el primer dataset).")
+              raise SystemExit(0)
+          print(f"**Categoría:** {d.get('categoria')}")
+          print(f"**Total en la categoría:** {d.get('total_en_categoria')}")
+          print(f"**Procesados en ESTA corrida:** {d.get('procesados_esta_corrida')} (empezó en el índice {d.get('empezar_en_usado')})")
+          print(f"**OK:** {d.get('ok')} — **Errores:** {d.get('errores')} — **Formato no soportado:** {d.get('no_soportados')}")
+          estado = "✅ corrida completa (el próximo cron reinicia desde 0)" if d.get("corrida_completa") else f"⏸️ corrida parcial — el próximo cron continúa automáticamente en {d.get('siguiente_empezar_en')}"
+          print(f"**Estado:** {estado}")
+          PY
+
+      - name: Confirmar y subir cambios (siempre, incluso si la corrida quedó parcial o el job se cortó)
+        if: always()
+        run: |
+          if [ ! -d data/sources ]; then
+            echo "No hay data/sources que confirmar (no se llegó a guardar ni un dataset)."
+            exit 0
+          fi
+          git config user.name "peru-en-datos-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/sources
+          if git diff --cached --quiet; then
+            echo "Sin cambios en data/sources, no se crea commit."
+            exit 0
+          fi
+          git commit -m "Sincroniza datasets de Economía y Finanzas (Fase 5) - $(date -u +'%Y-%m-%d %H:%M UTC')"
+
+          for intento in 1 2 3 4 5; do
+            git fetch origin main
+            if git merge origin/main --no-edit -X ours -m "Merge automático (sincronizar-economia-finanzas)"; then
+              if git push origin main; then
+                echo "Subido correctamente."
+                exit 0
+              fi
+            fi
+            echo "Intento $intento falló (probablemente otro push a la vez), reintentando..."
+            sleep $((intento * 5))
+          done
+          echo "No se pudo subir después de varios intentos." >&2
+          exit 1
