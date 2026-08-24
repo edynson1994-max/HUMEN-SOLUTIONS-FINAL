@@ -313,12 +313,15 @@ def guardar_resultado(resultado, sources_dir=SOURCES_DIR):
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("dataset_id", nargs="?", help="dataset_id exacto tal como aparece en catalog.json")
-    parser.add_argument("--todos-de-categoria", help="En vez de un dataset_id, sincroniza TODOS los del catálogo con esta categoría (ej. 'Economía y Finanzas'). Utilidad simple para probar hoy — el workflow programado y robusto es la Fase 5.")
-    parser.add_argument("--limit", type=int, default=None, help="Con --todos-de-categoria: procesar solo los primeros N (para pruebas).")
-    parser.add_argument("--resource-id", help="Forzar un resource_id específico en vez del que se elige automáticamente.")
-    parser.add_argument("--max-mb", type=float, default=None, help="Cortar la descarga a los primeros N MB (muestra parcial) — para pruebas rápidas con datasets grandes.")
+    parser.add_argument("--todos-de-categoria", help="En vez de un dataset_id, sincroniza TODOS los del catálogo con esta categoría (ej. 'Economía y Finanzas').")
+    parser.add_argument("--limit", type=int, default=None, help="Con --todos-de-categoria: procesar solo los primeros N (contados desde --empezar-en).")
+    parser.add_argument("--empezar-en", type=int, default=0, help="Con --todos-de-categoria: saltar los primeros N datasets de la categoría — para CONTINUAR una corrida anterior que se cortó por tiempo (ver 'siguiente_empezar_en' en el resumen de esa corrida).")
+    parser.add_argument("--max-minutos", type=float, default=None, help="Con --todos-de-categoria: detenerse ordenadamente (cada dataset ya se guarda individualmente al procesarse, así que nada se pierde) si supera este tiempo, en vez de esperar a que GitHub Actions lo mate de golpe.")
+    parser.add_argument("--resource-id", help="Forzar un resource_id específico en vez del que se elige automáticamente (solo tiene sentido con un dataset_id único, no con --todos-de-categoria).")
+    parser.add_argument("--max-mb", type=float, default=None, help="Cortar la descarga a los primeros N MB (muestra parcial) — recomendado en corridas grandes para no bajar archivos enormes sin querer (ver mef.py, que sí necesita el archivo completo aparte).")
     parser.add_argument("--catalogo", default=CATALOG_PATH, help="Ruta a catalog.json (default: data/catalog.json).")
     parser.add_argument("--out-dir", default=SOURCES_DIR, help="Carpeta base de salida (default: data/sources/).")
+    parser.add_argument("--resumen-out", default=None, help="Con --todos-de-categoria: ruta donde guardar un resumen JSON de la corrida (totales, siguiente_empezar_en). Default: <out-dir>/_resumen_ultima_corrida.json.")
     parser.add_argument("--pausa", type=float, default=0.5, help="Segundos de espera entre datasets en modo --todos-de-categoria.")
     args = parser.parse_args()
 
@@ -337,16 +340,29 @@ def main():
         print(json.dumps(resultado, ensure_ascii=False, indent=2))
         sys.exit(0 if resultado["estado"] == "ok" else 1)
 
-    objetivo = [
+    todos_los_de_la_categoria = [
         ds["dataset_id"] for ds in catalogo.get("datasets", [])
         if ds.get("categoria") == args.todos_de_categoria
     ]
+    total_categoria = len(todos_los_de_la_categoria)
+    objetivo = todos_los_de_la_categoria[args.empezar_en:]
     if args.limit:
         objetivo = objetivo[:args.limit]
-    print(f"Sincronizando {len(objetivo)} datasets de la categoría {args.todos_de_categoria!r}...", file=sys.stderr)
+    print(
+        f"{total_categoria} datasets en la categoría {args.todos_de_categoria!r}. "
+        f"Empezando en el índice {args.empezar_en}, procesando {len(objetivo)}...",
+        file=sys.stderr,
+    )
 
+    inicio = time.time()
     ok, errores, no_soportados = 0, 0, 0
+    cortado_por_tiempo = False
+    procesados = 0
     for i, dataset_id in enumerate(objetivo, 1):
+        if args.max_minutos is not None and (time.time() - inicio) / 60 >= args.max_minutos:
+            print(f"  Se alcanzó --max-minutos ({args.max_minutos}) en {i}/{len(objetivo)} — deteniendo.", file=sys.stderr)
+            cortado_por_tiempo = True
+            break
         print(f"[{i}/{len(objetivo)}] {dataset_id}", file=sys.stderr)
         try:
             resultado = sincronizar(dataset_id, catalogo, max_mb=args.max_mb)
@@ -363,9 +379,34 @@ def main():
         except Exception as exc:
             errores += 1
             print(f"    ERROR inesperado: {exc}", file=sys.stderr)
+        procesados = i
         time.sleep(args.pausa)
 
-    print(f"\nListo: {ok} ok, {errores} con error, {no_soportados} con formato no soportado, de {len(objetivo)}.", file=sys.stderr)
+    siguiente_empezar_en = args.empezar_en + procesados
+    corrida_completa = (not cortado_por_tiempo) and siguiente_empezar_en >= total_categoria
+    resumen = {
+        "categoria": args.todos_de_categoria,
+        "total_en_categoria": total_categoria,
+        "empezar_en_usado": args.empezar_en,
+        "procesados_esta_corrida": procesados,
+        "ok": ok,
+        "errores": errores,
+        "no_soportados": no_soportados,
+        "cortado_por_tiempo": cortado_por_tiempo,
+        "corrida_completa": corrida_completa,
+        "siguiente_empezar_en": None if corrida_completa else siguiente_empezar_en,
+    }
+    resumen_out = args.resumen_out or os.path.join(args.out_dir, "_resumen_ultima_corrida.json")
+    os.makedirs(os.path.dirname(resumen_out), exist_ok=True)
+    with open(resumen_out, "w", encoding="utf-8") as f:
+        json.dump(resumen, f, ensure_ascii=False, indent=2)
+
+    print(
+        f"\nListo: {ok} ok, {errores} con error, {no_soportados} con formato no soportado, "
+        f"de {procesados} procesados en esta corrida ({total_categoria} en la categoría). "
+        + ("CORRIDA COMPLETA." if corrida_completa else f"PARCIAL — continuar con --empezar-en {siguiente_empezar_en}."),
+        file=sys.stderr,
+    )
 
 
 if __name__ == "__main__":
