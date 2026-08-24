@@ -20,6 +20,22 @@ name: Sincronizar licitaciones
 # Las dos últimas están como jobs aparte y solo manuales a propósito: si fallan
 # o hace falta ajustar selectores, no arriesgan romper la sincronización
 # diaria que ya funciona.
+#
+# SOBRE LA DIFERENCIA DE COBERTURA vs "Oportunidades de Negocio v2.0" del SEACE
+# --------------------------------------------------------------------------------
+# El propio portal SEACE (prod4.seace.gob.pe/openegocio) reporta ~3,300+
+# oportunidades vigentes a nivel nacional; la fuente "ocp" que corre sola cada
+# día hoy trae ~540. La causa más probable (no confirmada aún con datos reales
+# masivos, solo con 1 ejemplo) es que el campo tenderPeriod.endDate — el que
+# se usa para decidir si un proceso sigue vigente — no es confiable en este
+# dataset específico de Perú: en el único release real inspeccionado, ese
+# campo ya estaba vencido para cuando se procesó el archivo, y CADA convocatoria
+# que hoy aparece en data.json llegó por el camino de respaldo (sin fecha
+# límite, publicada hace ≤30 días), no por tener una fecha límite futura real.
+# sync.py ahora guarda licitaciones/_diagnostico_campos.json en cada corrida
+# con estadísticas reales sobre miles de releases (ver _diagnosticar_release()
+# en sync.py) — revisar ese archivo después de la próxima corrida antes de
+# decidir si hay que ajustar el filtro de vigencia.
 
 on:
   schedule:
@@ -65,6 +81,7 @@ jobs:
           git config user.name "humen-licitaciones-bot"
           git config user.email "actions@users.noreply.github.com"
           git add licitaciones/data.json licitaciones/sample_raw_release.json
+          [ -f licitaciones/_diagnostico_campos.json ] && git add licitaciones/_diagnostico_campos.json
           if git diff --cached --quiet; then
             echo "Sin cambios en los datos, no se crea commit."
           else
