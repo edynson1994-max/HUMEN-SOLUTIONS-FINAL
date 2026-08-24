@@ -1,0 +1,16 @@
+{
+  "dataset_id": "volumen-de-desembarque-mensual-de-recursos-hidrobiológicos-por-puerto-y-por-especie-en-la",
+  "titulo": "Volumen de desembarque mensual de recursos hidrobiológicos por puerto y por especie en la región Piura [Gobierno Regional Piura]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/volumen-de-desembarque-mensual-de-recursos-hidrobiol%C3%B3gicos-por-puerto-y-por-especie-en-la",
+  "resource_id": "04efef13-45b6-46d5-a6df-9b92248092a1",
+  "estado": "formato_no_soportado",
+  "formato": ".xlsx",
+  "generado_en": "2026-08-24T22:21:18Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

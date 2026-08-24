@@ -1,0 +1,16 @@
+{
+  "dataset_id": "sien-sistema-de-información-del-estado-nutricional-de-niños-y-gestantes-perú-inscenan",
+  "titulo": "SIEN - Sistema de información del Estado Nutricional de niños y gestantes Perú - INS/CENAN (Instituto Nacional de Salud - Centro Nacional de Alimentación y Nutrición)",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/sien-sistema-de-informaci%C3%B3n-del-estado-nutricional-de-ni%C3%B1os-y-gestantes-per%C3%BA-inscenan",
+  "resource_id": "c54ea61e-e154-43b1-92d7-e8326c844d37",
+  "estado": "formato_no_soportado",
+  "formato": "zip",
+  "generado_en": "2026-08-24T22:13:08Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

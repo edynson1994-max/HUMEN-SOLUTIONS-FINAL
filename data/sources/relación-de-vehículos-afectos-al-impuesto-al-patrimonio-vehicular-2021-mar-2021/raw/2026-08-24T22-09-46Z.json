@@ -1,0 +1,16 @@
+{
+  "dataset_id": "relación-de-vehículos-afectos-al-impuesto-al-patrimonio-vehicular-2021-mar-2021",
+  "titulo": "Relación de Vehículos afectos al Impuesto al Patrimonio Vehicular 2021 a Mar 2021",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/relaci%C3%B3n-de-veh%C3%ADculos-afectos-al-impuesto-al-patrimonio-vehicular-2021-mar-2021",
+  "resource_id": "659835a0-8abb-42b2-af81-facf922d1c66",
+  "estado": "formato_no_soportado",
+  "formato": "data",
+  "generado_en": "2026-08-24T22:09:46Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

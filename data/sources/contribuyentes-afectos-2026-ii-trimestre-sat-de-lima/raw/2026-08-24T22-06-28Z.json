@@ -1,0 +1,146 @@
+{
+  "dataset_id": "contribuyentes-afectos-2026-ii-trimestre-sat-de-lima",
+  "titulo": "Contribuyentes Afectos 2026 (II Trimestre) SAT de Lima",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/contribuyentes-afectos-2026-ii-trimestre-sat-de-lima",
+  "resource_id": "e7ef43c3-a4b5-4e5e-a871-2ab6e76f2339",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "Nº contribuyente",
+    "Tipo persona",
+    "Distrito domicilio fiscal",
+    "Tributo"
+  ],
+  "filas_leidas": 308648,
+  "muestra": [
+    {
+      "Nº contribuyente": "3107568924",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "SAN MIGUEL",
+      "Tributo": "Vehicular"
+    },
+    {
+      "Nº contribuyente": "3107568925",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "SAN BORJA",
+      "Tributo": "Vehicular"
+    },
+    {
+      "Nº contribuyente": "3107568926",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "SAN JUAN DE MIRAFLORES",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "3107568927",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "LIMA",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "3107568928",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "LIMA",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "3107568929",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "CHORRILLOS",
+      "Tributo": "Vehicular"
+    },
+    {
+      "Nº contribuyente": "3107568930",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "BARRANCO",
+      "Tributo": "Vehicular"
+    },
+    {
+      "Nº contribuyente": "3107568931",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "SURQUILLO",
+      "Tributo": "Vehicular"
+    },
+    {
+      "Nº contribuyente": "3107568932",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "LIMA",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "3107568933",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "LINCE",
+      "Tributo": "Vehicular"
+    },
+    {
+      "Nº contribuyente": "3107568934",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "LIMA",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "3107568935",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "LIMA",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "3107568936",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "LIMA",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "3107568937",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "SAN LUIS",
+      "Tributo": "Vehicular"
+    },
+    {
+      "Nº contribuyente": "3107568938",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "BREÑA",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "3107568939",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "LIMA",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "3107568940",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "LINCE",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "3107568941",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "LIMA",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "3107568942",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "SAN JUAN DE LURIGANCHO",
+      "Tributo": "Vehicular"
+    },
+    {
+      "Nº contribuyente": "3107568943",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "LIMA",
+      "Tributo": "Predial Arbitrios"
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:06:28Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 308648,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

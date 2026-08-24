@@ -1,0 +1,16 @@
+{
+  "dataset_id": "encuesta-demográfica-y-de-salud-familiar-endes-2021-instituto-nacional-de-estadística-e",
+  "titulo": "Encuesta Demográfica y de Salud Familiar (ENDES) 2021  - [Instituto Nacional de Estadística e Informática - INEI]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-demogr%C3%A1fica-y-de-salud-familiar-endes-2021-instituto-nacional-de-estad%C3%ADstica-e",
+  "resource_id": "f2fc23e2-ed84-4f50-9c3d-76f5a8be338e",
+  "estado": "formato_no_soportado",
+  "formato": "pdf",
+  "generado_en": "2026-08-24T22:12:08Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

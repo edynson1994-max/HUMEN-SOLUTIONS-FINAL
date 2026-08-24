@@ -1,0 +1,16 @@
+{
+  "dataset_id": "constancia-de-producción-de-libros-yo-productos-editoriales-afines-–-bnp",
+  "titulo": "Constancia de producción de libros y/o productos editoriales afines – [BNP]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/constancia-de-producci%C3%B3n-de-libros-yo-productos-editoriales-afines-%E2%80%93-bnp",
+  "resource_id": "2fd4bcb5-6b78-47b7-8e4b-b45a62278f73",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:20:34Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

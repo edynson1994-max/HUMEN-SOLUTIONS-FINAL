@@ -1,0 +1,16 @@
+{
+  "dataset_id": "construcción-de-predios-de-los-contribuyentes-de-la-municipalidad-distrital-de-pueblo-libre",
+  "titulo": "Construcción de Predios de los Contribuyentes de la Municipalidad Distrital de Pueblo Libre - [MPL]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/construcci%C3%B3n-de-predios-de-los-contribuyentes-de-la-municipalidad-distrital-de-pueblo-libre",
+  "resource_id": "7c0647ae-b159-4993-b0c1-e6e6606a90e7",
+  "estado": "formato_no_soportado",
+  "formato": "docx",
+  "generado_en": "2026-08-24T22:22:08Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

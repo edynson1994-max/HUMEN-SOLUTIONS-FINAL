@@ -1,0 +1,16 @@
+{
+  "dataset_id": "estado-de-resultado-integral-información-financiera-de-empresas-supervisadas-por-la-smv",
+  "titulo": "Estado de Resultado Integral Información financiera de empresas supervisadas por la SMV",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/estado-de-resultado-integral-informaci%C3%B3n-financiera-de-empresas-supervisadas-por-la-smv",
+  "resource_id": "629848e2-137b-480a-959a-5f79448956ec",
+  "estado": "formato_no_soportado",
+  "formato": "json",
+  "generado_en": "2026-08-24T22:21:39Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

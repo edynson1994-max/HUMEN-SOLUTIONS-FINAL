@@ -1,0 +1,16 @@
+{
+  "dataset_id": "encuesta-demográfica-y-de-salud-familiar-endes-1986-instituto-nacional-de-estadística-e",
+  "titulo": "Encuesta Demográfica y de Salud Familiar (ENDES) 1986  - [Instituto Nacional de Estadística e Informática - INEI]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-demogr%C3%A1fica-y-de-salud-familiar-endes-1986-instituto-nacional-de-estad%C3%ADstica-e",
+  "resource_id": "ee21b60d-b2d6-4b66-90e9-d53d621d3eb2",
+  "estado": "formato_no_soportado",
+  "formato": "zip",
+  "generado_en": "2026-08-24T22:13:06Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

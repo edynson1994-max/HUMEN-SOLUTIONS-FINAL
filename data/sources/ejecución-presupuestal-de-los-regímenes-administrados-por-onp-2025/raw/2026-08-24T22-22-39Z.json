@@ -1,0 +1,106 @@
+{
+  "dataset_id": "ejecución-presupuestal-de-los-regímenes-administrados-por-onp-2025",
+  "titulo": "Ejecución presupuestal de los regímenes administrados por ONP 2025",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/ejecuci%C3%B3n-presupuestal-de-los-reg%C3%ADmenes-administrados-por-onp-2025",
+  "resource_id": "00960a5a-7514-4d77-85d5-0ede15ca1276",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento",
+    "",
+    "",
+    ""
+  ],
+  "filas_leidas": 1994,
+  "muestra": [
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "",
+      "": ""
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "Año",
+      "": "Ejecutado"
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "2008",
+      "": "   "
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "2008",
+      "": " 22,462,929 "
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "2008",
+      "": " 22,462,929 "
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "2008",
+      "": " -   "
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "2008",
+      "": " 1,470,828 "
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "2008",
+      "": " 1,470,828 "
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "2008",
+      "": " -   "
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "2008",
+      "": " 814,342 "
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "2008",
+      "": " 814,342 "
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "2008",
+      "": " -   "
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "2008",
+      "": " 12,002,281 "
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "2008",
+      "": " 12,002,281 "
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "2008",
+      "": " 2,746,103 "
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "2008",
+      "": " -   "
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "2008",
+      "": " 2,746,103 "
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "2008",
+      "": " 1,712,423 "
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "2008",
+      "": " -   "
+    },
+    {
+      "Regímenes Administrados por ONP y otras obligaciones según fuentes de financiamiento": "2008",
+      "": " 1,712,423 "
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:22:39Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 1994,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

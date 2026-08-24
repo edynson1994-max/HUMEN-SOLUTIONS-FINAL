@@ -1,0 +1,16 @@
+{
+  "dataset_id": "información-financiera-empresas-supervisadas-por-la-smv",
+  "titulo": "Información Financiera Empresas supervisadas por la SMV",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/informaci%C3%B3n-financiera-empresas-supervisadas-por-la-smv",
+  "resource_id": "529b91b0-911e-422c-bc75-c6379d70ab8c",
+  "estado": "formato_no_soportado",
+  "formato": "json",
+  "generado_en": "2026-08-24T22:11:12Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "impuesto-predial-2025-mpm",
+  "titulo": "IMPUESTO PREDIAL-2025-MPM",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/impuesto-predial-2025-mpm",
+  "resource_id": "8631b073-07f7-4383-89b1-dbc7170ffb41",
+  "estado": "formato_no_soportado",
+  "formato": ".xlsx",
+  "generado_en": "2026-08-24T22:23:35Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "gasto-del-fondo-para-intervenciones-ante-la-ocurrencia-de-desastres-naturales-fondes",
+  "titulo": "Gasto del Fondo para Intervenciones ante la Ocurrencia de Desastres Naturales - FONDES - consolidada",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/gasto-del-fondo-para-intervenciones-ante-la-ocurrencia-de-desastres-naturales-fondes",
+  "resource_id": "ffafcabe-8db8-43af-b33d-7995c6d451df",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:31Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "gasto-presupuestal-de-las-entidades-de-tratamiento-empresarial-etes",
+  "titulo": "Gasto Presupuestal de las Entidades de Tratamiento Empresarial - ETES",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/gasto-presupuestal-de-las-entidades-de-tratamiento-empresarial-etes",
+  "resource_id": "d7a02504-58fa-4f9d-89f1-d5f95969f59b",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:32Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

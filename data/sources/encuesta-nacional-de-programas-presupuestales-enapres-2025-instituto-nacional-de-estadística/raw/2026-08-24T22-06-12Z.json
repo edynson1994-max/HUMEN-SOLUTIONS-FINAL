@@ -1,0 +1,16 @@
+{
+  "dataset_id": "encuesta-nacional-de-programas-presupuestales-enapres-2025-instituto-nacional-de-estadística",
+  "titulo": "Encuesta Nacional de Programas Presupuestales (ENAPRES) 2025 - [Instituto Nacional de Estadística e Informática - INEI]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-de-programas-presupuestales-enapres-2025-instituto-nacional-de-estad%C3%ADstica",
+  "resource_id": "19375b6d-6980-4194-b94d-5bca77b0f1f5",
+  "estado": "formato_no_soportado",
+  "formato": "pdf",
+  "generado_en": "2026-08-24T22:06:12Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

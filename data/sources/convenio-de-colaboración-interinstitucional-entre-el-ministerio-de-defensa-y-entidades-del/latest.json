@@ -1,0 +1,16 @@
+{
+  "dataset_id": "convenio-de-colaboración-interinstitucional-entre-el-ministerio-de-defensa-y-entidades-del",
+  "titulo": "Convenio de Colaboración Interinstitucional entre el Ministerio de Defensa y Entidades del Estado - [MINDEF]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/convenio-de-colaboraci%C3%B3n-interinstitucional-entre-el-ministerio-de-defensa-y-entidades-del",
+  "resource_id": "61d2ca6f-20e6-452c-85eb-c8b9e6c4b109",
+  "estado": "formato_no_soportado",
+  "formato": ".csv",
+  "generado_en": "2026-08-24T22:05:47Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

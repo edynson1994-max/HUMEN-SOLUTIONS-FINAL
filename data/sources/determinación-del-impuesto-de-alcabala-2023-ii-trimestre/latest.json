@@ -1,0 +1,128 @@
+{
+  "dataset_id": "determinación-del-impuesto-de-alcabala-2023-ii-trimestre",
+  "titulo": "Determinación del Impuesto de Alcabala 2023 (II Trimestre)",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/determinaci%C3%B3n-del-impuesto-de-alcabala-2023-ii-trimestre",
+  "resource_id": "6f2a844d-d950-447a-9572-a29d25339c74",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "filas_leidas": 46955,
+  "muestra": [
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "Información al 30/06/2023",
+      "": ""
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "",
+      "": ""
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "Codigo Concepto",
+      "": "Impuesto"
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "110",
+      "": "0"
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "110",
+      "": "0"
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "110",
+      "": "0"
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "110",
+      "": "1063.33"
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "110",
+      "": "2755.58"
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "110",
+      "": "2755.58"
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "110",
+      "": "0"
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "110",
+      "": "10598.4"
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "110",
+      "": "10598.4"
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "110",
+      "": "0"
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "110",
+      "": "0"
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "110",
+      "": "9530.25"
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "110",
+      "": "0"
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "110",
+      "": "0"
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "110",
+      "": "0"
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "110",
+      "": "686.25"
+    },
+    {
+      "BASE DE DATOS DE CONTRIBUYENTES AFECTOS AL IMPUESTO DE ALCABALA  2023": "110",
+      "": "686.25"
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:20:51Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 46955,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

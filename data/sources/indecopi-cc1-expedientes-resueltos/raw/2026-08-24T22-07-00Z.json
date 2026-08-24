@@ -1,0 +1,16 @@
+{
+  "dataset_id": "indecopi-cc1-expedientes-resueltos",
+  "titulo": "[INDECOPI]-[CC1] Expedientes Resueltos",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/indecopi-cc1-expedientes-resueltos",
+  "resource_id": "993d9fab-d95b-438d-a48d-191de488b504",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:07:00Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

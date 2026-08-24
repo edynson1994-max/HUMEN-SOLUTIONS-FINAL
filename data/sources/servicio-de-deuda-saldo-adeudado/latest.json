@@ -1,0 +1,16 @@
+{
+  "dataset_id": "servicio-de-deuda-saldo-adeudado",
+  "titulo": "Servicio de deuda - Saldo adeudado",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/servicio-de-deuda-saldo-adeudado",
+  "resource_id": "40237130-9059-445b-abb3-2154abafe8c9",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:17:00Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

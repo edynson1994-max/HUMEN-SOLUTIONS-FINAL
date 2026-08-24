@@ -1,0 +1,19 @@
+{
+  "dataset_id": "dataset-02-cartera-proyectos-lambayeque-latentes",
+  "titulo": "Dataset 02 - Cartera Proyectos Lambayeque - Latentes",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/dataset-02-cartera-proyectos-lambayeque-latentes",
+  "resource_id": "80ec147d-5e40-40ff-a5c4-59509074cfc4",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "field larger than field limit (131072)",
+    "url_catalogo_respaldo": "field larger than field limit (131072)"
+  },
+  "generado_en": "2026-08-24T22:19:35Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

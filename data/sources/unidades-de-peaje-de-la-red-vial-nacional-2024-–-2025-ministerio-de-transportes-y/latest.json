@@ -1,0 +1,16 @@
+{
+  "dataset_id": "unidades-de-peaje-de-la-red-vial-nacional-2024-–-2025-ministerio-de-transportes-y",
+  "titulo": "Unidades de Peaje de la Red Vial Nacional 2024 – 2025 - [Ministerio de Transportes y Comunicaciones – MTC]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/unidades-de-peaje-de-la-red-vial-nacional-2024-%E2%80%93-2025-ministerio-de-transportes-y",
+  "resource_id": "575a26b0-c1eb-4409-a14c-3f89ab6733b4",
+  "estado": "formato_no_soportado",
+  "formato": "geojson",
+  "generado_en": "2026-08-24T22:23:27Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

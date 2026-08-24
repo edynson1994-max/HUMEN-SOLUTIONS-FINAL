@@ -1,0 +1,16 @@
+{
+  "dataset_id": "estado-de-ejecución-del-gasto-público",
+  "titulo": "Estado de Ejecución del Gasto Público",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/estado-de-ejecuci%C3%B3n-del-gasto-p%C3%BAblico",
+  "resource_id": "845683d8-51ed-4d49-89ed-03725e11c7db",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:02Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

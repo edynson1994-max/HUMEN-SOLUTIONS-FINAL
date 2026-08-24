@@ -1,0 +1,16 @@
+{
+  "dataset_id": "encuesta-nacional-de-empresas-ene-2015-instituto-nacional-de-estadística-e-informática-inei",
+  "titulo": "Encuesta Nacional de Empresas (ENE) 2015 - [Instituto Nacional de Estadística e Informática - INEI]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-de-empresas-ene-2015-instituto-nacional-de-estad%C3%ADstica-e-inform%C3%A1tica-inei",
+  "resource_id": "ed7942f4-ba6e-4a91-aa60-081133fe2de1",
+  "estado": "formato_no_soportado",
+  "formato": "pdf",
+  "generado_en": "2026-08-24T22:09:20Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

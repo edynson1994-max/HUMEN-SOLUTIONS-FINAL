@@ -1,0 +1,16 @@
+{
+  "dataset_id": "mtc-resumen-de-aportaciones-de-las-aseguradoras-de-soat-y-cat-2004-2017",
+  "titulo": "MTC - RESUMEN DE APORTACIONES DE LAS ASEGURADORAS DE SOAT y CAT 2004-2017",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/mtc-resumen-de-aportaciones-de-las-aseguradoras-de-soat-y-cat-2004-2017",
+  "resource_id": "bfb86ba8-89ae-466e-9bca-4762f1509aa0",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:07:02Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

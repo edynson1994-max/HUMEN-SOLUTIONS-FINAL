@@ -1,0 +1,16 @@
+{
+  "dataset_id": "reporte-de-ingresos-de-contribuyentes-de-la-municipalidad-distrital-de-jesús-maría-mdjm",
+  "titulo": "Reporte de ingresos de contribuyentes de la Municipalidad Distrital de Jesús María - [MDJM]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/reporte-de-ingresos-de-contribuyentes-de-la-municipalidad-distrital-de-jes%C3%BAs-mar%C3%ADa-mdjm",
+  "resource_id": "6179abd8-4e50-4e74-842d-040f6a0b60f8",
+  "estado": "formato_no_soportado",
+  "formato": "cvs",
+  "generado_en": "2026-08-24T22:05:21Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

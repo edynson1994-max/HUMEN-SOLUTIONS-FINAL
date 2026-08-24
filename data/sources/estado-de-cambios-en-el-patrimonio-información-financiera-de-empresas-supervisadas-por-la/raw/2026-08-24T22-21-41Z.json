@@ -1,0 +1,16 @@
+{
+  "dataset_id": "estado-de-cambios-en-el-patrimonio-información-financiera-de-empresas-supervisadas-por-la",
+  "titulo": "Estado de Cambios en el Patrimonio Información financiera de empresas supervisadas por la SMV",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/estado-de-cambios-en-el-patrimonio-informaci%C3%B3n-financiera-de-empresas-supervisadas-por-la",
+  "resource_id": "2b74af77-4ad6-4628-82b3-49afca305c9f",
+  "estado": "formato_no_soportado",
+  "formato": "json",
+  "generado_en": "2026-08-24T22:21:41Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

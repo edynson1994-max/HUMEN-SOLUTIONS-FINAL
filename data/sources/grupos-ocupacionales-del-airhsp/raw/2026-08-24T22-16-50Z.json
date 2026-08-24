@@ -1,0 +1,16 @@
+{
+  "dataset_id": "grupos-ocupacionales-del-airhsp",
+  "titulo": "Grupos Ocupacionales del AIRHSP",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/grupos-ocupacionales-del-airhsp",
+  "resource_id": "68a01707-68a4-4416-b6b8-5d5b512e29fd",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:50Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

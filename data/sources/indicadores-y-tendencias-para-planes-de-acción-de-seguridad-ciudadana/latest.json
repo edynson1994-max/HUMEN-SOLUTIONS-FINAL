@@ -1,0 +1,251 @@
+{
+  "dataset_id": "indicadores-y-tendencias-para-planes-de-acción-de-seguridad-ciudadana",
+  "titulo": "Indicadores y Tendencias para Planes de Acción de Seguridad Ciudadana",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/indicadores-y-tendencias-para-planes-de-acci%C3%B3n-de-seguridad-ciudadana",
+  "resource_id": "960262ec-db69-4876-8b9c-f28b4a65ec3f",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "INDICADOR",
+    "AMBITO",
+    "UBIGEO_DASH",
+    "FUENTE",
+    "ANIO",
+    "VALORES",
+    "VALORES_2",
+    "POBLACION_PROYECTADA",
+    "CLASIF"
+  ],
+  "filas_leidas": 108129,
+  "muestra": [
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "240301",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2018",
+      "VALORES": "679",
+      "VALORES_2": "28.21290564",
+      "POBLACION_PROYECTADA": "24067",
+      "CLASIF": "1"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "240101",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2018",
+      "VALORES": "1943",
+      "VALORES_2": "17.69790595",
+      "POBLACION_PROYECTADA": "109787",
+      "CLASIF": "2"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "240201",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2018",
+      "VALORES": "129",
+      "VALORES_2": "9.836065574",
+      "POBLACION_PROYECTADA": "13115",
+      "CLASIF": "3"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "240302",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2018",
+      "VALORES": "161",
+      "VALORES_2": "8.648939028",
+      "POBLACION_PROYECTADA": "18615",
+      "CLASIF": "4"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "240203",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2018",
+      "VALORES": "37",
+      "VALORES_2": "5.309988519",
+      "POBLACION_PROYECTADA": "6968",
+      "CLASIF": "5"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "240103",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2018",
+      "VALORES": "53",
+      "VALORES_2": "5.212943838",
+      "POBLACION_PROYECTADA": "10167",
+      "CLASIF": "6"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "240104",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2018",
+      "VALORES": "31",
+      "VALORES_2": "4.231504232",
+      "POBLACION_PROYECTADA": "7326",
+      "CLASIF": "7"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "240106",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2018",
+      "VALORES": "17",
+      "VALORES_2": "3.607044345",
+      "POBLACION_PROYECTADA": "4713",
+      "CLASIF": "8"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "240102",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2018",
+      "VALORES": "84",
+      "VALORES_2": "3.394487998",
+      "POBLACION_PROYECTADA": "24746",
+      "CLASIF": "9"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "240304",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2018",
+      "VALORES": "20",
+      "VALORES_2": "2.978406552",
+      "POBLACION_PROYECTADA": "6715",
+      "CLASIF": "10"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "240105",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2018",
+      "VALORES": "18",
+      "VALORES_2": "2.041742287",
+      "POBLACION_PROYECTADA": "8816",
+      "CLASIF": "11"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "240303",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2018",
+      "VALORES": "7",
+      "VALORES_2": "1.903725863",
+      "POBLACION_PROYECTADA": "3677",
+      "CLASIF": "12"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "240202",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2018",
+      "VALORES": "3",
+      "VALORES_2": "1.149865849",
+      "POBLACION_PROYECTADA": "2609",
+      "CLASIF": "13"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "30101",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2019",
+      "VALORES": "840",
+      "VALORES_2": "11.22994652",
+      "POBLACION_PROYECTADA": "74800",
+      "CLASIF": "1"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "30701",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2019",
+      "VALORES": "41",
+      "VALORES_2": "7.743153919",
+      "POBLACION_PROYECTADA": "5295",
+      "CLASIF": "2"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "30201",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2019",
+      "VALORES": "332",
+      "VALORES_2": "7.341721766",
+      "POBLACION_PROYECTADA": "45221",
+      "CLASIF": "3"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "30306",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2019",
+      "VALORES": "7",
+      "VALORES_2": "6.416131989",
+      "POBLACION_PROYECTADA": "1091",
+      "CLASIF": "4"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "30708",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2019",
+      "VALORES": "18",
+      "VALORES_2": "5.635566688",
+      "POBLACION_PROYECTADA": "3194",
+      "CLASIF": "5"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "30107",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2019",
+      "VALORES": "15",
+      "VALORES_2": "5.401512423",
+      "POBLACION_PROYECTADA": "2777",
+      "CLASIF": "6"
+    },
+    {
+      "INDICADOR": "2",
+      "AMBITO": "3",
+      "UBIGEO_DASH": "30216",
+      "FUENTE": "SIDPOL",
+      "ANIO": "2019",
+      "VALORES": "104",
+      "VALORES_2": "5.276241692",
+      "POBLACION_PROYECTADA": "19711",
+      "CLASIF": "7"
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:23:43Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 108129,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

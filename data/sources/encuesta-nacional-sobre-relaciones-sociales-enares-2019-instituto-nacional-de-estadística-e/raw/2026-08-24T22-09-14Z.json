@@ -1,0 +1,16 @@
+{
+  "dataset_id": "encuesta-nacional-sobre-relaciones-sociales-enares-2019-instituto-nacional-de-estadística-e",
+  "titulo": "Encuesta Nacional Sobre Relaciones Sociales (ENARES) 2019 - [Instituto Nacional de Estadística e Informática - INEI]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-sobre-relaciones-sociales-enares-2019-instituto-nacional-de-estad%C3%ADstica-e",
+  "resource_id": "c420de94-a131-4a1e-991f-b5a06971c312",
+  "estado": "formato_no_soportado",
+  "formato": "pdf",
+  "generado_en": "2026-08-24T22:09:14Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

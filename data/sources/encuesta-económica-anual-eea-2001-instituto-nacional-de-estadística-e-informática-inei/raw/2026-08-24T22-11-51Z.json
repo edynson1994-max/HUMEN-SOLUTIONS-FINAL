@@ -1,0 +1,16 @@
+{
+  "dataset_id": "encuesta-económica-anual-eea-2001-instituto-nacional-de-estadística-e-informática-inei",
+  "titulo": "Encuesta Económica Anual (EEA) 2001 - [Instituto Nacional de Estadística e Informática - INEI]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-econ%C3%B3mica-anual-eea-2001-instituto-nacional-de-estad%C3%ADstica-e-inform%C3%A1tica-inei",
+  "resource_id": "e029e516-b1ad-452c-8a97-42b95da8b977",
+  "estado": "formato_no_soportado",
+  "formato": "pdf",
+  "generado_en": "2026-08-24T22:11:51Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

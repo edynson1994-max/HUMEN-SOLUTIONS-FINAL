@@ -1,0 +1,16 @@
+{
+  "dataset_id": "ingresos-tributarios- municipalidad-de-miraflores",
+  "titulo": "Ingresos tributarios - [Municipalidad de Miraflores]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/ingresos-tributarios-%C2%A0municipalidad-de-miraflores",
+  "resource_id": "4b9c6098-d571-42f9-8eda-dc77f6baa9f1",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:09:57Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

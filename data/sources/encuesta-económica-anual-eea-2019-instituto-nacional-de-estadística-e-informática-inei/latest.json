@@ -1,0 +1,16 @@
+{
+  "dataset_id": "encuesta-económica-anual-eea-2019-instituto-nacional-de-estadística-e-informática-inei",
+  "titulo": "Encuesta Económica Anual (EEA) 2019 - [Instituto Nacional de Estadística e Informática - INEI]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-econ%C3%B3mica-anual-eea-2019-instituto-nacional-de-estad%C3%ADstica-e-inform%C3%A1tica-inei",
+  "resource_id": "a2795094-5878-4a6c-85de-741c267be309",
+  "estado": "formato_no_soportado",
+  "formato": "pdf",
+  "generado_en": "2026-08-24T22:10:25Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "seguimiento-de-proyectos-de-inversión",
+  "titulo": "Seguimiento de Proyectos de Inversión",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/seguimiento-de-proyectos-de-inversi%C3%B3n",
+  "resource_id": "8a1ade4c-90b7-48b5-a90f-0ab10e97779b",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:18Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "vehículos-afectos-al-impuesto-vehicular-2023-de-lima-metropolitana-iii-trimestre",
+  "titulo": "Vehículos afectos al Impuesto Vehicular 2023 de Lima Metropolitana (III Trimestre)",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/veh%C3%ADculos-afectos-al-impuesto-vehicular-2023-de-lima-metropolitana-iii-trimestre",
+  "resource_id": "698ab7a8-5d8d-4659-9de7-060325a4a386",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:21:01Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

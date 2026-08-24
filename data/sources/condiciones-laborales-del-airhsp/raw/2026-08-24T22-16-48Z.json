@@ -1,0 +1,16 @@
+{
+  "dataset_id": "condiciones-laborales-del-airhsp",
+  "titulo": "Condiciones Laborales del AIRHSP",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/condiciones-laborales-del-airhsp",
+  "resource_id": "9380fde9-f561-43ef-a79a-f2d172d5feed",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:48Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

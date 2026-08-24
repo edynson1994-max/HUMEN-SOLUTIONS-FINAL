@@ -1,0 +1,16 @@
+{
+  "dataset_id": "ingresos-recaudados-de-la-municipalidad-distrital-de-san-juan-de-miraflores-–-mdsjm",
+  "titulo": "Ingresos Recaudados de la Municipalidad Distrital de San Juan de Miraflores – [MDSJM]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/ingresos-recaudados-de-la-municipalidad-distrital-de-san-juan-de-miraflores-%E2%80%93-mdsjm",
+  "resource_id": "bdf27d7b-f8f3-4681-9e9d-40bcba5c3c3f",
+  "estado": "formato_no_soportado",
+  "formato": "docx",
+  "generado_en": "2026-08-24T22:11:59Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

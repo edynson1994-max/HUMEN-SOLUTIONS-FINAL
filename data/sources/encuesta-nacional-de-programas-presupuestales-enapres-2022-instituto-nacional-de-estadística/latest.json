@@ -1,0 +1,16 @@
+{
+  "dataset_id": "encuesta-nacional-de-programas-presupuestales-enapres-2022-instituto-nacional-de-estadística",
+  "titulo": "Encuesta Nacional de Programas Presupuestales (ENAPRES) 2022 - [Instituto Nacional de Estadística e Informática - INEI]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-de-programas-presupuestales-enapres-2022-instituto-nacional-de-estad%C3%ADstica",
+  "resource_id": "89c6e02e-d9a3-49a5-a90f-dba7107e8e22",
+  "estado": "formato_no_soportado",
+  "formato": "pdf",
+  "generado_en": "2026-08-24T22:14:12Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

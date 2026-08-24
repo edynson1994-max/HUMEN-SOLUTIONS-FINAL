@@ -1,0 +1,16 @@
+{
+  "dataset_id": "recaudación-de-unidades-de-peaje-cargo-de-provias-nacional",
+  "titulo": "Recaudación de Unidades de Peaje a cargo de Provias Nacional",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-de-unidades-de-peaje-cargo-de-provias-nacional",
+  "resource_id": "30bb3e1c-40fe-4c2c-9417-586661296130",
+  "estado": "formato_no_soportado",
+  "formato": "xlb",
+  "generado_en": "2026-08-24T22:07:37Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

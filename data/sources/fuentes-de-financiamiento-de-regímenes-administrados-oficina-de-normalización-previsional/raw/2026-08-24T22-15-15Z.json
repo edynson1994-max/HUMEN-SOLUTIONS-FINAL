@@ -1,0 +1,188 @@
+{
+  "dataset_id": "fuentes-de-financiamiento-de-regímenes-administrados-oficina-de-normalización-previsional",
+  "titulo": "Fuentes de Financiamiento de Regímenes administrados - [Oficina de Normalización Previsional - ONP]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/fuentes-de-financiamiento-de-reg%C3%ADmenes-administrados-oficina-de-normalizaci%C3%B3n-previsional",
+  "resource_id": "8c60da0b-0e03-4590-b497-a2e8b00f3f71",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "FECHA_CORTE",
+    "ENTIDAD",
+    "RECURSOS ORDINARIOS",
+    "CONTRIBUCIONES A FONDOS",
+    "TOTAL",
+    "PERIODO"
+  ],
+  "filas_leidas": 774,
+  "muestra": [
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": "ELECTROLIMA",
+      "RECURSOS ORDINARIOS": "3613532.61",
+      "CONTRIBUCIONES A FONDOS": "0",
+      "TOTAL": "3613532.61",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " EMSAL ",
+      "RECURSOS ORDINARIOS": "0",
+      "CONTRIBUCIONES A FONDOS": "335736.16",
+      "TOTAL": "335736.16",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " ENATA S.A. ",
+      "RECURSOS ORDINARIOS": "0",
+      "CONTRIBUCIONES A FONDOS": "192136.29",
+      "TOTAL": "192136.29",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " ENTEL ",
+      "RECURSOS ORDINARIOS": "0",
+      "CONTRIBUCIONES A FONDOS": "2496184.88",
+      "TOTAL": "2496184.88",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " FODASA ",
+      "RECURSOS ORDINARIOS": "350555.27",
+      "CONTRIBUCIONES A FONDOS": "0",
+      "TOTAL": "350555.27",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " INST NAC. ADM. PUBLICA - INAP ",
+      "RECURSOS ORDINARIOS": "485240.7",
+      "CONTRIBUCIONES A FONDOS": "0",
+      "TOTAL": "485240.7",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " S.N.P. DL 19990 ",
+      "RECURSOS ORDINARIOS": "119805071.2",
+      "CONTRIBUCIONES A FONDOS": "947380184.3",
+      "TOTAL": "1067185256",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " SOC. PARAMONGA LTDA. S.A. ",
+      "RECURSOS ORDINARIOS": "0",
+      "CONTRIBUCIONES A FONDOS": "10303",
+      "TOTAL": "10303",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " D.L. 18846 ",
+      "RECURSOS ORDINARIOS": "5902333.64",
+      "CONTRIBUCIONES A FONDOS": "35488366.58",
+      "TOTAL": "41390700.22",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " ENAPU ",
+      "RECURSOS ORDINARIOS": "13386737.83",
+      "CONTRIBUCIONES A FONDOS": "1900527.07",
+      "TOTAL": "15287264.9",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " ENCI ",
+      "RECURSOS ORDINARIOS": "2895",
+      "CONTRIBUCIONES A FONDOS": "0",
+      "TOTAL": "2895",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " INDUSTRIAL CACHIMAYO S.A. ",
+      "RECURSOS ORDINARIOS": "0",
+      "CONTRIBUCIONES A FONDOS": "28755",
+      "TOTAL": "28755",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " R.T.P. ",
+      "RECURSOS ORDINARIOS": "139790.41",
+      "CONTRIBUCIONES A FONDOS": "0",
+      "TOTAL": "139790.41",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " ENAFER ",
+      "RECURSOS ORDINARIOS": "64991",
+      "CONTRIBUCIONES A FONDOS": "0",
+      "TOTAL": "64991",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " SERV. DE NAC.  DE INTELIGENCIA - SIN ",
+      "RECURSOS ORDINARIOS": "200085",
+      "CONTRIBUCIONES A FONDOS": "0",
+      "TOTAL": "200085",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " PESCA PERU S.A. ",
+      "RECURSOS ORDINARIOS": "0",
+      "CONTRIBUCIONES A FONDOS": "40343.35",
+      "TOTAL": "40343.35",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " LUSA ",
+      "RECURSOS ORDINARIOS": "0",
+      "CONTRIBUCIONES A FONDOS": "6561",
+      "TOTAL": "6561",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " INSTITUTO NAC.de PLANIFICACION-INP ",
+      "RECURSOS ORDINARIOS": "614780.88",
+      "CONTRIBUCIONES A FONDOS": "0",
+      "TOTAL": "614780.88",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " CIA PERUANA de VAPORES-CPV ",
+      "RECURSOS ORDINARIOS": "2540203.28",
+      "CONTRIBUCIONES A FONDOS": "0",
+      "TOTAL": "2540203.28",
+      "PERIODO": "201803"
+    },
+    {
+      "FECHA_CORTE": "20230724",
+      "ENTIDAD": " CAJA de AHORROS DE LIMA-CAL ",
+      "RECURSOS ORDINARIOS": "963716.52",
+      "CONTRIBUCIONES A FONDOS": "0",
+      "TOTAL": "963716.52",
+      "PERIODO": "201803"
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:15:15Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 774,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

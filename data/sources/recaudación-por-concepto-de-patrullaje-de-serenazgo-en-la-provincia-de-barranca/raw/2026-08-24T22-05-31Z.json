@@ -1,0 +1,19 @@
+{
+  "dataset_id": "recaudación-por-concepto-de-patrullaje-de-serenazgo-en-la-provincia-de-barranca",
+  "titulo": "Recaudación por concepto de patrullaje de Serenazgo en la Provincia de Barranca [Municipalidad Provincial de Barranca]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-por-concepto-de-patrullaje-de-serenazgo-en-la-provincia-de-barranca",
+  "resource_id": "442db4e3-f731-426c-b73b-eab2ed4f725c",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "new-line character seen in unquoted field - do you need to open the file with newline=''?",
+    "url_catalogo_respaldo": "new-line character seen in unquoted field - do you need to open the file with newline=''?"
+  },
+  "generado_en": "2026-08-24T22:05:31Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

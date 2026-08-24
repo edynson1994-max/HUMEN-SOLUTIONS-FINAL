@@ -1,0 +1,16 @@
+{
+  "dataset_id": "determinación-del-impuesto-de-alcabala-2025-i-trimestre",
+  "titulo": "Determinación del Impuesto de Alcabala 2025 (I Trimestre)",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/determinaci%C3%B3n-del-impuesto-de-alcabala-2025-i-trimestre",
+  "resource_id": "3154d393-b84b-48b4-b8b9-9ba2d8f66f57",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:21:24Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

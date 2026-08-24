@@ -1,0 +1,16 @@
+{
+  "dataset_id": "generación-de-empleo-temporal-ministerio-de-trabajo-y-promoción-del-empleo",
+  "titulo": "Generación de Empleo Temporal - [Ministerio de Trabajo y Promoción del Empleo]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/generaci%C3%B3n-de-empleo-temporal-ministerio-de-trabajo-y-promoci%C3%B3n-del-empleo",
+  "resource_id": "fd19fef2-d5b4-422a-84a1-8aa887a932e9",
+  "estado": "formato_no_soportado",
+  "formato": "xls",
+  "generado_en": "2026-08-24T22:08:46Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "transferencias-de-fondos-y-asignaciones-financieras",
+  "titulo": "Transferencias de fondos y asignaciones financieras",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/transferencias-de-fondos-y-asignaciones-financieras",
+  "resource_id": "4484d4b2-53bb-4cae-8d6f-80b9318bdb4a",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:20Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "registro-de-pago-de-servicios-básicos-de-las-iiee-de-la-región-san-martín-–-gore-san-martín-",
+  "titulo": "Registro de pago de servicios básicos de LAS IIEE de la región San Martín – [Gore San Martín – GRSM]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/registro-de-pago-de-servicios-b%C3%A1sicos-de-las-iiee-de-la-regi%C3%B3n-san-mart%C3%ADn-%E2%80%93-gore-san-mart%C3%ADn-",
+  "resource_id": "36b72211-e13e-48cb-ab6e-c46e014b419b",
+  "estado": "formato_no_soportado",
+  "formato": "docx",
+  "generado_en": "2026-08-24T22:21:36Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

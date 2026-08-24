@@ -1,0 +1,16 @@
+{
+  "dataset_id": "padrón-de-contribuyentes-en-el-sistema-de-emisión-electrónica-see-superintendencia-nacional",
+  "titulo": "Padrón de contribuyentes en el Sistema de Emisión Electrónica (SEE) - [Superintendencia Nacional de Aduanas y de Administración Tributaria - SUNAT] ",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/padr%C3%B3n-de-contribuyentes-en-el-sistema-de-emisi%C3%B3n-electr%C3%B3nica-see-superintendencia-nacional",
+  "resource_id": "7f9de48a-b4d1-4fe0-8eb4-19ba5df37369",
+  "estado": "formato_no_soportado",
+  "formato": ".csv",
+  "generado_en": "2026-08-24T22:06:10Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

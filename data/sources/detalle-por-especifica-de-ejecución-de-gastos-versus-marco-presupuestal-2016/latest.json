@@ -1,0 +1,16 @@
+{
+  "dataset_id": "detalle-por-especifica-de-ejecución-de-gastos-versus-marco-presupuestal-2016",
+  "titulo": "Detalle por especifica de ejecución de gastos versus marco presupuestal 2016",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/detalle-por-especifica-de-ejecuci%C3%B3n-de-gastos-versus-marco-presupuestal-2016",
+  "resource_id": "d08b1067-a5e3-470a-bdf5-52f550ee32fe",
+  "estado": "formato_no_soportado",
+  "formato": "html",
+  "generado_en": "2026-08-24T22:07:08Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "pensionistas-del-régimen-sctr-administrado-por-la-onp",
+  "titulo": "Pensionistas del Régimen SCTR administrado por la ONP",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/pensionistas-del-r%C3%A9gimen-sctr-administrado-por-la-onp",
+  "resource_id": "fa595c37-e2bb-49dd-a9fe-138578fdf374",
+  "estado": "formato_no_soportado",
+  "formato": "cvs",
+  "generado_en": "2026-08-24T22:10:32Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

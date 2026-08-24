@@ -1,0 +1,16 @@
+{
+  "dataset_id": "presupuesto-y-ejecución-de-gasto",
+  "titulo": "Presupuesto y Ejecución de Gasto",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/presupuesto-y-ejecuci%C3%B3n-de-gasto",
+  "resource_id": "0493cee6-b6b2-42b3-9ed8-9c315c4dfd04",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:15:09Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

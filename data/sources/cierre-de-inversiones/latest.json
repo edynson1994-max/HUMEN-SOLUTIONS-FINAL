@@ -1,0 +1,16 @@
+{
+  "dataset_id": "cierre-de-inversiones",
+  "titulo": "Cierre de inversiones",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/cierre-de-inversiones",
+  "resource_id": "d40cba6a-8176-478b-bee1-3774e401755b",
+  "estado": "formato_no_soportado",
+  "formato": "data",
+  "generado_en": "2026-08-24T22:15:53Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

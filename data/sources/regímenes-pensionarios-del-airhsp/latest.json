@@ -1,0 +1,16 @@
+{
+  "dataset_id": "regímenes-pensionarios-del-airhsp",
+  "titulo": "Regímenes Pensionarios del AIRHSP",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/reg%C3%ADmenes-pensionarios-del-airhsp",
+  "resource_id": "741f29dd-f731-45e2-8122-517e33b9332f",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:52Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

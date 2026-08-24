@@ -1,0 +1,16 @@
+{
+  "dataset_id": "detalle-por-rubro-de-ejecución-de-gastos-vs-marco-presupuestal-2017",
+  "titulo": "Detalle por rubro de ejecución de gastos vs marco presupuestal 2017",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/detalle-por-rubro-de-ejecuci%C3%B3n-de-gastos-vs-marco-presupuestal-2017",
+  "resource_id": "ce764706-30f1-45c5-9c89-c6cddec9ce27",
+  "estado": "formato_no_soportado",
+  "formato": "html",
+  "generado_en": "2026-08-24T22:07:04Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

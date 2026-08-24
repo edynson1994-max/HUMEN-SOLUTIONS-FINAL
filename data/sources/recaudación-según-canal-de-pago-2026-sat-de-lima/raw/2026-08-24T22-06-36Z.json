@@ -1,0 +1,167 @@
+{
+  "dataset_id": "recaudación-según-canal-de-pago-2026-sat-de-lima",
+  "titulo": "Recaudación según Canal de Pago 2026 (SAT de Lima)",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-seg%C3%BAn-canal-de-pago-2026-sat-de-lima",
+  "resource_id": "7b8b199a-8ffa-43e3-a608-c374aa7661dd",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "Año_Pago,\"Mes_Pago\"\"",
+    "Código_Mes_Pago\"\"",
+    "Categoria_Canal\"\"",
+    "Canal_Pago\"\"",
+    "Monto_Recaudado (S/)\"\"\""
+  ],
+  "filas_leidas": 96,
+  "muestra": [
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Enero\"\"",
+      "Código_Mes_Pago\"\"": "202601\"\"",
+      "Categoria_Canal\"\"": "Bancos\"\"",
+      "Canal_Pago\"\"": "Banco Continental\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "5814018.0\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Enero\"\"",
+      "Código_Mes_Pago\"\"": "202601\"\"",
+      "Categoria_Canal\"\"": "Bancos\"\"",
+      "Canal_Pago\"\"": "Banco de Crédito\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "18339737.0\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Enero\"\"",
+      "Código_Mes_Pago\"\"": "202601\"\"",
+      "Categoria_Canal\"\"": "Bancos\"\"",
+      "Canal_Pago\"\"": "Banco Interamericano de Finanzas\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "508403.0\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Enero\"\"",
+      "Código_Mes_Pago\"\"": "202601\"\"",
+      "Categoria_Canal\"\"": "Bancos\"\"",
+      "Canal_Pago\"\"": "Banco Scotiabank\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "2262406.0\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Enero\"\"",
+      "Código_Mes_Pago\"\"": "202601\"\"",
+      "Categoria_Canal\"\"": "Bancos\"\"",
+      "Canal_Pago\"\"": "Caja Metropolitana de Lima\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "15097.0\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Enero\"\"",
+      "Código_Mes_Pago\"\"": "202601\"\"",
+      "Categoria_Canal\"\"": "Bancos\"\"",
+      "Canal_Pago\"\"": "Banco Interbank\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "1438506.0\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Enero\"\"",
+      "Código_Mes_Pago\"\"": "202601\"\"",
+      "Categoria_Canal\"\"": "Caja SAT\"\"",
+      "Canal_Pago\"\"": "Sede Principal (Camaná)\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "34950518.0\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Enero\"\"",
+      "Código_Mes_Pago\"\"": "202601\"\"",
+      "Categoria_Canal\"\"": "Caja SAT\"\"",
+      "Canal_Pago\"\"": "Agencia San Juan Miraflores\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "3775520.0\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Enero\"\"",
+      "Código_Mes_Pago\"\"": "202601\"\"",
+      "Categoria_Canal\"\"": "Caja SAT\"\"",
+      "Canal_Pago\"\"": "Agencia Argentina\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "3843857.0\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Enero\"\"",
+      "Código_Mes_Pago\"\"": "202601\"\"",
+      "Categoria_Canal\"\"": "Caja SAT\"\"",
+      "Canal_Pago\"\"": "Depósito Villa Salvador (Urb. Pre Urbana)\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "414009.0\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Enero\"\"",
+      "Código_Mes_Pago\"\"": "202601\"\"",
+      "Categoria_Canal\"\"": "Caja SAT\"\"",
+      "Canal_Pago\"\"": "Depósito Ate (Parcelación La Estrella)\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "596985.0\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Enero\"\"",
+      "Código_Mes_Pago\"\"": "202601\"\"",
+      "Categoria_Canal\"\"": "Caja SAT\"\"",
+      "Canal_Pago\"\"": "Depósito Comas (Av. San Juan)\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "807427.0\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Enero\"\"",
+      "Código_Mes_Pago\"\"": "202601\"\"",
+      "Categoria_Canal\"\"": "Caja SAT\"\"",
+      "Canal_Pago\"\"": "MAC Lima Norte\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "1778922.0\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Enero\"\"",
+      "Código_Mes_Pago\"\"": "202601\"\"",
+      "Categoria_Canal\"\"": "Caja SAT\"\"",
+      "Canal_Pago\"\"": "Agencia Camacho\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "14773621.0\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Enero\"\"",
+      "Código_Mes_Pago\"\"": "202601\"\"",
+      "Categoria_Canal\"\"": "Dígital\"\"",
+      "Canal_Pago\"\"": "Pagos Virtuales\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "22904203.0\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Enero\"\"",
+      "Código_Mes_Pago\"\"": "202601\"\"",
+      "Categoria_Canal\"\"": "Convenios\"\"",
+      "Canal_Pago\"\"": "Notarías afiliadas\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "15286510.0\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Febrero\"\"",
+      "Código_Mes_Pago\"\"": "202602\"\"",
+      "Categoria_Canal\"\"": "Bancos\"\"",
+      "Canal_Pago\"\"": "Banco Continental\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "24823479.35\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Febrero\"\"",
+      "Código_Mes_Pago\"\"": "202602\"\"",
+      "Categoria_Canal\"\"": "Bancos\"\"",
+      "Canal_Pago\"\"": "Banco de Crédito\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "49557757.87\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Febrero\"\"",
+      "Código_Mes_Pago\"\"": "202602\"\"",
+      "Categoria_Canal\"\"": "Bancos\"\"",
+      "Canal_Pago\"\"": "Banco Interamericano de Finanzas\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "369027.82\"\"\""
+    },
+    {
+      "Año_Pago,\"Mes_Pago\"\"": "2026,\"Febrero\"\"",
+      "Código_Mes_Pago\"\"": "202602\"\"",
+      "Categoria_Canal\"\"": "Bancos\"\"",
+      "Canal_Pago\"\"": "Banco Scotiabank\"\"",
+      "Monto_Recaudado (S/)\"\"\"": "8051754.48\"\"\""
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:06:36Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 96,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

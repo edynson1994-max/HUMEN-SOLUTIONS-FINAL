@@ -1,0 +1,16 @@
+{
+  "dataset_id": "ingresos-pia-y-pim-municipalidad-de-miraflores",
+  "titulo": "Ingresos PIA y PIM - [Municipalidad de Miraflores]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/ingresos-pia-y-pim-municipalidad-de-miraflores",
+  "resource_id": "02f36379-f5f3-42f6-a9cf-b55a8344cd04",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:09:51Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

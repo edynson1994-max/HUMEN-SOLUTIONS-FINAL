@@ -1,0 +1,16 @@
+{
+  "dataset_id": "datos-de-afiliados-al-seguro-integral-de-salud-en-estado-activo-sis",
+  "titulo": "Datos de Afiliados al Seguro Integral de Salud en Estado Activo - [SIS]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/datos-de-afiliados-al-seguro-integral-de-salud-en-estado-activo-sis",
+  "resource_id": "87610981-3101-46a5-8632-2e6d9aed1595",
+  "estado": "formato_no_soportado",
+  "formato": "pdf",
+  "generado_en": "2026-08-24T22:09:55Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

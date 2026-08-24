@@ -1,0 +1,16 @@
+{
+  "dataset_id": "encuesta-nacional-de-programas-estratégicos",
+  "titulo": "Encuesta Nacional de Programas Estratégicos",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-de-programas-estrat%C3%A9gicos",
+  "resource_id": "5edc0ab1-6f9f-4875-928c-187182f72b96",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:07:38Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "proyectos-de-inversión-pública-viables-gobierno-regional-de-loreto",
+  "titulo": "Proyectos de inversión pública viables - Gobierno Regional de Loreto",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/proyectos-de-inversi%C3%B3n-p%C3%BAblica-viables-gobierno-regional-de-loreto",
+  "resource_id": "7429d7cf-2bb8-4a49-ac65-a50da4d142fc",
+  "estado": "formato_no_soportado",
+  "formato": ".xlsx",
+  "generado_en": "2026-08-24T22:23:37Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

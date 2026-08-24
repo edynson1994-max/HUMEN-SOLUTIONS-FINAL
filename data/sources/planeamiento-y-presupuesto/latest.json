@@ -1,0 +1,16 @@
+{
+  "dataset_id": "planeamiento-y-presupuesto",
+  "titulo": "PLANEAMIENTO Y PRESUPUESTO",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/planeamiento-y-presupuesto",
+  "resource_id": "33f1c6fd-ac78-4f17-8ae7-210bf9d26bc6",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:08:49Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

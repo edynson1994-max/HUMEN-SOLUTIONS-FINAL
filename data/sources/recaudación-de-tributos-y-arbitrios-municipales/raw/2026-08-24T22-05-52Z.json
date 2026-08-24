@@ -1,0 +1,16 @@
+{
+  "dataset_id": "recaudación-de-tributos-y-arbitrios-municipales",
+  "titulo": "Recaudación de Tributos y Arbitrios Municipales",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-de-tributos-y-arbitrios-municipales",
+  "resource_id": "760d630a-dc3b-4416-a6e2-8a8054711bb1",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:05:52Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

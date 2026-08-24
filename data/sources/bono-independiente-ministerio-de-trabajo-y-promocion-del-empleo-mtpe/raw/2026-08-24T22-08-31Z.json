@@ -1,0 +1,16 @@
+{
+  "dataset_id": "bono-independiente-ministerio-de-trabajo-y-promocion-del-empleo-mtpe",
+  "titulo": "Bono Independiente -[Ministerio de Trabajo y Promocion del Empleo - MTPE]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/bono-independiente-ministerio-de-trabajo-y-promocion-del-empleo-mtpe",
+  "resource_id": "d21e2749-e07e-4077-b20e-9f343774212d",
+  "estado": "formato_no_soportado",
+  "formato": "data",
+  "generado_en": "2026-08-24T22:08:31Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

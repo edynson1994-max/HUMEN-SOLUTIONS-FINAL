@@ -1,0 +1,16 @@
+{
+  "dataset_id": "contribuyentes-puntuales-2025-ii-trimestre",
+  "titulo": "Contribuyentes puntuales 2025 (II Trimestre)",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/contribuyentes-puntuales-2025-ii-trimestre",
+  "resource_id": "26901c2c-88be-4377-9658-b88133a31ce6",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:23:00Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

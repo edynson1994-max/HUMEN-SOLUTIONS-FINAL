@@ -1,0 +1,16 @@
+{
+  "dataset_id": "promedios-valuos-municipalidad-de-miraflores",
+  "titulo": "Promedios Valuos - [Municipalidad de Miraflores]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/promedios-valuos-municipalidad-de-miraflores",
+  "resource_id": "a7a77438-dedf-49fb-ad93-ffd4d33b8e10",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:09:59Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

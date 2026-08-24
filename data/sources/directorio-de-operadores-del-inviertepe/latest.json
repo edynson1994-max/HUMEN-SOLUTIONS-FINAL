@@ -1,0 +1,16 @@
+{
+  "dataset_id": "directorio-de-operadores-del-inviertepe",
+  "titulo": "Directorio de Operadores del Invierte.pe",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/directorio-de-operadores-del-inviertepe",
+  "resource_id": "5b0ea629-6808-4eb4-bd9d-9da085b2c1a7",
+  "estado": "formato_no_soportado",
+  "formato": "data",
+  "generado_en": "2026-08-24T22:15:54Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

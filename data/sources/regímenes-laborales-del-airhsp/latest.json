@@ -1,0 +1,16 @@
+{
+  "dataset_id": "regímenes-laborales-del-airhsp",
+  "titulo": "Regímenes Laborales del AIRHSP",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/reg%C3%ADmenes-laborales-del-airhsp",
+  "resource_id": "1e013f9b-65ce-4599-886c-775ee06532b7",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:49Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

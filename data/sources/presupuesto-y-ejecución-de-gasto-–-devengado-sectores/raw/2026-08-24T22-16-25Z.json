@@ -1,0 +1,16 @@
+{
+  "dataset_id": "presupuesto-y-ejecución-de-gasto-–-devengado-sectores",
+  "titulo": "Presupuesto y Ejecución de Gasto – Devengado Sectores",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/presupuesto-y-ejecuci%C3%B3n-de-gasto-%E2%80%93-devengado-sectores",
+  "resource_id": "95453c93-d0dd-4909-a4ba-fdec1744a860",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:25Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

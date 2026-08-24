@@ -1,0 +1,16 @@
+{
+  "dataset_id": "clasificación-funcional-del-gasto-0",
+  "titulo": "Clasificación Funcional del Gasto",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/clasificaci%C3%B3n-funcional-del-gasto-0",
+  "resource_id": "a1d09035-f2ac-4155-a093-4f8004bb1808",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:04Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

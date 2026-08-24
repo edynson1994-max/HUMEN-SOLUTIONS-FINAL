@@ -1,0 +1,16 @@
+{
+  "dataset_id": "pagos-del-impuesto-de-alcabala-lima-provincia-ene-mar-2021",
+  "titulo": "Pagos del Impuesto de Alcabala Lima Provincia Ene Mar 2021",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/pagos-del-impuesto-de-alcabala-lima-provincia-ene-mar-2021",
+  "resource_id": "c6aba65a-c115-4034-8cfd-090396319144",
+  "estado": "formato_no_soportado",
+  "formato": "data",
+  "generado_en": "2026-08-24T22:09:44Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

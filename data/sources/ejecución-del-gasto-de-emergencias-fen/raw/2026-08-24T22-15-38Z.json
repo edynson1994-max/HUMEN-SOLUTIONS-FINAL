@@ -1,0 +1,16 @@
+{
+  "dataset_id": "ejecución-del-gasto-de-emergencias-fen",
+  "titulo": "Ejecución del Gasto de Emergencias - FEN",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/ejecuci%C3%B3n-del-gasto-de-emergencias-fen",
+  "resource_id": "6f2dd0e6-7a3f-44b9-bc84-9a9c4bf5c4af",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:15:38Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

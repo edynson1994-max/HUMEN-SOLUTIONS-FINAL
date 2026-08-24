@@ -1,0 +1,16 @@
+{
+  "dataset_id": "metadados-recaudacion-de-ingresos-de-impuesto-predial-de-la-municipalidad-distrital-de",
+  "titulo": "METADADOS RECAUDACION DE INGRESOS DE IMPUESTO PREDIAL DE LA MUNICIPALIDAD DISTRITAL DE RANRAHIRCA- [MDR]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/metadados-recaudacion-de-ingresos-de-impuesto-predial-de-la-municipalidad-distrital-de",
+  "resource_id": "2de6e847-80e4-4dc4-9ce3-738ffee04f23",
+  "estado": "formato_no_soportado",
+  "formato": "docx",
+  "generado_en": "2026-08-24T22:22:02Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

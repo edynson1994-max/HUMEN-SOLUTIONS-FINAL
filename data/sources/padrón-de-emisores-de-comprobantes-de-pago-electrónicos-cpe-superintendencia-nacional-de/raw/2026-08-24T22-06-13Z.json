@@ -1,0 +1,16 @@
+{
+  "dataset_id": "padrón-de-emisores-de-comprobantes-de-pago-electrónicos-cpe-superintendencia-nacional-de",
+  "titulo": "Padrón de Emisores de Comprobantes de Pago Electrónicos (CPE) - [Superintendencia Nacional de Aduanas y de Administración Tributaria - SUNAT]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/padr%C3%B3n-de-emisores-de-comprobantes-de-pago-electr%C3%B3nicos-cpe-superintendencia-nacional-de",
+  "resource_id": "89892e6d-29e5-4d15-8c86-c4cfe28e8994",
+  "estado": "formato_no_soportado",
+  "formato": "zip",
+  "generado_en": "2026-08-24T22:06:13Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

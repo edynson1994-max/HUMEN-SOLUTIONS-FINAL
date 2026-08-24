@@ -1,0 +1,251 @@
+{
+  "dataset_id": "asegurados-del-régimen-sctr-administrado-por-la-onp-2025",
+  "titulo": "Asegurados del Régimen SCTR administrado por la ONP 2025",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/asegurados-del-r%C3%A9gimen-sctr-administrado-por-la-onp-2025",
+  "resource_id": "d0fb423d-c12a-4254-9fd7-7781e0c90388",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "sector",
+    "dpto1",
+    "sexact",
+    "tipo",
+    "fnacact",
+    "edadact",
+    "redadact",
+    "id_persona",
+    "salact"
+  ],
+  "filas_leidas": 287732,
+  "muestra": [
+    {
+      "sector": "1",
+      "dpto1": "25",
+      "sexact": "0",
+      "tipo": "1",
+      "fnacact": "17/06/1959",
+      "edadact": "65",
+      "redadact": "6",
+      "id_persona": "9142",
+      "salact": "5"
+    },
+    {
+      "sector": "1",
+      "dpto1": "25",
+      "sexact": "0",
+      "tipo": "1",
+      "fnacact": "02/01/1957",
+      "edadact": "68",
+      "redadact": "6",
+      "id_persona": "68112",
+      "salact": "5"
+    },
+    {
+      "sector": "1",
+      "dpto1": "25",
+      "sexact": "0",
+      "tipo": "1",
+      "fnacact": "25/05/1965",
+      "edadact": "59",
+      "redadact": "5",
+      "id_persona": "90117",
+      "salact": "5"
+    },
+    {
+      "sector": "1",
+      "dpto1": "25",
+      "sexact": "0",
+      "tipo": "1",
+      "fnacact": "13/10/1956",
+      "edadact": "68",
+      "redadact": "6",
+      "id_persona": "69118",
+      "salact": "5"
+    },
+    {
+      "sector": "1",
+      "dpto1": "25",
+      "sexact": "0",
+      "tipo": "1",
+      "fnacact": "03/07/1964",
+      "edadact": "60",
+      "redadact": "5",
+      "id_persona": "68119",
+      "salact": "2"
+    },
+    {
+      "sector": "1",
+      "dpto1": "25",
+      "sexact": "1",
+      "tipo": "1",
+      "fnacact": "21/07/1960",
+      "edadact": "64",
+      "redadact": "5",
+      "id_persona": "27123",
+      "salact": "3"
+    },
+    {
+      "sector": "1",
+      "dpto1": "25",
+      "sexact": "1",
+      "tipo": "1",
+      "fnacact": "28/06/1961",
+      "edadact": "63",
+      "redadact": "5",
+      "id_persona": "33123",
+      "salact": "5"
+    },
+    {
+      "sector": "1",
+      "dpto1": "25",
+      "sexact": "0",
+      "tipo": "1",
+      "fnacact": "15/08/1964",
+      "edadact": "60",
+      "redadact": "5",
+      "id_persona": "65125",
+      "salact": "2"
+    },
+    {
+      "sector": "1",
+      "dpto1": "25",
+      "sexact": "0",
+      "tipo": "1",
+      "fnacact": "23/05/1965",
+      "edadact": "59",
+      "redadact": "5",
+      "id_persona": "41128",
+      "salact": "2"
+    },
+    {
+      "sector": "1",
+      "dpto1": "15",
+      "sexact": "0",
+      "tipo": "1",
+      "fnacact": "08/03/1963",
+      "edadact": "62",
+      "redadact": "5",
+      "id_persona": "50128",
+      "salact": "3"
+    },
+    {
+      "sector": "1",
+      "dpto1": "25",
+      "sexact": "0",
+      "tipo": "1",
+      "fnacact": "18/09/1961",
+      "edadact": "63",
+      "redadact": "5",
+      "id_persona": "95129",
+      "salact": "5"
+    },
+    {
+      "sector": "1",
+      "dpto1": "25",
+      "sexact": "1",
+      "tipo": "1",
+      "fnacact": "05/05/1958",
+      "edadact": "66",
+      "redadact": "6",
+      "id_persona": "26130",
+      "salact": "2"
+    },
+    {
+      "sector": "1",
+      "dpto1": "25",
+      "sexact": "0",
+      "tipo": "1",
+      "fnacact": "18/04/1958",
+      "edadact": "66",
+      "redadact": "6",
+      "id_persona": "35140",
+      "salact": "2"
+    },
+    {
+      "sector": "1",
+      "dpto1": "25",
+      "sexact": "0",
+      "tipo": "1",
+      "fnacact": "10/01/1964",
+      "edadact": "61",
+      "redadact": "5",
+      "id_persona": "37141",
+      "salact": "5"
+    },
+    {
+      "sector": "1",
+      "dpto1": "20",
+      "sexact": "0",
+      "tipo": "1",
+      "fnacact": "11/07/1966",
+      "edadact": "58",
+      "redadact": "5",
+      "id_persona": "64142",
+      "salact": "4"
+    },
+    {
+      "sector": "1",
+      "dpto1": "25",
+      "sexact": "1",
+      "tipo": "1",
+      "fnacact": "21/10/1963",
+      "edadact": "61",
+      "redadact": "5",
+      "id_persona": "59143",
+      "salact": "3"
+    },
+    {
+      "sector": "1",
+      "dpto1": "25",
+      "sexact": "0",
+      "tipo": "1",
+      "fnacact": "20/11/1959",
+      "edadact": "65",
+      "redadact": "6",
+      "id_persona": "28146",
+      "salact": "3"
+    },
+    {
+      "sector": "1",
+      "dpto1": "15",
+      "sexact": "1",
+      "tipo": "1",
+      "fnacact": "04/04/1964",
+      "edadact": "60",
+      "redadact": "5",
+      "id_persona": "68148",
+      "salact": "2"
+    },
+    {
+      "sector": "1",
+      "dpto1": "15",
+      "sexact": "",
+      "tipo": "1",
+      "fnacact": "15/08/1969",
+      "edadact": "55",
+      "redadact": "5",
+      "id_persona": "74148",
+      "salact": "5"
+    },
+    {
+      "sector": "1",
+      "dpto1": "25",
+      "sexact": "0",
+      "tipo": "1",
+      "fnacact": "03/09/1963",
+      "edadact": "61",
+      "redadact": "5",
+      "id_persona": "76155",
+      "salact": "2"
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:22:31Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 287732,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

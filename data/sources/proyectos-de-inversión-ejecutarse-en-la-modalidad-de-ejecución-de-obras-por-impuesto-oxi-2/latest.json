@@ -1,0 +1,19 @@
+{
+  "dataset_id": "proyectos-de-inversión-ejecutarse-en-la-modalidad-de-ejecución-de-obras-por-impuesto-oxi-2",
+  "titulo": "PROYECTOS DE INVERSIÓN A EJECUTARSE EN LA MODALIDAD DE EJECUCIÓN DE OBRAS POR IMPUESTO (OXI)-PNSR",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/proyectos-de-inversi%C3%B3n-ejecutarse-en-la-modalidad-de-ejecuci%C3%B3n-de-obras-por-impuesto-oxi-2",
+  "resource_id": "88df1808-b242-40db-9914-30743230b72b",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "new-line character seen in unquoted field - do you need to open the file with newline=''?",
+    "url_catalogo_respaldo": "new-line character seen in unquoted field - do you need to open the file with newline=''?"
+  },
+  "generado_en": "2026-08-24T22:15:37Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

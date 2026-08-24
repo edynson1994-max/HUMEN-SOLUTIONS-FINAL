@@ -1,0 +1,16 @@
+{
+  "dataset_id": "encuesta-económica-anual-eea-2014-instituto-nacional-de-estadística-e-informática-inei",
+  "titulo": "Encuesta Económica Anual (EEA) 2014 - [Instituto Nacional de Estadística e Informática - INEI]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-econ%C3%B3mica-anual-eea-2014-instituto-nacional-de-estad%C3%ADstica-e-inform%C3%A1tica-inei",
+  "resource_id": "42322f82-3e70-422c-a9ab-04e72b0ff9cc",
+  "estado": "formato_no_soportado",
+  "formato": "pdf",
+  "generado_en": "2026-08-24T22:11:06Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

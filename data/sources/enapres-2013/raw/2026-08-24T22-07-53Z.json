@@ -1,0 +1,19 @@
+{
+  "dataset_id": "enapres-2013",
+  "titulo": "ENAPRES 2013",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/enapres-2013",
+  "resource_id": "762b7a06-a425-437e-95cc-2a8640996d09",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+    "url_catalogo_respaldo": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+  },
+  "generado_en": "2026-08-24T22:07:53Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "base-de-emisión-de-arbitrios-municipales-municipalidad-distrital-de-jesús-maría-maría-–-mdjm",
+  "titulo": "Base de Emisión de Arbitrios Municipales Municipalidad Distrital de Jesús María María – [MDJM]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/base-de-emisi%C3%B3n-de-arbitrios-municipales-municipalidad-distrital-de-jes%C3%BAs-mar%C3%ADa-mar%C3%ADa-%E2%80%93-mdjm",
+  "resource_id": "85d14123-b2eb-4eff-8003-29ae4f92c5f5",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:21:42Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

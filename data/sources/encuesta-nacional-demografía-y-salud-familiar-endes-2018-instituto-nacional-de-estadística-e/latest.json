@@ -1,0 +1,16 @@
+{
+  "dataset_id": "encuesta-nacional-demografía-y-salud-familiar-endes-2018-instituto-nacional-de-estadística-e",
+  "titulo": "Encuesta Nacional Demografía y Salud Familiar (ENDES) 2018 - [Instituto Nacional de Estadística e Informática - INEI]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-demograf%C3%ADa-y-salud-familiar-endes-2018-instituto-nacional-de-estad%C3%ADstica-e",
+  "resource_id": "7d6cc676-4680-41b5-96b0-4f439c6895b2",
+  "estado": "formato_no_soportado",
+  "formato": "pdf",
+  "generado_en": "2026-08-24T22:09:15Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

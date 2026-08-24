@@ -1,0 +1,16 @@
+{
+  "dataset_id": "cargos-estructurales-del-airhsp",
+  "titulo": "Cargos Estructurales del AIRHSP",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/cargos-estructurales-del-airhsp",
+  "resource_id": "b9597c33-4c3d-4e1a-b756-2e6d265fb40f",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:47Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

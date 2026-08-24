@@ -1,0 +1,16 @@
+{
+  "dataset_id": "gasto-en-niñez-y-adolescencia-gpnna",
+  "titulo": "Gasto en niñez y adolescencia (GPNNA)",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/gasto-en-ni%C3%B1ez-y-adolescencia-gpnna",
+  "resource_id": "fba4c7e9-6f5a-4e8b-a5dc-2b0b03b70a00",
+  "estado": "formato_no_soportado",
+  "formato": "data",
+  "generado_en": "2026-08-24T22:21:44Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

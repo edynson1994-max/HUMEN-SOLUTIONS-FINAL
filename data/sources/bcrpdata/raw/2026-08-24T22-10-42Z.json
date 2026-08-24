@@ -1,0 +1,16 @@
+{
+  "dataset_id": "bcrpdata",
+  "titulo": "BCRPData",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/bcrpdata",
+  "resource_id": "1ce1942e-5cf1-4df3-aa08-8ac588240ede",
+  "estado": "formato_no_soportado",
+  "formato": "html",
+  "generado_en": "2026-08-24T22:10:42Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

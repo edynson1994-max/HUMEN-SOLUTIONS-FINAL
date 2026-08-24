@@ -1,0 +1,16 @@
+{
+  "dataset_id": "servicio-de-deuda-deuda-proyectada",
+  "titulo": "Servicio de deuda - Deuda proyectada",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/servicio-de-deuda-deuda-proyectada",
+  "resource_id": "f6a370f7-d361-4da2-ba81-a3733e6823c6",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:17:02Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

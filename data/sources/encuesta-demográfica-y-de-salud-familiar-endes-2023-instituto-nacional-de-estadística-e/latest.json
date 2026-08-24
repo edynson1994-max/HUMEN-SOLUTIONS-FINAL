@@ -1,0 +1,16 @@
+{
+  "dataset_id": "encuesta-demográfica-y-de-salud-familiar-endes-2023-instituto-nacional-de-estadística-e",
+  "titulo": "Encuesta Demográfica y de Salud Familiar (ENDES) 2023 - [Instituto Nacional de Estadística e Informática - INEI]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-demogr%C3%A1fica-y-de-salud-familiar-endes-2023-instituto-nacional-de-estad%C3%ADstica-e",
+  "resource_id": "25e40ddb-e25e-4527-8b83-5006c9afa9a5",
+  "estado": "formato_no_soportado",
+  "formato": "pdf",
+  "generado_en": "2026-08-24T22:18:55Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

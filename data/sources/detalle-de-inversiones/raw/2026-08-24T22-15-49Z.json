@@ -1,0 +1,16 @@
+{
+  "dataset_id": "detalle-de-inversiones",
+  "titulo": "Detalle de inversiones",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/detalle-de-inversiones",
+  "resource_id": "c95eba17-3067-40c7-ad84-f117b72799fa",
+  "estado": "formato_no_soportado",
+  "formato": "data",
+  "generado_en": "2026-08-24T22:15:49Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

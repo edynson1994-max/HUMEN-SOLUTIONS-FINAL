@@ -1,0 +1,16 @@
+{
+  "dataset_id": "listado-de-obras-avance-fisico-financiero-y-presupuesto-asignado",
+  "titulo": "listado de obras avance fisico financiero y presupuesto asignado",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/listado-de-obras-avance-fisico-financiero-y-presupuesto-asignado",
+  "resource_id": "8ca47a3b-d643-4cbd-9589-a825fdbbce24",
+  "estado": "formato_no_soportado",
+  "formato": ".xlsx",
+  "generado_en": "2026-08-24T22:23:30Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

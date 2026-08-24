@@ -1,0 +1,16 @@
+{
+  "dataset_id": "encuesta-demográfica-y-de-salud-familiar-endes-1992-instituto-nacional-de-estadística-e",
+  "titulo": "Encuesta Demográfica y de Salud Familiar (ENDES) 1992  - [Instituto Nacional de Estadística e Informática - INEI]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-demogr%C3%A1fica-y-de-salud-familiar-endes-1992-instituto-nacional-de-estad%C3%ADstica-e",
+  "resource_id": "36392f07-b295-4f5c-8332-3bf8feed6cbc",
+  "estado": "formato_no_soportado",
+  "formato": "pdf",
+  "generado_en": "2026-08-24T22:13:05Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

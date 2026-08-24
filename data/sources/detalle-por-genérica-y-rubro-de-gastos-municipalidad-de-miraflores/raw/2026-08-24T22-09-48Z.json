@@ -1,0 +1,19 @@
+{
+  "dataset_id": "detalle-por-genérica-y-rubro-de-gastos-municipalidad-de-miraflores",
+  "titulo": "Detalle por Genérica y Rubro de Gastos - [Municipalidad de Miraflores]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/detalle-por-gen%C3%A9rica-y-rubro-de-gastos-municipalidad-de-miraflores",
+  "resource_id": "b1afc089-6ec2-42e6-a215-28dccd4667a6",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "new-line character seen in unquoted field - do you need to open the file with newline=''?",
+    "url_catalogo_respaldo": "new-line character seen in unquoted field - do you need to open the file with newline=''?"
+  },
+  "generado_en": "2026-08-24T22:09:48Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

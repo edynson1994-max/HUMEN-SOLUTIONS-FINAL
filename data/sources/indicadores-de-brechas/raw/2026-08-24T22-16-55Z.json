@@ -1,0 +1,16 @@
+{
+  "dataset_id": "indicadores-de-brechas",
+  "titulo": "Indicadores de brechas",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/indicadores-de-brechas",
+  "resource_id": "15965ef2-7966-4fc3-92ed-968708c8726f",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:55Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

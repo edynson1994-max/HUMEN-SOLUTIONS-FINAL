@@ -1,0 +1,16 @@
+{
+  "dataset_id": "lista-de-docentes-undac-2026",
+  "titulo": "Lista de docentes Undac 2026",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/lista-de-docentes-undac-2026",
+  "resource_id": "8762aa72-54e5-41ef-8937-1ef0975c4bff",
+  "estado": "formato_no_soportado",
+  "formato": ".csv",
+  "generado_en": "2026-08-24T22:05:54Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

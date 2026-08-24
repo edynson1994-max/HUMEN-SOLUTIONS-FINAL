@@ -1,0 +1,16 @@
+{
+  "dataset_id": "inversiones-desactivadas",
+  "titulo": "Inversiones desactivadas",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/inversiones-desactivadas",
+  "resource_id": "8d1975a1-55c3-403b-b7ef-a041cf77568b",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:15:52Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

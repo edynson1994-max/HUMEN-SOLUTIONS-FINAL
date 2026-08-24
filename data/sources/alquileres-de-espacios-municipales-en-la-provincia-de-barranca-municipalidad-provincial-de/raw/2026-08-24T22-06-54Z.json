@@ -1,0 +1,19 @@
+{
+  "dataset_id": "alquileres-de-espacios-municipales-en-la-provincia-de-barranca-municipalidad-provincial-de",
+  "titulo": "Alquileres de espacios municipales en la Provincia de Barranca [Municipalidad Provincial de Barranca]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/alquileres-de-espacios-municipales-en-la-provincia-de-barranca-municipalidad-provincial-de",
+  "resource_id": "b26bcacd-709a-4c0b-bc39-b22f7763df11",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "new-line character seen in unquoted field - do you need to open the file with newline=''?",
+    "url_catalogo_respaldo": "new-line character seen in unquoted field - do you need to open the file with newline=''?"
+  },
+  "generado_en": "2026-08-24T22:06:54Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

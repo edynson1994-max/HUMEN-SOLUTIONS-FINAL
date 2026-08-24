@@ -1,0 +1,16 @@
+{
+  "dataset_id": "presupuesto-y-ejecución-de-gasto-–-gasto-social",
+  "titulo": "Presupuesto y Ejecución de Gasto – Gasto Social",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/presupuesto-y-ejecuci%C3%B3n-de-gasto-%E2%80%93-gasto-social",
+  "resource_id": "cc91c055-582d-4494-8d59-cf0b33bc514c",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:42Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

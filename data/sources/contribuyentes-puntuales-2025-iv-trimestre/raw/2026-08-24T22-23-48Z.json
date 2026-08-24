@@ -1,0 +1,16 @@
+{
+  "dataset_id": "contribuyentes-puntuales-2025-iv-trimestre",
+  "titulo": "Contribuyentes Puntuales 2025 (IV Trimestre)",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/contribuyentes-puntuales-2025-iv-trimestre",
+  "resource_id": "71036ad0-7fc0-43ab-b81b-c2ad99cb89d3",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:23:48Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

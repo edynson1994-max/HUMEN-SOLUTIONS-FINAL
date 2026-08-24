@@ -1,0 +1,16 @@
+{
+  "dataset_id": "relación-de-agentes-bn-nivel-nacional-banco-de-la-nación",
+  "titulo": "Relación de Agentes BN a Nivel Nacional - [Banco de la Nación]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/relaci%C3%B3n-de-agentes-bn-nivel-nacional-banco-de-la-naci%C3%B3n",
+  "resource_id": "691881f4-c867-4df2-aefd-e6eeb638a196",
+  "estado": "formato_no_soportado",
+  "formato": ".csv",
+  "generado_en": "2026-08-24T22:06:15Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

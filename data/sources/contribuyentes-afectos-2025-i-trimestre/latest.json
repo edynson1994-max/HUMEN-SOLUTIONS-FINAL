@@ -1,0 +1,16 @@
+{
+  "dataset_id": "contribuyentes-afectos-2025-i-trimestre",
+  "titulo": "Contribuyentes afectos 2025 (I Trimestre)",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/contribuyentes-afectos-2025-i-trimestre",
+  "resource_id": "33d9f6c7-fe8f-44b2-985d-8cafaa81a007",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:21:26Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

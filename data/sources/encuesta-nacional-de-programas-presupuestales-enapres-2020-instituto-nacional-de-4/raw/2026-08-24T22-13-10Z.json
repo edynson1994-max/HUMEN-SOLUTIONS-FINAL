@@ -1,0 +1,16 @@
+{
+  "dataset_id": "encuesta-nacional-de-programas-presupuestales-enapres-2020-instituto-nacional-de-4",
+  "titulo": "Encuesta Nacional de Programas Presupuestales (ENAPRES) 2020 - [Instituto Nacional de Estadística e Informática - INEI]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-de-programas-presupuestales-enapres-2020-instituto-nacional-de-4",
+  "resource_id": "668ffa40-0e1d-41f2-928e-430810a27529",
+  "estado": "formato_no_soportado",
+  "formato": "pdf",
+  "generado_en": "2026-08-24T22:13:10Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

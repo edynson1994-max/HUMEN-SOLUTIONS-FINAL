@@ -1,0 +1,16 @@
+{
+  "dataset_id": "proyectos-de-agua-y-saneamiento-en-la-modalidad-de-obras-por-impuesto-pnsu",
+  "titulo": "PROYECTOS DE AGUA Y SANEAMIENTO EN LA MODALIDAD DE OBRAS POR IMPUESTO - PNSU",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/proyectos-de-agua-y-saneamiento-en-la-modalidad-de-obras-por-impuesto-pnsu",
+  "resource_id": "13d33376-d253-49b7-a283-5536eec038da",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:10:18Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

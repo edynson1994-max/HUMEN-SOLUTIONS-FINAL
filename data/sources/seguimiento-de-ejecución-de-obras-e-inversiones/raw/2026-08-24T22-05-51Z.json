@@ -1,0 +1,16 @@
+{
+  "dataset_id": "seguimiento-de-ejecución-de-obras-e-inversiones",
+  "titulo": "Seguimiento de Ejecución de Obras e Inversiones",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/seguimiento-de-ejecuci%C3%B3n-de-obras-e-inversiones",
+  "resource_id": "b497c9d2-84e5-4937-877d-7967022d4b92",
+  "estado": "formato_no_soportado",
+  "formato": ".xlsx",
+  "generado_en": "2026-08-24T22:05:51Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

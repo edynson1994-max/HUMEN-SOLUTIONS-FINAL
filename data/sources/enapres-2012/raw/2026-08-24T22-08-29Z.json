@@ -1,0 +1,19 @@
+{
+  "dataset_id": "enapres-2012",
+  "titulo": "ENAPRES 2012",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/enapres-2012",
+  "resource_id": "d9cdef4b-c2ba-4b32-8adb-3c21d255cf42",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "HTTP Error 404: Not Found",
+    "url_catalogo_respaldo": "HTTP Error 404: Not Found"
+  },
+  "generado_en": "2026-08-24T22:08:29Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "dataset_id": "recaudación-por-conceptos-de-autorizaciones-de-uso-de-la-vía-pública-en-la-provincia-de",
+  "titulo": "Recaudación por conceptos de Autorizaciones de uso de la vía pública en la provincia de Barranca [Municipalidad Provincial de Barranca]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-por-conceptos-de-autorizaciones-de-uso-de-la-v%C3%ADa-p%C3%BAblica-en-la-provincia-de",
+  "resource_id": "bfe9413e-7a3d-4d37-8c55-c6710ec616f0",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "new-line character seen in unquoted field - do you need to open the file with newline=''?",
+    "url_catalogo_respaldo": "new-line character seen in unquoted field - do you need to open the file with newline=''?"
+  },
+  "generado_en": "2026-08-24T22:06:45Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

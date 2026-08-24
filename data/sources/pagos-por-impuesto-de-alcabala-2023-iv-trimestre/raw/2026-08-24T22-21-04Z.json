@@ -1,0 +1,16 @@
+{
+  "dataset_id": "pagos-por-impuesto-de-alcabala-2023-iv-trimestre",
+  "titulo": "Pagos por Impuesto de Alcabala 2023 (IV Trimestre)",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/pagos-por-impuesto-de-alcabala-2023-iv-trimestre",
+  "resource_id": "79148958-0d16-4a6f-b6fe-6d234595eb3f",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:21:04Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

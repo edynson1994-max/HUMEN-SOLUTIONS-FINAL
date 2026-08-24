@@ -1,0 +1,16 @@
+{
+  "dataset_id": "instrumentos-de-deuda-de-largo-plazo",
+  "titulo": "Instrumentos de Deuda de Largo Plazo",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/instrumentos-de-deuda-de-largo-plazo",
+  "resource_id": "a3cb7fd6-341f-470f-8614-5692f8e12a33",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:59Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

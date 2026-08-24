@@ -1,0 +1,16 @@
+{
+  "dataset_id": "estudiantes-undac-matriculados-por-semestre-y-asignatura-año-2026",
+  "titulo": "Estudiantes UNDAC matriculados por semestre y asignatura - Año 2026",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/estudiantes-undac-matriculados-por-semestre-y-asignatura-a%C3%B1o-2026",
+  "resource_id": "b5211f97-d61c-4389-9bb7-d33944ec9bb1",
+  "estado": "formato_no_soportado",
+  "formato": ".csv",
+  "generado_en": "2026-08-24T22:05:58Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

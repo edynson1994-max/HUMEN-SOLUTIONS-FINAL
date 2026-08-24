@@ -1,11 +1,47 @@
 {
-  "generado_en": "2026-08-24T18:13:04Z",
+  "generado_en": "2026-08-24T22:23:55Z",
   "fuentes": {
-    "analytics_generado_en": "2026-08-24T18:13:04Z",
-    "cambios_generado_en": "2026-08-24T18:13:03Z"
+    "analytics_generado_en": "2026-08-24T22:23:55Z",
+    "cambios_generado_en": "2026-08-24T22:23:55Z"
   },
-  "total_candidatas": 1,
+  "total_candidatas": 5,
   "candidatas": [
+    {
+      "id": "mas_datos-pensionistas-y-beneficiarios-del-sistema-nacional-de-pensiones-decreto-ley-n°-19990-22",
+      "tipo": "mas_datos",
+      "dataset_id": "pensionistas-y-beneficiarios-del-sistema-nacional-de-pensiones-decreto-ley-n°-19990-22",
+      "titulo": "Pensionistas y beneficiarios del Sistema Nacional de Pensiones (Decreto Ley N° 19990) administrados por la ONP 2024",
+      "entidad": "Oficina de Normalización Previsional - ONP",
+      "hechos": {
+        "filas": 386118
+      },
+      "resumen_estructurado": "\"Pensionistas y beneficiarios del Sistema Nacional de Pensiones (Decreto Ley N° 19990) administrados por la ONP 2024\" (Oficina de Normalización Previsional - ONP) es. por ahora. el dataset con más filas sincronizadas: 386.118.",
+      "prioridad": 386118
+    },
+    {
+      "id": "mas_datos-pensionistas-y-beneficiarios-del-sistema-nacional-de-pensiones-decreto-ley-n°-19990-28",
+      "tipo": "mas_datos",
+      "dataset_id": "pensionistas-y-beneficiarios-del-sistema-nacional-de-pensiones-decreto-ley-n°-19990-28",
+      "titulo": "Pensionistas y beneficiarios del Sistema Nacional de Pensiones (Decreto Ley N° 19990) administrados por la ONP 2025",
+      "entidad": "Oficina de Normalización Previsional - ONP",
+      "hechos": {
+        "filas": 385811
+      },
+      "resumen_estructurado": "\"Pensionistas y beneficiarios del Sistema Nacional de Pensiones (Decreto Ley N° 19990) administrados por la ONP 2025\" (Oficina de Normalización Previsional - ONP) es. por ahora. el dataset con más filas sincronizadas: 385.811.",
+      "prioridad": 385811
+    },
+    {
+      "id": "mas_datos-pensionistas-del-sistema-nacional-de-pensiones-según-modalidad-de-pago-oficina-de",
+      "tipo": "mas_datos",
+      "dataset_id": "pensionistas-del-sistema-nacional-de-pensiones-según-modalidad-de-pago-oficina-de",
+      "titulo": "Pensionistas del Sistema Nacional de Pensiones según modalidad de pago - [Oficina de Normalización Previsional- ONP]",
+      "entidad": "Oficina de Normalización Previsional - ONP",
+      "hechos": {
+        "filas": 337113
+      },
+      "resumen_estructurado": "\"Pensionistas del Sistema Nacional de Pensiones según modalidad de pago - [Oficina de Normalización Previsional- ONP]\" (Oficina de Normalización Previsional - ONP) es. por ahora. el dataset con más filas sincronizadas: 337.113.",
+      "prioridad": 337113
+    },
     {
       "id": "cobertura_catalogo",
       "tipo": "cobertura_catalogo",
@@ -13,12 +49,24 @@
       "titulo": "Cobertura del catálogo de Economía y Finanzas",
       "entidad": null,
       "hechos": {
-        "total_datasets_portal": 4650,
-        "total_clasificados_en_categoria": 1,
-        "catalogo_corrida_completa": false
+        "total_datasets_portal": 4651,
+        "total_clasificados_en_categoria": 505,
+        "catalogo_corrida_completa": true
       },
-      "resumen_estructurado": "Perú en Datos conoce 1 datasets de Economía y Finanzas de los 4650 que tiene registrados el Portal Nacional de Datos Abiertos (descubrimiento parcial — todavía se está descubriendo el resto del portal).",
-      "prioridad": 1
+      "resumen_estructurado": "Perú en Datos conoce 505 datasets de Economía y Finanzas de los 4651 que tiene registrados el Portal Nacional de Datos Abiertos (descubrimiento completo).",
+      "prioridad": 505
+    },
+    {
+      "id": "nuevas_conexiones",
+      "tipo": "nuevas_conexiones",
+      "dataset_id": null,
+      "titulo": "Nuevos datasets sincronizados",
+      "entidad": null,
+      "hechos": {
+        "total_primera_sincronizacion": 504
+      },
+      "resumen_estructurado": "504 dataset(s) se sincronizaron por primera vez en la corrida más reciente.",
+      "prioridad": 504
     }
   ]
 }

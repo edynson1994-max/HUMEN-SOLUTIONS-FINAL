@@ -1,0 +1,16 @@
+{
+  "dataset_id": "principales-cuentas-de-información-financiera-de-empresas-supervisadas-por-la-smv",
+  "titulo": "Principales cuentas de Información financiera de empresas supervisadas por la SMV",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/principales-cuentas-de-informaci%C3%B3n-financiera-de-empresas-supervisadas-por-la-smv",
+  "resource_id": "2acb3384-4af5-43fe-9af4-d2c2a45bc215",
+  "estado": "formato_no_soportado",
+  "formato": "json",
+  "generado_en": "2026-08-24T22:21:23Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

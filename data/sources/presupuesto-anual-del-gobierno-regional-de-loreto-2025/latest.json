@@ -1,0 +1,16 @@
+{
+  "dataset_id": "presupuesto-anual-del-gobierno-regional-de-loreto-2025",
+  "titulo": "Presupuesto Anual del Gobierno Regional de Loreto - 2025",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/presupuesto-anual-del-gobierno-regional-de-loreto-2025",
+  "resource_id": "4f833444-f1fb-4480-8801-9e4426dd8595",
+  "estado": "formato_no_soportado",
+  "formato": ".xlsx",
+  "generado_en": "2026-08-24T22:23:40Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

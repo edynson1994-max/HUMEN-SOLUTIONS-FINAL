@@ -1,0 +1,16 @@
+{
+  "dataset_id": "intervenciones-período-de-lluvias-2015-2016-y-fenómeno-el-niño",
+  "titulo": "Intervenciones período de lluvias 2015-2016 y Fenómeno El Niño",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/intervenciones-per%C3%ADodo-de-lluvias-2015-2016-y-fen%C3%B3meno-el-ni%C3%B1o",
+  "resource_id": "a7b5788f-55c7-4706-9c0a-8d290ff386d0",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:37Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "estado-de-situación-financiera",
+  "titulo": "Estado de Situación Financiera",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/estado-de-situaci%C3%B3n-financiera",
+  "resource_id": "121aabba-6873-4800-929f-a60fea74f4c2",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:15:59Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

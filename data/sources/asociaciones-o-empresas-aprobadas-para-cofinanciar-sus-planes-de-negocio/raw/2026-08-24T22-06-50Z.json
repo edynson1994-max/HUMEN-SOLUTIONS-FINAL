@@ -1,0 +1,16 @@
+{
+  "dataset_id": "asociaciones-o-empresas-aprobadas-para-cofinanciar-sus-planes-de-negocio",
+  "titulo": "ASOCIACIONES O EMPRESAS APROBADAS PARA COFINANCIAR SUS PLANES DE NEGOCIO",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/asociaciones-o-empresas-aprobadas-para-cofinanciar-sus-planes-de-negocio",
+  "resource_id": "a833e4e5-d73d-4313-898f-9a424b0a8455",
+  "estado": "formato_no_soportado",
+  "formato": ".csv",
+  "generado_en": "2026-08-24T22:06:50Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

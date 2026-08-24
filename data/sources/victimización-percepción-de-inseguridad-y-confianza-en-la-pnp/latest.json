@@ -1,0 +1,230 @@
+{
+  "dataset_id": "victimización-percepción-de-inseguridad-y-confianza-en-la-pnp",
+  "titulo": "Victimización, Percepción de Inseguridad y Confianza en la PNP",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/victimizaci%C3%B3n-percepci%C3%B3n-de-inseguridad-y-confianza-en-la-pnp",
+  "resource_id": "fb906439-e38a-4460-a51e-ea08769b0f0c",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "VALOR",
+    "INDICADOR",
+    "CLASIF",
+    "PERIODO",
+    "VALOR PERIODO",
+    "COD_UBICACION",
+    "AMBITO_PROY",
+    "DEPARTAMENTO"
+  ],
+  "filas_leidas": 1592,
+  "muestra": [
+    {
+      "VALOR": "18",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "0",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "0",
+      "AMBITO_PROY": "NACIONAL",
+      "DEPARTAMENTO": "NACIONAL"
+    },
+    {
+      "VALOR": "25.5",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "1",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "16",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "LORETO"
+    },
+    {
+      "VALOR": "24.6",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "2",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "3",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "APURÍMAC"
+    },
+    {
+      "VALOR": "24.5",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "3",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "25",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "UCAYALI"
+    },
+    {
+      "VALOR": "23.4",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "4",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "1",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "AMAZONAS"
+    },
+    {
+      "VALOR": "23.3",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "5",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "24",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "TUMBES"
+    },
+    {
+      "VALOR": "22.5",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "6",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "20",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "PIURA"
+    },
+    {
+      "VALOR": "22",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "7",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "6",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "CAJAMARCA"
+    },
+    {
+      "VALOR": "21.7",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "8",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "1599",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "REGIÓN LIMA"
+    },
+    {
+      "VALOR": "19.9",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "9",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "22",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "SAN MARTÍN"
+    },
+    {
+      "VALOR": "19.8",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "10",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "18",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "MOQUEGUA"
+    },
+    {
+      "VALOR": "19.4",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "11",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "14",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "LAMBAYEQUE"
+    },
+    {
+      "VALOR": "19.4",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "12",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "4",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "AREQUIPA"
+    },
+    {
+      "VALOR": "19",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "13",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "1501",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "LIMA METROPOLITANA"
+    },
+    {
+      "VALOR": "18.2",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "14",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "13",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "LA LIBERTAD"
+    },
+    {
+      "VALOR": "17.3",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "15",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "7",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "PROV. CONST. DEL CALLAO"
+    },
+    {
+      "VALOR": "16.9",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "16",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "11",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "ICA"
+    },
+    {
+      "VALOR": "15.2",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "17",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "8",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "CUSCO"
+    },
+    {
+      "VALOR": "15",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "18",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "2",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "ÁNCASH"
+    },
+    {
+      "VALOR": "14.9",
+      "INDICADOR": "PORCENTAJE DE CONFIANZA EN LA PNP",
+      "CLASIF": "19",
+      "PERIODO": "AÑO",
+      "VALOR PERIODO": "2014",
+      "COD_UBICACION": "23",
+      "AMBITO_PROY": "DEPARTAMENTO",
+      "DEPARTAMENTO": "TACNA"
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:22:03Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 1592,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

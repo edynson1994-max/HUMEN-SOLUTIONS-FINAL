@@ -1,0 +1,188 @@
+{
+  "dataset_id": "encuesta-demográfica-y-de-salud-familiar-endes-2025-instituto-nacional-de-estadística-e-5",
+  "titulo": "Encuesta Demográfica y de Salud Familiar (ENDES) 2025 - [Instituto Nacional de Estadística e Informática - INEI]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-demogr%C3%A1fica-y-de-salud-familiar-endes-2025-instituto-nacional-de-estad%C3%ADstica-e-5",
+  "resource_id": "654e55e3-c702-4274-8ea2-70032881f995",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "Variable",
+    "Descripción",
+    "Tipo de dato",
+    "Tamaño",
+    "Recurso relacionado",
+    "Información Adicional"
+  ],
+  "filas_leidas": 2768,
+  "muestra": [
+    {
+      "Variable": "ID1",
+      "Descripción": "Año",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "4",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": ""
+    },
+    {
+      "Variable": "HHID",
+      "Descripción": "Identificación Cuestionario del Hogar",
+      "Tipo de dato": "Alfanumérico",
+      "Tamaño": "15",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": "Rango: 000100101:542905001. Variable (Llave de identificación)."
+    },
+    {
+      "Variable": "QHCLUSTER",
+      "Descripción": "Conglomerado",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "4",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": ""
+    },
+    {
+      "Variable": "QHNUMBER",
+      "Descripción": "Vivienda seleccionada",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "3",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": ""
+    },
+    {
+      "Variable": "QHHOME",
+      "Descripción": "Hogar seleccionado",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "2",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": "Rango: 1:5."
+    },
+    {
+      "Variable": "QSNUMERO",
+      "Descripción": "Número de la persona seleccionada",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "2",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": "Rango: 1:25. Variable (Llave de identificación)."
+    },
+    {
+      "Variable": "QSINTM",
+      "Descripción": "Mes de visita final",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "2",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": "Rango: 1:12. Valores: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12."
+    },
+    {
+      "Variable": "QSINTY",
+      "Descripción": "Año de visita final",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "4",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": "Rango: 2023:2024."
+    },
+    {
+      "Variable": "QSTOTVISIT",
+      "Descripción": "Número total de visitas",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "2",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": "Rango: 1:10."
+    },
+    {
+      "Variable": "QSRESULT",
+      "Descripción": "Codigo resultado final",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "1",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": "Rango: 1:6, 9. Valores: 1; 2; 3; 4; 5; 6; 9."
+    },
+    {
+      "Variable": "QSNINOS",
+      "Descripción": "Total Niños/Niñas de 0 a 11 años",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "2",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": "Rango: 1:15."
+    },
+    {
+      "Variable": "QSRESINF",
+      "Descripción": "Resultado informante",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "1",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": "Rango: 1:6, 9. Valores: 1; 2; 3; 4; 5; 6; 9."
+    },
+    {
+      "Variable": "QS20C",
+      "Descripción": "Codigo persona seleccionada",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "2",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": "Rango: 1:25."
+    },
+    {
+      "Variable": "QSSEXO",
+      "Descripción": "Sexo de la persona seleccionada",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "1",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": "Rango: 1:2. Valores: 1; 2."
+    },
+    {
+      "Variable": "QSMEF",
+      "Descripción": "Informante en Mef",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "1",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": "Rango: 1:2. Valores: 1; 2."
+    },
+    {
+      "Variable": "QSDIA",
+      "Descripción": "Día de nacimiento",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "2",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": "Rango: 1:31,98. Valores: 98."
+    },
+    {
+      "Variable": "QS22M",
+      "Descripción": "Mes de nacimiento",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "2",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": "Rango: 1:12. Valores: 1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12."
+    },
+    {
+      "Variable": "QS22A",
+      "Descripción": "Año de nacimiento",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "4",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": "Rango: 1924:2008. Valores: 9998."
+    },
+    {
+      "Variable": "QS23",
+      "Descripción": "Años cumplidos",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "2",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": "Rango: 15:97. Valores: 97."
+    },
+    {
+      "Variable": "QS24",
+      "Descripción": "Asistió a la escuela",
+      "Tipo de dato": "Numérico",
+      "Tamaño": "1",
+      "Recurso relacionado": "CSALUD01_2025.csv",
+      "Información Adicional": "Rango: 1:2. Valores: 1; 2."
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:06:39Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 2768,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

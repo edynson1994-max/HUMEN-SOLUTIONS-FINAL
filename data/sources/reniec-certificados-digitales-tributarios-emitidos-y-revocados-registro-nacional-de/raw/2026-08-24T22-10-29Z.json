@@ -1,0 +1,188 @@
+{
+  "dataset_id": "reniec-certificados-digitales-tributarios-emitidos-y-revocados-registro-nacional-de",
+  "titulo": "RENIEC - Certificados digitales tributarios emitidos y revocados [Registro Nacional de Identificación y Estado Civil]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/reniec-certificados-digitales-tributarios-emitidos-y-revocados-registro-nacional-de",
+  "resource_id": "5aa10723-96ba-4ab4-b921-5fc61b013ef7",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "fechaOperacion",
+    "fechaExpiracion",
+    "estado",
+    "departamento",
+    "provincia",
+    "distrito"
+  ],
+  "filas_leidas": 24177,
+  "muestra": [
+    {
+      "fechaOperacion": "2021-01-01 00:07:53",
+      "fechaExpiracion": "2024-01-01 00:07:53",
+      "estado": "Emitido",
+      "departamento": "MAYNAS",
+      "provincia": "LORETO",
+      "distrito": "IQUITOS"
+    },
+    {
+      "fechaOperacion": "2021-01-01 00:08:41",
+      "fechaExpiracion": "2024-01-01 00:08:41",
+      "estado": "Emitido",
+      "departamento": "MAYNAS",
+      "provincia": "LORETO",
+      "distrito": "IQUITOS"
+    },
+    {
+      "fechaOperacion": "2021-01-01 00:11:35",
+      "fechaExpiracion": "2024-01-01 00:11:35",
+      "estado": "Emitido",
+      "departamento": "MAYNAS",
+      "provincia": "LORETO",
+      "distrito": "IQUITOS"
+    },
+    {
+      "fechaOperacion": "2021-01-01 00:17:33",
+      "fechaExpiracion": "2024-01-01 00:17:32",
+      "estado": "Emitido",
+      "departamento": "LIMA",
+      "provincia": "LIMA",
+      "distrito": "LIMA"
+    },
+    {
+      "fechaOperacion": "2021-01-01 00:31:20",
+      "fechaExpiracion": "2024-01-01 00:31:20",
+      "estado": "Emitido",
+      "departamento": "LIMA",
+      "provincia": "LIMA",
+      "distrito": "LINCE"
+    },
+    {
+      "fechaOperacion": "2021-01-01 01:17:25",
+      "fechaExpiracion": "2024-01-01 01:17:25",
+      "estado": "Emitido",
+      "departamento": "AREQUIPA",
+      "provincia": "AREQUIPA",
+      "distrito": "CERRO COLORADO"
+    },
+    {
+      "fechaOperacion": "2021-01-01 01:38:49",
+      "fechaExpiracion": "2024-01-01 01:38:48",
+      "estado": "Emitido",
+      "departamento": "LIMA",
+      "provincia": "LIMA",
+      "distrito": "CHORRILLOS"
+    },
+    {
+      "fechaOperacion": "2021-01-01 01:53:02",
+      "fechaExpiracion": "2024-01-01 01:53:01",
+      "estado": "Emitido",
+      "departamento": "LIMA",
+      "provincia": "LIMA",
+      "distrito": "SAN JUAN DE LURIGANCHO"
+    },
+    {
+      "fechaOperacion": "2021-01-01 01:58:11",
+      "fechaExpiracion": "2024-01-01 01:58:11",
+      "estado": "Emitido",
+      "departamento": "LIMA",
+      "provincia": "LIMA",
+      "distrito": "SAN JUAN DE LURIGANCHO"
+    },
+    {
+      "fechaOperacion": "2021-01-01 02:03:49",
+      "fechaExpiracion": "2024-01-01 02:03:49",
+      "estado": "Emitido",
+      "departamento": "LIMA",
+      "provincia": "LIMA",
+      "distrito": "SAN JUAN DE LURIGANCHO"
+    },
+    {
+      "fechaOperacion": "2021-01-01 02:12:34",
+      "fechaExpiracion": "2024-01-01 02:12:34",
+      "estado": "Emitido",
+      "departamento": "LIMA",
+      "provincia": "LIMA",
+      "distrito": "SAN JUAN DE LURIGANCHO"
+    },
+    {
+      "fechaOperacion": "2021-01-01 02:42:48",
+      "fechaExpiracion": "2024-01-01 02:42:48",
+      "estado": "Emitido",
+      "departamento": "SULLANA",
+      "provincia": "PIURA",
+      "distrito": "SULLANA"
+    },
+    {
+      "fechaOperacion": "2021-01-01 02:56:08",
+      "fechaExpiracion": "2024-01-01 02:56:08",
+      "estado": "Emitido",
+      "departamento": "TACNA",
+      "provincia": "TACNA",
+      "distrito": "TACNA"
+    },
+    {
+      "fechaOperacion": "2021-01-01 06:52:34",
+      "fechaExpiracion": "2024-01-01 06:52:34",
+      "estado": "Emitido",
+      "departamento": "LIMA",
+      "provincia": "LIMA",
+      "distrito": "INDEPENDENCIA"
+    },
+    {
+      "fechaOperacion": "2021-01-01 07:40:43",
+      "fechaExpiracion": "2024-01-01 07:40:43",
+      "estado": "Emitido",
+      "departamento": "AREQUIPA",
+      "provincia": "AREQUIPA",
+      "distrito": "PAUCARPATA"
+    },
+    {
+      "fechaOperacion": "2021-01-01 08:54:38",
+      "fechaExpiracion": "2024-01-01 08:54:37",
+      "estado": "Emitido",
+      "departamento": "AREQUIPA",
+      "provincia": "AREQUIPA",
+      "distrito": "AREQUIPA"
+    },
+    {
+      "fechaOperacion": "2021-01-01 09:35:08",
+      "fechaExpiracion": "2024-01-01 09:35:08",
+      "estado": "Emitido",
+      "departamento": "LIMA",
+      "provincia": "LIMA",
+      "distrito": "COMAS"
+    },
+    {
+      "fechaOperacion": "2021-01-01 09:54:01",
+      "fechaExpiracion": "2024-01-01 09:54:01",
+      "estado": "Emitido",
+      "departamento": "LIMA",
+      "provincia": "LIMA",
+      "distrito": "PUENTE PIEDRA"
+    },
+    {
+      "fechaOperacion": "2021-01-01 09:55:11",
+      "fechaExpiracion": "2024-01-01 09:55:11",
+      "estado": "Emitido",
+      "departamento": "AREQUIPA",
+      "provincia": "AREQUIPA",
+      "distrito": "SACHACA"
+    },
+    {
+      "fechaOperacion": "2021-01-01 10:01:35",
+      "fechaExpiracion": "2024-01-01 10:01:35",
+      "estado": "Emitido",
+      "departamento": "LIMA",
+      "provincia": "LIMA",
+      "distrito": "ATE"
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:10:29Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 24177,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

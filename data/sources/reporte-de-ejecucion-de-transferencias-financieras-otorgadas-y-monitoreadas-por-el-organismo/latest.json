@@ -1,0 +1,81 @@
+{
+  "dataset_id": "reporte-de-ejecucion-de-transferencias-financieras-otorgadas-y-monitoreadas-por-el-organismo",
+  "titulo": "Reporte de ejecucion de transferencias financieras otorgadas y monitoreadas por el Organismo Técnico de la Administración de los Servicios de Saneamiento – OTASS, a favor de Empresas Prestadoras de Servicios – EPS",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/reporte-de-ejecucion-de-transferencias-financieras-otorgadas-y-monitoreadas-por-el-organismo",
+  "resource_id": "f6747ec8-2695-4c36-8f07-8e0564a58138",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "Reporte de ejecución de las transferencias financieras monitoreadas por OTASS (por año)",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "filas_leidas": 12,
+  "muestra": [
+    {
+      "Reporte de ejecución de las transferencias financieras monitoreadas por OTASS (por año)": "",
+      "": ""
+    },
+    {
+      "Reporte de ejecución de las transferencias financieras monitoreadas por OTASS (por año)": "Año de Transferencia",
+      "": "% Ejecución"
+    },
+    {
+      "Reporte de ejecución de las transferencias financieras monitoreadas por OTASS (por año)": "2017",
+      "": "91,04%"
+    },
+    {
+      "Reporte de ejecución de las transferencias financieras monitoreadas por OTASS (por año)": "2018",
+      "": "82,24%"
+    },
+    {
+      "Reporte de ejecución de las transferencias financieras monitoreadas por OTASS (por año)": "2019",
+      "": "63,27%"
+    },
+    {
+      "Reporte de ejecución de las transferencias financieras monitoreadas por OTASS (por año)": "2020",
+      "": "97,03%"
+    },
+    {
+      "Reporte de ejecución de las transferencias financieras monitoreadas por OTASS (por año)": "2021",
+      "": "91,10%"
+    },
+    {
+      "Reporte de ejecución de las transferencias financieras monitoreadas por OTASS (por año)": "2022",
+      "": "94,27%"
+    },
+    {
+      "Reporte de ejecución de las transferencias financieras monitoreadas por OTASS (por año)": "2023",
+      "": "48,57%"
+    },
+    {
+      "Reporte de ejecución de las transferencias financieras monitoreadas por OTASS (por año)": "2024",
+      "": "44,61%"
+    },
+    {
+      "Reporte de ejecución de las transferencias financieras monitoreadas por OTASS (por año)": "2025",
+      "": "0,27%"
+    },
+    {
+      "Reporte de ejecución de las transferencias financieras monitoreadas por OTASS (por año)": "Total",
+      "": "81,55%"
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:04:52Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 12,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

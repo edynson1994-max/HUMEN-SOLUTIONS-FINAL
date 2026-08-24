@@ -1,0 +1,111 @@
+{
+  "dataset_id": "directorio-de-asociaciones-formalizadas-en-la-region-de-ayacucho-para-el-año-2025",
+  "titulo": "DIRECTORIO DE ASOCIACIONES FORMALIZADAS EN LA REGION DE AYACUCHO PARA EL AÑO 2025",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/directorio-de-asociaciones-formalizadas-en-la-region-de-ayacucho-para-el-a%C3%B1o-2025",
+  "resource_id": "53fbbdbd-ad09-4e0b-a105-70c9c83f51a4",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    " Lista de formalización por asociaciones",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "filas_leidas": 34,
+  "muestra": [
+    {
+      " Lista de formalización por asociaciones": "Tipo de Documento de Identidad",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    },
+    {
+      " Lista de formalización por asociaciones": "DNI",
+      "": ""
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:04:59Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 34,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

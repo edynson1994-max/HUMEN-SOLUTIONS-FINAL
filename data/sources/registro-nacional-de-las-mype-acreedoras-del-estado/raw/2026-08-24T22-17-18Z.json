@@ -1,0 +1,16 @@
+{
+  "dataset_id": "registro-nacional-de-las-mype-acreedoras-del-estado",
+  "titulo": "Registro Nacional de las MYPE acreedoras del Estado",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/registro-nacional-de-las-mype-acreedoras-del-estado",
+  "resource_id": "45dfd84b-c18e-4c67-bbc6-226560533bd5",
+  "estado": "formato_no_soportado",
+  "formato": "data",
+  "generado_en": "2026-08-24T22:17:18Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

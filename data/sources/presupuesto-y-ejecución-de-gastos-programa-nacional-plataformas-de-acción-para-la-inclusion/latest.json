@@ -1,0 +1,19 @@
+{
+  "dataset_id": "presupuesto-y-ejecución-de-gastos-programa-nacional-plataformas-de-acción-para-la-inclusion",
+  "titulo": "Presupuesto y Ejecución de Gastos - [PROGRAMA NACIONAL PLATAFORMAS DE ACCIÓN PARA LA INCLUSION SOCIAL PAIS - PNPAIS]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/presupuesto-y-ejecuci%C3%B3n-de-gastos-programa-nacional-plataformas-de-acci%C3%B3n-para-la-inclusion",
+  "resource_id": "92e6fada-95a6-4227-9f79-34eac66424b6",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "new-line character seen in unquoted field - do you need to open the file with newline=''?",
+    "url_catalogo_respaldo": "new-line character seen in unquoted field - do you need to open the file with newline=''?"
+  },
+  "generado_en": "2026-08-24T22:14:38Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

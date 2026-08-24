@@ -1,0 +1,19 @@
+{
+  "dataset_id": "indicadores-enapres-semestre-movil-febrero-julio-2019",
+  "titulo": "Indicadores ENAPRES semestre movil febrero - julio 2019",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/indicadores-enapres-semestre-movil-febrero-julio-2019",
+  "resource_id": "40f3a8aa-74f4-4ce1-8eed-5e9331b845d1",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+    "url_catalogo_respaldo": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+  },
+  "generado_en": "2026-08-24T22:08:00Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

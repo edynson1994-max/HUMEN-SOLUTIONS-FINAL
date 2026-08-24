@@ -1,0 +1,116 @@
+{
+  "dataset_id": "directorio-de-mypes-formalizadas-en-la-region-de-ayacucho-para-el-año-2025",
+  "titulo": "DIRECTORIO DE MYPES FORMALIZADAS EN LA REGION DE AYACUCHO PARA EL AÑO 2025",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/directorio-de-mypes-formalizadas-en-la-region-de-ayacucho-para-el-a%C3%B1o-2025",
+  "resource_id": "dda497ca-3a78-4763-aad8-b06e017039bb",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "filas_leidas": 215,
+  "muestra": [
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "Tipo de Documento de Identidad",
+      "": "Monto de capital social"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "5350"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "52500"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "10000"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "28000"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "5000"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "5000"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "5000"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "5300"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "25040"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "4995"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "5100"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "4200"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "5000"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "5350"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "5000"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "66600"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "30000"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "3060"
+    },
+    {
+      "Unidades economicas constituidas y/o formalizadas  por la Dirección Regional de Producción del Gobierno Regional de Ayacucho durante el ejercicio 2025": "DNI",
+      "": "30000"
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:04:57Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 215,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

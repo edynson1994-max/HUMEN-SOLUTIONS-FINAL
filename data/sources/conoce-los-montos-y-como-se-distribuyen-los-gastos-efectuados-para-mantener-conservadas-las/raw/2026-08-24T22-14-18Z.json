@@ -1,0 +1,19 @@
+{
+  "dataset_id": "conoce-los-montos-y-como-se-distribuyen-los-gastos-efectuados-para-mantener-conservadas-las",
+  "titulo": "Conoce los montos y como se distribuyen los gastos efectuados para mantener conservadas las áreas naturales protegidas",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/conoce-los-montos-y-como-se-distribuyen-los-gastos-efectuados-para-mantener-conservadas-las",
+  "resource_id": "089d3e10-24aa-4cfe-808a-572aa7ab019f",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "new-line character seen in unquoted field - do you need to open the file with newline=''?",
+    "url_catalogo_respaldo": "new-line character seen in unquoted field - do you need to open the file with newline=''?"
+  },
+  "generado_en": "2026-08-24T22:14:18Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

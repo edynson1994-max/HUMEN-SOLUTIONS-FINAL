@@ -1,0 +1,16 @@
+{
+  "dataset_id": "créditos-financieros-2025-1er-semestre-obtenidos-por-el-personal-pensionista-o-sus",
+  "titulo": "Créditos financieros 2025 1er semestre obtenidos por el personal pensionista o sus beneficiarios por institución armada",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/cr%C3%A9ditos-financieros-2025-1er-semestre-obtenidos-por-el-personal-pensionista-o-sus",
+  "resource_id": "f7b6337d-1565-4bb3-af2e-073f331d1ceb",
+  "estado": "formato_no_soportado",
+  "formato": ".csv",
+  "generado_en": "2026-08-24T22:06:47Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

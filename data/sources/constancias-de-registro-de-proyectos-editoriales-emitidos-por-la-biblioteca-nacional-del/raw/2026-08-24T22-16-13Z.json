@@ -1,0 +1,16 @@
+{
+  "dataset_id": "constancias-de-registro-de-proyectos-editoriales-emitidos-por-la-biblioteca-nacional-del",
+  "titulo": "Constancias de Registro de Proyectos Editoriales emitidos por la Biblioteca Nacional del Perú – [BNP]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/constancias-de-registro-de-proyectos-editoriales-emitidos-por-la-biblioteca-nacional-del",
+  "resource_id": "ebaa4fa2-b4c8-4dfd-bf81-f061b439e790",
+  "estado": "formato_no_soportado",
+  "formato": "docx",
+  "generado_en": "2026-08-24T22:16:13Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

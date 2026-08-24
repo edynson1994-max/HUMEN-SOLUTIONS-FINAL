@@ -1,0 +1,16 @@
+{
+  "dataset_id": "estado-de-gestión-0",
+  "titulo": "Estado de Gestión",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/estado-de-gesti%C3%B3n-0",
+  "resource_id": "3c708452-03d0-490a-a05f-a1dca6b5f3b9",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:15:58Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

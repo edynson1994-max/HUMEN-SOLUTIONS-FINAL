@@ -1,0 +1,170 @@
+{
+  "dataset_id": "relacion-de-agencias-y-oficinas-especiales-nivel-nacional-banco-de-la-nación-bn",
+  "titulo": "Relacion de Agencias y Oficinas Especiales a Nivel Nacional - [Banco de la Nación - BN]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/relacion-de-agencias-y-oficinas-especiales-nivel-nacional-banco-de-la-naci%C3%B3n-bn",
+  "resource_id": "6aa725ca-6be8-4fa2-a1cd-66a91c6450af",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "20240603",
+    "AGENCIA 1",
+    "CALLAO",
+    "070101",
+    "CALLAO",
+    "CALLAO",
+    "CALLAO",
+    "Av. Saenz Peña N°  205 - 207 -209"
+  ],
+  "filas_leidas": 549,
+  "muestra": [
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 1",
+      "CALLAO": "LIMA",
+      "070101": "150101",
+      "Av. Saenz Peña N°  205 - 207 -209": "Av. Du Petit Thouars 113 Esq. 28 de Julio 932 - Cercado"
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 1",
+      "CALLAO": "MIRAFLORES",
+      "070101": "150122",
+      "Av. Saenz Peña N°  205 - 207 -209": "Av. José Pardo N° 205"
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 2",
+      "CALLAO": "SAN JUAN DE LURIGANCHO",
+      "070101": "150132",
+      "Av. Saenz Peña N°  205 - 207 -209": "Av. Tusilagos Mz. P Lt. 3 y 4 Urb. Los Jardines de San Juan de Lurigancho"
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 1",
+      "CALLAO": "LIMA",
+      "070101": "150101",
+      "Av. Saenz Peña N°  205 - 207 -209": "Jr. De la Unión N° 170 - Cercado"
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 2",
+      "CALLAO": "CALLAO",
+      "070101": "070101",
+      "Av. Saenz Peña N°  205 - 207 -209": "Av. Elmer Faucett Esq. Av. Tomás Valle, Centro Aéreo Comercial Tdas. 105B, 106B, 107B y 108B / Sector B / 2° Etapa"
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 1",
+      "CALLAO": "SAN ISIDRO",
+      "070101": "150131",
+      "Av. Saenz Peña N°  205 - 207 -209": "Av. República de Panamá N° 3650 - 3660 -3664 - 3666"
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 2",
+      "CALLAO": "BARRANCO",
+      "070101": "150104",
+      "Av. Saenz Peña N°  205 - 207 -209": "Av. Grau N° 101"
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 2",
+      "CALLAO": "BREÑA",
+      "070101": "150105",
+      "Av. Saenz Peña N°  205 - 207 -209": "Jr. Orbegozo N° 298 Esquina con el Jr. Huaraz s/n"
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 1",
+      "CALLAO": "SAN JUAN DE MIRAFLORES",
+      "070101": "150133",
+      "Av. Saenz Peña N°  205 - 207 -209": "Av. Guillermo Billinghurst N° 1091 - 1093, manzana G2, lote 32, zona D"
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 1",
+      "CALLAO": "CHORRILLOS",
+      "070101": "150108",
+      "Av. Saenz Peña N°  205 - 207 -209": "Av. Alejandro Iglesias N° 496 Urbanización Chorrillos "
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 2",
+      "CALLAO": "EL AGUSTINO",
+      "070101": "150111",
+      "Av. Saenz Peña N°  205 - 207 -209": "Jirón Ancash N° 2151 (C.C. Agustino Plaza) Locales 2181-2185"
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 2",
+      "CALLAO": "JESUS MARIA",
+      "070101": "150113",
+      "Av. Saenz Peña N°  205 - 207 -209": "Jr. Horacio Urteaga N° 1280"
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 2",
+      "CALLAO": "LA PERLA",
+      "070101": "070104",
+      "Av. Saenz Peña N°  205 - 207 -209": "Av. Santa Rosa N° 135 - Centro Comercial La Perla  Of. A-101, A-102"
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 2",
+      "CALLAO": "LA VICTORIA",
+      "070101": "150115",
+      "Av. Saenz Peña N°  205 - 207 -209": "Av. Nicolás Arriola N° 873 - 875 Urb. Santa Catalina"
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 2",
+      "CALLAO": "LINCE",
+      "070101": "150116",
+      "Av. Saenz Peña N°  205 - 207 -209": "Av. Arenales N° 1785 - 1795"
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 2",
+      "CALLAO": "MAGDALENA DEL MAR",
+      "070101": "150120",
+      "Av. Saenz Peña N°  205 - 207 -209": "Calle San Martín N° 645"
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 2",
+      "CALLAO": "JESUS MARIA",
+      "070101": "150113",
+      "Av. Saenz Peña N°  205 - 207 -209": "Centro Comercial San Felipe, tiendas N° 8 y 9"
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 1",
+      "CALLAO": "PUEBLO LIBRE",
+      "070101": "150121",
+      "Av. Saenz Peña N°  205 - 207 -209": "Av. Bolívar N° 936 - 940"
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 2",
+      "CALLAO": "RIMAC",
+      "070101": "150128",
+      "Av. Saenz Peña N°  205 - 207 -209": "Av. Felipe Arancibia N° 585 Urb. Ventura Rossi"
+    },
+    {
+      "20240603": "20240603",
+      "AGENCIA 1": "AGENCIA 2",
+      "CALLAO": "CARABAYLLO",
+      "070101": "150106",
+      "Av. Saenz Peña N°  205 - 207 -209": "Av. Chimpu Ocllo N° 747, Urb. Tungasuca"
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:19:37Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 549,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

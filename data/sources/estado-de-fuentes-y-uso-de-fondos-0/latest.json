@@ -1,0 +1,16 @@
+{
+  "dataset_id": "estado-de-fuentes-y-uso-de-fondos-0",
+  "titulo": "Estado de Fuentes y Uso de Fondos",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/estado-de-fuentes-y-uso-de-fondos-0",
+  "resource_id": "4ab7407e-0ab7-49f7-9e3c-6448577a26ec",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:03Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

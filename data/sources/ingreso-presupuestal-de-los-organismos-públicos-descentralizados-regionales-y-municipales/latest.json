@@ -1,0 +1,16 @@
+{
+  "dataset_id": "ingreso-presupuestal-de-los-organismos-públicos-descentralizados-regionales-y-municipales",
+  "titulo": "Ingreso Presupuestal de los Organismos Públicos Descentralizados - Regionales y Municipales",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/ingreso-presupuestal-de-los-organismos-p%C3%BAblicos-descentralizados-regionales-y-municipales",
+  "resource_id": "2a183dc1-8dfd-4ac7-9ad8-40fd44827691",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:30Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "estado-de-flujo-de-efectivo-información-financiera-de-empresas-supervisadas-por-la-smv",
+  "titulo": "Estado de Flujo de Efectivo Información financiera de empresas supervisadas por la SMV",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/estado-de-flujo-de-efectivo-informaci%C3%B3n-financiera-de-empresas-supervisadas-por-la-smv",
+  "resource_id": "dd9736a7-fe39-4038-8e76-5cdbe22b89ae",
+  "estado": "formato_no_soportado",
+  "formato": "json",
+  "generado_en": "2026-08-24T22:21:40Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

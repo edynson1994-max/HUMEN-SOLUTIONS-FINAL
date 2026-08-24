@@ -1,0 +1,16 @@
+{
+  "dataset_id": "sat-de-lima",
+  "titulo": "SAT DE LIMA ",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/sat-de-lima",
+  "resource_id": "cbe56c23-583d-4632-a973-5edc9477a744",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:13:39Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

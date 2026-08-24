@@ -1,0 +1,16 @@
+{
+  "dataset_id": "distribución-geográfica-del-gasto-0",
+  "titulo": "Distribución Geográfica del Gasto",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/distribuci%C3%B3n-geogr%C3%A1fica-del-gasto-0",
+  "resource_id": "a5c53bf2-4432-49ad-bbae-02b4e23f15b1",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:05Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

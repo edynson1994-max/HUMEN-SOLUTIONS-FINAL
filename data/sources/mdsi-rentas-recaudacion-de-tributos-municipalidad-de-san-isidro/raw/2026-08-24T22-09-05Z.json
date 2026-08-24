@@ -1,0 +1,16 @@
+{
+  "dataset_id": "mdsi-rentas-recaudacion-de-tributos-municipalidad-de-san-isidro",
+  "titulo": "MDSI - Rentas : Recaudacion de Tributos - Municipalidad de San Isidro",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/mdsi-rentas-recaudacion-de-tributos-municipalidad-de-san-isidro",
+  "resource_id": "0dac2abb-5033-4110-98ac-9a9f5bc5e535",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:09:05Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

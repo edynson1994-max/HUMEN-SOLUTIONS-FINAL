@@ -1,0 +1,167 @@
+{
+  "dataset_id": "bonos-y-pensiones-complementarias-administradas-por-la-onp",
+  "titulo": "Bonos y pensiones complementarias administradas por la ONP",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/bonos-y-pensiones-complementarias-administradas-por-la-onp",
+  "resource_id": "b5dcdf9b-b54e-4dad-b4b5-384410526239",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "id_persona",
+    "prestacion",
+    "tipotra",
+    "tipoben",
+    "beneficio"
+  ],
+  "filas_leidas": 11337,
+  "muestra": [
+    {
+      "id_persona": "79926603232",
+      "prestacion": "2",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "80.65000000000001"
+    },
+    {
+      "id_persona": "21087584215",
+      "prestacion": "1",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "175.09"
+    },
+    {
+      "id_persona": "64044301204",
+      "prestacion": "1",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "134.32"
+    },
+    {
+      "id_persona": "08878300222",
+      "prestacion": "1",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": ""
+    },
+    {
+      "id_persona": "95319801232",
+      "prestacion": "1",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "177.62"
+    },
+    {
+      "id_persona": "78918202232",
+      "prestacion": "1",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "158.15"
+    },
+    {
+      "id_persona": "25255004222",
+      "prestacion": "1",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "110.67"
+    },
+    {
+      "id_persona": "82999400232",
+      "prestacion": "2",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "106.97"
+    },
+    {
+      "id_persona": "92183684226",
+      "prestacion": "1",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "58.72"
+    },
+    {
+      "id_persona": "27326100221",
+      "prestacion": "1",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "29.47"
+    },
+    {
+      "id_persona": "56013402227",
+      "prestacion": "1",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "101.24"
+    },
+    {
+      "id_persona": "96558184219",
+      "prestacion": "1",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "155.13"
+    },
+    {
+      "id_persona": "92305684226",
+      "prestacion": "1",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "202.84"
+    },
+    {
+      "id_persona": "08597600222",
+      "prestacion": "1",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "822.81"
+    },
+    {
+      "id_persona": "08499002222",
+      "prestacion": "1",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "428.91"
+    },
+    {
+      "id_persona": "94893184226",
+      "prestacion": "1",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "79.51000000000001"
+    },
+    {
+      "id_persona": "43797584208",
+      "prestacion": "1",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "73.68000000000001"
+    },
+    {
+      "id_persona": "08296402222",
+      "prestacion": "1",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "477.32"
+    },
+    {
+      "id_persona": "08393200222",
+      "prestacion": "1",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "594.75"
+    },
+    {
+      "id_persona": "57077900206",
+      "prestacion": "2",
+      "tipotra": "2",
+      "tipoben": "4",
+      "beneficio": "58.54"
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:08:56Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 11337,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "contribuyentes-puntuales-2025-iii-trimestre",
+  "titulo": "Contribuyentes Puntuales 2025 (III Trimestre)",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/contribuyentes-puntuales-2025-iii-trimestre",
+  "resource_id": "fb88a0c0-e4a1-4973-a8a2-449dfa10b666",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:23:25Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

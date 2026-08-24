@@ -1,0 +1,16 @@
+{
+  "dataset_id": "instrumentos-de-deuda-de-corto-plazo",
+  "titulo": "Instrumentos de Deuda de Corto Plazo",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/instrumentos-de-deuda-de-corto-plazo",
+  "resource_id": "e4993da8-7943-481e-91b4-b088eceb7244",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:58Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

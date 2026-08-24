@@ -1,0 +1,16 @@
+{
+  "dataset_id": "ejecución-del-gasto-de-mantenimiento",
+  "titulo": "Ejecución del Gasto de Mantenimiento",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/ejecuci%C3%B3n-del-gasto-de-mantenimiento",
+  "resource_id": "a3317cbc-b3bc-40cf-a91e-30f759574edd",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:35Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

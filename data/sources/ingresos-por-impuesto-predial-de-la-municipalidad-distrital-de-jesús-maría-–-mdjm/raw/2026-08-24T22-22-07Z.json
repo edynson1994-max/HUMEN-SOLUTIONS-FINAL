@@ -1,0 +1,16 @@
+{
+  "dataset_id": "ingresos-por-impuesto-predial-de-la-municipalidad-distrital-de-jesús-maría-–-mdjm",
+  "titulo": "Ingresos por impuesto predial de la Municipalidad Distrital de Jesús María – [MDJM]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/ingresos-por-impuesto-predial-de-la-municipalidad-distrital-de-jes%C3%BAs-mar%C3%ADa-%E2%80%93-mdjm",
+  "resource_id": "71268e75-ed80-495f-9ca7-7493859cd262",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:22:07Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

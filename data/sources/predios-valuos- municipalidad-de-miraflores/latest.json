@@ -1,0 +1,16 @@
+{
+  "dataset_id": "predios-valuos- municipalidad-de-miraflores",
+  "titulo": "Predios Valuos - [Municipalidad de Miraflores]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/predios-valuos-%C2%A0municipalidad-de-miraflores",
+  "resource_id": "8c1ab0c7-18a6-4bbf-ade4-1bcdf1034abe",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:09:58Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "relación-de-agencias-y-oficinas-especiales-nivel-nacional-banco-de-la-nación-2026",
+  "titulo": "Relación de Agencias y Oficinas Especiales a Nivel Nacional - [Banco de la Nación 2026]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/relaci%C3%B3n-de-agencias-y-oficinas-especiales-nivel-nacional-banco-de-la-naci%C3%B3n-2026",
+  "resource_id": "be26aad5-4098-46c4-923d-1bb8ab53e2a6",
+  "estado": "formato_no_soportado",
+  "formato": ".csv",
+  "generado_en": "2026-08-24T22:06:14Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

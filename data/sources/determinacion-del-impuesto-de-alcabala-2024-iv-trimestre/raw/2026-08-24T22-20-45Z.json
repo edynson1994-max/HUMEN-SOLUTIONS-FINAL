@@ -1,0 +1,16 @@
+{
+  "dataset_id": "determinacion-del-impuesto-de-alcabala-2024-iv-trimestre",
+  "titulo": "Determinacion del Impuesto de Alcabala 2024 (IV Trimestre)",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/determinacion-del-impuesto-de-alcabala-2024-iv-trimestre",
+  "resource_id": "20201350-2403-4b28-b4e3-7719fdd525e9",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:20:45Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

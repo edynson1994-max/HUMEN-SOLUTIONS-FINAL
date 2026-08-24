@@ -1,0 +1,16 @@
+{
+  "dataset_id": "encuesta-nacional-de-programas-presupuestales-enapres-2010-instituto-nacional-de-estadística",
+  "titulo": "Encuesta Nacional de Programas Presupuestales (ENAPRES) 2010 - [Instituto Nacional de Estadística e Informática - INEI]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-de-programas-presupuestales-enapres-2010-instituto-nacional-de-estad%C3%ADstica",
+  "resource_id": "b6b04121-f41e-44a3-aae8-62fca233e891",
+  "estado": "formato_no_soportado",
+  "formato": "pdf",
+  "generado_en": "2026-08-24T22:13:20Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "estado-situacional-de-inversiones",
+  "titulo": "Estado situacional de inversiones",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/estado-situacional-de-inversiones",
+  "resource_id": "4c7c05d5-91eb-4598-897b-f3ef6fa6e44c",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:15:50Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

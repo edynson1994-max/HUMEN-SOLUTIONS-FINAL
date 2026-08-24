@@ -1,0 +1,105 @@
+{
+  "dataset_id": "ejecución-presupuestal-del-régimen-19990-–-sistema-nacional-de-pensiones-2024",
+  "titulo": "Ejecución presupuestal del Régimen 19990 – Sistema Nacional de Pensiones 2024",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/ejecuci%C3%B3n-presupuestal-del-r%C3%A9gimen-19990-%E2%80%93-sistema-nacional-de-pensiones-2024",
+  "resource_id": "49c40a2e-4437-402a-a6cc-adeeaf963f96",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "Fuentes de financiamiento D.L 19990",
+    "",
+    ""
+  ],
+  "filas_leidas": 115,
+  "muestra": [
+    {
+      "Fuentes de financiamiento D.L 19990": "",
+      "": ""
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "Año",
+      "": "Ejecutado"
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "1997",
+      "": " 363,616,958 "
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "1997",
+      "": " -   "
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "1997",
+      "": " 823,804,640 "
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "1997",
+      "": " 1,187,421,598 "
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "1998",
+      "": " 575,268,837 "
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "1998",
+      "": " -   "
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "1998",
+      "": " 728,756,194 "
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "1998",
+      "": " 1,304,025,031 "
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "1999",
+      "": " 933,643,703 "
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "1999",
+      "": " -   "
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "1999",
+      "": " 582,584,012 "
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "1999",
+      "": " 1,516,227,715 "
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "2000",
+      "": " 1,162,119,393 "
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "2000",
+      "": " -   "
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "2000",
+      "": " 486,038,489 "
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "2000",
+      "": " 1,648,157,882 "
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "2001",
+      "": " 1,384,510,363 "
+    },
+    {
+      "Fuentes de financiamiento D.L 19990": "2001",
+      "": " -   "
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:20:04Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 115,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

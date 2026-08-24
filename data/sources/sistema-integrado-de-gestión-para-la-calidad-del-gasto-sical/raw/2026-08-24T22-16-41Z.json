@@ -1,0 +1,16 @@
+{
+  "dataset_id": "sistema-integrado-de-gestión-para-la-calidad-del-gasto-sical",
+  "titulo": "Sistema Integrado de Gestión para la Calidad del Gasto (SICAL)",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/sistema-integrado-de-gesti%C3%B3n-para-la-calidad-del-gasto-sical",
+  "resource_id": "01be5e97-65c5-4a6f-ac09-5fb341a3aecb",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:41Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "dataset_id": "recaudación-por-alcabala-en-la-provincia-de-barranca-municipalidad-provincial-de-barranca",
+  "titulo": "Recaudación por alcabala en la provincia de Barranca [Municipalidad Provincial de Barranca]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-por-alcabala-en-la-provincia-de-barranca-municipalidad-provincial-de-barranca",
+  "resource_id": "2ec3a540-339e-405d-8a42-90aafcebf172",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "new-line character seen in unquoted field - do you need to open the file with newline=''?",
+    "url_catalogo_respaldo": "new-line character seen in unquoted field - do you need to open the file with newline=''?"
+  },
+  "generado_en": "2026-08-24T22:05:34Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

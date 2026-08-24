@@ -1,0 +1,16 @@
+{
+  "dataset_id": "certificados-de-verificación-de-gastos-para-reintegro-tributario-emitidos-por-la-biblioteca",
+  "titulo": "Certificados de Verificación de Gastos para Reintegro Tributario emitidos por la Biblioteca Nacional del Perú - [BNP]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/certificados-de-verificaci%C3%B3n-de-gastos-para-reintegro-tributario-emitidos-por-la-biblioteca",
+  "resource_id": "499b4989-6c3c-441a-bcc4-d88eebddb2ae",
+  "estado": "formato_no_soportado",
+  "formato": "docx",
+  "generado_en": "2026-08-24T22:16:15Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

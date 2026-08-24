@@ -1,0 +1,16 @@
+{
+  "dataset_id": "proyectos-de-inversion-publica-2026",
+  "titulo": "PROYECTOS DE INVERSION PUBLICA 2026",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/proyectos-de-inversion-publica-2026",
+  "resource_id": "3b635156-62df-4e15-827d-3e555f8276d6",
+  "estado": "formato_no_soportado",
+  "formato": ".csv",
+  "generado_en": "2026-08-24T22:06:49Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

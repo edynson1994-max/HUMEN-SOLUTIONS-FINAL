@@ -1,0 +1,16 @@
+{
+  "dataset_id": "ingresos-por-barrido-de-calles-de-la-municipalidad-distrital-de-jesús-maría-–-mdjm",
+  "titulo": "Ingresos por barrido de calles de la Municipalidad Distrital de Jesús María – [MDJM]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/ingresos-por-barrido-de-calles-de-la-municipalidad-distrital-de-jes%C3%BAs-mar%C3%ADa-%E2%80%93-mdjm",
+  "resource_id": "11e9be84-ca2c-43bb-860b-778390ebce94",
+  "estado": "formato_no_soportado",
+  "formato": "docx",
+  "generado_en": "2026-08-24T22:05:59Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

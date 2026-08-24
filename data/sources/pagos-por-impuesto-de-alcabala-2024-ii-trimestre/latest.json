@@ -1,0 +1,16 @@
+{
+  "dataset_id": "pagos-por-impuesto-de-alcabala-2024-ii-trimestre",
+  "titulo": "Pagos por Impuesto de Alcabala 2024 (II Trimestre)",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/pagos-por-impuesto-de-alcabala-2024-ii-trimestre",
+  "resource_id": "0d471777-38b6-43d0-9b2a-6da2ff6e73f1",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:20:40Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "afiliados-del-sistema-nacional-de-pensiones-decreto-ley-n°-19990-administrados-por-la-onp-1",
+  "titulo": "Afiliados del Sistema Nacional de Pensiones (Decreto Ley N° 19990) administrados por la ONP 2021 - [Oficina de Normalización Previsional -ONP]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/afiliados-del-sistema-nacional-de-pensiones-decreto-ley-n%C2%B0-19990-administrados-por-la-onp-1",
+  "resource_id": "98cb1082-e0ee-4a8f-92d4-6d0e46e793c5",
+  "estado": "formato_no_soportado",
+  "formato": "zip",
+  "generado_en": "2026-08-24T22:10:00Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "balance-constructivo-de-empresas-del-estado",
+  "titulo": "Balance Constructivo de Empresas del Estado",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/balance-constructivo-de-empresas-del-estado",
+  "resource_id": "1766eda4-c97b-4550-a2b8-dbe12b9da3f7",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:00Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "determinación-del-impuesto-de-alcabala-2023-iii-trimestre",
+  "titulo": "Determinación del Impuesto de Alcabala 2023 (III Trimestre)",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/determinaci%C3%B3n-del-impuesto-de-alcabala-2023-iii-trimestre",
+  "resource_id": "29044b30-30f3-47ef-be3d-f22732549c71",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:20:59Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

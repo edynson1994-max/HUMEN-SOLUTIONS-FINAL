@@ -1,0 +1,209 @@
+{
+  "dataset_id": "recaudación-en-soles-ferrocarril-organismo-supervisor-de-la-inversión-en-infraestructura-de",
+  "titulo": "Recaudación en Soles - FERROCARRIL - Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público – OSITRAN",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-en-soles-ferrocarril-organismo-supervisor-de-la-inversi%C3%B3n-en-infraestructura-de",
+  "resource_id": "a4fe2aee-32e2-4e53-a40e-7608d689348b",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "ANIO",
+    "MES",
+    "ENTIDAD PRESTADORA",
+    "CONCESION",
+    "SIGLAS CONCESION",
+    "TIPO DE INGRESO",
+    "IMPORTE S/."
+  ],
+  "filas_leidas": 685,
+  "muestra": [
+    {
+      "ANIO": "2019",
+      "MES": "1",
+      "ENTIDAD PRESTADORA": "FERROCARRIL TRANSANDINO S.A.",
+      "CONCESION": "FERROCARRIL DEL SUR Y SUR - ORIENTE",
+      "SIGLAS CONCESION": "FSO",
+      "TIPO DE INGRESO": "ACCESO A LA VÍA",
+      "IMPORTE S/.": "9915040.263"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "1",
+      "ENTIDAD PRESTADORA": "FERROCARRIL TRANSANDINO S.A.",
+      "CONCESION": "FERROCARRIL DEL SUR Y SUR - ORIENTE",
+      "SIGLAS CONCESION": "FSO",
+      "TIPO DE INGRESO": "ALQUILER. MATERIAL TRACTIVO Y RODANTE",
+      "IMPORTE S/.": "149119.601"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "1",
+      "ENTIDAD PRESTADORA": "FERROCARRIL TRANSANDINO S.A.",
+      "CONCESION": "FERROCARRIL DEL SUR Y SUR - ORIENTE",
+      "SIGLAS CONCESION": "FSO",
+      "TIPO DE INGRESO": "OTROS INGRESOS",
+      "IMPORTE S/.": "0.0"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "1",
+      "ENTIDAD PRESTADORA": "FERROVÍAS CENTRAL ANDINA S.A.  ",
+      "CONCESION": "FERROCARRIL DEL CENTRO",
+      "SIGLAS CONCESION": "FCE",
+      "TIPO DE INGRESO": "ACCESO A LA VÍA",
+      "IMPORTE S/.": "2087074.07"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "1",
+      "ENTIDAD PRESTADORA": "FERROVÍAS CENTRAL ANDINA S.A.  ",
+      "CONCESION": "FERROCARRIL DEL CENTRO",
+      "SIGLAS CONCESION": "FCE",
+      "TIPO DE INGRESO": "ALQUILER DE ESPACIOS A OPERADORES Y TERCEROS",
+      "IMPORTE S/.": "1892520.31"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "1",
+      "ENTIDAD PRESTADORA": "FERROVÍAS CENTRAL ANDINA S.A.  ",
+      "CONCESION": "FERROCARRIL DEL CENTRO",
+      "SIGLAS CONCESION": "FCE",
+      "TIPO DE INGRESO": "ALQUILER. MATERIAL TRACTIVO Y RODANTE",
+      "IMPORTE S/.": "11921.69"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "1",
+      "ENTIDAD PRESTADORA": "FERROVÍAS CENTRAL ANDINA S.A.  ",
+      "CONCESION": "FERROCARRIL DEL CENTRO",
+      "SIGLAS CONCESION": "FCE",
+      "TIPO DE INGRESO": "OTROS INGRESOS",
+      "IMPORTE S/.": "56060.7"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "2",
+      "ENTIDAD PRESTADORA": "FERROVÍAS CENTRAL ANDINA S.A.  ",
+      "CONCESION": "FERROCARRIL DEL CENTRO",
+      "SIGLAS CONCESION": "FCE",
+      "TIPO DE INGRESO": "OTROS INGRESOS",
+      "IMPORTE S/.": "58376.19"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "2",
+      "ENTIDAD PRESTADORA": "FERROVÍAS CENTRAL ANDINA S.A.  ",
+      "CONCESION": "FERROCARRIL DEL CENTRO",
+      "SIGLAS CONCESION": "FCE",
+      "TIPO DE INGRESO": "ALQUILER. MATERIAL TRACTIVO Y RODANTE",
+      "IMPORTE S/.": "8780.4"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "2",
+      "ENTIDAD PRESTADORA": "FERROVÍAS CENTRAL ANDINA S.A.  ",
+      "CONCESION": "FERROCARRIL DEL CENTRO",
+      "SIGLAS CONCESION": "FCE",
+      "TIPO DE INGRESO": "ALQUILER DE ESPACIOS A OPERADORES Y TERCEROS",
+      "IMPORTE S/.": "1558132.25"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "2",
+      "ENTIDAD PRESTADORA": "FERROVÍAS CENTRAL ANDINA S.A.  ",
+      "CONCESION": "FERROCARRIL DEL CENTRO",
+      "SIGLAS CONCESION": "FCE",
+      "TIPO DE INGRESO": "ACCESO A LA VÍA",
+      "IMPORTE S/.": "1563348.32"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "2",
+      "ENTIDAD PRESTADORA": "FERROCARRIL TRANSANDINO S.A.",
+      "CONCESION": "FERROCARRIL DEL SUR Y SUR - ORIENTE",
+      "SIGLAS CONCESION": "FSO",
+      "TIPO DE INGRESO": "ACCESO A LA VÍA",
+      "IMPORTE S/.": "5744462.46"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "2",
+      "ENTIDAD PRESTADORA": "FERROCARRIL TRANSANDINO S.A.",
+      "CONCESION": "FERROCARRIL DEL SUR Y SUR - ORIENTE",
+      "SIGLAS CONCESION": "FSO",
+      "TIPO DE INGRESO": "ALQUILER. MATERIAL TRACTIVO Y RODANTE",
+      "IMPORTE S/.": "135963.889"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "2",
+      "ENTIDAD PRESTADORA": "FERROCARRIL TRANSANDINO S.A.",
+      "CONCESION": "FERROCARRIL DEL SUR Y SUR - ORIENTE",
+      "SIGLAS CONCESION": "FSO",
+      "TIPO DE INGRESO": "OTROS INGRESOS",
+      "IMPORTE S/.": "0.0"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "3",
+      "ENTIDAD PRESTADORA": "FERROVÍAS CENTRAL ANDINA S.A.  ",
+      "CONCESION": "FERROCARRIL DEL CENTRO",
+      "SIGLAS CONCESION": "FCE",
+      "TIPO DE INGRESO": "OTROS INGRESOS",
+      "IMPORTE S/.": "75205.88"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "3",
+      "ENTIDAD PRESTADORA": "FERROVÍAS CENTRAL ANDINA S.A.  ",
+      "CONCESION": "FERROCARRIL DEL CENTRO",
+      "SIGLAS CONCESION": "FCE",
+      "TIPO DE INGRESO": "ALQUILER. MATERIAL TRACTIVO Y RODANTE",
+      "IMPORTE S/.": "10253.92"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "3",
+      "ENTIDAD PRESTADORA": "FERROVÍAS CENTRAL ANDINA S.A.  ",
+      "CONCESION": "FERROCARRIL DEL CENTRO",
+      "SIGLAS CONCESION": "FCE",
+      "TIPO DE INGRESO": "ALQUILER DE ESPACIOS A OPERADORES Y TERCEROS",
+      "IMPORTE S/.": "1595823.94"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "3",
+      "ENTIDAD PRESTADORA": "FERROVÍAS CENTRAL ANDINA S.A.  ",
+      "CONCESION": "FERROCARRIL DEL CENTRO",
+      "SIGLAS CONCESION": "FCE",
+      "TIPO DE INGRESO": "ACCESO A LA VÍA",
+      "IMPORTE S/.": "1614063.22"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "3",
+      "ENTIDAD PRESTADORA": "FERROCARRIL TRANSANDINO S.A.",
+      "CONCESION": "FERROCARRIL DEL SUR Y SUR - ORIENTE",
+      "SIGLAS CONCESION": "FSO",
+      "TIPO DE INGRESO": "ACCESO A LA VÍA",
+      "IMPORTE S/.": "7224910.31"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "3",
+      "ENTIDAD PRESTADORA": "FERROCARRIL TRANSANDINO S.A.",
+      "CONCESION": "FERROCARRIL DEL SUR Y SUR - ORIENTE",
+      "SIGLAS CONCESION": "FSO",
+      "TIPO DE INGRESO": "OTROS INGRESOS",
+      "IMPORTE S/.": "0.0"
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:08:48Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 685,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

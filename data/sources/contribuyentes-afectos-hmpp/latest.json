@@ -1,0 +1,16 @@
+{
+  "dataset_id": "contribuyentes-afectos-hmpp",
+  "titulo": "Contribuyentes Afectos - HMPP",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/contribuyentes-afectos-hmpp",
+  "resource_id": "ee13d999-8f3d-4447-baad-943aa1c2fed9",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:12:05Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

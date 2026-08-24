@@ -1,0 +1,251 @@
+{
+  "dataset_id": "pagos-por-impuesto-de-alcabala-2026-ii-trimestre-sat-de-lima",
+  "titulo": "Pagos por Impuesto de Alcabala 2026 (II Trimestre) SAT de Lima",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/pagos-por-impuesto-de-alcabala-2026-ii-trimestre-sat-de-lima",
+  "resource_id": "1cec05bb-af4b-4eb9-9f4d-763714fc65c8",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "Nº contribuyente",
+    "Fecha de pago",
+    "Distrito del inmueble",
+    "Año transferencia del inmueble",
+    "Mes transferencia del inmueble",
+    "Cantidad pagos",
+    "Impuesto pagado (S/)",
+    "Intereses pagados (S/)",
+    "Total pagado (S/)"
+  ],
+  "filas_leidas": 24510,
+  "muestra": [
+    {
+      "Nº contribuyente": "2297997702",
+      "Fecha de pago": "2026-03-12",
+      "Distrito del inmueble": "RIMAC",
+      "Año transferencia del inmueble": "2026",
+      "Mes transferencia del inmueble": "3",
+      "Cantidad pagos": "1",
+      "Impuesto pagado (S/)": "2256.78",
+      "Intereses pagados (S/)": "0.0",
+      "Total pagado (S/)": "2256.78"
+    },
+    {
+      "Nº contribuyente": "2297997703",
+      "Fecha de pago": "2026-03-09",
+      "Distrito del inmueble": "SAN BORJA",
+      "Año transferencia del inmueble": "2026",
+      "Mes transferencia del inmueble": "3",
+      "Cantidad pagos": "1",
+      "Impuesto pagado (S/)": "1320.0",
+      "Intereses pagados (S/)": "0.0",
+      "Total pagado (S/)": "1320.0"
+    },
+    {
+      "Nº contribuyente": "2297997704",
+      "Fecha de pago": "2026-02-10",
+      "Distrito del inmueble": "MIRAFLORES",
+      "Año transferencia del inmueble": "2026",
+      "Mes transferencia del inmueble": "2",
+      "Cantidad pagos": "1",
+      "Impuesto pagado (S/)": "4881.42",
+      "Intereses pagados (S/)": "0.0",
+      "Total pagado (S/)": "4881.42"
+    },
+    {
+      "Nº contribuyente": "2297997705",
+      "Fecha de pago": "2026-01-07",
+      "Distrito del inmueble": "CHACLACAYO",
+      "Año transferencia del inmueble": "2025",
+      "Mes transferencia del inmueble": "12",
+      "Cantidad pagos": "1",
+      "Impuesto pagado (S/)": "11736.24",
+      "Intereses pagados (S/)": "0.0",
+      "Total pagado (S/)": "11736.24"
+    },
+    {
+      "Nº contribuyente": "2297997706",
+      "Fecha de pago": "2026-02-06",
+      "Distrito del inmueble": "MAGDALENA DEL MAR",
+      "Año transferencia del inmueble": "2026",
+      "Mes transferencia del inmueble": "2",
+      "Cantidad pagos": "3",
+      "Impuesto pagado (S/)": "16773.61",
+      "Intereses pagados (S/)": "0.0",
+      "Total pagado (S/)": "16773.61"
+    },
+    {
+      "Nº contribuyente": "2297997707",
+      "Fecha de pago": "2026-03-25",
+      "Distrito del inmueble": "SAN BORJA",
+      "Año transferencia del inmueble": "2026",
+      "Mes transferencia del inmueble": "2",
+      "Cantidad pagos": "1",
+      "Impuesto pagado (S/)": "16297.74",
+      "Intereses pagados (S/)": "0.0",
+      "Total pagado (S/)": "16297.74"
+    },
+    {
+      "Nº contribuyente": "2297997708",
+      "Fecha de pago": "2026-03-04",
+      "Distrito del inmueble": "LA VICTORIA",
+      "Año transferencia del inmueble": "2026",
+      "Mes transferencia del inmueble": "3",
+      "Cantidad pagos": "1",
+      "Impuesto pagado (S/)": "19820.4",
+      "Intereses pagados (S/)": "0.0",
+      "Total pagado (S/)": "19820.4"
+    },
+    {
+      "Nº contribuyente": "2297997709",
+      "Fecha de pago": "2026-02-18",
+      "Distrito del inmueble": "SAN ISIDRO",
+      "Año transferencia del inmueble": "2026",
+      "Mes transferencia del inmueble": "2",
+      "Cantidad pagos": "2",
+      "Impuesto pagado (S/)": "48928.8",
+      "Intereses pagados (S/)": "0.0",
+      "Total pagado (S/)": "48928.8"
+    },
+    {
+      "Nº contribuyente": "2297997710",
+      "Fecha de pago": "2026-03-11",
+      "Distrito del inmueble": "LIMA",
+      "Año transferencia del inmueble": "2026",
+      "Mes transferencia del inmueble": "2",
+      "Cantidad pagos": "1",
+      "Impuesto pagado (S/)": "367.2",
+      "Intereses pagados (S/)": "0.0",
+      "Total pagado (S/)": "367.2"
+    },
+    {
+      "Nº contribuyente": "2297997711",
+      "Fecha de pago": "2026-01-08",
+      "Distrito del inmueble": "SAN MARTIN DE PORRES",
+      "Año transferencia del inmueble": "2025",
+      "Mes transferencia del inmueble": "12",
+      "Cantidad pagos": "4",
+      "Impuesto pagado (S/)": "7953.259999999999",
+      "Intereses pagados (S/)": "0.0",
+      "Total pagado (S/)": "7953.259999999999"
+    },
+    {
+      "Nº contribuyente": "2297997712",
+      "Fecha de pago": "2026-01-26",
+      "Distrito del inmueble": "LIMA",
+      "Año transferencia del inmueble": "2026",
+      "Mes transferencia del inmueble": "1",
+      "Cantidad pagos": "1",
+      "Impuesto pagado (S/)": "54814.8",
+      "Intereses pagados (S/)": "0.0",
+      "Total pagado (S/)": "54814.8"
+    },
+    {
+      "Nº contribuyente": "2297997713",
+      "Fecha de pago": "2026-03-31",
+      "Distrito del inmueble": "SANTIAGO DE SURCO",
+      "Año transferencia del inmueble": "2026",
+      "Mes transferencia del inmueble": "3",
+      "Cantidad pagos": "1",
+      "Impuesto pagado (S/)": "71745.0",
+      "Intereses pagados (S/)": "0.0",
+      "Total pagado (S/)": "71745.0"
+    },
+    {
+      "Nº contribuyente": "2297997714",
+      "Fecha de pago": "2026-04-28",
+      "Distrito del inmueble": "SANTIAGO DE SURCO",
+      "Año transferencia del inmueble": "2026",
+      "Mes transferencia del inmueble": "4",
+      "Cantidad pagos": "8",
+      "Impuesto pagado (S/)": "571104.0",
+      "Intereses pagados (S/)": "0.0",
+      "Total pagado (S/)": "571104.0"
+    },
+    {
+      "Nº contribuyente": "2297997715",
+      "Fecha de pago": "2026-05-22",
+      "Distrito del inmueble": "SANTIAGO DE SURCO",
+      "Año transferencia del inmueble": "2026",
+      "Mes transferencia del inmueble": "5",
+      "Cantidad pagos": "2",
+      "Impuesto pagado (S/)": "6158.5",
+      "Intereses pagados (S/)": "0.0",
+      "Total pagado (S/)": "6158.5"
+    },
+    {
+      "Nº contribuyente": "2297997716",
+      "Fecha de pago": "2026-05-25",
+      "Distrito del inmueble": "SANTIAGO DE SURCO",
+      "Año transferencia del inmueble": "2026",
+      "Mes transferencia del inmueble": "5",
+      "Cantidad pagos": "8",
+      "Impuesto pagado (S/)": "66900.90000000001",
+      "Intereses pagados (S/)": "0.0",
+      "Total pagado (S/)": "66900.90000000001"
+    },
+    {
+      "Nº contribuyente": "2297997717",
+      "Fecha de pago": "2026-05-29",
+      "Distrito del inmueble": "SAN JUAN DE LURIGANCHO",
+      "Año transferencia del inmueble": "2025",
+      "Mes transferencia del inmueble": "8",
+      "Cantidad pagos": "5",
+      "Impuesto pagado (S/)": "8884.41",
+      "Intereses pagados (S/)": "642.34",
+      "Total pagado (S/)": "9526.75"
+    },
+    {
+      "Nº contribuyente": "2297997718",
+      "Fecha de pago": "2026-05-29",
+      "Distrito del inmueble": "SAN JUAN DE LURIGANCHO",
+      "Año transferencia del inmueble": "2025",
+      "Mes transferencia del inmueble": "12",
+      "Cantidad pagos": "1",
+      "Impuesto pagado (S/)": "2147.25",
+      "Intereses pagados (S/)": "76.85",
+      "Total pagado (S/)": "2224.1"
+    },
+    {
+      "Nº contribuyente": "2297997719",
+      "Fecha de pago": "2026-06-11",
+      "Distrito del inmueble": "SAN JUAN DE LURIGANCHO",
+      "Año transferencia del inmueble": "2025",
+      "Mes transferencia del inmueble": "12",
+      "Cantidad pagos": "1",
+      "Impuesto pagado (S/)": "5.17",
+      "Intereses pagados (S/)": "0.02",
+      "Total pagado (S/)": "5.19"
+    },
+    {
+      "Nº contribuyente": "2297997720",
+      "Fecha de pago": "2026-02-16",
+      "Distrito del inmueble": "ATE",
+      "Año transferencia del inmueble": "2026",
+      "Mes transferencia del inmueble": "1",
+      "Cantidad pagos": "1",
+      "Impuesto pagado (S/)": "1391682.17",
+      "Intereses pagados (S/)": "0.0",
+      "Total pagado (S/)": "1391682.17"
+    },
+    {
+      "Nº contribuyente": "2297997721",
+      "Fecha de pago": "2026-05-21",
+      "Distrito del inmueble": "SANTIAGO DE SURCO",
+      "Año transferencia del inmueble": "2026",
+      "Mes transferencia del inmueble": "5",
+      "Cantidad pagos": "12",
+      "Impuesto pagado (S/)": "104456.15999999997",
+      "Intereses pagados (S/)": "0.0",
+      "Total pagado (S/)": "104456.15999999997"
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:06:23Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 24510,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "predios-afectos-arbitrios-municipales-de-la-municipalidad-distrital-de-jesús-maría-mdjm",
+  "titulo": "Predios Afectos a Arbitrios Municipales de la Municipalidad Distrital de Jesús María - [MDJM]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/predios-afectos-arbitrios-municipales-de-la-municipalidad-distrital-de-jes%C3%BAs-mar%C3%ADa-mdjm",
+  "resource_id": "fd5be6fc-8a75-4280-a633-c671ea3e22a5",
+  "estado": "formato_no_soportado",
+  "formato": "docx",
+  "generado_en": "2026-08-24T22:06:01Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

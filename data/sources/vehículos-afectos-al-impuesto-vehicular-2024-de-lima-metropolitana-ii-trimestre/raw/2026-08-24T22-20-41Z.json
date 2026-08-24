@@ -1,0 +1,16 @@
+{
+  "dataset_id": "vehículos-afectos-al-impuesto-vehicular-2024-de-lima-metropolitana-ii-trimestre",
+  "titulo": "Vehículos afectos al Impuesto Vehicular 2024 de Lima Metropolitana (II Trimestre)",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/veh%C3%ADculos-afectos-al-impuesto-vehicular-2024-de-lima-metropolitana-ii-trimestre",
+  "resource_id": "5ba44ef0-af03-4e3b-aae4-4c4412c34d31",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:20:41Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

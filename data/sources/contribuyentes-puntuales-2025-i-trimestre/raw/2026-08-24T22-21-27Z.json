@@ -1,0 +1,16 @@
+{
+  "dataset_id": "contribuyentes-puntuales-2025-i-trimestre",
+  "titulo": "Contribuyentes puntuales 2025 (I Trimestre)",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/contribuyentes-puntuales-2025-i-trimestre",
+  "resource_id": "30089445-3458-4bc4-9f85-ad148d8bc197",
+  "estado": "formato_no_soportado",
+  "formato": "xlsx",
+  "generado_en": "2026-08-24T22:21:27Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

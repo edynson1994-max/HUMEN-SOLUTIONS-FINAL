@@ -1,0 +1,16 @@
+{
+  "dataset_id": "encuesta-nacional-de-presupuestos-familiares-enapref-2009-instituto-nacional-de-estadística",
+  "titulo": "Encuesta Nacional de Presupuestos Familiares (ENAPREF) 2009 - [Instituto Nacional de Estadística e Informática - INEI]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-de-presupuestos-familiares-enapref-2009-instituto-nacional-de-estad%C3%ADstica",
+  "resource_id": "780b1d8a-fca2-45a7-a9ca-48a029b49035",
+  "estado": "formato_no_soportado",
+  "formato": "pdf",
+  "generado_en": "2026-08-24T22:09:18Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

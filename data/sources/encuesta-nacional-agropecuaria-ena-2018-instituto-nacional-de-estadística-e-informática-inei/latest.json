@@ -1,0 +1,16 @@
+{
+  "dataset_id": "encuesta-nacional-agropecuaria-ena-2018-instituto-nacional-de-estadística-e-informática-inei",
+  "titulo": "Encuesta Nacional Agropecuaria (ENA) 2018 - [Instituto Nacional de Estadística e Informática - INEI]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-agropecuaria-ena-2018-instituto-nacional-de-estad%C3%ADstica-e-inform%C3%A1tica-inei",
+  "resource_id": "0b255e0e-f3d5-475a-9854-1e91a8cbd9e9",
+  "estado": "formato_no_soportado",
+  "formato": "pdf",
+  "generado_en": "2026-08-24T22:09:21Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

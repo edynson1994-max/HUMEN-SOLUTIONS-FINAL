@@ -1,0 +1,16 @@
+{
+  "dataset_id": "gasto-presupuestal-de-los-organismos-públicos-descentralizados-regionales-y-municipales",
+  "titulo": "Gasto Presupuestal de los Organismos Públicos Descentralizados - Regionales y Municipales",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/gasto-presupuestal-de-los-organismos-p%C3%BAblicos-descentralizados-regionales-y-municipales",
+  "resource_id": "4ea888ae-2b97-4a4e-9fae-d5612d996cd3",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:29Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

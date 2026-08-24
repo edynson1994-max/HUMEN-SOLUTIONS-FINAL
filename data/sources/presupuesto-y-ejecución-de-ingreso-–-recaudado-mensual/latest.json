@@ -1,0 +1,16 @@
+{
+  "dataset_id": "presupuesto-y-ejecución-de-ingreso-–-recaudado-mensual",
+  "titulo": "Presupuesto y Ejecución de Ingreso – Recaudado Mensual",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/presupuesto-y-ejecuci%C3%B3n-de-ingreso-%E2%80%93-recaudado-mensual",
+  "resource_id": "45c87c5b-42ec-4329-8b9f-91bac21c72b9",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:16Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

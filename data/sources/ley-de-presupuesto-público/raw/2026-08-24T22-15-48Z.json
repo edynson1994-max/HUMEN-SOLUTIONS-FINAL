@@ -1,0 +1,16 @@
+{
+  "dataset_id": "ley-de-presupuesto-público",
+  "titulo": "Ley de Presupuesto Público",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/ley-de-presupuesto-p%C3%BAblico",
+  "resource_id": "b7d7c9e8-f1ae-46f3-b5e4-ceade63ab636",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:15:48Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

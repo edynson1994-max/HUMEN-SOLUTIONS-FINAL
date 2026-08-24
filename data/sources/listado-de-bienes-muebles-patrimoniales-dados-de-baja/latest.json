@@ -1,0 +1,16 @@
+{
+  "dataset_id": "listado-de-bienes-muebles-patrimoniales-dados-de-baja",
+  "titulo": "Listado de bienes muebles patrimoniales dados de baja",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/listado-de-bienes-muebles-patrimoniales-dados-de-baja",
+  "resource_id": "e8dbe505-d9e9-4d36-8d1c-dc202e5e643c",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:43Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

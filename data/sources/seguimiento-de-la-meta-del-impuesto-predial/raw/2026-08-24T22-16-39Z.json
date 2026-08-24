@@ -1,0 +1,16 @@
+{
+  "dataset_id": "seguimiento-de-la-meta-del-impuesto-predial",
+  "titulo": "Seguimiento de la Meta del Impuesto Predial",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/seguimiento-de-la-meta-del-impuesto-predial",
+  "resource_id": "587392e3-5b16-4588-aa86-5b24dafe445d",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:39Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "dataset_id": "contribuyentes-afectos-2026-i-trimestre-sat-de-lima",
+  "titulo": "Contribuyentes Afectos 2026 (I Trimestre) SAT de Lima",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/contribuyentes-afectos-2026-i-trimestre-sat-de-lima",
+  "resource_id": "fd599fdc-c1f1-4a56-9798-8de506e5427e",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "Nº contribuyente",
+    "Tipo persona",
+    "Distrito domicilio fiscal",
+    "Tributo"
+  ],
+  "filas_leidas": 304739,
+  "muestra": [
+    {
+      "Nº contribuyente": "1000002996",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "LIMA",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "1000033965",
+      "Tipo persona": "Sociedad Conyugal",
+      "Distrito domicilio fiscal": "SAN BORJA",
+      "Tributo": "Vehicular"
+    },
+    {
+      "Nº contribuyente": "1000058940",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "LIMA",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "1000069983",
+      "Tipo persona": "Sociedad Conyugal",
+      "Distrito domicilio fiscal": "SAN ISIDRO",
+      "Tributo": "Vehicular"
+    },
+    {
+      "Nº contribuyente": "1000071927",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "LA MOLINA",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "1000072926",
+      "Tipo persona": "Sociedad Conyugal",
+      "Distrito domicilio fiscal": "LA MOLINA",
+      "Tributo": "Vehicular"
+    },
+    {
+      "Nº contribuyente": "1000079982",
+      "Tipo persona": "Persona Jurídica",
+      "Distrito domicilio fiscal": "PUNTA HERMOSA",
+      "Tributo": "Vehicular"
+    },
+    {
+      "Nº contribuyente": "1000091907",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "SAN JUAN DE LURIGANCHO",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "1000093905",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "LIMA",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "1000138860",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "RIMAC",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "1000142856",
+      "Tipo persona": "Sucesión Indivisa",
+      "Distrito domicilio fiscal": "LIMA",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "1000171827",
+      "Tipo persona": "Sucesión Indivisa",
+      "Distrito domicilio fiscal": "LIMA",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "1000210788",
+      "Tipo persona": "Sucesión Indivisa",
+      "Distrito domicilio fiscal": "LIMA",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "1000212786",
+      "Tipo persona": "Persona Jurídica",
+      "Distrito domicilio fiscal": "SAN ISIDRO",
+      "Tributo": "Vehicular"
+    },
+    {
+      "Nº contribuyente": "1000219968",
+      "Tipo persona": "Persona Jurídica",
+      "Distrito domicilio fiscal": "SANTIAGO DE SURCO",
+      "Tributo": "Vehicular"
+    },
+    {
+      "Nº contribuyente": "1000231767",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "SAN JUAN DE MIRAFLORES",
+      "Tributo": "Vehicular"
+    },
+    {
+      "Nº contribuyente": "1000238760",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "LIMA",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "1000258740",
+      "Tipo persona": "Persona Natural",
+      "Distrito domicilio fiscal": "LIMA",
+      "Tributo": "Predial Arbitrios"
+    },
+    {
+      "Nº contribuyente": "1000270728",
+      "Tipo persona": "Sociedad Conyugal",
+      "Distrito domicilio fiscal": "PUEBLO LIBRE",
+      "Tributo": "Vehicular"
+    },
+    {
+      "Nº contribuyente": "1000275723",
+      "Tipo persona": "Persona Jurídica",
+      "Distrito domicilio fiscal": "SAN JUAN DE LURIGANCHO",
+      "Tributo": "Vehicular"
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:05:09Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 304739,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

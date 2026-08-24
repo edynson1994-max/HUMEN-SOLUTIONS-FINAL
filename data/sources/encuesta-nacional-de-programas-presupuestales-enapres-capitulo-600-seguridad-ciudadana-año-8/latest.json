@@ -1,0 +1,19 @@
+{
+  "dataset_id": "encuesta-nacional-de-programas-presupuestales-enapres-capitulo-600-seguridad-ciudadana-año-8",
+  "titulo": "Encuesta Nacional de Programas Presupuestales (ENAPRES) Capitulo 600 Seguridad Ciudadana - Año 2014 - [Ministerio del Interior (MININTER)]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-de-programas-presupuestales-enapres-capitulo-600-seguridad-ciudadana-a%C3%B1o-8",
+  "resource_id": "736c06da-b065-4bbd-976a-9c950bd6194d",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+    "url_catalogo_respaldo": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+  },
+  "generado_en": "2026-08-24T22:07:35Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

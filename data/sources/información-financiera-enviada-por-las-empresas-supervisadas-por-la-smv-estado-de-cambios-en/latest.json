@@ -1,0 +1,16 @@
+{
+  "dataset_id": "información-financiera-enviada-por-las-empresas-supervisadas-por-la-smv-estado-de-cambios-en",
+  "titulo": "Información Financiera enviada por las empresas supervisadas por la SMV - Estado de Cambios en el Patrimonio",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/informaci%C3%B3n-financiera-enviada-por-las-empresas-supervisadas-por-la-smv-estado-de-cambios-en",
+  "resource_id": "010b6b9c-9f52-4e43-9530-6b20ec8526a7",
+  "estado": "formato_no_soportado",
+  "formato": "json",
+  "generado_en": "2026-08-24T22:21:15Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

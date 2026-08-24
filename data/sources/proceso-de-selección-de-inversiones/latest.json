@@ -1,0 +1,16 @@
+{
+  "dataset_id": "proceso-de-selección-de-inversiones",
+  "titulo": "Proceso de selección de inversiones",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/proceso-de-selecci%C3%B3n-de-inversiones",
+  "resource_id": "a51bf42e-78d1-4bde-bedc-e28af1b441e9",
+  "estado": "formato_no_soportado",
+  "formato": "data",
+  "generado_en": "2026-08-24T22:15:56Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

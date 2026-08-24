@@ -1,0 +1,16 @@
+{
+  "dataset_id": "presupuesto-y-ejecución-de-ingreso",
+  "titulo": "Presupuesto y Ejecución de Ingreso",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/presupuesto-y-ejecuci%C3%B3n-de-ingreso",
+  "resource_id": "f511d44d-9b11-4b7a-a69b-d4fc88e476ba",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:10Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

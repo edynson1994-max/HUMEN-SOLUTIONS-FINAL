@@ -1,0 +1,16 @@
+{
+  "dataset_id": "ingreso-presupuestal-de-las-entidades-de-tratamiento-empresarial-etes",
+  "titulo": "Ingreso Presupuestal de las Entidades de Tratamiento Empresarial - ETES",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/ingreso-presupuestal-de-las-entidades-de-tratamiento-empresarial-etes",
+  "resource_id": "d9449329-74b7-404f-a4a8-5a8de3184c8c",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:34Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

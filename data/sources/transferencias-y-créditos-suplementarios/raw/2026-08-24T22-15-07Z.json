@@ -1,0 +1,16 @@
+{
+  "dataset_id": "transferencias-y-créditos-suplementarios",
+  "titulo": "Transferencias y Créditos Suplementarios",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/transferencias-y-cr%C3%A9ditos-suplementarios",
+  "resource_id": "8f9a5179-5058-4fd5-b080-fbc504b7f931",
+  "estado": "formato_no_soportado",
+  "formato": "data",
+  "generado_en": "2026-08-24T22:15:07Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

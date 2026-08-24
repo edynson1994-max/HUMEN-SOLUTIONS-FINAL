@@ -1,0 +1,16 @@
+{
+  "dataset_id": "rentas-recaudacion-de-tributos-municipalidad-provincial-del-santa",
+  "titulo": "Rentas : Recaudacion de Tributos - Municipalidad Provincial del Santa",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/rentas-recaudacion-de-tributos-municipalidad-provincial-del-santa",
+  "resource_id": "9cea1364-ec87-4774-94e3-b876b85b6468",
+  "estado": "formato_no_soportado",
+  "formato": "xlb",
+  "generado_en": "2026-08-24T22:10:24Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

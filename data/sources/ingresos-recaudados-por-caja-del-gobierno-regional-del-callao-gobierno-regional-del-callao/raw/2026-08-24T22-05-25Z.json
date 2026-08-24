@@ -1,0 +1,251 @@
+{
+  "dataset_id": "ingresos-recaudados-por-caja-del-gobierno-regional-del-callao-gobierno-regional-del-callao",
+  "titulo": "Ingresos recaudados por caja del Gobierno Regional del Callao - [Gobierno Regional del Callao - GORECALLAO]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/ingresos-recaudados-por-caja-del-gobierno-regional-del-callao-gobierno-regional-del-callao",
+  "resource_id": "51c3e6e4-f747-44fa-874f-ada9959de169",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "FECHA_CORTE",
+    "AÑO",
+    "MES",
+    "FECHA",
+    "TIPO_DOC",
+    "DOCUMENTO",
+    "GLOSA",
+    "CONCEPTO",
+    "TOTAL"
+  ],
+  "filas_leidas": 92664,
+  "muestra": [
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "01",
+      "FECHA": "20260128",
+      "TIPO_DOC": "Boleta de Venta                                                                                     ",
+      "DOCUMENTO": "0000001678",
+      "GLOSA": "PAGO CORRESPONDIENTE A LA CONSTANCIA DE OFERTA DE VENTA N 2026000053 PARTIDA P01294066 PAGO EN EFECTIVO",
+      "CONCEPTO": "VENTA DE TERRENOS",
+      "TOTAL": "110.10"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "02",
+      "FECHA": "20260211",
+      "TIPO_DOC": "Boleta de Venta                                                                                     ",
+      "DOCUMENTO": "0000001698",
+      "GLOSA": "PAGO CORRESPONDIENTE A LA CONSTANCIA DE OFERTA DE VENTA N 2026000003 PARTIDA P01029554 PAGO EN EFECTIVO",
+      "CONCEPTO": "VENTA DE TERRENOS",
+      "TOTAL": "200.00"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "02",
+      "FECHA": "20260219",
+      "TIPO_DOC": "Boleta de Venta                                                                                     ",
+      "DOCUMENTO": "0000001715",
+      "GLOSA": "PAGO CORRESPONDIENTE A LA CONSTANCIA DE OFERTA DE VENTA N 2026000023 PARTIDA P52011869 PAGO EN EFECTIVO ",
+      "CONCEPTO": "VENTA DE TERRENOS",
+      "TOTAL": "113.70"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "03",
+      "FECHA": "20260306",
+      "TIPO_DOC": "Boleta de Venta                                                                                     ",
+      "DOCUMENTO": "0000001741",
+      "GLOSA": "PAGO CORRESPONDIENTE A LA CONSTANCIA DE OFERTA DE VENTA N 2026000037 PARTIDA P52021028 PAGO EN EFECTIVO ",
+      "CONCEPTO": "VENTA DE TERRENOS",
+      "TOTAL": "120.00"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "03",
+      "FECHA": "20260306",
+      "TIPO_DOC": "Boleta de Venta                                                                                     ",
+      "DOCUMENTO": "0000001747",
+      "GLOSA": "ARRENDAMIENTO DEL CAMPO SINTETICO DE FUTBOL F7 DEL COMPLEJO DEPORTIVO TELMO CARBAJO ",
+      "CONCEPTO": "ALQUILER DE CAMPO SINTETICO DE FUTBOL (7 JUG.) (A) NOCTURNO",
+      "TOTAL": "120.00"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "03",
+      "FECHA": "20260311",
+      "TIPO_DOC": "Boleta de Venta                                                                                     ",
+      "DOCUMENTO": "0000001751",
+      "GLOSA": "ARRENDAMIENTO DE CAMPO SINTETICO DE FUTBOL F7 DEL COMPLEJO DEPORTIVO TELMO CARBAJO",
+      "CONCEPTO": "ALQUILER DE CAMPO SINTETICO DE FUTBOL (7 JUG.) (A) NOCTURNO",
+      "TOTAL": "60.00"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "03",
+      "FECHA": "20260311",
+      "TIPO_DOC": "Boleta de Venta                                                                                     ",
+      "DOCUMENTO": "0000001752",
+      "GLOSA": "PAGO CORRESPONDIENTE A LA CONSTANCIA DE OFERTA DE VENTA N 2026000045 PARTIDA P52017351 PAGO EN EFECTIVO ",
+      "CONCEPTO": "VENTA DE TERRENOS",
+      "TOTAL": "118.40"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "03",
+      "FECHA": "20260325",
+      "TIPO_DOC": "Boleta de Venta                                                                                     ",
+      "DOCUMENTO": "0000001766",
+      "GLOSA": "PAGO CORRESPONDIENTE A LA CONSTANCIA DE OFERTA DE VENTA N 2026000007 PARTIDA P52011724 PAGO EN EFECTIVO ",
+      "CONCEPTO": "VENTA DE TERRENOS",
+      "TOTAL": "280.00"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "01",
+      "FECHA": "20260112",
+      "TIPO_DOC": "Ticket o cinta emitido por máquina registradora                                                     ",
+      "DOCUMENTO": "0000284010",
+      "GLOSA": "MATRICULA-VILLA REGIONAL                          ",
+      "CONCEPTO": "MATRICULA-VILLA REGIONAL",
+      "TOTAL": "40.00"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "01",
+      "FECHA": "20260112",
+      "TIPO_DOC": "Ticket o cinta emitido por máquina registradora                                                     ",
+      "DOCUMENTO": "0000284016",
+      "GLOSA": "MATRICULA-VILLA REGIONAL                          ",
+      "CONCEPTO": "MATRICULA-VILLA REGIONAL",
+      "TOTAL": "20.00"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "01",
+      "FECHA": "20260112",
+      "TIPO_DOC": "Ticket o cinta emitido por máquina registradora                                                     ",
+      "DOCUMENTO": "0000284031",
+      "GLOSA": "MATRICULA-VILLA REGIONAL                          ",
+      "CONCEPTO": "MATRICULA-VILLA REGIONAL",
+      "TOTAL": "60.00"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "01",
+      "FECHA": "20260112",
+      "TIPO_DOC": "Ticket o cinta emitido por máquina registradora                                                     ",
+      "DOCUMENTO": "0000284041",
+      "GLOSA": "MATRICULA-VILLA REGIONAL                          ",
+      "CONCEPTO": "MATRICULA-VILLA REGIONAL",
+      "TOTAL": "40.00"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "01",
+      "FECHA": "20260112",
+      "TIPO_DOC": "Ticket o cinta emitido por máquina registradora                                                     ",
+      "DOCUMENTO": "0000284042",
+      "GLOSA": "MATRICULA-VILLA REGIONAL                          ",
+      "CONCEPTO": "MATRICULA-VILLA REGIONAL",
+      "TOTAL": "40.00"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "01",
+      "FECHA": "20260112",
+      "TIPO_DOC": "Ticket o cinta emitido por máquina registradora                                                     ",
+      "DOCUMENTO": "0000284059",
+      "GLOSA": "MATRICULA-VILLA REGIONAL                          ",
+      "CONCEPTO": "MATRICULA-VILLA REGIONAL",
+      "TOTAL": "20.00"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "01",
+      "FECHA": "20260112",
+      "TIPO_DOC": "Ticket o cinta emitido por máquina registradora                                                     ",
+      "DOCUMENTO": "0000284074",
+      "GLOSA": "MATRICULA-VILLA REGIONAL                          ",
+      "CONCEPTO": "MATRICULA-VILLA REGIONAL",
+      "TOTAL": "40.00"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "01",
+      "FECHA": "20260112",
+      "TIPO_DOC": "Ticket o cinta emitido por máquina registradora                                                     ",
+      "DOCUMENTO": "0000284076",
+      "GLOSA": "MATRICULA-VILLA REGIONAL                          ",
+      "CONCEPTO": "MATRICULA-VILLA REGIONAL",
+      "TOTAL": "20.00"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "01",
+      "FECHA": "20260112",
+      "TIPO_DOC": "Ticket o cinta emitido por máquina registradora                                                     ",
+      "DOCUMENTO": "0000284078",
+      "GLOSA": "MATRICULA-VILLA REGIONAL                          ",
+      "CONCEPTO": "MATRICULA-VILLA REGIONAL",
+      "TOTAL": "20.00"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "01",
+      "FECHA": "20260112",
+      "TIPO_DOC": "Ticket o cinta emitido por máquina registradora                                                     ",
+      "DOCUMENTO": "0000284098",
+      "GLOSA": "MATRICULA-VILLA REGIONAL                          ",
+      "CONCEPTO": "MATRICULA-VILLA REGIONAL",
+      "TOTAL": "40.00"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "01",
+      "FECHA": "20260112",
+      "TIPO_DOC": "Ticket o cinta emitido por máquina registradora                                                     ",
+      "DOCUMENTO": "0000284099",
+      "GLOSA": "MATRICULA-VILLA REGIONAL                          ",
+      "CONCEPTO": "MATRICULA-VILLA REGIONAL",
+      "TOTAL": "20.00"
+    },
+    {
+      "FECHA_CORTE": "20260505",
+      "AÑO": "2026",
+      "MES": "01",
+      "FECHA": "20260112",
+      "TIPO_DOC": "Ticket o cinta emitido por máquina registradora                                                     ",
+      "DOCUMENTO": "0000284102",
+      "GLOSA": "MATRICULA-VILLA REGIONAL                          ",
+      "CONCEPTO": "MATRICULA-VILLA REGIONAL",
+      "TOTAL": "40.00"
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:05:25Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 92664,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "estado-de-cambios-en-el-patrimonio-neto-0",
+  "titulo": "Estado de Cambios en el Patrimonio Neto",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/estado-de-cambios-en-el-patrimonio-neto-0",
+  "resource_id": "550c7c90-ec49-4a61-bc00-49c02906d70e",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:15:57Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

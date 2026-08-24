@@ -1,0 +1,16 @@
+{
+  "dataset_id": "predios-con-propietarios-únicos-para-la-determinación-del-impuesto-predial-de-la",
+  "titulo": "Predios con Propietarios Únicos para la Determinación del Impuesto Predial de la Municipalidad Distrital de Jesús María - [MDJM]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/predios-con-propietarios-%C3%BAnicos-para-la-determinaci%C3%B3n-del-impuesto-predial-de-la",
+  "resource_id": "3deb92e4-2618-42d1-b394-4adc1f6316d7",
+  "estado": "formato_no_soportado",
+  "formato": "docx",
+  "generado_en": "2026-08-24T22:06:02Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

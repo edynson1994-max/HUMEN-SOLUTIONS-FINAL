@@ -1,0 +1,16 @@
+{
+  "dataset_id": "formato-12b-de-inversiones",
+  "titulo": "Formato 12B de inversiones",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/formato-12b-de-inversiones",
+  "resource_id": "c85b5c46-bd70-4dfb-89cb-679ddc1215e0",
+  "estado": "formato_no_soportado",
+  "formato": "data",
+  "generado_en": "2026-08-24T22:15:51Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

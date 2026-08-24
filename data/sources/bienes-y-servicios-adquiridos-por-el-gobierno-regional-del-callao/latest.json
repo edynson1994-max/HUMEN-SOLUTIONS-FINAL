@@ -1,0 +1,16 @@
+{
+  "dataset_id": "bienes-y-servicios-adquiridos-por-el-gobierno-regional-del-callao",
+  "titulo": "Bienes y servicios adquiridos por el Gobierno Regional del Callao",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/bienes-y-servicios-adquiridos-por-el-gobierno-regional-del-callao",
+  "resource_id": "b7e70635-1335-43ba-a83d-11885bdda8b5",
+  "estado": "formato_no_soportado",
+  "formato": "docx",
+  "generado_en": "2026-08-24T22:17:31Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

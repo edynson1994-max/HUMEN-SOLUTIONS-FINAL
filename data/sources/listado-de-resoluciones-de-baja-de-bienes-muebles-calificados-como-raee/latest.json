@@ -1,0 +1,16 @@
+{
+  "dataset_id": "listado-de-resoluciones-de-baja-de-bienes-muebles-calificados-como-raee",
+  "titulo": "Listado de Resoluciones de Baja de Bienes Muebles calificados como RAEE",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/listado-de-resoluciones-de-baja-de-bienes-muebles-calificados-como-raee",
+  "resource_id": "5fbb873a-5f9c-4041-bca5-2fcc2068c04c",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:44Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "personal-activo-y-pensionista-del-sector-público-registrado-en-el-airhsp",
+  "titulo": "Personal Activo y Pensionista del Sector Público registrado en el AIRHSP",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/personal-activo-y-pensionista-del-sector-p%C3%BAblico-registrado-en-el-airhsp",
+  "resource_id": "8134cda6-bd68-4211-944a-026116869948",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-08-24T22:16:46Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

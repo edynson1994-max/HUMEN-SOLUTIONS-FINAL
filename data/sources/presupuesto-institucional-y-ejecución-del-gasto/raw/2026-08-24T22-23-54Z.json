@@ -1,0 +1,64 @@
+{
+  "dataset_id": "presupuesto-institucional-y-ejecución-del-gasto",
+  "titulo": "Presupuesto institucional y ejecución del gasto",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/presupuesto-institucional-y-ejecuci%C3%B3n-del-gasto",
+  "resource_id": "eeac51c2-d333-49fb-8dbc-37c4089d0cf3",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "",
+    "CUADRO DE EJECUCION PRESUPUESTAL 2026",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "filas_leidas": 9,
+  "muestra": [
+    {
+      "": "Avance % ",
+      "CUADRO DE EJECUCION PRESUPUESTAL 2026": "PIA"
+    },
+    {
+      "": "",
+      "CUADRO DE EJECUCION PRESUPUESTAL 2026": ""
+    },
+    {
+      "": "  0.7",
+      "CUADRO DE EJECUCION PRESUPUESTAL 2026": "1,548,476"
+    },
+    {
+      "": "  0.0",
+      "CUADRO DE EJECUCION PRESUPUESTAL 2026": "4,918,876"
+    },
+    {
+      "": "  1.2",
+      "CUADRO DE EJECUCION PRESUPUESTAL 2026": "4,081,407"
+    },
+    {
+      "": "  3.6",
+      "CUADRO DE EJECUCION PRESUPUESTAL 2026": "7,557,162"
+    },
+    {
+      "": "  1.0",
+      "CUADRO DE EJECUCION PRESUPUESTAL 2026": "38,713,864"
+    },
+    {
+      "": "",
+      "CUADRO DE EJECUCION PRESUPUESTAL 2026": "56,819,785"
+    },
+    {
+      "": "",
+      "CUADRO DE EJECUCION PRESUPUESTAL 2026": ""
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-08-24T22:23:54Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": 9,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

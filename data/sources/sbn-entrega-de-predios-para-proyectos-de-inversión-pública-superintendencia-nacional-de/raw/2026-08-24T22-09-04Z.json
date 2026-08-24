@@ -1,0 +1,16 @@
+{
+  "dataset_id": "sbn-entrega-de-predios-para-proyectos-de-inversión-pública-superintendencia-nacional-de",
+  "titulo": "SBN Entrega de predios para proyectos de Inversión Pública - [Superintendencia Nacional de Bienes Estatales - SBN]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/sbn-entrega-de-predios-para-proyectos-de-inversi%C3%B3n-p%C3%BAblica-superintendencia-nacional-de",
+  "resource_id": "d3cae99b-6ae3-4e2a-aefc-dd589e81d5ad",
+  "estado": "formato_no_soportado",
+  "formato": "xls",
+  "generado_en": "2026-08-24T22:09:04Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "dataset_id": "padrón-ruc-superintendencia-nacional-de-aduanas-y-de-administración-tributaria-sunat",
+  "titulo": "Padrón RUC Superintendencia Nacional de Aduanas y de Administración Tributaria SUNAT",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/padr%C3%B3n-ruc-superintendencia-nacional-de-aduanas-y-de-administraci%C3%B3n-tributaria-sunat",
+  "resource_id": "053bc7f4-73b5-4344-b390-1fd495594b24",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "new-line character seen in unquoted field - do you need to open the file with newline=''?",
+    "url_catalogo_respaldo": "new-line character seen in unquoted field - do you need to open the file with newline=''?"
+  },
+  "generado_en": "2026-08-24T22:11:00Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "dataset_id": "base-de-datos-de-proyectos-de-inversion-pública-en-seguridad-ciudadana",
+  "titulo": "Base de datos de Proyectos de Inversion Pública en Seguridad Ciudadana",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/base-de-datos-de-proyectos-de-inversion-p%C3%BAblica-en-seguridad-ciudadana",
+  "resource_id": "2fc80fdb-161a-4869-a267-130afe16948e",
+  "estado": "formato_no_soportado",
+  "formato": "html",
+  "generado_en": "2026-08-24T22:08:15Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

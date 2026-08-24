@@ -1,0 +1,19 @@
+{
+  "dataset_id": "recaudación-por-limpieza-pública-en-la-provincia-de-barranca-municipalidad-provincial-de",
+  "titulo": "Recaudación por limpieza pública en la provincia de Barranca  [Municipalidad Provincial de Barranca]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-por-limpieza-p%C3%BAblica-en-la-provincia-de-barranca-municipalidad-provincial-de",
+  "resource_id": "21d94b29-f2a7-41c3-a47d-a47ac2400afc",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "new-line character seen in unquoted field - do you need to open the file with newline=''?",
+    "url_catalogo_respaldo": "new-line character seen in unquoted field - do you need to open the file with newline=''?"
+  },
+  "generado_en": "2026-08-24T22:05:29Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

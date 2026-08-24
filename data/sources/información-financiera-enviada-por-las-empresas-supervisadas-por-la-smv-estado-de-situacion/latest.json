@@ -1,0 +1,16 @@
+{
+  "dataset_id": "información-financiera-enviada-por-las-empresas-supervisadas-por-la-smv-estado-de-situacion",
+  "titulo": "Información Financiera enviada por las empresas supervisadas por la SMV - Estado de situacion financiera",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/informaci%C3%B3n-financiera-enviada-por-las-empresas-supervisadas-por-la-smv-estado-de-situacion",
+  "resource_id": "e0fd47db-5b7c-449b-ba11-3de3b15fb8a8",
+  "estado": "formato_no_soportado",
+  "formato": "json",
+  "generado_en": "2026-08-24T22:21:12Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

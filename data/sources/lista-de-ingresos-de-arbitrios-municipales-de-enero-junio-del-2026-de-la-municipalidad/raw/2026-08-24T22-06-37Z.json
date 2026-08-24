@@ -1,0 +1,16 @@
+{
+  "dataset_id": "lista-de-ingresos-de-arbitrios-municipales-de-enero-junio-del-2026-de-la-municipalidad",
+  "titulo": "Lista de Ingresos de Arbitrios Municipales de Enero a Junio del 2026 de la Municipalidad Provincial de Arequipa - MPA",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/lista-de-ingresos-de-arbitrios-municipales-de-enero-junio-del-2026-de-la-municipalidad",
+  "resource_id": "39d96538-65a5-4802-8fac-b35e9992e31a",
+  "estado": "formato_no_soportado",
+  "formato": ".xlsx",
+  "generado_en": "2026-08-24T22:06:37Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

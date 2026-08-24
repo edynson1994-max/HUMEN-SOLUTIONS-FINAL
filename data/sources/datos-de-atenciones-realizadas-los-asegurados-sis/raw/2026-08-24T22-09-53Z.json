@@ -1,0 +1,16 @@
+{
+  "dataset_id": "datos-de-atenciones-realizadas-los-asegurados-sis",
+  "titulo": "Datos de Atenciones realizadas a los asegurados - [SIS]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/datos-de-atenciones-realizadas-los-asegurados-sis",
+  "resource_id": "8ef41816-6540-4b29-ab6f-94fb80ae0839",
+  "estado": "formato_no_soportado",
+  "formato": "pdf",
+  "generado_en": "2026-08-24T22:09:53Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "primera_sincronizacion",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}
