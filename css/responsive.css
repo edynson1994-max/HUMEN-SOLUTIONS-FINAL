@@ -205,6 +205,47 @@ HERO
 
 }
 
+.hero-game{
+
+    padding:26px 20px 22px;
+
+}
+
+.hero-game-header{
+
+    flex-direction:column;
+    text-align:center;
+    gap:10px;
+
+}
+
+.hero-visual .hero-game-logo{
+
+    height:28px;
+    width:auto;
+    max-width:none;
+    border-radius:0;
+
+}
+
+.hero-game-grid{
+
+    flex-direction:column;
+
+}
+
+.game-tile{
+
+    height:150px;
+
+}
+
+.hero-game-footer{
+
+    margin-top:20px;
+
+}
+
 .hero h1{
 
     font-size:2rem;

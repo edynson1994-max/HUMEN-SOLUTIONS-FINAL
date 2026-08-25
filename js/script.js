@@ -331,5 +331,59 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.key === "ArrowLeft") goTo(current - 1);
     });
 
+
+
+    /*==========================================
+      HERO — MINI JUEGO "CONOCE NUESTROS SERVICIOS"
+    ==========================================*/
+
+    const heroGame = document.querySelector("#heroGame");
+
+    if (heroGame) {
+
+        const tiles = Array.from(heroGame.querySelectorAll(".game-tile"));
+        const progressText = heroGame.querySelector("#heroGameProgressText");
+        const discovered = new Set();
+
+        function updateProgress() {
+
+            const total = tiles.length;
+
+            if (progressText) {
+                progressText.textContent = discovered.size < total
+                    ? discovered.size + " de " + total + " servicios descubiertos"
+                    : "¡Descubriste los " + total + "! Así trabajamos por ti.";
+            }
+
+            heroGame.classList.toggle("is-complete", discovered.size === total);
+
+        }
+
+        tiles.forEach(tile => {
+
+            tile.addEventListener("click", () => {
+
+                const flipped = tile.classList.toggle("is-flipped");
+                tile.setAttribute("aria-pressed", flipped ? "true" : "false");
+
+                const service = tile.getAttribute("data-service");
+
+                if (flipped && service && !discovered.has(service)) {
+
+                    discovered.add(service);
+
+                    const dot = heroGame.querySelector('.dot[data-dot="' + service + '"]');
+                    if (dot) dot.classList.add("done");
+
+                    updateProgress();
+
+                }
+
+            });
+
+        });
+
+    }
+
 });
 

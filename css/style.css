@@ -840,6 +840,372 @@ HERO
 }
 
 /*=========================
+HERO — MINI JUEGO "CONOCE
+NUESTROS SERVICIOS"
+==========================*/
+
+.hero-game{
+
+    padding:34px 34px 28px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+    justify-content:flex-start;
+
+    width:100%;
+
+}
+
+.hero-game-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+
+    padding-bottom:22px;
+
+    margin-bottom:24px;
+
+    border-bottom:1px solid rgba(185,151,91,.25);
+
+}
+
+.hero-visual .hero-game-logo{
+
+    height:34px;
+
+    width:auto;
+
+    max-width:none;
+
+    display:block;
+
+    border-radius:0;
+
+}
+
+.hero-game-title{
+
+    margin:0;
+
+    font-weight:700;
+
+    font-size:1.05rem;
+
+    color:var(--primary);
+
+}
+
+.hero-game-grid{
+
+    display:flex;
+
+    gap:18px;
+
+}
+
+.game-tile{
+
+    display:block;
+
+    flex:1 1 auto;
+
+    min-width:0;
+
+    height:184px;
+
+    background:none;
+
+    border:none;
+
+    padding:0;
+
+    margin:0;
+
+    cursor:pointer;
+
+    perspective:1200px;
+
+    font-family:inherit;
+
+}
+
+.game-tile:focus-visible{
+
+    outline:2px solid var(--secondary);
+
+    outline-offset:6px;
+
+    border-radius:18px;
+
+}
+
+.game-tile-inner{
+
+    display:block;
+
+    position:relative;
+
+    width:100%;
+
+    height:100%;
+
+    transition:transform .65s cubic-bezier(.4,.15,.2,1),translate .25s ease;
+
+    transform-style:preserve-3d;
+
+}
+
+.game-tile:not(.is-flipped):hover .game-tile-inner,
+.game-tile:not(.is-flipped):focus-visible .game-tile-inner{
+
+    translate:0 -4px;
+
+}
+
+.game-tile.is-flipped .game-tile-inner{
+
+    transform:rotateY(180deg);
+
+}
+
+.game-tile-face{
+
+    position:absolute;
+
+    inset:0;
+
+    backface-visibility:hidden;
+
+    -webkit-backface-visibility:hidden;
+
+    border-radius:18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    padding:16px 12px;
+
+    text-align:center;
+
+    border:1.5px solid rgba(185,151,91,.35);
+
+}
+
+.game-tile-icon{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(255,255,255,.55);
+
+}
+
+.game-tile-name{
+
+    font-weight:700;
+
+    font-size:.98rem;
+
+}
+
+.game-tile-hint{
+
+    font-size:.76rem;
+
+    opacity:.75;
+
+}
+
+.game-tile-back{
+
+    transform:rotateY(180deg);
+
+    color:#fff;
+
+}
+
+.game-tile-check{
+
+    width:24px;
+
+    height:24px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(255,255,255,.22);
+
+    font-size:.8rem;
+
+    margin-bottom:2px;
+
+}
+
+.game-tile-copy{
+
+    font-size:.82rem;
+
+    line-height:1.45;
+
+}
+
+.tile-contabilidad .game-tile-front{
+
+    background:var(--secondary-bg);
+
+    color:var(--primary);
+
+}
+
+.tile-contabilidad .game-tile-back{
+
+    background:var(--primary);
+
+    border-color:var(--primary);
+
+}
+
+.tile-inventarios .game-tile-front{
+
+    background:var(--primary-light-bg);
+
+    color:var(--primary);
+
+}
+
+.tile-inventarios .game-tile-back{
+
+    background:var(--primary-light);
+
+    border-color:var(--primary-light);
+
+}
+
+.tile-limpieza .game-tile-front{
+
+    background:var(--clean-bg);
+
+    color:var(--clean-dark);
+
+    border-color:var(--clean-border);
+
+}
+
+.tile-limpieza .game-tile-back{
+
+    background:var(--clean);
+
+    border-color:var(--clean);
+
+}
+
+.hero-game-footer{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin-top:24px;
+
+    padding-top:18px;
+
+    border-top:1px solid rgba(185,151,91,.25);
+
+}
+
+.hero-game-progress-dots{
+
+    display:flex;
+
+    gap:7px;
+
+}
+
+.hero-game-progress-dots .dot{
+
+    width:9px;
+
+    height:9px;
+
+    border-radius:50%;
+
+    background:rgba(110,107,93,.28);
+
+    transition:background .3s ease;
+
+}
+
+.hero-game-progress-dots .dot.done{
+
+    background:var(--secondary);
+
+}
+
+.hero-game-progress-text{
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+    color:var(--text-light);
+
+}
+
+.hero-game.is-complete .hero-game-progress-text{
+
+    color:var(--primary);
+
+}
+
+@media (prefers-reduced-motion: reduce){
+
+    .game-tile-inner{
+
+        transition:none;
+
+    }
+
+}
+
+/*=========================
 INDICADORES
 ==========================*/
 
@@ -2295,6 +2661,18 @@ RESPONSIVE
 .hero-grid{
 
     gap:40px;
+
+}
+
+.hero-game-grid{
+
+    flex-direction:column;
+
+}
+
+.game-tile{
+
+    height:150px;
 
 }
 
