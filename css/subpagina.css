@@ -115,6 +115,15 @@
     margin:0;
 }
 
+/* ---------- Texto introductorio del formulario del cotizador ---------- */
+
+.form-intro{
+    font-size:.85rem;
+    color:var(--text-light);
+    line-height:1.6;
+    margin:-6px 0 18px;
+}
+
 /* ---------- HUMEN Clean — acento propio (teal) ---------- */
 
 .tema-clean .cotizador-resultado{
