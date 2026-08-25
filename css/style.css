@@ -4464,6 +4464,16 @@ PAGO CON MERCADO PAGO
 
 }
 
+/* .pagar-nota vive dentro de .cotizador-resultado, que tiene fondo oscuro
+   (verde o teal) — el gris de var(--text-light) quedaba prácticamente
+   ilegible ahí (texto oscuro sobre fondo oscuro). Se aclara solo en ese
+   contexto, sin tocar dónde más se use esta clase. */
+.cotizador-resultado .pagar-nota{
+
+    color:rgba(255,255,255,.75);
+
+}
+
 .descuento-pago-rapido{
 
     display:flex;

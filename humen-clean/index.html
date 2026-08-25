@@ -91,11 +91,13 @@
 
                             <hr>
 
-                            <label>4. Ubicación (región Cusco)</label>
+                            <label>4. Ubicación</label>
                             <select id="ubicacion">
-                                <option value="urbana">Zona urbana (Cusco, Anta, Izcuchaca y otros centros urbanos)</option>
-                                <option value="alejada">Comunidades / zonas alejadas de Cusco (Zurite, Ancahuasi, Urubamba, Chinchero, etc.) — +S/10 movilidad</option>
+                                <option value="base">Izcuchaca (Anta) o Cusco Cercado — nuestros puntos de operación</option>
+                                <option value="cercana">Zurite, Chinchero, Ancahuasi, San Sebastián, San Jerónimo, Wanchaq y otros distritos cercanos — +S/15 movilidad</option>
+                                <option value="lejana">Valle Sagrado y zonas más alejadas — Urubamba, Ollantaytambo, Pisac, Calca, Limatambo, etc. — +S/30 movilidad</option>
                             </select>
+                            <small>Operamos desde dos puntos, Izcuchaca (Anta) y Cusco Cercado — el recargo de movilidad se calcula según qué tan lejos estés del más cercano de los dos.</small>
 
                             <hr>
 
@@ -132,7 +134,7 @@
 
                             <hr>
 
-                            <div style="font-size:13px;opacity:.85;line-height:1.7">
+                            <div style="font-size:13px;color:var(--text);line-height:1.7">
                                 <b>Cómo calculamos tu precio</b>
                                 <ul>
                                     <li>Precio por visita: área × tarifa según tipo de servicio (S/2.00, S/4.00 o S/6.00 por m²).</li>
@@ -170,10 +172,17 @@
 
                             <button id="btnPagarAhora" type="button" class="btn-pagar-mp">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-                                Pagar ahora con Mercado Pago
+                                Pagar esta visita con Mercado Pago
                             </button>
 
                             <p class="pagar-nota" id="notaPagoSeguro">Pago seguro con Mercado Pago — tarjeta, Yape y más.</p>
+
+                            <button id="btnPagarGlobal" type="button" class="btn-pagar-mp btn-pagar-mp-outline" style="display:none;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                <span id="textoBtnPagarGlobal">Pagar el plan completo por adelantado</span>
+                            </button>
+
+                            <p class="pagar-nota" id="notaPagoGlobal" style="display:none;"></p>
 
                             <p class="pagar-nota-revision" id="notaRevisionManual" style="display:none;">Este monto requiere una revisión personalizada antes de procesar el pago — usa "Solicitar Cotización por WhatsApp" y te contactamos directamente.</p>
 
@@ -284,13 +293,39 @@
         // anterior. Ajustable si hace falta.
         var UMBRAL_REVISION_MANUAL = 1500;
 
+        // Umbral de revisión manual para la OTRA forma de pago (el plan
+        // completo del mes por adelantado) — ese monto es naturalmente
+        // varias veces más grande que una sola visita, así que usa su
+        // propio umbral, más alto, para no bloquear casi todos los planes
+        // recurrentes normales y solo pedir revisión en los realmente
+        // grandes.
+        var UMBRAL_REVISION_MANUAL_GLOBAL = 6000;
+
+        // Descuento adicional por pagar el plan completo de una sola vez
+        // por adelantado, en vez de visita por visita — no lo especificaste,
+        // así que usé un 5% extra sobre el precio ya descontado por
+        // frecuencia. Ajustable si prefieres otro número.
+        var DESCUENTO_PAGO_GLOBAL = 0.05;
+
         // Este servicio no suma un descuento extra "por pagar ahora" — ya
         // tiene su propio sistema de descuento por frecuencia (hasta 15%),
         // sumar otro 10% encima distorsionaría la fórmula pedida.
         var DESCUENTO_PAGO_RAPIDO = 0;
 
         var TARIFA_MINIMA = 50;
-        var RECARGO_MOVILIDAD = 10;
+
+        // Recargo de movilidad por zona. El negocio opera desde DOS puntos
+        // — Izcuchaca (Anta) y Cusco Cercado — así que la zona "base" sin
+        // recargo cubre ambos, y las otras zonas se miden por cercanía al
+        // más próximo de los dos, no solo desde Anta.
+        // Distancias de referencia por carretera desde Izcuchaca: Cusco
+        // ciudad ~25.5 km / 40 min (o ~29 min según ruta); Chinchero
+        // ~23 km; Urubamba ~33 km / 39 min; Ollantaytambo ~51 km;
+        // Zurite/Ancahuasi están sobre la misma vía Cusco-Abancay, más
+        // cerca de Izcuchaca que de Cusco ciudad. Son valores de
+        // referencia (no un cálculo exacto por GPS) — ajustables si
+        // conoces mejor tus costos reales de movilidad.
+        var RECARGOS_UBICACION = {base: 0, cercana: 15, lejana: 30};
 
         // Insumos si los trae HUMEN Clean, por cada visita (ya no "por
         // jornada" — este cotizador ya no cobra por horas ni turnos de
@@ -311,7 +346,11 @@
         // da 2.80, no 4.00), así que se tomó el monto en soles como el dato
         // correcto y el factor solo como referencia informativa.
         var NOMBRES_SERVICIO_M2 = {"2.00": "Mantenimiento / Estándar", "4.00": "Profunda / Desinfección", "6.00": "Post-Construcción / Fin de Obra"};
-        var NOMBRES_UBICACION = {"urbana": "Zona urbana (Cusco, Anta, Izcuchaca y otros centros urbanos)", "alejada": "Comunidades / zonas alejadas de Cusco"};
+        var NOMBRES_UBICACION = {
+            base: "Izcuchaca (Anta) o Cusco Cercado",
+            cercana: "Zurite, Chinchero, Ancahuasi y otros distritos cercanos",
+            lejana: "Valle Sagrado y zonas más alejadas (Urubamba, Ollantaytambo, Limatambo, etc.)"
+        };
 
         // Ya no se cotiza por horas ni por jornada — el negocio ahora es
         // por visita, y la frecuencia define tanto el descuento (mientras
@@ -328,6 +367,66 @@
             diario:      {label: "Diario — 1 vez al día",              descuento: 0.15, vecesPorDia: 1, visitasPorMes: 26},
             diario2:     {label: "Diario doble — 2 veces al día (apertura y cierre)", descuento: 0.15, vecesPorDia: 2, visitasPorMes: 26}
         };
+
+        // Guarda los datos de la última cotización calculada, para que el
+        // botón de "pagar el plan completo por adelantado" (una segunda
+        // forma de pago, además de pagar visita por visita) sepa qué
+        // cobrar sin tener que recalcular todo de nuevo.
+        var ultimoCalculo = null;
+
+        function obtenerPrecioGlobal() {
+            if (!ultimoCalculo || !ultimoCalculo.totalMensualEstimado) return null;
+            return Math.round(ultimoCalculo.totalMensualEstimado * (1 - DESCUENTO_PAGO_GLOBAL) * 100) / 100;
+        }
+
+        function obtenerParametrosGlobal() {
+            if (!ultimoCalculo) return {};
+            return {
+                area: ultimoCalculo.area,
+                tipoServicio: ultimoCalculo.tipoServicioLabel,
+                frecuencia: ultimoCalculo.frecuenciaLabel,
+                ubicacion: ultimoCalculo.ubicacion,
+                insumos: ultimoCalculo.insumos,
+                visitasPorMes: ultimoCalculo.visitasPorMes,
+                precioPorVisita: ultimoCalculo.costoPorVisitaEfectivo,
+                pagoGlobal: true
+            };
+        }
+
+        function obtenerDetalleTextoGlobal() {
+            if (!ultimoCalculo) return "";
+            var precioGlobal = obtenerPrecioGlobal();
+            return "Pago global por adelantado — plan " + ultimoCalculo.frecuenciaLabel + "\n" +
+                ultimoCalculo.visitasPorMes + " visita(s) al mes × " + HumenCotizador.formatoMoneda(ultimoCalculo.costoPorVisitaEfectivo) + " c/u\n" +
+                "Subtotal del plan: " + HumenCotizador.formatoMoneda(ultimoCalculo.totalMensualEstimado) + "\n" +
+                "Descuento adicional por pago por adelantado (" + (DESCUENTO_PAGO_GLOBAL * 100).toFixed(0) + "%): -" + HumenCotizador.formatoMoneda(ultimoCalculo.totalMensualEstimado - precioGlobal) + "\n" +
+                "Total del plan por adelantado: " + HumenCotizador.formatoMoneda(precioGlobal) + "\n" +
+                "(No incluye adicionales puntuales — esos se cobran aparte, visita por visita.)";
+        }
+
+        function etiquetaResumenGlobal() {
+            if (!ultimoCalculo) return "";
+            return "Plan " + ultimoCalculo.frecuenciaLabel + " — " + ultimoCalculo.visitasPorMes + " visita(s) pagadas por adelantado";
+        }
+
+        function actualizarBotonPagoGlobal() {
+            var btn = document.getElementById("btnPagarGlobal");
+            var texto = document.getElementById("textoBtnPagarGlobal");
+            var nota = document.getElementById("notaPagoGlobal");
+            if (!btn || !texto || !nota) return;
+
+            if (!ultimoCalculo || !ultimoCalculo.totalMensualEstimado) {
+                btn.style.display = "none";
+                nota.style.display = "none";
+                return;
+            }
+
+            var precioGlobal = obtenerPrecioGlobal();
+            texto.textContent = "Pagar el plan completo por adelantado — " + HumenCotizador.formatoMoneda(precioGlobal);
+            nota.textContent = "Pagas de una sola vez las " + ultimoCalculo.visitasPorMes + " visitas del mes, con " + (DESCUENTO_PAGO_GLOBAL * 100).toFixed(0) + "% de descuento adicional sobre el precio ya rebajado por frecuencia.";
+            btn.style.display = "";
+            nota.style.display = "";
+        }
 
         function calcular() {
 
@@ -357,8 +456,8 @@
             var costoArea = area * tarifaServicio;
             detalle.push("Precio por visita (" + area.toFixed(0) + " m² × S/" + tarifaServicio.toFixed(2) + ") ... S/" + costoArea.toFixed(2));
 
-            var costoMovilidad = ubicacion === "alejada" ? RECARGO_MOVILIDAD : 0;
-            if (costoMovilidad > 0) detalle.push("Movilidad (zona alejada) ... +S/" + costoMovilidad.toFixed(2));
+            var costoMovilidad = RECARGOS_UBICACION[ubicacion] || 0;
+            if (costoMovilidad > 0) detalle.push("Movilidad (" + NOMBRES_UBICACION[ubicacion] + ") ... +S/" + costoMovilidad.toFixed(2));
 
             var costoInsumos = 0;
             if (insumos === "empresa") {
@@ -408,7 +507,7 @@
                 detalle.map(function (item) { return "<div>" + item + "</div>"; }).join("") +
                 '<hr><div style="display:flex;justify-content:space-between;font-size:1.2rem;font-weight:bold"><span>TOTAL DE ESTA VISITA</span><span>S/' + precioVisitaActual.toFixed(2) + '</span></div>' +
                 (tarifaMinimaAplicada ? '<p style="margin-top:10px;font-size:.85rem;">Se aplicó la tarifa mínima por visita (S/' + TARIFA_MINIMA.toFixed(2) + ').</p>' : '') +
-                (totalMensualEstimado ? '<p style="margin-top:10px;font-size:.9rem;"><b>Estimado si mantienes este plan por un mes:</b> ' + HumenCotizador.formatoMoneda(totalMensualEstimado) + ' (' + frecuencia.visitasPorMes + ' visita(s) al mes, sin contar adicionales puntuales). El pago con Mercado Pago siempre es por una visita a la vez.</p>' : '') +
+                (totalMensualEstimado ? '<p style="margin-top:10px;font-size:.9rem;"><b>Plan mensual:</b> ' + frecuencia.visitasPorMes + ' visita(s) al mes ≈ ' + HumenCotizador.formatoMoneda(totalMensualEstimado) + '. Puedes pagar visita por visita, o el plan completo por adelantado con descuento extra (opción abajo).</p>' : '') +
                 '<hr><h4>Resumen — así queda tu servicio</h4><ul>' +
                 '<li>Área: ' + area.toFixed(0) + ' m²</li>' +
                 '<li>Tipo de servicio: ' + NOMBRES_SERVICIO_M2[tarifaServicioStr] + '</li>' +
@@ -426,6 +525,23 @@
                 adicionales: adicionalesElegidos,
                 totalMensualEstimado: totalMensualEstimado
             };
+
+            // Se guarda todo lo necesario para que el botón de "pagar el
+            // plan completo por adelantado" sepa qué cobrar, y se
+            // muestra/oculta ese botón según si esta cotización es un
+            // plan recurrente o un servicio único (que no tiene "plan"
+            // que prepagar).
+            ultimoCalculo = {
+                area: area,
+                tipoServicioLabel: NOMBRES_SERVICIO_M2[tarifaServicioStr],
+                frecuenciaLabel: frecuencia.label,
+                ubicacion: ubicacion,
+                insumos: insumos,
+                costoPorVisitaEfectivo: costoPorVisitaEfectivo,
+                visitasPorMes: frecuencia.visitasPorMes,
+                totalMensualEstimado: totalMensualEstimado
+            };
+            actualizarBotonPagoGlobal();
 
             HumenCotizador.mostrarResultado(precioVisitaActual, html, {
                 parametros: parametros,
@@ -450,7 +566,17 @@
             servicioNombre: "Limpieza de Oficinas — HUMEN Clean",
             servicioClave: "limpieza",
             umbralRevisionManual: UMBRAL_REVISION_MANUAL,
-            descuentoPagoRapido: DESCUENTO_PAGO_RAPIDO
+            descuentoPagoRapido: DESCUENTO_PAGO_RAPIDO,
+            botonesPagoAdicionales: [
+                {
+                    id: "btnPagarGlobal",
+                    obtenerPrecio: obtenerPrecioGlobal,
+                    obtenerParametros: obtenerParametrosGlobal,
+                    obtenerDetalleTexto: obtenerDetalleTextoGlobal,
+                    etiquetaResumen: etiquetaResumenGlobal,
+                    umbralRevisionManual: UMBRAL_REVISION_MANUAL_GLOBAL
+                }
+            ]
         });
 
     })();

@@ -140,7 +140,17 @@
      *   obtenerPrecio: () => number | null,
      *   obtenerCodigo: () => string,
      *   obtenerParametros: () => object,
-     *   obtenerDetalleTexto: () => string
+     *   obtenerDetalleTexto: () => string,
+     *   botonesPagoAdicionales: [            (opcional — otros botones que abren
+     *     {                                   el mismo modal de pago pero cobran
+     *       id: "btnPagarGlobal",             un monto distinto al de
+     *       obtenerPrecio: () => number,      "btnPagarAhora". Pensado para el
+     *       obtenerParametros: () => object,  caso de HUMEN Clean: pagar UNA
+     *       obtenerDetalleTexto: () => string,visita, o pagar un plan completo
+     *       etiquetaResumen: () => string,    por adelantado. El botón normal
+     *       umbralRevisionManual: number      (btnPagarAhora) sigue funcionando
+     *     }                                   igual si no se usa esto. umbralRevisionManual
+     *   ]                                     es opcional — si no se pasa, usa el de config.
      * }
      */
     function init(config) {
@@ -153,6 +163,25 @@
             var el = document.getElementById("detalleCotizacion");
             return el ? el.innerText : "";
         };
+
+        // El botón de WhatsApp vive dentro del panel de resultado, visible
+        // desde que se carga la página — pero su href solo se llenaba
+        // dentro de mostrarResultado(), después de calcular. Si el
+        // cliente lo tocaba ANTES de calcular, el href seguía siendo "#"
+        // y no pasaba nada (no abría ningún chat). Se le da un link real
+        // desde el inicio, con un mensaje genérico, para que el botón
+        // siempre funcione — mostrarResultado() lo reemplaza por el
+        // mensaje con el detalle en cuanto el cliente calcula.
+        var btnWAInicial = document.getElementById("btnSolicitarCotizacion");
+        if (btnWAInicial) {
+            var hrefActual = btnWAInicial.getAttribute("href");
+            if (!hrefActual || hrefActual === "#") {
+                btnWAInicial.href = whatsappLink(
+                    WHATSAPP_NEGOCIO,
+                    "Hola, quisiera solicitar una cotización del servicio de " + (config.servicioNombre || "Humen Solutions") + "."
+                );
+            }
+        }
 
         var btnPagar = document.getElementById("btnPagarAhora");
         var overlay = document.getElementById("pagoModalOverlay");
@@ -169,6 +198,13 @@
 
         var descuento = config.descuentoPagoRapido || 0;
 
+        // Qué botón de pago abrió el modal en este momento — por defecto el
+        // normal (btnPagarAhora / config.*), o el descriptor de un botón
+        // adicional si el cliente eligió otra forma de pago (ej. "pagar el
+        // plan completo"). El formulario, al enviarse, cobra lo que diga
+        // este descriptor, no siempre config.obtenerPrecio().
+        var pagoActivo = null;
+
         window.addEventListener("pageshow", function (event) {
             if (event.persisted) {
                 btnConfirmar.disabled = false;
@@ -176,8 +212,10 @@
             }
         });
 
-        function requiereRevisionManual(precio) {
-            var umbral = config.umbralRevisionManual;
+        function requiereRevisionManual(precio, umbralOverride) {
+            var umbral = (umbralOverride !== undefined && umbralOverride !== null)
+                ? umbralOverride
+                : config.umbralRevisionManual;
             return umbral ? precio > umbral : false;
         }
 
@@ -198,19 +236,36 @@
             r.addEventListener("change", actualizarCamposComprobante);
         });
 
-        function abrir() {
+        function abrir(descriptor) {
 
-            var precio = config.obtenerPrecio();
+            descriptor = descriptor || {};
+
+            var obtenerPrecio = descriptor.obtenerPrecio || config.obtenerPrecio;
+            var obtenerParametros = descriptor.obtenerParametros || config.obtenerParametros;
+            var obtenerDetalleTexto = descriptor.obtenerDetalleTexto || config.obtenerDetalleTexto;
+            var servicioNombre = descriptor.servicioNombre || config.servicioNombre;
+            var etiquetaResumen = typeof descriptor.etiquetaResumen === "function"
+                ? descriptor.etiquetaResumen()
+                : (descriptor.etiquetaResumen || "");
+
+            var precio = obtenerPrecio();
 
             if (!precio || precio <= 0) {
                 alert("Primero completa los datos de tu cotización para calcular un precio.");
                 return;
             }
 
-            if (requiereRevisionManual(precio)) {
+            if (requiereRevisionManual(precio, descriptor.umbralRevisionManual)) {
                 alert("Este monto requiere una revisión manual antes de pagar. Por favor usa 'Solicitar Cotización' por WhatsApp.");
                 return;
             }
+
+            pagoActivo = {
+                obtenerPrecio: obtenerPrecio,
+                obtenerParametros: obtenerParametros,
+                obtenerDetalleTexto: obtenerDetalleTexto,
+                servicioNombre: servicioNombre
+            };
 
             errorBox.textContent = "";
             actualizarCamposComprobante();
@@ -220,7 +275,7 @@
                 : precio;
 
             resumen.innerHTML =
-                "<strong>Servicio:</strong> " + config.servicioNombre + "<br>" +
+                "<strong>Servicio:</strong> " + servicioNombre + (etiquetaResumen ? " — " + etiquetaResumen : "") + "<br>" +
                 "<strong>Código:</strong> " + config.obtenerCodigo() + "<br>" +
                 "<strong>Total a pagar" + (descuento > 0 ? " (" + Math.round(descuento * 100) + "% dcto. por pago inmediato)" : "") + ":</strong> " +
                 formatoMoneda(precioFinal);
@@ -234,7 +289,14 @@
             document.body.style.overflow = "";
         }
 
-        btnPagar.addEventListener("click", abrir);
+        btnPagar.addEventListener("click", function () { abrir(); });
+
+        (config.botonesPagoAdicionales || []).forEach(function (extra) {
+            var btn = document.getElementById(extra.id);
+            if (!btn) return;
+            btn.addEventListener("click", function () { abrir(extra); });
+        });
+
         if (closeBtn) closeBtn.addEventListener("click", cerrar);
 
         overlay.addEventListener("click", function (e) {
@@ -269,20 +331,31 @@
                 return;
             }
 
-            var precio = config.obtenerPrecio();
+            // Usa el descriptor del botón que abrió el modal (el normal o
+            // uno adicional, ej. "pagar plan completo") — si por algo el
+            // modal se abrió sin pasar por abrir() (no debería pasar, pero
+            // por seguridad), cae de vuelta a los valores de config.
+            var activo = pagoActivo || {
+                obtenerPrecio: config.obtenerPrecio,
+                obtenerParametros: config.obtenerParametros,
+                obtenerDetalleTexto: config.obtenerDetalleTexto,
+                servicioNombre: config.servicioNombre
+            };
+
+            var precio = activo.obtenerPrecio();
             var precioFinal = descuento > 0
                 ? Math.round(precio * (1 - descuento) * 100) / 100
                 : precio;
 
             var datos = {
-                servicio: config.servicioNombre,
+                servicio: activo.servicioNombre,
                 servicioClave: config.servicioClave,
-                parametros: config.obtenerParametros ? config.obtenerParametros() : {},
+                parametros: activo.obtenerParametros ? activo.obtenerParametros() : {},
                 monto: precioFinal,
                 montoSinDescuento: precio,
                 descuentoAplicado: descuento,
                 codigo: config.obtenerCodigo(),
-                detalle: config.obtenerDetalleTexto ? config.obtenerDetalleTexto() : "",
+                detalle: activo.obtenerDetalleTexto ? activo.obtenerDetalleTexto() : "",
                 nombre: document.getElementById("pagoNombre").value.trim(),
                 correo: document.getElementById("pagoCorreo").value.trim(),
                 telefono: document.getElementById("pagoTelefono").value.trim(),

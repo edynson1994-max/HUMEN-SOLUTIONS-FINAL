@@ -115,13 +115,27 @@
     margin:0;
 }
 
-/* ---------- Texto introductorio del formulario del cotizador ---------- */
+/* ---------- Texto introductorio y notas del formulario del cotizador ---------- */
+
+/* Antes usaban var(--text-light) (gris claro) o quedaban con opacidad
+   reducida sobre texto oscuro — se veían borrosas/poco nítidas. Ahora usan
+   el mismo tono oscuro que el resto del texto (var(--text)), a full
+   opacidad, para que se lean nítidas incluso en letra chica. */
 
 .form-intro{
     font-size:.85rem;
-    color:var(--text-light);
+    color:var(--text);
     line-height:1.6;
     margin:-6px 0 18px;
+}
+
+#contenedorFormulario small{
+    display:block;
+    color:var(--text);
+    opacity:1;
+    font-size:.82rem;
+    line-height:1.55;
+    margin:6px 0 4px;
 }
 
 /* ---------- HUMEN Clean — acento propio (teal) ---------- */
@@ -159,6 +173,20 @@
 
 .tema-clean .btn-pagar-mp{
     background:linear-gradient(135deg, var(--clean), var(--clean-dark));
+}
+
+/* Segunda forma de pago (plan completo por adelantado) — mismo botón,
+   pero en versión "outline" para que se lea como la opción secundaria
+   frente a "Pagar esta visita", que sigue siendo la acción principal. */
+.tema-clean .btn-pagar-mp-outline{
+    background:rgba(255,255,255,.10);
+    border:1.5px solid rgba(255,255,255,.55);
+    color:#fff;
+}
+
+.tema-clean .btn-pagar-mp-outline:hover{
+    background:rgba(255,255,255,.18);
+    box-shadow:none;
 }
 
 @media (max-width:720px){
