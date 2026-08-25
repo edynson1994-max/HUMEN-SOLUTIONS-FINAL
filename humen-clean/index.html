@@ -50,7 +50,7 @@
             <div class="container">
                 <span class="subpagina-eyebrow">HUMEN Clean · un servicio de Humen Solutions</span>
                 <h1>Cotiza tu limpieza al instante</h1>
-                <p>Oficinas, locales comerciales, casas y departamentos en Anta. Cotiza por metro cuadrado o por jornada de trabajo — calculamos tu precio al instante.</p>
+                <p>Oficinas, locales comerciales, casas y departamentos en todo Cusco. Cuéntanos el tamaño del espacio y los días de trabajo que necesitas — calculamos tu precio al instante.</p>
             </div>
         </section>
 
@@ -63,46 +63,33 @@
                         <div id="contenedorFormulario">
 
                             <h3>Datos de tu limpieza</h3>
+                            <p class="form-intro">Cuéntanos el tamaño del espacio y el tiempo de trabajo que necesitas — combinamos ambos datos para que el precio refleje bien el servicio, sin importar si es un espacio grande de pocas horas o uno pequeño de varios días.</p>
 
-                            <label>1. Modo de cotización</label>
+                            <label>1. Área a limpiar</label>
+                            <input type="number" id="areaM2" min="1" placeholder="Ejemplo: 80 (m²)">
 
-                            <div id="modoCotizacionOpciones" style="display:flex;gap:10px;margin:10px 0 14px;">
-                                <label class="comprobante-opcion" style="flex:1;">
-                                    <input type="radio" name="modoCotizacion" value="m2" checked>
-                                    <span>Por metro cuadrado</span>
-                                </label>
-                                <label class="comprobante-opcion" style="flex:1;">
-                                    <input type="radio" name="modoCotizacion" value="dias">
-                                    <span>Por jornada / días</span>
-                                </label>
-                            </div>
-
-                            <div id="campoModoM2">
-                                <label>2. Área a limpiar</label>
-                                <input type="number" id="areaM2" min="1" placeholder="Ejemplo: 80 (m²)">
-
-                                <label>3. Tipo de servicio</label>
-                                <select id="tipoServicioM2">
-                                    <option value="2.00">Mantenimiento / Estándar (S/2.00 por m²)</option>
-                                    <option value="4.00">Profunda / Desinfección (S/4.00 por m²)</option>
-                                    <option value="6.00">Post-Construcción / Fin de Obra (S/6.00 por m²)</option>
-                                </select>
-                            </div>
-
-                            <div id="campoModoDias" style="display:none;">
-                                <label>2. Número de días</label>
-                                <input type="number" id="numDias" min="1" value="1">
-
-                                <label>3. Tipo de turno</label>
-                                <select id="tipoTurno">
-                                    <option value="40">Media jornada (4 horas) — S/40.00 por día</option>
-                                    <option value="70">Jornada completa (8 horas) — S/70.00 por día</option>
-                                </select>
-                            </div>
+                            <label>2. Tipo de servicio</label>
+                            <select id="tipoServicioM2">
+                                <option value="2.00">Mantenimiento / Estándar (S/2.00 por m²)</option>
+                                <option value="4.00">Profunda / Desinfección (S/4.00 por m²)</option>
+                                <option value="6.00">Post-Construcción / Fin de Obra (S/6.00 por m²)</option>
+                            </select>
 
                             <hr>
 
-                            <label>4. Frecuencia / Recurrencia</label>
+                            <label>3. Días estimados para completar el trabajo</label>
+                            <input type="number" id="numDias" min="1" value="1">
+                            <small>Es tu estimado de duración del proyecto, no horas facturadas — el precio queda fijo con esta cotización, así que si el equipo termina antes, tú no pagas menos y HUMEN Clean no cobra de más ni pierde por trabajar rápido.</small>
+
+                            <label>4. Tipo de turno por día</label>
+                            <select id="tipoTurno">
+                                <option value="40">Media jornada (4 horas) — S/40.00 por día</option>
+                                <option value="70">Jornada completa (8 horas) — S/70.00 por día</option>
+                            </select>
+
+                            <hr>
+
+                            <label>5. Frecuencia / Recurrencia</label>
                             <select id="frecuencia">
                                 <option value="0">Servicio único / Ocasional</option>
                                 <option value="0.05">Mensual (-5%)</option>
@@ -110,20 +97,20 @@
                                 <option value="0.15">Semanal (-15%)</option>
                             </select>
 
-                            <label>5. Ubicación</label>
+                            <label>6. Ubicación (región Cusco)</label>
                             <select id="ubicacion">
-                                <option value="urbana">Zona urbana / Izcuchaca centro</option>
-                                <option value="alejada">Comunidades / zonas alejadas (Zurite, Ancahuasi, etc.) — +S/10 movilidad</option>
+                                <option value="urbana">Zona urbana (Cusco, Anta, Izcuchaca y otros centros urbanos)</option>
+                                <option value="alejada">Comunidades / zonas alejadas de Cusco (Zurite, Ancahuasi, Urubamba, Chinchero, etc.) — +S/10 movilidad</option>
                             </select>
 
                             <hr>
 
-                            <label>6. Insumos y herramientas</label>
+                            <label>7. Insumos y herramientas</label>
                             <select id="insumos">
                                 <option value="cliente">Yo los proporciono</option>
                                 <option value="empresa">Que los traiga HUMEN Clean</option>
                             </select>
-                            <small>Si HUMEN Clean lleva los insumos: +S/15 por jornada (cotización por días) o +S/0.50 adicional por m² (cotización por metro cuadrado).</small>
+                            <small>Si HUMEN Clean lleva los insumos: +S/15 por día de trabajo + S/0.50 adicional por m².</small>
 
                             <hr>
 
@@ -154,11 +141,12 @@
                             <div style="font-size:13px;opacity:.85;line-height:1.7">
                                 <b>Cómo calculamos tu precio</b>
                                 <ul>
-                                    <li>Por m²: área × tarifa según tipo de servicio (S/2.00, S/4.00 o S/6.00 por m²).</li>
-                                    <li>Por días: días × tarifa según turno (S/40.00 media jornada o S/70.00 jornada completa).</li>
+                                    <li>Costo por área: m² × tarifa según tipo de servicio (S/2.00, S/4.00 o S/6.00 por m²).</li>
+                                    <li>Costo por tiempo de trabajo: días × tarifa según turno (S/40.00 media jornada o S/70.00 jornada completa).</li>
                                     <li>Se suma el recargo por movilidad (zonas alejadas), los insumos si los trae HUMEN Clean, y los adicionales que elijas.</li>
                                     <li>Se aplica el descuento por frecuencia recurrente.</li>
                                     <li>Tarifa mínima por salida: S/50.</li>
+                                    <li>Es un precio fijo por proyecto, no por hora trabajada: se cotiza sobre tu área y tus días estimados, y no cambia si el equipo termina antes.</li>
                                 </ul>
                             </div>
 
@@ -294,11 +282,14 @@
         var year = document.getElementById("year");
         if (year) year.textContent = new Date().getFullYear();
 
-        // No hay un umbral publicado por el cliente para este servicio —
-        // se fija uno razonable (contratos grandes de limpieza recurrente)
-        // siguiendo el mismo criterio que ya usaba el cotizador original
-        // para Contabilidad/Inventarios. Ajustable si hace falta.
-        var UMBRAL_REVISION_MANUAL = 1200;
+        // Umbral de revisión manual: con la fórmula unificada (área + días
+        // se suman en vez de ser alternativas) los montos de trabajos
+        // grandes son más altos que antes, así que se subió un poco frente
+        // a la versión anterior de este cotizador (S/1,200) para no
+        // frenar contratos multi-día normales, y seguir capturando los
+        // trabajos realmente grandes para que los revises tú antes de
+        // que el cliente pueda pagar solo. Ajustable si hace falta.
+        var UMBRAL_REVISION_MANUAL = 2000;
 
         // Este servicio no suma un descuento extra "por pagar ahora" — ya
         // tiene su propio sistema de descuento por frecuencia (hasta 15%),
@@ -308,11 +299,12 @@
         var TARIFA_MINIMA = 50;
         var RECARGO_MOVILIDAD = 10;
 
-        // Insumos si los trae HUMEN Clean: el prompt da dos alternativas
-        // ("+S/15 por jornada" o "+S/0.50 adicional por m²") sin decir cuál
-        // usar en cada modo — se aplicó la que corresponde a cada modo de
-        // cotización: por jornada en el modo "días" (multiplicado por el
-        // número de días), por m² en el modo "metro cuadrado".
+        // Insumos si los trae HUMEN Clean: como ahora el cotizador siempre
+        // pide área Y días a la vez (ya no son dos modos alternativos),
+        // los dos costos que planteaste ("+S/15 por jornada" y "+S/0.50
+        // por m²") se suman en vez de elegir uno — así el cargo por
+        // insumos también refleja tanto el tamaño del espacio como el
+        // tiempo de trabajo, igual que el resto de la fórmula.
         var COSTO_INSUMOS_EMPRESA_POR_DIA = 15;
         var COSTO_INSUMOS_EMPRESA_POR_M2 = 0.5;
 
@@ -331,82 +323,61 @@
         var NOMBRES_SERVICIO_M2 = {"2.00": "Mantenimiento / Estándar", "4.00": "Profunda / Desinfección", "6.00": "Post-Construcción / Fin de Obra"};
         var NOMBRES_TURNO = {"40": "Media jornada (4 horas)", "70": "Jornada completa (8 horas)"};
         var NOMBRES_FRECUENCIA = {"0": "Servicio único / Ocasional", "0.05": "Mensual", "0.10": "Quincenal", "0.15": "Semanal"};
-        var NOMBRES_UBICACION = {"urbana": "Zona urbana / Izcuchaca centro", "alejada": "Comunidades / zonas alejadas"};
-
-        function actualizarCamposModo() {
-            var modo = document.querySelector('input[name="modoCotizacion"]:checked').value;
-            document.getElementById("campoModoM2").style.display = modo === "m2" ? "" : "none";
-            document.getElementById("campoModoDias").style.display = modo === "dias" ? "" : "none";
-        }
-
-        document.querySelectorAll('input[name="modoCotizacion"]').forEach(function (r) {
-            r.addEventListener("change", actualizarCamposModo);
-        });
-        actualizarCamposModo();
+        var NOMBRES_UBICACION = {"urbana": "Zona urbana (Cusco, Anta, Izcuchaca y otros centros urbanos)", "alejada": "Comunidades / zonas alejadas de Cusco"};
 
         function calcular() {
 
-            var modo = document.querySelector('input[name="modoCotizacion"]:checked').value;
             var descuentoFrecuenciaStr = document.getElementById("frecuencia").value;
             var descuentoFrecuencia = Number(descuentoFrecuenciaStr);
             var ubicacion = document.getElementById("ubicacion").value;
             var insumos = document.getElementById("insumos").value;
 
-            var detalle = [];
-            var subtotalBase = 0;
-            var resumenModo = [];
-
-            if (modo === "m2") {
-                var area = Number(document.getElementById("areaM2").value);
-                if (isNaN(area) || area <= 0) {
-                    alert("Ingresa un área válida en metros cuadrados.");
-                    return;
-                }
-                if (area > 2000) {
-                    alert("Para espacios de más de 2,000 m² contáctanos directamente para una cotización personalizada.");
-                    return;
-                }
-
-                var tarifaServicioStr = document.getElementById("tipoServicioM2").value;
-                var tarifaServicio = Number(tarifaServicioStr);
-
-                subtotalBase = area * tarifaServicio;
-                detalle.push("Subtotal (" + area.toFixed(0) + " m² × S/" + tarifaServicio.toFixed(2) + ") ... S/" + subtotalBase.toFixed(2));
-
-                resumenModo.push("<li>Modo: Por metro cuadrado</li>");
-                resumenModo.push("<li>Área: " + area.toFixed(0) + " m²</li>");
-                resumenModo.push("<li>Tipo de servicio: " + NOMBRES_SERVICIO_M2[tarifaServicioStr] + "</li>");
-
-            } else {
-                var dias = Number(document.getElementById("numDias").value);
-                if (isNaN(dias) || dias <= 0) {
-                    alert("Ingresa un número de días válido.");
-                    return;
-                }
-                if (dias > 60) {
-                    alert("Para contratos de más de 60 días contáctanos directamente para una cotización personalizada.");
-                    return;
-                }
-
-                var tarifaTurnoStr = document.getElementById("tipoTurno").value;
-                var tarifaTurno = Number(tarifaTurnoStr);
-
-                subtotalBase = dias * tarifaTurno;
-                detalle.push("Subtotal (" + dias.toFixed(0) + " día(s) × S/" + tarifaTurno.toFixed(2) + ") ... S/" + subtotalBase.toFixed(2));
-
-                resumenModo.push("<li>Modo: Por jornada / días</li>");
-                resumenModo.push("<li>Días de trabajo: " + dias.toFixed(0) + "</li>");
-                resumenModo.push("<li>Turno: " + NOMBRES_TURNO[tarifaTurnoStr] + "</li>");
+            var area = Number(document.getElementById("areaM2").value);
+            if (isNaN(area) || area <= 0) {
+                alert("Ingresa un área válida en metros cuadrados.");
+                return;
             }
+            if (area > 2000) {
+                alert("Para espacios de más de 2,000 m² contáctanos directamente para una cotización personalizada.");
+                return;
+            }
+
+            var dias = Number(document.getElementById("numDias").value);
+            if (isNaN(dias) || dias <= 0) {
+                alert("Ingresa un número de días válido.");
+                return;
+            }
+            if (dias > 60) {
+                alert("Para contratos de más de 60 días contáctanos directamente para una cotización personalizada.");
+                return;
+            }
+
+            var tarifaServicioStr = document.getElementById("tipoServicioM2").value;
+            var tarifaServicio = Number(tarifaServicioStr);
+
+            var tarifaTurnoStr = document.getElementById("tipoTurno").value;
+            var tarifaTurno = Number(tarifaTurnoStr);
+
+            var detalle = [];
+
+            // Los dos componentes se suman: uno cubre el tamaño del
+            // espacio (insumos/consumibles escalan con el área) y el otro
+            // el tiempo de trabajo (mano de obra escala con los días y el
+            // tipo de turno) — así un trabajo grande en pocas horas y uno
+            // pequeño de varios días quedan cotizados de forma justa para
+            // ambas partes.
+            var costoPorArea = area * tarifaServicio;
+            detalle.push("Costo por área (" + area.toFixed(0) + " m² × S/" + tarifaServicio.toFixed(2) + ") ... S/" + costoPorArea.toFixed(2));
+
+            var costoPorDias = dias * tarifaTurno;
+            detalle.push("Costo por tiempo de trabajo (" + dias.toFixed(0) + " día(s) × S/" + tarifaTurno.toFixed(2) + ") ... S/" + costoPorDias.toFixed(2));
 
             var costoMovilidad = ubicacion === "alejada" ? RECARGO_MOVILIDAD : 0;
             if (costoMovilidad > 0) detalle.push("Movilidad (zona alejada) ... +S/" + costoMovilidad.toFixed(2));
 
             var costoInsumos = 0;
             if (insumos === "empresa") {
-                costoInsumos = modo === "dias"
-                    ? COSTO_INSUMOS_EMPRESA_POR_DIA * Number(document.getElementById("numDias").value)
-                    : COSTO_INSUMOS_EMPRESA_POR_M2 * Number(document.getElementById("areaM2").value);
+                costoInsumos = (COSTO_INSUMOS_EMPRESA_POR_DIA * dias) + (COSTO_INSUMOS_EMPRESA_POR_M2 * area);
                 detalle.push("Insumos y herramientas (HUMEN Clean los trae) ... +S/" + costoInsumos.toFixed(2));
             }
 
@@ -420,13 +391,13 @@
                 }
             });
 
-            var subtotalConAdicionales = subtotalBase + costoMovilidad + costoInsumos + sumaAdicionales;
+            var subtotal = costoPorArea + costoPorDias + costoMovilidad + costoInsumos + sumaAdicionales;
 
-            var precioFinal = subtotalConAdicionales * (1 - descuentoFrecuencia);
-            var descuentoMonto = subtotalConAdicionales - precioFinal;
+            var precioFinal = subtotal * (1 - descuentoFrecuencia);
+            var descuentoMonto = subtotal - precioFinal;
 
             if (descuentoFrecuencia > 0) {
-                detalle.push("Subtotal ... S/" + subtotalConAdicionales.toFixed(2));
+                detalle.push("Subtotal ... S/" + subtotal.toFixed(2));
                 detalle.push("Descuento por frecuencia (" + (descuentoFrecuencia * 100).toFixed(0) + "%) ... -S/" + descuentoMonto.toFixed(2));
             }
 
@@ -440,13 +411,26 @@
                 detalle.map(function (item) { return "<div>" + item + "</div>"; }).join("") +
                 '<hr><div style="display:flex;justify-content:space-between;font-size:1.2rem;font-weight:bold"><span>TOTAL' + (descuentoFrecuenciaStr !== "0" ? " POR VISITA" : "") + '</span><span>S/' + precioFinal.toFixed(2) + '</span></div>' +
                 (tarifaMinimaAplicada ? '<p style="margin-top:10px;font-size:.85rem;">Se aplicó la tarifa mínima por salida (S/' + TARIFA_MINIMA.toFixed(2) + ').</p>' : '') +
-                '<hr><h4>Resumen</h4><ul>' +
-                resumenModo.join("") +
+                '<hr><h4>Resumen — así queda tu servicio</h4><ul>' +
+                '<li>Área: ' + area.toFixed(0) + ' m²</li>' +
+                '<li>Tipo de servicio: ' + NOMBRES_SERVICIO_M2[tarifaServicioStr] + '</li>' +
+                '<li>Días de trabajo: ' + dias.toFixed(0) + '</li>' +
+                '<li>Turno: ' + NOMBRES_TURNO[tarifaTurnoStr] + '</li>' +
                 '<li>Frecuencia: ' + NOMBRES_FRECUENCIA[descuentoFrecuenciaStr] + '</li>' +
                 '<li>Ubicación: ' + NOMBRES_UBICACION[ubicacion] + '</li>' +
+                '<li>Insumos y herramientas: ' + (insumos === "empresa" ? "Los trae HUMEN Clean" : "Los proporciona el cliente") + '</li>' +
                 '</ul></div>';
 
-            var parametros = {modo: modo, descuentoFrecuencia: descuentoFrecuencia, ubicacion: ubicacion, insumos: insumos, adicionales: adicionalesElegidos};
+            var parametros = {
+                area: area,
+                tipoServicio: NOMBRES_SERVICIO_M2[tarifaServicioStr],
+                dias: dias,
+                turno: NOMBRES_TURNO[tarifaTurnoStr],
+                descuentoFrecuencia: descuentoFrecuencia,
+                ubicacion: ubicacion,
+                insumos: insumos,
+                adicionales: adicionalesElegidos
+            };
 
             HumenCotizador.mostrarResultado(precioFinal, html, {
                 parametros: parametros,
@@ -455,6 +439,8 @@
                 whatsappTexto: function (codigo, precio) {
                     return "Hola, quisiera solicitar el servicio de HUMEN Clean (limpieza).\n\n" +
                         "Código de cotización: " + codigo + "\n" +
+                        "Área: " + area.toFixed(0) + " m² — " + NOMBRES_SERVICIO_M2[tarifaServicioStr] + "\n" +
+                        "Días de trabajo: " + dias.toFixed(0) + " (" + NOMBRES_TURNO[tarifaTurnoStr] + ")\n" +
                         "Frecuencia: " + NOMBRES_FRECUENCIA[descuentoFrecuenciaStr] + "\n" +
                         "Ubicación: " + NOMBRES_UBICACION[ubicacion] + "\n" +
                         "Precio: " + HumenCotizador.formatoMoneda(precio) + "\n\n" +
