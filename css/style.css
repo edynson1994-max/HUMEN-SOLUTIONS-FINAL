@@ -58,6 +58,15 @@ VARIABLES
     /* Blanco */
     --white:#FFFFFF;
 
+    /* HUMEN Clean (limpieza de oficinas) — acento propio, ligado a la
+       marca pero distinto del verde/dorado, para que se lea como un
+       servicio hermano (ver contabilidad/inventarios que sí comparten
+       la paleta principal). Teal fresco, evoca "limpio". */
+    --clean:#0F7C82;
+    --clean-dark:#0B5D62;
+    --clean-bg:#E3F3F2;
+    --clean-border:#BFE3E1;
+
     /* Sombras cálidas */
     --shadow:0 12px 35px rgba(38,38,32,.07);
 
@@ -1228,6 +1237,55 @@ SERVICIOS
     background:var(--secondary-bg);
 
     color:var(--primary);
+
+}
+
+/* HUMEN Clean (limpieza de oficinas) — acento propio (teal), distinto
+   del verde/dorado de la marca principal, para que se lea como un
+   servicio hermano y no se confunda con Contabilidad/Inventarios. */
+.card-icon-clean{
+
+    background:var(--clean-bg);
+
+    color:var(--clean);
+
+}
+
+.card:hover .card-icon-clean{
+
+    background:var(--clean);
+
+    border-color:var(--clean);
+
+}
+
+.card-clean{
+
+    border-color:var(--clean-border);
+
+}
+
+.card-clean .card-promos li{
+
+    color:var(--clean-dark);
+
+}
+
+.card-subbrand{
+
+    display:inline-block;
+
+    font-size:.72rem;
+
+    font-weight:700;
+
+    letter-spacing:.04em;
+
+    text-transform:uppercase;
+
+    color:var(--clean);
+
+    margin-bottom:8px;
 
 }
 
@@ -2757,7 +2815,10 @@ CONTACTO PREMIUM
 
 }
 /*==============================
-      CARD EXTRA RECLUTAMIENTO
+      TARJETAS DE SERVICIO
+      (antes decía "CARD EXTRA RECLUTAMIENTO" — .card-extra/.extra-title/
+      .extra-link quedaron sin uso al quitar esa tarjeta; se dejan
+      definidas por si se necesita un bloque extra en otra tarjeta)
 ===============================*/
 
 .card{

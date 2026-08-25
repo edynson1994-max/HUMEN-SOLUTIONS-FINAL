@@ -1,0 +1,165 @@
+/*==================================================
+    HUMEN SOLUTIONS — subpagina.css
+
+    Estilos compartidos por las 3 sub-páginas de servicio
+    (contabilidad/, inventarios/, humen-clean/). Reutiliza los tokens y
+    componentes ya definidos en style.css (colores, botones, tarjetas del
+    cotizador, modal de pago) — este archivo solo agrega lo que esas
+    páginas necesitan y que la página principal no tenía: un header
+    simplificado (sin menú completo) y un footer corto con enlace de
+    vuelta al sitio principal.
+==================================================*/
+
+/* ---------- Header simplificado ---------- */
+
+.subpagina-header .container{
+    justify-content:space-between;
+}
+
+.volver-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-weight:600;
+    font-size:.95rem;
+    color:var(--primary);
+    text-decoration:none;
+    transition:var(--transition);
+}
+
+.volver-link:hover{
+    color:var(--secondary);
+    transform:translateX(-3px);
+}
+
+.volver-link svg{
+    flex-shrink:0;
+}
+
+/* ---------- Hero de sub-página ---------- */
+
+.subpagina-hero{
+    padding-top:180px;
+    padding-bottom:60px;
+    background:var(--primary-light-bg);
+    text-align:center;
+}
+
+.subpagina-hero .container{
+    max-width:720px;
+}
+
+.subpagina-hero .subpagina-eyebrow{
+    display:inline-block;
+    font-size:.8rem;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--secondary);
+    margin-bottom:16px;
+}
+
+.subpagina-hero h1{
+    font-size:2.6rem;
+    color:var(--primary);
+    line-height:1.2;
+    margin-bottom:18px;
+}
+
+.subpagina-hero p{
+    color:var(--text-light);
+    font-size:1.1rem;
+    line-height:1.7;
+}
+
+/* ---------- Sección del cotizador (fuera del grid de la home) ---------- */
+
+.subpagina-cotizacion{
+    padding:70px 0 100px;
+}
+
+/* ---------- Footer corto ---------- */
+
+.subpagina-footer{
+    background:var(--primary);
+    color:rgba(255,255,255,.75);
+    padding:36px 0;
+    text-align:center;
+}
+
+.subpagina-footer .container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+}
+
+.subpagina-footer img{
+    height:34px;
+    width:auto;
+    opacity:.95;
+}
+
+.subpagina-footer a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.subpagina-footer a:hover{
+    color:var(--secondary-light);
+}
+
+.subpagina-footer p{
+    font-size:.85rem;
+    margin:0;
+}
+
+/* ---------- HUMEN Clean — acento propio (teal) ---------- */
+
+.tema-clean .cotizador-resultado{
+    background:linear-gradient(135deg, var(--clean), var(--clean-dark));
+    box-shadow:0 20px 45px rgba(15,124,130,.25);
+}
+
+.tema-clean #contenedorFormulario button{
+    background:linear-gradient(135deg, var(--clean), var(--clean-dark));
+}
+
+.tema-clean #contenedorFormulario button:hover{
+    box-shadow:0 15px 35px rgba(15,124,130,.25);
+}
+
+.tema-clean #contenedorFormulario input:focus,
+.tema-clean #contenedorFormulario select:focus{
+    border-color:var(--clean);
+    box-shadow:0 0 0 4px rgba(15,124,130,.12);
+}
+
+.tema-clean .subpagina-hero{
+    background:var(--clean-bg);
+}
+
+.tema-clean .subpagina-hero .subpagina-eyebrow{
+    color:var(--clean-dark);
+}
+
+.tema-clean .subpagina-footer{
+    background:var(--clean-dark);
+}
+
+.tema-clean .btn-pagar-mp{
+    background:linear-gradient(135deg, var(--clean), var(--clean-dark));
+}
+
+@media (max-width:720px){
+
+    .subpagina-hero h1{
+        font-size:1.9rem;
+    }
+
+    .subpagina-hero{
+        padding-top:140px;
+    }
+
+}

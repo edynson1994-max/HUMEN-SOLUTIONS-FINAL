@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Cotizador de Inventarios Físicos | HUMEN SOLUTIONS</title>
+
+    <meta name="description"
+        content="Cotiza en línea tu inventario físico o control de kárdex: SKUs, unidades, almacenes y ubicación. Precio al instante, paga en línea con Mercado Pago.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css?v=3">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/subpagina.css">
+
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="shortcut icon" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/favicon.png">
+
+</head>
+
+<body>
+
+    <header id="header" class="subpagina-header">
+        <div class="container">
+
+            <a href="../index.html" class="logo">
+                <img src="../images/logo-header-new.png" alt="HUMEN SOLUTIONS" width="1571" height="465" class="logo-icon">
+            </a>
+
+            <a href="../index.html" class="volver-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Volver a Humen Solutions
+            </a>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="subpagina-hero">
+            <div class="container">
+                <span class="subpagina-eyebrow">Inventarios Físicos</span>
+                <h1>Cotiza tu inventario o control de Kárdex</h1>
+                <p>Cuéntanos el tamaño y las condiciones de tu almacén — calculamos el precio exacto al instante.</p>
+            </div>
+        </section>
+
+        <section class="subpagina-cotizacion">
+            <div class="container">
+
+                <div class="cotizador-grid">
+
+                    <div class="cotizador-card">
+                        <div id="contenedorFormulario">
+
+                            <h3>Inventario y Control de Almacén</h3>
+
+                            <label>1. ¿Qué servicio necesitas?</label>
+                            <select id="tipoServicio">
+                                <option value="">Seleccione...</option>
+                                <option value="puntual">Toma de Inventario Físico (Puntual)</option>
+                                <option value="kardex">Control de Kárdex y Stock (Mensual)</option>
+                            </select>
+                            <small>Elige si necesitas una auditoría puntual o un control permanente.</small>
+
+                            <br><br>
+
+                            <label>2. ¿Cuántos tipos de productos (SKUs) manejas?</label>
+                            <select id="skus">
+                                <option value="">Seleccione...</option>
+                                <option value="150">Hasta 150 tipos</option>
+                                <option value="600">151 a 600 tipos</option>
+                                <option value="1500">601 a 1500 tipos</option>
+                                <option value="masivo">Más de 1500 (Evaluación técnica)</option>
+                            </select>
+                            <small>Cada talla, color o presentación cuenta como un SKU diferente.</small>
+
+                            <br><br>
+
+                            <label>3. Cantidad aproximada de unidades físicas</label>
+                            <select id="unidades">
+                                <option value="">Seleccione...</option>
+                                <option value="3000">Hasta 3,000 unidades</option>
+                                <option value="10000">3,001 a 10,000</option>
+                                <option value="30000">10,001 a 30,000</option>
+                                <option value="masivo">Más de 30,000</option>
+                            </select>
+
+                            <br><br>
+
+                            <label>4. ¿Cuántos locales o almacenes?</label>
+                            <select id="almacenes">
+                                <option value="1">1 almacén</option>
+                                <option value="2">2 almacenes</option>
+                                <option value="3">3 almacenes</option>
+                                <option value="4">Más de 3</option>
+                            </select>
+
+                            <br><br>
+
+                            <label>5. Ubicación</label>
+                            <select id="ciudad">
+                                <option value="">Seleccione...</option>
+                                <option value="Cusco">Cusco Cercado</option>
+                                <option value="Wanchaq">Wanchaq</option>
+                                <option value="Santiago">Santiago</option>
+                                <option value="San Sebastian">San Sebastián</option>
+                                <option value="San Jeronimo">San Jerónimo</option>
+                                <option value="Valle">Valle Sagrado</option>
+                                <option value="Otra">Otra ciudad</option>
+                            </select>
+
+                            <br><br>
+
+                            <label>6. Estado de la mercadería</label>
+                            <select id="organizacion">
+                                <option value="">Seleccione...</option>
+                                <option value="excelente">Excelente</option>
+                                <option value="regular">Regular</option>
+                                <option value="desordenado">Desordenado</option>
+                            </select>
+
+                            <br><br>
+
+                            <label>7. Código de barras</label>
+                            <select id="codigo">
+                                <option value="todos">Todos los productos</option>
+                                <option value="parcial">Solo algunos</option>
+                                <option value="ninguno">Ninguno</option>
+                            </select>
+
+                            <br><br>
+
+                            <label class="check-card">
+                                <span>Requiere conciliación de diferencias</span>
+                                <input type="checkbox" id="conciliacion">
+                            </label>
+
+                            <br>
+
+                            <label class="check-card">
+                                <span>Requiere valorización económica</span>
+                                <input type="checkbox" id="valorizacion">
+                            </label>
+
+                            <br>
+
+                            <label class="check-card">
+                                <span>Informe Ejecutivo para Gerencia</span>
+                                <input type="checkbox" id="ejecutivo">
+                            </label>
+
+                            <hr>
+
+                            <div style="font-size:13px;opacity:.85;line-height:1.7">
+                                <b>Condiciones del servicio</b>
+                                <ul>
+                                    <li>La tarifa considera hasta 3,000 unidades físicas.</li>
+                                    <li>Almacenes de gran volumen requieren visita técnica.</li>
+                                    <li>La mercadería debe encontrarse accesible para el conteo.</li>
+                                    <li>Servicios fuera de Cusco tendrán viáticos adicionales.</li>
+                                </ul>
+                            </div>
+
+                            <button id="btnCalcular" type="button">Calcular Cotización</button>
+
+                        </div>
+                    </div>
+
+                    <div class="cotizador-resultado">
+
+                        <span class="resultado-etiqueta">Tu Precio</span>
+
+                        <h2>S/ 0.00</h2>
+
+                        <p class="resultado-subtitulo">Precio final según la información proporcionada.</p>
+
+                        <hr>
+
+                        <div id="detalleCotizacion"></div>
+
+                        <div class="cotizacion-acciones">
+
+                            <a id="btnSolicitarCotizacion" class="btn-primary" href="#" target="_blank" rel="noopener">
+                                Solicitar Cotización por WhatsApp
+                            </a>
+
+                            <div class="descuento-pago-rapido" id="descuentoPagoRapido" style="display:none;">
+                                <span class="descuento-badge">-10%</span>
+                                <span class="descuento-texto">
+                                    Pagando ahora: <strong id="descuentoPrecioFinal">S/ 0.00</strong>
+                                    <span class="descuento-precio-original" id="descuentoPrecioOriginal">S/ 0.00</span>
+                                </span>
+                            </div>
+
+                            <button id="btnPagarAhora" type="button" class="btn-pagar-mp">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                                Pagar ahora y ahorrar 10%
+                            </button>
+
+                            <p class="pagar-nota" id="notaPagoSeguro">Pago seguro con Mercado Pago — tarjeta, Yape y más.</p>
+
+                            <p class="pagar-nota-revision" id="notaRevisionManual" style="display:none;">Este monto requiere una revisión personalizada antes de procesar el pago — usa "Solicitar Cotización por WhatsApp" y te contactamos directamente.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="subpagina-footer">
+        <div class="container">
+            <img src="../images/logo-header-new.png" alt="HUMEN SOLUTIONS">
+            <p>Un servicio de <a href="../index.html">Humen Solutions</a> — contabilidad, inventarios físicos y limpieza de oficinas.</p>
+            <p>© <span id="year"></span> HUMEN SOLUTIONS — RUC: 10482592126</p>
+        </div>
+    </footer>
+
+    <!-- MODAL: DATOS PARA EL PAGO -->
+    <div class="pago-modal-overlay" id="pagoModalOverlay">
+        <div class="pago-modal">
+
+            <button type="button" class="erp-modal-close" id="pagoModalClose" aria-label="Cerrar">✕</button>
+
+            <div class="pago-modal-body">
+
+                <span class="erp-slide-tag">Antes de continuar</span>
+                <h4>Completa tus datos</h4>
+                <p>Los usaremos para generar tu orden de servicio y enviarte la confirmación del pago.</p>
+
+                <form id="formPago">
+
+                    <div class="form-group">
+                        <label>Tipo de comprobante</label>
+                        <div class="comprobante-tabs">
+                            <label class="comprobante-opcion">
+                                <input type="radio" name="tipoComprobante" value="boleta" checked>
+                                <span>Boleta</span>
+                            </label>
+                            <label class="comprobante-opcion">
+                                <input type="radio" name="tipoComprobante" value="factura">
+                                <span>Factura</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pagoNombre">Nombre completo</label>
+                        <input type="text" id="pagoNombre" class="form-control" placeholder="Ingrese su nombre completo" required>
+                    </div>
+
+                    <div id="camposFactura" class="campos-comprobante" hidden>
+                        <div class="form-group">
+                            <label for="pagoRazonSocial">Razón social</label>
+                            <input type="text" id="pagoRazonSocial" class="form-control" placeholder="Nombre de la empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="pagoRuc">RUC</label>
+                            <input type="text" id="pagoRuc" class="form-control" placeholder="20123456789" inputmode="numeric" maxlength="11">
+                        </div>
+                    </div>
+
+                    <div id="camposBoleta" class="campos-comprobante">
+                        <div class="form-group">
+                            <label for="pagoDni">DNI <span class="campo-opcional">(opcional)</span></label>
+                            <input type="text" id="pagoDni" class="form-control" placeholder="12345678" inputmode="numeric" maxlength="8">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pagoCorreo">Correo electrónico</label>
+                        <input type="email" id="pagoCorreo" class="form-control" placeholder="ejemplo@empresa.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pagoTelefono">WhatsApp / Teléfono</label>
+                        <input type="tel" id="pagoTelefono" class="form-control" placeholder="+51 999 999 999" required>
+                    </div>
+
+                    <div class="pago-modal-resumen" id="pagoResumen"></div>
+
+                    <button type="submit" class="btn-pagar-mp btn-pagar-mp-full" id="btnConfirmarPago">Continuar a Mercado Pago</button>
+
+                    <p class="pago-modal-error" id="pagoError"></p>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../js/cotizador-comun.js"></script>
+    <script>
+    (function () {
+
+        var year = document.getElementById("year");
+        if (year) year.textContent = new Date().getFullYear();
+
+        var UMBRAL_REVISION_MANUAL = 3000;
+        var DESCUENTO_PAGO_RAPIDO = 0.10;
+
+        function calcular() {
+
+            var tipoServicio = document.getElementById("tipoServicio").value;
+            var skus = document.getElementById("skus").value;
+            var unidades = document.getElementById("unidades").value;
+            var almacenes = Number(document.getElementById("almacenes").value);
+            var ciudad = document.getElementById("ciudad").value;
+            var organizacion = document.getElementById("organizacion").value;
+            var codigo = document.getElementById("codigo").value;
+
+            var conciliacion = document.getElementById("conciliacion").checked;
+            var valorizacion = document.getElementById("valorizacion").checked;
+            var ejecutivo = document.getElementById("ejecutivo").checked;
+
+            if (tipoServicio === "" || skus === "" || unidades === "" || ciudad === "" || organizacion === "" || isNaN(almacenes) || almacenes < 1) {
+                alert("Complete todos los datos con valores válidos.");
+                return;
+            }
+
+            if (almacenes > 15) {
+                alert("Para más de 15 almacenes contáctanos directamente para una cotización personalizada.");
+                return;
+            }
+
+            if (skus === "masivo") {
+                alert("Este volumen de SKUs requiere una visita técnica previa.");
+                return;
+            }
+
+            var total = 0;
+            var detalle = [];
+            var diagnostico = [];
+            var recomendaciones = [];
+            var puntos = 0;
+
+            if (tipoServicio === "puntual") {
+                if (skus === "150") { total += 350; detalle.push("Inventario puntual — hasta 200 SKUs ... S/350"); puntos += 1; }
+                else if (skus === "600") { total += 650; detalle.push("Inventario puntual — 201 a 600 SKUs ... S/650"); puntos += 2; }
+                else if (skus === "1500") { total += 1200; detalle.push("Inventario puntual — 601 a 1,500 SKUs .. S/1,200"); puntos += 3; }
+                diagnostico.push("Se realizará un inventario físico con conteo, conciliación e informe de diferencias.");
+            }
+
+            if (tipoServicio === "kardex") {
+                if (skus === "150") { total += 150; detalle.push("Control de Kárdex — hasta 100 SKUs .... S/150/mes"); puntos += 1; }
+                else if (skus === "600") { total += 280; detalle.push("Control de Kárdex — 101 a 500 SKUs .... S/280/mes"); puntos += 2; }
+                else if (skus === "1500") { total += 450; detalle.push("Control de Kárdex — 501 a 1,000 SKUs .. S/450/mes"); puntos += 3; }
+                diagnostico.push("El servicio corresponde al control y reconstrucción permanente del Kárdex SUNAT.");
+            }
+
+            switch (unidades) {
+                case "3000": diagnostico.push("Hasta 3,000 unidades físicas."); break;
+                case "10000": total += 60; detalle.push("3,001 a 10,000 unidades ............ +S/60"); puntos++; diagnostico.push("Volumen medio de conteo."); break;
+                case "30000": total += 150; detalle.push("10,001 a 30,000 unidades ........... +S/150"); puntos += 2; diagnostico.push("Alto volumen de inventario."); break;
+                case "masivo": total += 300; detalle.push("Más de 30,000 unidades ............. +S/300"); puntos += 4; diagnostico.push("Inventario de gran volumen."); break;
+            }
+
+            if (almacenes > 1) {
+                var extra = (almacenes - 1) * 80;
+                total += extra;
+                detalle.push(almacenes + " almacenes ..................... +S/" + extra);
+                puntos += almacenes - 1;
+                diagnostico.push("Inventario distribuido en " + almacenes + " almacenes.");
+            }
+
+            if (ciudad === "Valle") { total += 100; detalle.push("Viáticos Valle Sagrado ............. +S/100"); recomendaciones.push("Incluye desplazamiento al Valle Sagrado."); }
+            if (ciudad === "Otra") { total += 180; detalle.push("Viáticos fuera de Cusco ............ +S/180"); recomendaciones.push("Los viáticos pueden variar según la ubicación."); }
+
+            switch (organizacion) {
+                case "excelente": diagnostico.push("Mercadería correctamente organizada."); break;
+                case "regular": total += 60; detalle.push("Organización regular ............... +S/60"); puntos++; diagnostico.push("Será necesario ordenar parcialmente la mercadería."); break;
+                case "desordenado": total += 150; detalle.push("Mercadería desordenada ............. +S/150"); puntos += 3; diagnostico.push("El conteo demandará búsqueda manual de productos."); break;
+            }
+
+            switch (codigo) {
+                case "todos": diagnostico.push("Todos los productos cuentan con código."); break;
+                case "parcial": total += 40; detalle.push("Código de barras parcial ........... +S/40"); puntos++; break;
+                case "ninguno": total += 90; detalle.push("Sin código de barras ............... +S/90"); puntos += 2; recomendaciones.push("Se recomienda implementar codificación para futuros inventarios."); break;
+            }
+
+            if (conciliacion) { total += 60; detalle.push("Conciliación de diferencias ........ +S/60"); recomendaciones.push("Se entregará análisis de sobrantes y faltantes."); }
+            if (valorizacion) { total += 70; detalle.push("Valorización económica ............. +S/70"); recomendaciones.push("Se entregará valorización monetaria del inventario."); }
+            if (ejecutivo) { total += 50; detalle.push("Informe ejecutivo ................. +S/50"); recomendaciones.push("Incluye conclusiones y recomendaciones gerenciales."); }
+
+            var complejidad = "", estrellas = "", equipo = 2, tiempo = "1 día";
+
+            if (puntos <= 2) { complejidad = "Baja"; estrellas = "⭐⭐☆☆☆"; equipo = 2; tiempo = "1 día"; }
+            else if (puntos <= 5) { complejidad = "Media"; estrellas = "⭐⭐⭐☆☆"; equipo = 2; tiempo = "1 a 2 días"; }
+            else if (puntos <= 8) { complejidad = "Alta"; estrellas = "⭐⭐⭐⭐☆"; equipo = 3; tiempo = "2 a 3 días"; }
+            else { complejidad = "Muy Alta"; estrellas = "⭐⭐⭐⭐⭐"; equipo = 4; tiempo = "3 a 5 días"; }
+
+            if (recomendaciones.length === 0) recomendaciones.push("No se identificaron requerimientos adicionales para este servicio.");
+
+            var html = '<div class="resultado-cotizacion"><h3>📦 Cotización de Inventario</h3><h4>Valorización del Servicio</h4>' +
+                detalle.map(function (item) { return "<div>" + item + "</div>"; }).join("") +
+                '<hr><div style="display:flex;justify-content:space-between;font-size:1.2rem;font-weight:bold"><span>TOTAL ESTIMADO</span><span>S/' + total.toFixed(2) + '</span></div><hr>' +
+                "<h4>Nivel de Complejidad</h4><p>" + estrellas + "</p><p><strong>" + complejidad + "</strong></p><hr>" +
+                "<h4>Diagnóstico</h4><ul>" + diagnostico.map(function (d) { return "<li>" + d + "</li>"; }).join("") + "</ul><hr>" +
+                "<h4>Recomendaciones</h4><ul>" + recomendaciones.map(function (r) { return "<li>" + r + "</li>"; }).join("") + "</ul><hr>" +
+                "<h4>Plan Operativo Recomendado</h4><p><strong>Equipo sugerido:</strong> " + equipo + " inventarista(s)</p><p><strong>Tiempo estimado:</strong> " + tiempo + "</p><p><strong>Entrega del informe:</strong> 48 horas después del servicio.</p><hr>" +
+                '<div style="font-size:.9rem;opacity:.85"><b>Condiciones del servicio</b><ul><li>La tarifa considera hasta 3,000 unidades como volumen estándar.</li><li>Inventarios masivos podrán requerir una visita técnica previa.</li><li>La mercadería deberá encontrarse accesible para realizar el conteo.</li><li>Los servicios fuera de la ciudad de Cusco pueden generar costos adicionales por desplazamiento.</li><li>El precio es final según los datos proporcionados; si el alcance real del servicio difiere de lo declarado, se cotiza el ajuste por separado.</li></ul></div></div>';
+
+            var parametros = {tipoServicio: tipoServicio, skus: skus, unidades: unidades, almacenes: almacenes, ciudad: ciudad, organizacion: organizacion, codigo: codigo, conciliacion: conciliacion, valorizacion: valorizacion, ejecutivo: ejecutivo};
+
+            HumenCotizador.mostrarResultado(total, html, {
+                parametros: parametros,
+                umbralRevisionManual: UMBRAL_REVISION_MANUAL,
+                descuentoPagoRapido: DESCUENTO_PAGO_RAPIDO,
+                whatsappTexto: function (codigoCot, precio) {
+                    return "Hola, quisiera solicitar el servicio de Inventarios Físicos.\n\n" +
+                        "Código de cotización: " + codigoCot + "\n" +
+                        "Precio estimado: " + HumenCotizador.formatoMoneda(precio) + "\n\n" +
+                        "Detalle:\n" + document.getElementById("detalleCotizacion").innerText;
+                }
+            });
+        }
+
+        document.getElementById("btnCalcular").addEventListener("click", calcular);
+
+        HumenCotizador.init({
+            servicioNombre: "Inventarios Físicos",
+            servicioClave: "inventario",
+            umbralRevisionManual: UMBRAL_REVISION_MANUAL,
+            descuentoPagoRapido: DESCUENTO_PAGO_RAPIDO
+        });
+
+    })();
+    </script>
+
+</body>
+</html>

@@ -134,19 +134,23 @@ guardar copia de cada contrato generado, y copia su ID desde la URL
 
 ## Paso 5 — Conectar la web con el backend
 
-1. Abre el archivo `js/script.js` de tu página web.
-2. Busca esta línea (cerca del final del archivo):
+Desde que cada servicio (Contabilidad, Inventarios, HUMEN Clean) tiene su
+propia página con su propio cotizador, este backend ya no se conecta desde
+`js/script.js` — ese archivo ahora solo tiene la lógica del sitio principal
+(menú, animaciones, formulario de contacto). El cotizador y el pago viven en
+`js/cotizador-comun.js`, compartido por las 3 sub-páginas.
+
+1. Abre el archivo `js/cotizador-comun.js`.
+2. Busca esta línea (cerca del inicio del archivo):
 
    ```js
-   const MP_BACKEND_URL = "PENDIENTE_CONFIGURAR";
+   var MP_BACKEND_URL = "https://script.google.com/macros/s/AKfycb.../exec";
    ```
 
-3. Reemplaza `"PENDIENTE_CONFIGURAR"` por la URL que copiaste en el Paso 4,
-   entre comillas. Por ejemplo:
-
-   ```js
-   const MP_BACKEND_URL = "https://script.google.com/macros/s/AKfycb.../exec";
-   ```
+3. Reemplázala por la URL que copiaste en el Paso 4, entre comillas. Como es
+   un solo archivo compartido, actualizarlo aquí actualiza el pago en las 3
+   páginas de servicio a la vez (`contabilidad/`, `inventarios/`,
+   `humen-clean/`).
 
 4. Sube el archivo actualizado a tu repositorio / hosting.
 

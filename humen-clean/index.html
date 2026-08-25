@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>HUMEN Clean — Cotizador de Limpieza de Oficinas | HUMEN SOLUTIONS</title>
+
+    <meta name="description"
+        content="HUMEN Clean: servicio de limpieza de oficinas, locales comerciales, casas y departamentos. Cotiza en línea al instante según tamaño, tipo de limpieza y frecuencia, y paga en línea con Mercado Pago.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css?v=3">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/subpagina.css">
+
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="shortcut icon" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/favicon.png">
+
+</head>
+
+<body class="tema-clean">
+
+    <header id="header" class="subpagina-header">
+        <div class="container">
+
+            <a href="../index.html" class="logo">
+                <img src="../images/logo-header-new.png" alt="HUMEN SOLUTIONS" width="1571" height="465" class="logo-icon">
+            </a>
+
+            <a href="../index.html" class="volver-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Volver a Humen Solutions
+            </a>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="subpagina-hero">
+            <div class="container">
+                <span class="subpagina-eyebrow">HUMEN Clean · un servicio de Humen Solutions</span>
+                <h1>Cotiza tu limpieza al instante</h1>
+                <p>Oficinas, locales comerciales, casas y departamentos. Elige el tamaño, el tipo de limpieza y la frecuencia — calculamos tu precio al instante.</p>
+            </div>
+        </section>
+
+        <section class="subpagina-cotizacion">
+            <div class="container">
+
+                <div class="cotizador-grid">
+
+                    <div class="cotizador-card">
+                        <div id="contenedorFormulario">
+
+                            <h3>Datos de tu limpieza</h3>
+
+                            <label>1. Tipo de inmueble</label>
+                            <select id="tipoInmueble">
+                                <option value="oficina">Oficina</option>
+                                <option value="local">Local Comercial</option>
+                                <option value="departamento">Departamento</option>
+                                <option value="casa">Casa</option>
+                            </select>
+
+                            <label>2. Tamaño del espacio</label>
+
+                            <div id="modoTamanoOpciones" style="display:flex;gap:10px;margin:10px 0 14px;">
+                                <label class="comprobante-opcion" style="flex:1;">
+                                    <input type="radio" name="modoTamano" value="m2" checked>
+                                    <span>Metros cuadrados</span>
+                                </label>
+                                <label class="comprobante-opcion" style="flex:1;" id="opcionDormBanos">
+                                    <input type="radio" name="modoTamano" value="dormbanos">
+                                    <span>Dormitorios y baños</span>
+                                </label>
+                            </div>
+
+                            <div id="campoM2">
+                                <input type="number" id="areaM2" min="1" placeholder="Ejemplo: 80 (m²)">
+                            </div>
+
+                            <div id="campoDormBanos" style="display:none;">
+                                <label>Dormitorios</label>
+                                <input type="number" id="dormitorios" min="0" value="1">
+                                <label>Baños</label>
+                                <input type="number" id="banos" min="0" value="1">
+                                <small>Estimamos el área a partir de tus ambientes: aprox. 20 m² de áreas comunes + 15 m² por dormitorio + 5 m² por baño. Si conoces tu metraje exacto, usa "Metros cuadrados" para un precio más preciso.</small>
+                            </div>
+
+                            <hr>
+
+                            <label>3. Tipo de servicio</label>
+                            <select id="tipoServicioLimpieza">
+                                <option value="1.0">Mantenimiento / Estándar</option>
+                                <option value="1.4">Limpieza Profunda</option>
+                                <option value="1.8">Post Mudanza / Fin de Obra</option>
+                            </select>
+
+                            <label>4. Frecuencia</label>
+                            <select id="frecuencia">
+                                <option value="0">Una sola vez</option>
+                                <option value="0.05">Mensual (-5%)</option>
+                                <option value="0.10">Quincenal (-10%)</option>
+                                <option value="0.15">Semanal (-15%)</option>
+                            </select>
+
+                            <hr>
+
+                            <label>5. Insumos y productos de limpieza</label>
+                            <select id="insumos">
+                                <option value="cliente">Yo los proporciono</option>
+                                <option value="empresa">Que los traiga HUMEN Clean (+S/25)</option>
+                            </select>
+
+                            <hr>
+
+                            <h4 class="titulo-seccion">Servicios adicionales</h4>
+
+                            <label class="check-card">
+                                <span>Interior de refrigeradora (+S/30)</span>
+                                <input type="checkbox" id="addRefrigeradora">
+                            </label>
+
+                            <label class="check-card">
+                                <span>Interior de horno (+S/25)</span>
+                                <input type="checkbox" id="addHorno">
+                            </label>
+
+                            <label class="check-card">
+                                <span>Vidrios altos / exteriores (+S/40)</span>
+                                <input type="checkbox" id="addVidrios">
+                            </label>
+
+                            <label class="check-card">
+                                <span>Organización de clósets (+S/35)</span>
+                                <input type="checkbox" id="addClosets">
+                            </label>
+
+                            <hr>
+
+                            <div style="font-size:13px;opacity:.85;line-height:1.7">
+                                <b>Cómo calculamos tu precio</b>
+                                <ul>
+                                    <li>Tarifa base: S/3.50 por m², según tipo de servicio.</li>
+                                    <li>Se suman insumos y adicionales que elijas.</li>
+                                    <li>Se aplica el descuento por frecuencia recurrente.</li>
+                                    <li>Tarifa mínima por visita: S/70.</li>
+                                </ul>
+                            </div>
+
+                            <button id="btnCalcular" type="button">Calcular Cotización</button>
+
+                        </div>
+                    </div>
+
+                    <div class="cotizador-resultado">
+
+                        <span class="resultado-etiqueta">Tu Precio</span>
+
+                        <h2>S/ 0.00</h2>
+
+                        <p class="resultado-subtitulo">Precio final según la información proporcionada.</p>
+
+                        <hr>
+
+                        <div id="detalleCotizacion"></div>
+
+                        <div class="cotizacion-acciones">
+
+                            <a id="btnSolicitarCotizacion" class="btn-primary" href="#" target="_blank" rel="noopener">
+                                Solicitar Cotización por WhatsApp
+                            </a>
+
+                            <button id="btnPagarAhora" type="button" class="btn-pagar-mp">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                                Pagar ahora con Mercado Pago
+                            </button>
+
+                            <p class="pagar-nota" id="notaPagoSeguro">Pago seguro con Mercado Pago — tarjeta, Yape y más.</p>
+
+                            <p class="pagar-nota-revision" id="notaRevisionManual" style="display:none;">Este monto requiere una revisión personalizada antes de procesar el pago — usa "Solicitar Cotización por WhatsApp" y te contactamos directamente.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="subpagina-footer">
+        <div class="container">
+            <img src="../images/logo-header-new.png" alt="HUMEN SOLUTIONS">
+            <p>HUMEN Clean es un servicio de <a href="../index.html">Humen Solutions</a> — contabilidad, inventarios físicos y limpieza de oficinas.</p>
+            <p>© <span id="year"></span> HUMEN SOLUTIONS — RUC: 10482592126</p>
+        </div>
+    </footer>
+
+    <!-- MODAL: DATOS PARA EL PAGO -->
+    <div class="pago-modal-overlay" id="pagoModalOverlay">
+        <div class="pago-modal">
+
+            <button type="button" class="erp-modal-close" id="pagoModalClose" aria-label="Cerrar">✕</button>
+
+            <div class="pago-modal-body">
+
+                <span class="erp-slide-tag">Antes de continuar</span>
+                <h4>Completa tus datos</h4>
+                <p>Los usaremos para generar tu orden de servicio y enviarte la confirmación del pago.</p>
+
+                <form id="formPago">
+
+                    <div class="form-group">
+                        <label>Tipo de comprobante</label>
+                        <div class="comprobante-tabs">
+                            <label class="comprobante-opcion">
+                                <input type="radio" name="tipoComprobante" value="boleta" checked>
+                                <span>Boleta</span>
+                            </label>
+                            <label class="comprobante-opcion">
+                                <input type="radio" name="tipoComprobante" value="factura">
+                                <span>Factura</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pagoNombre">Nombre completo</label>
+                        <input type="text" id="pagoNombre" class="form-control" placeholder="Ingrese su nombre completo" required>
+                    </div>
+
+                    <div id="camposFactura" class="campos-comprobante" hidden>
+                        <div class="form-group">
+                            <label for="pagoRazonSocial">Razón social</label>
+                            <input type="text" id="pagoRazonSocial" class="form-control" placeholder="Nombre de la empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="pagoRuc">RUC</label>
+                            <input type="text" id="pagoRuc" class="form-control" placeholder="20123456789" inputmode="numeric" maxlength="11">
+                        </div>
+                    </div>
+
+                    <div id="camposBoleta" class="campos-comprobante">
+                        <div class="form-group">
+                            <label for="pagoDni">DNI <span class="campo-opcional">(opcional)</span></label>
+                            <input type="text" id="pagoDni" class="form-control" placeholder="12345678" inputmode="numeric" maxlength="8">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pagoCorreo">Correo electrónico</label>
+                        <input type="email" id="pagoCorreo" class="form-control" placeholder="ejemplo@empresa.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pagoTelefono">WhatsApp / Teléfono</label>
+                        <input type="tel" id="pagoTelefono" class="form-control" placeholder="+51 999 999 999" required>
+                    </div>
+
+                    <div class="pago-modal-resumen" id="pagoResumen"></div>
+
+                    <button type="submit" class="btn-pagar-mp btn-pagar-mp-full" id="btnConfirmarPago">Continuar a Mercado Pago</button>
+
+                    <p class="pago-modal-error" id="pagoError"></p>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../js/cotizador-comun.js"></script>
+    <script>
+    (function () {
+
+        var year = document.getElementById("year");
+        if (year) year.textContent = new Date().getFullYear();
+
+        // No hay un umbral publicado por el cliente para este servicio —
+        // se fija uno razonable (contratos grandes de limpieza recurrente)
+        // siguiendo el mismo criterio que ya usaba el cotizador original
+        // para Contabilidad/Inventarios. Ajustable si hace falta.
+        var UMBRAL_REVISION_MANUAL = 1200;
+
+        // Este servicio no suma un descuento extra "por pagar ahora" — ya
+        // tiene su propio sistema de descuento por frecuencia (hasta 15%),
+        // sumar otro 10% encima distorsionaría la fórmula pedida.
+        var DESCUENTO_PAGO_RAPIDO = 0;
+
+        var TARIFA_BASE_M2 = 3.5;
+        var TARIFA_MINIMA = 70;
+        var COSTO_INSUMOS_EMPRESA = 25;
+
+        var ADICIONALES = [
+            {id: "addRefrigeradora", label: "Interior de refrigeradora", costo: 30},
+            {id: "addHorno", label: "Interior de horno", costo: 25},
+            {id: "addVidrios", label: "Vidrios altos / exteriores", costo: 40},
+            {id: "addClosets", label: "Organización de clósets", costo: 35}
+        ];
+
+        var NOMBRES_SERVICIO = {"1.0": "Mantenimiento / Estándar", "1.4": "Limpieza Profunda", "1.8": "Post Mudanza / Fin de Obra"};
+        var NOMBRES_FRECUENCIA = {"0": "Una sola vez", "0.05": "Mensual", "0.10": "Quincenal", "0.15": "Semanal"};
+        var NOMBRES_INMUEBLE = {"oficina": "Oficina", "local": "Local Comercial", "departamento": "Departamento", "casa": "Casa"};
+
+        function actualizarVisibilidadTamano() {
+            var tipoInmueble = document.getElementById("tipoInmueble").value;
+            var permiteDormBanos = tipoInmueble === "casa" || tipoInmueble === "departamento";
+
+            // Para Oficina/Local Comercial solo tiene sentido indicar el
+            // tamaño en m² — se oculta el selector completo (no solo la
+            // segunda opción) para no mostrar un toggle de una sola pieza.
+            document.getElementById("modoTamanoOpciones").style.display = permiteDormBanos ? "flex" : "none";
+
+            if (!permiteDormBanos) {
+                document.querySelector('input[name="modoTamano"][value="m2"]').checked = true;
+                actualizarCamposTamano();
+            }
+        }
+
+        function actualizarCamposTamano() {
+            var modo = document.querySelector('input[name="modoTamano"]:checked').value;
+            document.getElementById("campoM2").style.display = modo === "m2" ? "" : "none";
+            document.getElementById("campoDormBanos").style.display = modo === "dormbanos" ? "" : "none";
+        }
+
+        document.getElementById("tipoInmueble").addEventListener("change", actualizarVisibilidadTamano);
+        document.querySelectorAll('input[name="modoTamano"]').forEach(function (r) {
+            r.addEventListener("change", actualizarCamposTamano);
+        });
+        actualizarVisibilidadTamano();
+        actualizarCamposTamano();
+
+        function calcularAreaM2() {
+            var modo = document.querySelector('input[name="modoTamano"]:checked').value;
+
+            if (modo === "m2") {
+                var area = Number(document.getElementById("areaM2").value);
+                return (isNaN(area) || area <= 0) ? null : area;
+            }
+
+            var dormitorios = Number(document.getElementById("dormitorios").value);
+            var banos = Number(document.getElementById("banos").value);
+            if (isNaN(dormitorios) || dormitorios < 0 || isNaN(banos) || banos < 0) return null;
+
+            // Estimación: áreas comunes (sala/cocina) + dormitorios + baños.
+            // Aproximación documentada en la UI — el cliente puede usar
+            // "Metros cuadrados" si conoce su metraje exacto.
+            return 20 + dormitorios * 15 + banos * 5;
+        }
+
+        function calcular() {
+
+            var tipoInmueble = document.getElementById("tipoInmueble").value;
+            var area = calcularAreaM2();
+            // Se guarda el valor de texto tal cual lo entrega el <select>
+            // (ej. "1.0", "0.10") para usarlo como llave de los diccionarios
+            // de nombres — Number("1.0") da 1, y String(1) ya no es "1.0",
+            // así que buscar con el número redondeado rompía el lookup.
+            var factorServicioStr = document.getElementById("tipoServicioLimpieza").value;
+            var descuentoFrecuenciaStr = document.getElementById("frecuencia").value;
+            var factorServicio = Number(factorServicioStr);
+            var descuentoFrecuencia = Number(descuentoFrecuenciaStr);
+            var insumos = document.getElementById("insumos").value;
+
+            if (!area) {
+                alert("Ingresa un tamaño válido para tu espacio (metros cuadrados, o dormitorios y baños).");
+                return;
+            }
+
+            if (area > 2000) {
+                alert("Para espacios de más de 2,000 m² contáctanos directamente para una cotización personalizada.");
+                return;
+            }
+
+            var detalle = [];
+
+            var subtotalBase = area * TARIFA_BASE_M2 * factorServicio;
+            detalle.push("Subtotal base (" + area.toFixed(0) + " m² × S/" + TARIFA_BASE_M2.toFixed(2) + " × " + factorServicio.toFixed(1) + ") ... S/" + subtotalBase.toFixed(2));
+
+            var costoInsumos = insumos === "empresa" ? COSTO_INSUMOS_EMPRESA : 0;
+            if (costoInsumos > 0) detalle.push("Insumos y productos (HUMEN Clean los provee) ... +S/" + costoInsumos.toFixed(2));
+
+            var sumaAdicionales = 0;
+            var adicionalesElegidos = [];
+            ADICIONALES.forEach(function (a) {
+                if (document.getElementById(a.id).checked) {
+                    sumaAdicionales += a.costo;
+                    adicionalesElegidos.push(a.label);
+                    detalle.push(a.label + " ... +S/" + a.costo.toFixed(2));
+                }
+            });
+
+            var subtotalConAdicionales = subtotalBase + costoInsumos + sumaAdicionales;
+
+            var precioFinal = subtotalConAdicionales * (1 - descuentoFrecuencia);
+            var descuentoMonto = subtotalConAdicionales - precioFinal;
+
+            if (descuentoFrecuencia > 0) {
+                detalle.push("Subtotal con adicionales ... S/" + subtotalConAdicionales.toFixed(2));
+                detalle.push("Descuento por frecuencia (" + (descuentoFrecuencia * 100).toFixed(0) + "%) ... -S/" + descuentoMonto.toFixed(2));
+            }
+
+            var tarifaMinimaAplicada = false;
+            if (precioFinal < TARIFA_MINIMA) {
+                precioFinal = TARIFA_MINIMA;
+                tarifaMinimaAplicada = true;
+            }
+
+            var html = '<div class="resultado-cotizacion"><h3>🧽 Cotización HUMEN Clean</h3><h4>Desglose</h4>' +
+                detalle.map(function (item) { return "<div>" + item + "</div>"; }).join("") +
+                '<hr><div style="display:flex;justify-content:space-between;font-size:1.2rem;font-weight:bold"><span>TOTAL' + (NOMBRES_FRECUENCIA[descuentoFrecuenciaStr] !== "Una sola vez" ? " POR VISITA" : "") + '</span><span>S/' + precioFinal.toFixed(2) + '</span></div>' +
+                (tarifaMinimaAplicada ? '<p style="margin-top:10px;font-size:.85rem;">Se aplicó la tarifa mínima por visita (S/' + TARIFA_MINIMA.toFixed(2) + ').</p>' : '') +
+                '<hr><h4>Resumen</h4><ul>' +
+                '<li>Inmueble: ' + NOMBRES_INMUEBLE[tipoInmueble] + '</li>' +
+                '<li>Tamaño considerado: ' + area.toFixed(0) + ' m²</li>' +
+                '<li>Tipo de servicio: ' + NOMBRES_SERVICIO[factorServicioStr] + '</li>' +
+                '<li>Frecuencia: ' + NOMBRES_FRECUENCIA[descuentoFrecuenciaStr] + '</li>' +
+                '</ul></div>';
+
+            var parametros = {tipoInmueble: tipoInmueble, area: area, factorServicio: factorServicio, descuentoFrecuencia: descuentoFrecuencia, insumos: insumos, adicionales: adicionalesElegidos};
+
+            HumenCotizador.mostrarResultado(precioFinal, html, {
+                parametros: parametros,
+                umbralRevisionManual: UMBRAL_REVISION_MANUAL,
+                descuentoPagoRapido: DESCUENTO_PAGO_RAPIDO,
+                whatsappTexto: function (codigo, precio) {
+                    return "Hola, quisiera solicitar el servicio de HUMEN Clean (limpieza).\n\n" +
+                        "Código de cotización: " + codigo + "\n" +
+                        "Inmueble: " + NOMBRES_INMUEBLE[tipoInmueble] + " (" + area.toFixed(0) + " m² aprox.)\n" +
+                        "Servicio: " + NOMBRES_SERVICIO[factorServicioStr] + "\n" +
+                        "Frecuencia: " + NOMBRES_FRECUENCIA[descuentoFrecuenciaStr] + "\n" +
+                        "Precio: " + HumenCotizador.formatoMoneda(precio) + "\n\n" +
+                        "Detalle:\n" + document.getElementById("detalleCotizacion").innerText;
+                }
+            });
+        }
+
+        document.getElementById("btnCalcular").addEventListener("click", calcular);
+
+        HumenCotizador.init({
+            servicioNombre: "Limpieza de Oficinas — HUMEN Clean",
+            servicioClave: "limpieza",
+            umbralRevisionManual: UMBRAL_REVISION_MANUAL,
+            descuentoPagoRapido: DESCUENTO_PAGO_RAPIDO
+        });
+
+    })();
+    </script>
+
+</body>
+</html>

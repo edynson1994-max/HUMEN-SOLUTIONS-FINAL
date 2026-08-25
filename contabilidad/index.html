@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Cotizador de Contabilidad Empresarial | HUMEN SOLUTIONS</title>
+
+    <meta name="description"
+        content="Cotiza en línea tu servicio de contabilidad empresarial: régimen tributario, comprobantes, planillas y servicios adicionales. Precio al instante, paga en línea con Mercado Pago.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css?v=3">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/subpagina.css">
+
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="shortcut icon" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/favicon.png">
+
+</head>
+
+<body>
+
+    <header id="header" class="subpagina-header">
+        <div class="container">
+
+            <a href="../index.html" class="logo">
+                <img src="../images/logo-header-new.png" alt="HUMEN SOLUTIONS" width="1571" height="465" class="logo-icon">
+            </a>
+
+            <a href="../index.html" class="volver-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Volver a Humen Solutions
+            </a>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="subpagina-hero">
+            <div class="container">
+                <span class="subpagina-eyebrow">Contabilidad Empresarial</span>
+                <h1>Cotiza tu servicio contable en línea</h1>
+                <p>Cuéntanos el régimen tributario y las operaciones de tu empresa — calculamos el precio mensual exacto al instante.</p>
+            </div>
+        </section>
+
+        <section class="subpagina-cotizacion">
+            <div class="container">
+
+                <div class="cotizador-grid">
+
+                    <div class="cotizador-card">
+                        <div id="contenedorFormulario">
+
+                            <h3>Servicio Contable</h3>
+
+                            <label>Régimen Tributario</label>
+                            <select id="regimen">
+                                <option value="">Seleccione...</option>
+                                <option value="RUS">Nuevo RUS</option>
+                                <option value="RER">Régimen Especial (RER)</option>
+                                <option value="RMT">Régimen MYPE Tributario</option>
+                                <option value="GENERAL">Régimen General</option>
+                            </select>
+
+                            <label>Comprobantes mensuales</label>
+                            <input type="number" id="comprobantes" min="0" placeholder="Ejemplo: 120">
+
+                            <label>Trabajadores en planilla</label>
+                            <input type="number" id="trabajadores" value="0" min="0">
+
+                            <hr>
+
+                            <h4 class="titulo-seccion">Operaciones Especiales</h4>
+
+                            <label class="check-card">
+                                <span>Realiza importaciones</span>
+                                <input type="checkbox" id="importaciones">
+                            </label>
+
+                            <label class="check-card">
+                                <span>Realiza exportaciones</span>
+                                <input type="checkbox" id="exportaciones">
+                            </label>
+
+                            <label class="check-card">
+                                <span>Opera con detracciones</span>
+                                <input type="checkbox" id="detracciones">
+                            </label>
+
+                            <label class="check-card">
+                                <span>Percepciones / Retenciones</span>
+                                <input type="checkbox" id="retenciones">
+                            </label>
+
+                            <label class="check-card">
+                                <span>Maneja caja chica</span>
+                                <input type="checkbox" id="cajachica">
+                            </label>
+
+                            <label class="check-card">
+                                <span>Más de una cuenta bancaria</span>
+                                <input type="checkbox" id="bancos">
+                            </label>
+
+                            <hr>
+
+                            <h4 class="titulo-seccion">Servicios Adicionales</h4>
+
+                            <label class="check-card">
+                                <span>Emisión de comprobantes electrónicos</span>
+                                <input type="checkbox" id="facturacion">
+                            </label>
+
+                            <label class="check-card">
+                                <span>Reportes gerenciales</span>
+                                <input type="checkbox" id="reportes">
+                            </label>
+
+                            <label class="check-card">
+                                <span>Atención de requerimientos SUNAT</span>
+                                <input type="checkbox" id="sunat">
+                            </label>
+
+                            <label class="check-card">
+                                <span>Asesoría tributaria permanente</span>
+                                <input type="checkbox" id="asesoria">
+                            </label>
+
+                            <button id="btnCalcular" type="button">Calcular Cotización</button>
+
+                        </div>
+                    </div>
+
+                    <div class="cotizador-resultado">
+
+                        <span class="resultado-etiqueta">Tu Precio</span>
+
+                        <h2>S/ 0.00</h2>
+
+                        <p class="resultado-subtitulo">Precio mensual estimado según la información proporcionada.</p>
+
+                        <hr>
+
+                        <div id="detalleCotizacion"></div>
+
+                        <div class="cotizacion-acciones">
+
+                            <a id="btnSolicitarCotizacion" class="btn-primary" href="#" target="_blank" rel="noopener">
+                                Solicitar Cotización por WhatsApp
+                            </a>
+
+                            <div class="descuento-pago-rapido" id="descuentoPagoRapido" style="display:none;">
+                                <span class="descuento-badge">-10%</span>
+                                <span class="descuento-texto">
+                                    Pagando ahora: <strong id="descuentoPrecioFinal">S/ 0.00</strong>
+                                    <span class="descuento-precio-original" id="descuentoPrecioOriginal">S/ 0.00</span>
+                                </span>
+                            </div>
+
+                            <button id="btnPagarAhora" type="button" class="btn-pagar-mp">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                                Pagar ahora y ahorrar 10%
+                            </button>
+
+                            <p class="pagar-nota" id="notaPagoSeguro">Pago seguro con Mercado Pago — tarjeta, Yape y más.</p>
+
+                            <p class="pagar-nota-revision" id="notaRevisionManual" style="display:none;">Este monto requiere una revisión personalizada antes de procesar el pago — usa "Solicitar Cotización por WhatsApp" y te contactamos directamente.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="subpagina-footer">
+        <div class="container">
+            <img src="../images/logo-header-new.png" alt="HUMEN SOLUTIONS">
+            <p>Un servicio de <a href="../index.html">Humen Solutions</a> — contabilidad, inventarios físicos y limpieza de oficinas.</p>
+            <p>© <span id="year"></span> HUMEN SOLUTIONS — RUC: 10482592126</p>
+        </div>
+    </footer>
+
+    <!-- MODAL: DATOS PARA EL PAGO -->
+    <div class="pago-modal-overlay" id="pagoModalOverlay">
+        <div class="pago-modal">
+
+            <button type="button" class="erp-modal-close" id="pagoModalClose" aria-label="Cerrar">✕</button>
+
+            <div class="pago-modal-body">
+
+                <span class="erp-slide-tag">Antes de continuar</span>
+                <h4>Completa tus datos</h4>
+                <p>Los usaremos para generar tu orden de servicio y enviarte la confirmación del pago.</p>
+
+                <form id="formPago">
+
+                    <div class="form-group">
+                        <label>Tipo de comprobante</label>
+                        <div class="comprobante-tabs">
+                            <label class="comprobante-opcion">
+                                <input type="radio" name="tipoComprobante" value="boleta" checked>
+                                <span>Boleta</span>
+                            </label>
+                            <label class="comprobante-opcion">
+                                <input type="radio" name="tipoComprobante" value="factura">
+                                <span>Factura</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pagoNombre">Nombre completo</label>
+                        <input type="text" id="pagoNombre" class="form-control" placeholder="Ingrese su nombre completo" required>
+                    </div>
+
+                    <div id="camposFactura" class="campos-comprobante" hidden>
+                        <div class="form-group">
+                            <label for="pagoRazonSocial">Razón social</label>
+                            <input type="text" id="pagoRazonSocial" class="form-control" placeholder="Nombre de la empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="pagoRuc">RUC</label>
+                            <input type="text" id="pagoRuc" class="form-control" placeholder="20123456789" inputmode="numeric" maxlength="11">
+                        </div>
+                    </div>
+
+                    <div id="camposBoleta" class="campos-comprobante">
+                        <div class="form-group">
+                            <label for="pagoDni">DNI <span class="campo-opcional">(opcional)</span></label>
+                            <input type="text" id="pagoDni" class="form-control" placeholder="12345678" inputmode="numeric" maxlength="8">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pagoCorreo">Correo electrónico</label>
+                        <input type="email" id="pagoCorreo" class="form-control" placeholder="ejemplo@empresa.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pagoTelefono">WhatsApp / Teléfono</label>
+                        <input type="tel" id="pagoTelefono" class="form-control" placeholder="+51 999 999 999" required>
+                    </div>
+
+                    <div class="pago-modal-resumen" id="pagoResumen"></div>
+
+                    <button type="submit" class="btn-pagar-mp btn-pagar-mp-full" id="btnConfirmarPago">Continuar a Mercado Pago</button>
+
+                    <p class="pago-modal-error" id="pagoError"></p>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../js/cotizador-comun.js"></script>
+    <script>
+    (function () {
+
+        var year = document.getElementById("year");
+        if (year) year.textContent = new Date().getFullYear();
+
+        // Igual que la tabla de revisión manual del cotizador original:
+        // por encima de este monto mensual, no se paga directo, se
+        // coordina por WhatsApp.
+        var UMBRAL_REVISION_MANUAL = 2500;
+        var DESCUENTO_PAGO_RAPIDO = 0.10;
+
+        function calcular() {
+
+            var regimen = document.getElementById("regimen").value;
+            var comprobantes = Number(document.getElementById("comprobantes").value);
+            var trabajadores = Number(document.getElementById("trabajadores").value);
+
+            var importaciones = document.getElementById("importaciones").checked;
+            var exportaciones = document.getElementById("exportaciones").checked;
+            var detracciones = document.getElementById("detracciones").checked;
+            var retenciones = document.getElementById("retenciones").checked;
+            var cajachica = document.getElementById("cajachica").checked;
+            var bancos = document.getElementById("bancos").checked;
+
+            var facturacion = document.getElementById("facturacion").checked;
+            var reportes = document.getElementById("reportes").checked;
+            var sunat = document.getElementById("sunat").checked;
+            var asesoria = document.getElementById("asesoria").checked;
+
+            if (regimen === "" || isNaN(comprobantes) || comprobantes < 0 || isNaN(trabajadores) || trabajadores < 0) {
+                alert("Complete todos los datos con valores válidos (comprobantes y trabajadores, aunque sea con 0).");
+                return;
+            }
+
+            if (comprobantes > 300) {
+                alert("Para más de 300 comprobantes mensuales contáctanos directamente para una cotización personalizada.");
+                return;
+            }
+
+            if (trabajadores > 100) {
+                alert("Para más de 100 trabajadores en planilla contáctanos directamente para una cotización personalizada.");
+                return;
+            }
+
+            var parametros = {regimen: regimen, comprobantes: comprobantes, trabajadores: trabajadores, importaciones: importaciones, exportaciones: exportaciones, detracciones: detracciones, retenciones: retenciones, cajachica: cajachica, bancos: bancos, facturacion: facturacion, reportes: reportes, sunat: sunat, asesoria: asesoria};
+
+            if (regimen === "RUS") {
+                mostrar(50, '<strong>Nuevo RUS</strong><br><br>Precio mensual estimado: <strong>S/50.00</strong><br><br>Este régimen tiene obligaciones tributarias básicas.<br><br>Para este régimen no es necesario completar una valorización detallada.', parametros);
+                return;
+            }
+
+            var total = 0;
+            var detalle = [];
+            var diagnostico = [];
+            var recomendaciones = [];
+            var puntos = 0;
+
+            if (regimen === "RER") { total += 150; detalle.push("Base Régimen Especial ............ S/150"); puntos += 1; diagnostico.push("La empresa pertenece al Régimen Especial."); }
+            if (regimen === "RMT") { total += 250; detalle.push("Base Régimen MYPE ............... S/250"); puntos += 2; diagnostico.push("La empresa pertenece al Régimen MYPE Tributario."); }
+            if (regimen === "GENERAL") { total += 700; detalle.push("Base Régimen General ............ S/700"); puntos += 3; diagnostico.push("La empresa pertenece al Régimen General."); }
+
+            if (comprobantes <= 50) {
+                diagnostico.push("Hasta 50 comprobantes mensuales.");
+            } else if (comprobantes <= 150) {
+                total += 60; detalle.push("Comprobantes .................... +S/60"); puntos++; diagnostico.push("Volumen medio de comprobantes.");
+            } else {
+                total += 150; detalle.push("Comprobantes .................... +S/150"); puntos += 2; diagnostico.push("Alto volumen de comprobantes.");
+            }
+
+            if (trabajadores <= 2) {
+                diagnostico.push("Hasta 2 trabajadores en planilla.");
+            } else if (trabajadores <= 5) {
+                total += 70; detalle.push("Planilla (3-5 trabajadores) ..... +S/70"); puntos++; diagnostico.push("Planilla pequeña.");
+            } else if (trabajadores <= 10) {
+                total += 150; detalle.push("Planilla (6-10 trabajadores) .... +S/150"); puntos += 2; diagnostico.push("Planilla mediana.");
+            } else {
+                var adicional = (trabajadores - 10) * 15;
+                total += 150 + adicional;
+                detalle.push("Planilla (" + trabajadores + " trabajadores) .... +S/" + (150 + adicional));
+                puntos += 3;
+                diagnostico.push("Planilla numerosa.");
+            }
+
+            if (importaciones) { total += 50; detalle.push("Importaciones ................... +S/50"); puntos += 2; diagnostico.push("Realiza importaciones."); }
+            if (exportaciones) { total += 50; detalle.push("Exportaciones ................... +S/50"); puntos += 2; diagnostico.push("Realiza exportaciones."); }
+            if (detracciones) { total += 30; detalle.push("Detracciones .................... +S/30"); puntos++; diagnostico.push("Opera con detracciones."); }
+            if (retenciones) { total += 30; detalle.push("Retenciones / Percepciones ...... +S/30"); puntos++; diagnostico.push("Opera con retenciones o percepciones."); }
+            if (cajachica) { total += 20; detalle.push("Caja chica ...................... +S/20"); puntos++; diagnostico.push("Administra caja chica."); }
+            if (bancos) { total += 25; detalle.push("Varias cuentas bancarias ........ +S/25"); puntos++; diagnostico.push("Maneja varias cuentas bancarias."); }
+
+            if (facturacion) { total += 40; detalle.push("Emisión comprobantes ............ +S/40"); recomendaciones.push("Incluye emisión de comprobantes electrónicos."); }
+            if (reportes) { total += 40; detalle.push("Reportes gerenciales ............ +S/40"); recomendaciones.push("Incluye reportes mensuales."); }
+            if (sunat) { total += 30; detalle.push("Atención SUNAT ................. +S/30"); recomendaciones.push("Incluye atención de requerimientos SUNAT."); }
+            if (asesoria) { total += 50; detalle.push("Asesoría tributaria ............. +S/50"); recomendaciones.push("Incluye asesoría tributaria permanente."); }
+
+            var complejidad = "Baja";
+            if (puntos >= 5) complejidad = "Media";
+            if (puntos >= 10) complejidad = "Alta";
+            if (puntos >= 15) complejidad = "Muy Alta";
+
+            if (trabajadores > 20) recomendaciones.push("Se recomienda automatizar la gestión de planillas.");
+            if (importaciones || exportaciones) recomendaciones.push("Es recomendable realizar revisiones tributarias periódicas relacionadas con comercio exterior.");
+            if (detracciones || retenciones) recomendaciones.push("Se recomienda efectuar conciliaciones tributarias mensuales.");
+            if (recomendaciones.length === 0) recomendaciones.push("La empresa presenta una operación estándar y puede mantenerse con el servicio mensual cotizado.");
+
+            var html = "<h3>Cotización Contable</h3><hr><h4>Valorización</h4>" +
+                detalle.join("<br>") +
+                "<br><br><strong>Total Mensual: S/" + total.toFixed(2) + "</strong><hr>" +
+                "<h4>Complejidad</h4>" + complejidad + "<hr>" +
+                "<h4>Diagnóstico</h4><ul>" + diagnostico.map(function (x) { return "<li>" + x + "</li>"; }).join("") + "</ul><hr>" +
+                "<h4>Recomendaciones</h4><ul>" + recomendaciones.map(function (x) { return "<li>" + x + "</li>"; }).join("") + "</ul><hr>" +
+                "<p>La Declaración Jurada Anual no está incluida en esta cotización y se cotiza de manera independiente.</p>";
+
+            mostrar(total, html, parametros);
+        }
+
+        function mostrar(total, html, parametros) {
+            HumenCotizador.mostrarResultado(total, html, {
+                parametros: parametros,
+                umbralRevisionManual: UMBRAL_REVISION_MANUAL,
+                descuentoPagoRapido: DESCUENTO_PAGO_RAPIDO,
+                whatsappTexto: function (codigo, precio) {
+                    return "Hola, quisiera solicitar el servicio de Contabilidad Empresarial.\n\n" +
+                        "Código de cotización: " + codigo + "\n" +
+                        "Precio mensual estimado: " + HumenCotizador.formatoMoneda(precio) + "\n\n" +
+                        "Detalle:\n" + document.getElementById("detalleCotizacion").innerText;
+                }
+            });
+        }
+
+        document.getElementById("btnCalcular").addEventListener("click", calcular);
+
+        HumenCotizador.init({
+            servicioNombre: "Contabilidad Empresarial",
+            servicioClave: "contabilidad",
+            umbralRevisionManual: UMBRAL_REVISION_MANUAL,
+            descuentoPagoRapido: DESCUENTO_PAGO_RAPIDO
+        });
+
+    })();
+    </script>
+
+</body>
+</html>
