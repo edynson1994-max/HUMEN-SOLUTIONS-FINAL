@@ -3660,6 +3660,19 @@ COTIZADOR PREMIUM
 
 }
 
+/* Los párrafos que a veces se inyectan dentro de #detalleCotizacion (ej.
+   la nota de "tarifa mínima aplicada" o el estimado de "plan mensual" en
+   HUMEN Clean) son elementos <p> normales, y el estilo global de <p> del
+   sitio los pinta de un gris/tostado oscuro (pensado para fondos claros)
+   — pero este panel tiene fondo oscuro, así que ese texto quedaba casi
+   ilegible. Se fuerza aquí a blanco semitransparente, igual que el resto
+   del texto del panel. */
+#detalleCotizacion p{
+
+    color:rgba(255,255,255,.85);
+
+}
+
 /*=========================
 FORMULARIO DEL COTIZADOR
 =========================*/

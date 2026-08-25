@@ -381,14 +381,17 @@
 
         function obtenerParametrosGlobal() {
             if (!ultimoCalculo) return {};
+            // Mismos valores "crudos" que el pago normal (el backend vuelve
+            // a calcular el precio de la visita de forma independiente y
+            // luego aplica el descuento del plan completo) — no se manda
+            // "precioPorVisita" directamente, porque eso vendría del
+            // navegador y no se puede confiar en él para cobrar.
             return {
                 area: ultimoCalculo.area,
-                tipoServicio: ultimoCalculo.tipoServicioLabel,
-                frecuencia: ultimoCalculo.frecuenciaLabel,
+                tarifaServicio: ultimoCalculo.tarifaServicio,
+                frecuencia: ultimoCalculo.frecuenciaClave,
                 ubicacion: ultimoCalculo.ubicacion,
                 insumos: ultimoCalculo.insumos,
-                visitasPorMes: ultimoCalculo.visitasPorMes,
-                precioPorVisita: ultimoCalculo.costoPorVisitaEfectivo,
                 pagoGlobal: true
             };
         }
@@ -516,23 +519,36 @@
                 '<li>Insumos y herramientas: ' + (insumos === "empresa" ? "Los trae HUMEN Clean" : "Los proporciona el cliente") + '</li>' +
                 '</ul></div>';
 
+            // OJO: a diferencia de "detalle"/"etiquetaResumen" (que son solo
+            // texto para mostrar y para los correos), esto SÍ se manda al
+            // backend para que vuelva a calcular el precio de forma
+            // independiente antes de cobrar — por eso va con los valores
+            // "crudos" del formulario (tarifaServicio, la clave de la
+            // frecuencia) y no con las etiquetas legibles ("Mensual — 1 vez
+            // al mes"), que el backend no podría interpretar para calcular.
             var parametros = {
                 area: area,
-                tipoServicio: NOMBRES_SERVICIO_M2[tarifaServicioStr],
-                frecuencia: frecuencia.label,
+                tarifaServicio: tarifaServicioStr,
+                frecuencia: frecuenciaClave,
                 ubicacion: ubicacion,
                 insumos: insumos,
-                adicionales: adicionalesElegidos,
-                totalMensualEstimado: totalMensualEstimado
+                addRefrigeradora: document.getElementById("addRefrigeradora").checked,
+                addHorno: document.getElementById("addHorno").checked,
+                addVidrios: document.getElementById("addVidrios").checked,
+                addClosets: document.getElementById("addClosets").checked
             };
 
             // Se guarda todo lo necesario para que el botón de "pagar el
             // plan completo por adelantado" sepa qué cobrar, y se
             // muestra/oculta ese botón según si esta cotización es un
             // plan recurrente o un servicio único (que no tiene "plan"
-            // que prepagar).
+            // que prepagar). Guarda tanto los valores crudos (para mandar
+            // al backend) como las etiquetas legibles (para mostrar en
+            // pantalla y en los correos).
             ultimoCalculo = {
                 area: area,
+                tarifaServicio: tarifaServicioStr,
+                frecuenciaClave: frecuenciaClave,
                 tipoServicioLabel: NOMBRES_SERVICIO_M2[tarifaServicioStr],
                 frecuenciaLabel: frecuencia.label,
                 ubicacion: ubicacion,
