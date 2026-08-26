@@ -1,13 +1,13 @@
 {
-  "generado_en": "2026-08-25T11:19:02+00:00",
+  "generado_en": "2026-08-26T11:21:00+00:00",
   "nota": "Diagnóstico de qué tan confiable es tenderPeriod.endDate como fecha limite real en este dataset — ver el docstring de _diagnosticar_release() en sync.py para el detalle completo. Si 'tenderPeriod_endDate_futuro' es 0 o casi 0 comparado con 'total_releases_leidos', es una señal fuerte de que ese campo no sirve para filtrar vigencia en este dataset y hace falta revisar 'enquiryPeriod_endDate_futuro' y los 'ejemplos_anomalos' como alternativa.",
   "total_releases_leidos": 234848,
   "con_tenderPeriod_endDate": 219129,
   "tenderPeriod_endDate_futuro": 0,
   "tenderPeriod_endDate_pasado": 219129,
   "con_enquiryPeriod_endDate": 152968,
-  "enquiryPeriod_endDate_futuro": 1,
-  "enquiryPeriod_endDate_pasado": 152967,
+  "enquiryPeriod_endDate_futuro": 0,
+  "enquiryPeriod_endDate_pasado": 152968,
   "enquiryPeriod_termina_despues_de_tenderPeriod": 152924,
   "ejemplos_anomalos": [
     {
