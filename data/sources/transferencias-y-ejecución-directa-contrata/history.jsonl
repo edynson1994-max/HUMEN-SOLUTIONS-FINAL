@@ -1,2 +1,3 @@
 {"fecha": "2026-08-24T22:05:20Z", "estado": "error", "filas": null, "nivel_usado": null, "cambio": {"tipo": "primera_sincronizacion", "filas_antes": null, "filas_despues": null, "diferencia": null, "diferencia_pct": null}}
 {"fecha": "2026-08-24T23:08:18Z", "estado": "error", "filas": null, "nivel_usado": null, "cambio": {"tipo": "no_comparable", "filas_antes": null, "filas_despues": null, "diferencia": null, "diferencia_pct": null}}
+{"fecha": "2026-08-30T14:22:44Z", "estado": "error", "filas": null, "nivel_usado": null, "cambio": {"tipo": "no_comparable", "filas_antes": null, "filas_despues": null, "diferencia": null, "diferencia_pct": null}}

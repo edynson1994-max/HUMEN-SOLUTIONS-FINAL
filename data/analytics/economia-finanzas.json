@@ -1,5 +1,5 @@
 {
-  "generado_en": "2026-08-24T23:29:55Z",
+  "generado_en": "2026-08-30T14:47:01Z",
   "catalogo": {
     "categoria": "Economía y Finanzas",
     "total_datasets_portal": 4651,
@@ -94,8 +94,8 @@
     "conteo": {
       "creciente": 0,
       "decreciente": 0,
-      "estable": 213,
-      "insuficiente_historial": 292
+      "estable": 226,
+      "insuficiente_historial": 279
     }
   },
   "entidades": {

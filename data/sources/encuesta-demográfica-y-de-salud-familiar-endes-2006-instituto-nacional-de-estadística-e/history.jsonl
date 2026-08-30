@@ -1,2 +1,3 @@
 {"fecha": "2026-08-24T22:12:52Z", "estado": "ok", "filas": 20763, "nivel_usado": "url_en_vivo", "cambio": {"tipo": "primera_sincronizacion", "filas_antes": null, "filas_despues": 20763, "diferencia": null, "diferencia_pct": null}}
 {"fecha": "2026-08-24T23:17:49Z", "estado": "ok", "filas": 20763, "nivel_usado": "url_en_vivo", "cambio": {"tipo": "sin_cambio", "filas_antes": 20763, "filas_despues": 20763, "diferencia": 0, "diferencia_pct": 0.0}}
+{"fecha": "2026-08-30T14:32:39Z", "estado": "ok", "filas": 20763, "nivel_usado": "url_en_vivo", "cambio": {"tipo": "sin_cambio", "filas_antes": 20763, "filas_despues": 20763, "diferencia": 0, "diferencia_pct": 0.0}}
