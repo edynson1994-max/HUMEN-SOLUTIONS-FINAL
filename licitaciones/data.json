@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-29T15:23:15+00:00",
+  "generated_at": "2026-08-30T15:07:15+00:00",
   "attribution": "Datos derivados del Registro de Datos Abiertos de Contrataciones (Open Contracting Partnership), a partir de información publicada por el organismo peruano a cargo del SEACE. Licencia CC BY 4.0. Banco de información pública — no requiere afiliación con Humen Solutions para consultarlo.",
   "source_url": "https://data.open-contracting.org/en/publication/135",
-  "total_count": 387,
+  "total_count": 385,
   "humen_counts": {
     "cont": 3,
     "inv": 0,
@@ -267,22 +267,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=efe3baed-9e54-4577-b43a-a258d853ca59"
     },
     {
-      "id": "ocds-dgv273-seacev3-1230028",
-      "procCategory": "Obras",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-65-2026-GR.LAMB/PEOT-1",
-      "entidad": "GOBIERNO REGIONAL DE LAMBAYEQUE - PROYECTO ESPECIAL OLMOS - TINAJONES",
-      "region": "CHICLAYO",
-      "tipoProc": "Contratación Directa",
-      "code": "1230028",
-      "monto": 2673842.81,
-      "moneda": "PEN",
-      "pubDate": "2026-07-30",
-      "dueDate": null,
-      "objeto": "EJECUCIÓN DE OBRA DE LA INVERSIÓN TIPO IOARR DENOMINADA: \"RENOVACION DE PUENTE; EN EL(LA) RUTA LA 111 (PÍTIPO), DENOMINADO PUENTE MAURO (TAYMI NUEVO), DISTRITO DE PITIPO, PROVINCIA FERREÑAFE, DEPARTAMENTO LAMBAYEQUE, con CUI N° 2730323",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=6d276a06-9020-42c3-a9c1-a646a83f1bfa"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1230030",
       "procCategory": "Servicios",
       "humenTags": [],
@@ -329,22 +313,6 @@
       "dueDate": null,
       "objeto": "ADQUISICIÓN DE FÓRMULA POLIMÉRICA PARA PACIENTE CON INSUFICIENCIA RENAL Y DIALIZADO X 237 ML PARA EL SERVICIO DE NEFROLOGÍA Y HEMODIÁLISIS DEL HOSPITAL NACIONAL DEL CENTRO DANIEL ALCIDES CARRIÓN",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=a4c3363f-fdf7-4fe7-bac5-dda39e852d82"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1230768",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-2-2026-GRP/RSSR-1",
-      "entidad": "GOBIERNO REGIONAL DE PUNO-SALUD SAN ROMAN",
-      "region": "SAN ROMAN",
-      "tipoProc": "Contratación Directa",
-      "code": "1230768",
-      "monto": 492654.0,
-      "moneda": "PEN",
-      "pubDate": "2026-07-30",
-      "dueDate": null,
-      "objeto": "ADQUISICIÓN DE INSUMOS MÉDICOS PARA LA CONTINUIDAD DEL TRATAMIENTO DE DIÁLISIS PERITONEAL PARA PACIENTES CON ENFERMEDAD RENAL EN EL HOSPITAL CARLOS MONGE MEDRANO JULIACA",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=2405fecb-ec6a-49d9-bb21-cc3dab560530"
     },
     {
       "id": "ocds-dgv273-seacev3-1230922",
