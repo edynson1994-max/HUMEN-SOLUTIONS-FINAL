@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-30T15:07:15+00:00",
+  "generated_at": "2026-08-31T17:46:15+00:00",
   "attribution": "Datos derivados del Registro de Datos Abiertos de Contrataciones (Open Contracting Partnership), a partir de información publicada por el organismo peruano a cargo del SEACE. Licencia CC BY 4.0. Banco de información pública — no requiere afiliación con Humen Solutions para consultarlo.",
   "source_url": "https://data.open-contracting.org/en/publication/135",
-  "total_count": 385,
+  "total_count": 381,
   "humen_counts": {
     "cont": 3,
     "inv": 0,
@@ -3099,22 +3099,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=7d9fdd81-b804-4a20-b167-53b75b4d46cb"
     },
     {
-      "id": "ocds-dgv273-seacev3-1188937",
-      "procCategory": "Obras",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-1-2026-MIDAGRI-PSI-1",
-      "entidad": "PROGRAMA SUBSECTORIAL DE IRRIGACIONES - PSI",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1188937",
-      "monto": 4348803.61,
-      "moneda": "PEN",
-      "pubDate": "2026-07-31",
-      "dueDate": null,
-      "objeto": "CONTRATACIÓN PARA LA EJECUCION DE SALDO DE OBRA: ¿MEJORAMIENTO DEL CANAL DE RIEGO JESUS - CHUCO, DISTRITO DE JESUS - CAJAMARCA - CAJAMARCA\"",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=eae8b389-24b3-4624-afc6-433380ef8f0e"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1189970",
       "procCategory": "Servicios",
       "humenTags": [],
@@ -3931,22 +3915,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=39fba227-e12f-4e39-a809-9dff237173f4"
     },
     {
-      "id": "ocds-dgv273-seacev3-1195691",
-      "procCategory": "Obras",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-1-2026-MDCM-OEC-1",
-      "entidad": "MUNICIPALIDAD DISTRITAL DE CURA MORI",
-      "region": "PIURA",
-      "tipoProc": "Contratación Directa",
-      "code": "1195691",
-      "monto": 18129130.29,
-      "moneda": "PEN",
-      "pubDate": "2026-07-31",
-      "dueDate": null,
-      "objeto": "CONTRATACIÓN DE EJECUCIÓN: MEJORAMIENTO DE LA CARRETERA VECINAL TRAMO EMP. PI-1023 CUCUNGARÁ HASTA EMP.PE-1N KM980, DISTRITO DE CURA MORI, PROVINCIA DE PIURA, DEPARTAMENTO DE PIURA¿ CUI N°2543024",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=1633de87-f5cf-4676-ad42-1e4d3687380b"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1199806",
       "procCategory": "Obras",
       "humenTags": [],
@@ -4329,22 +4297,6 @@
       "dueDate": null,
       "objeto": "ADQUISICIÓN DEL PRODUCTO FARMACÉUTICO ¿ COMPRA CENTRALIZADA PARA EL ABASTECIMIENTO POR UN PERIODO DE DOCE (12) MESES SODIO CLORURO 900 MG/100 ML (0.9 %) 1L INYECTABLE",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=7e217d64-e00e-4b83-b823-01025c195e33"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1144919",
-      "procCategory": "Obras",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-5-2025-GRSM/DEC-1",
-      "entidad": "GOBIERNO REGIONAL DE SAN MARTIN Sede Central",
-      "region": "MOYOBAMBA",
-      "tipoProc": "Contratación Directa",
-      "code": "1144919",
-      "monto": 14771561.19,
-      "moneda": "PEN",
-      "pubDate": "2026-07-31",
-      "dueDate": null,
-      "objeto": "CONTRATACIÓN EJECUCIÓN DEL SALDO DE LA OBRA: MEJORAMIENTO DEL SERVICIO DE AGUA EN EL SISTEMA DE RIEGO DEL CANAL PRINCIPAL MICHUCO, DISTRITO NUEVA CAJAMARCA Y SAN FERNANDO, PROVINCIA DE RIOJA ¿ REGIÓN SAN MARTIN¿, con CUI N° 2231275.",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=8f804444-0283-4d7a-a45a-03379be8de31"
     },
     {
       "id": "ocds-dgv273-seacev3-1151805",
@@ -5067,22 +5019,6 @@
       "dueDate": null,
       "objeto": "SERVICIO DE ARRENDAMIENTO DE INMUEBLE PARA EL FUNCIONAMIENTO DE LA 1RA Y 2DA FISCALÍA PROVINCIAL PENAL CORPORATIVA DE SAN JUAN DE LURIGANCHO (Zona Baja) IMPLEMENTACIÓN DEL NCPP -  DISTRITO FISCAL DE LIMA ESTE",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=50651642-d433-4df7-94e3-58c3737f63ad"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-873945",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-PROC-20-2022-SUNAT/7N0950-1",
-      "entidad": "SUPERINTENDENCIA NACIONAL DE ADUANAS Y DE ADMINISTRACION TRIBUTARIA - SUNAT",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "873945",
-      "monto": 162000.0,
-      "moneda": "PEN",
-      "pubDate": "2026-07-31",
-      "dueDate": null,
-      "objeto": "ALQUILER DE UN INMUEBLE EN LA PROVINCIA DE PASCO, DEPARTAMENTO DE PASCO",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=59c9abae-3bab-4ae2-91c0-83b10558990c"
     },
     {
       "id": "ocds-dgv273-seacev3-876256",
