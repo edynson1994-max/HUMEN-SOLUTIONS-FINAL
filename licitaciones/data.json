@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-02T14:49:38+00:00",
+  "generated_at": "2026-09-03T14:49:26+00:00",
   "attribution": "Datos derivados del Registro de Datos Abiertos de Contrataciones (Open Contracting Partnership), a partir de información publicada por el organismo peruano a cargo del SEACE. Licencia CC BY 4.0. Banco de información pública — no requiere afiliación con Humen Solutions para consultarlo.",
   "source_url": "https://data.open-contracting.org/en/publication/135",
-  "total_count": 114,
+  "total_count": 113,
   "humen_counts": {
     "cont": 1,
     "inv": 0,
@@ -665,22 +665,6 @@
       "dueDate": null,
       "objeto": "ADQUISICION DE INSUMOS PARA EL PROGRAMA VASO DE LECHE DE LA MUNICIPALIDAD DISTRITAL DE CASTILLA",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=fea19ef2-658e-4349-8dff-bcd9187dd46d"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1236626",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-3-2026-UNISCJSA/DEC-1",
-      "entidad": "UNIVERSIDAD NACIONAL INTERCULTURAL DE LA SELVA CENTRAL JUAN SANTOS ATAHUALPA",
-      "region": "CHANCHAMAYO",
-      "tipoProc": "Contratación Directa",
-      "code": "1236626",
-      "monto": 876177.5,
-      "moneda": "PEN",
-      "pubDate": "2026-08-03",
-      "dueDate": null,
-      "objeto": "CONTRATACIÓN DEL SERVICIO DE COMEDOR UNIVERSITARIO PARA ESTUDIANTES ORIGINARIOS Y/O PROVENIENTES DE LAS COMUNIDADES Y DE ESCASOS RECURSOS ECONOMICOS DE LA UNIVERSIDAD NACIONAL INTERCULTURAL DE LA SELVA CENTRAL JUAN SANTOS ATAHUALPA - SEDE FILIAL (SATIPO - MAZAMARI), SEDE PICHANAQUI, SEDE LA MERCED",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=fbfde59e-9365-438a-965b-33cae1bb1a2a"
     },
     {
       "id": "ocds-dgv273-seacev3-1236909",
