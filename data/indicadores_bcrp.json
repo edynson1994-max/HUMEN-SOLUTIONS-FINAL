@@ -3,9 +3,9 @@
   "atribucion": "Banco Central de Reserva del Perú (BCRP).",
   "dataset_url": "https://estadisticas.bcrp.gob.pe/estadisticas/series/",
   "tipo_cambio": {
-    "periodo": "02.Set.26",
-    "compra": 3.356,
-    "venta": 3.358,
+    "periodo": "03.Set.26",
+    "compra": 3.359,
+    "venta": 3.36,
     "unidad": "S/ por US$",
     "descripcion": "Tipo de cambio interbancario, BCRP"
   },
@@ -15,9 +15,9 @@
     "descripcion": "Tasa de Referencia de la Política Monetaria, BCRP"
   },
   "inflacion": {
-    "periodo": "Jul.2026",
-    "variacion_mensual_pct": 0.29,
-    "variacion_12_meses_pct": 4.07,
+    "periodo": "Ago.2026",
+    "variacion_mensual_pct": 0.07,
+    "variacion_12_meses_pct": 4.44,
     "descripcion": "IPC Lima Metropolitana (INEI, vía BCRP)"
   },
   "estado": "ok",
@@ -26,5 +26,5 @@
     "tasa_referencia",
     "inflacion"
   ],
-  "generado_en": "2026-09-03T16:58:49Z"
+  "generado_en": "2026-09-04T16:48:02Z"
 }
