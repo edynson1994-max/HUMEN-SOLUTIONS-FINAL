@@ -204,6 +204,30 @@ SCROLLBAR
 }
 
 /*=========================
+SELECCIÓN DE TEXTO Y FOCO
+==========================*/
+
+::selection{
+    background:var(--secondary);
+    color:#fff;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.card:focus-visible{
+
+    outline:2px solid var(--secondary);
+    outline-offset:3px;
+    border-radius:6px;
+
+}
+
+/*=========================
 TEXTOS
 ==========================*/
 
@@ -327,7 +351,7 @@ BOTONES
 
     border-radius:50px;
 
-    background:var(--primary);
+    background:linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 55%, var(--primary-dark) 100%);
 
     color:#fff;
 
@@ -335,9 +359,9 @@ BOTONES
 
     letter-spacing:.2px;
 
-    transition:var(--transition);
+    transition:transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s cubic-bezier(.22,1,.36,1), background .35s ease;
 
-    box-shadow:var(--shadow);
+    box-shadow:0 12px 30px rgba(51,71,42,.22);
 
 }
 
@@ -345,9 +369,17 @@ BOTONES
 
     transform:translateY(-4px);
 
-    background:var(--primary-light);
+    background:linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
 
-    box-shadow:var(--shadow-hover);
+    box-shadow:0 20px 42px rgba(51,71,42,.30);
+
+}
+
+.btn-primary:active{
+
+    transform:translateY(-1px);
+
+    box-shadow:0 10px 22px rgba(51,71,42,.24);
 
 }
 .btn-header-cta:hover{
@@ -380,7 +412,7 @@ BOTONES
 
     font-weight:700;
 
-    transition:var(--transition);
+    transition:transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s cubic-bezier(.22,1,.36,1), background .35s ease, color .35s ease;
 
 }
 
@@ -389,6 +421,10 @@ BOTONES
     background:var(--primary);
 
     color:#fff;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 32px rgba(51,71,42,.20);
 
 }
 
@@ -1543,15 +1579,15 @@ SERVICIOS
 
     box-shadow:0 10px 30px rgba(38,38,32,.06);
 
-    transition:all .35s ease;
+    transition:transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s cubic-bezier(.22,1,.36,1), border-color .4s ease;
 
 }
 
 .card:hover{
 
-    transform:translateY(-6px);
+    transform:translateY(-8px);
 
-    box-shadow:0 20px 45px rgba(38,38,32,.12);
+    box-shadow:0 26px 50px rgba(51,71,42,.14);
 
     border-color:var(--secondary);
 
@@ -5347,6 +5383,10 @@ PRECIO EN TARJETAS DE SERVICIOS
 
     line-height:1.1;
 
+    letter-spacing:-.3px;
+
+    font-variant-numeric:tabular-nums;
+
 }
 
 .card-precio-periodo{
@@ -5369,7 +5409,7 @@ PRECIO EN TARJETAS DE SERVICIOS
 
     margin-top:14px;
 
-    background:var(--primary);
+    background:linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
 
     color:#fff;
 
@@ -5383,17 +5423,15 @@ PRECIO EN TARJETAS DE SERVICIOS
 
     text-decoration:none;
 
-    transition:.3s;
+    transition:transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s cubic-bezier(.22,1,.36,1);
 
 }
 
 .card-precio-link:hover{
 
-    background:var(--primary-light);
-
     transform:translateY(-2px);
 
-    box-shadow:var(--shadow);
+    box-shadow:0 14px 28px rgba(51,71,42,.24);
 
 }
 
@@ -5445,11 +5483,12 @@ BENEFICIOS/PROMOCIONES EN TARJETA DE SERVICIO
 /* INDICADORES DEL DÍA (BCRP) */
 /* ========================= */
 .indicadores-strip{
-    margin-top:56px;
-    padding:28px 32px;
-    background:var(--primary-light-bg);
+    margin:0 0 50px;
+    padding:30px 32px 32px;
+    background:linear-gradient(180deg, var(--primary-light-bg) 0%, #fff 140%);
     border:1px solid var(--border);
     border-radius:var(--radius);
+    box-shadow:0 14px 34px rgba(38,38,32,.05);
 }
 
 .indicadores-eyebrow{
@@ -5462,11 +5501,23 @@ BENEFICIOS/PROMOCIONES EN TARJETA DE SERVICIO
 }
 
 .indicadores-eyebrow > span{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
     font-size:.72rem;
     font-weight:700;
     letter-spacing:.07em;
     text-transform:uppercase;
     color:var(--primary);
+}
+
+.indicadores-eyebrow > span::before{
+    content:"";
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--secondary);
+    box-shadow:0 0 0 3px var(--secondary-bg);
 }
 
 .indicadores-fuente{
@@ -5485,24 +5536,36 @@ BENEFICIOS/PROMOCIONES EN TARJETA DE SERVICIO
 .indicadores-grid{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
-    gap:22px 28px;
+    gap:16px;
 }
 
 .indicador-item{
     display:flex;
     flex-direction:column;
     gap:4px;
+    padding:16px 18px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:12px;
+    transition:transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s cubic-bezier(.22,1,.36,1), border-color .3s ease;
+}
+
+.indicador-item:hover{
+    transform:translateY(-3px);
+    box-shadow:0 14px 28px rgba(38,38,32,.08);
+    border-color:var(--secondary);
 }
 
 .indicador-label{
-    font-size:.78rem;
+    font-size:.76rem;
     color:var(--text-light);
 }
 
 .indicador-valor{
     font-size:1.55rem;
-    font-weight:700;
-    color:var(--text);
+    font-weight:800;
+    color:var(--primary);
+    letter-spacing:-.3px;
     font-variant-numeric:tabular-nums;
 }
 

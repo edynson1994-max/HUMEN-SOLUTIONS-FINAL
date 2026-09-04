@@ -41,7 +41,10 @@
 .subpagina-hero{
     padding-top:180px;
     padding-bottom:60px;
-    background:var(--primary-light-bg);
+    background:
+        radial-gradient(circle at 15% 20%, rgba(185,151,91,.10) 0%, transparent 45%),
+        radial-gradient(circle at 85% 0%, rgba(51,71,42,.06) 0%, transparent 40%),
+        var(--primary-light-bg);
     text-align:center;
 }
 
@@ -85,6 +88,17 @@
     color:rgba(255,255,255,.75);
     padding:36px 0;
     text-align:center;
+    position:relative;
+}
+
+.subpagina-footer::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:2px;
+    background:linear-gradient(90deg, transparent, var(--secondary-light), transparent);
 }
 
 .subpagina-footer .container{

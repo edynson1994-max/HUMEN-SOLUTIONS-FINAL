@@ -9,7 +9,7 @@
     <title>Servicios Adicionales de Contabilidad — Constitución de Empresa SACS | HUMEN SOLUTIONS</title>
 
     <meta name="description"
-        content="Además de llevar tu contabilidad, te ayudamos a formalizar tu negocio. Constituye tu empresa como SACS: 100% digital, sin notaría, desde S/ 105 en tasas estatales. Conoce requisitos y costo total.">
+        content="Además de llevar tu contabilidad, te ayudamos a formalizar tu negocio. Constituye tu empresa como SACS: 100% digital, sin notaría, desde S/ 112 en tasas estatales. Conoce requisitos y costo total.">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -181,6 +181,51 @@
             color:var(--secondary);
         }
 
+        .sa-costo-opcional{
+            margin-top:18px;
+            padding:16px 18px;
+            background:#fff;
+            border:1px dashed var(--secondary);
+            border-radius:12px;
+        }
+
+        .sa-costo-opcional-fila{
+            display:flex;
+            justify-content:space-between;
+            align-items:baseline;
+            gap:12px;
+            font-size:.9rem;
+            font-weight:600;
+            color:var(--primary);
+        }
+
+        .sa-costo-opcional-fila em{
+            display:inline-block;
+            margin-left:8px;
+            font-style:normal;
+            font-size:.66rem;
+            font-weight:700;
+            letter-spacing:.05em;
+            text-transform:uppercase;
+            color:var(--accent-amber);
+            background:var(--secondary-bg);
+            padding:3px 9px;
+            border-radius:50px;
+            vertical-align:middle;
+        }
+
+        .sa-costo-opcional-fila span:last-child{
+            white-space:nowrap;
+            color:var(--secondary);
+        }
+
+        .sa-costo-opcional-nota{
+            font-size:.78rem;
+            color:var(--text-light);
+            line-height:1.55;
+            margin-top:8px;
+        }
+
         .sa-costo-nota{
             font-size:.78rem;
             color:var(--text-light);
@@ -287,6 +332,85 @@
                     Conoce los servicios adicionales que puedes contratar junto a tu plan de contabilidad. Aún no tienes empresa formalmente constituida? Este es el primer paso.
                 </p>
 
+                <div class="indicadores-strip" id="indicadoresStrip">
+
+                    <div class="indicadores-eyebrow">
+
+                        <span>Indicadores del día para tu contabilidad</span>
+
+                        <a href="https://estadisticas.bcrp.gob.pe/estadisticas/series/" target="_blank" rel="noopener" class="indicadores-fuente">Fuente: BCRP</a>
+
+                    </div>
+
+                    <div class="indicadores-grid">
+
+                        <div class="indicador-item">
+                            <span class="indicador-label">Tipo de cambio (venta)</span>
+                            <span class="indicador-valor" id="indTipoCambio">—</span>
+                            <span class="indicador-sub" id="indTipoCambioSub">cargando…</span>
+                        </div>
+
+                        <div class="indicador-item">
+                            <span class="indicador-label">Tasa de referencia BCRP</span>
+                            <span class="indicador-valor" id="indTasaRef">—</span>
+                            <span class="indicador-sub" id="indTasaRefSub">cargando…</span>
+                        </div>
+
+                        <div class="indicador-item">
+                            <span class="indicador-label">Inflación (IPC, 12 meses)</span>
+                            <span class="indicador-valor" id="indInflacion">—</span>
+                            <span class="indicador-sub" id="indInflacionSub">cargando…</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <script>
+                (function(){
+                    var elTC = document.getElementById('indTipoCambio');
+                    var elTCSub = document.getElementById('indTipoCambioSub');
+                    var elTasa = document.getElementById('indTasaRef');
+                    var elTasaSub = document.getElementById('indTasaRefSub');
+                    var elIPC = document.getElementById('indInflacion');
+                    var elIPCSub = document.getElementById('indInflacionSub');
+
+                    function marcarSinDatos(){
+                        [elTC, elTasa, elIPC].forEach(function(el){ if (el) el.textContent = '—'; });
+                        [elTCSub, elTasaSub, elIPCSub].forEach(function(el){ if (el) el.textContent = 'sin datos disponibles todavía'; });
+                    }
+
+                    fetch('../data/indicadores_bcrp.json', { cache: 'no-store' })
+                        .then(function(r){ if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+                        .then(function(d){
+                            if (d.tipo_cambio) {
+                                elTC.textContent = 'S/ ' + d.tipo_cambio.venta.toFixed(3);
+                                elTCSub.textContent = d.tipo_cambio.periodo + ' · BCRP';
+                            } else {
+                                elTC.textContent = '—';
+                                elTCSub.textContent = 'sin dato disponible';
+                            }
+                            if (d.tasa_referencia) {
+                                elTasa.textContent = d.tasa_referencia.valor_pct.toFixed(2) + '%';
+                                elTasaSub.textContent = d.tasa_referencia.periodo + ' · BCRP';
+                            } else {
+                                elTasa.textContent = '—';
+                                elTasaSub.textContent = 'sin dato disponible';
+                            }
+                            if (d.inflacion) {
+                                elIPC.textContent = d.inflacion.variacion_12_meses_pct.toFixed(2) + '%';
+                                elIPCSub.textContent = 'mensual ' + d.inflacion.variacion_mensual_pct.toFixed(2) + '% · ' + d.inflacion.periodo + ' · BCRP';
+                            } else {
+                                elIPC.textContent = '—';
+                                elIPCSub.textContent = 'sin dato disponible';
+                            }
+                        })
+                        .catch(function(){
+                            marcarSinDatos();
+                        });
+                })();
+                </script>
+
                 <div class="sa-grid">
 
                     <article class="sa-card sa-card-featured fade-up">
@@ -354,11 +478,6 @@
                                 <div class="sa-costo">
 
                                     <div class="sa-costo-fila">
-                                        <span>Reserva de nombre (SUNARP, recomendada)</span>
-                                        <span>S/ 26.40</span>
-                                    </div>
-
-                                    <div class="sa-costo-fila">
                                         <span>Acto constitutivo SACS (SID‑SUNARP)</span>
                                         <span>S/ 18.70</span>
                                     </div>
@@ -374,8 +493,8 @@
                                     </div>
 
                                     <div class="sa-costo-fila sa-costo-subtotal">
-                                        <span>Subtotal tasas estatales</span>
-                                        <span>≈ S/ 138.40</span>
+                                        <span>Subtotal tasas estatales obligatorias</span>
+                                        <span>≈ S/ 112.00</span>
                                     </div>
 
                                     <div class="sa-costo-fila">
@@ -385,7 +504,23 @@
 
                                     <div class="sa-costo-total">
                                         <span>Total estimado</span>
-                                        <span>desde S/ 288</span>
+                                        <span>desde S/ 262</span>
+                                    </div>
+
+                                    <div class="sa-costo-opcional">
+                                        <div class="sa-costo-opcional-fila">
+                                            <span>
+                                                + Reserva de nombre (SUNARP)
+                                                <em>opcional</em>
+                                            </span>
+                                            <span>+ S/ 26.40</span>
+                                        </div>
+                                        <p class="sa-costo-opcional-nota">
+                                            No es un requisito obligatorio del trámite SACS: el propio sistema SID‑SUNARP verifica la
+                                            disponibilidad del nombre al momento de firmar el acto constitutivo. Reservarlo antes es
+                                            opcional y solo recomendable si quieres asegurar el nombre elegido por 30 días y evitar que
+                                            la inscripción se rechace por un nombre ya tomado.
+                                        </p>
                                     </div>
 
                                     <p class="sa-costo-nota">
