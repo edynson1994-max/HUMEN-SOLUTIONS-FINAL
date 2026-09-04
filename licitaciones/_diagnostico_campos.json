@@ -1,5 +1,5 @@
 {
-  "generado_en": "2026-09-03T14:49:26+00:00",
+  "generado_en": "2026-09-04T14:38:31+00:00",
   "nota": "Diagnóstico de qué tan confiable es tenderPeriod.endDate como fecha limite real en este dataset — ver el docstring de _diagnosticar_release() en sync.py para el detalle completo. Si 'tenderPeriod_endDate_futuro' es 0 o casi 0 comparado con 'total_releases_leidos', es una señal fuerte de que ese campo no sirve para filtrar vigencia en este dataset y hace falta revisar 'enquiryPeriod_endDate_futuro' y los 'ejemplos_anomalos' como alternativa.",
   "total_releases_leidos": 234848,
   "con_tenderPeriod_endDate": 219129,
