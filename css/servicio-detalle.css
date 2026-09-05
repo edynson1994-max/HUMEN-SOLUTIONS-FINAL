@@ -1,0 +1,87 @@
+/* ============================================================
+   "Sobre el servicio" — página de explicación/confianza que se
+   abre al hacer clic en cada tarjeta de servicio del home.
+   Compartido por contabilidad, inventarios y humen-clean.
+   Reutiliza .section-title, .benefits-grid/.benefit-card, .process/.step
+   y .btn-primary/.btn-secondary de css/style.css.
+   ============================================================ */
+
+.svc-section{
+    padding:70px 0 20px;
+}
+
+.svc-section + .svc-section{
+    padding-top:20px;
+}
+
+.svc-section:last-of-type{
+    padding-bottom:100px;
+}
+
+.svc-intro{
+    max-width:720px;
+    margin:0 auto 50px;
+    text-align:center;
+    color:var(--text-light);
+    font-size:1.05rem;
+    line-height:1.7;
+}
+
+.svc-block{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:38px;
+    box-shadow:var(--shadow);
+    margin-bottom:40px;
+}
+
+.svc-block h3{
+    font-size:1.5rem;
+    color:var(--primary);
+    margin-bottom:22px;
+}
+
+.svc-checklist{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px 30px;
+}
+
+.svc-checklist li{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    font-size:.95rem;
+    color:var(--text);
+    line-height:1.55;
+}
+
+.svc-checklist li svg{
+    flex-shrink:0;
+    margin-top:3px;
+    color:var(--secondary);
+}
+
+.svc-cta{
+    margin-top:10px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:18px;
+}
+
+@media (max-width:720px){
+
+    .svc-block{
+        padding:28px 22px;
+    }
+
+    .svc-checklist{
+        grid-template-columns:1fr;
+    }
+
+}

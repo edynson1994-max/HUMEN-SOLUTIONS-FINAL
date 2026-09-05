@@ -387,3 +387,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+/*==================================================
+    TARJETAS DE SERVICIOS — clic en toda la tarjeta
+    lleva a la página de explicación del servicio,
+    salvo que el clic haya sido sobre un enlace propio
+    de la tarjeta (Cotizar / Servicios adicionales).
+==================================================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    document.querySelectorAll(".card[data-href]").forEach(card => {
+
+        card.addEventListener("click", (event) => {
+
+            if (event.target.closest("a")) return;
+
+            window.location.href = card.getAttribute("data-href");
+
+        });
+
+    });
+
+});
+

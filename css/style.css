@@ -1620,6 +1620,40 @@ SERVICIOS
 
 }
 
+.card[data-href]{
+
+    cursor:pointer;
+
+}
+
+.card-body-link{
+
+    display:block;
+
+    color:inherit;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+}
+
+.card-body-link:hover h3{
+
+    color:var(--secondary);
+
+}
+
+.card-body-link:focus-visible{
+
+    outline:2px solid var(--secondary);
+
+    outline-offset:6px;
+
+    border-radius:10px;
+
+}
+
 .card-icon{
 
     display:flex;
