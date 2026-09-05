@@ -1,37 +1,49 @@
 {
-  "id": "ocds-dgv273-seacev3-1235225-2026-08-04T10:21:13.317563-05:00",
+  "id": "ocds-dgv273-seacev3-1237621-2026-09-03T10:50:00.552620-05:00",
   "tag": [
     "compiled"
   ],
-  "date": "2026-08-04T10:21:13.317550-05:00",
-  "ocid": "ocds-dgv273-seacev3-1235225",
+  "date": "2026-09-03T10:50:00.552607-05:00",
+  "ocid": "ocds-dgv273-seacev3-1237621",
   "buyer": {
-    "id": "PE-CONSUCODE-10249",
-    "name": "FUERZA AEREA DEL PERU"
+    "id": "PE-CONSUCODE-1182",
+    "name": "MUNICIPALIDAD PROVINCIAL DE CHUPACA"
   },
   "tender": {
-    "id": "1235225",
+    "id": "1237621",
     "items": [
       {
-        "id": "21333746",
+        "id": "21356385",
         "unit": {
-          "id": "40",
-          "name": "Unidad",
+          "id": "36",
+          "name": "Servicio",
           "scheme": "PE-SEACE3-UnidadMedida"
         },
         "status": "active",
         "position": "1",
-        "quantity": 216.0,
+        "quantity": 1.0,
         "totalValue": {
           "amount": 0.0,
           "currency": "PEN",
           "currencyName": "Soles"
         },
-        "description": "ADQUISICIÓN DE MATERIAL MISCELÁNEO PARA EL MANTENIMIENTO E INSPECCIONES DE LAS FLOTAS AÉREAS PP-032/PP-135",
-        "statusDetails": "CONVOCADO"
+        "description": "SUPERVISOR DE OBRA DENOMINADA CREACIÓN DEL SERVICIO DE MOVILIDAD URBANA EN EL BARRIO BUENOS AIRES (SECTOR SANTA ROSA), DISTRITO DE CHUPACA DE LA PROVINCIA DE CHUPACA DEL DEPARTAMENTO DE JUNIN",
+        "statusDetails": "CONVOCADO",
+        "classification": {
+          "id": "8110151000336399",
+          "scheme": "CUBSO",
+          "description": "SUPERVISION DE OBRA DE CONSTRUCCION DE CALLES Y SIMILARES"
+        },
+        "additionalClassifications": [
+          {
+            "id": "81101510",
+            "scheme": "UNSPSC",
+            "description": "Ingeniería de carreteras"
+          }
+        ]
       }
     ],
-    "title": "LP-SM-7-2026-FAP/SEBAT-1",
+    "title": "CP CON-SM-1-2026-MPCH-1",
     "value": {
       "amount": 0.0,
       "currency": "PEN",
@@ -40,66 +52,62 @@
     },
     "documents": [
       {
-        "id": "24831474986046141",
-        "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=ba89305e-92e2-4d79-bbbb-3ec17c8068b2",
+        "id": "24831474986081863",
+        "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=9e21293d-29eb-4c11-a995-dfc212147e8d",
         "title": "Bases Administrativas",
-        "format": "docx",
+        "format": "pdf",
         "language": "es",
         "documentType": "biddingDocuments",
-        "datePublished": "2026-08-03T18:26:00-05:00"
+        "datePublished": "2026-09-02T17:47:00-05:00"
       }
     ],
-    "description": "ADQUISICIÓN DE MATERIAL MISCELÁNEO PARA EL MANTENIMIENTO E INSPECCIONES DE LAS FLOTAS AÉREAS PP-032/PP-135",
+    "description": "SUPERVISOR DE OBRA DENOMINADA ¿CREACIÓN DEL SERVICIO DE MOVILIDAD URBANA EN EL BARRIO BUENOS AIRES (SECTOR SANTA ROSA), DISTRITO DE CHUPACA DE LA PROVINCIA DE CHUPACA DEL DEPARTAMENTO DE JUNIN",
     "tenderPeriod": {
-      "endDate": "2026-08-03T00:00:00-05:00",
-      "startDate": "2026-08-03T00:00:00-05:00"
+      "endDate": "2026-09-02T00:00:00-05:00",
+      "startDate": "2026-09-02T00:00:00-05:00"
     },
-    "datePublished": "2026-08-03T18:26:00-05:00",
+    "datePublished": "2026-09-02T17:47:00-05:00",
     "enquiryPeriod": {
-      "endDate": "2026-08-13T23:59:00-05:00",
-      "startDate": "2026-08-04T00:01:00-05:00",
-      "durationInDays": 9
+      "endDate": "2026-09-14T23:59:00-05:00",
+      "startDate": "2026-09-03T00:01:00-05:00",
+      "durationInDays": 11
     },
     "procuringEntity": {
-      "id": "PE-CONSUCODE-10249",
-      "name": "FUERZA AEREA DEL PERU"
+      "id": "PE-CONSUCODE-1182",
+      "name": "MUNICIPALIDAD PROVINCIAL DE CHUPACA"
     },
-    "procurementMethod": "open",
-    "mainProcurementCategory": "goods",
-    "procurementMethodDetails": "Licitación Pública",
+    "mainProcurementCategory": "services",
+    "procurementMethodDetails": "Concurso Público para Consultoría",
     "additionalProcurementCategories": [
-      "goods"
+      "services"
     ],
     "hasTenderInformationProtectedByLaw": false
   },
   "parties": [
     {
-      "id": "PE-CONSUCODE-10249",
-      "name": "FUERZA AEREA DEL PERU",
+      "id": "PE-CONSUCODE-1182",
+      "name": "MUNICIPALIDAD PROVINCIAL DE CHUPACA",
       "roles": [
         "buyer",
         "procuringEntity"
       ],
       "address": {
-        "region": "LIMA",
-        "locality": "JESUS MARIA",
-        "department": "LIMA",
+        "region": "CHUPACA",
+        "locality": "CHUPACA",
+        "department": "JUNIN",
         "countryName": "PERU",
-        "streetAddress": "CAMPO DE MARTE LIMA"
+        "streetAddress": "JR.GRAU 390"
       },
       "identifier": {
-        "id": "10249",
+        "id": "1182",
         "scheme": "PE-CONSUCODE",
-        "legalName": "FUERZA AEREA DEL PERU"
-      },
-      "contactPoint": {
-        "telephone": "000000"
+        "legalName": "MUNICIPALIDAD PROVINCIAL DE CHUPACA"
       },
       "additionalIdentifiers": [
         {
-          "id": "20144364059",
+          "id": "20174790320",
           "scheme": "PE-RUC",
-          "legalName": "FUERZA AEREA DEL PERU"
+          "legalName": "MUNICIPALIDAD PROVINCIAL DE CHUPACA"
         }
       ]
     }
@@ -113,13 +121,15 @@
   ],
   "planning": {
     "budget": {
+      "project": "CREACION DEL SERVICIO DE MOVILIDAD URBANA EN EL BARRIO BUENOS AIRES (SECTOR SANTA ROSA),   DISTRITO DE CHUPACA DE LA PROVINCIA DE CHUPACA DEL DEPARTAMENTO DE JUNIN",
+      "projectID": "2703047",
       "description": "Fondos Públicos"
     }
   },
-  "publishedDate": "2026-08-04T10:21:13.317569-05:00",
+  "publishedDate": "2026-09-03T10:50:00.552625-05:00",
   "initiationType": "tender",
   "dataSegmentation": {
-    "id": "2026-08",
+    "id": "2026-09",
     "criteria": [
       "añoInicioConvocatoria",
       "mesInicioConvocatoria"
