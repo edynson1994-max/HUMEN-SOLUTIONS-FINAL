@@ -42,8 +42,8 @@
     padding-top:180px;
     padding-bottom:60px;
     background:
-        radial-gradient(circle at 15% 20%, rgba(185,151,91,.10) 0%, transparent 45%),
-        radial-gradient(circle at 85% 0%, rgba(51,71,42,.06) 0%, transparent 40%),
+        radial-gradient(circle at 15% 20%, rgba(212,184,118,.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 0%, rgba(134,178,108,.06) 0%, transparent 40%),
         var(--primary-light-bg);
     text-align:center;
 }
@@ -84,7 +84,7 @@
 /* ---------- Footer corto ---------- */
 
 .subpagina-footer{
-    background:var(--primary);
+    background:linear-gradient(180deg, var(--primary-deep-light), var(--primary-deep));
     color:rgba(255,255,255,.75);
     padding:36px 0;
     text-align:center;
@@ -155,8 +155,8 @@
 /* ---------- HUMEN Clean — acento propio (teal) ---------- */
 
 .tema-clean .cotizador-resultado{
-    background:linear-gradient(135deg, var(--clean), var(--clean-dark));
-    box-shadow:0 20px 45px rgba(15,124,130,.25);
+    background:linear-gradient(135deg, var(--clean-deep-light), var(--clean-deep));
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
 }
 
 .tema-clean #contenedorFormulario button{
@@ -164,13 +164,13 @@
 }
 
 .tema-clean #contenedorFormulario button:hover{
-    box-shadow:0 15px 35px rgba(15,124,130,.25);
+    box-shadow:0 15px 35px rgba(0,0,0,.30);
 }
 
 .tema-clean #contenedorFormulario input:focus,
 .tema-clean #contenedorFormulario select:focus{
     border-color:var(--clean);
-    box-shadow:0 0 0 4px rgba(15,124,130,.12);
+    box-shadow:0 0 0 4px rgba(95,194,199,.15);
 }
 
 .tema-clean .subpagina-hero{
@@ -182,7 +182,7 @@
 }
 
 .tema-clean .subpagina-footer{
-    background:var(--clean-dark);
+    background:linear-gradient(180deg, var(--clean-deep-light), var(--clean-deep));
 }
 
 .tema-clean .btn-pagar-mp{

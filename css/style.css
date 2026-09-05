@@ -16,61 +16,81 @@ VARIABLES
 
 :root{
 
-    /* Verde profundo — color dominante de marca */
-    --primary:#33472A;
+    /* ============================================================
+       TEMA OSCURO — mismo sistema de marca que "Perú en Datos"
+       (paper / ink / carmin / oro), llevado a todo el sitio.
+       ============================================================ */
 
-    /* Verde medio — hover / acentos */
-    --primary-light:#4F6B3A;
+    /* Verde brillante — color dominante de marca sobre fondo oscuro */
+    --primary:#86B26C;
 
-    /* Verde más oscuro — degradados */
-    --primary-dark:#24331C;
+    /* Verde claro — hover / acentos */
+    --primary-light:#9BBF7E;
+
+    /* Verde medio — degradados (más oscuro que --primary, sigue siendo legible) */
+    --primary-dark:#5C7C46;
+
+    /* Superficie sólida oscura para bloques grandes (footer, CTA, panel de
+       cotización) — evita que el verde brillante empapele secciones enteras */
+    --primary-deep:#141A0F;
+    --primary-deep-light:#212B17;
 
     /* Dorado — acento refinado de marca */
-    --secondary:#B9975B;
+    --secondary:#E3C98F;
 
     /* Dorado claro — hover */
-    --secondary-light:#D4B876;
+    --secondary-light:#E3C98F;
 
-    /* Dorado muy claro — fondos suaves */
-    --secondary-bg:#FAF5E9;
+    /* Dorado — fondos suaves (tarjetas, chips) */
+    --secondary-bg:#332A18;
 
-    /* Verde muy claro — fondos suaves */
-    --primary-light-bg:#F5F7F2;
+    /* Verde — fondos suaves */
+    --primary-light-bg:#1E2418;
 
     /* Dorado (acento de marca, presente en el logo) */
-    --accent-amber:#B08D3E;
+    --accent-amber:#D9BE7E;
 
-    /* Dorado muy claro */
-    --accent-amber-bg:#FBF3E3;
+    /* Dorado — fondos suaves */
+    --accent-amber-bg:#332A18;
 
-    /* Fondo marfil cálido */
-    --background:#FDFCFA;
+    /* Fondo principal — "paper" oscuro cálido */
+    --background:#1A1F16;
+
+    /* Superficie elevada — tarjetas, modales, header */
+    --surface:#23291D;
+    --surface-2:#2A311F;
 
     /* Texto */
-    --text:#26261F;
+    --text:#ECE7DC;
 
     /* Texto secundario */
-    --text-light:#6E6B5D;
+    --text-light:#B3AB9C;
 
-    /* Bordes cálidos */
-    --border:#E6E0D0;
+    /* Bordes */
+    --border:#38402F;
+    --border-soft:#2E3527;
 
-    /* Blanco */
+    /* Blanco (texto/iconos sobre superficies de color) */
     --white:#FFFFFF;
 
     /* HUMEN Clean (limpieza de oficinas) — acento propio, ligado a la
        marca pero distinto del verde/dorado, para que se lea como un
        servicio hermano (ver contabilidad/inventarios que sí comparten
        la paleta principal). Teal fresco, evoca "limpio". */
-    --clean:#0F7C82;
-    --clean-dark:#0B5D62;
-    --clean-bg:#E3F3F2;
-    --clean-border:#BFE3E1;
+    --clean:#5FC2C7;
+    --clean-dark:#3D9AA0;
+    --clean-bg:#16302F;
+    --clean-border:#2A4A48;
 
-    /* Sombras cálidas */
-    --shadow:0 12px 35px rgba(38,38,32,.07);
+    /* Superficie sólida oscura para bloques grandes en el tema Clean
+       (footer, panel de resultado) — mismo criterio que --primary-deep */
+    --clean-deep:#0C201F;
+    --clean-deep-light:#173330;
 
-    --shadow-hover:0 20px 45px rgba(38,38,32,.14);
+    /* Sombras — negras, cálidas hacia el verde muy oscuro */
+    --shadow:0 12px 35px rgba(0,0,0,.35);
+
+    --shadow-hover:0 20px 45px rgba(0,0,0,.5);
 
     --radius:18px;
 
@@ -93,6 +113,7 @@ RESET
 html{
 
     scroll-behavior:smooth;
+    color-scheme:dark;
 
 }
 
@@ -100,7 +121,7 @@ body{
 
     font-family:'Manrope',sans-serif;
 
-    background:#FDFCFA;
+    background:var(--background);
 
     color:var(--text);
 
@@ -158,7 +179,13 @@ textarea,
 select{
 
     font-family:'manrope',sans-serif;
+    color:var(--text);
 
+}
+
+::placeholder{
+    color:var(--text-light);
+    opacity:.8;
 }
 
 section{
@@ -191,7 +218,7 @@ SCROLLBAR
 
 ::-webkit-scrollbar-track{
 
-    background:#F2EFE5;
+    background:var(--surface);
 
 }
 
@@ -268,7 +295,7 @@ h3{
 
 p{
 
-    color:#6E6B5D;
+    color:#B3AB9C;
 
     font-size:1.05rem;
 
@@ -361,7 +388,7 @@ BOTONES
 
     transition:transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s cubic-bezier(.22,1,.36,1), background .35s ease;
 
-    box-shadow:0 12px 30px rgba(51,71,42,.22);
+    box-shadow:0 12px 30px rgba(0,0,0,.22);
 
 }
 
@@ -371,7 +398,7 @@ BOTONES
 
     background:linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
 
-    box-shadow:0 20px 42px rgba(51,71,42,.30);
+    box-shadow:0 20px 42px rgba(0,0,0,.30);
 
 }
 
@@ -379,7 +406,7 @@ BOTONES
 
     transform:translateY(-1px);
 
-    box-shadow:0 10px 22px rgba(51,71,42,.24);
+    box-shadow:0 10px 22px rgba(0,0,0,.24);
 
 }
 .btn-header-cta:hover{
@@ -424,7 +451,7 @@ BOTONES
 
     transform:translateY(-3px);
 
-    box-shadow:0 16px 32px rgba(51,71,42,.20);
+    box-shadow:0 16px 32px rgba(0,0,0,.20);
 
 }
 
@@ -468,11 +495,11 @@ BOTONES
 
     font-weight:600;
 
-    background:#FBF9F4;
+    background:#23291D;
 
     color:var(--primary);
 
-    border:1px solid #E6E0D0;
+    border:1px solid #38402F;
 
     box-shadow:none;
 
@@ -496,15 +523,15 @@ header{
 
     z-index:9999;
 
-    background:rgba(255,255,255,.98);
+    background:rgba(26,31,22,.90);
 
     backdrop-filter:blur(18px);
 
     -webkit-backdrop-filter:blur(18px);
 
-    border-bottom:1px solid rgba(38,38,32,.06);
+    border-bottom:1px solid rgba(255,255,255,.06);
 
-    box-shadow:0 10px 35px rgba(38,38,32,.05);
+    box-shadow:0 10px 35px rgba(0,0,0,.25);
 
     transition:.35s;
 
@@ -548,7 +575,7 @@ header .container{
 
     transition:.35s ease;
 
-    filter:drop-shadow(0 6px 14px rgba(51,71,42,.16));
+    filter:drop-shadow(0 6px 14px rgba(0,0,0,.16));
 
 }
 
@@ -576,7 +603,7 @@ header .container{
 
     font-weight:600;
 
-    color:#2E2E26;
+    color:var(--text);
 
     letter-spacing:.2px;
 
@@ -649,9 +676,9 @@ HERO
     overflow:hidden;
 
     background:
-    radial-gradient(circle at top left,#FAF5E9 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#F5F7F2 0%,transparent 30%),
-    linear-gradient(180deg,#ffffff 0%,#FCFBF8 100%);
+    radial-gradient(circle at top left,#26301E 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#1E2418 0%,transparent 30%),
+    linear-gradient(180deg,var(--background) 0%,#15190F 100%);
 
 }
 .hero::before{
@@ -670,9 +697,9 @@ HERO
 
     background-size:cover;
 
-    opacity:.20;
+    opacity:.14;
 
-    mix-blend-mode:multiply;
+    mix-blend-mode:screen;
 
     pointer-events:none;
 
@@ -729,7 +756,7 @@ HERO
 
     display:inline-block;
 
-    background:#F3EEDF;
+    background:#1E2418;
 
     color:var(--primary-light);
 
@@ -749,7 +776,7 @@ HERO
 
     font-size:1.05rem;
 
-    color:#6E6B5D;
+    color:#B3AB9C;
 
     max-width:100%;
 
@@ -781,7 +808,7 @@ HERO
 
     position:relative;
 
-    background:#ffffff;
+    background:var(--surface);
 
     border-radius:28px;
 
@@ -793,9 +820,9 @@ HERO
 
     align-items:center;
 
-    box-shadow:0 30px 70px rgba(38,38,32,.14);
+    box-shadow:0 30px 70px rgba(0,0,0,.14);
 
-    border:1px solid rgba(185,151,91,.35);
+    border:1px solid rgba(212,184,118,.35);
 
     overflow:hidden;
 
@@ -841,7 +868,7 @@ HERO
 
     height:220px;
 
-    background:#FAF5E9;
+    background:#332A18;
 
     border-radius:50%;
 
@@ -863,7 +890,7 @@ HERO
 
     height:260px;
 
-    background:#F5F7F2;
+    background:#1E2418;
 
     border-radius:50%;
 
@@ -912,7 +939,7 @@ NUESTROS SERVICIOS"
 
     margin-bottom:24px;
 
-    border-bottom:1px solid rgba(185,151,91,.25);
+    border-bottom:1px solid rgba(212,184,118,.25);
 
 }
 
@@ -1041,7 +1068,7 @@ NUESTROS SERVICIOS"
 
     text-align:center;
 
-    border:1.5px solid rgba(185,151,91,.35);
+    border:1.5px solid rgba(212,184,118,.35);
 
 }
 
@@ -1183,7 +1210,7 @@ NUESTROS SERVICIOS"
 
     padding-top:18px;
 
-    border-top:1px solid rgba(185,151,91,.25);
+    border-top:1px solid rgba(212,184,118,.25);
 
 }
 
@@ -1259,7 +1286,7 @@ INDICADORES
 
 .hero-feature{
 
-    background:#fff;
+    background:var(--surface);
 
     padding:20px;
 
@@ -1335,7 +1362,7 @@ UTILIDADES
 
 .bg-white{
 
-    background:#fff;
+    background:var(--surface);
 
 }
 
@@ -1430,7 +1457,7 @@ NOSOTROS
 
     gap:20px;
 
-    background:linear-gradient(160deg,var(--primary),#24331C);
+    background:linear-gradient(160deg,var(--primary-deep-light),var(--primary-deep));
 
     border-radius:24px;
 
@@ -1549,7 +1576,7 @@ SERVICIOS
 
 #servicios{
 
-    background:rgba(255,255,255,.96);
+    background:rgba(26,31,22,.96);
 
 }
 
@@ -1565,7 +1592,7 @@ SERVICIOS
 
 .card{
 
-    background:#ffffff;
+    background:var(--surface);
     border-radius:18px;
 
     display:flex;
@@ -1575,9 +1602,9 @@ SERVICIOS
 
     padding:40px 34px;
 
-    border:1px solid #E6E0D0;
+    border:1px solid #38402F;
 
-    box-shadow:0 10px 30px rgba(38,38,32,.06);
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
 
     transition:transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s cubic-bezier(.22,1,.36,1), border-color .4s ease;
 
@@ -1587,7 +1614,7 @@ SERVICIOS
 
     transform:translateY(-8px);
 
-    box-shadow:0 26px 50px rgba(51,71,42,.14);
+    box-shadow:0 26px 50px rgba(0,0,0,.14);
 
     border-color:var(--secondary);
 
@@ -1611,7 +1638,7 @@ SERVICIOS
 
     background:var(--secondary-bg);
 
-    border:1.5px solid rgba(185,151,91,.45);
+    border:1.5px solid rgba(212,184,118,.45);
 
     color:var(--primary);
 
@@ -1705,7 +1732,7 @@ SERVICIOS
 
 .card p{
 
-    color:#6E6B5D;
+    color:#B3AB9C;
 
     line-height:1.8;
 
@@ -1741,7 +1768,7 @@ SERVICIOS
 
 .card-link:hover{
 
-    color:#8A6F3F;
+    color:#E3C98F;
 
 }
 
@@ -1758,7 +1785,7 @@ BENEFICIOS
 
 #beneficios{
 
-    background:rgba(255,255,255,.96);
+    background:rgba(26,31,22,.96);
 
 }
 
@@ -1774,7 +1801,7 @@ BENEFICIOS
 
 .benefits-grid>div{
 
-    background:#fff;
+    background:var(--surface);
 
     border-radius:18px;
 
@@ -1820,7 +1847,7 @@ BENEFICIOS
 
     background:var(--secondary-bg);
 
-    border:1.5px solid rgba(185,151,91,.45);
+    border:1.5px solid rgba(212,184,118,.45);
 
     color:var(--primary);
 
@@ -1870,11 +1897,11 @@ SECTORES
 
 .sector-card{
 
-    background:#fff;
+    background:var(--surface);
 
     border-radius:28px;
 
-    border:1px solid #E9E3D3;
+    border:1px solid #38402F;
 
     height:230px;
 
@@ -1896,9 +1923,9 @@ SECTORES
 
     transform:translateY(-6px);
 
-    box-shadow:0 28px 60px rgba(38,38,32,.12);
+    box-shadow:0 28px 60px rgba(0,0,0,.12);
 
-    border-color:#4F6B3A;
+    border-color:#9BBF7E;
 
 }
 .sector-card:hover .sector-icon{
@@ -1948,9 +1975,9 @@ SECTORES
 
     border-radius:50%;
 
-    border:1.5px solid rgba(185,151,91,.45);
+    border:1.5px solid rgba(212,184,118,.45);
 
-    background:#ffffff;
+    background:var(--surface);
 
     display:flex;
 
@@ -1982,7 +2009,7 @@ SECTORES
 }
 .sector-card:hover .sector-icon{
 
-    background:#4F6B3A;
+    background:#9BBF7E;
 
     color:#ffffff;
 
@@ -1996,7 +2023,7 @@ PROCESO
 
 #proceso{
 
-    background:#ffffff;
+    background:var(--surface);
 
 }
 
@@ -2028,7 +2055,7 @@ PROCESO
 
     height:4px;
 
-    background:#E6E0D0;
+    background:#38402F;
 
     z-index:0;
 
@@ -2131,7 +2158,9 @@ CTA INTERMEDIA
 
 .cta{
 
-    background:linear-gradient(135deg,var(--primary),var(--primary-light));
+    background:linear-gradient(135deg,var(--primary-deep-light),var(--primary-deep));
+
+    border:1px solid var(--border);
 
     color:#fff;
 
@@ -2173,7 +2202,7 @@ CTA INTERMEDIA
 
 .cta .btn-primary:hover{
 
-    background:#FBF9F4;
+    background:#23291D;
 
 }
 
@@ -2225,7 +2254,7 @@ DECORACIONES
 
     border-radius:50%;
 
-    background:rgba(185,151,91,.05);
+    background:rgba(212,184,118,.05);
 
     top:-180px;
 
@@ -2245,7 +2274,7 @@ DECORACIONES
 
     border-radius:50%;
 
-    background:rgba(51,71,42,.05);
+    background:rgba(134,178,108,.08);
 
     bottom:-150px;
 
@@ -2278,7 +2307,7 @@ FAQ
 }
 
 .faq-item{
-    background:#fff;
+    background:var(--surface);
     border-radius:16px;
     margin-bottom:20px;
     border:1px solid var(--border);
@@ -2349,7 +2378,7 @@ CONTACTO
 =========================================*/
 
 #contacto{
-    background:#fff;
+    background:var(--surface);
 }
 
 .contact-grid{
@@ -2360,7 +2389,7 @@ CONTACTO
 }
 
 .contact-form{
-    background:#fff;
+    background:var(--surface);
     padding:45px;
     border-radius:20px;
     box-shadow:var(--shadow);
@@ -2386,12 +2415,13 @@ CONTACTO
     outline:none;
     transition:.3s;
     font-size:1rem;
-    background:#fff;
+    background:var(--surface);
+    color:var(--text);
 }
 
 .form-control:focus{
     border-color:var(--primary-light);
-    box-shadow:0 0 0 4px rgba(185,151,91,.10);
+    box-shadow:0 0 0 4px rgba(212,184,118,.10);
 }
 
 textarea.form-control{
@@ -2405,7 +2435,7 @@ textarea.form-control{
 }
 
 .contact-info{
-    background:linear-gradient(180deg,var(--primary),#24331C);
+    background:linear-gradient(180deg,var(--primary-deep-light),var(--primary-deep));
     color:#fff;
     padding:45px;
     border-radius:20px;
@@ -2471,7 +2501,7 @@ FOOTER
 =========================================*/
 
 footer{
-    background:var(--primary);
+    background:linear-gradient(180deg, var(--primary-deep-light), var(--primary-deep));
     color:#fff;
     padding-top:80px;
 }
@@ -2672,7 +2702,7 @@ UTILIDADES
 }
 
 .bg-white{
-    background:#fff;
+    background:var(--surface);
 }
 
 .round{
@@ -2950,8 +2980,8 @@ CONTACTO PREMIUM
 
     background:linear-gradient(
         180deg,
-        #33472A 0%,
-        #24331C 100%
+        var(--primary-deep-light) 0%,
+        var(--primary-deep) 100%
     );
 
     color:#fff;
@@ -2961,7 +2991,7 @@ CONTACTO PREMIUM
     padding:48px;
 
     box-shadow:
-        0 20px 45px rgba(51,71,42,.18);
+        0 20px 45px rgba(0,0,0,.35);
 
     position:relative;
 
@@ -3021,7 +3051,7 @@ CONTACTO PREMIUM
 
 .contact-header span{
 
-    color:#D4B876;
+    color:#E3C98F;
 
     font-size:.72rem;
 
@@ -3035,7 +3065,7 @@ CONTACTO PREMIUM
 
 .contact-header span{
 
-    color:#D4B876;
+    color:#E3C98F;
 
     font-size:.72rem;
 
@@ -3065,7 +3095,7 @@ CONTACTO PREMIUM
 
     align-items:center;
 
-    color:#D4B876;
+    color:#E3C98F;
 
     box-shadow:0 15px 30px rgba(0,0,0,.18);
 
@@ -3089,7 +3119,7 @@ CONTACTO PREMIUM
 
     align-items:center;
 
-    color:#D4B876;
+    color:#E3C98F;
 
     box-shadow:0 15px 30px rgba(0,0,0,.18);
 
@@ -3103,7 +3133,7 @@ CONTACTO PREMIUM
 
         0 18px 35px rgba(0,0,0,.18);
 
-    border-color:#D4B876;
+    border-color:#E3C98F;
 
 }
 
@@ -3131,7 +3161,7 @@ CONTACTO PREMIUM
 
 .phone .icon{
 
-    background:#33472A;
+    background:#86B26C;
 
 }
 
@@ -3143,19 +3173,19 @@ CONTACTO PREMIUM
 
 .email .icon{
 
-    background:#8A6F3F;
+    background:#E3C98F;
 
 }
 
 .location .icon{
 
-    background:#4F6B3A;
+    background:#9BBF7E;
 
 }
 
 .schedule .icon{
 
-    background:#B08D3E;
+    background:#D9BE7E;
 
 }
 
@@ -3185,7 +3215,7 @@ CONTACTO PREMIUM
 
 .contact-card small{
 
-    color:#D4B876;
+    color:#E3C98F;
 
     font-size:14px;
 
@@ -3211,7 +3241,7 @@ CONTACTO PREMIUM
 
 .contact-footer strong{
 
-    color:#D4B876;
+    color:#E3C98F;
 
     font-size:1.2rem;
 
@@ -3275,7 +3305,7 @@ font-size:15px;
 
 font-weight:700;
 
-color:#33472A;
+color:#86B26C;
 
 margin-bottom:8px;
 
@@ -3285,7 +3315,7 @@ margin-bottom:8px;
 
 font-size:14px;
 
-color:#6E6B5D;
+color:#B3AB9C;
 
 line-height:1.6;
 
@@ -3303,7 +3333,7 @@ gap:8px;
 
 font-weight:700;
 
-color:#4F6B3A;
+color:#9BBF7E;
 
 text-decoration:none;
 
@@ -3315,7 +3345,7 @@ transition:.3s;
 
 gap:14px;
 
-color:#24331C;
+color:#5C7C46;
 
 }
 /*==================================================
@@ -3326,8 +3356,8 @@ footer{
 
 background:linear-gradient(
 180deg,
-#33472A,
-#24331C
+var(--primary-deep-light),
+var(--primary-deep)
 );
 
 color:#fff;
@@ -3456,7 +3486,7 @@ width:45px;
 
 height:3px;
 
-background:#D4B876;
+background:#E3C98F;
 
 border-radius:20px;
 
@@ -3496,7 +3526,7 @@ gap:8px;
 
 .footer-column a:hover{
 
-color:#D4B876;
+color:#E3C98F;
 
 transform:translateX(8px);
 
@@ -3548,7 +3578,7 @@ COTIZADOR PREMIUM
 
 #cotizacion{
 
-    background:linear-gradient(180deg,#FDFCFA,#FFFFFF);
+    background:linear-gradient(180deg,var(--background),#171C13);
 
 }
 
@@ -3568,21 +3598,21 @@ COTIZADOR PREMIUM
 
 .cotizador-card{
 
-    background:#ffffff;
+    background:var(--surface);
 
-    border:1px solid #E6E0D0;
+    border:1px solid #38402F;
 
     border-radius:24px;
 
     padding:40px;
 
-    box-shadow:0 15px 40px rgba(38,38,32,.06);
+    box-shadow:0 15px 40px rgba(0,0,0,.06);
 
 }
 
 .cotizador-resultado{
 
-    background:linear-gradient(135deg,#33472A,#24331C);
+    background:linear-gradient(135deg,var(--primary-deep-light),var(--primary-deep));
 
     color:#ffffff;
 
@@ -3594,7 +3624,7 @@ COTIZADOR PREMIUM
 
     top:120px;
 
-    box-shadow:0 20px 45px rgba(51,71,42,.25);
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
 
 }
 
@@ -3743,7 +3773,7 @@ FORMULARIO DEL COTIZADOR
 
     height:55px;
 
-    border:1px solid #E6E0D0;
+    border:1px solid #38402F;
 
     border-radius:14px;
 
@@ -3753,7 +3783,9 @@ FORMULARIO DEL COTIZADOR
 
     transition:.30s;
 
-    background:#ffffff;
+    background:var(--surface);
+
+    color:var(--text);
 
 }
 
@@ -3763,9 +3795,9 @@ FORMULARIO DEL COTIZADOR
 
     outline:none;
 
-    border-color:#4F6B3A;
+    border-color:#9BBF7E;
 
-    box-shadow:0 0 0 4px rgba(185,151,91,.10);
+    box-shadow:0 0 0 4px rgba(212,184,118,.10);
 
 }
 
@@ -3781,7 +3813,7 @@ FORMULARIO DEL COTIZADOR
 
     border-radius:14px;
 
-    background:linear-gradient(135deg,#33472A,#4F6B3A);
+    background:linear-gradient(135deg,#86B26C,#9BBF7E);
 
     color:#ffffff;
 
@@ -3799,7 +3831,7 @@ FORMULARIO DEL COTIZADOR
 
     transform:translateY(-3px);
 
-    box-shadow:0 15px 35px rgba(185,151,91,.25);
+    box-shadow:0 15px 35px rgba(212,184,118,.25);
 
 }
 
@@ -3829,9 +3861,9 @@ PESTAÑAS DEL COTIZADOR
 
     border-radius:50px;
 
-    background:#FBF9F4;
+    background:#23291D;
 
-    color:#33472A;
+    color:#86B26C;
 
     font-weight:700;
 
@@ -3843,17 +3875,17 @@ PESTAÑAS DEL COTIZADOR
 
 .cotizador-btn:hover{
 
-    background:#EDE6D2;
+    background:#2A311F;
 
 }
 
 .cotizador-btn.active{
 
-    background:linear-gradient(135deg,#33472A,#4F6B3A);
+    background:linear-gradient(135deg,#86B26C,#9BBF7E);
 
     color:#ffffff;
 
-    box-shadow:0 12px 30px rgba(51,71,42,.25);
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
 
 }
 
@@ -3986,7 +4018,7 @@ PESTAÑAS DEL COTIZADOR
 
     background:#ffffff;
 
-    color:#33472A;
+    color:#86B26C;
 
     font-size:.95rem;
 
@@ -4002,7 +4034,7 @@ PESTAÑAS DEL COTIZADOR
 
     transform:translateY(-3px);
 
-    background:#FAF5E9;
+    background:#332A18;
 
 }
 
@@ -4024,7 +4056,7 @@ PESTAÑAS DEL COTIZADOR
     width:110px;
     padding:3px 0;
 
-    background:#B08D3E;
+    background:#D9BE7E;
     color:#fff;
 
     text-align:center;
@@ -4057,13 +4089,13 @@ CHECKBOX MODERNOS - COTIZADOR HUMEN
 
     margin:14px 0;
 
-    background:#ffffff;
+    background:var(--surface);
 
     border:1px solid var(--border);
 
     border-radius:16px;
 
-    box-shadow:0 6px 18px rgba(38,38,32,.05);
+    box-shadow:0 6px 18px rgba(0,0,0,.05);
 
     transition:.30s ease;
 
@@ -4077,7 +4109,7 @@ CHECKBOX MODERNOS - COTIZADOR HUMEN
 
     border-color:var(--primary-light);
 
-    box-shadow:0 12px 28px rgba(185,151,91,.15);
+    box-shadow:0 12px 28px rgba(212,184,118,.15);
 
 }
 
@@ -4174,7 +4206,7 @@ BOTÓN FLOTANTE COTIZACIÓN
 
     transform:translateY(-4px);
 
-    box-shadow:0 14px 30px rgba(51,71,42,.35);
+    box-shadow:0 14px 30px rgba(0,0,0,.35);
 
 }
 /*=========================================
@@ -4248,7 +4280,7 @@ MAPA - NOSOTROS
 
     color:var(--secondary);
 
-    background:rgba(185,151,91,.15);
+    background:rgba(212,184,118,.15);
 
     border-radius:10px;
 
@@ -4282,7 +4314,7 @@ MAPA - NOSOTROS
 
     border-radius:50px;
 
-    background:#4F6B3A;
+    background:#9BBF7E;
 
     color:#fff;
 
@@ -4298,7 +4330,7 @@ MAPA - NOSOTROS
 
 .btn-map-about:hover{
 
-    background:#24331C;
+    background:#5C7C46;
 
     transform:translateY(-3px);
 
@@ -4322,7 +4354,7 @@ TECNOLOGÍA PROPIA (bloque de confianza)
 
     background:var(--secondary-bg);
 
-    border:1px solid rgba(185,151,91,.30);
+    border:1px solid rgba(212,184,118,.30);
 
     border-radius:18px;
 
@@ -4420,7 +4452,7 @@ MODAL: SISTEMA PROPIO (ERP)
 
     inset:0;
 
-    background:rgba(38,38,32,.72);
+    background:rgba(0,0,0,.72);
 
     backdrop-filter:blur(6px);
 
@@ -4460,7 +4492,7 @@ MODAL: SISTEMA PROPIO (ERP)
 
 .erp-modal{
 
-    background:#fff;
+    background:var(--surface);
 
     border-radius:24px;
 
@@ -4510,7 +4542,7 @@ MODAL: SISTEMA PROPIO (ERP)
 
     border:none;
 
-    background:rgba(38,38,32,.55);
+    background:rgba(0,0,0,.55);
 
     color:#fff;
 
@@ -4578,7 +4610,7 @@ MODAL: SISTEMA PROPIO (ERP)
 
 .erp-slide-img{
 
-    background:#F4F1E7;
+    background:#1E2418;
 
     display:flex;
 
@@ -4602,7 +4634,7 @@ MODAL: SISTEMA PROPIO (ERP)
 
     border-radius:10px;
 
-    box-shadow:0 12px 30px rgba(38,38,32,.18);
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
 
     border:1px solid var(--border);
 
@@ -4927,7 +4959,7 @@ PAGO CON MERCADO PAGO
 
     background:#F2C94C;
 
-    color:#33472A;
+    color:#86B26C;
 
     font-weight:800;
 
@@ -4973,11 +5005,11 @@ PAGO CON MERCADO PAGO
 
     font-size:.82rem;
 
-    color:#8A6F3F;
+    color:#E3C98F;
 
     background:var(--secondary-bg);
 
-    border:1px solid rgba(185,151,91,.30);
+    border:1px solid rgba(212,184,118,.30);
 
     border-radius:12px;
 
@@ -4997,7 +5029,7 @@ PAGO CON MERCADO PAGO
 
     inset:0;
 
-    background:rgba(38,38,32,.72);
+    background:rgba(0,0,0,.72);
 
     backdrop-filter:blur(6px);
 
@@ -5033,7 +5065,7 @@ PAGO CON MERCADO PAGO
 
 .pago-modal{
 
-    background:#fff;
+    background:var(--surface);
 
     border-radius:24px;
 
@@ -5095,7 +5127,7 @@ PAGO CON MERCADO PAGO
 
     background:var(--secondary-bg);
 
-    border:1px solid rgba(185,151,91,.30);
+    border:1px solid rgba(212,184,118,.30);
 
     border-radius:14px;
 
@@ -5119,7 +5151,7 @@ PAGO CON MERCADO PAGO
 
 .pago-modal-error{
 
-    color:#B3261E;
+    color:#E08578;
 
     font-size:.85rem;
 
@@ -5177,7 +5209,7 @@ SELECTOR DE COMPROBANTE (Boleta / Factura)
 
     border:1.5px solid var(--border);
 
-    background:#fff;
+    background:var(--surface);
 
     color:var(--text);
 
@@ -5228,9 +5260,9 @@ PROPONER UN PRECIO
 
     width:100%;
 
-    background:rgba(185,151,91,.12);
+    background:rgba(212,184,118,.12);
 
-    border:1.5px dashed rgba(185,151,91,.45);
+    border:1.5px dashed rgba(212,184,118,.45);
 
     border-radius:14px;
 
@@ -5248,7 +5280,7 @@ PROPONER UN PRECIO
 
 .banner-proponer-precio:hover{
 
-    background:rgba(185,151,91,.20);
+    background:rgba(212,184,118,.20);
 
     border-color:var(--secondary);
 
@@ -5345,7 +5377,7 @@ PRECIO EN TARJETAS DE SERVICIOS
 
 .card-precio{
 
-    border-top:1px solid #EDE8D8;
+    border-top:1px solid #38402F;
 
     display:flex;
 
@@ -5431,7 +5463,7 @@ PRECIO EN TARJETAS DE SERVICIOS
 
     transform:translateY(-2px);
 
-    box-shadow:0 14px 28px rgba(51,71,42,.24);
+    box-shadow:0 14px 28px rgba(0,0,0,.24);
 
 }
 
@@ -5488,7 +5520,7 @@ BENEFICIOS/PROMOCIONES EN TARJETA DE SERVICIO
     background:linear-gradient(180deg, var(--primary-light-bg) 0%, #fff 140%);
     border:1px solid var(--border);
     border-radius:var(--radius);
-    box-shadow:0 14px 34px rgba(38,38,32,.05);
+    box-shadow:0 14px 34px rgba(0,0,0,.05);
 }
 
 .indicadores-eyebrow{
@@ -5544,7 +5576,7 @@ BENEFICIOS/PROMOCIONES EN TARJETA DE SERVICIO
     flex-direction:column;
     gap:4px;
     padding:16px 18px;
-    background:#fff;
+    background:var(--surface);
     border:1px solid var(--border);
     border-radius:12px;
     transition:transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s cubic-bezier(.22,1,.36,1), border-color .3s ease;
@@ -5552,7 +5584,7 @@ BENEFICIOS/PROMOCIONES EN TARJETA DE SERVICIO
 
 .indicador-item:hover{
     transform:translateY(-3px);
-    box-shadow:0 14px 28px rgba(38,38,32,.08);
+    box-shadow:0 14px 28px rgba(0,0,0,.08);
     border-color:var(--secondary);
 }
 

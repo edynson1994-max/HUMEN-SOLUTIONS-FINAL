@@ -69,12 +69,10 @@ main.peru-datos-main{
     margin-left:-50vw;
     margin-right:-50vw;
     border-top:1px solid var(--border);
-    /* Mismo "paper" claro que usa Perú en Datos, para que no haya un salto
-       de color mientras carga el iframe. El sitio de HUMEN es siempre claro
-       (no tiene modo oscuro), así que este fondo se queda fijo también —
-       el propio iframe sí se adapta a modo oscuro internamente, de forma
-       independiente. */
-    background:#FDFCFA;
+    /* Mismo "paper" oscuro que usa Perú en Datos (tema oscuro por defecto
+       ahora en todo el sitio), para que no haya un salto de color mientras
+       carga el iframe. */
+    background:var(--background);
 }
 
 .pd-frame{

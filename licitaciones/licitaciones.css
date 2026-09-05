@@ -10,8 +10,8 @@ de resultados) construido con esos mismos tokens.
 
 :root{
     /* Rojo de alerta ya usado en el sitio (mensajes de error de pago) */
-    --urgent:#B3261E;
-    --urgent-bg:#FBEAE8;
+    --urgent:#E08578;
+    --urgent-bg:#3A251F;
 
     /* Dorado de marca, reutilizado para "cierra pronto" */
     --soon:var(--secondary);
@@ -118,7 +118,7 @@ ESTADOS (vacío / error)
     margin-top:30px;
     padding:60px 30px;
     text-align:center;
-    background:var(--white);
+    background:var(--surface);
     border:1px solid var(--border);
     border-radius:var(--radius);
     box-shadow:var(--shadow);
@@ -138,7 +138,7 @@ ESTADÍSTICAS
 }
 
 .lic-stat{
-    background:var(--white);
+    background:var(--surface);
     border:1px solid var(--border);
     border-radius:14px;
     padding:20px 22px;
@@ -181,7 +181,7 @@ CONTROLES
     padding:14px 18px 14px 44px;
     border:1.5px solid var(--border);
     border-radius:50px;
-    background:var(--white);
+    background:var(--surface);
     color:var(--text);
     font-family:inherit;
     font-size:.95rem;
@@ -197,7 +197,7 @@ CONTROLES
     padding:13px 38px 13px 20px;
     border:1.5px solid var(--border);
     border-radius:50px;
-    background-color:var(--white);
+    background-color:var(--surface);
     background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="%236E6B5D" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>');
     background-repeat:no-repeat;
     background-position:right 18px center;
@@ -217,7 +217,7 @@ CONTROLES
     padding:10px 18px;
     border-radius:50px;
     border:1.5px solid var(--border);
-    background:var(--white);
+    background:var(--surface);
     color:var(--text-light);
     font-size:.86rem;
     font-weight:600;
@@ -236,7 +236,7 @@ CONTROLES
 .lic-chip:hover{ border-color:var(--secondary); }
 .lic-chip.active{ background:var(--primary); border-color:var(--primary); color:#fff; }
 .lic-chip.active .count{ background:rgba(255,255,255,.22); color:#fff; }
-.lic-chip-star{ border-color:var(--secondary); color:#8A6F3F; }
+.lic-chip-star{ border-color:var(--secondary); color:#E3C98F; }
 .lic-chip-star.active{ background:var(--secondary); border-color:var(--secondary); color:#fff; }
 
 .lic-sortrow{ display:flex; align-items:center; gap:10px; }
@@ -266,7 +266,7 @@ RESULTADOS
     display:grid;
     grid-template-columns:6px 1fr auto;
     align-items:stretch;
-    background:var(--white);
+    background:var(--surface);
     border:1px solid var(--border);
     border-radius:var(--radius);
     box-shadow:var(--shadow);
@@ -307,9 +307,9 @@ RESULTADOS
     white-space:nowrap;
 }
 .lic-tag.proc{ background:var(--primary-light-bg); color:var(--primary); }
-.lic-tag.cat{ background:var(--secondary-bg); color:#8A6F3F; }
+.lic-tag.cat{ background:var(--secondary-bg); color:#E3C98F; }
 .lic-tag.star{
-    background:#fff;
+    background:var(--surface);
     color:var(--secondary);
     border:1px solid var(--secondary);
 }
@@ -338,7 +338,7 @@ RESULTADOS
     margin-bottom:4px;
 }
 .lic-badge.urgent{ background:var(--urgent-bg); color:var(--urgent); }
-.lic-badge.soon{ background:var(--soon-bg); color:#8A6F3F; }
+.lic-badge.soon{ background:var(--soon-bg); color:#E3C98F; }
 .lic-badge.ok{ background:var(--ok-bg); color:var(--ok); }
 .lic-badge.unknown{ background:var(--primary-light-bg); color:var(--text-light); }
 .lic-deadline .date{ color:var(--text-light); }
@@ -361,7 +361,7 @@ RESULTADOS
     padding:60px 20px;
     text-align:center;
     color:var(--text-light);
-    background:var(--white);
+    background:var(--surface);
     border:1px solid var(--border);
     border-radius:var(--radius);
 }
@@ -372,7 +372,7 @@ PANEL DE DETALLE
 
 .lic-veil{
     position:fixed; inset:0;
-    background:rgba(38,38,32,.45);
+    background:rgba(0,0,0,.55);
     backdrop-filter:blur(2px);
     display:none;
     align-items:flex-start;
@@ -382,7 +382,7 @@ PANEL DE DETALLE
 }
 .lic-veil.open{ display:flex; }
 .lic-panel{
-    background:var(--white);
+    background:var(--surface);
     border-radius:var(--radius);
     box-shadow:var(--shadow-hover);
     max-width:640px;
@@ -429,7 +429,7 @@ PANEL DE DETALLE
 }
 .lic-panel .lic-panel-link{ margin-top:20px; }
 .lic-panel .lic-panel-link a{ color:var(--secondary); font-weight:700; }
-.lic-panel .lic-panel-link a:hover{ color:#8A6F3F; }
+.lic-panel .lic-panel-link a:hover{ color:#E3C98F; }
 .lic-panel .lic-panel-link-fallback{
     background:var(--secondary-bg);
     border-radius:12px;
@@ -440,7 +440,7 @@ PANEL DE DETALLE
     margin-top:6px;
     font-size:.85rem;
     font-weight:400;
-    color:var(--text-light,#6b6b6b);
+    color:var(--text-light,#B3AB9C);
 }
 .lic-panel-hint strong{ color:var(--text); }
 
