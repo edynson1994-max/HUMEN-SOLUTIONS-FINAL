@@ -1,13 +1,13 @@
 {
-  "generado_en": "2026-08-30T14:47:01Z",
+  "generado_en": "2026-09-06T13:06:14Z",
   "categoria": "Economía y Finanzas",
   "total_catalogo": 505,
   "total_datasets_portal": 4651,
   "catalogo_corrida_completa": true,
   "conteos_por_estado": {
-    "ok": 226,
+    "ok": 234,
     "formato_no_soportado": 244,
-    "error": 35
+    "error": 27
   },
   "datasets": [
     {
@@ -842,8 +842,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-de-programas-presupuestales-enapres-capitulo-600-seguridad-ciudadana-a%C3%B1o",
       "fecha_modificacion_portal": "Vie, 06/12/2026 - 15:14",
-      "estado": "error",
-      "filas": null,
+      "estado": "ok",
+      "filas": 65990,
       "formato": null
     },
     {
@@ -853,8 +853,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-de-programas-presupuestales-enapres-capitulo-600-seguridad-ciudadana-a%C3%B1o-2",
       "fecha_modificacion_portal": "Vie, 06/12/2026 - 15:03",
-      "estado": "error",
-      "filas": null,
+      "estado": "ok",
+      "filas": 66110,
       "formato": null
     },
     {
@@ -864,8 +864,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-de-programas-presupuestales-enapres-capitulo-600-seguridad-ciudadana-a%C3%B1o-5",
       "fecha_modificacion_portal": "Vie, 06/12/2026 - 15:13",
-      "estado": "error",
-      "filas": null,
+      "estado": "ok",
+      "filas": 65521,
       "formato": null
     },
     {
@@ -875,8 +875,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-de-programas-presupuestales-enapres-capitulo-600-seguridad-ciudadana-a%C3%B1o-8",
       "fecha_modificacion_portal": "Vie, 06/12/2026 - 15:14",
-      "estado": "error",
-      "filas": null,
+      "estado": "ok",
+      "filas": 71187,
       "formato": null
     },
     {
@@ -919,8 +919,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/enapres-2014",
       "fecha_modificacion_portal": "Vie, 04/17/2020 - 19:37",
-      "estado": "error",
-      "filas": null,
+      "estado": "ok",
+      "filas": 71187,
       "formato": null
     },
     {
@@ -930,8 +930,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/enapres-2013",
       "fecha_modificacion_portal": "Vie, 04/17/2020 - 19:37",
-      "estado": "error",
-      "filas": null,
+      "estado": "ok",
+      "filas": 82484,
       "formato": null
     },
     {
@@ -952,8 +952,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/enapres-2015",
       "fecha_modificacion_portal": "Vie, 04/17/2020 - 19:37",
-      "estado": "error",
-      "filas": null,
+      "estado": "ok",
+      "filas": 65521,
       "formato": null
     },
     {
@@ -963,8 +963,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/enapres-2017",
       "fecha_modificacion_portal": "Mié, 03/29/2023 - 12:38",
-      "estado": "error",
-      "filas": null,
+      "estado": "ok",
+      "filas": 65990,
       "formato": null
     },
     {

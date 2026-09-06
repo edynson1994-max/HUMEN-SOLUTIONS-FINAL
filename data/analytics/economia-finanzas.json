@@ -1,5 +1,5 @@
 {
-  "generado_en": "2026-08-30T14:47:01Z",
+  "generado_en": "2026-09-06T13:06:14Z",
   "catalogo": {
     "categoria": "Economía y Finanzas",
     "total_datasets_portal": 4651,
@@ -10,17 +10,17 @@
   "sincronizacion": {
     "total_con_historial": 505,
     "por_estado": {
-      "ok": 226,
+      "ok": 234,
       "formato_no_soportado": 244,
-      "error": 35
+      "error": 27
     },
     "total_con_data_api_confirmada": 0
   },
   "filas": {
-    "total_datasets_con_filas_ok": 226,
-    "total_filas_ok": 9300566,
-    "promedio_filas_ok": 41152.9,
-    "mediana_filas_ok": 2962.5,
+    "total_datasets_con_filas_ok": 234,
+    "total_filas_ok": 9854556,
+    "promedio_filas_ok": 42113.5,
+    "mediana_filas_ok": 4474.5,
     "ranking_mas_filas": [
       {
         "dataset_id": "pensionistas-y-beneficiarios-del-sistema-nacional-de-pensiones-decreto-ley-n°-19990-22",
@@ -109,6 +109,10 @@
         "conteo": 15
       },
       {
+        "entidad": "Ministerio del Interior - MININTER",
+        "conteo": 12
+      },
+      {
         "entidad": "Banco de la Nación",
         "conteo": 10
       },
@@ -134,10 +138,6 @@
       },
       {
         "entidad": "Ministerio de la Producción - PRODUCE",
-        "conteo": 4
-      },
-      {
-        "entidad": "Municipalidad Distrital de Los Olivos ",
         "conteo": 4
       }
     ]
