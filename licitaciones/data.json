@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-09T14:55:58+00:00",
+  "generated_at": "2026-09-10T14:42:28+00:00",
   "attribution": "Datos derivados del Registro de Datos Abiertos de Contrataciones (Open Contracting Partnership), a partir de información publicada por el organismo peruano a cargo del SEACE. Licencia CC BY 4.0. Banco de información pública — no requiere afiliación con Humen Solutions para consultarlo.",
   "source_url": "https://data.open-contracting.org/en/publication/135",
-  "total_count": 2847,
+  "total_count": 2846,
   "humen_counts": {
     "cont": 14,
     "inv": 8,
@@ -8795,22 +8795,6 @@
       "dueDate": null,
       "objeto": "CONTRATACIÓN DE EJECUCIÓN DE OBRA: ¿RENOVACION DE PUENTE; EN EL(LA) CAMINO VECINAL (PUENTE SARAGOZA), EMPALME RUTA AM 682 (LONGAR, CALZADA PAMPA, SAUCE, MARAYPAMPA) DISTRITO DE LONGAR, PROVINCIA RODRIGUEZ DE MENDOZA, DEPARTAMENTO AMAZONAS¿, con CUI N° 2676041",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=7c8a6e8a-e463-4987-8e05-d1a4efcbedc9"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1236290",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "CP-ABR-5-2026-MDHR/CS-1",
-      "entidad": "MUNICIPALIDAD DISTRITAL DE HUANTAR",
-      "region": "HUARI",
-      "tipoProc": "Concurso Público Abreviado",
-      "code": "1236290",
-      "monto": 0.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-10",
-      "dueDate": null,
-      "objeto": "SERVICIO DE CONSULTORÍA PARA LA ELABORACIÓN DEL EXPEDIENTE TÉCNICO: ¿MEJORAMIENTO DEL SERVICIO DE PROVISION DE AGUA PARA RIEGO EN LOS SECTORES DE GARANGA Y CHICURO DEL CENTRO POBLADO DE ACOPARA DISTRITO DE HUANTAR DE LA PROVINCIA DE HUARI DEL DEPARTAMENTO DE ANCASH¿ CUI N°2730508",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=253fec6a-a3f3-4f91-a450-1cbaf125abdb"
     },
     {
       "id": "ocds-dgv273-seacev3-1236316",
