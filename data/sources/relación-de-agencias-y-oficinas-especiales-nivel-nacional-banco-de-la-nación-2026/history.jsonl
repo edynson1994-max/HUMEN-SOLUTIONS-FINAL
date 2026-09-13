@@ -2,3 +2,4 @@
 {"fecha": "2026-08-24T23:09:54Z", "estado": "ok", "filas": 559, "nivel_usado": "url_en_vivo", "cambio": {"tipo": "no_comparable", "filas_antes": null, "filas_despues": 559, "diferencia": null, "diferencia_pct": null}}
 {"fecha": "2026-08-30T14:24:31Z", "estado": "ok", "filas": 559, "nivel_usado": "url_en_vivo", "cambio": {"tipo": "sin_cambio", "filas_antes": 559, "filas_despues": 559, "diferencia": 0, "diferencia_pct": 0.0}}
 {"fecha": "2026-09-06T12:49:22Z", "estado": "ok", "filas": 559, "nivel_usado": "url_en_vivo", "cambio": {"tipo": "sin_cambio", "filas_antes": 559, "filas_despues": 559, "diferencia": 0, "diferencia_pct": 0.0}}
+{"fecha": "2026-09-13T13:47:16Z", "estado": "ok", "filas": 559, "nivel_usado": "url_en_vivo", "cambio": {"tipo": "sin_cambio", "filas_antes": 559, "filas_despues": 559, "diferencia": 0, "diferencia_pct": 0.0}}
