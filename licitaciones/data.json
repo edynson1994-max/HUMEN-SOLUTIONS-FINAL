@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-12T13:48:41+00:00",
+  "generated_at": "2026-09-13T14:44:27+00:00",
   "attribution": "Datos derivados del Registro de Datos Abiertos de Contrataciones (Open Contracting Partnership), a partir de información publicada por el organismo peruano a cargo del SEACE. Licencia CC BY 4.0. Banco de información pública — no requiere afiliación con Humen Solutions para consultarlo.",
   "source_url": "https://data.open-contracting.org/en/publication/135",
-  "total_count": 2799,
+  "total_count": 2739,
   "humen_counts": {
     "cont": 14,
     "inv": 8,
@@ -939,22 +939,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=3df995d8-c73f-4520-abe5-b5bbcd8c7ea1"
     },
     {
-      "id": "ocds-dgv273-seacev3-1238462",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-1-2026-MDSMCH-1",
-      "entidad": "MUNICIPALIDAD DISTRITAL DE SANTA MARIA DE CHICMO",
-      "region": "ANDAHUAYLAS",
-      "tipoProc": "Contratación Directa",
-      "code": "1238462",
-      "monto": 165000.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ADQUISICIÓN DE TERRENO EN EL(LA) PARA LA CONEXIÓN DEL PASAJE DIONICIO SALAZAR A LA AV. JR. TUPAC AMARU DEL CERCADO DE SANTA MARIA DE CHICMO DISTRITO DE SANTA MARIA DE CHICMO, PROVINCIA ANDAHUAYLAS, DEPARTAMENTO APURÍMAC CON CUI 2727675",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=ea779025-8066-4df2-ad64-81d8512412ca"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1238478",
       "procCategory": "Bienes",
       "humenTags": [],
@@ -1099,38 +1083,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=cbbaf794-58d5-416c-8d38-b36832bdc11d"
     },
     {
-      "id": "ocds-dgv273-seacev3-1238807",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-25-2026-MP-FN-1",
-      "entidad": "MINISTERIO PUBLICO",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1238807",
-      "monto": 450000.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "Servicio de arrendamiento de inmueble para el funcionamiento de Sedes Fiscales y Administrativas  del Distrito Fiscal de Tumbes",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=e185056d-39a7-4651-96e0-f5c2f709af39"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1238824",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-20-2026-MP-FN-1",
-      "entidad": "MINISTERIO PUBLICO",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1238824",
-      "monto": 162000.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "Servicio de arrendamiento de inmueble para el funcionamiento de Archivo central  y Almacén de Bienes  Incautados  del Distrito Fiscal de Apurímac",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=7d6d1c1c-2050-4920-ad8b-8d2ecc200a4d"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1238830",
       "procCategory": "Servicios",
       "humenTags": [],
@@ -1227,22 +1179,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=2f0be81d-5c09-45f6-a8ac-b93597f2ab56"
     },
     {
-      "id": "ocds-dgv273-seacev3-1238972",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-24-2026-MTC/20-1",
-      "entidad": "MTC-PROYECTO ESPECIAL DE INFRAESTRUCTURA DE TRANSPORTE NACIONAL (PROVIAS NACIONAL)",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1238972",
-      "monto": 324000.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE ALQUILER DE INMUEBLE PARA LA OFICINA DE LA UNIDAD ZONAL XIV AYACUCHO",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=dbca0620-1a94-453a-8298-a3319d503e35"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1239108",
       "procCategory": "Bienes",
       "humenTags": [],
@@ -1323,22 +1259,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=ba1f943e-a36f-4c3d-9466-fb682f4a1816"
     },
     {
-      "id": "ocds-dgv273-seacev3-1239257",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-12-2026-ANA-1",
-      "entidad": "AUTORIDAD NACIONAL DEL AGUA",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1239257",
-      "monto": 187736.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ADQUISICIÓN DE DIÉSEL B5 S-50 PARA LAS ACTIVIDADES DE OPERATIVIDAD, MANTENIMIENTO Y REPARACIÓN DE MAQUINARIAS Y EQUIPOS EN EL ÁMBITO DE LA ADMINISTRACIÓN LOCAL DE AGUA CHIRA, EN EL MARCO DEL D.S.N°05-2026 PRORROGADO MEDIANTE DECRETO SUPREMO N°39-2026-PCM, DECRETO SUPREMO N°74-2026-PCM Y DECRETO SUPR",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=14ec04f7-18d4-4ab8-b99f-db272f3a9af7"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1239371",
       "procCategory": "Servicios",
       "humenTags": [],
@@ -1353,38 +1273,6 @@
       "dueDate": null,
       "objeto": "SUPERVISION DE LA OBRA DENOMINADA: \"MEJORAMIENTO DEL SERVICIO DE EDUCACION PRIMARIA Y SERVICIO DE EDUCACION SECUNDARIA EN I.E.88187 DE CENTRO POBLADO CHALAN DEL DISTRITO DE CONCHUCOS DE LA PROVINCIA DE PALLASCA DEL DEPARTAMENTO DE ANCASH¿ CON CUI N° 2719554 ¿ PRIMERA ETAPA",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=362e0283-7a51-4f79-99c4-6d2106ccd466"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1239382",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-9-2026-MDCC-1",
-      "entidad": "MUNICIPALIDAD DISTRITAL DE CERRO COLORADO",
-      "region": "AREQUIPA",
-      "tipoProc": "Contratación Directa",
-      "code": "1239382",
-      "monto": 316854.61,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "CONTRATACION DEL SERVICIO PARA LA EJECUCION DE LAS FICHAS TECNICAS DE EMERGENCIAS, SECTOR SAN PEDRO, SAN PABLO, LAS LOMAS DEL CURAL, SECTOR ASENTAMIENTO HUMANO LA ISLA EN EL DISTRITO DE CERRO COLORADO, PROVINCIA DE AREQUIPA, REGION AREQUIPA.",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=74417063-fbdc-4e73-8e2a-0aea9bfa4407"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1239431",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-1-2026-MDP/DEC-1",
-      "entidad": "MUNICIPALIDAD DISTRITAL DE PARCOY",
-      "region": "PATAZ",
-      "tipoProc": "Contratación Directa",
-      "code": "1239431",
-      "monto": 255000.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ADQUISICIÓN DE 10,000 GALONES DE COMBUSTIBLE DIÉSEL B5-S50 DESTINADOS A LA ATENCIÓN DE LA EMERGENCIA EN\\nCAMINOS VECINALES Y TROCHAS DEL DISTRITO DE PARCOY, PROVINCIA DE PATAZ Y DEPARTAMENTO DE LA LIBERTAD.",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=d733e89f-2454-4595-925a-925daab1dd16"
     },
     {
       "id": "ocds-dgv273-seacev3-1239454",
@@ -1433,22 +1321,6 @@
       "dueDate": null,
       "objeto": "SERVICIO DE ALQUILER DE INMUEBLE PARA EL FUNCIONAMIENTO DE LOS ORGANOS JURISDICCIONALES ESPECIALIZADOS EN EXTINCIÓN DE DOMINIO DE LA CORTE SUPERIOR DE JUSTICIA DE LA LIBERTAD",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=6dc75ac8-b828-4ce0-85bd-9f64749bee9a"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1239555",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-5-2026-OSINERGMIN-1",
-      "entidad": "ORGANISMO SUPERVISOR DE LA INVERSION EN ENERGIA Y MINERIA",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1239555",
-      "monto": 227500.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "CONTRATACIÓN DEL SERVICIO DE ARRENDAMIENTO DE NUEVA OFICINA TALARA",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=dc99fb13-0871-4f9d-a65b-870459ec9064"
     },
     {
       "id": "ocds-dgv273-seacev3-1239623",
@@ -1673,22 +1545,6 @@
       "dueDate": null,
       "objeto": "CONTRATACIÓN PARA EL DISEÑO Y CONTRUCCION DE LA OBRA ¿ IOARR, POR PAQUETE: CUIs 2733035 , 2733037, 2733066",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=18d82b70-fc53-4bb9-8e20-04474602c3ba"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1239911",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "ABR-PROC-47-2026-OTL / PETROPERU-1",
-      "entidad": "PETROLEOS DEL PERU S.A.",
-      "region": "LIMA",
-      "tipoProc": "Adjudicación Abreviada",
-      "code": "1239911",
-      "monto": 78207.06,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ADQUISICIÓN DE EMPAQUETADURAS EN LAMINA Y CUADRADA PARA LA PARADA DE FCK EN REFINERÍA TALARA",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=69bc2863-d5c3-43d1-b8ea-f82fa3342945"
     },
     {
       "id": "ocds-dgv273-seacev3-1239945",
@@ -2009,22 +1865,6 @@
       "dueDate": null,
       "objeto": "CONTRATACIÓN DEL SERVICIO DE ARRENDAMIENTO DE LOCAL PARA LA OFICINA REGIONAL DE CUSCO",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=ca603491-3fc7-4c70-888f-898537b72701"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1240445",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "ABR-PROC-42-2026-OTL / PETROPERU-1",
-      "entidad": "PETROLEOS DEL PERU S.A.",
-      "region": "LIMA",
-      "tipoProc": "Adjudicación Abreviada",
-      "code": "1240445",
-      "monto": 296893.62,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ADQUISICION DE REPUESTOS DE VÁLVULA FISHER PARA REFINERÍA TALARA",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=c5f895bb-ec05-4c38-ab07-add151c06508"
     },
     {
       "id": "ocds-dgv273-seacev3-1240451",
@@ -6859,22 +6699,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=a91c1f92-2afd-4c5c-91c4-93eb78878b5c"
     },
     {
-      "id": "ocds-dgv273-seacev3-1230209",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-3-2026-IGP-1",
-      "entidad": "INSTITUTO GEOFISICO DEL PERU",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1230209",
-      "monto": 74200.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ADQUISICIÓN DE EQUIPAMIENTO INFORMÁTICO - SOFTWARE PARA MODELO HIDRÁULICO PARA EL PROYECTO ¿ MEJORAMIENTO DEL SERVICIO DEL LABORATORIO NACIONAL DE INSTRUMENTACIÓN GEOFÍSICA PARA LA GENERACIÓN DE INFORMACIÓN BASE EN GESTIÓN DE RIESGO DE DESASTRES CAUSADOS POR SISMOS, TSUNAMIS, FALLAS ACTIVAS Y GEODIN",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=730903de-05b7-4be9-9493-f6ba4b1d5b43"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1230353",
       "procCategory": "Servicios",
       "humenTags": [],
@@ -6937,22 +6761,6 @@
       "dueDate": null,
       "objeto": "CONTRATACIÓN DE DEFENSA Y ASESORIA LEGAL OTORGADA POR RESOLUCIÓN N° 000020-2026-DP/SSG",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=b67d8d99-1620-45a7-9e5d-b3faf7f9cd4b"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1230655",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-3-2026-RE-1",
-      "entidad": "MINISTERIO DE RELACIONES EXTERIORES",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1230655",
-      "monto": 226800.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "CONTRATACIÓN DEL SERVICIO DE ARRENDAMIENTO DE LA RESIDENCIA PARA EL DIRECTOR DE LA DIRECCIÓN DESCONCENTRADA EN TRUJILLO DEL MINISTERIO DE RELACIONES EXTERIORES",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=b9a456c4-c6f6-4a64-b34b-242df24502c5"
     },
     {
       "id": "ocds-dgv273-seacev3-1230757",
@@ -7097,22 +6905,6 @@
       "dueDate": null,
       "objeto": "SERVICIO DE ALQUILER DE CASA PARA EL HOGAR PROTEGIDO SEÑOR DE BURGOS DE LA RED DE SALUD HUANUCO",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=5796f863-c460-4f2a-8d57-d4903405e7c4"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1231699",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-5-2026-OEC-MDCLR-1",
-      "entidad": "MUNICIPALIDAD DISTRITAL DE CARMEN DE LA LEGUA REYNOSO",
-      "region": "CALLAO",
-      "tipoProc": "Contratación Directa",
-      "code": "1231699",
-      "monto": 248421.45,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ADQUISICION DE INSUMOS ALIMENTARIOS PARA EL PROGRAMA VASO DE LECHE (LECHE EVAPORADA ENTERA Y HOJUELA DE AVENA CON CEREALES PRECOCIDOS CON MINERALES Y VITAMINAS) DE LA MUNICIPALIDAD DISTRITAL DE CARMEN DE LA LEGUA REYNOSO",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=8ea38cef-ae7e-4b7d-8b81-ba5b016bd830"
     },
     {
       "id": "ocds-dgv273-seacev3-1231743",
@@ -7403,22 +7195,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=47ec762a-c9d6-42ce-aabb-77cb5244da99"
     },
     {
-      "id": "ocds-dgv273-seacev3-1232952",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-1-2026-OC-PERPG/GRM-1",
-      "entidad": "GOBIERNO REGIONAL DE MOQUEGUA - PROYECTO ESPECIAL REGIONAL PASTO GRANDE",
-      "region": "MARISCAL NIETO",
-      "tipoProc": "Contratación Directa",
-      "code": "1232952",
-      "monto": 79547.25,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ADQUSICION DE TRES (3) KITS DE ELASTOMEROS MARCA BERMAD PARA EL COMPONENTE: PUESTA EN FUNCIONAMIENTO DE LA LINEA DE CONDUCCION JAGUAY RINCINADA A RESERVORIO LOMAS DE ILO (63.29) DISTRITO DE MOQUEGUA E ILO, PROVINCIA MARISCAL NIETO E ILO, REGION MOQUEGUA.",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=cd436304-73da-4dba-a17f-e841f5b2cabf"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1232963",
       "procCategory": "Bienes",
       "humenTags": [],
@@ -7659,22 +7435,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=b9bb756a-0870-4e1a-b6f5-bd1df4e8ff44"
     },
     {
-      "id": "ocds-dgv273-seacev3-1233775",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "ABR-PROC-43-2026-OFP / PETROPERU-1",
-      "entidad": "PETROLEOS DEL PERU S.A.",
-      "region": "LIMA",
-      "tipoProc": "Adjudicación Abreviada",
-      "code": "1233775",
-      "monto": 138600.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE TRANSPORTE TERRESTRE DE TURBO A1 DE REFINERÍA LA PAMPILLA HASTA PLANTA AEROPUERTO CUSCO",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=622cb357-9d82-417b-a897-687496bf5a7a"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1233796",
       "procCategory": "Servicios",
       "humenTags": [],
@@ -7883,22 +7643,6 @@
       "dueDate": null,
       "objeto": "ADQUISICIÓN DE COMBUSTIBLE DIESEL B5-S50, GASOLINA 95 OCT., PARA LA EJECUCIÓN DE LA OBRA IOARR: ¿MEJORAMIENTO Y AMPLIACION DEL SERVICIO DE TRANSITABILIDAD VIAL INTERURBANA EN EL CAMINO VECINAL DEL CENTRO POBLADO ONGÓN Y DE CENTRO POBLADO PUENTE PIEDRA DISTRITO DE ONGÓN DE LA PROVINCIA DE PATAZ DEL D",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=05bef0dd-09cf-40d5-b700-8eb9c645b024"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1234464",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-2-2026-INPE/U.E.001-1",
-      "entidad": "INSTITUTO NACIONAL PENITENCIARIO",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1234464",
-      "monto": 390000.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "CONTRATACIÓN DEL SERVICIO DE ARRENDAMIENTO DE UN (01) INMUEBLE PARA LAS DIVERSAS AREAS DE LA UNIDAD DE RECURSOS HUMANOS EL INPE",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=5041bd77-c3ad-40ad-b9a4-1c5a9b9fab87"
     },
     {
       "id": "ocds-dgv273-seacev3-1234476",
@@ -8237,22 +7981,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=e25cb462-1b31-47cb-bb29-92aebfb3e391"
     },
     {
-      "id": "ocds-dgv273-seacev3-1235403",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-7-2026-SENAMHI-1",
-      "entidad": "SERVICIO NACIONAL DE METEOROLOGIA E HIDROLOGIA",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1235403",
-      "monto": 82270.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ADQUISICION DE ANTENA MONO FRECUENCIA GPS/DGPS, GLONASS BEIDOU, GALILEO PARA ADCP M9 SONTEK",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=2b82a456-c1ef-41e8-be9b-f699c1564dd5"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1235747",
       "procCategory": "Bienes",
       "humenTags": [],
@@ -8347,38 +8075,6 @@
       "dueDate": null,
       "objeto": "CONTRATACIÓN DE LA EJECUCIÓN DE LA OBRA: \"RENOVACIÓN DE PUENTE; EN EL(LA) CARRETERA COCHAMAL ¿ SECTOR RÍOS (PUENTE PANTANAL), DISTRITO DE COCHAMAL, PROVINCIA RODRÍGUEZ DE MENDOZA, DEPARTAMENTO AMAZONAS¿, con CUI N° 2680294",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=6ff53022-120e-4213-b353-b777d07603b4"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1235938",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-13-2026-MTC/10-1",
-      "entidad": "MINISTERIO DE TRANSPORTES Y COMUNICACIONES",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1235938",
-      "monto": 387571.2,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE MANTENIMIENTO INTEGRAL DE ASCENSORES MARCA SCHINDLER DE LA SEDE CENTRAL DEL MINISTERIO DE TRANSPORTES Y COMUNICACIONES",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=61d12938-c552-4601-9b95-307a62136d8e"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1235957",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-8-2026-GERESA/LL-1",
-      "entidad": "GOBIERNO REGIONAL DE LA LIBERTAD - DIRECCIÓN REGIONAL DE SALUD LA LIBERTAD",
-      "region": "TRUJILLO",
-      "tipoProc": "Contratación Directa",
-      "code": "1235957",
-      "monto": 966961.57,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE MANTENIMIENTO DE LA INFRAESTRUCTURA Y ADECUACIÓN DE LOS AMBIENTES DEL CENTRO DE SALUD GUADALUPITO I-3, RED INTEGRADA DE SALUD VIRU",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=451b7baa-27bc-426b-9344-3075de1fd0ad"
     },
     {
       "id": "ocds-dgv273-seacev3-1236023",
@@ -8525,22 +8221,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=902ee328-4807-42b8-8cdc-c98e5651fbcf"
     },
     {
-      "id": "ocds-dgv273-seacev3-1236220",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-9-2026-GERESA/LL-1",
-      "entidad": "GOBIERNO REGIONAL DE LA LIBERTAD - DIRECCIÓN REGIONAL DE SALUD LA LIBERTAD",
-      "region": "TRUJILLO",
-      "tipoProc": "Contratación Directa",
-      "code": "1236220",
-      "monto": 2458615.04,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE MANTENIMIENTO INTEGRAL DE LA INFRAESTRUCTURA DEL PUESTO DE SALUD CHICLIN DISTRITO DE CHICAMA PROVINCIA DE ASCOPE DEPARTAMENTO DE LA LIBERTAD",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=0834144b-6cd5-4aec-8a30-769df6fd877a"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1236233",
       "procCategory": "Servicios",
       "humenTags": [],
@@ -8619,22 +8299,6 @@
       "dueDate": null,
       "objeto": "ADQUISICIÓN DE ENZIMA TRANSCRIPTASA REVERSA/TAQ ADN POLIMERASA EN UN PASO X 500 DETERMINACIONES",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=79979a10-9e8f-45d6-9182-6d64d9582de9"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1236457",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-8-2026-VIVIENDA-OGA-UE-1",
-      "entidad": "MINISTERIO DE VIVIENDA, CONSTRUCCIÓN Y SANEAMIENTO - Administración General",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1236457",
-      "monto": 137500.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE ARRENDAMIENTO DE INMUEBLE PARA EL FUNCIONAMIENTO DEL CENTRO DE ATENCIÓN AL CIUDADANO DE CAJAMARCA",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=2c953161-72e4-4d99-a8bd-3c680e948f90"
     },
     {
       "id": "ocds-dgv273-seacev3-1236479",
@@ -8717,22 +8381,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=4623af84-0f50-486f-9cd3-54fb15dc1d46"
     },
     {
-      "id": "ocds-dgv273-seacev3-1236579",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-10-2026-BCRPLIM-1",
-      "entidad": "BANCO CENTRAL DE RESERVA DEL PERÚ",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1236579",
-      "monto": 106787.42,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "Contratación de la renovación del soporte, mantenimiento y actualización de las licencias ORACLE de la base de datos centralizada y el Centro Externo de Respaldo (CER) de Piura",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=a186ea67-fa5a-4591-a143-20d22decb865"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1236617",
       "procCategory": "Bienes",
       "humenTags": [],
@@ -8779,22 +8427,6 @@
       "dueDate": null,
       "objeto": "SERVICIO DE ALIMENTACIÓN PARA PACIENTES Y PERSONAL DE SALUD DEL HOSPITAL SANTA ROSA PARA UN PERIODO DE 60 DÍAS POR DESABASTECIMIENTO",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=4f974dd5-ffd6-4486-91cb-ea10ecdd2e30"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1236717",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-9-2026-UNTRM/E-1",
-      "entidad": "UNIVERSIDAD NACIONAL TORIBIO RODRIGUEZ DE MENDOZA DE AMAZONAS",
-      "region": "CHACHAPOYAS",
-      "tipoProc": "Contratación Directa",
-      "code": "1236717",
-      "monto": 95000.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ADQUISICIÓN DE UN (01) EQUIPO CON SISTEMA AVANZADO PARA ANÁLISIS CUANTITATIVO DEL ANDAR DEL CABALLO PARA EL PROYECTO ¿INTEGRANDO LA GENÓMICA, LOT Y DATA MINING PARA LA CARACTERIZACIÓN DEL ANDAR DEL CABALLO PERUANO DE PAGO¿ EN EL MARCO DEL CONTRATO N°PE501096382-2025.",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=ab354c2e-7cfa-4514-aad6-03e618c90393"
     },
     {
       "id": "ocds-dgv273-seacev3-1236737",
@@ -9053,22 +8685,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=87193e03-ddba-4a3c-9a21-4b2ce80ff052"
     },
     {
-      "id": "ocds-dgv273-seacev3-1237032",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-1-2026-HRDT-1",
-      "entidad": "GOBIERNO REGIONAL DE LA LIBERTAD - HOSPITAL REGIONAL DOCENTE DE TRUJILLO",
-      "region": "TRUJILLO",
-      "tipoProc": "Contratación Directa",
-      "code": "1237032",
-      "monto": 300300.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "¿SUMINISTRO DE REACTIVOS PARA TAMIZAJE DE DONANTES DE SANGRE PARA 3 MESES, POR DESABASTECIMIENTO CON EQUIPO EN CESION DE USO¿",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=d8fafe9b-82d1-4f78-b7cf-95f1664abbc1"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1237053",
       "procCategory": "Servicios",
       "humenTags": [],
@@ -9309,22 +8925,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=5c827205-514f-445c-ad15-4f899d3d42fc"
     },
     {
-      "id": "ocds-dgv273-seacev3-1237585",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-1-2026-MDC/DEC-1",
-      "entidad": "MUNICIPALIDAD DISTRITAL DE CANAYRE",
-      "region": "HUANTA",
-      "tipoProc": "Contratación Directa",
-      "code": "1237585",
-      "monto": 99985.04,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "Servicio de alquiler de maquinaria y vehículo para la intervención de la actividad de emergencia: \"Limpieza y descolmatación y conformación de dique con material propio de tramo del cauce del río Canayre por impacto de daños a consecuencia de intensas precipitaciones y declarado en emergencia media",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=3e487a41-2579-4c7f-a1e0-e722db17e696"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1237653",
       "procCategory": "Servicios",
       "humenTags": [],
@@ -9421,22 +9021,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=ebc7040c-4c16-4d82-adc2-6e020346508a"
     },
     {
-      "id": "ocds-dgv273-seacev3-1237753",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-5-2026-MPHCO/DEC-1",
-      "entidad": "MUNICIPALIDAD PROVINCIAL DE HUANUCO",
-      "region": "HUANUCO",
-      "tipoProc": "Contratación Directa",
-      "code": "1237753",
-      "monto": 45500.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE ALQUILER DE UN INMUEBLE PARA EL FUNCIONAMIENTO DEL ALMACEN DEL PROGRAMA DE COMPLEMENTACIÓN ALIMENTARIA DE LA MUNICIPALIDAD PROVINCIAL DE HUÁNUCO,",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=333f70fa-94bd-4d9b-9885-8c4fb07b7097"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1237826",
       "procCategory": "Servicios",
       "humenTags": [],
@@ -9451,22 +9035,6 @@
       "dueDate": null,
       "objeto": "CONTRATACIÓN DEL SERVICIO DE MANTENIMIENTO CORRECTIVO DE UN (01) GENERADOR DE 10.5kV DEL GRUPO WARTSILA Nº 5 DE LA CENTRAL TERMICA DE IQUITOS.",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=15a14105-8c66-4641-971c-718855348959"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1237832",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-2-2026-GRJ-DRA/DEC-1",
-      "entidad": "GOBIERNO REGIONAL DE JUNIN-AGRICULTURA",
-      "region": "HUANCAYO",
-      "tipoProc": "Contratación Directa",
-      "code": "1237832",
-      "monto": 129680.5,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ADQUISICIÓN DE FERTILIZANTE FOLIAR (AMINOÁCIDO + EXTRACTOS VEGETALES + MICROELEMENTOS) PARA LA ATENCIÓN A LOS AGRICULTORES DE LA REGIÓN JUNÍN EN MARCO AL DECRETO SUPREMO N°097-2026-PCM ¿ PELIGRO INMINENTE ANTE INTENSAS PRECIPITACIONES PLUVIALES ASOCIADAS AL FENÓMENO EL NIÑO 2026 ¿ 2027",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=9dbb1c5c-7196-4288-a7fe-dca290ce0317"
     },
     {
       "id": "ocds-dgv273-seacev3-1237859",
@@ -9579,22 +9147,6 @@
       "dueDate": null,
       "objeto": "EJECUCIÓN DE LA OBRA DENOMINADA: \"CONSTRUCCIÓN DE MURO DE CONTENCIÓN, CERCO PERIMÉTRICO Y ALMACÉN; EN EL (LA) I.E. 209 EN LA LOCALIDAD COLLONCE, DISTRITO DE OCUMAL, PROVINCIA LUYA, DEPARTAMENTO AMAZONAS\" CON CUI Nº2693539",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=27081236-eb69-4400-804e-09d34e79e9b9"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1221317",
-      "procCategory": "Obras",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-1-2026-MDA/OEC-1",
-      "entidad": "MUNICIPALIDAD DISTRITAL DE AWAJUN",
-      "region": "RIOJA",
-      "tipoProc": "Contratación Directa",
-      "code": "1221317",
-      "monto": 793632.36,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "CONTRATACIÓN DE EJECUCIÓN DE OBRA: ¿REPARACIÓN DE AMBIENTE DE PREPARACIÓN Y EXPENDIO DE ALIMENTOS, SALA DE USOS MÚLTIPLES Y ALMACÉN O DEPÓSITO; EN EL(LA) I.E. 292 EN LA LOCALIDAD SHAMPUYACU, DISTRITO DE AWAJÚN, PROVINCIA RIOJA, DEPARTAMENTO SAN MARTÍN¿, CUI 2688967.",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=f670da0d-d981-4d53-ab4d-9935e64ef705"
     },
     {
       "id": "ocds-dgv273-seacev3-1222110",
@@ -10013,22 +9565,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=be56918e-699f-47f8-a92f-5b47a0c1110b"
     },
     {
-      "id": "ocds-dgv273-seacev3-1226181",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-9-2026-HONADOMANI-SB-1",
-      "entidad": "HOSPITAL NACIONAL DOCENTE MADRE NIÑO - SAN BARTOLOME",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1226181",
-      "monto": 1027800.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ADQUISICIÓN DE DETERGENTE DESINFECTANTE PARA SUPERFICIES X 750 ML PARA UN ABASTECIMIENTO DE 24 MESES.\\nEXPEDIENTE: 01080-2026.",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=77fe4517-977b-464d-a814-91d5c3ea7695"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1226751",
       "procCategory": "Obras",
       "humenTags": [],
@@ -10139,38 +9675,6 @@
       "dueDate": null,
       "objeto": "CONTRATACIÓN DEL SERVICIO ESPECIALIZADO PARA LA IMPLEMENTACION DE LA ARMONIZACION DE LAS NIIF EN EL SISTEMA TRADERLIVE PARA EL FONDO MIVIVIENDA S.A.  EN CUMPLIMIENTO DE LO DISPUESTO EN LAS RESOLUCIONES SBS N° 02664-2025 Y N° 02665-2025, EMITIDAS POR LA SUPERINTENDENCIA DE BANCA, SEGUROS Y AFP (SBS)",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=88d4fd40-4f08-4810-a9e5-06eb4bc117dc"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1227851",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-1-2026-MDM/DEC-1",
-      "entidad": "MUNICIPALIDAD DISTRITAL DE MONZON",
-      "region": "HUAMALIES",
-      "tipoProc": "Contratación Directa",
-      "code": "1227851",
-      "monto": 85327.2,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "CONTRATACIÓN DE SERVICIO DE MANTENIMIENTO DE LAS CALLES, AVENIDAS, PASAJES CON MAQUINARIA PESADA EN EL DISTRITO DE MONZÓN ANTE LOS FENÓMENOS NATURALES CLIMATOLÓGICOS",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=e9f6f198-0563-464b-896b-73032993810e"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1227847",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-2-2026-UEHAL-1",
-      "entidad": "GOBIERNO REGIONAL DE CUSCO - UNIDAD EJECUTORA HOSPITAL ANTONIO LORENA",
-      "region": "CUSCO",
-      "tipoProc": "Contratación Directa",
-      "code": "1227847",
-      "monto": 788894.75,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "\"CONTRATACION DE INSUMOS DE DIALISIS PERITONEAL PARA PACIENTES CONTINUADORES DEL SISTEMA ULTRABAG\"",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=77ec35b1-8804-4887-a5ea-b90753343776"
     },
     {
       "id": "ocds-dgv273-seacev3-1228075",
@@ -10381,22 +9885,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=aeafa32b-0537-4d7b-8c5a-59c9321eef3b"
     },
     {
-      "id": "ocds-dgv273-seacev3-1229331",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-22-2026-MP-FN-1",
-      "entidad": "MINISTERIO PUBLICO",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1229331",
-      "monto": 223200.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE ARRENDAMIENTO DE INMUEBLE, PARA EL FUNCIONAMIENTO DE LA FISCALÍA PROVINCIAL CORPORATIVA ESPECIALIZADO EN DELITOS DE LESIONES Y AGRESIONES EN CONTRA DE LAS MUJERES E INTEGRANTES DEL GRUPO FAMILIAR DE MARISCAL NIETO DEL DISTRITO FISCAL DE MOQUEGUA",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=5d703467-1488-40b2-b3cb-a15c92a35619"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1229343",
       "procCategory": "Bienes",
       "humenTags": [],
@@ -10509,22 +9997,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=d476ed77-70f3-426a-b312-3a03f35d6f0f"
     },
     {
-      "id": "ocds-dgv273-seacev3-1229900",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-3-2026-DEC/MDM-1",
-      "entidad": "MUNICIPALIDAD DISTRITAL DE MACHUPICCHU",
-      "region": "URUBAMBA",
-      "tipoProc": "Contratación Directa",
-      "code": "1229900",
-      "monto": 72000.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "CONTRATACIÓN DE SERVICIO DE ALQUILER DE TERRENO PARA PUNTO DE TRANSFERENCIA DE RESIDUOS SOLIDO",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=c0aa1429-c066-4ec6-94e4-ab4c9011243a"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1229928",
       "procCategory": "Servicios",
       "humenTags": [],
@@ -10555,22 +10027,6 @@
       "dueDate": null,
       "objeto": "CONTRATACION DE LA EJECUCIÓN DEL SALDO DE OBRA DEL PROYECTO DENOMINADO: ¿MEJORAMIENTO Y AMPLIACION DE LOS SERVICIOS DE SALUD DEL ESTABLECIMIENTO DE SALUD MARITZA CAMPOS DIAZ, DEL DISTRITO DE CERRO COLORADO, PROVINCIA AREQUIPA ¿ REGION AREQUIPA¿ ¿ CUI: 2322531",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=bbb5fe7d-210e-4e00-831f-71ae9bba0d77"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1186695",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-2-2026-MTC/20-1",
-      "entidad": "MTC-PROYECTO ESPECIAL DE INFRAESTRUCTURA DE TRANSPORTE NACIONAL (PROVIAS NACIONAL)",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1186695",
-      "monto": 13230119.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE RECUPERACIÓN DE LA TRANSITABILIDAD EN LOS SECTORES:QUEBRADA SUCHIMAN Y PUENTE COMA",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=aaeade3e-0dd5-4e6f-8b80-2d2dfe828e03"
     },
     {
       "id": "ocds-dgv273-seacev3-1190339",
@@ -10765,22 +10221,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=6d539c7c-a625-473d-bc18-42c23f206a0f"
     },
     {
-      "id": "ocds-dgv273-seacev3-1217490",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-2-2026-GERESA/LL-1",
-      "entidad": "GOBIERNO REGIONAL DE LA LIBERTAD - DIRECCIÓN REGIONAL DE SALUD LA LIBERTAD",
-      "region": "TRUJILLO",
-      "tipoProc": "Contratación Directa",
-      "code": "1217490",
-      "monto": 258256.48,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE MANTENIMIENTO Y ADECUACIÓN DE LA INFRAESTRUCTURA DEL PUESTO DE SALUD LONGOTEA I-2, DISTRITO DE LONGOTEA, PROVINCIA DE BOLIVAR, DEPARTAMENTO LA LIBERTAD",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=a3a19c6d-71be-49fc-b2ea-3abad3ed3788"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1218555",
       "procCategory": "Bienes",
       "humenTags": [],
@@ -10891,22 +10331,6 @@
       "dueDate": null,
       "objeto": "SERVICIO DE SUSCRIPCION DE BASE DE DATOS CIENTIFICA Y ACCESO A PLATAFORMA DE PUBLICACION ACADEMICAS",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=504165c8-821a-457c-8785-8cfcba5985fb"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1220779",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-7-2026-CORPAC S.A.-1",
-      "entidad": "CORPORACION PERUANA DE AEROPUERTOS Y AVIACION COMERCIAL S.A.- CORPAC",
-      "region": "CALLAO",
-      "tipoProc": "Contratación Directa",
-      "code": "1220779",
-      "monto": 10042286.46,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE MANTENIMIENTO DEL ÁREA DE MOVIMIENTO DEL AERÓDROMO DE PUERTO ESPERANZA",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=aa2bf504-7fe5-4fee-9e30-3c007c38f25f"
     },
     {
       "id": "ocds-dgv273-seacev3-1220867",
@@ -11565,38 +10989,6 @@
       "dueDate": null,
       "objeto": "EJECUCIÓN DE LA OBRA DEL SALDO DE OBRA DEL PROYECTO: \"AMPLIACIÓN DE LA CAPACIDAD DE ALBERGUE Y CONSTRUCCIÓN DE ÁREAS COMPLEMENTARIAS EN EL COMPLEJO PENITENCIARIO DE AREQUIPA\" CUI N° 2158194 - ETAPA I (Requerimiento con Sistema de Entrega de Solo Construcción)",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=56f145f6-0844-4949-ac1c-350363fcb9c7"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1179415",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-3-2025-MINEDU/UE 026-1",
-      "entidad": "PROGRAMA EDUCACION BASICA PARA TODOS UE 026",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1179415",
-      "monto": 1572000.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE CONECTIVIDAD A INTERNET PARA 20 LOCALES EDUCATIVOS EN ZONAS RURALES EN LA REGIÓN LORETO",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=0fab3138-43d2-4eba-8d8c-2aa23e087688"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1179625",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-59-2025-MTC/20-1",
-      "entidad": "MTC-PROYECTO ESPECIAL DE INFRAESTRUCTURA DE TRANSPORTE NACIONAL (PROVIAS NACIONAL)",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1179625",
-      "monto": 80000.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE DEFENSA LEGAL PARA EL SEÑOR ESTEBAN SAMUEL DURAN AGUILAR CONFORME A LA RESOLUCIÓN DIRECTORAL N° 1081-2025-MTC/20",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=eee59402-8e0c-45ab-b524-428851990abe"
     },
     {
       "id": "ocds-dgv273-seacev3-1179627",
@@ -12431,22 +11823,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=2f9da7db-221e-428f-9c79-a95ddf59cd3f"
     },
     {
-      "id": "ocds-dgv273-seacev3-358719",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "DIRECTA-PROC-3-2017-EP/UO 0732-1",
-      "entidad": "EJERCITO PERUANO",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "358719",
-      "monto": 48600.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ADQUISICIÓN DE LENTES PROTECTORES",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=b8ff1a37-cdc0-40e8-9c91-0278e925bf86"
-    },
-    {
       "id": "ocds-dgv273-seacev3-358741",
       "procCategory": "Bienes",
       "humenTags": [],
@@ -12749,22 +12125,6 @@
       "dueDate": null,
       "objeto": "SERVICIO DE ALQUILER DE LOCAL PARA LA IMPLEMENTACIÓN DE UN NUEVO CENTRO DE SALUD MENTAL COMUNITARIO EN EL DISTRITO DE VILLA EL SALVADOR",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=aee77cde-8180-46f9-8cb4-e0a7b2b04ea1"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1121084",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-6-2025-DIRIS LS-1",
-      "entidad": "UNIDAD EJECUTORA DEL PLIEGO 011 MINISTERIO DE SALUD-DIRECCION DE REDES INTEGRADAS DE SALUD LIMA SUR",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1121084",
-      "monto": 78000.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE ALQUILER DE LOCAL PARA LA IMPLEMENTACIÓN DE UN NUEVO CENTRO DE SALUD MENTAL COMUNITARIO EN EL DISTRITO DE VILLA MARIA DEL TRIUNFO",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=ed3598c7-bad5-465e-ba52-ac607f2c5375"
     },
     {
       "id": "ocds-dgv273-seacev3-351100",
@@ -13599,22 +12959,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=775f9584-f852-400b-813f-e959785d3284"
     },
     {
-      "id": "ocds-dgv273-seacev3-1141903",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-1-2025-DEC-MDP-1",
-      "entidad": "MUNICIPALIDAD DISTRITAL DE PUNCHANA",
-      "region": "MAYNAS",
-      "tipoProc": "Contratación Directa",
-      "code": "1141903",
-      "monto": 1768425.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "CONTRATACIÓN DEL SERVICIO DE RELLENO SANITARIO PARA LA DISPOSICIÓN FINAL DE RESIDUOS SÓLIDOS EN EL DISTRITO DE PUNCHANA PARA EL PERÍODO 2025-2026.",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=78d226f4-acda-4f84-a6a0-45452e7e250f"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1143790",
       "procCategory": "Servicios",
       "humenTags": [],
@@ -13967,22 +13311,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=3563e071-eeb7-45e8-900c-b1aaa51ae8e3"
     },
     {
-      "id": "ocds-dgv273-seacev3-1104832",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-PROC-1-2025-PROINVERSION-1",
-      "entidad": "AGENCIA DE PROMOCION DE LA INVERSION PRIVADA - PROINVERSION",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1104832",
-      "monto": 20862174.68,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE ARRENDAMIENTO DE INMUEBLE PARA LA SEDE CENTRAL DE PROINVERSION (INCLUYE PRIMER ACONDICIONAMIENTO)",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=7b43da40-86f1-4b12-8a84-ed206beb57c5"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1106350",
       "procCategory": "Servicios",
       "humenTags": [],
@@ -14077,22 +13405,6 @@
       "dueDate": null,
       "objeto": "CONTRATACIÓN DE SERVICIO DE CONSULTORIA DE OBRA PARA LA SUPERVISION  DE LA EJECUCIÓN DE LA OBRA \"MEJORAMIENTO DE LA CARRETERA ABRALAJAS- NUEVO CHIRIMOTO- LA UNION, DISTRITO DE OMIA, PROVINCIA DE RODRIGUEZ DE MENDOZA ¿ REGION AMAZONAS¿ CON CODIGO UNICO DE INVERSIONES N°2334745.",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=3b9918a0-4e9b-4c01-8497-0434fa0b6b70"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1114053",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-PROC-1-2025-PASLC-1",
-      "entidad": "PROGRAMA AGUA SEGURA PARA LIMA Y CALLAO",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1114053",
-      "monto": 3150000.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "Servicio de Consultoría de Obra para la elaboración del Expediente Técnico del saldo de obra del Proyecto: Sectorización del Sistema de Agua Potable y Alcantarillado de la parte alta de Chorrillos: Matriz Próceres - Chorrillos CUI N 2403504",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=7935425d-a6f2-4b58-914c-e06eaa57fb51"
     },
     {
       "id": "ocds-dgv273-seacev3-5640",
@@ -16661,38 +15973,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=dec6c5d1-774e-40e2-b938-9f44a3ba7926"
     },
     {
-      "id": "ocds-dgv273-seacev3-18070",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "ADS-CLASICO-14-2014-ELECTROPERU-1",
-      "entidad": "EMPRESA DE ELECTRICIDAD DEL PERÚ S.A. - ELECTROPERU",
-      "region": "LIMA",
-      "tipoProc": "Adjudicación Directa Selectiva",
-      "code": "18070",
-      "monto": 30219.8,
-      "moneda": "CHF",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ADQUISICION DE PLANTILLAS CON PERFILES HIDRAULICOS",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=7fda3cfd-05a2-4b90-b5b3-8f04e83112e8"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-18076",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "CP-CLASICO-12-2014-OSINERGMIN-1",
-      "entidad": "ORGANISMO SUPERVISOR DE LA INVERSION EN ENERGIA Y MINERIA",
-      "region": "LIMA",
-      "tipoProc": "Concurso Público",
-      "code": "18076",
-      "monto": 537042.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ESTUDIO DE ANALISIS DE TIEMPOS Y MOVIMIENTOS DE CONEXIONES Y CORTE Y  RECONEXION",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=c06e68df-2cf4-40e1-bfe0-33931c647044"
-    },
-    {
       "id": "ocds-dgv273-seacev3-18085",
       "procCategory": "Bienes",
       "humenTags": [],
@@ -16707,38 +15987,6 @@
       "dueDate": null,
       "objeto": "ADQUISICION DE TELAS Y MATERIAL TEXTIL",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=81004772-daaf-4128-9f47-e9225db44413"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-18092",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "ADP-CLASICO-12-2014-OSINERGMIN-1",
-      "entidad": "ORGANISMO SUPERVISOR DE LA INVERSION EN ENERGIA Y MINERIA",
-      "region": "LIMA",
-      "tipoProc": "Adjudicación Directa Pública",
-      "code": "18092",
-      "monto": 363473.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "CONTRATACION DEL SERVICIO DE ESTUDIO Y MODELAMIENTO DEL RIESGO EN PLANTAS ENVASADORAS",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=496b8f7f-f14a-4e1b-99fb-3e89423d8aae"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-18135",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "LP-CLASICO-5-2014-BN-1",
-      "entidad": "BANCO DE LA NACION",
-      "region": "LIMA",
-      "tipoProc": "Licitación Pública",
-      "code": "18135",
-      "monto": 796794.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "Adquisicion de Material de Merchandising",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=cf8b61d5-e39f-451f-83e4-6c35f68cb4be"
     },
     {
       "id": "ocds-dgv273-seacev3-18165",
@@ -23819,22 +23067,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=072b573e-c4af-4048-b2bb-164b28187966"
     },
     {
-      "id": "ocds-dgv273-seacev3-189709",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "EXO-PROC-15-2015-OSINERGMIN",
-      "entidad": "ORGANISMO SUPERVISOR DE LA INVERSION EN ENERGIA Y MINERIA",
-      "region": "LIMA",
-      "tipoProc": "Exoneración",
-      "code": "189709",
-      "monto": 633600.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "CONTRATACION DEL SERVICIO DE ARRENDAMIENTO DE LOCAL EN LIMA NORTE",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=10be92c7-cf75-4bfa-baa2-cab7487f459f"
-    },
-    {
       "id": "ocds-dgv273-seacev3-190515",
       "procCategory": "Bienes",
       "humenTags": [],
@@ -24077,22 +23309,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=e41301f9-d334-40e2-bf35-4b51d37ebc60"
     },
     {
-      "id": "ocds-dgv273-seacev3-192324",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "EXO-PROC-27-2015-MINAGRI-PSI",
-      "entidad": "PROGRAMA SUBSECTORIAL DE IRRIGACIONES - PSI",
-      "region": "LIMA",
-      "tipoProc": "Exoneración",
-      "code": "192324",
-      "monto": 1065032.32,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ACTIVIDAD DE PREVENCIàN PICHI 002, SEGéN FICHA TECNICA REFORZADA N 102",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=a10bc7e0-6fee-4344-9078-f2c52964748b"
-    },
-    {
       "id": "ocds-dgv273-seacev3-192429",
       "procCategory": "Bienes",
       "humenTags": [],
@@ -24123,22 +23339,6 @@
       "dueDate": null,
       "objeto": "ADQUISICIÓN  DE MEDICAMENTOS  FUERA DEL PUE(UBIDECARENONA LIPOSOMAL 500MG/ML)",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=bd52c90b-361e-42c0-9b18-85fd85370c2d"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-192545",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "EXO-PROC-5-2015-IAFAS-EP",
-      "entidad": "IAFAS DEL EJERCITO DEL PERU (FOSPEME)",
-      "region": "LIMA",
-      "tipoProc": "Exoneración",
-      "code": "192545",
-      "monto": 439171.2,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ADQUISICION  DE  MEDICAMENTOS DEL LISTADO ESPECIAL (ACETATO DE ABIRATERONA 250 MG)",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=853307a0-4a51-443c-9578-eba7d5ecebc8"
     },
     {
       "id": "ocds-dgv273-seacev3-192673",
@@ -27551,22 +26751,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=4939ac2c-dcb3-49dd-a04f-d3df83032d02"
     },
     {
-      "id": "ocds-dgv273-seacev3-922222",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-PROC-3-2023-MML-OGA-OL-1",
-      "entidad": "MUNICIPALIDAD METROPOLITANA DE LIMA",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "922222",
-      "monto": 5760000.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE ARRENDAMIENTO DE INMUEBLE PARA EL FUNCIONAMIENTO DE LAS OFICINAS DE LA GERENCIA DE DESARROLLO URBANO",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=dc9a8dce-f50b-42b9-8e3a-be5217054a45"
-    },
-    {
       "id": "ocds-dgv273-seacev3-923266",
       "procCategory": "Servicios",
       "humenTags": [],
@@ -27903,22 +27087,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=b04753a3-17be-49aa-87e3-2965986ea8ad"
     },
     {
-      "id": "ocds-dgv273-seacev3-998612",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-PROC-1-2024-FUNC-ONPE-1",
-      "entidad": "OFICINA NACIONAL DE PROCESOS ELECTORALES",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "998612",
-      "monto": 72000.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE ALQUILER DE LOCAL PARA LA OFICINA REGIONAL DE COORDINACION DE HUANCAVELICA FUNCIONAMIENTO 2024",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=7e214b10-758d-46e1-ad83-598808a82c7d"
-    },
-    {
       "id": "ocds-dgv273-seacev3-901523",
       "procCategory": "Servicios",
       "humenTags": [],
@@ -28127,22 +27295,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=01cdcdfe-1baa-4fd9-b50a-fe11ee8798ba"
     },
     {
-      "id": "ocds-dgv273-seacev3-1005814",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-PROC-1-2024-SUNARP-ZRVII/UA-1",
-      "entidad": "ZONA REGISTRAL N° VII SEDE HUARAZ",
-      "region": "HUARAZ",
-      "tipoProc": "Contratación Directa",
-      "code": "1005814",
-      "monto": 926676.76,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE TRASLADO Y CUSTODIA DE VALORES PARA LAS OFICINAS REGISTRALES DE HUARAZ, CHIMBOTE, NUEVO CHIMBOTE Y OFICINA DESCONCENTRADA DEL CENTRO CULTURAL DE LA  ZONA REGISTRAL N° VII - SEDE HUARAZ",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=e4810843-a345-4f75-bc39-fcc2ebf682b4"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1009927",
       "procCategory": "Bienes",
       "humenTags": [],
@@ -28207,22 +27359,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=5445e881-3e80-4898-870c-3bb67f45e783"
     },
     {
-      "id": "ocds-dgv273-seacev3-1011765",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-PROC-7-2024-MPFN-1",
-      "entidad": "MINISTERIO PUBLICO",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1011765",
-      "monto": 234000.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE ARRENDAMIENTO DE INMUEBLE PARA EL FUNCIONAMIENTO DE LA SEDE DE LA 1° Y 2° FISCALIA PROVINCIAL DE FAMILIA DE SULLANA, OFICINA DE ADMINISTRACIÓN Y OTRAS ÁREAS DEL DISTRITO FISCAL DE SULLANA",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=7522c11f-5e53-4717-9bd8-08ec735d5cd1"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1012557",
       "procCategory": "Obras",
       "humenTags": [],
@@ -28285,22 +27421,6 @@
       "dueDate": null,
       "objeto": "Contratación de Bienes para la Adquisición de Tuberías y Accesorios para ejecutar el proyecto: REPARACION DE LINEA DE CONDUCCION; EN EL(LA) SECTOR QUERO, DE LA EPS MUNICIPAL MANTARO S.A. DISTRITO DE MOLINOS, PROVINCIA DE JAUJA, DEPARTAMENTO DE JUNIN.",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=dfa4a2d0-1855-4315-9f98-384f8e06d119"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1015255",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "DIRECTA-PROC-157-2023-MIDAGRI-AGRORUR-1",
-      "entidad": "PROGRAMA DE DESARROLLO PRODUCTIVO AGRARIO RURAL - AGRO RURAL",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1015255",
-      "monto": 464852.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ADQUISICION DE SEMILLAS DE HORTALIZAS - MODULOS PARA LA PROTECCION DE CULTIVOS FOTOTOLDOS - ITEM 2 y 3 - EN EL MARCO DEL DU Nº 030-2023",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=bd71d9ad-163b-4a4b-af56-cdc8ee261a6a"
     },
     {
       "id": "ocds-dgv273-seacev3-1015786",
@@ -28413,22 +27533,6 @@
       "dueDate": null,
       "objeto": "EJECUCION DE ACTIVIDADES DE INTERVENCION INMEDIATA EN EL DISTRITO DE CHAGLLA PROVINCIA DE PACHITEA , DEPARTAMENTO  DE HUANUCO; EN EL MARCO DEL DECRETO SUPREMO QUE AUTORIZA TRANSFERENCIA DE PARTIDAS EN EL PRESUPUESTO DEL SECTOR PÚBLICO PARA EL AÑO FISCAL 2024 A FAVOR DE DIVERSOS GOBIERNOS LOCALES - DECRETO SUPREMO Nº 062-2024-EF.",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=a8f8036a-4690-4573-9de7-4fc738bf8936"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1020053",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "ABR-PROC-104-2022-OFP / PETROPERU-1",
-      "entidad": "PETROLEOS DEL PERU S.A.",
-      "region": "LIMA",
-      "tipoProc": "Adjudicación Abreviada",
-      "code": "1020053",
-      "monto": 507540.66,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SUMINISTRO E INSTALACION DE REGULADORES DE TENSION MONOFASICO EN MEDIA TENSION PARA EL SISTEMA DE\\nUTILIZACION DE LA PLANTA DE VENTAS TALARA",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=f1e19b26-8aec-4891-8212-056477672629"
     },
     {
       "id": "ocds-dgv273-seacev3-1020713",
@@ -34713,22 +33817,6 @@
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=3c7b04e7-4b1e-4a64-860b-9a21eadc8215"
     },
     {
-      "id": "ocds-dgv273-seacev3-1021930",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "ABR-PROC-55-2024-OTL / PETROPERU-1",
-      "entidad": "PETROLEOS DEL PERU S.A.",
-      "region": "LIMA",
-      "tipoProc": "Adjudicación Abreviada",
-      "code": "1021930",
-      "monto": 9170071.7,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE MANTENIMIENTO MAYOR DEL TREN DE REACCIÓN EN LOS EQUIPOS FCK-C-101, FCK-R-101, FCK-R-102, FCK-C-201, FCK-R-103, FCK-E-102, FCK-E-103, FCK-D-301 Y LÍNEAS DE TRANSFERENCIA",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=0d122cea-214c-423c-8a2f-9213b58fba58"
-    },
-    {
       "id": "ocds-dgv273-seacev3-1022424",
       "procCategory": "Servicios",
       "humenTags": [],
@@ -34823,22 +33911,6 @@
       "dueDate": null,
       "objeto": "SERVICIO DE RECARGA Y ENTREGA POR BALONES GLP PARA LOS POBLADORES DE LAS JUNTAS VECINALES: ASENTAMIENTO HUMANO VILLA HERMOSA, ASENTAMIENTO HUMANO NUEVA VILLA HERMOSA Y URBANIZACIÓN BELCO.",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=7e977bc0-38c8-47c1-b3e4-cbbbfdf19fc6"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1026952",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "DIRECTA-PROC-2-2024-ESSALUD/RAAN-1",
-      "entidad": "SEGURO SOCIAL DE  SALUD",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1026952",
-      "monto": 337573.44,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "ADQUISICIÓN DE PRODUCTOS, RECURSOS E INSUMOS (PRI) DIPAC DE COMPRA LOCAL SISTEMA ANDY DISC, ULTRABBAG, PARA EL HOSPITAL III CHIMBOTE DE LA RAAN DE ESSLAUD, POR UN PERIODO DE TRES (03) MESES",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=0442db01-591f-4d8d-99d5-14e98b1a8a60"
     },
     {
       "id": "ocds-dgv273-seacev3-1027340",
@@ -34999,22 +34071,6 @@
       "dueDate": null,
       "objeto": "SERVICIO DE PUBLICIDAD EN PANELES DEL AIJCH, ADP, CENTROS COMERCIALES Y METRO DE LIMA",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=d89335cb-0141-4977-ac91-c6c41f6353f8"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1029495",
-      "procCategory": "Bienes",
-      "humenTags": [],
-      "title": "DIRECTA-PROC-1-2024-MDM-1",
-      "entidad": "MUNICIPALIDAD DISTRITAL DE MOLLEPATA - ANTA",
-      "region": "ANTA",
-      "tipoProc": "Contratación Directa",
-      "code": "1029495",
-      "monto": 141300.0,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "CONTRATACION  DE ADQUISICION  DE  TUBERIA  HDPE CORRUGADO  PARA EL PROYECTO  MEJORAMIENTO  DEL CONTROL  DE RIESGOS DE GESTION  CONTRA INCENDIOS  Y EMERGENCIA MENORES  EN 16  SECTORES  Y UN CENTRO POBLADO  DEL DISTRITO  DE MOLLEPATA-ANTA-CUSCO.",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=84845161-0daa-4447-bdd0-ca8085831b18"
     },
     {
       "id": "ocds-dgv273-seacev3-1029916",
@@ -37789,22 +36845,6 @@
       "dueDate": null,
       "objeto": "ADQUISICIÓN DE KIT DE EXTRACCIÓN ARN/ADN VIRAL PARA EL CNSP",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=58a3f865-9338-4d91-a602-4cee97a5a645"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1030518",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-PROC-9-2024-PNSR-1",
-      "entidad": "PROGRAMA NACIONAL DE SANEAMIENTO RURAL",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1030518",
-      "monto": 114746.36,
-      "moneda": "PEN",
-      "pubDate": "2026-08-13",
-      "dueDate": null,
-      "objeto": "SERVICIO DE HABILITACION TEMPORAL DE 03 CAPTACIONES, 500 ML DE LINEA DE CONDUCCIÓN Y 03 PASES AÉREOS EN EL DISTRITO DE LUYANDO, PROVINCIA DE LEONCIO PRADO Y DEPARTAMENTO DE HUÁNUCO, AFECTADO POR IMPACTO DE DAÑOS A CONSECUENCIA DE INTENSAS PRECIPITACIONES PLUVIALES, EN EL MARCO DEL DECRETO SUPREMO N° 033-2024-PCM",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=a4c92f3c-3183-40ac-bb35-c4b0c9c668ad"
     },
     {
       "id": "ocds-dgv273-seacev3-1031163",
