@@ -3,3 +3,4 @@
 {"fecha": "2026-08-30T14:46:45Z", "estado": "ok", "filas": 108129, "nivel_usado": "url_en_vivo", "cambio": {"tipo": "sin_cambio", "filas_antes": 108129, "filas_despues": 108129, "diferencia": 0, "diferencia_pct": 0.0}}
 {"fecha": "2026-09-06T13:06:01Z", "estado": "ok", "filas": 108129, "nivel_usado": "url_en_vivo", "cambio": {"tipo": "sin_cambio", "filas_antes": 108129, "filas_despues": 108129, "diferencia": 0, "diferencia_pct": 0.0}}
 {"fecha": "2026-09-13T14:06:41Z", "estado": "ok", "filas": 108129, "nivel_usado": "url_catalogo", "cambio": {"tipo": "sin_cambio", "filas_antes": 108129, "filas_despues": 108129, "diferencia": 0, "diferencia_pct": 0.0}}
+{"fecha": "2026-09-20T13:52:17Z", "estado": "ok", "filas": 108129, "nivel_usado": "url_catalogo", "cambio": {"tipo": "sin_cambio", "filas_antes": 108129, "filas_despues": 108129, "diferencia": 0, "diferencia_pct": 0.0}}
