@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-23T15:14:13+00:00",
+  "generated_at": "2026-09-24T15:36:40+00:00",
   "attribution": "Datos derivados del Registro de Datos Abiertos de Contrataciones (Open Contracting Partnership), a partir de información publicada por el organismo peruano a cargo del SEACE. Licencia CC BY 4.0. Banco de información pública — no requiere afiliación con Humen Solutions para consultarlo.",
   "source_url": "https://data.open-contracting.org/en/publication/135",
-  "total_count": 900,
+  "total_count": 899,
   "humen_counts": {
     "cont": 4,
     "inv": 1,
@@ -5305,22 +5305,6 @@
       "dueDate": null,
       "objeto": "SERVICIO DE HABILITACIÓN, ACONDICIONAMIENTO Y LOGÍSTICA INFORMÁTICA (SHALI) PARA LAS ELECCIONES REGIONALES Y MUNICIPALES 2026 ¿ ERM 2026",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=2314f1bd-f2a2-45b3-8250-fe3ddc408f4d"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1234504",
-      "procCategory": "Servicios",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-4-2026-SEDAPAL-1",
-      "entidad": "SERVICIO DE AGUA POTABLE Y ALCANTARILLADO DE LIMA - SEDAPAL",
-      "region": "LIMA",
-      "tipoProc": "Contratación Directa",
-      "code": "1234504",
-      "monto": 19863952.25,
-      "moneda": "PEN",
-      "pubDate": "2026-08-24",
-      "dueDate": null,
-      "objeto": "SERVICIO DE MANTENIMIENTO PARA LA PRESERVACION DE LOS SISTEMAS SECUNDARIOS DE AGUA POTABLE Y ALCANTARILLADO EN LA GERENCIA DE SERVICIOS SUR - ÍTEM 01 Y 02",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=d79531c3-a66b-43ad-9c7d-85f2a3165e73"
     },
     {
       "id": "ocds-dgv273-seacev3-1234632",
