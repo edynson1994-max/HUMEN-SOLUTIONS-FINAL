@@ -1,19 +1,19 @@
 {
-  "id": "ocds-dgv273-seacev3-1237621-2026-09-03T10:50:00.552620-05:00",
+  "id": "ocds-dgv273-seacev3-1242294-2026-10-03T10:12:07.709099-05:00",
   "tag": [
     "compiled"
   ],
-  "date": "2026-09-03T10:50:00.552607-05:00",
-  "ocid": "ocds-dgv273-seacev3-1237621",
+  "date": "2026-10-03T10:12:07.709087-05:00",
+  "ocid": "ocds-dgv273-seacev3-1242294",
   "buyer": {
-    "id": "PE-CONSUCODE-1182",
-    "name": "MUNICIPALIDAD PROVINCIAL DE CHUPACA"
+    "id": "PE-CONSUCODE-420",
+    "name": "MUNICIPALIDAD DISTRITAL DE YANAHUARA"
   },
   "tender": {
-    "id": "1237621",
+    "id": "1242294",
     "items": [
       {
-        "id": "21356385",
+        "id": "21383584",
         "unit": {
           "id": "36",
           "name": "Servicio",
@@ -27,23 +27,23 @@
           "currency": "PEN",
           "currencyName": "Soles"
         },
-        "description": "SUPERVISOR DE OBRA DENOMINADA CREACIÓN DEL SERVICIO DE MOVILIDAD URBANA EN EL BARRIO BUENOS AIRES (SECTOR SANTA ROSA), DISTRITO DE CHUPACA DE LA PROVINCIA DE CHUPACA DEL DEPARTAMENTO DE JUNIN",
+        "description": "PROCEDIMIENTO NO COMPETITIVO ¿ CONTRATACIÓN DIRECTA para la CONTRATACIÓN DE LA EJECUCIÓN DEL EXPEDIENTE TÉCNICO ¿ MEJORAMIENTO DEL SERVICIO DE PRACTICA DEPORTIVA Y/O RECREATIVA EN EL PARQUE INDEPENDENCIA EN LA MZA. 32 LOTE 1 Y MZA. 31 LOTE 1 DE LA UR",
         "statusDetails": "CONVOCADO",
         "classification": {
-          "id": "8110151000336399",
+          "id": "7215310200396973",
           "scheme": "CUBSO",
-          "description": "SUPERVISION DE OBRA DE CONSTRUCCION DE CALLES Y SIMILARES"
+          "description": "MEJORAMIENTO DEL SERVICIO DE PRACTICA RECREATIVA"
         },
         "additionalClassifications": [
           {
-            "id": "81101510",
+            "id": "72153102",
             "scheme": "UNSPSC",
-            "description": "Ingeniería de carreteras"
+            "description": "Servicios de construcción de campos deportivos interiores"
           }
         ]
       }
     ],
-    "title": "CP CON-SM-1-2026-MPCH-1",
+    "title": "DIRECTA-DIRECTA-3-2026-MDY-1",
     "value": {
       "amount": 0.0,
       "currency": "PEN",
@@ -52,64 +52,85 @@
     },
     "documents": [
       {
-        "id": "24831474986081863",
-        "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=9e21293d-29eb-4c11-a995-dfc212147e8d",
+        "id": "24831474986117148",
+        "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=504c1258-d515-4a7c-8112-bb83f3bc0bda",
         "title": "Bases Administrativas",
         "format": "pdf",
         "language": "es",
         "documentType": "biddingDocuments",
-        "datePublished": "2026-09-02T17:47:00-05:00"
+        "datePublished": "2026-10-02T11:22:00-05:00"
       }
     ],
-    "description": "SUPERVISOR DE OBRA DENOMINADA ¿CREACIÓN DEL SERVICIO DE MOVILIDAD URBANA EN EL BARRIO BUENOS AIRES (SECTOR SANTA ROSA), DISTRITO DE CHUPACA DE LA PROVINCIA DE CHUPACA DEL DEPARTAMENTO DE JUNIN",
-    "tenderPeriod": {
-      "endDate": "2026-09-02T00:00:00-05:00",
-      "startDate": "2026-09-02T00:00:00-05:00"
-    },
-    "datePublished": "2026-09-02T17:47:00-05:00",
-    "enquiryPeriod": {
-      "endDate": "2026-09-14T23:59:00-05:00",
-      "startDate": "2026-09-03T00:01:00-05:00",
-      "durationInDays": 11
-    },
+    "tenderers": [
+      {
+        "id": "PE-RUC-20613212788",
+        "name": "KS NIEVES E.I.R.L."
+      }
+    ],
+    "description": "CONTRATACIÓN DE LA EJECUCIÓN DEL EXPEDIENTE TÉCNICO ¿ MEJORAMIENTO DEL SERVICIO DE PRACTICA DEPORTIVA Y/O RECREATIVA EN EL PARQUE INDEPENDENCIA EN LA MZA. 32 LOTE 1 Y MZA. 31 LOTE 1 DE LA URB. INDEPENDENCIA AMERICANA, DE CENTRO POBLADO YANAHUARA DISTRITO DE YANAHUARADE LA PROVINCIA DE AREQUIPA",
+    "datePublished": "2026-10-02T11:22:00-05:00",
     "procuringEntity": {
-      "id": "PE-CONSUCODE-1182",
-      "name": "MUNICIPALIDAD PROVINCIAL DE CHUPACA"
+      "id": "PE-CONSUCODE-420",
+      "name": "MUNICIPALIDAD DISTRITAL DE YANAHUARA"
     },
-    "mainProcurementCategory": "services",
-    "procurementMethodDetails": "Concurso Público para Consultoría",
+    "numberOfTenderers": 1,
+    "procurementMethod": "direct",
+    "mainProcurementCategory": "works",
+    "procurementMethodDetails": "Contratación Directa",
     "additionalProcurementCategories": [
-      "services"
+      "works"
     ],
     "hasTenderInformationProtectedByLaw": false
   },
   "parties": [
     {
-      "id": "PE-CONSUCODE-1182",
-      "name": "MUNICIPALIDAD PROVINCIAL DE CHUPACA",
+      "id": "PE-CONSUCODE-420",
+      "name": "MUNICIPALIDAD DISTRITAL DE YANAHUARA",
       "roles": [
         "buyer",
         "procuringEntity"
       ],
       "address": {
-        "region": "CHUPACA",
-        "locality": "CHUPACA",
-        "department": "JUNIN",
+        "region": "AREQUIPA",
+        "locality": "YANAHUARA",
+        "department": "AREQUIPA",
         "countryName": "PERU",
-        "streetAddress": "JR.GRAU 390"
+        "streetAddress": "CALLE MIGUEL GRAU 402"
       },
       "identifier": {
-        "id": "1182",
+        "id": "420",
         "scheme": "PE-CONSUCODE",
-        "legalName": "MUNICIPALIDAD PROVINCIAL DE CHUPACA"
+        "legalName": "MUNICIPALIDAD DISTRITAL DE YANAHUARA"
+      },
+      "contactPoint": {
+        "telephone": "0"
       },
       "additionalIdentifiers": [
         {
-          "id": "20174790320",
+          "id": "20162586956",
           "scheme": "PE-RUC",
-          "legalName": "MUNICIPALIDAD PROVINCIAL DE CHUPACA"
+          "legalName": "MUNICIPALIDAD DISTRITAL DE YANAHUARA"
         }
       ]
+    },
+    {
+      "id": "PE-RUC-20613212788",
+      "name": "KS NIEVES E.I.R.L.",
+      "roles": [
+        "tenderer"
+      ],
+      "address": {
+        "countryName": "PERU"
+      },
+      "identifier": {
+        "id": "20613212788",
+        "scheme": "PE-RUC",
+        "legalName": "KS NIEVES E.I.R.L."
+      },
+      "contactPoint": {
+        "email": "Ver datos en Ficha del Proveedor",
+        "telephone": "Ver dato en ficha del proveedor"
+      }
     }
   ],
   "sources": [
@@ -121,18 +142,18 @@
   ],
   "planning": {
     "budget": {
-      "project": "CREACION DEL SERVICIO DE MOVILIDAD URBANA EN EL BARRIO BUENOS AIRES (SECTOR SANTA ROSA),   DISTRITO DE CHUPACA DE LA PROVINCIA DE CHUPACA DEL DEPARTAMENTO DE JUNIN",
-      "projectID": "2703047",
+      "project": "MEJORAMIENTO DEL SERVICIO DE PRÁCTICA DEPORTIVA Y/O RECREATIVA EN EL PARQUE INDEPENDENCIA EN LA MZ 32 LOTE 1 Y MZ 31 LOTE 1 DE LA URB. INDEPENDENCIA AMERICANA,  DE CENTRO POBLADO YANAHUARA DISTRITO DE YANAHUARA DE LA PROVINCIA DE AREQUIPA DEL DEPARTAMENTO DE AREQUIPA",
+      "projectID": "2706125",
       "description": "Fondos Públicos"
     }
   },
-  "publishedDate": "2026-09-03T10:50:00.552625-05:00",
+  "publishedDate": "2026-10-03T10:12:07.709104-05:00",
   "initiationType": "tender",
   "dataSegmentation": {
-    "id": "2026-09",
+    "id": "2026-10",
     "criteria": [
-      "añoInicioConvocatoria",
-      "mesInicioConvocatoria"
+      "añoPublicacionProceso",
+      "mesPublicacionProceso"
     ]
   }
 }

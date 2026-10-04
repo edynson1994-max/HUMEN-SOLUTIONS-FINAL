@@ -1,116 +1,116 @@
 {
-  "generado_en": "2026-10-03T14:59:57+00:00",
+  "generado_en": "2026-10-04T15:35:08+00:00",
   "nota": "Diagnóstico de qué tan confiable es tenderPeriod.endDate como fecha limite real en este dataset — ver el docstring de _diagnosticar_release() en sync.py para el detalle completo. Si 'tenderPeriod_endDate_futuro' es 0 o casi 0 comparado con 'total_releases_leidos', es una señal fuerte de que ese campo no sirve para filtrar vigencia en este dataset y hace falta revisar 'enquiryPeriod_endDate_futuro' y los 'ejemplos_anomalos' como alternativa.",
-  "total_releases_leidos": 248007,
-  "con_tenderPeriod_endDate": 231165,
+  "total_releases_leidos": 259455,
+  "con_tenderPeriod_endDate": 241709,
   "tenderPeriod_endDate_futuro": 0,
-  "tenderPeriod_endDate_pasado": 231165,
-  "con_enquiryPeriod_endDate": 160823,
-  "enquiryPeriod_endDate_futuro": 0,
-  "enquiryPeriod_endDate_pasado": 160823,
-  "enquiryPeriod_termina_despues_de_tenderPeriod": 160779,
+  "tenderPeriod_endDate_pasado": 241709,
+  "con_enquiryPeriod_endDate": 167868,
+  "enquiryPeriod_endDate_futuro": 688,
+  "enquiryPeriod_endDate_pasado": 167180,
+  "enquiryPeriod_termina_despues_de_tenderPeriod": 167822,
   "ejemplos_anomalos": [
     {
-      "ocid": "ocds-dgv273-seacev3-1237621",
-      "title": "CP CON-SM-1-2026-MPCH-1",
+      "ocid": "ocds-dgv273-seacev3-1249728",
+      "title": "CP-ABR-1-2026-MDP-1",
       "tenderPeriod": {
-        "endDate": "2026-09-02T00:00:00-05:00",
-        "startDate": "2026-09-02T00:00:00-05:00"
+        "endDate": "2026-10-02T00:00:00-05:00",
+        "startDate": "2026-10-02T00:00:00-05:00"
       },
       "enquiryPeriod": {
-        "endDate": "2026-09-14T23:59:00-05:00",
-        "startDate": "2026-09-03T00:01:00-05:00",
-        "durationInDays": 11
-      }
-    },
-    {
-      "ocid": "ocds-dgv273-seacev3-1232498",
-      "title": "LP-ABR-3-2026-HBT-2",
-      "tenderPeriod": {
-        "endDate": "2026-09-02T00:00:00-05:00",
-        "startDate": "2026-09-02T00:00:00-05:00"
-      },
-      "enquiryPeriod": {
-        "endDate": "2026-09-07T23:59:00-05:00",
-        "startDate": "2026-09-03T00:01:00-05:00",
+        "endDate": "2026-10-07T23:59:00-05:00",
+        "startDate": "2026-10-03T00:01:00-05:00",
         "durationInDays": 4
       }
     },
     {
-      "ocid": "ocds-dgv273-seacev3-1241234",
-      "title": "LP-ABR-61-2026-GRL/CS-1",
+      "ocid": "ocds-dgv273-seacev3-1251512",
+      "title": "LP-SM-31-2026-GRJ-1",
       "tenderPeriod": {
-        "endDate": "2026-09-01T00:00:00-05:00",
-        "startDate": "2026-09-01T00:00:00-05:00"
+        "endDate": "2026-10-01T00:00:00-05:00",
+        "startDate": "2026-10-01T00:00:00-05:00"
       },
       "enquiryPeriod": {
-        "endDate": "2026-09-04T23:59:00-05:00",
-        "startDate": "2026-09-02T00:01:00-05:00",
-        "durationInDays": 2
+        "endDate": "2026-10-16T23:59:00-05:00",
+        "startDate": "2026-10-02T00:01:00-05:00",
+        "durationInDays": 14
       }
     },
     {
-      "ocid": "ocds-dgv273-seacev3-1241750",
-      "title": "CP-ABR-3-2026-MDP/C-1",
+      "ocid": "ocds-dgv273-seacev3-1250007",
+      "title": "LP-ABR-7-2026-GRP/RSSR/OC-1",
       "tenderPeriod": {
-        "endDate": "2026-09-01T00:00:00-05:00",
-        "startDate": "2026-09-01T00:00:00-05:00"
+        "endDate": "2026-10-01T00:00:00-05:00",
+        "startDate": "2026-10-01T00:00:00-05:00"
       },
       "enquiryPeriod": {
-        "endDate": "2026-09-04T23:59:00-05:00",
-        "startDate": "2026-09-02T00:01:00-05:00",
-        "durationInDays": 2
+        "endDate": "2026-10-06T23:59:00-05:00",
+        "startDate": "2026-10-02T00:01:00-05:00",
+        "durationInDays": 4
       }
     },
     {
-      "ocid": "ocds-dgv273-seacev3-1241755",
-      "title": "CP-ABR-5-2026-MDP/C-1",
+      "ocid": "ocds-dgv273-seacev3-1252576",
+      "title": "CP-ABR-22-2026-GRC-CS-1",
       "tenderPeriod": {
-        "endDate": "2026-09-01T00:00:00-05:00",
-        "startDate": "2026-09-01T00:00:00-05:00"
+        "endDate": "2026-10-02T00:00:00-05:00",
+        "startDate": "2026-10-02T00:00:00-05:00"
       },
       "enquiryPeriod": {
-        "endDate": "2026-09-04T23:59:00-05:00",
-        "startDate": "2026-09-02T00:01:00-05:00",
-        "durationInDays": 2
+        "endDate": "2026-10-08T23:59:00-05:00",
+        "startDate": "2026-10-03T00:01:00-05:00",
+        "durationInDays": 5
       }
     },
     {
-      "ocid": "ocds-dgv273-seacev3-1244248",
-      "title": "LP-ABR-1-2026-MDCH-CS-1",
+      "ocid": "ocds-dgv273-seacev3-1252041",
+      "title": "LP-ABR-12-2026-MDSRS/CS-1",
       "tenderPeriod": {
-        "endDate": "2026-09-01T00:00:00-05:00",
-        "startDate": "2026-09-01T00:00:00-05:00"
+        "endDate": "2026-10-02T00:00:00-05:00",
+        "startDate": "2026-10-02T00:00:00-05:00"
       },
       "enquiryPeriod": {
-        "endDate": "2026-09-04T23:59:00-05:00",
-        "startDate": "2026-09-02T00:01:00-05:00",
-        "durationInDays": 2
+        "endDate": "2026-10-07T23:59:00-05:00",
+        "startDate": "2026-10-03T00:01:00-05:00",
+        "durationInDays": 4
       }
     },
     {
-      "ocid": "ocds-dgv273-seacev3-1229192",
-      "title": "CP-ABR-4-2026-MPS-C-1",
+      "ocid": "ocds-dgv273-seacev3-1253061",
+      "title": "LP-ABR-35-2026-GRA-SEDECENTRAL-1",
       "tenderPeriod": {
-        "endDate": "2026-09-01T00:00:00-05:00",
-        "startDate": "2026-09-01T00:00:00-05:00"
+        "endDate": "2026-10-01T00:00:00-05:00",
+        "startDate": "2026-10-01T00:00:00-05:00"
       },
       "enquiryPeriod": {
-        "endDate": "2026-09-04T23:59:00-05:00",
-        "startDate": "2026-09-02T00:01:00-05:00",
-        "durationInDays": 2
+        "endDate": "2026-10-06T23:59:00-05:00",
+        "startDate": "2026-10-02T00:01:00-05:00",
+        "durationInDays": 4
       }
     },
     {
-      "ocid": "ocds-dgv273-seacev3-1240449",
-      "title": "CP-ABR-1-2026-MDAB/DEC-1",
+      "ocid": "ocds-dgv273-seacev3-1253610",
+      "title": "CP-ABR-8-2026-MDH/C-2",
       "tenderPeriod": {
-        "endDate": "2026-09-02T00:00:00-05:00",
-        "startDate": "2026-09-02T00:00:00-05:00"
+        "endDate": "2026-10-02T00:00:00-05:00",
+        "startDate": "2026-10-02T00:00:00-05:00"
       },
       "enquiryPeriod": {
-        "endDate": "2026-09-07T23:59:00-05:00",
-        "startDate": "2026-09-03T00:01:00-05:00",
+        "endDate": "2026-10-07T23:59:00-05:00",
+        "startDate": "2026-10-03T00:01:00-05:00",
+        "durationInDays": 4
+      }
+    },
+    {
+      "ocid": "ocds-dgv273-seacev3-1251115",
+      "title": "LP-ABR-2-2026-MDQ/CS-1",
+      "tenderPeriod": {
+        "endDate": "2026-10-01T00:00:00-05:00",
+        "startDate": "2026-10-01T00:00:00-05:00"
+      },
+      "enquiryPeriod": {
+        "endDate": "2026-10-06T23:59:00-05:00",
+        "startDate": "2026-10-02T00:01:00-05:00",
         "durationInDays": 4
       }
     }
