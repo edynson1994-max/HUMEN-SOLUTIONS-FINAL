@@ -1,0 +1,230 @@
+{
+  "dataset_id": "lista-de-docentes-undac-2026",
+  "titulo": "Lista de docentes Undac 2026",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/lista-de-docentes-undac-2026",
+  "resource_id": "8762aa72-54e5-41ef-8937-1ef0975c4bff",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "N°",
+    "Nombre Docente",
+    "Escuela Principal",
+    "Cursos a Cargo",
+    "Cursos como Participante (No Principal)",
+    "Escuelas donde Dicta",
+    "Total Cursos Asignados",
+    "Cursos a Cargo (Principal)"
+  ],
+  "filas_leidas": 605,
+  "muestra": [
+    {
+      "N°": "1",
+      "Nombre Docente": "BUSTILLOS BONILLA, Joel",
+      "Escuela Principal": "Agronomía",
+      "Cursos a Cargo": "Botánica General, Cultivos Industriales, Genética",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía, Agronomía - Yanahuanca",
+      "Total Cursos Asignados": "3",
+      "Cursos a Cargo (Principal)": "3"
+    },
+    {
+      "N°": "2",
+      "Nombre Docente": "CASTRO BERMUDEZ, Gina                 ",
+      "Escuela Principal": "Agronomía",
+      "Cursos a Cargo": "Comunicación, Ecologia, Legislación Agraria",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía",
+      "Total Cursos Asignados": "3",
+      "Cursos a Cargo (Principal)": "3"
+    },
+    {
+      "N°": "3",
+      "Nombre Docente": "CORDOVA HERRERA, Hickey                 ",
+      "Escuela Principal": "Agronomía",
+      "Cursos a Cargo": "Edafologia, Manejo y Conservación de Suelos",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía",
+      "Total Cursos Asignados": "2",
+      "Cursos a Cargo (Principal)": "2"
+    },
+    {
+      "N°": "4",
+      "Nombre Docente": "GAMARRA TORIBIO, Vicente Nilo                 ",
+      "Escuela Principal": "Agronomía",
+      "Cursos a Cargo": "Química Analítica, Química general",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía, Agronomía - Paucartambo, Agronomía - Yanahuanca",
+      "Total Cursos Asignados": "4",
+      "Cursos a Cargo (Principal)": "4"
+    },
+    {
+      "N°": "5",
+      "Nombre Docente": "HUAYLLANI AGUI, Yhimy Yhon",
+      "Escuela Principal": "Agronomía",
+      "Cursos a Cargo": "Agroforestería, Fertilidad de Suelos, Formulación y evaluación de proyectos, Seminario de Investigación Científica II",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía",
+      "Total Cursos Asignados": "4",
+      "Cursos a Cargo (Principal)": "4"
+    },
+    {
+      "N°": "6",
+      "Nombre Docente": "LEON MUCHA, ANDRES EDWIN",
+      "Escuela Principal": "Agronomía",
+      "Cursos a Cargo": "Extensión y promoción agrícola, Introduccion a la Agronomia, Introducción a la agronomía",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía",
+      "Total Cursos Asignados": "3",
+      "Cursos a Cargo (Principal)": "3"
+    },
+    {
+      "N°": "7",
+      "Nombre Docente": "LLANOS ZEVALLOS, Manuel                 ",
+      "Escuela Principal": "Agronomía",
+      "Cursos a Cargo": "Fitopatología Aplicada, Olericultura, Propagación de Plantas",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía",
+      "Total Cursos Asignados": "3",
+      "Cursos a Cargo (Principal)": "3"
+    },
+    {
+      "N°": "8",
+      "Nombre Docente": "PAITAN  GILIAN, ROCIO KARIM",
+      "Escuela Principal": "Agronomía",
+      "Cursos a Cargo": "Cultivos de Pastos y Forrajes, Entomología Aplicada, Tuberosas y raices",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía",
+      "Total Cursos Asignados": "3",
+      "Cursos a Cargo (Principal)": "3"
+    },
+    {
+      "N°": "9",
+      "Nombre Docente": "PONCE AGUIRRE, Dante David",
+      "Escuela Principal": "Agronomía",
+      "Cursos a Cargo": "Fitomejoramiento Aplicado, Genética",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía",
+      "Total Cursos Asignados": "2",
+      "Cursos a Cargo (Principal)": "2"
+    },
+    {
+      "N°": "10",
+      "Nombre Docente": "RODRIGUEZ ROSALES, Catalina Silvia",
+      "Escuela Principal": "Agronomía",
+      "Cursos a Cargo": "Biología, Bioquímica, Taller de metodología del trabajo universitario",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía",
+      "Total Cursos Asignados": "3",
+      "Cursos a Cargo (Principal)": "3"
+    },
+    {
+      "N°": "11",
+      "Nombre Docente": "RODRIGUEZ SALDAÑA, Johnny Luis                   ",
+      "Escuela Principal": "Agronomía",
+      "Cursos a Cargo": "Agronegocios, Física, MATEMÁTICA BÁSICA, Matemática I",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía, DERECHO",
+      "Total Cursos Asignados": "4",
+      "Cursos a Cargo (Principal)": "4"
+    },
+    {
+      "N°": "12",
+      "Nombre Docente": "TONGO PIZARRO, Moises               ",
+      "Escuela Principal": "Agronomía",
+      "Cursos a Cargo": "Riegos y Drenajes, Topografía Agrícola",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía",
+      "Total Cursos Asignados": "2",
+      "Cursos a Cargo (Principal)": "2"
+    },
+    {
+      "N°": "13",
+      "Nombre Docente": "ZAMBRANO POMA, Carlos Alberto",
+      "Escuela Principal": "Agronomía",
+      "Cursos a Cargo": "Cultivos Ornamentales, Dibujo de Ingenieria, Manejo de Post Cosecha de Cultivos, Taller de educación física",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía, Agronomía - Yanahuanca",
+      "Total Cursos Asignados": "5",
+      "Cursos a Cargo (Principal)": "5"
+    },
+    {
+      "N°": "14",
+      "Nombre Docente": "ARMAS  MORENO, ANA MARIA LUZ",
+      "Escuela Principal": "Agronomía - La Merced",
+      "Cursos a Cargo": "Bioquímica, Física, Legislación Agraria, Manejo de Post Cosecha de Cultivos",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía - La Merced",
+      "Total Cursos Asignados": "4",
+      "Cursos a Cargo (Principal)": "4"
+    },
+    {
+      "N°": "15",
+      "Nombre Docente": "DE LA CRUZ MERA, Carlos Adolfo",
+      "Escuela Principal": "Agronomía - La Merced",
+      "Cursos a Cargo": "Cultivos Industriales, Cultivos Ornamentales, Ecología",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía - La Merced",
+      "Total Cursos Asignados": "3",
+      "Cursos a Cargo (Principal)": "3"
+    },
+    {
+      "N°": "16",
+      "Nombre Docente": "GUTIERREZ RUTTI, RUSBEL JHON",
+      "Escuela Principal": "Agronomía - La Merced",
+      "Cursos a Cargo": "Extensión y promoción agrícola, Formulación y evaluación de proyectos, Matemática I, Seminario de Investigación Científica II",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía - La Merced",
+      "Total Cursos Asignados": "4",
+      "Cursos a Cargo (Principal)": "4"
+    },
+    {
+      "N°": "17",
+      "Nombre Docente": "HILARIO ROMÁN, Nilda               ",
+      "Escuela Principal": "Agronomía - La Merced",
+      "Cursos a Cargo": "Química Analítica, Química general",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía - La Merced",
+      "Total Cursos Asignados": "2",
+      "Cursos a Cargo (Principal)": "2"
+    },
+    {
+      "N°": "18",
+      "Nombre Docente": "HUANES TOVAR, Luís Antonio",
+      "Escuela Principal": "Agronomía - La Merced",
+      "Cursos a Cargo": "Biología",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía - La Merced",
+      "Total Cursos Asignados": "1",
+      "Cursos a Cargo (Principal)": "1"
+    },
+    {
+      "N°": "19",
+      "Nombre Docente": "HUAYASCACHI LLIUYACC, Ulises Pablo",
+      "Escuela Principal": "Agronomía - La Merced",
+      "Cursos a Cargo": "Dibujo de Ingeniería, Riegos y Drenajes, Topografía Agrícola",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía - La Merced",
+      "Total Cursos Asignados": "3",
+      "Cursos a Cargo (Principal)": "3"
+    },
+    {
+      "N°": "20",
+      "Nombre Docente": "MARMOLEJO GUTARRA, Karina Jessica",
+      "Escuela Principal": "Agronomía - La Merced",
+      "Cursos a Cargo": "Fitomejoramiento Aplicado, Genética",
+      "Cursos como Participante (No Principal)": "-",
+      "Escuelas donde Dicta": "Agronomía - La Merced",
+      "Total Cursos Asignados": "2",
+      "Cursos a Cargo (Principal)": "2"
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-10-11T15:33:08Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "sin_cambio",
+    "filas_antes": 605,
+    "filas_despues": 605,
+    "diferencia": 0,
+    "diferencia_pct": 0.0
+  }
+}

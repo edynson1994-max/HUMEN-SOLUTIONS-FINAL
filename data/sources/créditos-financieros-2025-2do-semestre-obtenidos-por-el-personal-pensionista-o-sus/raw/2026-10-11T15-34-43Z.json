@@ -1,0 +1,230 @@
+{
+  "dataset_id": "créditos-financieros-2025-2do-semestre-obtenidos-por-el-personal-pensionista-o-sus",
+  "titulo": "Créditos financieros 2025 2do semestre obtenidos por el personal pensionista o sus beneficiarios por institución armada",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/cr%C3%A9ditos-financieros-2025-2do-semestre-obtenidos-por-el-personal-pensionista-o-sus",
+  "resource_id": "f7349e57-2062-4d35-bc67-6e6bd687d71f",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "idreg",
+    "INSTITUCION",
+    "AÑO",
+    "MES",
+    "TIPO PENSIÓN",
+    " IMPORTE ",
+    "Régimen",
+    "ENTIDAD"
+  ],
+  "filas_leidas": 363596,
+  "muestra": [
+    {
+      "idreg": "365",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "30",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "367",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "30",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "369",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "30",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "371",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "30",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "373",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "30",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "375",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "30",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "377",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "30",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "379",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "60",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "381",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "60",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "383",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "30",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "385",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "30",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "387",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "30",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "389",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "30",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "391",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "30",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "393",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "30",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "395",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "30",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "397",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "180",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "399",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "30",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "401",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "60",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    },
+    {
+      "idreg": "403",
+      "INSTITUCION": "EP",
+      "AÑO": "2025",
+      "MES": "6",
+      "TIPO PENSIÓN": "TITULAR",
+      " IMPORTE ": "60",
+      "Régimen": "DEFENSOR",
+      "ENTIDAD": "AECCONDOR EP"
+    }
+  ],
+  "muestra_parcial": true,
+  "generado_en": "2026-10-11T15:34:43Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "sin_cambio",
+    "filas_antes": 363596,
+    "filas_despues": 363596,
+    "diferencia": 0,
+    "diferencia_pct": 0.0
+  }
+}

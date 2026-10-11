@@ -1,0 +1,16 @@
+{
+  "dataset_id": "índices-soberanos",
+  "titulo": "Índices Soberanos",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/%C3%ADndices-soberanos",
+  "resource_id": "e6ee8b6f-1903-418f-a69f-f66217e81fda",
+  "estado": "formato_no_soportado",
+  "formato": "url",
+  "generado_en": "2026-10-11T15:47:01Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "no_comparable",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

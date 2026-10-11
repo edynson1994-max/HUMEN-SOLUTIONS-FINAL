@@ -1,0 +1,209 @@
+{
+  "dataset_id": "relación-de-cajeros-automaticos-nivel-nacional-banco-de-la-nación",
+  "titulo": "Relación de Cajeros Automaticos a Nivel Nacional - [Banco de la Nación]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/relaci%C3%B3n-de-cajeros-automaticos-nivel-nacional-banco-de-la-naci%C3%B3n",
+  "resource_id": "50502644-aa5d-4b37-8268-009098e4e4c9",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "FECHA_CORTE",
+    "ATM",
+    "UBIGEO",
+    "DEPARTAMENTO",
+    "PROVINCIA",
+    "DISTRITO",
+    "DIRECCION"
+  ],
+  "filas_leidas": 1112,
+  "muestra": [
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0001",
+      "UBIGEO": "160113",
+      "DEPARTAMENTO": "LORETO",
+      "PROVINCIA": "MAYNAS",
+      "DISTRITO": "SAN JUAN BAUTISTA",
+      "DIRECCION": "AV JOSE ABELARDO QUIÑONES ALT KM 4 5"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0002",
+      "UBIGEO": "140118",
+      "DEPARTAMENTO": "LAMBAYEQUE",
+      "PROVINCIA": "CHICLAYO",
+      "DISTRITO": "POMALCA",
+      "DIRECCION": "CALLE 24 DE JUNIO 090"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0003",
+      "UBIGEO": "150142",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "VILLA EL SALVADOR",
+      "DIRECCION": "AV REVOLUCION S/N"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0004",
+      "UBIGEO": "150140",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "SANTIAGO DE SURCO",
+      "DIRECCION": "AV BENAVIDES 3700"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0005",
+      "UBIGEO": "150141",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "SURQUILLO",
+      "DIRECCION": "AV TOMAS MARZANO 1451"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0006",
+      "UBIGEO": "010401",
+      "DEPARTAMENTO": "AMAZONAS",
+      "PROVINCIA": "CONDORCANQUI",
+      "DISTRITO": "NIEVA",
+      "DIRECCION": "JR GONZALO PUERTA 100 Y CALLE CIRO ALEGRIA"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0007",
+      "UBIGEO": "040409",
+      "DEPARTAMENTO": "AREQUIPA",
+      "PROVINCIA": "CASTILLA",
+      "DISTRITO": "ORCOPAMPA",
+      "DIRECCION": "AV BUENA AVENTURA CON AV BRASIL S/N"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0008",
+      "UBIGEO": "060801",
+      "DEPARTAMENTO": "CAJAMARCA",
+      "PROVINCIA": "JAEN",
+      "DISTRITO": "JAEN",
+      "DIRECCION": "PLAZA DE ARMAS DE JAEN S/N"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0009",
+      "UBIGEO": "090301",
+      "DEPARTAMENTO": "HUANCAVELICA",
+      "PROVINCIA": "ANGARAES",
+      "DISTRITO": "LIRCAY",
+      "DIRECCION": "JR DE LA UNION 173"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0010",
+      "UBIGEO": "130702",
+      "DEPARTAMENTO": "LA LIBERTAD",
+      "PROVINCIA": "PACASMAYO",
+      "DISTRITO": "GUADALUPE",
+      "DIRECCION": "PLAZA DE ARMAS S/N CENTRO CIVICO"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0011",
+      "UBIGEO": "240301",
+      "DEPARTAMENTO": "TUMBES",
+      "PROVINCIA": "ZARUMILLA",
+      "DISTRITO": "ZARUMILLA",
+      "DIRECCION": "JR ARICA 323"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0012",
+      "UBIGEO": "150113",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "JESUS MARIA",
+      "DIRECCION": "JR HORACIO URTEAGA 1284"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0013",
+      "UBIGEO": "020105",
+      "DEPARTAMENTO": "ANCASH",
+      "PROVINCIA": "HUARAZ",
+      "DISTRITO": "INDEPENDENCIA",
+      "DIRECCION": "JR. GUZMAN BARRON 719"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0014",
+      "UBIGEO": "120801",
+      "DEPARTAMENTO": "JUNIN",
+      "PROVINCIA": "YAULI",
+      "DISTRITO": "LA OROYA",
+      "DIRECCION": "AV HORACIO ZEVALLOS GAMES 315"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0015",
+      "UBIGEO": "040307",
+      "DEPARTAMENTO": "AREQUIPA",
+      "PROVINCIA": "CARAVELI",
+      "DISTRITO": "CHALA",
+      "DIRECCION": "JR COMERCIO 626"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0016",
+      "UBIGEO": "110401",
+      "DEPARTAMENTO": "ICA",
+      "PROVINCIA": "PALPA",
+      "DISTRITO": "PALPA",
+      "DIRECCION": "CALLE PORTAL DE ESCRIBANOS 175"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0017",
+      "UBIGEO": "130208",
+      "DEPARTAMENTO": "LA LIBERTAD",
+      "PROVINCIA": "ASCOPE",
+      "DISTRITO": "CASA GRANDE",
+      "DIRECCION": "AV CENTRAL MZ  J LT 1-2 URB 03 DE OCTUBRE"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0018",
+      "UBIGEO": "040401",
+      "DEPARTAMENTO": "AREQUIPA",
+      "PROVINCIA": "CASTILLA",
+      "DISTRITO": "APLAO",
+      "DIRECCION": "CALLE 3, MANZANA P1, LOTE 3"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0019",
+      "UBIGEO": "130701",
+      "DEPARTAMENTO": "LA LIBERTAD",
+      "PROVINCIA": "PACASMAYO",
+      "DISTRITO": "SAN PEDRO DE LLOC",
+      "DIRECCION": "JR. 2 DE MAYO 260"
+    },
+    {
+      "FECHA_CORTE": "20260616",
+      "ATM": "0020",
+      "UBIGEO": "140120",
+      "DEPARTAMENTO": "LAMBAYEQUE",
+      "PROVINCIA": "CHICLAYO",
+      "DISTRITO": "TUMAN",
+      "DIRECCION": "AV EL TREN DE 903"
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-10-11T15:33:56Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "sin_cambio",
+    "filas_antes": 1112,
+    "filas_despues": 1112,
+    "diferencia": 0,
+    "diferencia_pct": 0.0
+  }
+}

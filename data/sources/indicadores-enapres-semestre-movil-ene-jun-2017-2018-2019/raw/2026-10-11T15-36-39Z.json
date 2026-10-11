@@ -1,0 +1,19 @@
+{
+  "dataset_id": "indicadores-enapres-semestre-movil-ene-jun-2017-2018-2019",
+  "titulo": "Indicadores ENAPRES semestre movil ENE-JUN 2017 - 2018 - 2019",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/indicadores-enapres-semestre-movil-ene-jun-2017-2018-2019",
+  "resource_id": "75f4425c-4264-4d2e-812e-d39b0b2c3364",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "new-line character seen in unquoted field - do you need to open the file with newline=''?",
+    "url_catalogo_respaldo": "new-line character seen in unquoted field - do you need to open the file with newline=''?"
+  },
+  "generado_en": "2026-10-11T15:36:39Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "no_comparable",
+    "filas_antes": null,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

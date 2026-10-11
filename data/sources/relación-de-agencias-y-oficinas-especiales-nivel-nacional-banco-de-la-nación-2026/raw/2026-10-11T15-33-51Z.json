@@ -1,0 +1,230 @@
+{
+  "dataset_id": "relación-de-agencias-y-oficinas-especiales-nivel-nacional-banco-de-la-nación-2026",
+  "titulo": "Relación de Agencias y Oficinas Especiales a Nivel Nacional - [Banco de la Nación 2026]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/relaci%C3%B3n-de-agencias-y-oficinas-especiales-nivel-nacional-banco-de-la-naci%C3%B3n-2026",
+  "resource_id": "be26aad5-4098-46c4-923d-1bb8ab53e2a6",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "FECHA_CORTE",
+    "TIPO",
+    "AGENCIA",
+    "UBIGEO",
+    "DEPARTAMENTO",
+    "PROVINCIA",
+    "DISTRITO",
+    "DIRECCION"
+  ],
+  "filas_leidas": 559,
+  "muestra": [
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 1",
+      "AGENCIA": "CALLAO",
+      "UBIGEO": "070101",
+      "DEPARTAMENTO": "CALLAO",
+      "PROVINCIA": "CALLAO",
+      "DISTRITO": "CALLAO",
+      "DIRECCION": "AV. SAENZ PEÑA N°  205 - 207 -209"
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 1",
+      "AGENCIA": "28 DE JULIO",
+      "UBIGEO": "150101",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "LIMA",
+      "DIRECCION": "AV. DU PETIT THOUARS 113 ESQ. 28 DE JULIO 932 - CERCADO"
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 1",
+      "AGENCIA": "MIRAFLORES",
+      "UBIGEO": "150122",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "MIRAFLORES",
+      "DIRECCION": "AV. JOSÉ PARDO N° 205"
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 2",
+      "AGENCIA": "SAN JUAN DE LURIGANCHO",
+      "UBIGEO": "150132",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "SAN JUAN DE LURIGANCHO",
+      "DIRECCION": "AV. TUSILAGOS MZ. P LT. 3 Y 4 URB. LOS JARDINES DE SAN JUAN DE LURIGANCHO"
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 1",
+      "AGENCIA": "PLAZA PIZARRO",
+      "UBIGEO": "150101",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "LIMA",
+      "DIRECCION": "JR. DE LA UNIÓN N° 170 - CERCADO"
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 2",
+      "AGENCIA": "AEROPUERTO",
+      "UBIGEO": "070101",
+      "DEPARTAMENTO": "CALLAO",
+      "PROVINCIA": "CALLAO",
+      "DISTRITO": "CALLAO",
+      "DIRECCION": "AV. ELMER FAUCETT ESQ. AV. TOMÁS VALLE, CENTRO AÉREO COMERCIAL TDAS. 105B, 106B, 107B Y 108B / SECTOR B / 2° ETAPA"
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 1",
+      "AGENCIA": "SAN ISIDRO",
+      "UBIGEO": "150131",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "SAN ISIDRO",
+      "DIRECCION": "AV. REPÚBLICA DE PANAMÁ N° 3650 - 3660 -3664 - 3666"
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 2",
+      "AGENCIA": "BARRANCO",
+      "UBIGEO": "150104",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "BARRANCO",
+      "DIRECCION": "AV. GRAU N° 101"
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 2",
+      "AGENCIA": "BREÑA",
+      "UBIGEO": "150105",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "BREÑA",
+      "DIRECCION": "JR. ORBEGOZO N° 298 ESQUINA CON EL JR. HUARAZ S/N"
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 1",
+      "AGENCIA": "SAN JUAN DE MIRAFLORES",
+      "UBIGEO": "150133",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "SAN JUAN DE MIRAFLORES",
+      "DIRECCION": "AV. GUILLERMO BILLINGHURST N° 1091 - 1093, MANZANA G2, LOTE 32, ZONA D"
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 1",
+      "AGENCIA": "CHORRILLOS",
+      "UBIGEO": "150108",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "CHORRILLOS",
+      "DIRECCION": "AV. ALEJANDRO IGLESIAS N° 496 URBANIZACIÓN CHORRILLOS "
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 2",
+      "AGENCIA": "EL AGUSTINO",
+      "UBIGEO": "150111",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "EL AGUSTINO",
+      "DIRECCION": "JIRÓN ANCASH N° 2151 (C.C. AGUSTINO PLAZA) LOCALES 2181-2185"
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 2",
+      "AGENCIA": "SAN JOSE",
+      "UBIGEO": "150113",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "JESUS MARIA",
+      "DIRECCION": "JR. HORACIO URTEAGA N° 1280"
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 2",
+      "AGENCIA": "LA PERLA",
+      "UBIGEO": "070104",
+      "DEPARTAMENTO": "CALLAO",
+      "PROVINCIA": "CALLAO",
+      "DISTRITO": "LA PERLA",
+      "DIRECCION": "AV. SANTA ROSA N° 135 - CENTRO COMERCIAL LA PERLA  OF. A-101, A-102"
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 2",
+      "AGENCIA": "LA VICTORIA",
+      "UBIGEO": "150115",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "LA VICTORIA",
+      "DIRECCION": "AV. NICOLÁS ARRIOLA N° 873 - 875 URB. SANTA CATALINA"
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 2",
+      "AGENCIA": "JOCKEY PLAZA",
+      "UBIGEO": "150140",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "SANTIAGO DE SURCO",
+      "DIRECCION": "AV. JAVIER PRADO ESTE N° 4200, C.C. JOCKEY PLAZA, LOCAL S9L- 109. URBANIZACIÓN FUNDO MONTERRICO CHICO"
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 2",
+      "AGENCIA": "LINCE",
+      "UBIGEO": "150116",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "LINCE",
+      "DIRECCION": "AV. ARENALES N° 1785 - 1795"
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 2",
+      "AGENCIA": "MAGDALENA",
+      "UBIGEO": "150120",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "MAGDALENA DEL MAR",
+      "DIRECCION": "CALLE SAN MARTÍN N° 645"
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 2",
+      "AGENCIA": "SAN FELIPE",
+      "UBIGEO": "150113",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "JESUS MARIA",
+      "DIRECCION": "CENTRO COMERCIAL SAN FELIPE, TIENDAS N° 8 Y 9"
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "TIPO": "AGENCIA 1",
+      "AGENCIA": "PUEBLO LIBRE",
+      "UBIGEO": "150121",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "PUEBLO LIBRE",
+      "DIRECCION": "AV. BOLÍVAR N° 936 - 940"
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-10-11T15:33:51Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "sin_cambio",
+    "filas_antes": 559,
+    "filas_despues": 559,
+    "diferencia": 0,
+    "diferencia_pct": 0.0
+  }
+}
