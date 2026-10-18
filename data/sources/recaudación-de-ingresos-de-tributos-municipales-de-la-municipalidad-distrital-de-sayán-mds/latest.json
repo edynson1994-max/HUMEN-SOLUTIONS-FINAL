@@ -4,7 +4,7 @@
   "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-de-ingresos-de-tributos-municipales-de-la-municipalidad-distrital-de-say%C3%A1n-mds",
   "resource_id": "a54b978e-b4aa-4221-874b-ec9c4d04398c",
   "estado": "ok",
-  "nivel_usado": "url_en_vivo",
+  "nivel_usado": "url_catalogo",
   "columnas_detectadas": [
     "FECHA_CORTE",
     "DEPARTAMENTO",
@@ -408,7 +408,7 @@
     }
   ],
   "muestra_parcial": true,
-  "generado_en": "2026-10-11T15:47:28Z",
+  "generado_en": "2026-10-18T13:23:59Z",
   "cambio_vs_corrida_anterior": {
     "tipo": "sin_cambio",
     "filas_antes": 204368,

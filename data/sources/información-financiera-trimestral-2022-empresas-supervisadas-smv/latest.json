@@ -4,7 +4,7 @@
   "dataset_url": "https://www.datosabiertos.gob.pe/dataset/informaci%C3%B3n-financiera-trimestral-2022-empresas-supervisadas-smv",
   "estado": "error",
   "error": "el dataset no tiene ningún recurso en el catálogo",
-  "generado_en": "2026-10-11T15:40:04Z",
+  "generado_en": "2026-10-18T13:16:01Z",
   "cambio_vs_corrida_anterior": {
     "tipo": "no_comparable",
     "filas_antes": null,

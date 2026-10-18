@@ -7,3 +7,4 @@
 {"fecha": "2026-09-27T14:53:10Z", "estado": "ok", "filas": 204368, "nivel_usado": "url_en_vivo", "cambio": {"tipo": "sin_cambio", "filas_antes": 204368, "filas_despues": 204368, "diferencia": 0, "diferencia_pct": 0.0}}
 {"fecha": "2026-10-04T14:56:23Z", "estado": "ok", "filas": 204368, "nivel_usado": "url_en_vivo", "cambio": {"tipo": "sin_cambio", "filas_antes": 204368, "filas_despues": 204368, "diferencia": 0, "diferencia_pct": 0.0}}
 {"fecha": "2026-10-11T15:47:28Z", "estado": "ok", "filas": 204368, "nivel_usado": "url_en_vivo", "cambio": {"tipo": "sin_cambio", "filas_antes": 204368, "filas_despues": 204368, "diferencia": 0, "diferencia_pct": 0.0}}
+{"fecha": "2026-10-18T13:23:59Z", "estado": "ok", "filas": 204368, "nivel_usado": "url_catalogo", "cambio": {"tipo": "sin_cambio", "filas_antes": 204368, "filas_despues": 204368, "diferencia": 0, "diferencia_pct": 0.0}}
