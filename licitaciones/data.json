@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-21T15:45:41+00:00",
+  "generated_at": "2026-10-22T15:44:35+00:00",
   "attribution": "Datos derivados del Registro de Datos Abiertos de Contrataciones (Open Contracting Partnership), a partir de información publicada por el organismo peruano a cargo del SEACE. Licencia CC BY 4.0. Banco de información pública — no requiere afiliación con Humen Solutions para consultarlo.",
   "source_url": "https://data.open-contracting.org/en/publication/135",
-  "total_count": 619,
+  "total_count": 618,
   "humen_counts": {
     "cont": 2,
     "inv": 0,
@@ -5677,22 +5677,6 @@
       "dueDate": null,
       "objeto": "SERVICIO DE ALIMENTACION PARA INTERNOS, NIÑOS Y PERSONAL DE SEGURIDAD 24X48 DEL EP PUCALLPA",
       "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=0fd5d431-0541-4f61-9b20-82faab61b901"
-    },
-    {
-      "id": "ocds-dgv273-seacev3-1221317",
-      "procCategory": "Obras",
-      "humenTags": [],
-      "title": "DIRECTA-DIRECTA-1-2026-MDA/OEC-1",
-      "entidad": "MUNICIPALIDAD DISTRITAL DE AWAJUN",
-      "region": "RIOJA",
-      "tipoProc": "Contratación Directa",
-      "code": "1221317",
-      "monto": 793632.36,
-      "moneda": "PEN",
-      "pubDate": "2026-09-21",
-      "dueDate": null,
-      "objeto": "CONTRATACIÓN DE EJECUCIÓN DE OBRA: ¿REPARACIÓN DE AMBIENTE DE PREPARACIÓN Y EXPENDIO DE ALIMENTOS, SALA DE USOS MÚLTIPLES Y ALMACÉN O DEPÓSITO; EN EL(LA) I.E. 292 EN LA LOCALIDAD SHAMPUYACU, DISTRITO DE AWAJÚN, PROVINCIA RIOJA, DEPARTAMENTO SAN MARTÍN¿, CUI 2688967.",
-      "url": "https://prod1.seace.gob.pe/SeaceWeb-PRO/SdescargarArchivoAlfresco?fileCode=f670da0d-d981-4d53-ab4d-9935e64ef705"
     },
     {
       "id": "ocds-dgv273-seacev3-1224465",
