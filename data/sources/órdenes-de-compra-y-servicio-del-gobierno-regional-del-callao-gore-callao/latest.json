@@ -4,7 +4,7 @@
   "dataset_url": "https://www.datosabiertos.gob.pe/dataset/%C3%B3rdenes-de-compra-y-servicio-del-gobierno-regional-del-callao-gore-callao",
   "resource_id": "194c1de5-696e-44ae-81ef-e9d8ae97f6f7",
   "estado": "ok",
-  "nivel_usado": "url_en_vivo",
+  "nivel_usado": "url_catalogo",
   "columnas_detectadas": [
     "ANO",
     "MES",
@@ -387,7 +387,7 @@
     }
   ],
   "muestra_parcial": false,
-  "generado_en": "2026-10-18T13:21:39Z",
+  "generado_en": "2026-10-25T13:49:13Z",
   "cambio_vs_corrida_anterior": {
     "tipo": "sin_cambio",
     "filas_antes": 4032,

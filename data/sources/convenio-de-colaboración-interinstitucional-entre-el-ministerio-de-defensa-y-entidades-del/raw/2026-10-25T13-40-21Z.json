@@ -1,0 +1,98 @@
+{
+  "dataset_id": "convenio-de-colaboración-interinstitucional-entre-el-ministerio-de-defensa-y-entidades-del",
+  "titulo": "Convenio de Colaboración Interinstitucional entre el Ministerio de Defensa y Entidades del Estado - [MINDEF]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/convenio-de-colaboraci%C3%B3n-interinstitucional-entre-el-ministerio-de-defensa-y-entidades-del",
+  "resource_id": "61d2ca6f-20e6-452c-85eb-c8b9e6c4b109",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "CONVENIO",
+    "FECHA DE INICIO",
+    "FECHA DE TÉRMINO",
+    "OBJETO"
+  ],
+  "filas_leidas": 12,
+  "muestra": [
+    {
+      "CONVENIO": "Convenio de Colaboración Interinstitucional \nentre el Ministerio de Defensa y el Ministerio de Educación - MINEDU",
+      "FECHA DE INICIO": "20/02/2026",
+      "FECHA DE TÉRMINO": "31/12/2026",
+      "OBJETO": "EL CONVENIO tiene por objeto establecer los mecanismos de coordinación y colaboración interinstitucional; así como, los términos y condiciones de los compromisos de LAS PARTES para efectivizar lo dispuesto en el artículo 68º de la Ley Nº 32513, Ley de Presupuesto del Sector Público para el Año Fiscal 2026."
+    },
+    {
+      "CONVENIO": "Convenio de Colaboración Interinstitucional entre el Ministerio de Defensa y el Ministerio de Energía y Minas- MINEM",
+      "FECHA DE INICIO": "26/02/2026",
+      "FECHA DE TÉRMINO": "31/12/2026",
+      "OBJETO": "EL CONVENIO tiene por objeto establecer los mecanismos de coordinación y colaboración interinstitucional; así como, los términos y condiciones de los compromisos de LAS PARTES para efectivizar lo dispuesto en el artículo 68º de la Ley Nº 32513, Ley de Presupuesto del Sector Público para el Año Fiscal 2026."
+    },
+    {
+      "CONVENIO": "Convenio de Colaboración Interinstitucional entre el Ministerio de Defensa y el Ministerio de Desarrollo Inclusión Social - MIDIS",
+      "FECHA DE INICIO": "5/03/2026",
+      "FECHA DE TÉRMINO": "31/12/2026",
+      "OBJETO": "EL CONVENIO tiene por objeto establecer los mecanismos de coordinación y colaboración interinstitucional; así como, los términos y condiciones de los compromisos de LAS PARTES para efectivizar lo dispuesto en el artículo 68º de la Ley Nº 32513, Ley de Presupuesto del Sector Público para el Año Fiscal 2026."
+    },
+    {
+      "CONVENIO": "Convenio de Colaboración Interinstitucional entre el Ministerio de Defensa y el Ministerio de la Producción - PRODUCE",
+      "FECHA DE INICIO": "12/03/2026",
+      "FECHA DE TÉRMINO": "31/12/2026",
+      "OBJETO": "EL CONVENIO tiene por objeto establecer los mecanismos de coordinación y colaboración interinstitucional; así como, los términos y condiciones de los compromisos de LAS PARTES para efectivizar lo dispuesto en el artículo 68º de la Ley Nº 32513, Ley de Presupuesto del Sector Público para el Año Fiscal 2026."
+    },
+    {
+      "CONVENIO": "Convenio de Colaboración Interinstitucional entre el Ministerio de Defensa y el Ministerio de Justicia y Derechos Humanos - MINJUSDH",
+      "FECHA DE INICIO": "9/04/2026",
+      "FECHA DE TÉRMINO": "31/12/2026",
+      "OBJETO": "EL CONVENIO tiene por objeto establecer los mecanismos de coordinación y colaboración interinstitucional; así como, los términos y condiciones de los compromisos de LAS PARTES para efectivizar lo dispuesto en el artículo 68º de la Ley Nº 32513, Ley de Presupuesto del Sector Público para el Año Fiscal 2026."
+    },
+    {
+      "CONVENIO": "Convenio de Colaboración Interinstitucional entre el Ministerio de Defensa y la Municipalidad Distrital de Yurúa - LA MDY",
+      "FECHA DE INICIO": "24/04/2026",
+      "FECHA DE TÉRMINO": "31/12/2026",
+      "OBJETO": "EL CONVENIO tiene por objeto establecer los mecanismos de coordinación y colaboración interinstitucional; así como, los términos y condiciones de los compromisos de LAS PARTES para efectivizar lo dispuesto en el artículo 68º de la Ley Nº 32513, Ley de Presupuesto del Sector Público para el Año Fiscal 2026."
+    },
+    {
+      "CONVENIO": "Convenio de Colaboración Interinstitucional entre el Ministerio de Defensa y la Presidencia del Consejo de Ministros - PCM",
+      "FECHA DE INICIO": "24/04/2026",
+      "FECHA DE TÉRMINO": "31/12/2026",
+      "OBJETO": "EL CONVENIO tiene por objeto establecer los mecanismos de coordinación y colaboración interinstitucional; así como, los términos y condiciones de los compromisos de LAS PARTES para efectivizar lo dispuesto en el artículo 68º de la Ley Nº 32513, Ley de Presupuesto del Sector Público para el Año Fiscal 2026."
+    },
+    {
+      "CONVENIO": "Convenio de Colaboración Interinstitucional entre el Ministerio de Defensa y el Gobierno Regional de Ucayali - GORE UCAYALI",
+      "FECHA DE INICIO": "24/04/2026",
+      "FECHA DE TÉRMINO": "31/12/2026",
+      "OBJETO": "EL CONVENIO tiene por objeto establecer los mecanismos de coordinación y colaboración interinstitucional; así como, los términos y condiciones de los compromisos de LAS PARTES para efectivizar lo dispuesto en el artículo 68º de la Ley Nº 32513, Ley de Presupuesto del Sector Público para el Año Fiscal 2026."
+    },
+    {
+      "CONVENIO": "Convenio de Colaboración Interinstitucional entre el Ministerio de Defensa y la Municipalidad Provincial de Purús ",
+      "FECHA DE INICIO": "24/04/2026",
+      "FECHA DE TÉRMINO": "31/12/2026",
+      "OBJETO": "EL CONVENIO tiene por objeto establecer los mecanismos de coordinación y colaboración interinstitucional; así como, los términos y condiciones de los compromisos de LAS PARTES para efectivizar lo dispuesto en el artículo 68º de la Ley Nº 32513, Ley de Presupuesto del Sector Público para el Año Fiscal 2026."
+    },
+    {
+      "CONVENIO": "Convenio de Colaboración Interinstitucional entre el Ministerio de Defensa y el Ministerio de Economía y Finanzas - MEF",
+      "FECHA DE INICIO": "6/05/2026",
+      "FECHA DE TÉRMINO": "31/12/2026",
+      "OBJETO": "EL CONVENIO tiene por objeto establecer los mecanismos de coordinación y colaboración interinstitucional; así como, los términos y condiciones de los compromisos de LAS PARTES para efectivizar lo dispuesto en el artículo 68º de la Ley Nº 32513, Ley de Presupuesto del Sector Público para el Año Fiscal 2026."
+    },
+    {
+      "CONVENIO": "Convenio de Colaboración Interinstitucional entre el Ministerio de Defensa y el Ministerio de la Mujer y Poblaciones Vulnerables - MIMP",
+      "FECHA DE INICIO": "21/05/2026",
+      "FECHA DE TÉRMINO": "31/12/2026",
+      "OBJETO": "EL CONVENIO tiene por objeto establecer los mecanismos de coordinación y colaboración interinstitucional; así como, los términos y condiciones de los compromisos de LAS PARTES para efectivizar lo dispuesto en el artículo 68º de la Ley Nº 32513, Ley de Presupuesto del Sector Público para el Año Fiscal 2026."
+    },
+    {
+      "CONVENIO": "Convenio de Colaboración Interinstitucional entre el Ministerio de Defensa y el Ministerio de Transportes y Comunicaciones - MTC",
+      "FECHA DE INICIO": "4/06/2026",
+      "FECHA DE TÉRMINO": "31/12/2026",
+      "OBJETO": "EL CONVENIO tiene por objeto establecer los mecanismos de coordinación y colaboración interinstitucional; así como, los términos y condiciones de los compromisos de LAS PARTES para efectivizar lo dispuesto en el artículo 68º de la Ley Nº 32513, Ley de Presupuesto del Sector Público para el Año Fiscal 2026."
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-10-25T13:40:21Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "sin_cambio",
+    "filas_antes": 12,
+    "filas_despues": 12,
+    "diferencia": 0,
+    "diferencia_pct": 0.0
+  }
+}

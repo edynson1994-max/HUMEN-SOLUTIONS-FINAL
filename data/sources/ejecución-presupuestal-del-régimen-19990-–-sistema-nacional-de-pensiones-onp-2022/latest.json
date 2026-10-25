@@ -93,7 +93,7 @@
     },
     {
       "null": [
-        "<script type=\"text/javascript\" nonce='j90z0ouZscpoX8iMuyUKwQ'>//<![CDATA["
+        "<script type=\"text/javascript\" nonce='TfUtWpS2zSXfUI3c0YukJg'>//<![CDATA["
       ]
     },
     {
@@ -102,7 +102,7 @@
         "fShowButtons:true",
         "urlCdn:\"https://aadcdn.msauth.net/shared/1.0/\"",
         "urlDefaultFavicon:\"https://aadcdn.msauth.net/shared/1.0/content/images/favicon_a_eupayfgghqiai7k9sol6lg2.ico\"",
-        "urlPost:\"/59eb295b-ef81-4708-8888-5756316215ab/oauth2/authorize?client_id=00000003-0000-0ff1-ce00-000000000000\\u0026response_mode=form_post\\u0026ear_jwe_crypto=eyJhbGciOiJFQ0RILUVTIiwiZW5jIjoiQTI1NkdDTSIsImFwdiI6IkFBQUFDVVZoY2tOc2FXVnVkR2dBQUFCRlEwc3pNQUFBQUhUbVoyWisrN25xUDViRlBkUEFWQUMvVWFJV1hvOVhvb2xkb1JUWGJVN3BLZCtDTHRPdTB4ekZzZnpsUTlrK2RNWUI2cnFXRzNjRDZWWFpHRmdqWXhIWjIzY3EzeUo4WGJrYm5SSlBUaDZXSXJyOEFtcERTbkd3YTd3djhxWGZrZ0FBQUJqT3lwSG50dUFLUGhZU3A1TkFuTHlKckxJQmFMREJ0dFU9In0%3d\\u0026ear_jwk=eyJhbGciOiJFQ0RILUVTIiwiY3J2IjoiUC0zODQiLCJ4IjoiQUFBQU1IVG1aMlorKzducVA1YkZQZFBBVkFDL1VhSVdYbzlYb29sZG9SVFhiVTdwS2QrQ0x0T3UweHpGc2Z6bFE5aytkQT09IiwieSI6IkFBQUFNTVlCNnJxV0czY0Q2VlhaR0Znall4SFoyM2NxM3lKOFhia2JuUkpQVGg2V0lycjhBbXBEU25Hd2E3d3Y4cVhma2c9PSIsImt0eSI6IkVDIn0%3d\\u0026spa_client_id=08e18876-6177-487e-b8b5-cf950c1e598c\\u0026client_info=1\\u0026response_type=code+id_token+spa_rt\\u0026resource=00000003-0000-0ff1-ce00-000000000000\\u0026scope=openid\\u0026nonce=F2C492EA417BA8EBCD4DE5D9D66EF1AA32F093A07634ACD5-65E42BD918112EC266897779FCAF196C96CBE1F259603E385910FBE333BD0E3E\\u0026redirect_uri=https%3a%2f%2fonpgobpe.sharepoint.com%2f_forms%2fdefault.aspx\\u0026state=OD0wJjMyPUFBTVRud0FBQUJSSUpzM3pLRHRialRyR0ZNQ0VaQkdwdWFjTXVFRGhrQldYQ2g1QXU1aCUyRjg4MEtnOFh2YVRhMTdiaWxoeTFkZGJwJTJCZmg3N0J0YiUyRlBUV1p6YldONmcyc0RNTk1NYlMzeTh5eVh0ekxvT3JTQUpBaVdqcFFGc1NQMzVFSHQ2bEcwTVgwOUpXbzQ1Rlp2ZWhhT0szWE9xeWxEUzhjNE5ISHg4S2w3RlNOYyUyQlBMN25abnY4ajVtMlptelBmOGxvdEdPcEZmViUyQjVWQjNSaVpsRXFzSFdHJTJCTnhhZE1IJTJCMjV3U0Z5SVo5d1ZtNTVwUDVsUGVheHdTRXk4cHNDZ25hbXlHeERJczRjYnREOFRwSThpc3VsJTJCa085NVclMkZwZ1p3Slk2JTJCNDltcnZvZW5OZ3YwRm5tSUlPVXRTMWVqJTJCY3B3RlJIMEdUenBnQk9pTUVQeHolMkJqUlYwZVdaYlc0a1glMkZmWXdtdUtMUXpMcnRpRG03dENBUmtPSDM5clBQZXclM0QlM0Q\\u0026claims=%7b%22id_token%22%3a%7b%22xms_cc%22%3a%7b%22values%22%3a%5b%22CP1%22%5d%7d%7d%7d\\u0026wsucxt=1\\u0026cobrandid=11bd8083-87e0-41b5-bb78-0bc43c8a8e8a\\u0026client-request-id=4e1546a2-c0f5-0000-4a42-760d45331a68\\u0026sso_reload=True\"",
+        "urlPost:\"/59eb295b-ef81-4708-8888-5756316215ab/oauth2/authorize?client_id=00000003-0000-0ff1-ce00-000000000000\\u0026response_mode=form_post\\u0026ear_jwe_crypto=eyJhbGciOiJFQ0RILUVTIiwiZW5jIjoiQTI1NkdDTSIsImFwdiI6IkFBQUFDVVZoY2tOc2FXVnVkR2dBQUFCRlEwc3pNQUFBQUc2RlQ4MmZDUDNIVmVwVVJpY0RFTy9iVC9EM2pXVjhzQTVQQytyU3RXc2FwaGFvVmdCb0ZKYjBrMUFmVWJYNC9NL0I5eHY2RzduUlJ4MWxIV1lQclJ2bVgvUytVaEZZc2pENGUyM0s4ejRsSS8rTmN0VjN3UnFnS1F4RlBWam1NQUFBQUJnQVZwTmNNSURpaUI1SHVmMXRtRGU2eFU0KzQzek9HNUE9In0%3d\\u0026ear_jwk=eyJhbGciOiJFQ0RILUVTIiwiY3J2IjoiUC0zODQiLCJ4IjoiQUFBQU1HNkZUODJmQ1AzSFZlcFVSaWNERU8vYlQvRDNqV1Y4c0E1UEMrclN0V3NhcGhhb1ZnQm9GSmIwazFBZlViWDQvQT09IiwieSI6IkFBQUFNTS9COXh2Nkc3blJSeDFsSFdZUHJSdm1YL1MrVWhGWXNqRDRlMjNLOHo0bEkvK05jdFYzd1JxZ0tReEZQVmptTUE9PSIsImt0eSI6IkVDIn0%3d\\u0026spa_client_id=08e18876-6177-487e-b8b5-cf950c1e598c\\u0026client_info=1\\u0026response_type=code+id_token+spa_rt\\u0026resource=00000003-0000-0ff1-ce00-000000000000\\u0026scope=openid\\u0026nonce=7728AA22A7EAB4813EDBEDC024FECF9C14991616BA595ACD-0AA76AB35E4FDFA92F477ABA5CC876ED8759E161FAA8AFF54E8597B10E0D65CF\\u0026redirect_uri=https%3a%2f%2fonpgobpe.sharepoint.com%2f_forms%2fdefault.aspx\\u0026state=OD0wJjMyPUFBTVRud0FBQUJSSUpzM3pLRHRialRyR0ZNQ0VaQkdwdWFjTXVNUWRhRExKRzFkQW9lU2REWXVIMmZRT3Z0ayUyRk10VjR3OURxRjRwaDdVM3VwTWJHbXc3R0F1b2Y5SEg2SEtaTURzZzVXQnNyVWdIRGxLQ1ZHOEVlVlRMTGJSSUluNHA2dSUyQiUyRmRlbTlQZ0ZHTSUyQjJ4ZWxJMEF5emx0SiUyRk5SR25wTHoyOWFhRyUyRmIwam1QT2x1aVpjQXhSeEloT3RBMkI5Sk9UdjJLOWclMkJ6aG1oS2JYbndCOGhkSDZReU9FUWhoaSUyQlM4THZSeUslMkZ3TGdJMHVKM0lNNWNPQ2ttYSUyQmdIOUlOZVB6WGlIUzN4VWhKaTJmNU9FUnBuN2JqSHZISktndTl3d2lCZjg2RmI1aHd3VXk5RFpETVNNZ25YazhwNktIVUJJV3hYTzRaRFZ6c1dGTTROSVJmUzdRa3gyc2F3aXZjWEpWQnduUWFYajhiUnp0eThNZjFVMWw5WUtxZmRuVEElM0QlM0Q\\u0026claims=%7b%22id_token%22%3a%7b%22xms_cc%22%3a%7b%22values%22%3a%5b%22CP1%22%5d%7d%7d%7d\\u0026wsucxt=1\\u0026cobrandid=11bd8083-87e0-41b5-bb78-0bc43c8a8e8a\\u0026client-request-id=c75748a2-40d9-0000-538b-4cf965151726\\u0026sso_reload=True\"",
         "iPawnIcon:0",
         "sPOST_Username:\"\"",
         "fEnableNumberMatching:true",
@@ -110,6 +110,7 @@
         "sFTName:\"flowToken\"",
         "fEnableOneDSClientTelemetry:true",
         "fEnableWebVitalsV2:true",
+        "urlReportPageLoad:\"https://login.microsoftonline.com/common/instrumentation/reportpageload?mkt=en-US\"",
         "dynamicTenantBranding:null",
         "staticTenantBranding:null",
         "oAppCobranding:{}",
@@ -122,9 +123,9 @@
         "fUseMsaSessionState:true",
         "fIsRemoteNGCSupported:true",
         "desktopSsoConfig:{\"isEdgeAnaheimAllowed\":true",
-        "iwaEndpointUrlFormat:\"https://autologon.microsoftazuread-sso.com/{0}/winauth/sso?client-request-id=4e1546a2-c0f5-0000-4a42-760d45331a68\"",
-        "iwaSsoProbeUrlFormat:\"https://autologon.microsoftazuread-sso.com/{0}/winauth/ssoprobe?client-request-id=4e1546a2-c0f5-0000-4a42-760d45331a68\"",
-        "iwaIFrameUrlFormat:\"https://autologon.microsoftazuread-sso.com/{0}/winauth/iframe?client-request-id=4e1546a2-c0f5-0000-4a42-760d45331a68\\u0026isAdalRequest=False\"",
+        "iwaEndpointUrlFormat:\"https://autologon.microsoftazuread-sso.com/{0}/winauth/sso?client-request-id=c75748a2-40d9-0000-538b-4cf965151726\"",
+        "iwaSsoProbeUrlFormat:\"https://autologon.microsoftazuread-sso.com/{0}/winauth/ssoprobe?client-request-id=c75748a2-40d9-0000-538b-4cf965151726\"",
+        "iwaIFrameUrlFormat:\"https://autologon.microsoftazuread-sso.com/{0}/winauth/iframe?client-request-id=c75748a2-40d9-0000-538b-4cf965151726\\u0026isAdalRequest=False\"",
         "iwaRequestTimeoutInMs:10000",
         "startDesktopSsoOnPageLoad:false",
         "progressAnimationTimeout:10000",
@@ -133,7 +134,7 @@
         "isSafariAllowed:true",
         "redirectUri:\"\"",
         "isIEAllowedForSsoProbe:true",
-        "edgeRedirectUri:\"https://autologon.microsoftazuread-sso.com/common/winauth/sso/edgeredirect?client-request-id=4e1546a2-c0f5-0000-4a42-760d45331a68\\u0026origin=login.microsoftonline.com\\u0026is_redirected=1\"",
+        "edgeRedirectUri:\"https://autologon.microsoftazuread-sso.com/common/winauth/sso/edgeredirect?client-request-id=c75748a2-40d9-0000-538b-4cf965151726\\u0026origin=login.microsoftonline.com\\u0026is_redirected=1\"",
         "isFlowTokenPassedInEdge:true}",
         "iSessionPullType:2",
         "fUseSameSite:true",
@@ -182,13 +183,13 @@
         "scid:1013",
         "hpgact:1800",
         "hpgid:6",
-        "apiCanary:\"PBgABDgEAAAA9VeaV3ywaSLp1O3c4_Et5RXZvU3RzQXJ0aWZhY3RzCAAAAAAAwrG0vm255I53WfUIz4Ie9axhFH_RjcH_1fqlWFHr7ZUn5P1jne2YgeiDy4GbHSZ0uXXR7VO1ccEf6aeqQPVjnxyG_CeiH7_1R3YL3xVzQ6NvDjEH8D6vh8u_YCH-40__faVlmqvLtQ7XXZa8Qo9BXIheLxaDvpzigWVVCesNG96-BHorDaG_UMuRe-ibdd9_TDWWQUhFcSOk4IX0ZkFrMgDkqDXjHtCTpBBGIvRSXA-gy5twwcIalzvfUUeqt40O0cg7rRleZ5ap6kz6aj6nuaCvxmwPTqDZkF7_dM9CD29J0siBUqV5XaZ0hviXLPVbP0hDWpUj2viSgzfQ5-hCG2rncvPUHNoR9gtV25SLA-W6wO3DBWUaS0YIjKvH8IZ59SRHd8rcJy9M9DWux0tV_c4LmPTa8vbE7v-smZZf5S7h4KTFzHdgBmRmpEEgkJDvE2zLK7eCHs24PCmKsX1KNq6XNSMC4Ls19xridLeOFNxZv3QmCe4BGyRR2lFGok-H9QFI33n20_nyDFDVNxhcB-zEVcBT0qWTVssyyj3j44gi8VIWFHU25gtNX1pxwya0ApHk2N4jb_oLdvJtUJ_E7zkQegOIZdGiA9gOCBwJYVi_8nFNRm2NwQXNl6WZobi0vJ8cu2IHYAoHPBSON9OCKNIRrp4dcgsScGC_gDOesZnDpVXtDaJKBNb3hBVkHMmYBrrSZiI1sqLhNW16YpAWAeMphJDeXe-e5sZ4WDhEXo1QX2NS_evJ3-fF4yEHLttXIAA\"",
-        "canary:\"AnHml1MqPJymHhL0m6BDa7ntvJqppmk8W+Kj0DsnMHM=2:1:CANARY:bSq1Dvwt/6/KUSa/f5NCbGZO7VpLBfumjdn3jqFG8eQ=\"",
+        "apiCanary:\"PBgABDgEAAAA9VeaV3ywaSLp1O3c4_Et5RXZvU3RzQXJ0aWZhY3RzCAAAAAAAcMqGr7F_KWXxhnMGz5eikzcMoaNdutoNh860PO2ZW5akZqH_39WY-5KE9xsvpss89icZ7cnknUrIJpw6kunhHJZ0_F4nTFu8eEcOQO6NfHUGiR0qIGMxZ7zP4W-oJU7SPRX5HVUTCWxAEJBvhGSlR1K2EdpTgEMthji5eR5qMVDKdDoTx18BeK0xqhKhM958I_gSJ1ZYB7SKbDHVL4FmqnEmVPuHHBAHMjnVlW6oknQ6b6RDPsmzsqCeuGlKgd-6sQ3zrKIfcXQMrAsQn_vmLwCuIGrOnO1IQzt7qCaUQCTa7rOqX7OSFS0TIyiyFfy1dacstV6WQSq5MLh-UYUkyRVf_Virlkwv8MFzXB_0BBEFu28i_KyhNKe-_7JYlC3llbSdsGWoMJ0szfOuiDyYb_gTLgT4lSTtAJYe8Zcb1s8RcQrTsmF3j-9bVF2fY9c82-ZLTS_NM7MqD5ttm8KQrKhiA8SypAIhf1jCA56KRGDzUVrVwEvbl7wcyej82BbVowqqPMsto35CQ-9KPYhas1G3V6mx408aLWuWrXkOM3CCHthn2TnBCGZOF7Mny2_zRkrZZm9TwaJKuH9y3jfnfrFFBBhxOJyvh0IuMv_0bVsVBOu1UYLbxr7xFy0deH77yxRgTvvpKII5UeHyMJDVyFtdSTmUTdSZBQwjZ9lRnfm7Be9fDXREj1EQkquw1U66uoFcz22SpVU6H1ikP0RAXrZfRk86Uy3FPIlmhD6WdfhsM80I6xxM4j9SG7mVYCxsIAA\"",
+        "canary:\"OtTH6nuLldZfXn/u+IvC2dbZMkxsxamETZ44mjGOwNE=6:1:CANARY:7gP7L4QbctLfILXlL12pHTLJW6pYji/LuTgwU84HxwU=\"",
         "sCanaryTokenName:\"canary\"",
         "fSkipRenderingNewCanaryToken:false",
         "fEnableNewCsrfProtection:true",
-        "correlationId:\"4e1546a2-c0f5-0000-4a42-760d45331a68\"",
-        "sessionId:\"51af4880-7d6c-48eb-a2f4-b64f32e11100\"",
+        "correlationId:\"c75748a2-40d9-0000-538b-4cf965151726\"",
+        "sessionId:\"7f79c6ae-f947-46e5-a951-423fb3491601\"",
         "sRingId:\"R6\"",
         "locale:{\"mkt\":\"en-US\"",
         "lcid:1033}",
@@ -240,9 +241,9 @@
         "1",
         "25353",
         "4]}",
-        "rt:\"2026-10-18T13:16:30\"",
-        "et:4",
-        "axv:\"4.380.295\"}",
+        "rt:\"2026-10-25T13:46:02\"",
+        "et:11",
+        "axv:\"4.380.336\"}",
         "clientEvents:{\"enabled\":true",
         "telemetryEnabled:true",
         "useOneDSEventApi:true",
@@ -265,11 +266,11 @@
         "END:\"end\"",
         "END_SSO:\"end-sso\"",
         "END_USERS:\"end-users\"}",
-        "nonce:\"AwABEgEAAAADAOz_BQD0_0V2b1N0c0FydGlmYWN0cwUAAAAAAG1EZV6eD-E512dXfh-l1GHGNqbK4D5-zDa4Go8GYMRG4c3ja944wJ9XYiarq8PqxcQpnIaKyzN83lqZ4D70hZEgAA\"",
+        "nonce:\"AwABEgEAAAADAOz_BQD0_0V2b1N0c0FydGlmYWN0cwUAAAAAAB5msUuK-qVFOJNnAlDH-ooXYDTc-_nfxW2nrVbdI35Hg2ePtPngCLGOTAvg4qaG1BfyYLOF6WPUUYxrtPY5jAwgAA\"",
         "overallTimeoutMs:4000",
         "reloadOnFailure:true",
         "telemetry:{\"type\":\"ChromeSsoTelemetry\"",
-        "nonce:\"AwABDwEAAAADAOz_BQD0_0V2b1N0c0FydGlmYWN0cwUAAAAAAJ7-QDAr6oUVvkmEqR4PbjB9OxwSWy-GCOHFMF9qISZlFepPFR7e_L5YcJ500YZinLXrudd1DFs3Qrxbr5XET1JpaYFXpsqTZKRo4Qk1OtjaIAA\"",
+        "nonce:\"AwABDwEAAAADAOz_BQD0_0V2b1N0c0FydGlmYWN0cwUAAAAAAE05k6-m8QlS4jq6cMbsP1k7e7NjkDT8A_qpfR_5_N8jwQirCYi4_kcigzWXzJcmgUbSAV9fVbegj0zyZ_ec8aoG5jbmsIRAofT1Es_2s3LQIAA\"",
         "reportStates:[]}",
         "redirectEndStates:[\"end\"]",
         "cookieNames:{\"aadSso\":\"AADSSO\"",
@@ -294,12 +295,12 @@
     },
     {
       "null": [
-        "<script type=\"text/javascript\" nonce='j90z0ouZscpoX8iMuyUKwQ'>//<![CDATA["
+        "<script type=\"text/javascript\" nonce='TfUtWpS2zSXfUI3c0YukJg'>//<![CDATA["
       ]
     }
   ],
   "muestra_parcial": false,
-  "generado_en": "2026-10-18T13:16:30Z",
+  "generado_en": "2026-10-25T13:46:02Z",
   "cambio_vs_corrida_anterior": {
     "tipo": "sin_cambio",
     "filas_antes": 63,

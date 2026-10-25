@@ -1,0 +1,310 @@
+{
+  "dataset_id": "ejecución-presupuestal-del-régimen-19990-–-sistema-nacional-de-pensiones-onp-2022-oficina",
+  "titulo": "Ejecución presupuestal del Régimen 19990 – Sistema Nacional de Pensiones ONP 2022 [Oficina Normalización Previsional]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/ejecuci%C3%B3n-presupuestal-del-r%C3%A9gimen-19990-%E2%80%93-sistema-nacional-de-pensiones-onp-2022-oficina",
+  "resource_id": "3d4f49bd-35f0-4e07-a2b9-0900f1880f90",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [],
+  "filas_leidas": 63,
+  "muestra": [
+    {
+      "null": [
+        "<!-- Copyright (C) Microsoft Corporation. All rights reserved. -->"
+      ]
+    },
+    {
+      "null": [
+        "<!DOCTYPE html>"
+      ]
+    },
+    {
+      "null": [
+        "<html>"
+      ]
+    },
+    {
+      "null": [
+        "<head>"
+      ]
+    },
+    {
+      "null": [
+        "    <title>Redirecting</title>"
+      ]
+    },
+    {
+      "null": [
+        "    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">"
+      ]
+    },
+    {
+      "null": [
+        "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">"
+      ]
+    },
+    {
+      "null": [
+        "    <meta name=\"viewport\" content=\"width=device-width",
+        " initial-scale=1.0",
+        " maximum-scale=2.0",
+        " user-scalable=yes\">"
+      ]
+    },
+    {
+      "null": [
+        "    <meta http-equiv=\"Pragma\" content=\"no-cache\">"
+      ]
+    },
+    {
+      "null": [
+        "    <meta http-equiv=\"Expires\" content=\"-1\">"
+      ]
+    },
+    {
+      "null": [
+        "    <meta name=\"PageID\" content=\"BssoInterrupt\" />"
+      ]
+    },
+    {
+      "null": [
+        "    <meta name=\"SiteID\" content=\"\" />"
+      ]
+    },
+    {
+      "null": [
+        "    <meta name=\"ReqLC\" content=\"1033\" />"
+      ]
+    },
+    {
+      "null": [
+        "    <meta name=\"LocLC\" content=\"en-US\" />"
+      ]
+    },
+    {
+      "null": [
+        "    "
+      ]
+    },
+    {
+      "null": [
+        "<meta name=\"robots\" content=\"none\" />"
+      ]
+    },
+    {
+      "null": [
+        "<script type=\"text/javascript\" nonce='r2Q7vImZyo-Z_yMQCSOwog'>//<![CDATA["
+      ]
+    },
+    {
+      "null": [
+        "$Config={\"iMaxStackForKnockoutAsyncComponents\":10000",
+        "fShowButtons:true",
+        "urlCdn:\"https://aadcdn.msauth.net/shared/1.0/\"",
+        "urlDefaultFavicon:\"https://aadcdn.msauth.net/shared/1.0/content/images/favicon_a_eupayfgghqiai7k9sol6lg2.ico\"",
+        "urlPost:\"/59eb295b-ef81-4708-8888-5756316215ab/oauth2/authorize?client_id=00000003-0000-0ff1-ce00-000000000000\\u0026response_mode=form_post\\u0026ear_jwe_crypto=eyJhbGciOiJFQ0RILUVTIiwiZW5jIjoiQTI1NkdDTSIsImFwdiI6IkFBQUFDVVZoY2tOc2FXVnVkR2dBQUFCRlEwc3pNQUFBQUQ5Wmc4Y1VHK29sREJvbFg2NDhYT21YdTFFYlNWT2hCbStYWURnaHFwZ3dyMU1WWFZpZjg0cXhQdFVJdjBHc0MwUWJCVFVtZzZycmdNMlgrK1hCMmtDcEFuSStqVWFKMHM2cnlBNld5aWxCbVRmNnZMMWlHeHN3MlA1RXpZVXoxUUFBQUJpQzJsSndYNUpzY2pMeUs1SWJMWFFKS2ZXdlRBcEVyVFU9In0%3d\\u0026ear_jwk=eyJhbGciOiJFQ0RILUVTIiwiY3J2IjoiUC0zODQiLCJ4IjoiQUFBQU1EOVpnOGNVRytvbERCb2xYNjQ4WE9tWHUxRWJTVk9oQm0rWFlEZ2hxcGd3cjFNVlhWaWY4NHF4UHRVSXYwR3NDdz09IiwieSI6IkFBQUFNRVFiQlRVbWc2cnJnTTJYKytYQjJrQ3BBbkkralVhSjBzNnJ5QTZXeWlsQm1UZjZ2TDFpR3hzdzJQNUV6WVV6MVE9PSIsImt0eSI6IkVDIn0%3d\\u0026spa_client_id=08e18876-6177-487e-b8b5-cf950c1e598c\\u0026client_info=1\\u0026response_type=code+id_token+spa_rt\\u0026resource=00000003-0000-0ff1-ce00-000000000000\\u0026scope=openid\\u0026nonce=FC3D61F468AE040B593681E20A893E83DE7F5849C657B7B6-274BF3C0E8A2BA1FC2AA957BD663228539E5472B345775884B9FC2047DD961F3\\u0026redirect_uri=https%3a%2f%2fonpgobpe.sharepoint.com%2f_forms%2fdefault.aspx\\u0026state=OD0wJjMyPUFBTVRud0FBQUJSSUpzM3pLRHRialRyR0ZNQ0VaQkdwdWFjTXVOVE10RGFJdSUyQmxEbjJxM01haCUyRjdYdnVBJTJGbzExNnJwbzBKMHdDektuNCUyQkN5MFVrMnRLMTh2YTdTMVVIOEJHS0RJYjd4ODA5T1AwOENKbzBwTk41aURINmRaR2FqJTJCR3VnRGZ4R3FQRCUyRlFqSXNvM1NjNk5vRVFNJTJCVTJSVHM5eXlFekdLWGF2M2NPT3A0bCUyQiUyQkppUkh2Z1d1MjN2SEtGSGd3R3M4a080UHQ5YVppMnhGOXlaSDBDbGJzT3hpcXdwRXFEMnFHZURISGRoQ2UlMkZjWGJ3dURwdldFNTJQVjJNd1Y2eUdCbjhiNlVlc3pPbWUlMkJBN2MzTE5kVEhCUWI3QVFQbXpYZEdqN1RQOGtVN1RDQXFRWmh6ZWwzUXVLQlpPRWswaTVQWnVhd3hEOFFzJTJCMnNJN0QlMkJwM0J4TDFJUW9TTGJMZlFmSXpGQkJuVEFZTThjdHdWS3d5T3o1bWtp\\u0026claims=%7b%22id_token%22%3a%7b%22xms_cc%22%3a%7b%22values%22%3a%5b%22CP1%22%5d%7d%7d%7d\\u0026wsucxt=1\\u0026cobrandid=11bd8083-87e0-41b5-bb78-0bc43c8a8e8a\\u0026client-request-id=c55748a2-4061-0000-55bb-c7ba5c9e54d8\\u0026sso_reload=True\"",
+        "iPawnIcon:0",
+        "sPOST_Username:\"\"",
+        "fEnableNumberMatching:true",
+        "stsErrorCode:\"50168\"",
+        "sFTName:\"flowToken\"",
+        "fEnableOneDSClientTelemetry:true",
+        "fEnableWebVitalsV2:true",
+        "dynamicTenantBranding:null",
+        "staticTenantBranding:null",
+        "oAppCobranding:{}",
+        "iBackgroundImage:4",
+        "fApplicationInsightsEnabled:false",
+        "iApplicationInsightsEnabledPercentage:0",
+        "urlSetDebugMode:\"https://login.microsoftonline.com/common/debugmode\"",
+        "fEnableCssAnimation:true",
+        "fAllowGrayOutLightBox:true",
+        "fUseMsaSessionState:true",
+        "fIsRemoteNGCSupported:true",
+        "desktopSsoConfig:{\"isEdgeAnaheimAllowed\":true",
+        "iwaEndpointUrlFormat:\"https://autologon.microsoftazuread-sso.com/{0}/winauth/sso?client-request-id=c55748a2-4061-0000-55bb-c7ba5c9e54d8\"",
+        "iwaSsoProbeUrlFormat:\"https://autologon.microsoftazuread-sso.com/{0}/winauth/ssoprobe?client-request-id=c55748a2-4061-0000-55bb-c7ba5c9e54d8\"",
+        "iwaIFrameUrlFormat:\"https://autologon.microsoftazuread-sso.com/{0}/winauth/iframe?client-request-id=c55748a2-4061-0000-55bb-c7ba5c9e54d8\\u0026isAdalRequest=False\"",
+        "iwaRequestTimeoutInMs:10000",
+        "startDesktopSsoOnPageLoad:false",
+        "progressAnimationTimeout:10000",
+        "isEdgeAllowed:false",
+        "minDssoEdgeVersion:\"17\"",
+        "isSafariAllowed:true",
+        "redirectUri:\"\"",
+        "isIEAllowedForSsoProbe:true",
+        "edgeRedirectUri:\"https://autologon.microsoftazuread-sso.com/common/winauth/sso/edgeredirect?client-request-id=c55748a2-4061-0000-55bb-c7ba5c9e54d8\\u0026origin=login.microsoftonline.com\\u0026is_redirected=1\"",
+        "isFlowTokenPassedInEdge:true}",
+        "iSessionPullType:2",
+        "fUseSameSite:true",
+        "isGlobalTenant:true",
+        "uiflavor:1001",
+        "fLoadStringCustomizationPromises:true",
+        "fUseAlternateTextForSwitchToCredPickerLink:true",
+        "fOfflineAccountVisible:false",
+        "fEnableUserStateFix:true",
+        "fShowAccessPassPeek:true",
+        "fUpdateSessionPollingLogic:true",
+        "fEnableShowPickerCredObservable:true",
+        "fFetchSessionsSkipDsso:true",
+        "fIsCiamUserFlowUxNewLogicEnabled:true",
+        "fUseNonMicrosoftDefaultBrandingForCiam:true",
+        "fRemoveCustomCss:true",
+        "fFixUICrashForApiRequestHandler:true",
+        "fShowUpdatedKoreanPrivacyFooter:true",
+        "fUsePostCssHotfix:true",
+        "fFixUserFlowBranding:true",
+        "fEnablePasskeyNullFix:true",
+        "fEnableRefreshCookiesFix:true",
+        "fEnableWebNativeBridgeInterstitialUx:true",
+        "fEnableThisAppOnlyUxSupport:true",
+        "fEnableWindowParentingFix:true",
+        "fEnableNativeBridgeErrors:true",
+        "fEnableNativeBridgeErrorUpn:true",
+        "fEnableDomApiSuccessUpnFix:true",
+        "fEnableFidoClientHintsFix:true",
+        "urlAcmaServerPath:\"https://login.microsoftonline.com\"",
+        "sTenantId:\"common\"",
+        "sMkt:\"en-US\"",
+        "fIsDesktop:true",
+        "fLogDisallowedCssProperties:true",
+        "fDisallowExternalFonts:true",
+        "fDisallowCssPositioning:true",
+        "fShowDebugDetailsAriaExpanded:true",
+        "fEnableAgreementViewMountFetch:true",
+        "fEnableStableEffectOnce:false",
+        "fPreventOtcFormDoubleSubmit:true",
+        "fEnableOtcInputAutofill:true",
+        "fEnableOtcSubmitErrorOnInput:true",
+        "fEnablePhoneOnlyUsernameGctHandling:true",
+        "fEnableWebNativeBridgeLoadFix:true",
+        "fEnableWebNativeBridgeClientTelemetry:true",
+        "scid:1013",
+        "hpgact:1800",
+        "hpgid:6",
+        "apiCanary:\"PBgABDgEAAAA9VeaV3ywaSLp1O3c4_Et5RXZvU3RzQXJ0aWZhY3RzCAAAAAAASG4bnYVTsGPDjudCcXSwss_b2iys3QTuS0oy6Ut7nYxB-037nR8qG_pi8azpk--fyqwMnjN9F2lPI1awlzujMfYSLKZTxKKKtGc_6SOT4iVkMfIzDOLNqo-06HxXNW2xUUWZe0OynZzrT5IChWs6WcRoix9bxEWWNEgvC4la0IhrbLwAL5QfcobJLroeL2L7wqbOPYvzVUZubKwzgjPC8p5DqXzMZle3ERdPbxUlNm3hHqw4-cmlCFvMt4FeMjl0iM60oVsdMcHvDbFdWi9dcoCdv-CZLrDKLlAF-Rvkp9WTy-Wf8RLYbHVkouKe0PBQef4N-JWf20Zs2_k-8Qgo7cZnZeh6HEeXF3EecGSCV0ubfTUAzfQPUTvgdWUeyHkzX59OKaWRqUDYaW_iLabEUpqU9Nc5XTA-A09T_M7bc723I0j09eO51iHRWJES3jZEQmEhyEzSvmD3Pxkxo9lfIf9nM--8S4Sg22QbdB214kktd3KIPJGvGXro01zFq09IOpbf1thYtCxDEsSfr6DIGUKfa1rBG9njEZ3JmdXWLfeoqTGbdzSZlGIVFBexihZ3hqmpXeB3MBcvHI6GVeqhjuLNxsiJo38-OIJ6FXP5GRsqaFqggWoMUwIzLu6YModzmHsx7VkQccMtRvdJGljs045CjnVFQovbm1yLn-v8Ucgj7aqGSbskCLFnknAIK5Hja5IwtViZ9GjI8I7HKHnaWHRHbLTeCDNOg3hKGK-nw1_b5FA1Bqk4mW5I_nD9-zlfIAA\"",
+        "canary:\"EFD9hqmqnMz5vTBEcOuviC3ExITEVNnYQqMqIihJxNQ=2:1:CANARY:6gPVXliTI/Cwkw9NBWQK1xbYRUGWNqLqpwZeAkI2QcU=\"",
+        "sCanaryTokenName:\"canary\"",
+        "fSkipRenderingNewCanaryToken:false",
+        "fEnableNewCsrfProtection:true",
+        "correlationId:\"c55748a2-4061-0000-55bb-c7ba5c9e54d8\"",
+        "sessionId:\"7b0e1184-2d15-4dde-8db1-f7e433379d01\"",
+        "sRingId:\"R6\"",
+        "locale:{\"mkt\":\"en-US\"",
+        "lcid:1033}",
+        "slMaxRetry:2",
+        "slReportFailure:true",
+        "strings:{\"desktopsso\":{\"authenticatingmessage\":\"Trying to sign you in\"}}",
+        "enums:{\"ClientMetricsModes\":{\"None\":0",
+        "SubmitOnPost:1",
+        "SubmitOnRedirect:2",
+        "InstrumentPlt:4}}",
+        "urls:{\"instr\":{\"pageload\":\"https://login.microsoftonline.com/common/instrumentation/reportpageload\"",
+        "dssostatus:\"https://login.microsoftonline.com/common/instrumentation/dssostatus\"}}",
+        "browser:{\"ltr\":1",
+        "Chrome:1",
+        "_Win:1",
+        "_M124:1",
+        "_D0:1",
+        "Full:1",
+        "Win81:1",
+        "RE_WebKit:1",
+        "b:{\"name\":\"Chrome\"",
+        "major:124",
+        "minor:0}",
+        "os:{\"name\":\"Windows\"",
+        "version:\"10.0\"}",
+        "V:\"124.0\"}",
+        "watson:{\"url\":\"/common/handlers/watson\"",
+        "bundle:\"https://aadcdn.msauth.net/ests/2.1/content/cdnbundles/watson.min_82o5oyf7tvyeotpacdeksw2.js\"",
+        "sbundle:\"https://aadcdn.msauth.net/ests/2.1/content/cdnbundles/watsonsupportwithjquery.3.5.min_dc940oomzau4rsu8qesnvg2.js\"",
+        "fbundle:\"https://aadcdn.msauth.net/ests/2.1/content/cdnbundles/frameworksupport.min_oadrnc13magb009k4d20lg2.js\"",
+        "resetErrorPeriod:5",
+        "maxCorsErrors:-1",
+        "maxInjectErrors:5",
+        "maxErrors:10",
+        "maxTotalErrors:3",
+        "expSrcs:[\"https://login.microsoftonline.com\"",
+        "https://aadcdn.msauth.net/",
+        "https://aadcdn.msftauth.net/",
+        ".login.microsoftonline.com]",
+        "envErrorRedirect:true",
+        "envErrorUrl:\"/common/handlers/enverror\"}",
+        "loader:{\"cdnRoots\":[\"https://aadcdn.msauth.net/\"",
+        "https://aadcdn.msftauth.net/]",
+        "logByThrowing:true}",
+        "serverDetails:{\"slc\":\"ProdSlices\"",
+        "dc:\"EUS\"",
+        "ri:\"BL2XXXX\"",
+        "ver:{\"v\":[2",
+        "1",
+        "25353",
+        "4]}",
+        "rt:\"2026-10-25T13:45:52\"",
+        "et:6",
+        "axv:\"4.380.336\"}",
+        "clientEvents:{\"enabled\":true",
+        "telemetryEnabled:true",
+        "useOneDSEventApi:true",
+        "flush:60000",
+        "autoPost:true",
+        "autoPostDelay:1000",
+        "minEvents:1",
+        "maxEvents:1",
+        "pltDelay:500",
+        "appInsightsConfig:{\"instrumentationKey\":\"69adc3c768bd4dc08c19416121249fcc-66f1668a-797b-4249-95e3-6c6651768c28-7293\"",
+        "webAnalyticsConfiguration:{\"autoCapture\":{\"jsError\":true}}}",
+        "defaultEventName:\"IDUX_ESTSClientTelemetryEvent_WebWatson\"",
+        "serviceID:3",
+        "endpointUrl:\"\"}",
+        "fApplyAsciiRegexOnInput:true",
+        "country:\"US\"",
+        "fBreakBrandingSigninString:true",
+        "bsso:{\"states\":{\"START\":\"start\"",
+        "INPROGRESS:\"in-progress\"",
+        "END:\"end\"",
+        "END_SSO:\"end-sso\"",
+        "END_USERS:\"end-users\"}",
+        "nonce:\"AwABEgEAAAADAOz_BQD0_0V2b1N0c0FydGlmYWN0cwUAAAAAAC1ok3v4E8qTgLVJ7fzQmHVeUmi0y6mSrCsOeEV3K-cLSGkHSiVTeWJb-lWBxZv0Q7f1bvhy1xaFojxD6E8cVbYgAA\"",
+        "overallTimeoutMs:4000",
+        "reloadOnFailure:true",
+        "telemetry:{\"type\":\"ChromeSsoTelemetry\"",
+        "nonce:\"AwABDwEAAAADAOz_BQD0_0V2b1N0c0FydGlmYWN0cwUAAAAAAKSbd-qcwTu3LLBAEsR-eRXMiAI_2FpzRBIsajUZ_HcVv4w403NsDqL0VcqBg5MrDx3JHEWvT3YFCEqN1yxudVbA-6bCnR34CNbuijGSnpVHIAA\"",
+        "reportStates:[]}",
+        "redirectEndStates:[\"end\"]",
+        "cookieNames:{\"aadSso\":\"AADSSO\"",
+        "winSso:\"ESTSSSO\"",
+        "ssoTiles:\"ESTSSSOTILES\"",
+        "ssoPulled:\"SSOCOOKIEPULLED\"",
+        "userList:\"ESTSUSERLIST\"}",
+        "enabled:true",
+        "type:\"chrome\"",
+        "reason:\"Pull is needed\"}",
+        "urlNoCookies:\"https://login.microsoftonline.com/cookiesdisabled\"",
+        "fTrimChromeBssoUrl:true",
+        "inlineMode:5",
+        "fShowCopyDebugDetailsLink:true",
+        "fTenantBrandingCdnAddEventHandlers:true};"
+      ]
+    },
+    {
+      "null": [
+        "//]]></script> "
+      ]
+    },
+    {
+      "null": [
+        "<script type=\"text/javascript\" nonce='r2Q7vImZyo-Z_yMQCSOwog'>//<![CDATA["
+      ]
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-10-25T13:45:52Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "sin_cambio",
+    "filas_antes": 63,
+    "filas_despues": 63,
+    "diferencia": 0,
+    "diferencia_pct": 0.0
+  }
+}

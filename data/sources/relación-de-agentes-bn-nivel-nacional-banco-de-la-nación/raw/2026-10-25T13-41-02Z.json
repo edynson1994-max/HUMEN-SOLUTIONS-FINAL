@@ -1,0 +1,251 @@
+{
+  "dataset_id": "relación-de-agentes-bn-nivel-nacional-banco-de-la-nación",
+  "titulo": "Relación de Agentes BN a Nivel Nacional - [Banco de la Nación]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/relaci%C3%B3n-de-agentes-bn-nivel-nacional-banco-de-la-naci%C3%B3n",
+  "resource_id": "691881f4-c867-4df2-aefd-e6eeb638a196",
+  "estado": "ok",
+  "nivel_usado": "url_en_vivo",
+  "columnas_detectadas": [
+    "FECHA_CORTE",
+    "CODIGO_DE_COMERCIO",
+    "UBIGEO",
+    "DEPARTAMENTO",
+    "PROVINCIA",
+    "DISTRITO",
+    "DIRECCION",
+    "TIPO",
+    ""
+  ],
+  "filas_leidas": 20275,
+  "muestra": [
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000001",
+      "UBIGEO": "150112",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "INDEPENDENCIA",
+      "DIRECCION": "AV SACSAYHUAMAN 344",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000002",
+      "UBIGEO": "150117",
+      "DEPARTAMENTO": "LIMA",
+      "PROVINCIA": "LIMA",
+      "DISTRITO": "LOS OLIVOS",
+      "DIRECCION": "URB SANTA ROSA S/N MZ G LT 33",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000003",
+      "UBIGEO": "021601",
+      "DEPARTAMENTO": "ANCASH",
+      "PROVINCIA": "POMABAMBA",
+      "DISTRITO": "POMABAMBA",
+      "DIRECCION": "JR HUAMACHUCO S/N",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000004",
+      "UBIGEO": "030213",
+      "DEPARTAMENTO": "APURIMAC",
+      "PROVINCIA": "ANDAHUAYLAS",
+      "DISTRITO": "SAN JERONIMO",
+      "DIRECCION": "CHAMPACCOCHA S/N",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000005",
+      "UBIGEO": "040101",
+      "DEPARTAMENTO": "AREQUIPA",
+      "PROVINCIA": "AREQUIPA",
+      "DISTRITO": "AREQUIPA",
+      "DIRECCION": "AV MARISCAL CASTILLA 620",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000006",
+      "UBIGEO": "040122",
+      "DEPARTAMENTO": "AREQUIPA",
+      "PROVINCIA": "AREQUIPA",
+      "DISTRITO": "SOCABAYA",
+      "DIRECCION": "AV PRIMERO DE MAYO 100 URB CERRO SALAVERRY",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000007",
+      "UBIGEO": "040107",
+      "DEPARTAMENTO": "AREQUIPA",
+      "PROVINCIA": "AREQUIPA",
+      "DISTRITO": "JACOBO HUNTER",
+      "DIRECCION": "CALLE JAVIER PEREZ DE CUELLAR MZ B LT 7",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000008",
+      "UBIGEO": "050101",
+      "DEPARTAMENTO": "AYACUCHO",
+      "PROVINCIA": "HUAMANGA",
+      "DISTRITO": "AYACUCHO",
+      "DIRECCION": "URB JOSE ORTIZ VERGARA MZ K LT 19",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000009",
+      "UBIGEO": "050104",
+      "DEPARTAMENTO": "AYACUCHO",
+      "PROVINCIA": "HUAMANGA",
+      "DISTRITO": "CARMEN ALTO",
+      "DIRECCION": "AV VICTOR PRADO MZ F LT 1 ASOC LA FLORIDA",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000010",
+      "UBIGEO": "060612",
+      "DEPARTAMENTO": "CAJAMARCA",
+      "PROVINCIA": "CUTERVO",
+      "DISTRITO": "SANTO DOMINGO DE LA CAPILLA",
+      "DIRECCION": "AV BUENAVENTURA JULCA S/N",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000011",
+      "UBIGEO": "060611",
+      "DEPARTAMENTO": "CAJAMARCA",
+      "PROVINCIA": "CUTERVO",
+      "DISTRITO": "SANTA CRUZ",
+      "DIRECCION": "ANEXO CAMPO FLORIDO",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000012",
+      "UBIGEO": "060907",
+      "DEPARTAMENTO": "CAJAMARCA",
+      "PROVINCIA": "SAN IGNACIO",
+      "DISTRITO": "TABACONAS",
+      "DIRECCION": "CALLE SANTA ROSA S/N CPM TAMBORAPA PUEBLO",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000013",
+      "UBIGEO": "060901",
+      "DEPARTAMENTO": "CAJAMARCA",
+      "PROVINCIA": "SAN IGNACIO",
+      "DISTRITO": "SAN IGNACIO",
+      "DIRECCION": "AV SAN IGNACIO 352",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000014",
+      "UBIGEO": "061109",
+      "DEPARTAMENTO": "CAJAMARCA",
+      "PROVINCIA": "SAN MIGUEL",
+      "DISTRITO": "NIEPOS",
+      "DIRECCION": "CALLE CORONEL ISAIAS FLORES 19",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000015",
+      "UBIGEO": "080504",
+      "DEPARTAMENTO": "CUSCO",
+      "PROVINCIA": "CANAS",
+      "DISTRITO": "LANGUI",
+      "DIRECCION": "CALLE HIPOLITO CABALLERO S/N",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000016",
+      "UBIGEO": "080105",
+      "DEPARTAMENTO": "CUSCO",
+      "PROVINCIA": "CUSCO",
+      "DISTRITO": "SAN SEBASTIAN",
+      "DIRECCION": "CALLE BELLAVISTA MZ B LT 5",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000017",
+      "UBIGEO": "090117",
+      "DEPARTAMENTO": "HUANCAVELICA",
+      "PROVINCIA": "HUANCAVELICA",
+      "DISTRITO": "YAULI",
+      "DIRECCION": "JR HUANCAVELICA S/N",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000018",
+      "UBIGEO": "090504",
+      "DEPARTAMENTO": "HUANCAVELICA",
+      "PROVINCIA": "CHURCAMPA",
+      "DISTRITO": "EL CARMEN",
+      "DIRECCION": "JR DICIESEIS DE JULIO S/N",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000019",
+      "UBIGEO": "090302",
+      "DEPARTAMENTO": "HUANCAVELICA",
+      "PROVINCIA": "ANGARAES",
+      "DISTRITO": "ANCHONGA",
+      "DIRECCION": "CALLE HUANCAVELICA 8 CP BUENOS AIRES DE PARCO",
+      "TIPO": "Propio",
+      "": ""
+    },
+    {
+      "FECHA_CORTE": "20260609",
+      "CODIGO_DE_COMERCIO": "00000020",
+      "UBIGEO": "110305",
+      "DEPARTAMENTO": "ICA",
+      "PROVINCIA": "NASCA",
+      "DISTRITO": "VISTA ALEGRE",
+      "DIRECCION": "AV GUARDIA CIVIL S/N",
+      "TIPO": "Propio",
+      "": ""
+    }
+  ],
+  "muestra_parcial": false,
+  "generado_en": "2026-10-25T13:41:02Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "sin_cambio",
+    "filas_antes": 20275,
+    "filas_despues": 20275,
+    "diferencia": 0,
+    "diferencia_pct": 0.0
+  }
+}
