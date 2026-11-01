@@ -5,10 +5,10 @@
   "resource_id": "40f3a8aa-74f4-4ce1-8eed-5e9331b845d1",
   "estado": "error",
   "errores_por_nivel": {
-    "url_en_vivo": "new-line character seen in unquoted field - do you need to open the file with newline=''?",
-    "url_catalogo_respaldo": "new-line character seen in unquoted field - do you need to open the file with newline=''?"
+    "url_en_vivo": "<urlopen error timed out>",
+    "url_catalogo_respaldo": "<urlopen error timed out>"
   },
-  "generado_en": "2026-10-25T13:42:53Z",
+  "generado_en": "2026-11-01T16:39:52Z",
   "cambio_vs_corrida_anterior": {
     "tipo": "no_comparable",
     "filas_antes": null,

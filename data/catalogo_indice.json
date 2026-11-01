@@ -1,13 +1,13 @@
 {
-  "generado_en": "2026-10-25T13:56:33Z",
+  "generado_en": "2026-11-01T17:10:11Z",
   "categoria": "Economía y Finanzas",
   "total_catalogo": 505,
   "total_datasets_portal": 4651,
   "catalogo_corrida_completa": true,
   "conteos_por_estado": {
-    "ok": 234,
+    "ok": 226,
     "formato_no_soportado": 244,
-    "error": 27
+    "error": 35
   },
   "datasets": [
     {
@@ -842,8 +842,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-de-programas-presupuestales-enapres-capitulo-600-seguridad-ciudadana-a%C3%B1o",
       "fecha_modificacion_portal": "Vie, 06/12/2026 - 15:14",
-      "estado": "ok",
-      "filas": 65990,
+      "estado": "error",
+      "filas": null,
       "formato": null
     },
     {
@@ -853,8 +853,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-de-programas-presupuestales-enapres-capitulo-600-seguridad-ciudadana-a%C3%B1o-2",
       "fecha_modificacion_portal": "Vie, 06/12/2026 - 15:03",
-      "estado": "ok",
-      "filas": 66110,
+      "estado": "error",
+      "filas": null,
       "formato": null
     },
     {
@@ -864,8 +864,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-de-programas-presupuestales-enapres-capitulo-600-seguridad-ciudadana-a%C3%B1o-5",
       "fecha_modificacion_portal": "Vie, 06/12/2026 - 15:13",
-      "estado": "ok",
-      "filas": 65521,
+      "estado": "error",
+      "filas": null,
       "formato": null
     },
     {
@@ -875,8 +875,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-de-programas-presupuestales-enapres-capitulo-600-seguridad-ciudadana-a%C3%B1o-8",
       "fecha_modificacion_portal": "Vie, 06/12/2026 - 15:14",
-      "estado": "ok",
-      "filas": 71187,
+      "estado": "error",
+      "filas": null,
       "formato": null
     },
     {
@@ -919,8 +919,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/enapres-2014",
       "fecha_modificacion_portal": "Vie, 04/17/2020 - 19:37",
-      "estado": "ok",
-      "filas": 71187,
+      "estado": "error",
+      "filas": null,
       "formato": null
     },
     {
@@ -930,8 +930,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/enapres-2013",
       "fecha_modificacion_portal": "Vie, 04/17/2020 - 19:37",
-      "estado": "ok",
-      "filas": 82484,
+      "estado": "error",
+      "filas": null,
       "formato": null
     },
     {
@@ -952,8 +952,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/enapres-2015",
       "fecha_modificacion_portal": "Vie, 04/17/2020 - 19:37",
-      "estado": "ok",
-      "filas": 65521,
+      "estado": "error",
+      "filas": null,
       "formato": null
     },
     {
@@ -963,8 +963,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/enapres-2017",
       "fecha_modificacion_portal": "Mié, 03/29/2023 - 12:38",
-      "estado": "ok",
-      "filas": 65990,
+      "estado": "error",
+      "filas": null,
       "formato": null
     },
     {
@@ -1030,7 +1030,7 @@
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-en-soles-carreteras-organismo-supervisor-de-la-inversi%C3%B3n-en-infraestructura-de",
       "fecha_modificacion_portal": "Vie, 07/03/2026 - 15:51",
       "estado": "ok",
-      "filas": 59820,
+      "filas": 64714,
       "formato": null
     },
     {
@@ -1041,7 +1041,7 @@
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-en-d%C3%B3lares-aeropuertos-organismo-supervisor-de-la-inversi%C3%B3n-en-infraestructura",
       "fecha_modificacion_portal": "Vie, 07/03/2026 - 15:20",
       "estado": "ok",
-      "filas": 42630,
+      "filas": 45349,
       "formato": null
     },
     {
@@ -1052,7 +1052,7 @@
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-en-dolares-puertos-concesionados-organismo-supervisor-de-la-inversi%C3%B3n-en",
       "fecha_modificacion_portal": "Vie, 07/03/2026 - 15:37",
       "estado": "ok",
-      "filas": 3813,
+      "filas": 4028,
       "formato": null
     },
     {
@@ -1063,7 +1063,7 @@
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-en-soles-puertos-concesionados-organismo-supervisor-de-la-inversi%C3%B3n-en",
       "fecha_modificacion_portal": "Vie, 07/03/2026 - 15:37",
       "estado": "ok",
-      "filas": 2359,
+      "filas": 2389,
       "formato": null
     },
     {
@@ -1074,7 +1074,7 @@
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-en-soles-metro-de-lima-organismo-supervisor-de-la-inversi%C3%B3n-en-infraestructura",
       "fecha_modificacion_portal": "Vie, 07/03/2026 - 15:37",
       "estado": "ok",
-      "filas": 284,
+      "filas": 309,
       "formato": null
     },
     {
@@ -1096,7 +1096,7 @@
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-en-soles-ferrocarril-organismo-supervisor-de-la-inversi%C3%B3n-en-infraestructura-de",
       "fecha_modificacion_portal": "Vie, 07/03/2026 - 15:24",
       "estado": "ok",
-      "filas": 685,
+      "filas": 761,
       "formato": null
     },
     {
@@ -1173,7 +1173,7 @@
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-de-ingresos-aeron%C3%A1uticos-y-no-aeronauticos-en-d%C3%B3lares-aeropuertos-lap-organismo",
       "fecha_modificacion_portal": "Vie, 07/03/2026 - 15:51",
       "estado": "ok",
-      "filas": 174,
+      "filas": 184,
       "formato": null
     },
     {

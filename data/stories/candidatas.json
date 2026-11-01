@@ -1,10 +1,10 @@
 {
-  "generado_en": "2026-10-25T13:56:33Z",
+  "generado_en": "2026-11-01T17:10:11Z",
   "fuentes": {
-    "analytics_generado_en": "2026-10-25T13:56:33Z",
-    "cambios_generado_en": "2026-10-25T13:56:33Z"
+    "analytics_generado_en": "2026-11-01T17:10:11Z",
+    "cambios_generado_en": "2026-11-01T17:10:11Z"
   },
-  "total_candidatas": 4,
+  "total_candidatas": 7,
   "candidatas": [
     {
       "id": "mas_datos-pensionistas-y-beneficiarios-del-sistema-nacional-de-pensiones-decreto-ley-n°-19990-22",
@@ -55,6 +55,54 @@
       },
       "resumen_estructurado": "Perú en Datos conoce 505 datasets de Economía y Finanzas de los 4651 que tiene registrados el Portal Nacional de Datos Abiertos (descubrimiento completo).",
       "prioridad": 505
+    },
+    {
+      "id": "mayor_aumento-recaudación-en-soles-ferrocarril-organismo-supervisor-de-la-inversión-en-infraestructura-de",
+      "tipo": "mayor_aumento",
+      "dataset_id": "recaudación-en-soles-ferrocarril-organismo-supervisor-de-la-inversión-en-infraestructura-de",
+      "titulo": "Recaudación en Soles - FERROCARRIL - Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público – OSITRAN",
+      "entidad": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN",
+      "hechos": {
+        "dataset_id": "recaudación-en-soles-ferrocarril-organismo-supervisor-de-la-inversión-en-infraestructura-de",
+        "filas_antes": 685,
+        "filas_despues": 761,
+        "diferencia": 76,
+        "diferencia_pct": 11.09
+      },
+      "resumen_estructurado": "\"Recaudación en Soles - FERROCARRIL - Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público – OSITRAN\" (Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN) aumentó de 685 a 761 filas (+11,1%) en su última sincronización.",
+      "prioridad": 11.09
+    },
+    {
+      "id": "mayor_aumento-recaudación-en-soles-metro-de-lima-organismo-supervisor-de-la-inversión-en-infraestructura",
+      "tipo": "mayor_aumento",
+      "dataset_id": "recaudación-en-soles-metro-de-lima-organismo-supervisor-de-la-inversión-en-infraestructura",
+      "titulo": "Recaudación en Soles - METRO DE LIMA - Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público – OSITRAN",
+      "entidad": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN",
+      "hechos": {
+        "dataset_id": "recaudación-en-soles-metro-de-lima-organismo-supervisor-de-la-inversión-en-infraestructura",
+        "filas_antes": 284,
+        "filas_despues": 309,
+        "diferencia": 25,
+        "diferencia_pct": 8.8
+      },
+      "resumen_estructurado": "\"Recaudación en Soles - METRO DE LIMA - Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público – OSITRAN\" (Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN) aumentó de 284 a 309 filas (+8,8%) en su última sincronización.",
+      "prioridad": 8.8
+    },
+    {
+      "id": "mayor_aumento-recaudación-en-soles-carreteras-organismo-supervisor-de-la-inversión-en-infraestructura-de",
+      "tipo": "mayor_aumento",
+      "dataset_id": "recaudación-en-soles-carreteras-organismo-supervisor-de-la-inversión-en-infraestructura-de",
+      "titulo": "Recaudación en Soles - CARRETERAS- Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público - OSITRAN",
+      "entidad": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN",
+      "hechos": {
+        "dataset_id": "recaudación-en-soles-carreteras-organismo-supervisor-de-la-inversión-en-infraestructura-de",
+        "filas_antes": 59820,
+        "filas_despues": 64714,
+        "diferencia": 4894,
+        "diferencia_pct": 8.18
+      },
+      "resumen_estructurado": "\"Recaudación en Soles - CARRETERAS- Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público - OSITRAN\" (Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN) aumentó de 59820 a 64714 filas (+8,2%) en su última sincronización.",
+      "prioridad": 8.18
     }
   ]
 }

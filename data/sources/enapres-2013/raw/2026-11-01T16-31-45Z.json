@@ -1,0 +1,19 @@
+{
+  "dataset_id": "enapres-2013",
+  "titulo": "ENAPRES 2013",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/enapres-2013",
+  "resource_id": "762b7a06-a425-437e-95cc-2a8640996d09",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "<urlopen error timed out>",
+    "url_catalogo_respaldo": "<urlopen error timed out>"
+  },
+  "generado_en": "2026-11-01T16:31:45Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "no_comparable",
+    "filas_antes": 82484,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

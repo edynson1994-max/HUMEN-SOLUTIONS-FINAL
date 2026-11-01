@@ -1,9 +1,94 @@
 {
-  "generado_en": "2026-10-25T13:56:33Z",
+  "generado_en": "2026-11-01T17:10:11Z",
   "total_datasets_con_historial": 505,
-  "total_con_cambio_detectado": 0,
-  "total_mostrados": 0,
+  "total_con_cambio_detectado": 7,
+  "total_mostrados": 7,
   "total_primera_sincronizacion": 0,
-  "total_sin_cambio_o_no_comparable": 505,
-  "cambios": []
+  "total_sin_cambio_o_no_comparable": 498,
+  "cambios": [
+    {
+      "dataset_id": "recaudación-en-soles-carreteras-organismo-supervisor-de-la-inversión-en-infraestructura-de",
+      "titulo": "Recaudación en Soles - CARRETERAS- Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público - OSITRAN",
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-en-soles-carreteras-organismo-supervisor-de-la-inversi%C3%B3n-en-infraestructura-de",
+      "entidad": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN",
+      "fecha": "2026-11-01T17:04:32Z",
+      "tipo": "aumento",
+      "filas_antes": 59820,
+      "filas_despues": 64714,
+      "diferencia": 4894,
+      "diferencia_pct": 8.18
+    },
+    {
+      "dataset_id": "recaudación-en-dólares-aeropuertos-organismo-supervisor-de-la-inversión-en-infraestructura",
+      "titulo": "Recaudación en Dólares - AEROPUERTOS - Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público – OSITRAN",
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-en-d%C3%B3lares-aeropuertos-organismo-supervisor-de-la-inversi%C3%B3n-en-infraestructura",
+      "entidad": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN",
+      "fecha": "2026-11-01T17:04:36Z",
+      "tipo": "aumento",
+      "filas_antes": 42630,
+      "filas_despues": 45349,
+      "diferencia": 2719,
+      "diferencia_pct": 6.38
+    },
+    {
+      "dataset_id": "recaudación-en-dolares-puertos-concesionados-organismo-supervisor-de-la-inversión-en",
+      "titulo": "Recaudación en Dolares - PUERTOS CONCESIONADOS - Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público – OSITRAN",
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-en-dolares-puertos-concesionados-organismo-supervisor-de-la-inversi%C3%B3n-en",
+      "entidad": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN",
+      "fecha": "2026-11-01T17:04:39Z",
+      "tipo": "aumento",
+      "filas_antes": 3813,
+      "filas_despues": 4028,
+      "diferencia": 215,
+      "diferencia_pct": 5.64
+    },
+    {
+      "dataset_id": "recaudación-en-soles-ferrocarril-organismo-supervisor-de-la-inversión-en-infraestructura-de",
+      "titulo": "Recaudación en Soles - FERROCARRIL - Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público – OSITRAN",
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-en-soles-ferrocarril-organismo-supervisor-de-la-inversi%C3%B3n-en-infraestructura-de",
+      "entidad": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN",
+      "fecha": "2026-11-01T17:04:53Z",
+      "tipo": "aumento",
+      "filas_antes": 685,
+      "filas_despues": 761,
+      "diferencia": 76,
+      "diferencia_pct": 11.09
+    },
+    {
+      "dataset_id": "recaudación-en-soles-puertos-concesionados-organismo-supervisor-de-la-inversión-en",
+      "titulo": "Recaudación en Soles - PUERTOS CONCESIONADOS - Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público – OSITRAN",
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-en-soles-puertos-concesionados-organismo-supervisor-de-la-inversi%C3%B3n-en",
+      "entidad": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN",
+      "fecha": "2026-11-01T17:04:41Z",
+      "tipo": "aumento",
+      "filas_antes": 2359,
+      "filas_despues": 2389,
+      "diferencia": 30,
+      "diferencia_pct": 1.27
+    },
+    {
+      "dataset_id": "recaudación-en-soles-metro-de-lima-organismo-supervisor-de-la-inversión-en-infraestructura",
+      "titulo": "Recaudación en Soles - METRO DE LIMA - Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público – OSITRAN",
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-en-soles-metro-de-lima-organismo-supervisor-de-la-inversi%C3%B3n-en-infraestructura",
+      "entidad": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN",
+      "fecha": "2026-11-01T17:04:43Z",
+      "tipo": "aumento",
+      "filas_antes": 284,
+      "filas_despues": 309,
+      "diferencia": 25,
+      "diferencia_pct": 8.8
+    },
+    {
+      "dataset_id": "recaudación-de-ingresos-aeronáuticos-y-no-aeronauticos-en-dólares-aeropuertos-lap-organismo",
+      "titulo": "Recaudación de Ingresos Aeronáuticos y No Aeronauticos en Dólares - AEROPUERTOS - LAP - Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público – OSITRAN",
+      "dataset_url": "https://www.datosabiertos.gob.pe/dataset/recaudaci%C3%B3n-de-ingresos-aeron%C3%A1uticos-y-no-aeronauticos-en-d%C3%B3lares-aeropuertos-lap-organismo",
+      "entidad": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN",
+      "fecha": "2026-11-01T17:05:07Z",
+      "tipo": "aumento",
+      "filas_antes": 174,
+      "filas_despues": 184,
+      "diferencia": 10,
+      "diferencia_pct": 5.75
+    }
+  ]
 }

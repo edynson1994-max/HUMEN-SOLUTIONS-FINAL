@@ -1,0 +1,18 @@
+{
+  "dataset_id": "encuesta-nacional-de-programas-presupuestales-enapres-capitulo-600-seguridad-ciudadana-año-2",
+  "titulo": "Encuesta Nacional de Programas Presupuestales (ENAPRES) Capitulo 600 Seguridad Ciudadana - Año 2016 - [Ministerio del Interior (MININTER)]",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-de-programas-presupuestales-enapres-capitulo-600-seguridad-ciudadana-a%C3%B1o-2",
+  "resource_id": "af72a0ff-c4a2-426d-bdcd-744de481d9a1",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_catalogo": "<urlopen error timed out>"
+  },
+  "generado_en": "2026-11-01T16:07:09Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "no_comparable",
+    "filas_antes": 66110,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}

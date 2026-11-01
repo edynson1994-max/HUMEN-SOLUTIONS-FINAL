@@ -17,20 +17,8 @@
     "MONEDA",
     "IMPORTE"
   ],
-  "filas_leidas": 174,
+  "filas_leidas": 184,
   "muestra": [
-    {
-      "ANIO": "2019",
-      "MES": "1",
-      "ENTIDAD_PRESTADORA": "LIMA AIRPORT PARTNERS",
-      "SIGLAS CONCESION": "LAP",
-      "CONCESION": "AEROPUERTO INTERNACIONAL JORGE CHÁVEZ",
-      "AEROPUERTO": "LIMA",
-      "SIGLAS AEROPUERTO": "LIM",
-      "TIPO_INGRESO": "INGRESOS AERONÁUTICOS",
-      "MONEDA": "DOLARES",
-      "IMPORTE": "23572655.13"
-    },
     {
       "ANIO": "2019",
       "MES": "1",
@@ -42,6 +30,18 @@
       "TIPO_INGRESO": "INGRESOS NO AERONÁUTICOS",
       "MONEDA": "DOLARES",
       "IMPORTE": "8255008.02"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "1",
+      "ENTIDAD_PRESTADORA": "LIMA AIRPORT PARTNERS",
+      "SIGLAS CONCESION": "LAP",
+      "CONCESION": "AEROPUERTO INTERNACIONAL JORGE CHÁVEZ",
+      "AEROPUERTO": "LIMA",
+      "SIGLAS AEROPUERTO": "LIM",
+      "TIPO_INGRESO": "INGRESOS AERONÁUTICOS",
+      "MONEDA": "DOLARES",
+      "IMPORTE": "23572655.13"
     },
     {
       "ANIO": "2019",
@@ -99,9 +99,9 @@
       "CONCESION": "AEROPUERTO INTERNACIONAL JORGE CHÁVEZ",
       "AEROPUERTO": "LIMA",
       "SIGLAS AEROPUERTO": "LIM",
-      "TIPO_INGRESO": "INGRESOS NO AERONÁUTICOS",
+      "TIPO_INGRESO": "INGRESOS AERONÁUTICOS",
       "MONEDA": "DOLARES",
-      "IMPORTE": "8897833.22"
+      "IMPORTE": "22818224.1"
     },
     {
       "ANIO": "2019",
@@ -111,21 +111,9 @@
       "CONCESION": "AEROPUERTO INTERNACIONAL JORGE CHÁVEZ",
       "AEROPUERTO": "LIMA",
       "SIGLAS AEROPUERTO": "LIM",
-      "TIPO_INGRESO": "INGRESOS AERONÁUTICOS",
+      "TIPO_INGRESO": "INGRESOS NO AERONÁUTICOS",
       "MONEDA": "DOLARES",
-      "IMPORTE": "22818224.1"
-    },
-    {
-      "ANIO": "2019",
-      "MES": "5",
-      "ENTIDAD_PRESTADORA": "LIMA AIRPORT PARTNERS",
-      "SIGLAS CONCESION": "LAP",
-      "CONCESION": "AEROPUERTO INTERNACIONAL JORGE CHÁVEZ",
-      "AEROPUERTO": "LIMA",
-      "SIGLAS AEROPUERTO": "LIM",
-      "TIPO_INGRESO": "INGRESOS AERONÁUTICOS",
-      "MONEDA": "DOLARES",
-      "IMPORTE": "24668516.42"
+      "IMPORTE": "8897833.22"
     },
     {
       "ANIO": "2019",
@@ -138,6 +126,18 @@
       "TIPO_INGRESO": "INGRESOS NO AERONÁUTICOS",
       "MONEDA": "DOLARES",
       "IMPORTE": "8933546.99"
+    },
+    {
+      "ANIO": "2019",
+      "MES": "5",
+      "ENTIDAD_PRESTADORA": "LIMA AIRPORT PARTNERS",
+      "SIGLAS CONCESION": "LAP",
+      "CONCESION": "AEROPUERTO INTERNACIONAL JORGE CHÁVEZ",
+      "AEROPUERTO": "LIMA",
+      "SIGLAS AEROPUERTO": "LIM",
+      "TIPO_INGRESO": "INGRESOS AERONÁUTICOS",
+      "MONEDA": "DOLARES",
+      "IMPORTE": "24668516.42"
     },
     {
       "ANIO": "2019",
@@ -261,12 +261,12 @@
     }
   ],
   "muestra_parcial": false,
-  "generado_en": "2026-10-25T13:43:47Z",
+  "generado_en": "2026-11-01T17:05:07Z",
   "cambio_vs_corrida_anterior": {
-    "tipo": "sin_cambio",
+    "tipo": "aumento",
     "filas_antes": 174,
-    "filas_despues": 174,
-    "diferencia": 0,
-    "diferencia_pct": 0.0
+    "filas_despues": 184,
+    "diferencia": 10,
+    "diferencia_pct": 5.75
   }
 }

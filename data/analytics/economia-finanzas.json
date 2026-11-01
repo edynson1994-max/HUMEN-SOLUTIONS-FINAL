@@ -1,5 +1,5 @@
 {
-  "generado_en": "2026-10-25T13:56:33Z",
+  "generado_en": "2026-11-01T17:10:11Z",
   "catalogo": {
     "categoria": "Economía y Finanzas",
     "total_datasets_portal": 4651,
@@ -10,17 +10,17 @@
   "sincronizacion": {
     "total_con_historial": 505,
     "por_estado": {
-      "ok": 234,
+      "ok": 226,
       "formato_no_soportado": 244,
-      "error": 27
+      "error": 35
     },
     "total_con_data_api_confirmada": 0
   },
   "filas": {
-    "total_datasets_con_filas_ok": 234,
-    "total_filas_ok": 9854556,
-    "promedio_filas_ok": 42113.5,
-    "mediana_filas_ok": 4474.5,
+    "total_datasets_con_filas_ok": 226,
+    "total_filas_ok": 9308535,
+    "promedio_filas_ok": 41188.2,
+    "mediana_filas_ok": 2962.5,
     "ranking_mas_filas": [
       {
         "dataset_id": "pensionistas-y-beneficiarios-del-sistema-nacional-de-pensiones-decreto-ley-n°-19990-22",
@@ -85,16 +85,87 @@
     ]
   },
   "variaciones": {
-    "total_con_variacion_detectada": 0,
-    "ranking_mayor_aumento_pct": [],
+    "total_con_variacion_detectada": 7,
+    "ranking_mayor_aumento_pct": [
+      {
+        "dataset_id": "recaudación-en-soles-ferrocarril-organismo-supervisor-de-la-inversión-en-infraestructura-de",
+        "titulo": "Recaudación en Soles - FERROCARRIL - Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público – OSITRAN",
+        "entidad": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN",
+        "tipo": "aumento",
+        "filas_antes": 685,
+        "filas_despues": 761,
+        "diferencia": 76,
+        "diferencia_pct": 11.09
+      },
+      {
+        "dataset_id": "recaudación-en-soles-metro-de-lima-organismo-supervisor-de-la-inversión-en-infraestructura",
+        "titulo": "Recaudación en Soles - METRO DE LIMA - Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público – OSITRAN",
+        "entidad": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN",
+        "tipo": "aumento",
+        "filas_antes": 284,
+        "filas_despues": 309,
+        "diferencia": 25,
+        "diferencia_pct": 8.8
+      },
+      {
+        "dataset_id": "recaudación-en-soles-carreteras-organismo-supervisor-de-la-inversión-en-infraestructura-de",
+        "titulo": "Recaudación en Soles - CARRETERAS- Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público - OSITRAN",
+        "entidad": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN",
+        "tipo": "aumento",
+        "filas_antes": 59820,
+        "filas_despues": 64714,
+        "diferencia": 4894,
+        "diferencia_pct": 8.18
+      },
+      {
+        "dataset_id": "recaudación-en-dólares-aeropuertos-organismo-supervisor-de-la-inversión-en-infraestructura",
+        "titulo": "Recaudación en Dólares - AEROPUERTOS - Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público – OSITRAN",
+        "entidad": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN",
+        "tipo": "aumento",
+        "filas_antes": 42630,
+        "filas_despues": 45349,
+        "diferencia": 2719,
+        "diferencia_pct": 6.38
+      },
+      {
+        "dataset_id": "recaudación-de-ingresos-aeronáuticos-y-no-aeronauticos-en-dólares-aeropuertos-lap-organismo",
+        "titulo": "Recaudación de Ingresos Aeronáuticos y No Aeronauticos en Dólares - AEROPUERTOS - LAP - Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público – OSITRAN",
+        "entidad": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN",
+        "tipo": "aumento",
+        "filas_antes": 174,
+        "filas_despues": 184,
+        "diferencia": 10,
+        "diferencia_pct": 5.75
+      },
+      {
+        "dataset_id": "recaudación-en-dolares-puertos-concesionados-organismo-supervisor-de-la-inversión-en",
+        "titulo": "Recaudación en Dolares - PUERTOS CONCESIONADOS - Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público – OSITRAN",
+        "entidad": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN",
+        "tipo": "aumento",
+        "filas_antes": 3813,
+        "filas_despues": 4028,
+        "diferencia": 215,
+        "diferencia_pct": 5.64
+      },
+      {
+        "dataset_id": "recaudación-en-soles-puertos-concesionados-organismo-supervisor-de-la-inversión-en",
+        "titulo": "Recaudación en Soles - PUERTOS CONCESIONADOS - Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público – OSITRAN",
+        "entidad": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público  - OSITRAN",
+        "tipo": "aumento",
+        "filas_antes": 2359,
+        "filas_despues": 2389,
+        "diferencia": 30,
+        "diferencia_pct": 1.27
+      }
+    ],
     "ranking_mayor_disminucion_pct": []
   },
   "tendencias": {
     "ventana_corridas": 5,
     "conteo": {
-      "creciente": 0,
+      "creciente": 7,
       "decreciente": 0,
-      "estable": 234,
+      "estable": 227,
       "insuficiente_historial": 271
     }
   },
@@ -107,10 +178,6 @@
       {
         "entidad": "Servicio de Administración Tributaria de Lima - SAT",
         "conteo": 15
-      },
-      {
-        "entidad": "Ministerio del Interior - MININTER",
-        "conteo": 12
       },
       {
         "entidad": "Banco de la Nación",
@@ -138,6 +205,10 @@
       },
       {
         "entidad": "Ministerio de la Producción - PRODUCE",
+        "conteo": 4
+      },
+      {
+        "entidad": "Municipalidad Distrital de Los Olivos ",
         "conteo": 4
       }
     ]

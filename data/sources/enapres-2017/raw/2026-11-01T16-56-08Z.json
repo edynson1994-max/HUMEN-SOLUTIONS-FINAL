@@ -1,0 +1,19 @@
+{
+  "dataset_id": "enapres-2017",
+  "titulo": "ENAPRES 2017",
+  "dataset_url": "https://www.datosabiertos.gob.pe/dataset/enapres-2017",
+  "resource_id": "ad4c50f5-69d1-4cc9-8bd1-995f49328ae3",
+  "estado": "error",
+  "errores_por_nivel": {
+    "url_en_vivo": "<urlopen error timed out>",
+    "url_catalogo_respaldo": "<urlopen error timed out>"
+  },
+  "generado_en": "2026-11-01T16:56:08Z",
+  "cambio_vs_corrida_anterior": {
+    "tipo": "no_comparable",
+    "filas_antes": 65990,
+    "filas_despues": null,
+    "diferencia": null,
+    "diferencia_pct": null
+  }
+}
