@@ -3,9 +3,9 @@
   "atribucion": "Banco Central de Reserva del Perú (BCRP).",
   "dataset_url": "https://estadisticas.bcrp.gob.pe/estadisticas/series/",
   "tipo_cambio": {
-    "periodo": "06.Nov.26",
-    "compra": 3.427,
-    "venta": 3.429,
+    "periodo": "09.Nov.26",
+    "compra": 3.41,
+    "venta": 3.412,
     "unidad": "S/ por US$",
     "descripcion": "Tipo de cambio interbancario, BCRP"
   },
@@ -26,5 +26,5 @@
     "tasa_referencia",
     "inflacion"
   ],
-  "generado_en": "2026-11-09T22:55:30Z"
+  "generado_en": "2026-11-10T20:21:05Z"
 }
