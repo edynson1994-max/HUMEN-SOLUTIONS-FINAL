@@ -8,10 +8,10 @@
     "url_en_vivo": "<urlopen error timed out>",
     "url_catalogo_respaldo": "<urlopen error timed out>"
   },
-  "generado_en": "2026-11-01T16:23:37Z",
+  "generado_en": "2026-11-15T16:39:54Z",
   "cambio_vs_corrida_anterior": {
     "tipo": "no_comparable",
-    "filas_antes": 71187,
+    "filas_antes": null,
     "filas_despues": null,
     "diferencia": null,
     "diferencia_pct": null

@@ -198,12 +198,12 @@
     }
   ],
   "muestra_parcial": false,
-  "generado_en": "2026-11-01T17:04:53Z",
+  "generado_en": "2026-11-15T17:21:03Z",
   "cambio_vs_corrida_anterior": {
-    "tipo": "aumento",
-    "filas_antes": 685,
+    "tipo": "sin_cambio",
+    "filas_antes": 761,
     "filas_despues": 761,
-    "diferencia": 76,
-    "diferencia_pct": 11.09
+    "diferencia": 0,
+    "diferencia_pct": 0.0
   }
 }

@@ -1,12 +1,12 @@
 {
   "categoria": "Economía y Finanzas",
   "total_en_categoria": 505,
-  "empezar_en_usado": 241,
-  "procesados_esta_corrida": 264,
-  "ok": 115,
-  "errores": 7,
-  "no_soportados": 142,
-  "cortado_por_tiempo": false,
-  "corrida_completa": true,
-  "siguiente_empezar_en": null
+  "empezar_en_usado": 0,
+  "procesados_esta_corrida": 275,
+  "ok": 138,
+  "errores": 30,
+  "no_soportados": 107,
+  "cortado_por_tiempo": true,
+  "corrida_completa": false,
+  "siguiente_empezar_en": 275
 }

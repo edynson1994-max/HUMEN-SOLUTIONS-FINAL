@@ -7,10 +7,10 @@
   "errores_por_nivel": {
     "url_catalogo": "<urlopen error timed out>"
   },
-  "generado_en": "2026-11-01T16:07:09Z",
+  "generado_en": "2026-11-15T16:23:28Z",
   "cambio_vs_corrida_anterior": {
     "tipo": "no_comparable",
-    "filas_antes": 66110,
+    "filas_antes": null,
     "filas_despues": null,
     "diferencia": null,
     "diferencia_pct": null
