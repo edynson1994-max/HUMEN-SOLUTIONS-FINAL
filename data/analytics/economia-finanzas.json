@@ -1,5 +1,5 @@
 {
-  "generado_en": "2026-11-15T17:27:05Z",
+  "generado_en": "2026-11-22T17:09:52Z",
   "catalogo": {
     "categoria": "Economía y Finanzas",
     "total_datasets_portal": 4651,
@@ -10,17 +10,17 @@
   "sincronizacion": {
     "total_con_historial": 505,
     "por_estado": {
-      "ok": 226,
+      "ok": 225,
       "formato_no_soportado": 244,
-      "error": 35
+      "error": 36
     },
     "total_con_data_api_confirmada": 0
   },
   "filas": {
-    "total_datasets_con_filas_ok": 226,
-    "total_filas_ok": 9308535,
-    "promedio_filas_ok": 41188.2,
-    "mediana_filas_ok": 2962.5,
+    "total_datasets_con_filas_ok": 225,
+    "total_filas_ok": 9304503,
+    "promedio_filas_ok": 41353.3,
+    "mediana_filas_ok": 2768,
     "ranking_mas_filas": [
       {
         "dataset_id": "pensionistas-y-beneficiarios-del-sistema-nacional-de-pensiones-decreto-ley-n°-19990-22",

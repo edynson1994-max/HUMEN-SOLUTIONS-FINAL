@@ -1,13 +1,13 @@
 {
-  "generado_en": "2026-11-15T17:27:06Z",
+  "generado_en": "2026-11-22T17:09:52Z",
   "categoria": "Economía y Finanzas",
   "total_catalogo": 505,
   "total_datasets_portal": 4651,
   "catalogo_corrida_completa": true,
   "conteos_por_estado": {
-    "ok": 226,
+    "ok": 225,
     "formato_no_soportado": 244,
-    "error": 35
+    "error": 36
   },
   "datasets": [
     {
@@ -3042,8 +3042,8 @@
       "categoria": "Economía y Finanzas",
       "dataset_url": "https://www.datosabiertos.gob.pe/dataset/%C3%B3rdenes-de-compra-y-servicio-del-gobierno-regional-del-callao-gore-callao",
       "fecha_modificacion_portal": "Jue, 04/30/2026 - 10:09",
-      "estado": "ok",
-      "filas": 4032,
+      "estado": "error",
+      "filas": null,
       "formato": null
     },
     {
